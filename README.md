@@ -29,8 +29,22 @@ Ventaja de trabajar aquí: Claude Code lee las imágenes desde el disco, así qu
 python scripts/add_word.py "palabra" "traducción"   # agregar vocabulario
 python scripts/build_pdf.py                          # generar el PDF
 python scripts/build_pdf.py --out output/v2.pdf      # PDF con otro nombre
-python scripts/build_html.py                         # generar la versión web
+python scripts/build_html.py                         # versión web espejo del PDF
+python scripts/build_artifact.py                     # cuaderno con buscador y audio
+python scripts/build_artifact.py --standalone --out docs/index.html   # GitHub Pages
+python bot/alcpt_bot.py                              # bot de Telegram
 ```
+
+## Bot de Telegram
+
+Mándale una palabra o una captura del examen y actualiza los JSON, regenera todo y hace push.
+Funciona en cualquier equipo donde clones el repo. Instrucciones en [`bot/README.md`](bot/README.md).
+
+## Audio
+
+Las dos páginas web traen un botón de bocina en cada palabra y en cada pregunta. Usa la voz
+del propio dispositivo (`speechSynthesis`), así que no consume datos ni requiere ninguna clave.
+En las preguntas lee el enunciado y todas las opciones, como en la parte auditiva del examen.
 
 ## Archivos que importan
 
@@ -40,6 +54,9 @@ python scripts/build_html.py                         # generar la versión web
 | `data/forms.json` | Preguntas, opciones, respuestas y explicaciones |
 | `CLAUDE.md` | Las reglas del flujo de trabajo |
 | `output/*.pdf` | Documento consolidado, párrafos justificados |
-| `output/*.html` | Misma información en versión web (se abre en el navegador) |
+| `output/ALCPT_Vocabulario_y_Examenes.html` | Espejo del PDF en versión web |
+| `output/cuaderno_alcpt.html` | Cuaderno con buscador y audio |
+| `docs/index.html` | Lo mismo, publicado en GitHub Pages |
+| `bot/alcpt_bot.py` | Bot de Telegram que alimenta el diccionario |
 
 Los dos JSON son la única fuente de verdad: el PDF siempre se regenera a partir de ellos.

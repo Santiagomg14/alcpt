@@ -59,11 +59,30 @@ alcpt/
 │   └── forms.json         <- fuente única de las preguntas
 ├── scripts/
 │   ├── build_pdf.py       <- genera el PDF consolidado
-│   ├── build_html.py      <- genera la versión web (mismo contenido)
+│   ├── build_html.py      <- versión web espejo del PDF
+│   ├── build_artifact.py  <- cuaderno con buscador y audio (+ --standalone para Pages)
 │   └── add_word.py        <- agrega palabras por línea de comandos
-├── inbox/                 <- aquí se dejan las capturas nuevas del ALCPT
-└── output/                <- PDF generado
+├── bot/
+│   ├── alcpt_bot.py       <- bot de Telegram (portátil, sin rutas fijas)
+│   └── README.md          <- cómo dejarlo corriendo en cualquier equipo
+├── inbox/                 <- capturas nuevas del ALCPT (fuera del repo)
+├── docs/                  <- index.html publicado en GitHub Pages
+└── output/                <- PDF y páginas generadas
 ```
+
+## Al cambiar los datos
+
+Cualquier cambio en `data/*.json` obliga a regenerar los cuatro documentos:
+
+```bash
+python scripts/build_pdf.py
+python scripts/build_html.py
+python scripts/build_artifact.py
+python scripts/build_artifact.py --standalone --out docs/index.html
+```
+
+El bot ya hace esto solo. Si editas a mano, no olvides `docs/index.html`: es lo que
+ve Brayhan desde el celular.
 
 ## Comandos habituales
 

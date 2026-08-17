@@ -79,6 +79,22 @@ table.vocab td{border-bottom:1px solid var(--rule); padding:7px 8px; vertical-al
 table.vocab tr:nth-child(even){background:var(--soft)}
 table.vocab td.n{color:var(--accent); font-weight:700; width:3.2em; text-align:right; padding-right:12px}
 table.vocab td.en{font-weight:700; width:30%}
+table.vocab td.audio{width:2.6em; text-align:right; padding-right:0}
+
+.say{
+  width:28px; height:28px; padding:0; cursor:pointer; vertical-align:middle;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:var(--card); border:1px solid var(--rule); border-radius:7px; color:var(--grey);
+}
+.say svg{width:14px; height:14px; fill:currentColor; pointer-events:none}
+.say .stop{display:none}
+.say:hover{color:var(--accent); border-color:var(--accent)}
+.say:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.say[aria-pressed="true"]{color:var(--accent); border-color:var(--accent)}
+.say[aria-pressed="true"] .play{display:none}
+.say[aria-pressed="true"] .stop{display:block}
+.say[hidden]{display:none}
+@media print{.say{display:none}}
 
 .pending{background:var(--accent-soft); border:1px solid var(--rule); border-radius:10px; padding:4px 16px 12px}
 
@@ -86,8 +102,12 @@ article.q{
   background:var(--card); border:1px solid var(--rule); border-left:3px solid var(--accent);
   border-radius:8px; padding:14px 18px; margin:14px 0;
 }
-article.q .stem{font-weight:700; text-align:justify; hyphens:auto; margin:0 0 10px}
-article.q .stem .num{color:var(--accent); margin-right:6px}
+article.q .stem{
+  font-weight:700; margin:0 0 10px; display:flex; gap:8px; align-items:flex-start;
+}
+article.q .stem .num{color:var(--accent); flex:0 0 auto}
+article.q .stem .text{text-align:justify; hyphens:auto}
+article.q .stem .say{margin-left:auto; flex:0 0 auto}
 ul.opts{list-style:none; margin:0 0 10px; padding:0; font-size:.95rem}
 ul.opts li{padding:3px 0 3px 20px; position:relative; text-align:justify; hyphens:auto}
 ul.opts li::before{content:"–"; position:absolute; left:4px; color:var(--grey)}
@@ -107,6 +127,66 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 """
 
 
+SPRITE = (
+    '<svg width="0" height="0" style="position:absolute" aria-hidden="true">'
+    '<symbol id="ic-play" viewBox="0 0 16 16">'
+    '<path d="M7.4 2.6 4.3 5.3H2a.8.8 0 0 0-.8.8v3.8a.8.8 0 0 0 .8.8h2.3l3.1 2.7'
+    'a.6.6 0 0 0 1-.45V3.05a.6.6 0 0 0-1-.45z"/>'
+    '<path d="M10.3 5.7a3.2 3.2 0 0 1 0 4.6" fill="none" stroke="currentColor" '
+    'stroke-width="1.3" stroke-linecap="round"/>'
+    '<path d="M12.3 3.9a6 6 0 0 1 0 8.2" fill="none" stroke="currentColor" '
+    'stroke-width="1.3" stroke-linecap="round"/></symbol>'
+    '<symbol id="ic-stop" viewBox="0 0 16 16">'
+    '<rect x="3.5" y="3.5" width="9" height="9" rx="1.6"/></symbol></svg>'
+)
+
+SPEECH_JS = """
+(function(){
+  var synth = window.speechSynthesis,
+      says = Array.prototype.slice.call(document.querySelectorAll('.say')),
+      voice = null, active = null;
+  if(!synth || typeof SpeechSynthesisUtterance === 'undefined'){
+    says.forEach(function(b){ b.hidden = true; }); return;
+  }
+  function pickVoice(){
+    var vs = synth.getVoices().filter(function(v){ return /^en(-|_|$)/i.test(v.lang); });
+    if(!vs.length) return;
+    voice = vs.filter(function(v){ return /^en-US/i.test(v.lang); })[0] || vs[0];
+  }
+  pickVoice();
+  if(typeof synth.onvoiceschanged !== 'undefined') synth.onvoiceschanged = pickVoice;
+  function release(){ if(active){ active.setAttribute('aria-pressed','false'); active = null; } }
+  says.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var wasActive = active === btn;
+      synth.cancel(); release();
+      if(wasActive) return;
+      var u = new SpeechSynthesisUtterance(btn.dataset.say);
+      u.lang = voice ? voice.lang : 'en-US';
+      if(voice) u.voice = voice;
+      u.rate = 0.95;
+      u.onend = release; u.onerror = release;
+      active = btn; btn.setAttribute('aria-pressed','true');
+      synth.speak(u);
+    });
+  });
+  window.addEventListener('pagehide', function(){ synth.cancel(); release(); });
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden){ synth.cancel(); release(); }
+  });
+})();
+"""
+
+
+def say_button(text, label):
+    """Boton que reproduce `text` en ingles con la voz del navegador."""
+    return (f'<button class="say" type="button" aria-pressed="false" '
+            f'data-say="{escape(text, quote=True)}" '
+            f'aria-label="{escape(label, quote=True)}">'
+            '<svg class="play"><use href="#ic-play"/></svg>'
+            '<svg class="stop"><use href="#ic-stop"/></svg></button>')
+
+
 def slug(text):
     return "".join(ch if ch.isalnum() else "-" for ch in str(text).lower()).strip("-")
 
@@ -122,6 +202,7 @@ def build(vocab, forms):
     a("<meta name='viewport' content='width=device-width,initial-scale=1'>")
     a("<title>Vocabulario en inglés y exámenes ALCPT</title>")
     a(f"<style>{CSS}</style></head><body>")
+    a(SPRITE)
 
     a("<header class='cover'>")
     a("<h1>Vocabulario en inglés<br>y exámenes ALCPT</h1>")
@@ -166,7 +247,8 @@ def build(vocab, forms):
         a("<table class='vocab'>")
         for e in s["entries"]:
             a(f"<tr><td class='n'>{e['n']}</td><td class='en'>{escape(e['en'])}</td>"
-              f"<td>{escape(e['es'])}</td></tr>")
+              f"<td>{escape(e['es'])}</td>"
+              f"<td class='audio'>{say_button(e['en'], 'Escuchar ' + e['en'])}</td></tr>")
         a("</table>")
 
     # cualquier bloque pending_* que siga esperando el filtrado de Brayhan
@@ -181,7 +263,8 @@ def build(vocab, forms):
         a(f"<p class='note'>{escape(pend['note'])}</p>")
         a("<table class='vocab'>")
         for e in pend["candidates"]:
-            a(f"<tr><td class='en'>{escape(e['en'])}</td><td>{escape(e['es'])}</td></tr>")
+            a(f"<tr><td class='en'>{escape(e['en'])}</td><td>{escape(e['es'])}</td>"
+              f"<td class='audio'>{say_button(e['en'], 'Escuchar ' + e['en'])}</td></tr>")
         a("</table></div>")
 
     # ---- Parte II: ALCPT
@@ -198,7 +281,10 @@ def build(vocab, forms):
         for q in f["questions"]:
             a("<article class='q'>")
             num = f"{q['n']}." if q.get("n") else "—"
-            a(f"<p class='stem'><span class='num'>{escape(num)}</span>{escape(q['question'])}</p>")
+            speech = q['question'] + '. Options: ' + '; '.join(q['options']) + '.'
+            a(f"<p class='stem'><span class='num'>{escape(num)}</span>"
+              f"<span class='text'>{escape(q['question'])}</span>"
+              f"{say_button(speech, 'Escuchar la pregunta ' + num)}</p>")
             a("<ul class='opts'>")
             for opt in q["options"]:
                 if opt == q["correct"]:
@@ -212,6 +298,7 @@ def build(vocab, forms):
             a("</article>")
 
     a(f"<footer>{total_words} palabras · {total_q} preguntas · generado el {date.today().isoformat()}</footer>")
+    a(f"<script>{SPEECH_JS}</script>")
     a("</div></body></html>")
     return "\n".join(out)
 
