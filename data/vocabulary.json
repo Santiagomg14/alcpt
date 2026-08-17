@@ -3,7 +3,7 @@
     "owner": "Brayhan",
     "level": "B2",
     "last_updated": "2026-08-17",
-    "total_confirmed": 331
+    "total_confirmed": 332
   },
   "sections": [
     {
@@ -250,6 +250,11 @@
           "n": 48,
           "en": "Cannonball",
           "es": "bala de cañón; clavado \"en bomba\""
+        },
+        {
+          "n": 332,
+          "en": "Stack",
+          "es": "pila, montón (de cosas ordenadas una sobre otra); apilar, amontonar; conjunto de tecnologías de un proyecto (tech stack); estructura de datos LIFO en programación; chimenea industrial alta; estanterías de una biblioteca (the stacks); \"stacks of\" = montones de, un montón de; \"stack up\" = acumularse, compararse con algo; \"stack the deck\" = amañar las cartas, hacer trampa"
         }
       ]
     },
