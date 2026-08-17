@@ -1,0 +1,17 @@
+# Capturas de los exámenes: material de origen, pesado y ya procesado en data/*.json
+inbox/*
+!inbox/.gitkeep
+
+# Respaldos locales (el historial de git los reemplaza)
+*.bak
+
+# Secretos: tokens del bot, claves de API
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/

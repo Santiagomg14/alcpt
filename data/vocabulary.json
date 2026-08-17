@@ -1,0 +1,1749 @@
+{
+  "meta": {
+    "owner": "Brayhan",
+    "level": "B2",
+    "last_updated": "2026-08-17",
+    "total_confirmed": 331
+  },
+  "sections": [
+    {
+      "id": "personal",
+      "title": "A. Mis palabras",
+      "subtitle": "Palabras enviadas una por una",
+      "entries": [
+        {
+          "n": 1,
+          "en": "Leakage",
+          "es": "fuga, filtración, escape"
+        },
+        {
+          "n": 2,
+          "en": "Trade-off",
+          "es": "compensación, intercambio; sacrificio de una cosa a cambio de otra"
+        },
+        {
+          "n": 3,
+          "en": "Beyond",
+          "es": "más allá de, por encima de, fuera de (un límite o alcance)"
+        },
+        {
+          "n": 4,
+          "en": "Mainstream",
+          "es": "corriente principal, convencional, dominante"
+        },
+        {
+          "n": 5,
+          "en": "Breach",
+          "es": "violación, incumplimiento, brecha"
+        },
+        {
+          "n": 6,
+          "en": "Tailor",
+          "es": "sastre (sust.); adaptar, personalizar, hacer a medida (verbo)"
+        },
+        {
+          "n": 7,
+          "en": "Fairly",
+          "es": "bastante, considerablemente; también: justamente, con equidad"
+        },
+        {
+          "n": 8,
+          "en": "Vendors",
+          "es": "proveedores, vendedores"
+        },
+        {
+          "n": 9,
+          "en": "Assessing",
+          "es": "evaluando, valorando, analizando"
+        },
+        {
+          "n": 10,
+          "en": "Outward",
+          "es": "hacia afuera, externo, exterior"
+        },
+        {
+          "n": 11,
+          "en": "Upward",
+          "es": "hacia arriba, ascendente"
+        },
+        {
+          "n": 12,
+          "en": "Inward",
+          "es": "hacia adentro, interno, interior"
+        },
+        {
+          "n": 13,
+          "en": "Boundary",
+          "es": "límite, frontera, borde"
+        },
+        {
+          "n": 14,
+          "en": "Aside",
+          "es": "a un lado, aparte; comentario al margen (aside from = aparte de)"
+        },
+        {
+          "n": 15,
+          "en": "Drop",
+          "es": "gota (sust.); caer, dejar caer, disminuir, abandonar (verbo)"
+        },
+        {
+          "n": 16,
+          "en": "Bark",
+          "es": "ladrido, ladrar; también: corteza (de árbol)"
+        },
+        {
+          "n": 17,
+          "en": "Folks",
+          "es": "gente, personas (informal); también: padres, familia"
+        },
+        {
+          "n": 18,
+          "en": "Kettle",
+          "es": "tetera, hervidor de agua, pava"
+        },
+        {
+          "n": 19,
+          "en": "Pick up",
+          "es": "recoger, levantar; pasar a buscar; aprender rápidamente; contestar el teléfono"
+        },
+        {
+          "n": 20,
+          "en": "Bear",
+          "es": "oso (sust.); soportar, aguantar, llevar, dar a luz (bear - bore - borne)"
+        },
+        {
+          "n": 21,
+          "en": "Concerns",
+          "es": "preocupaciones, inquietudes; concernir, atañer"
+        },
+        {
+          "n": 22,
+          "en": "Plunge",
+          "es": "zambullirse, sumergirse; desplomarse, caer en picada; zambullida"
+        },
+        {
+          "n": 23,
+          "en": "Enterprise",
+          "es": "empresa, compañía; emprendimiento, iniciativa; empresarial"
+        },
+        {
+          "n": 24,
+          "en": "Unwise",
+          "es": "imprudente, poco sensato, desaconsejable"
+        },
+        {
+          "n": 25,
+          "en": "Cobber",
+          "es": "amigo, compañero, \"colega\" (jerga australiana/neozelandesa)"
+        },
+        {
+          "n": 26,
+          "en": "Kangaroo",
+          "es": "canguro"
+        },
+        {
+          "n": 27,
+          "en": "Hooroo",
+          "es": "adiós, hasta luego, chao (jerga australiana informal)"
+        },
+        {
+          "n": 28,
+          "en": "Shrink",
+          "es": "encoger(se), reducir(se), disminuir; psiquiatra o psicólogo (informal)"
+        },
+        {
+          "n": 29,
+          "en": "Back down",
+          "es": "echarse atrás, ceder, dar marcha atrás, retractarse"
+        },
+        {
+          "n": 30,
+          "en": "Rewording",
+          "es": "reformulación, reescritura; expresar algo con otras palabras"
+        },
+        {
+          "n": 31,
+          "en": "Spurious",
+          "es": "falso, espurio, engañoso, sin fundamento"
+        },
+        {
+          "n": 32,
+          "en": "Hazardous",
+          "es": "peligroso, arriesgado, nocivo"
+        },
+        {
+          "n": 33,
+          "en": "Harms",
+          "es": "daños, perjuicios (sust.); daña, perjudica (verbo)"
+        },
+        {
+          "n": 34,
+          "en": "Trial",
+          "es": "juicio (legal); prueba, ensayo; dificultad, adversidad"
+        },
+        {
+          "n": 35,
+          "en": "Eliciting",
+          "es": "obteniendo, provocando, suscitando (información o una reacción)"
+        },
+        {
+          "n": 36,
+          "en": "Purported",
+          "es": "supuesto, presunto, alegado"
+        },
+        {
+          "n": 37,
+          "en": "Mockup",
+          "es": "maqueta, prototipo, boceto, modelo a escala"
+        },
+        {
+          "n": 38,
+          "en": "Seashore",
+          "es": "orilla del mar, costa, litoral"
+        },
+        {
+          "n": 39,
+          "en": "Seabed",
+          "es": "lecho marino, fondo del mar, fondo oceánico"
+        },
+        {
+          "n": 40,
+          "en": "Vessels",
+          "es": "embarcaciones, buques, naves; recipientes; vasos sanguíneos"
+        },
+        {
+          "n": 41,
+          "en": "Wrap it up",
+          "es": "terminar, concluir, cerrar; también literal: envolverlo"
+        },
+        {
+          "n": 42,
+          "en": "Fish fights",
+          "es": "disputas pesqueras, conflictos por la pesca"
+        },
+        {
+          "n": 43,
+          "en": "Windscreen",
+          "es": "parabrisas (inglés británico/australiano; en EE. UU.: windshield)"
+        },
+        {
+          "n": 44,
+          "en": "Bulb",
+          "es": "bombilla, foco (de luz); bulbo (de planta)"
+        },
+        {
+          "n": 45,
+          "en": "Waiter",
+          "es": "mesero, camarero, mozo"
+        },
+        {
+          "n": 46,
+          "en": "Solely",
+          "es": "únicamente, solamente, exclusivamente"
+        },
+        {
+          "n": 47,
+          "en": "Pitfalls",
+          "es": "trampas, escollos, obstáculos, riesgos ocultos"
+        },
+        {
+          "n": 48,
+          "en": "Cannonball",
+          "es": "bala de cañón; clavado \"en bomba\""
+        }
+      ]
+    },
+    {
+      "id": "form62",
+      "title": "B. Vocabulario extraído del Form 62",
+      "subtitle": null,
+      "entries": [
+        {
+          "n": 49,
+          "en": "Airmen",
+          "es": "aviadores, personal de la fuerza aérea"
+        },
+        {
+          "n": 50,
+          "en": "Club (militar)",
+          "es": "club social de una base (NCO Club, Officers' Club)"
+        },
+        {
+          "n": 51,
+          "en": "Kerosene",
+          "es": "queroseno (combustible para estufas y lámparas)"
+        },
+        {
+          "n": 52,
+          "en": "Heater",
+          "es": "calentador, calefactor, estufa"
+        },
+        {
+          "n": 53,
+          "en": "Ashes",
+          "es": "cenizas"
+        },
+        {
+          "n": 54,
+          "en": "Absent",
+          "es": "ausente (to be absent = faltar, no asistir)"
+        },
+        {
+          "n": 55,
+          "en": "Disrupt",
+          "es": "interrumpir, alterar, perturbar"
+        },
+        {
+          "n": 56,
+          "en": "Piece",
+          "es": "pedazo, trozo, porción"
+        },
+        {
+          "n": 57,
+          "en": "Just as",
+          "es": "justo cuando, en el mismo momento en que"
+        },
+        {
+          "n": 58,
+          "en": "Sleeves",
+          "es": "mangas (de una prenda)"
+        },
+        {
+          "n": 59,
+          "en": "Trousers",
+          "es": "pantalones"
+        },
+        {
+          "n": 60,
+          "en": "Slacks",
+          "es": "pantalones de vestir informales"
+        },
+        {
+          "n": 61,
+          "en": "Slip",
+          "es": "resbalar(se), perder el equilibrio"
+        },
+        {
+          "n": 62,
+          "en": "Sidewalk",
+          "es": "acera, vereda, banqueta"
+        },
+        {
+          "n": 63,
+          "en": "Icy",
+          "es": "helado, cubierto de hielo"
+        },
+        {
+          "n": 64,
+          "en": "Paved",
+          "es": "pavimentado"
+        },
+        {
+          "n": 65,
+          "en": "Traction",
+          "es": "tracción, agarre"
+        },
+        {
+          "n": 66,
+          "en": "A bit",
+          "es": "un poco, un poquito (cuantificador idiomático)"
+        },
+        {
+          "n": 67,
+          "en": "Shift",
+          "es": "cambiar de dirección, desplazarse; turno de trabajo"
+        },
+        {
+          "n": 68,
+          "en": "Rumor",
+          "es": "rumor, información no confirmada"
+        },
+        {
+          "n": 69,
+          "en": "Unconfirmed",
+          "es": "no confirmado, sin verificar"
+        },
+        {
+          "n": 70,
+          "en": "Scuttlebutt",
+          "es": "chisme, rumor (jerga militar/naval)"
+        },
+        {
+          "n": 71,
+          "en": "Airbase",
+          "es": "base aérea"
+        },
+        {
+          "n": 72,
+          "en": "Separately",
+          "es": "por separado, individualmente"
+        },
+        {
+          "n": 73,
+          "en": "Divided up",
+          "es": "dividido, repartido en partes"
+        },
+        {
+          "n": 74,
+          "en": "Tear (tore, torn)",
+          "es": "rasgar, romper (tela o papel)"
+        },
+        {
+          "n": 75,
+          "en": "Rip",
+          "es": "desgarrar, rasgar (sinónimo de tear)"
+        },
+        {
+          "n": 76,
+          "en": "Fence",
+          "es": "cerca, valla, cerco"
+        },
+        {
+          "n": 77,
+          "en": "Soiled",
+          "es": "ensuciado, manchado"
+        },
+        {
+          "n": 78,
+          "en": "Wrinkled",
+          "es": "arrugado"
+        },
+        {
+          "n": 79,
+          "en": "Disregard",
+          "es": "ignorar, hacer caso omiso de, desatender"
+        },
+        {
+          "n": 80,
+          "en": "Stand for",
+          "es": "significar, representar, simbolizar"
+        },
+        {
+          "n": 81,
+          "en": "Trailer",
+          "es": "remolque, tráiler"
+        },
+        {
+          "n": 82,
+          "en": "Haul",
+          "es": "transportar, acarrear (carga pesada)"
+        },
+        {
+          "n": 83,
+          "en": "Freight",
+          "es": "carga, flete, mercancía"
+        },
+        {
+          "n": 84,
+          "en": "Drain",
+          "es": "drenar, desaguar"
+        },
+        {
+          "n": 85,
+          "en": "Fall apart",
+          "es": "desarmarse, caerse a pedazos"
+        },
+        {
+          "n": 86,
+          "en": "Brand new",
+          "es": "nuevo, recién estrenado, flamante"
+        },
+        {
+          "n": 87,
+          "en": "Disrepair",
+          "es": "mal estado, deterioro"
+        },
+        {
+          "n": 88,
+          "en": "Controversial",
+          "es": "controvertido, polémico"
+        },
+        {
+          "n": 89,
+          "en": "Anger (to)",
+          "es": "enojar, enfurecer, indignar"
+        },
+        {
+          "n": 90,
+          "en": "Deep water",
+          "es": "aguas profundas"
+        },
+        {
+          "n": 91,
+          "en": "Thick forest",
+          "es": "bosque espeso, bosque denso"
+        },
+        {
+          "n": 92,
+          "en": "Chaplain",
+          "es": "capellán (oficial a cargo del bienestar espiritual)"
+        },
+        {
+          "n": 93,
+          "en": "Service",
+          "es": "servicio religioso, oficio; también: servicio militar"
+        },
+        {
+          "n": 94,
+          "en": "Chapel",
+          "es": "capilla"
+        },
+        {
+          "n": 95,
+          "en": "Abrupt",
+          "es": "abrupto, repentino, brusco"
+        },
+        {
+          "n": 96,
+          "en": "Sudden",
+          "es": "repentino, súbito"
+        },
+        {
+          "n": 97,
+          "en": "Ending",
+          "es": "final, desenlace"
+        },
+        {
+          "n": 98,
+          "en": "At all",
+          "es": "en absoluto, para nada (intensifica la negación)"
+        },
+        {
+          "n": 99,
+          "en": "Printing",
+          "es": "impresión (gerundio usado como sustantivo)"
+        },
+        {
+          "n": 100,
+          "en": "Keep (someone) up",
+          "es": "mantener despierto a alguien"
+        },
+        {
+          "n": 101,
+          "en": "About to",
+          "es": "a punto de"
+        },
+        {
+          "n": 102,
+          "en": "Marry",
+          "es": "casarse (con)"
+        },
+        {
+          "n": 103,
+          "en": "NCO (Non-Commissioned Officer)",
+          "es": "suboficial"
+        },
+        {
+          "n": 104,
+          "en": "Expect",
+          "es": "esperar, exigir, prever"
+        },
+        {
+          "n": 105,
+          "en": "Fine",
+          "es": "fino, delgado (además de \"bien\")"
+        },
+        {
+          "n": 106,
+          "en": "Thread",
+          "es": "hilo"
+        },
+        {
+          "n": 107,
+          "en": "Sew",
+          "es": "coser"
+        },
+        {
+          "n": 108,
+          "en": "Thin",
+          "es": "delgado, fino"
+        },
+        {
+          "n": 109,
+          "en": "Deliver / delivered",
+          "es": "entregar, repartir a domicilio"
+        },
+        {
+          "n": 110,
+          "en": "Newsstand",
+          "es": "quiosco de periódicos"
+        },
+        {
+          "n": 111,
+          "en": "Worse",
+          "es": "peor (comparativo de bad; superlativo: worst)"
+        },
+        {
+          "n": 112,
+          "en": "Mud",
+          "es": "barro, lodo"
+        },
+        {
+          "n": 113,
+          "en": "Whooping crane",
+          "es": "grulla trompetera (ave en peligro)"
+        },
+        {
+          "n": 114,
+          "en": "Diminishing",
+          "es": "disminuyendo, mermando"
+        },
+        {
+          "n": 115,
+          "en": "Torn up",
+          "es": "roto, hecho pedazos"
+        },
+        {
+          "n": 116,
+          "en": "A piece at a time",
+          "es": "de a un pedazo, por partes"
+        },
+        {
+          "n": 117,
+          "en": "Statement",
+          "es": "declaración, afirmación"
+        },
+        {
+          "n": 118,
+          "en": "Train station",
+          "es": "estación de tren"
+        },
+        {
+          "n": 119,
+          "en": "Theater",
+          "es": "teatro"
+        },
+        {
+          "n": 120,
+          "en": "Spray paint",
+          "es": "pintar con aerosol"
+        }
+      ]
+    },
+    {
+      "id": "form50",
+      "title": "C. Vocabulario extraído del Form 50",
+      "subtitle": null,
+      "entries": [
+        {
+          "n": 121,
+          "en": "For good",
+          "es": "para siempre, definitivamente (modismo)"
+        },
+        {
+          "n": 122,
+          "en": "For the time being",
+          "es": "por el momento, por ahora"
+        },
+        {
+          "n": 123,
+          "en": "Temporarily",
+          "es": "temporalmente, provisionalmente"
+        },
+        {
+          "n": 124,
+          "en": "Permanently",
+          "es": "permanentemente, de forma definitiva"
+        },
+        {
+          "n": 125,
+          "en": "In a hurry",
+          "es": "con prisa, apurado"
+        },
+        {
+          "n": 126,
+          "en": "Foggy",
+          "es": "con niebla, neblinoso"
+        },
+        {
+          "n": 127,
+          "en": "Fog",
+          "es": "niebla"
+        },
+        {
+          "n": 128,
+          "en": "Haze",
+          "es": "bruma, calima (polvo o partículas en el aire)"
+        },
+        {
+          "n": 129,
+          "en": "Dust",
+          "es": "polvo"
+        },
+        {
+          "n": 130,
+          "en": "Steady breeze",
+          "es": "brisa constante"
+        },
+        {
+          "n": 131,
+          "en": "Repel / repelled",
+          "es": "repeler, rechazar (un ataque)"
+        },
+        {
+          "n": 132,
+          "en": "Fight off",
+          "es": "repeler, rechazar, combatir"
+        },
+        {
+          "n": 133,
+          "en": "Reinforce",
+          "es": "reforzar (agregar personal o equipo)"
+        },
+        {
+          "n": 134,
+          "en": "Retreat",
+          "es": "retirarse, replegarse"
+        },
+        {
+          "n": 135,
+          "en": "Assault",
+          "es": "asalto, ataque"
+        },
+        {
+          "n": 136,
+          "en": "Work out",
+          "es": "resolver, solucionar (un problema)"
+        },
+        {
+          "n": 137,
+          "en": "Solve",
+          "es": "resolver"
+        },
+        {
+          "n": 138,
+          "en": "Thunder shower",
+          "es": "chubasco con truenos, aguacero eléctrico"
+        },
+        {
+          "n": 139,
+          "en": "Thunder",
+          "es": "trueno"
+        },
+        {
+          "n": 140,
+          "en": "Lightning",
+          "es": "relámpago, rayo"
+        },
+        {
+          "n": 141,
+          "en": "Storm",
+          "es": "tormenta"
+        },
+        {
+          "n": 142,
+          "en": "Hole / whole",
+          "es": "agujero / entero (homófonos)"
+        },
+        {
+          "n": 143,
+          "en": "Dig (dug, dug)",
+          "es": "cavar, excavar"
+        },
+        {
+          "n": 144,
+          "en": "Filling",
+          "es": "empaste (dental); relleno"
+        },
+        {
+          "n": 145,
+          "en": "Cavity",
+          "es": "caries, cavidad (en un diente)"
+        },
+        {
+          "n": 146,
+          "en": "Decay",
+          "es": "caries, deterioro; descomponerse"
+        },
+        {
+          "n": 147,
+          "en": "Dentist",
+          "es": "dentista"
+        },
+        {
+          "n": 148,
+          "en": "Cartoons",
+          "es": "caricaturas, tiras cómicas; dibujos animados"
+        },
+        {
+          "n": 149,
+          "en": "Headlines",
+          "es": "titulares (de prensa)"
+        },
+        {
+          "n": 150,
+          "en": "Drawings",
+          "es": "dibujos"
+        },
+        {
+          "n": 151,
+          "en": "Dense",
+          "es": "denso, espeso"
+        },
+        {
+          "n": 152,
+          "en": "Thick",
+          "es": "grueso, espeso, denso"
+        },
+        {
+          "n": 153,
+          "en": "Sea level",
+          "es": "nivel del mar"
+        },
+        {
+          "n": 154,
+          "en": "Altitude",
+          "es": "altitud"
+        },
+        {
+          "n": 155,
+          "en": "Spread out",
+          "es": "extender, desplegar, abrir (un mapa)"
+        },
+        {
+          "n": 156,
+          "en": "Fold",
+          "es": "doblar, plegar"
+        },
+        {
+          "n": 157,
+          "en": "Mark",
+          "es": "marcar, señalar"
+        },
+        {
+          "n": 158,
+          "en": "Inspect",
+          "es": "inspeccionar, examinar, revisar"
+        },
+        {
+          "n": 159,
+          "en": "Oxygen mask",
+          "es": "máscara de oxígeno"
+        },
+        {
+          "n": 160,
+          "en": "Cadet",
+          "es": "cadete"
+        },
+        {
+          "n": 161,
+          "en": "Guilty",
+          "es": "culpable"
+        },
+        {
+          "n": 162,
+          "en": "Innocent",
+          "es": "inocente"
+        },
+        {
+          "n": 163,
+          "en": "Charge",
+          "es": "cargo, acusación; también: cobrar, cargar"
+        },
+        {
+          "n": 164,
+          "en": "Verdict",
+          "es": "veredicto"
+        },
+        {
+          "n": 165,
+          "en": "Fine",
+          "es": "multa (además de \"fino/bien\")"
+        },
+        {
+          "n": 166,
+          "en": "Sentenced to prison",
+          "es": "condenado a prisión"
+        },
+        {
+          "n": 167,
+          "en": "Efficient",
+          "es": "eficiente"
+        },
+        {
+          "n": 168,
+          "en": "Supervise",
+          "es": "supervisar"
+        },
+        {
+          "n": 169,
+          "en": "Complain",
+          "es": "quejarse"
+        },
+        {
+          "n": 170,
+          "en": "In all / Altogether",
+          "es": "en total, en conjunto"
+        },
+        {
+          "n": 171,
+          "en": "Zoo",
+          "es": "zoológico"
+        },
+        {
+          "n": 172,
+          "en": "Take up",
+          "es": "empezar (una actividad, afición o profesión)"
+        },
+        {
+          "n": 173,
+          "en": "Medicine",
+          "es": "medicina"
+        },
+        {
+          "n": 174,
+          "en": "Lay (laid, laid)",
+          "es": "poner, colocar (en posición horizontal)"
+        },
+        {
+          "n": 175,
+          "en": "Bookcase",
+          "es": "estantería, librero"
+        },
+        {
+          "n": 176,
+          "en": "Bookstore",
+          "es": "librería (tienda)"
+        },
+        {
+          "n": 177,
+          "en": "Alike",
+          "es": "parecidos, similares, iguales"
+        },
+        {
+          "n": 178,
+          "en": "Wheat",
+          "es": "trigo"
+        },
+        {
+          "n": 179,
+          "en": "Damage",
+          "es": "dañar, perjudicar; daño"
+        },
+        {
+          "n": 180,
+          "en": "Hurt",
+          "es": "lastimar, dañar, doler"
+        },
+        {
+          "n": 181,
+          "en": "Blow down",
+          "es": "derribar, tumbar (el viento)"
+        },
+        {
+          "n": 182,
+          "en": "Crops",
+          "es": "cultivos, cosechas"
+        },
+        {
+          "n": 183,
+          "en": "Opposite",
+          "es": "enfrente de, al lado opuesto de"
+        },
+        {
+          "n": 184,
+          "en": "Across the street",
+          "es": "al otro lado de la calle"
+        },
+        {
+          "n": 185,
+          "en": "Behind",
+          "es": "detrás de"
+        },
+        {
+          "n": 186,
+          "en": "Next to",
+          "es": "junto a, al lado de"
+        },
+        {
+          "n": 187,
+          "en": "Post office",
+          "es": "oficina de correos"
+        },
+        {
+          "n": 188,
+          "en": "Light",
+          "es": "ligero, liviano (además de \"luz\")"
+        },
+        {
+          "n": 189,
+          "en": "Heavy",
+          "es": "pesado"
+        },
+        {
+          "n": 190,
+          "en": "Handle",
+          "es": "asa, mango; manejar"
+        },
+        {
+          "n": 191,
+          "en": "Lift",
+          "es": "levantar, alzar"
+        },
+        {
+          "n": 192,
+          "en": "Rare (carne)",
+          "es": "poco hecha, jugosa, roja"
+        },
+        {
+          "n": 193,
+          "en": "Roast beef",
+          "es": "rosbif, carne asada"
+        },
+        {
+          "n": 194,
+          "en": "Apple pie",
+          "es": "tarta o pastel de manzana"
+        },
+        {
+          "n": 195,
+          "en": "Chicken noodle soup",
+          "es": "sopa de pollo con fideos"
+        },
+        {
+          "n": 196,
+          "en": "Cold meats",
+          "es": "fiambres, embutidos"
+        }
+      ]
+    },
+    {
+      "id": "form63",
+      "title": "D. Vocabulario extraído del Form 63",
+      "subtitle": null,
+      "entries": [
+        {
+          "n": 197,
+          "en": "Issued",
+          "es": "de dotación, entregado oficialmente (issued gear, issued ID cards)"
+        },
+        {
+          "n": 198,
+          "en": "Provided that",
+          "es": "siempre que, a condición de que (conector condicional formal)"
+        },
+        {
+          "n": 199,
+          "en": "Finicky",
+          "es": "quisquilloso, maniático, remilgado"
+        },
+        {
+          "n": 200,
+          "en": "Tell time",
+          "es": "leer la hora en un reloj; ojo: NO se dice \"say the time\""
+        },
+        {
+          "n": 201,
+          "en": "Get in",
+          "es": "llegar (un vuelo, tren o autobús a su destino)"
+        },
+        {
+          "n": 202,
+          "en": "Get by",
+          "es": "arreglárselas, ir tirando, apañárselas"
+        },
+        {
+          "n": 203,
+          "en": "Honoree",
+          "es": "homenajeado, galardonado (sufijo -ee: quien recibe la acción)"
+        },
+        {
+          "n": 204,
+          "en": "Stub",
+          "es": "talón, resguardo (de un boleto o entrada)"
+        }
+      ]
+    },
+    {
+      "id": "form69",
+      "title": "E. Vocabulario extraído del Form 69",
+      "subtitle": null,
+      "entries": [
+        {
+          "n": 205,
+          "en": "Make up (a bed)",
+          "es": "tender la cama, hacer la cama (colocar sábanas y mantas)"
+        },
+        {
+          "n": 206,
+          "en": "Eventually",
+          "es": "finalmente, con el tiempo, tarde o temprano; FALSO AMIGO: no es \"eventualmente\""
+        },
+        {
+          "n": 207,
+          "en": "Drizzle",
+          "es": "llovizna; lloviznar"
+        },
+        {
+          "n": 208,
+          "en": "Sleet",
+          "es": "aguanieve, cellisca (mezcla de lluvia y nieve o granizo fino)"
+        },
+        {
+          "n": 209,
+          "en": "Befuddled",
+          "es": "aturdido, confundido, hecho un lío"
+        },
+        {
+          "n": 210,
+          "en": "Baffling",
+          "es": "desconcertante, incomprensible"
+        },
+        {
+          "n": 211,
+          "en": "Obsolete",
+          "es": "obsoleto, en desuso"
+        },
+        {
+          "n": 212,
+          "en": "Give (someone) a shot",
+          "es": "poner una inyección; inject = inyectar"
+        },
+        {
+          "n": 213,
+          "en": "Lubricate",
+          "es": "lubricar, engrasar (mantenimiento mecánico)"
+        },
+        {
+          "n": 214,
+          "en": "Bare (head)",
+          "es": "descubierto, sin cubrir (bare head = sin gorra ni casco)"
+        },
+        {
+          "n": 215,
+          "en": "Cover (militar)",
+          "es": "cubrecabeza, gorra reglamentaria; \"uncovered\" = sin gorra"
+        },
+        {
+          "n": 216,
+          "en": "Add up to / amount to",
+          "es": "sumar un total de, ascender a (una cantidad)"
+        }
+      ]
+    },
+    {
+      "id": "form70",
+      "title": "F. Vocabulario extraído del Form 70",
+      "subtitle": null,
+      "entries": [
+        {
+          "n": 217,
+          "en": "Lumber",
+          "es": "madera aserrada, tablas, maderamen (lumber company = maderera)"
+        },
+        {
+          "n": 218,
+          "en": "Moisture",
+          "es": "humedad (causa de óxido y corrosión en el equipo)"
+        },
+        {
+          "n": 219,
+          "en": "Tear down",
+          "es": "desmontar, desarmar por completo (un motor o unidad, para revisarlo)"
+        },
+        {
+          "n": 220,
+          "en": "Steer",
+          "es": "gobernar, timonear, dirigir (una embarcación o vehículo)"
+        },
+        {
+          "n": 221,
+          "en": "Run short of",
+          "es": "quedarse corto de, irse quedando sin (dinero, provisiones)"
+        },
+        {
+          "n": 222,
+          "en": "Nothing but",
+          "es": "nada más que, solamente (nothing but the truth = solo la verdad)"
+        },
+        {
+          "n": 223,
+          "en": "Attorney",
+          "es": "abogado (AmE); attorney at law = letrado"
+        },
+        {
+          "n": 224,
+          "en": "Bivouac",
+          "es": "vivac, campamento provisional sin instalaciones; vivaquear"
+        },
+        {
+          "n": 225,
+          "en": "Carve",
+          "es": "trinchar (la carne); tallar, esculpir"
+        },
+        {
+          "n": 226,
+          "en": "Safe",
+          "es": "caja fuerte (sustantivo); no confundir con el adjetivo \"seguro\""
+        },
+        {
+          "n": 227,
+          "en": "Take charge",
+          "es": "hacerse cargo, tomar el mando"
+        },
+        {
+          "n": 228,
+          "en": "Wind up",
+          "es": "concluir, rematar, terminar (un trabajo); dar cuerda a un reloj"
+        },
+        {
+          "n": 229,
+          "en": "Pallid",
+          "es": "pálido, desvaído; soso, sin brillo (de una actuación)"
+        },
+        {
+          "n": 230,
+          "en": "Detain",
+          "es": "detener, retener bajo custodia (uso legal y militar)"
+        },
+        {
+          "n": 231,
+          "en": "Loosen",
+          "es": "aflojar (una tuerca, un tornillo); antónimo de tighten"
+        },
+        {
+          "n": 232,
+          "en": "Come off",
+          "es": "soltarse, desprenderse, salirse (una pieza)"
+        },
+        {
+          "n": 233,
+          "en": "Nut",
+          "es": "tuerca (mecánica); también nuez"
+        },
+        {
+          "n": 234,
+          "en": "Boast",
+          "es": "alardear, fanfarronear, presumir de algo (boast about/of)"
+        },
+        {
+          "n": 235,
+          "en": "Exploits",
+          "es": "hazañas, proezas, gestas"
+        },
+        {
+          "n": 236,
+          "en": "Distort",
+          "es": "distorsionar, tergiversar, deformar"
+        },
+        {
+          "n": 237,
+          "en": "Utter (verbo)",
+          "es": "pronunciar, proferir, emitir (una palabra o sonido)"
+        },
+        {
+          "n": 238,
+          "en": "Impart",
+          "es": "impartir, transmitir, comunicar (conocimiento, información)"
+        }
+      ]
+    },
+    {
+      "id": "form71",
+      "title": "G. Vocabulario extraído del Form 71",
+      "subtitle": null,
+      "entries": [
+        {
+          "n": 239,
+          "en": "Expressway",
+          "es": "autopista, vía rápida (AmE); sinónimo de freeway"
+        }
+      ]
+    },
+    {
+      "id": "form73",
+      "title": "H. Vocabulario extraído del Form 73",
+      "subtitle": null,
+      "entries": [
+        {
+          "n": 240,
+          "en": "Make up one's mind",
+          "es": "decidirse, tomar una decisión"
+        },
+        {
+          "n": 241,
+          "en": "Bellboy",
+          "es": "botones, mozo de hotel"
+        },
+        {
+          "n": 242,
+          "en": "Pen",
+          "es": "corral, redil, cercado para animales; no confundir con \"pin\""
+        },
+        {
+          "n": 243,
+          "en": "In the open",
+          "es": "a la intemperie, al raso, sin techo ni tienda de campaña"
+        },
+        {
+          "n": 244,
+          "en": "Watchman",
+          "es": "vigilante, sereno, guarda"
+        },
+        {
+          "n": 245,
+          "en": "Blinking / flashing",
+          "es": "intermitente, que parpadea (una luz de señalización)"
+        },
+        {
+          "n": 246,
+          "en": "Steady (luz)",
+          "es": "fija, continua, sin parpadeo (opuesto a flashing)"
+        },
+        {
+          "n": 247,
+          "en": "Bend",
+          "es": "curva, recodo (de una carretera); doblar, torcer"
+        },
+        {
+          "n": 248,
+          "en": "Small print",
+          "es": "letra pequeña, letra chica (de un contrato)"
+        },
+        {
+          "n": 249,
+          "en": "Head first",
+          "es": "de cabeza (lanzarse de cabeza al agua); dive = zambullirse"
+        },
+        {
+          "n": 250,
+          "en": "Rush through",
+          "es": "despachar a toda prisa, tramitar con urgencia (un pedido)"
+        },
+        {
+          "n": 251,
+          "en": "Level",
+          "es": "nivelado, horizontal, a nivel; nivel de burbuja"
+        },
+        {
+          "n": 252,
+          "en": "Tilted",
+          "es": "inclinado, ladeado"
+        },
+        {
+          "n": 253,
+          "en": "Slanted",
+          "es": "sesgado, en pendiente, oblicuo"
+        },
+        {
+          "n": 254,
+          "en": "Break away",
+          "es": "zafarse, desprenderse, separarse (de un grupo o una sujeción)"
+        },
+        {
+          "n": 255,
+          "en": "Encircle",
+          "es": "rodear, cercar, envolver (uso táctico)"
+        },
+        {
+          "n": 256,
+          "en": "Spoiled (child)",
+          "es": "malcriado, consentido, mimado"
+        },
+        {
+          "n": 257,
+          "en": "Overindulged",
+          "es": "consentido en exceso, sobreprotegido"
+        },
+        {
+          "n": 258,
+          "en": "Barricade",
+          "es": "barricada, barrera, valla de contención; levantar una barricada"
+        },
+        {
+          "n": 259,
+          "en": "Puffy",
+          "es": "hinchado, abotargado (ojos, cara)"
+        },
+        {
+          "n": 260,
+          "en": "Swollen",
+          "es": "hinchado, inflamado (participio de swell)"
+        },
+        {
+          "n": 261,
+          "en": "Heel",
+          "es": "talón (del pie); tacón (del zapato)"
+        },
+        {
+          "n": 262,
+          "en": "Dull",
+          "es": "aburrido, soso; romo, sin filo; apagado (un color)"
+        },
+        {
+          "n": 263,
+          "en": "Count on",
+          "es": "contar con, confiar en (alguien)"
+        },
+        {
+          "n": 264,
+          "en": "Leap over",
+          "es": "saltar por encima de, franquear de un salto"
+        },
+        {
+          "n": 265,
+          "en": "Tarnished",
+          "es": "empañado, deslustrado, ennegrecido (metal, plata)"
+        },
+        {
+          "n": 266,
+          "en": "Discolored",
+          "es": "descolorido, decolorado, manchado"
+        }
+      ]
+    },
+    {
+      "id": "form75",
+      "title": "I. Vocabulario extraído del Form 75",
+      "subtitle": null,
+      "entries": [
+        {
+          "n": 267,
+          "en": "Pile (up)",
+          "es": "amontonar, apilar; montón, pila"
+        },
+        {
+          "n": 268,
+          "en": "Goof",
+          "es": "meter la pata, pifiarla (jerga); goof off = holgazanear"
+        },
+        {
+          "n": 269,
+          "en": "Gamble",
+          "es": "apostar, jugar por dinero; arriesgarse"
+        },
+        {
+          "n": 270,
+          "en": "Keep up with",
+          "es": "seguir el ritmo de, mantenerse a la altura de"
+        },
+        {
+          "n": 271,
+          "en": "Dispose of",
+          "es": "deshacerse de, desechar (formal, técnico)"
+        },
+        {
+          "n": 272,
+          "en": "Raze",
+          "es": "arrasar, demoler hasta los cimientos"
+        },
+        {
+          "n": 273,
+          "en": "Demolition crew",
+          "es": "cuadrilla de demolición"
+        },
+        {
+          "n": 274,
+          "en": "Skip",
+          "es": "saltarse, omitir (skip a meal = saltarse una comida)"
+        },
+        {
+          "n": 275,
+          "en": "Cantankerous",
+          "es": "cascarrabias, malhumorado, pendenciero"
+        },
+        {
+          "n": 276,
+          "en": "Mean (adj.)",
+          "es": "malintencionado, mezquino, antipático; NO significa \"medio\""
+        },
+        {
+          "n": 277,
+          "en": "Fumes",
+          "es": "gases tóxicos, humos, vapores (de un motor)"
+        },
+        {
+          "n": 278,
+          "en": "Vent",
+          "es": "respiradero, rejilla de ventilación, conducto de escape"
+        }
+      ]
+    },
+    {
+      "id": "form82",
+      "title": "J. Vocabulario extraído del Form 82",
+      "subtitle": null,
+      "entries": [
+        {
+          "n": 279,
+          "en": "Splice",
+          "es": "empalmar, unir (cables, cuerdas); empalme"
+        },
+        {
+          "n": 280,
+          "en": "Take over",
+          "es": "asumir el mando, hacerse cargo, tomar el control"
+        },
+        {
+          "n": 281,
+          "en": "Assume command",
+          "es": "asumir el mando (fórmula militar)"
+        },
+        {
+          "n": 282,
+          "en": "Swanky",
+          "es": "elegante, lujoso, de postín (informal)"
+        },
+        {
+          "n": 283,
+          "en": "Have a screw loose",
+          "es": "faltarle un tornillo, estar mal de la cabeza (idiom)"
+        },
+        {
+          "n": 284,
+          "en": "Splinter",
+          "es": "astilla; astillarse; splinter group = grupo escindido"
+        },
+        {
+          "n": 285,
+          "en": "Extract",
+          "es": "extraer, sacar (una astilla, una muela)"
+        },
+        {
+          "n": 286,
+          "en": "Surveillance",
+          "es": "vigilancia, seguimiento (under surveillance = bajo vigilancia)"
+        },
+        {
+          "n": 287,
+          "en": "Antifreeze",
+          "es": "anticongelante (aditivo del radiador)"
+        },
+        {
+          "n": 288,
+          "en": "In way over one's head",
+          "es": "estar sobrepasado, quedar muy por encima de tu capacidad"
+        },
+        {
+          "n": 289,
+          "en": "Be out of (gas)",
+          "es": "quedarse sin (gasolina, provisiones)"
+        },
+        {
+          "n": 290,
+          "en": "Hold up",
+          "es": "retrasar, demorar; también atracar, asaltar"
+        },
+        {
+          "n": 291,
+          "en": "Unveil",
+          "es": "descubrir, develar (una estatua, un plan)"
+        },
+        {
+          "n": 292,
+          "en": "Appraise",
+          "es": "tasar, valorar, peritar; no confundir con apprise (informar)"
+        },
+        {
+          "n": 293,
+          "en": "Scared to death",
+          "es": "muerto de miedo, aterrado (hipérbole)"
+        }
+      ]
+    },
+    {
+      "id": "form87",
+      "title": "K. Vocabulario extraído del Form 87",
+      "subtitle": null,
+      "entries": [
+        {
+          "n": 294,
+          "en": "Rule of thumb",
+          "es": "regla general, criterio práctico"
+        },
+        {
+          "n": 295,
+          "en": "Outfit",
+          "es": "conjunto de ropa, atuendo"
+        },
+        {
+          "n": 296,
+          "en": "Concentrate (troops)",
+          "es": "concentrar, agrupar (tropas)"
+        },
+        {
+          "n": 297,
+          "en": "Dismiss",
+          "es": "dar permiso para salir; despedir, expulsar"
+        },
+        {
+          "n": 298,
+          "en": "Thrown out",
+          "es": "expulsado, echado"
+        },
+        {
+          "n": 299,
+          "en": "Hardships",
+          "es": "penurias, adversidades, dificultades"
+        },
+        {
+          "n": 300,
+          "en": "Pester",
+          "es": "fastidiar, importunar, molestar insistentemente"
+        },
+        {
+          "n": 301,
+          "en": "Dud",
+          "es": "cartucho fallido, algo que no funciona ni detona"
+        },
+        {
+          "n": 302,
+          "en": "Firecrackers",
+          "es": "petardos, cohetes"
+        },
+        {
+          "n": 303,
+          "en": "Terrestrial",
+          "es": "terrestre"
+        },
+        {
+          "n": 304,
+          "en": "Overturn",
+          "es": "volcarse, dar vuelta"
+        },
+        {
+          "n": 305,
+          "en": "Upside down",
+          "es": "boca abajo, al revés"
+        },
+        {
+          "n": 306,
+          "en": "Unconscious",
+          "es": "inconsciente, sin conocimiento"
+        },
+        {
+          "n": 307,
+          "en": "Inconsolable",
+          "es": "inconsolable"
+        },
+        {
+          "n": 308,
+          "en": "Right away",
+          "es": "de inmediato, ahora mismo"
+        },
+        {
+          "n": 309,
+          "en": "Fasten",
+          "es": "abrochar, sujetar, atar"
+        },
+        {
+          "n": 310,
+          "en": "Shoelaces",
+          "es": "cordones de zapato"
+        },
+        {
+          "n": 311,
+          "en": "A good Joe / a good fellow",
+          "es": "buen tipo, buena gente (informal)"
+        },
+        {
+          "n": 312,
+          "en": "Okay (verbo)",
+          "es": "aprobar, autorizar"
+        },
+        {
+          "n": 313,
+          "en": "Expenditure",
+          "es": "gasto, desembolso"
+        },
+        {
+          "n": 314,
+          "en": "Cover the costs",
+          "es": "cubrir los gastos"
+        },
+        {
+          "n": 315,
+          "en": "Irrigate",
+          "es": "irrigar, regar"
+        },
+        {
+          "n": 316,
+          "en": "Toot",
+          "es": "pitar, tocar el claxon o una bocina"
+        },
+        {
+          "n": 317,
+          "en": "Whisper",
+          "es": "susurrar"
+        },
+        {
+          "n": 318,
+          "en": "Counterattack",
+          "es": "contraatacar"
+        },
+        {
+          "n": 319,
+          "en": "Surrender",
+          "es": "rendirse"
+        },
+        {
+          "n": 320,
+          "en": "Give up",
+          "es": "rendirse, darse por vencido"
+        },
+        {
+          "n": 321,
+          "en": "Sore (throat)",
+          "es": "dolorido, irritado (garganta)"
+        },
+        {
+          "n": 322,
+          "en": "Gloves",
+          "es": "guantes"
+        },
+        {
+          "n": 323,
+          "en": "Lack (to)",
+          "es": "carecer de, faltar"
+        },
+        {
+          "n": 324,
+          "en": "Take along",
+          "es": "llevar consigo, llevarse a alguien"
+        },
+        {
+          "n": 325,
+          "en": "Brag",
+          "es": "fanfarronear, presumir (sinónimo de boast)"
+        },
+        {
+          "n": 326,
+          "en": "Discouraged",
+          "es": "desanimado, desalentado (pérdida de moral)"
+        },
+        {
+          "n": 327,
+          "en": "The cleaner's",
+          "es": "la tintorería, la lavandería"
+        },
+        {
+          "n": 328,
+          "en": "Greasy",
+          "es": "grasiento, aceitoso"
+        },
+        {
+          "n": 329,
+          "en": "Parade",
+          "es": "desfile, formación; desfilar"
+        }
+      ]
+    },
+    {
+      "id": "technical_verbs",
+      "title": "L. Vocabulario extraído de Technical & Action Verbs",
+      "subtitle": null,
+      "entries": [
+        {
+          "n": 330,
+          "en": "Surplus (verbo)",
+          "es": "dar de baja por excedente, declarar material sobrante"
+        },
+        {
+          "n": 331,
+          "en": "Hold back",
+          "es": "retener, contener, frenar; ocultar información"
+        }
+      ]
+    }
+  ]
+}

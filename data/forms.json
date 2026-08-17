@@ -1,0 +1,2719 @@
+{
+  "meta": {
+    "language_policy": "Question text, options, correct answer and explanation are ALWAYS fully in English.",
+    "forms_documented": [
+      "50",
+      "62",
+      "63",
+      "69",
+      "70",
+      "71",
+      "73",
+      "75",
+      "82",
+      "87",
+      "Technical & Action Verbs"
+    ],
+    "last_updated": "2026-08-17",
+    "total_questions": 233
+  },
+  "forms": [
+    {
+      "form": "50",
+      "questions": [
+        {
+          "n": 16,
+          "question": "(Audio item, no printed stem.)",
+          "options": [
+            "chicken noodle soup",
+            "rare roast beef",
+            "apple pie",
+            "cold meats"
+          ],
+          "correct": "apple pie",
+          "explanation": "A food-vocabulary item. Note that \"rare,\" when applied to meat, means lightly cooked and still red inside, not \"unusual.\""
+        },
+        {
+          "n": 19,
+          "question": "The bank is opposite the post office.",
+          "options": [
+            "The bank is on a different street.",
+            "The bank is across the street from the post office.",
+            "The bank is just behind the post office.",
+            "The bank is next to the post office."
+          ],
+          "correct": "The bank is across the street from the post office.",
+          "explanation": "The preposition \"opposite\" is used to describe a position on the other side of a particular area, such as a road or a room, facing someone or something else. In urban navigation and giving directions, saying one building is opposite another means they are facing each other, typically separated by a street. \"On a different street\" is incorrect because \"opposite\" implies a specific spatial relationship along the same street."
+        },
+        {
+          "n": 28,
+          "question": "The box is light.",
+          "options": [
+            "The box is not heavy.",
+            "The box is not hard.",
+            "The light is on.",
+            "It has a handle."
+          ],
+          "correct": "The box is not heavy.",
+          "explanation": "In the context of this sentence, the word \"light\" is an adjective describing weight. It means that the object has little weight and is easy to move or lift. Therefore, saying the box is \"not heavy\" is the correct paraphrase. \"It has a handle\" is incorrect because, while a handle might make a box easier to lift, the sentence says nothing about a handle."
+        },
+        {
+          "n": 30,
+          "question": "Are they alike?",
+          "options": [
+            "Yes, they look the same.",
+            "Yes, I like them.",
+            "Yes, they will go on a trip."
+          ],
+          "correct": "Yes, they look the same.",
+          "explanation": "The adjective \"alike\" means having a resemblance or being similar to each other. When asking if two people are alike, the speaker is inquiring whether they share similar physical traits or characteristics. \"Yes, I like them\" is incorrect because it uses the verb \"like\" (to enjoy or appreciate), which is a different word entirely."
+        },
+        {
+          "n": 32,
+          "question": "Where did you put my pencil?",
+          "options": [
+            "I laid it on the bookcase.",
+            "I bought it at the bookstore.",
+            "I got it from Miss Bell."
+          ],
+          "correct": "I laid it on the bookcase.",
+          "explanation": "The question asks where you put the pencil, seeking the specific location where an object was placed. The verb \"laid\" is the past tense of \"lay,\" which means to put or place something down horizontally. \"On the bookcase\" correctly answers the \"where\" part of the question. \"I got it from Miss Bell\" is incorrect because it describes the source or origin of the item (from whom) rather than where it was placed."
+        },
+        {
+          "n": 34,
+          "question": "He is going to take up medicine this year. What is he going to do?",
+          "options": [
+            "He's going to study medicine.",
+            "He's going to continue working as a doctor."
+          ],
+          "correct": "He's going to study medicine.",
+          "explanation": "The phrasal verb \"take up\" means to begin a new activity, hobby, or profession. When someone says they are going to take up medicine, it indicates they are starting their path in the medical field, which involves beginning a course of study to become a doctor. \"Continue working as a doctor\" is incorrect because \"take up\" implies a new start, whereas continuing suggests he was already doing it."
+        },
+        {
+          "n": 38,
+          "question": "Twenty-five students in all made a trip to the zoo.",
+          "options": [
+            "Altogether, there were 25 students on the trip.",
+            "There were 25 trips made to the zoo.",
+            "The students all were 25 years old.",
+            "There were 25 students who called the zoo."
+          ],
+          "correct": "Altogether, there were 25 students on the trip.",
+          "explanation": "The phrase \"in all\" is an idiomatic expression used to indicate a total count or the entirety of a group. In the original sentence, \"25 students in all\" means that the total number of students who visited the zoo was 25. The phrase \"altogether\" is a synonym for \"in all,\" and \"on the trip\" accurately reflects the action of making a trip to the zoo."
+        },
+        {
+          "n": 39,
+          "question": "James is an efficient worker.",
+          "options": [
+            "He does his work quickly and well.",
+            "He supervises other workers.",
+            "He complains a lot."
+          ],
+          "correct": "He does his work quickly and well.",
+          "explanation": "The term \"efficient\" describes a person who works in a way that produces the desired results without wasting time, effort, or resources. Doing work quickly and well is a direct definition of efficiency. In military and professional contexts, efficiency is a key performance trait denoting high productivity and competence. Supervising others is a different role and is not implied by the word."
+        },
+        {
+          "n": 40,
+          "question": "The cadet was not guilty of the charge.",
+          "options": [
+            "The cadet was found innocent.",
+            "The cadet was given a fine.",
+            "The cadet was sentenced to prison.",
+            "The cadet was found guilty."
+          ],
+          "correct": "The cadet was found innocent.",
+          "explanation": "In a legal or military justice context, the phrase \"not guilty\" is a verdict indicating that the person accused (the cadet) did not commit the offense. Being found innocent is the direct synonym for being not guilty of a specific charge. \"The cadet was given a fine\" is incorrect because a fine is a form of punishment, which would only occur if the cadet were found guilty."
+        },
+        {
+          "n": 41,
+          "question": "Bob Moore wanted to inspect the new oxygen mask.",
+          "options": [
+            "He wanted to leave it.",
+            "He wanted to look at it.",
+            "He wanted to get one.",
+            "He wanted to buy it."
+          ],
+          "correct": "He wanted to look at it.",
+          "explanation": "To \"inspect\" means to examine something carefully and closely, in other words, to look at it. Wanting to buy, obtain, or leave the mask are different actions not implied by the verb \"inspect.\""
+        },
+        {
+          "n": 42,
+          "question": "Mike spread out the maps.",
+          "options": [
+            "He opened the maps.",
+            "He folded the maps.",
+            "He marked the maps.",
+            "He copied the maps."
+          ],
+          "correct": "He opened the maps.",
+          "explanation": "The phrasal verb \"spread out\" means to extend, unfold, or open something so that it covers a larger area, often to make it easier to see or use. In military operations, spreading out maps is a standard procedure for mission planning, navigation, and briefings, to allow personnel to view the entire terrain. \"He folded the maps\" is incorrect because folding is the opposite action; it involves making the maps smaller for storage or transport."
+        },
+        {
+          "n": 43,
+          "question": "The air is dense at sea level.",
+          "options": [
+            "The air is thick.",
+            "The air is thin.",
+            "The air is hot.",
+            "The air is cool."
+          ],
+          "correct": "The air is thick.",
+          "explanation": "In the context of meteorology and aviation, \"dense\" refers to the high concentration of molecules in the air. This is synonymous with saying the air is thick. At sea level, atmospheric pressure is at its highest, meaning the air is at its most dense. As altitude increases, the air becomes less dense, or thin. \"The air is thin\" is incorrect because thin is the antonym of dense."
+        },
+        {
+          "n": 45,
+          "question": "Mr. Long liked the cartoons in the evening newspaper. What were they?",
+          "options": [
+            "headlines",
+            "drawings",
+            "stories",
+            "news"
+          ],
+          "correct": "drawings",
+          "explanation": "In a newspaper, cartoons are drawings or comic panels, often humorous or satirical. Headlines are the titles of articles, while stories and news refer to written reporting, none of which are drawings."
+        },
+        {
+          "n": 46,
+          "question": "And it said she got a new filling yesterday. What did she get?",
+          "options": [
+            "a cavity filled by the dentist",
+            "her car filled with gasoline"
+          ],
+          "correct": "a cavity filled by the dentist",
+          "explanation": "In a medical or dental context, a \"filling\" refers to the material (such as composite or amalgam) used to fill a hole or cavity in a tooth caused by decay. This is a common term used in general English and often tested in military language proficiency exams to ensure personnel understand health-related terminology. \"Her car filled with gasoline\" is incorrect because, while \"fill\" is used for fuel tanks, the noun \"a filling\" refers specifically to dentistry."
+        },
+        {
+          "n": 47,
+          "question": "How did the hole get there?",
+          "options": [
+            "Edward dug it.",
+            "Edward wrote it.",
+            "Edward bought it."
+          ],
+          "correct": "Edward dug it.",
+          "explanation": "This question tests the understanding of homophones and their associated actions. The word \"whole\" is phonetically identical to \"hole.\" In the context of English language proficiency tests like the ALCPT, the verb associated with creating a hole in the ground is \"to dig.\" The past tense of dig is dug. Therefore, the most logical answer is \"Edward dug it.\""
+        },
+        {
+          "n": 48,
+          "question": "We're having a thunder shower. What are we having?",
+          "options": [
+            "a storm",
+            "a bath",
+            "a sunny day"
+          ],
+          "correct": "a storm",
+          "explanation": "A \"thunder shower\" is a specific type of weather event characterized by rain, lightning, and thunder. In this context it is synonymous with a brief storm. \"A bath\" is incorrect because, although the word \"shower\" can refer to personal hygiene, the addition of \"thunder\" clarifies that the term refers to a weather event."
+        },
+        {
+          "n": 49,
+          "question": "Carol kept working on the problem until she solved it.",
+          "options": [
+            "She worked it out.",
+            "She is working on it."
+          ],
+          "correct": "She worked it out.",
+          "explanation": "The sentence states that Carol continued her efforts until she reached a solution. The phrasal verb \"worked it out\" is an idiomatic expression meaning to solve a problem or find a solution through effort or calculation, which directly matches the meaning of \"solved it.\" \"She is working on it\" is incorrect because it uses the present continuous tense, suggesting the action is still in progress, while the original sentence is in the past and completed."
+        },
+        {
+          "n": 51,
+          "question": "The attack was repelled.",
+          "options": [
+            "It was fought off.",
+            "It was reinforced.",
+            "It was ordered."
+          ],
+          "correct": "It was fought off.",
+          "explanation": "The verb \"repelled\" means to drive or force back an attacker or an offensive action. In a military context, if an attack is repelled, the defending force has successfully resisted the assault and forced the enemy to retreat. Therefore \"fought off\" is a direct synonym for repelled. \"It was reinforced\" is incorrect because reinforcing means to strengthen a position or unit by adding more personnel or equipment."
+        },
+        {
+          "n": 52,
+          "question": "The temperature was around 70 degrees and it was a foggy morning.",
+          "options": [
+            "You couldn't see the sun.",
+            "There was some dust in the air.",
+            "There was a steady breeze blowing."
+          ],
+          "correct": "You couldn't see the sun.",
+          "explanation": "Fog is defined as a thick cloud of tiny water droplets suspended in the atmosphere at or near the Earth's surface. This condition significantly restricts visibility. Because fog is essentially a cloud at ground level, it obscures the sky and prevents a person from seeing the sun clearly. \"There was some dust in the air\" is incorrect because dust suspended in the air is referred to as haze or a dust storm, whereas fog is composed of water."
+        },
+        {
+          "n": 53,
+          "question": "The student has gone back to his country for good.",
+          "options": [
+            "He has left permanently.",
+            "He has left for the time being.",
+            "He has left temporarily.",
+            "He left in a hurry."
+          ],
+          "correct": "He has left permanently.",
+          "explanation": "The idiom \"for good\" means forever or permanently. In this context, saying the student has gone back to his country for good implies that he has no intention of returning and the move is final. \"For the time being\" means temporarily or for now, and \"temporarily\" indicates a short duration; both contradict the meaning of \"for good.\""
+        },
+        {
+          "n": null,
+          "question": "The wind did not damage the wheat. (Item number not visible in the screenshot.)",
+          "options": [
+            "The wind blew down the wheat.",
+            "The wind did not hurt the wheat.",
+            "The wind did not bring rain for the wheat.",
+            "The wind turned the wheat yellow."
+          ],
+          "correct": "The wind did not hurt the wheat.",
+          "explanation": "The verb \"damage\" means to cause physical harm or injury to something, reducing its value or usefulness. In the context of crops and weather, to damage is synonymous with to hurt. Therefore, saying the wind did not damage the wheat is the same as saying it did not hurt the wheat. \"The wind blew down the wheat\" is incorrect because blowing down the wheat is a specific type of damage, which contradicts the statement that no damage occurred."
+        }
+      ]
+    },
+    {
+      "form": "62",
+      "questions": [
+        {
+          "n": 14,
+          "question": "The Airmen decided to have their party at the club where they would have more space for dancing. Where would they have more space?",
+          "options": [
+            "at the club"
+          ],
+          "correct": "at the club",
+          "explanation": "The question asks where they would have more space. The statement says the Airmen chose the club specifically because that is where the additional dancing space was available. In a military context, a \"club\" (such as an NCO Club or Officers' Club) is a common social venue on a base used for events and recreation."
+        },
+        {
+          "n": 18,
+          "question": "Mary's husband went out to buy more fuel for the heater. What is he going to bring home?",
+          "options": [
+            "kerosene",
+            "ashes",
+            "Mary"
+          ],
+          "correct": "kerosene",
+          "explanation": "The sentence states he went out to buy \"fuel for the heater.\" Kerosene is a flammable hydrocarbon liquid commonly used as fuel in heaters, lamps, and cooking stoves. \"Mary\" is incorrect because she is the wife mentioned in the sentence, not the item being purchased."
+        },
+        {
+          "n": 28,
+          "question": "Bert has never been absent from class.",
+          "options": [
+            "He always goes to school.",
+            "He left school.",
+            "He never listens in class.",
+            "He disrupted class."
+          ],
+          "correct": "He always goes to school.",
+          "explanation": "To be \"absent\" means to be missing or not present. Since Bert has never been absent, the logical meaning is that he has attended every class session. \"He disrupted class\" is incorrect because disrupting refers to behavior during class, not attendance."
+        },
+        {
+          "n": 29,
+          "question": "Sam liked the cake so much that he got a second piece. How many pieces of cake did Sam have?",
+          "options": [
+            "two",
+            "three",
+            "a large piece",
+            "a small piece"
+          ],
+          "correct": "two",
+          "explanation": "Sam had a first piece and then a second one, for a total of two. \"A large piece\" and \"a small piece\" describe size rather than quantity."
+        },
+        {
+          "n": 30,
+          "question": "Susan came at the time we were leaving. When did Susan come?",
+          "options": [
+            "just as we were leaving",
+            "some time after we left"
+          ],
+          "correct": "just as we were leaving",
+          "explanation": "The phrase \"at the time\" is a temporal connector indicating simultaneity. Combined with the past continuous \"were leaving\" (an action in progress), it shows Susan's arrival coincided exactly with the departure. \"Just as\" is a synonymous expression for two events happening at the same moment."
+        },
+        {
+          "n": 34,
+          "question": "Why are sleeves needed?",
+          "options": [
+            "to cover the arms",
+            "to cover the table",
+            "to cover the legs"
+          ],
+          "correct": "to cover the arms",
+          "explanation": "Sleeves are the part of a garment, such as a shirt, jacket, or sweater, designed to cover the arms. \"To cover the legs\" is incorrect because legs are covered by the legs of trousers, pants, or slacks."
+        },
+        {
+          "n": 42,
+          "question": "She slipped on the sidewalk.",
+          "options": [
+            "The walk was icy.",
+            "The walk was paved.",
+            "The walk was clean."
+          ],
+          "correct": "The walk was icy.",
+          "explanation": "To \"slip\" means to lose one's footing by sliding on a smooth or slippery surface. An icy sidewalk is the only condition listed that directly explains why someone would slip, since ice significantly reduces friction. A clean or paved walk would normally provide better traction."
+        },
+        {
+          "n": 46,
+          "question": "Ted said he would have a bit more. How much did he want?",
+          "options": [
+            "a little more",
+            "a lot more",
+            "no more"
+          ],
+          "correct": "a little more",
+          "explanation": "\"A bit\" is an idiomatic quantifier meaning a small amount or degree, so \"a bit more\" is synonymous with \"a little more.\" \"A lot more\" signifies a large quantity, the opposite of \"a bit,\" and \"no more\" indicates zero."
+        },
+        {
+          "n": 47,
+          "question": "Yesterday the wind came from the south and it was warm. Today the wind is from the north and it is cold. Why is it cold today?",
+          "options": [
+            "because the wind shifted",
+            "because a storm is coming"
+          ],
+          "correct": "because the wind shifted",
+          "explanation": "The prompt describes a change in the wind's direction from south to north, resulting in a temperature change from warm to cold. In meteorological and navigational contexts, when the wind changes its source direction it is said to have \"shifted.\" This explains why the air mass changed from warm (southern origin) to cold (northern origin)."
+        },
+        {
+          "n": 48,
+          "question": "Joe heard a rumor that the airbase was going to close. What did he hear?",
+          "options": [
+            "a statement of fact",
+            "an official statement",
+            "a statement of authority",
+            "an unconfirmed statement"
+          ],
+          "correct": "an unconfirmed statement",
+          "explanation": "A \"rumor\" is information or a story that circulates but has not been proven or confirmed to be true. In military environments, rumors (sometimes called \"scuttlebutt\") are unofficial reports that lack verification until a formal announcement is issued by leadership."
+        },
+        {
+          "n": 49,
+          "question": "The stereo equipment cannot be sold separately. How will it be sold?",
+          "options": [
+            "divided up",
+            "a piece at a time",
+            "torn up",
+            "all at one time"
+          ],
+          "correct": "all at one time",
+          "explanation": "\"Separately\" means individually, one by one, or as independent parts. If the equipment cannot be sold separately, the entire set must be purchased together as a single unit. \"Divided up\" is incorrect because it means to split the set into smaller portions, which contradicts the statement."
+        },
+        {
+          "n": 50,
+          "question": "When he jumped from the fence Peter tore his trousers.",
+          "options": [
+            "He ripped them.",
+            "He dirtied them.",
+            "He soiled them.",
+            "He wrinkled them."
+          ],
+          "correct": "He ripped them.",
+          "explanation": "To \"tear\" is to rip, that is, to pull the fabric apart. \"Dirtied\" refers to getting dust, mud, or grime on the clothing, which does not break the fabric fibers. \"Soiled\" refers to staining or making something filthy. \"Wrinkled\" refers to creating creases or folds, which is minor compared to the material actually pulling apart."
+        },
+        {
+          "n": 52,
+          "question": "I want you to disregard that letter.",
+          "options": [
+            "Pay no attention to it.",
+            "Read it immediately.",
+            "Answer it right now.",
+            "Do not destroy it."
+          ],
+          "correct": "Pay no attention to it.",
+          "explanation": "The verb \"disregard\" means to ignore something, to treat it as if it has no importance, or to pay no attention to it. In a military or professional context, if a command or letter is to be disregarded, the information within it is no longer valid and should be ignored by the recipient."
+        },
+        {
+          "n": 53,
+          "question": "In this coded message each number represents a letter of the alphabet.",
+          "options": [
+            "Every number stands for a letter."
+          ],
+          "correct": "Every number stands for a letter.",
+          "explanation": "In coding and cryptography, \"represents\" means that one symbol (a number) is used to signify or substitute for another symbol (a letter). The phrasal verb \"stands for\" is a direct synonym for \"represents\" in this context."
+        },
+        {
+          "n": 54,
+          "question": "What are you going to use that trailer for?",
+          "options": [
+            "to haul freight",
+            "to drain the field",
+            "to pump water",
+            "to spray paint"
+          ],
+          "correct": "to haul freight",
+          "explanation": "A trailer is a non-motorized vehicle designed to be towed by a powered vehicle, such as a truck or tractor. Its primary purpose is to transport or \"haul\" goods, materials, or equipment, collectively known as \"freight.\" This is a standard logistical function in both military and civilian contexts."
+        },
+        {
+          "n": 55,
+          "question": "David's car is ready to fall apart.",
+          "options": [
+            "brand new",
+            "in poor condition",
+            "a rental car"
+          ],
+          "correct": "in poor condition",
+          "explanation": "The idiom \"ready to fall apart\" means that something is in such bad shape that it is likely to break into pieces or stop working soon. Applied to a car, it suggests the vehicle is old, unreliable, and in a state of extreme disrepair, which is synonymous with being \"in poor condition.\" \"Brand new\" is the opposite."
+        },
+        {
+          "n": 56,
+          "question": "The new movie has angered a lot of people.",
+          "options": [
+            "controversial",
+            "very sad"
+          ],
+          "correct": "controversial",
+          "explanation": "The phrase \"has angered a lot of people\" suggests the movie provoked strong negative reactions, public disagreement, or heated debate. \"Controversial\" specifically describes something that gives rise to public disagreement or intense discussion. \"Very sad\" describes sorrow, not conflict."
+        },
+        {
+          "n": 57,
+          "question": "\"I hope you don't fall.\" \"So do I. I can't swim.\" Where are the man and woman?",
+          "options": [
+            "by deep water",
+            "by a thick forest"
+          ],
+          "correct": "by deep water",
+          "explanation": "The speaker mentions \"I can't swim\" as the direct reason for their concern about falling. The mention of swimming, or the inability to swim, is a contextual clue pointing toward a water-based environment. If someone falls into deep water and cannot swim, they are in danger of drowning, which explains the apprehension in the dialogue."
+        },
+        {
+          "n": 59,
+          "question": "\"Here's a nice chair for you.\" \"Oh no, it's much too big.\" What did the woman say about the chair?",
+          "options": [
+            "It is not the right size.",
+            "It is not the right shape.",
+            "It is not the right price."
+          ],
+          "correct": "It is not the right size.",
+          "explanation": "The woman responds to the offer of a chair by saying it is \"much too big.\" The word \"big\" describes the dimensions, scale, or magnitude of an object, so her comment specifically addresses the chair's size. Since it is too big, it is not the correct size for her."
+        },
+        {
+          "n": 62,
+          "question": "\"Have you talked to the chaplain yet?\" \"No, I will see him after the service.\" Where are the man and woman?",
+          "options": [
+            "in a restaurant",
+            "in a train station",
+            "in a chapel",
+            "in a theater"
+          ],
+          "correct": "in a chapel",
+          "explanation": "The dialogue mentions two key terms: \"chaplain\" and \"service.\" In a military context, a chaplain is a commissioned officer responsible for the spiritual well-being of service members, and a \"service\" refers to a religious ceremony. These activities primarily occur in a chapel."
+        },
+        {
+          "n": 66,
+          "question": "\"What did you think of the book?\" \"The ending was very abrupt.\" What did the woman think?",
+          "options": [
+            "She thought the ending was sudden.",
+            "She thought the ending was sad."
+          ],
+          "correct": "She thought the ending was sudden.",
+          "explanation": "The word \"abrupt\" means sudden or unexpected. When the woman describes the book's ending as very abrupt, she is indicating that it finished quickly and without much warning. Therefore \"She thought the ending was sudden\" is the correct interpretation."
+        },
+        {
+          "n": 71,
+          "question": "The new student ________.",
+          "options": [
+            "in class at all this morning wasn't",
+            "at all wasn't this morning in class",
+            "wasn't in class at all this morning"
+          ],
+          "correct": "wasn't in class at all this morning",
+          "explanation": "This sentence follows the standard English word order for a negative statement: Subject (The new student) + Negative Verb (wasn't) + Prepositional Phrase of Place (in class) + Intensifier (at all) + Adverbial of Time (this morning). In English, expressions of place usually precede expressions of time, and the intensifier \"at all\" is correctly placed after the complement to emphasize the negation."
+        },
+        {
+          "n": 75,
+          "question": "The report was ready for ________.",
+          "options": [
+            "printing",
+            "printed",
+            "be printed"
+          ],
+          "correct": "printing",
+          "explanation": "In English, the preposition \"for\" is followed by a noun or a gerund (an -ing verb form acting as a noun). In \"The report was ready for printing,\" the word \"printing\" serves as the object of the preposition \"for,\" indicating the specific process the report is prepared for. If the sentence used the adjective \"ready\" without \"for,\" it would require an infinitive, for example \"The report was ready to print.\""
+        },
+        {
+          "n": 84,
+          "question": "The dog kept us up all night ________.",
+          "options": [
+            "barking",
+            "barks",
+            "bark"
+          ],
+          "correct": "barking",
+          "explanation": "The verb \"keep\" (past tense \"kept\") followed by an object and an action requires the present participle (the -ing form) to describe a continuous or repeated activity. In \"The dog kept us up all night barking,\" the word \"barking\" functions as a participle describing the ongoing action of the dog that caused the speakers to stay awake. The structure Subject + keep + Object + -ing is standard for indicating that an action continued over a period."
+        },
+        {
+          "n": 85,
+          "question": "Did you hear that Janelle is ________ marry?",
+          "options": [
+            "about",
+            "about for",
+            "about to",
+            "about for to"
+          ],
+          "correct": "about to",
+          "explanation": "The phrase \"be about to\" is a fixed idiomatic structure used to describe an action that is going to happen in the very near future. \"Janelle is about to marry\" means she will marry very soon. This construction requires the infinitive marker \"to\" followed by the base form of the verb (\"marry\"). \"About\" alone is incorrect because it lacks the necessary infinitive marker."
+        },
+        {
+          "n": 87,
+          "question": "The NCO expects his men ________ their uniforms.",
+          "options": [
+            "to wear",
+            "are wearing",
+            "be wearing"
+          ],
+          "correct": "to wear",
+          "explanation": "The verb \"expect\" follows the grammatical pattern expect + object + to-infinitive when indicating a requirement or anticipation of an action. In this sentence, \"the NCO\" is the subject, \"his men\" is the object, and \"to wear\" is the infinitive phrase that completes the thought. In a military context, this structure is frequently used to describe orders, standards, or behavioral expectations set by leadership."
+        },
+        {
+          "n": 90,
+          "question": "The woman used fine thread to sew the dress.",
+          "options": [
+            "heavy",
+            "new",
+            "thin",
+            "dark"
+          ],
+          "correct": "thin",
+          "explanation": "Here \"fine\" is an adjective meaning thin or delicate in width, not \"good\" or \"excellent.\" Fine thread is thin thread. \"Heavy\" and \"dark\" describe weight and color, which are not what \"fine\" indicates in this context."
+        },
+        {
+          "n": 91,
+          "question": "Mr. and Mrs. Jackson have their evening paper delivered. The paper is ________.",
+          "options": [
+            "mailed by them",
+            "bought at a newsstand",
+            "brought to their home",
+            "sent to the newsstand"
+          ],
+          "correct": "brought to their home",
+          "explanation": "In English, when a newspaper is \"delivered,\" it means it is brought directly to the subscriber's residence or place of business by a delivery person. The phrase \"have their evening paper delivered\" uses the causative structure (have + object + past participle), indicating that they arrange for someone else to perform the task of bringing the paper to them."
+        },
+        {
+          "n": 94,
+          "question": "There was ________ mud than we had expected.",
+          "options": [
+            "worse",
+            "as worse as",
+            "more worse"
+          ],
+          "correct": "worse",
+          "explanation": "The sentence uses the conjunction \"than,\" which indicates a comparison between two things (the actual amount of mud versus the predicted amount). In English, the adjective \"bad\" has irregular degrees of comparison: bad (positive), worse (comparative), and worst (superlative). The comparative form \"worse\" is required when followed by \"than.\" \"More worse\" is a double comparative and is ungrammatical."
+        },
+        {
+          "n": 95,
+          "question": "The number of whooping cranes ________ diminishing.",
+          "options": [
+            "is",
+            "being",
+            "are"
+          ],
+          "correct": "is",
+          "explanation": "The subject of the sentence is \"The number,\" which is a singular noun phrase. In English grammar, the expression \"the number of\" is followed by a plural noun (whooping cranes) but always takes a singular verb. Conversely, the expression \"a number of\" takes a plural verb. Since \"The number\" is singular, the verb must be \"is.\" Together with \"diminishing,\" it forms the present progressive tense to describe an ongoing trend."
+        }
+      ]
+    },
+    {
+      "form": "63",
+      "questions": [
+        {
+          "n": 12,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "a house",
+            "an animal",
+            "the sun",
+            "a book"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 21,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "a salad",
+            "a bar of soap",
+            "a candle",
+            "a comb"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 22,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "a drop of water",
+            "colors in the sky",
+            "a waterproof coat",
+            "a stub from a ticket"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 30,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "the owner",
+            "a friend",
+            "the store manager",
+            "a store worker"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 32,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "in her eyes",
+            "in her ears",
+            "in her throat",
+            "in her teeth"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 37,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "She can't hear.",
+            "She can't walk.",
+            "She can't talk.",
+            "She can't see."
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 78,
+          "question": "Sally has been waiting since Thursday. Peter apologizes and says he told her he would get here today. Sally says it is Saturday. On which day did Peter arrive?",
+          "options": [
+            "Saturday",
+            "Sunday",
+            "Tuesday"
+          ],
+          "correct": "Saturday",
+          "explanation": "In the dialogue, Sally explicitly identifies the current day by saying, \"It's Saturday.\" Peter apologizes and says, \"I told you I'd get here today.\" Since \"today\" refers to the day the conversation is taking place (Saturday), Peter arrived on Saturday. The mention of Thursday refers to when Sally began waiting, not when Peter arrived."
+        },
+        {
+          "n": 80,
+          "question": "Did you recognize him in his costume? (Select the closest synonym for \"recognize\".)",
+          "options": [
+            "know",
+            "envy",
+            "admire"
+          ],
+          "correct": "know",
+          "explanation": "The verb \"recognize\" means to identify someone or something from having seen them before. In the context of wearing a costume, the question asks if the listener was able to identify the person despite their altered appearance. \"Know\" serves as a synonym in this context, referring to the act of knowing or realizing who the person was. \"admire\" is incorrect because it means to regard someone with respect or pleasure, which is not the same as identifying them."
+        },
+        {
+          "n": 82,
+          "question": "What did you do besides exercise? (Select the closest synonym for \"besides\".)",
+          "options": [
+            "in addition to",
+            "in place of",
+            "with",
+            "before"
+          ],
+          "correct": "in addition to",
+          "explanation": "The word \"besides\" functions as a preposition meaning \"in addition to,\" \"as well as,\" or \"apart from.\" In the sentence \"What did you do besides exercise?\", the speaker is inquiring about other activities that were performed alongside the exercise. Thus, \"in addition to\" is the accurate synonym in this context. \"in place of\" is incorrect because it means \"instead of\" or \"as a substitute for.\" This would imply that the exercise was not done, which contradicts the sentence."
+        },
+        {
+          "n": 84,
+          "question": "________ pants need to be cleaned.",
+          "options": [
+            "These",
+            "This",
+            "Any",
+            "Such"
+          ],
+          "correct": "These",
+          "explanation": "\"Pants\" is a plural noun (specifically a pair noun). In English grammar, items that consist of two parts, like pants, trousers, scissors, or glasses, are always treated as plural. Therefore, they must be preceded by a plural demonstrative adjective like \"These\" and followed by a plural verb form like \"need.\" \"This\" is incorrect because it is a singular demonstrative adjective and cannot modify the plural noun \"pants.\""
+        },
+        {
+          "n": 86,
+          "question": "Do you enjoy ________ to classical music?",
+          "options": [
+            "listened",
+            "listening",
+            "listen",
+            "to listen"
+          ],
+          "correct": "listening",
+          "explanation": "In English grammar, certain verbs are followed specifically by a gerund (the -ing form) rather than an infinitive. The verb \"enjoy\" is a primary example of this rule. When describing an activity one takes pleasure in, the structure must be \"enjoy + [verb]-ing.\" Therefore, \"listening\" is the only grammatically correct option to follow \"Do you enjoy...\" \"listened\" is incorrect because it is the past tense or past participle form, which cannot function as the object of \"enjoy\"."
+        },
+        {
+          "n": 87,
+          "question": "The ________ ID cards were collected. (Choose the correct form.)",
+          "options": [
+            "issued",
+            "to issue",
+            "are issuing"
+          ],
+          "correct": "issued",
+          "explanation": "In this sentence, the past participle \"issued\" functions as an adjective modifying the noun phrase \"ID cards.\" It describes the state of the cards (those that have already been officially distributed). This is a common structure in military and administrative contexts where documents or equipment are referred to by their status (e.g., \"issued gear\" or \"issued permits\"). \"to issue\" is incorrect because the infinitive form cannot modify a noun in this position."
+        },
+        {
+          "n": 88,
+          "question": "Mary tried not to look ________, but we knew that she was upset.",
+          "options": [
+            "short",
+            "pretty",
+            "happy",
+            "angry"
+          ],
+          "correct": "(Not shown — the review screen for this item was not captured.)",
+          "explanation": "The item was captured during the test, so the app's correct answer and explanation were not recorded."
+        },
+        {
+          "n": 91,
+          "question": "They were ________ up the tent. (Select the closest synonym for \"setting up\".)",
+          "options": [
+            "putting",
+            "cleaning",
+            "folding",
+            "messing"
+          ],
+          "correct": "putting",
+          "explanation": "In military and outdoor contexts, \"setting up\" a tent means to assemble, erect, or prepare it for use. The phrasal verb \"putting up\" is a direct synonym for \"setting up\" in this context. While the choice only provides \"putting,\" it refers to the phrasal verb construction \"putting up the tent.\" \"cleaning\" is incorrect because it refers to washing or removing dirt from the tent, which is not the same as assembling it."
+        },
+        {
+          "n": 95,
+          "question": "Gilbert and Douglas ________ their lessons.",
+          "options": [
+            "study",
+            "are studied",
+            "were studied",
+            "studying"
+          ],
+          "correct": "study",
+          "explanation": "The sentence requires a verb in the active voice to describe the action being performed by the subjects, Gilbert and Douglas. \"Study\" is the base form of the verb, which functions as the simple present tense for a plural subject. In English, when a subject (Gilbert and Douglas) performs an action on an object (their lessons), the active voice is used. \"are studied\" is incorrect because it uses the passive voice, which would imply that someone else is studying them."
+        },
+        {
+          "n": 96,
+          "question": "Ms. Stickler, who is a finicky traveler, is willing to travel to the tropics ________ that she has access to constant air-conditioning.",
+          "options": [
+            "beyond",
+            "only",
+            "if",
+            "provided"
+          ],
+          "correct": "provided",
+          "explanation": "The sentence requires a conditional conjunction that introduces a necessary requirement for the main action to occur. \"Provided that\" is a formal expression meaning \"on the condition that\" or \"only if.\" It is used here to show that Ms. Stickler's willingness to travel is strictly dependent on the availability of air-conditioning. In military and professional English, \"provided that\" or \"providing that\" are common ways to state requirements or contingencies."
+        },
+        {
+          "n": 98,
+          "question": "Can the child ________ time yet?",
+          "options": [
+            "say",
+            "speak",
+            "tell"
+          ],
+          "correct": "tell",
+          "explanation": "In English, the specific idiomatic expression used to describe the ability to read a clock or watch is \"to tell time.\" While other verbs like 'say' or 'speak' relate to communication, they are not used in this fixed collocation. This is a common phrase taught in early English proficiency levels to describe the skill of interpreting the hour and minutes from a timepiece. \"say\" is incorrect because while we use \"say\" for reporting what a clock shows (e.g., \"The clock says three o'clock\"), it is not used for the skill itself."
+        },
+        {
+          "n": 99,
+          "question": "What time does the flight ________ ?",
+          "options": [
+            "get in",
+            "get over",
+            "get up",
+            "get by"
+          ],
+          "correct": "get in",
+          "explanation": "In English, the phrasal verb \"get in\" is used specifically to describe the arrival of a flight, train, or bus at its destination. In an aviation or travel context, asking what time a flight will \"get in\" is equivalent to asking what time it will arrive. \"get over\" is incorrect because it means to recover from an illness, an emotional issue, or to overcome a physical obstacle. \"get up\" is incorrect because it means to wake up or rise."
+        },
+        {
+          "n": 100,
+          "question": "The honor________ declined to attend the award ceremony. (Choose the correct suffix.)",
+          "options": [
+            "-ee",
+            "-ific"
+          ],
+          "correct": "-ee",
+          "explanation": "The sentence requires a noun that refers to a person because the subject \"declined to attend the award ceremony.\" The suffix \"-ee\" is used in English to create a noun representing the recipient of an action or an honor. Therefore, an \"honoree\" is a person being honored at an event. This fits both the grammatical requirements (a noun subject) and the semantic requirements (a person who can attend or decline a ceremony)."
+        }
+      ]
+    },
+    {
+      "form": "69",
+      "questions": [
+        {
+          "n": 9,
+          "question": "Mary is the cashier in our office. (What does this mean?)",
+          "options": [
+            "She types all the letters.",
+            "She cleans the floor.",
+            "She handles the money."
+          ],
+          "correct": "She handles the money.",
+          "explanation": "The word \"cashier\" refers to a person whose primary job responsibility is to handle financial transactions, such as receiving, counting, and paying out money. In an office environment, this role involves managing the petty cash or processing payments. Therefore, saying Mary handles the money is a direct description of a cashier's duties. \"She cleans the floor.\" is incorrect because this describes the duties of a janitor or a custodian, not a cashier."
+        },
+        {
+          "n": 15,
+          "question": "If a man says that perhaps he will come, what does he mean?",
+          "options": [
+            "He may or may not come.",
+            "He can't come.",
+            "He definitely will come."
+          ],
+          "correct": "He may or may not come.",
+          "explanation": "The word \"perhaps\" is an adverb used to express uncertainty or possibility. It is synonymous with \"maybe.\" When someone says they will \"perhaps\" do something, it indicates that the action is possible but not guaranteed. Therefore, it means the person may or may not perform the action. \"He can't come.\" is incorrect because \"perhaps\" suggests a possibility of attendance, whereas \"can't\" (cannot) expresses a total lack of ability or possibility."
+        },
+        {
+          "n": 16,
+          "question": "Which of these might be made of plastic?",
+          "options": [
+            "a salad",
+            "a bar of soap",
+            "a candle",
+            "a comb"
+          ],
+          "correct": "a comb",
+          "explanation": "A comb is a personal grooming tool frequently manufactured from plastic, though it can also be made from other materials like metal or wood. The question asks what might be made of plastic, and out of the options provided, a comb is the only one typically associated with synthetic polymers in a modern context. \"a salad\" is incorrect because it is a food item composed of organic biological materials."
+        },
+        {
+          "n": 18,
+          "question": "Carl is studying chemistry at school. What is he studying?",
+          "options": [
+            "foreign languages",
+            "political systems",
+            "important dates",
+            "basic substances"
+          ],
+          "correct": "basic substances",
+          "explanation": "Chemistry is the branch of science concerned with the substances of which matter is composed — their properties, structure and reactions. Studying chemistry therefore means studying basic substances. The other options correspond to different subjects: languages, political science and history."
+        },
+        {
+          "n": 31,
+          "question": "The student relies on his dictionary. What does he do?",
+          "options": [
+            "depends on it",
+            "talks about it",
+            "doesn't use it"
+          ],
+          "correct": "depends on it",
+          "explanation": "The phrase \"relies on\" is a phrasal verb that means to depend on something or someone with trust or necessity. In an educational or military training context, if a student relies on a dictionary, it means they are using it as a vital resource for their learning and cannot succeed or understand the material without its help. \"talks about it\" is incorrect because relying on an object involves using it for support or information, not discussing it."
+        },
+        {
+          "n": 36,
+          "question": "We told the sergeant that we had already made up our beds. What had we done?",
+          "options": [
+            "washed the sheets and blankets",
+            "put the sheets and blankets on the bed",
+            "piled the sheets and blankets on the bed"
+          ],
+          "correct": "put the sheets and blankets on the bed",
+          "explanation": "The phrasal verb \"to make up a bed\" means to prepare a bed for sleeping by neatly arranging the sheets, blankets, and pillows. In a military context, this is a fundamental daily task performed by personnel in barracks to ensure their quarters meet inspection standards. \"washed the sheets and blankets\" is incorrect because the phrase \"make up\" refers to the arranging, not to laundering."
+        },
+        {
+          "n": 37,
+          "question": "Many traffic laws have been revised. (What does this mean?)",
+          "options": [
+            "They were changed.",
+            "They were transferred.",
+            "They were protected.",
+            "They were preserved."
+          ],
+          "correct": "They were changed.",
+          "explanation": "The verb \"revised\" means to re-examine and make alterations, corrections, or improvements to something, such as a law, document, or policy. In the context of traffic laws, if they have been \"revised,\" it means they have undergone updates or modifications. Therefore, \"They were changed\" is the most accurate synonym. \"They were transferred.\" is incorrect because \"transferred\" means moved from one location or owner to another."
+        },
+        {
+          "n": 38,
+          "question": "Mr. Walton plans to attend the concert. (What does this mean?)",
+          "options": [
+            "He intends to go to the concert.",
+            "He does not expect to go to the concert.",
+            "He does not like concerts.",
+            "He expects to plan a concert."
+          ],
+          "correct": "He intends to go to the concert.",
+          "explanation": "The phrase \"plans to\" expresses a future intention or a decision to do something. In this context, Mr. Walton has made a decision to go to the concert. \"Intends to\" is a direct synonym for \"plans to\" in this grammatical structure, conveying the same meaning of purposeful action. \"He does not expect to go to the concert.\" is incorrect because it expresses the opposite of the original statement; planning to attend implies an expectation of going."
+        },
+        {
+          "n": 39,
+          "question": "The humidity is high today. (What does this mean?)",
+          "options": [
+            "The air is damp.",
+            "The wind is high.",
+            "The clouds are high.",
+            "The atmosphere is dry."
+          ],
+          "correct": "The air is damp.",
+          "explanation": "Humidity refers to the amount of water vapor or moisture present in the air. When the humidity is high, the air feels moist or wet. The word \"damp\" is a synonym for moist or slightly wet, making it the correct description for high humidity. \"The wind is high.\" is incorrect because wind refers to the movement of air (speed), which is unrelated to the amount of moisture (humidity) in the air."
+        },
+        {
+          "n": 49,
+          "question": "The school will eventually add another branch. (What does this mean?)",
+          "options": [
+            "Sooner or later another branch will be added.",
+            "Another branch will never be added to the school."
+          ],
+          "correct": "Sooner or later another branch will be added.",
+          "explanation": "The word \"eventually\" is an adverb used to describe something that will happen at an unspecified time in the future, typically after a period of time or a series of events. The phrase \"sooner or later\" is a direct synonym for \"eventually,\" expressing that the action is certain to occur at some point. Both phrases correctly convey the future intent of the original statement."
+        },
+        {
+          "n": 50,
+          "question": "Yesterday it drizzled all day. (What does this mean?)",
+          "options": [
+            "There was a light rain.",
+            "Sleet fell during the storm.",
+            "Heavy rains fell all day."
+          ],
+          "correct": "There was a light rain.",
+          "explanation": "The word \"drizzle\" specifically refers to very light rain falling in fine, small drops. In a military or meteorological context, accurately reporting weather conditions like drizzle is essential for determining visibility and ground conditions. The sentence \"yesterday it drizzled all day\" means that light rain persisted throughout the entire day. \"Sleet fell during the storm.\" is incorrect because sleet refers to a mixture of rain and snow or small ice pellets."
+        },
+        {
+          "n": 51,
+          "question": "Herbert's income is very low. (What does this mean?)",
+          "options": [
+            "He doesn't make much money.",
+            "He doesn't have much time.",
+            "He doesn't make much progress.",
+            "He doesn't have much education."
+          ],
+          "correct": "He doesn't make much money.",
+          "explanation": "The word \"income\" refers to the money a person receives, typically from their job (salary/wages) or investments. If an income is described as \"low,\" it means the individual is earning a small amount of currency. Therefore, the sentence \"He doesn't make much money\" is a direct synonym for having a low income. \"He doesn't have much time.\" is incorrect because \"time\" refers to duration or availability, which is unrelated to earnings."
+        },
+        {
+          "n": 55,
+          "question": "The programming instructions on this new VCR will leave most people completely befuddled. The programming is ________ .",
+          "options": [
+            "baffling",
+            "manageable",
+            "obsolete"
+          ],
+          "correct": "baffling",
+          "explanation": "The sentence states that the instructions will leave people \"completely befuddled.\" The word befuddled means to be utterly confused, puzzled, or muddled. Therefore, if the programming instructions have this effect, the programming itself is baffling, which is a synonym for confusing or difficult to understand. \"manageable\" is incorrect because it means easy to handle or deal with, which contradicts the state of being befuddled."
+        },
+        {
+          "n": 56,
+          "question": "Barousse found many unusual shells while she was walking. Where was she walking?",
+          "options": [
+            "on the beach",
+            "on the highway"
+          ],
+          "correct": "on the beach",
+          "explanation": "The sentence describes a logical activity: finding \"shells.\" Shells (specifically sea shells) are naturally occurring objects found along the shorelines of oceans or seas. Therefore, the most logical location for finding unusual shells while walking is \"on the beach.\" \"on the highway\" is incorrect because highways are paved roads intended for motor vehicles; shells are not naturally found there."
+        },
+        {
+          "n": 61,
+          "question": "\"How will you get your dog to take that medicine?\" \"I'm going to inject it.\" What's the man going to do with the medicine?",
+          "options": [
+            "He's going to give the dog a shot.",
+            "He's going to throw it away."
+          ],
+          "correct": "He's going to give the dog a shot.",
+          "explanation": "In the dialogue, the man states that he is going to \"inject\" the medicine. To \"inject\" something into a patient or an animal means to use a needle and syringe to put the substance into the body. This action is commonly referred to in English as \"giving a shot\" or an \"injection.\" This is a common medical term tested in the ALCPT to ensure understanding of basic health procedures."
+        },
+        {
+          "n": 68,
+          "question": "I see the girl. Jake ________ also.",
+          "options": [
+            "see it",
+            "sees her",
+            "saw him",
+            "seen me"
+          ],
+          "correct": "sees her",
+          "explanation": "This sentence tests subject-verb agreement and pronoun reference. The first sentence establishes the context in the present tense (\"I see\"). For the second sentence, the subject is \"Jake\" (third-person singular), which requires the verb form ending in '-s' (\"sees\"). The object being referred to is \"the girl,\" which is feminine and singular. Therefore, the correct object pronoun to replace it is \"her.\""
+        },
+        {
+          "n": 70,
+          "question": "She bought a ________ of stockings.",
+          "options": [
+            "pair",
+            "two",
+            "feet",
+            "deck"
+          ],
+          "correct": "pair",
+          "explanation": "In English, items that are composed of two identical or matching parts used together (such as stockings, socks, shoes, or gloves) are referred to using the collective noun \"pair.\" The phrase \"a pair of\" is the standard way to count these items. \"two\" is incorrect because while stockings come in sets of two, the grammatical structure \"a two of\" is incorrect; you would simply say \"two stockings.\""
+        },
+        {
+          "n": 74,
+          "question": "Adam wasn't able to go. (What does this mean?)",
+          "options": [
+            "He couldn't go.",
+            "He didn't want to go.",
+            "He wasn't ready to go.",
+            "He wasn't supposed to go."
+          ],
+          "correct": "He couldn't go.",
+          "explanation": "The phrase \"wasn't able to\" is the past tense negative form of \"be able to,\" which is used to express capability or possibility. In English, \"couldn't\" (the contraction of \"could not\") is the direct modal synonym for expressing a lack of ability or possibility in the past. Therefore, \"Adam wasn't able to go\" carries the same meaning as \"He couldn't go.\" \"He didn't want to go.\" is incorrect because \"want\" refers to a person's desire or intent, whereas \"able\" refers to capability."
+        },
+        {
+          "n": 77,
+          "question": "________ is prohibited in this area.",
+          "options": [
+            "Speeding",
+            "Speeds"
+          ],
+          "correct": "Speeding",
+          "explanation": "In this sentence, the subject of the sentence is missing. A gerund (the -ing form of a verb functioning as a noun) is required to represent the activity being banned. \"Speeding\" is the act of driving faster than the legal limit, and it correctly functions as the singular subject for the verb \"is prohibited.\" In military and civilian traffic regulations, specific activities like speeding are designated as prohibited within safety areas like school zones or base housing."
+        },
+        {
+          "n": 81,
+          "question": "Sleet and snow are weather hazards. (Select the closest synonym for \"hazards\".)",
+          "options": [
+            "dangers",
+            "signs",
+            "advantages"
+          ],
+          "correct": "dangers",
+          "explanation": "In both general and military contexts, the word \"hazards\" refers to potential sources of danger, risk, or harm. When discussing weather conditions like sleet and snow, they are considered hazards because they create unsafe environments for driving, flying, and tactical operations. Identifying weather hazards is a critical part of safety briefings and risk assessment. \"signs\" is incorrect because weather conditions are not indicators in this sense."
+        },
+        {
+          "n": 82,
+          "question": "The mechanic had to adjust the brakes. (Select the closest synonym for \"adjust\".)",
+          "options": [
+            "reset",
+            "lubricated",
+            "cleaned"
+          ],
+          "correct": "reset",
+          "explanation": "In a mechanical context, to \"adjust\" something means to change or regulate its position or state to ensure it functions correctly or meets specific requirements. \"Reset\" is a synonym in this context, as it refers to setting something again or differently to achieve the correct alignment or performance. For example, when brakes wear down, a mechanic must reset or adjust them to maintain the proper distance between the brake pads and the drums/rotors."
+        },
+        {
+          "n": 84,
+          "question": "We'll write as soon as we ________ .",
+          "options": [
+            "know",
+            "will know",
+            "knew"
+          ],
+          "correct": "know",
+          "explanation": "This sentence involves a future time clause. In English, when a sentence refers to a future action using a conjunction of time such as \"as soon as,\" \"when,\" \"before,\" or \"until,\" the present simple tense is used in the subordinate clause even though the meaning is future. The main clause uses the future tense (\"We'll write\"), while the clause following \"as soon as\" must be in the present simple (\"we know\"). \"will know\" is incorrect because \"will\" is generally not used after these time conjunctions."
+        },
+        {
+          "n": 88,
+          "question": "His head was bare. (What does this mean?)",
+          "options": [
+            "not covered",
+            "large",
+            "small",
+            "cold"
+          ],
+          "correct": "not covered",
+          "explanation": "The word \"bare\" means lacking a natural or usual covering. In this context, saying a head is bare means the person is not wearing a hat, cap, helmet, or any other headgear. In military settings, this is often referred to as being \"uncovered.\" \"large\" is incorrect because bare refers to the state of being uncovered, not the physical dimensions or size of the head."
+        },
+        {
+          "n": 93,
+          "question": "The things I bought added up to $17.50. (Select the closest synonym for \"added up to\".)",
+          "options": [
+            "amounted to",
+            "afforded to",
+            "arrived to",
+            "averaged from"
+          ],
+          "correct": "amounted to",
+          "explanation": "The phrasal verb \"add up to\" means to result in a particular total. \"Amounted to\" is the direct synonym: both express that the combined cost of the purchases reached the total of $17.50. \"arrived to\" is incorrect because \"arrive\" refers to reaching a place, and the construction is not idiomatic in English."
+        },
+        {
+          "n": 95,
+          "question": "By the end of the year, Mr. Henley ________ on five times.",
+          "options": [
+            "will have been operated",
+            "can operate",
+            "is being operated"
+          ],
+          "correct": "will have been operated",
+          "explanation": "This sentence requires the Future Perfect Passive tense. The phrase \"by the end of the year\" is a temporal marker that indicates an action will be completed before a specific point in the future. Because Mr. Henley is the patient (the recipient of the action, indicated by the preposition \"on\"), the verb must be in the passive voice. The structure \"will have been\" + past participle (\"operated\") correctly identifies that by the specified future date, the total of five surgeries will have occurred."
+        }
+      ]
+    },
+    {
+      "form": "70",
+      "questions": [
+        {
+          "n": 11,
+          "question": "Rose Ellen broke her mirror. Now she cannot ________ .",
+          "options": [
+            "see herself",
+            "talk to anyone",
+            "tell time"
+          ],
+          "correct": "see herself",
+          "explanation": "A mirror is a reflective surface used primarily for seeing one's own image or reflection. If Rose Ellen broke her mirror, she has lost the tool used to see herself. This question tests the functional understanding of common household objects. \"talk to anyone\" is incorrect because mirrors are optical devices, not communication tools like phones."
+        },
+        {
+          "n": 35,
+          "question": "I need a stamp. (What does this mean?)",
+          "options": [
+            "I don't have any stamps.",
+            "I bought a stamp.",
+            "I have lots of stamps."
+          ],
+          "correct": "I don't have any stamps.",
+          "explanation": "The verb \"need\" indicates a requirement or a necessity arising from a lack of something. If a person says they \"need a stamp,\" it implies that they do not currently possess one or have run out of them. Therefore, \"I don't have any stamps\" is the most logical inference from the statement. \"I bought a stamp.\" is incorrect because it describes a completed purchase rather than a present lack."
+        },
+        {
+          "n": 37,
+          "question": "The Airman walked into the office with his hat on. (What does this mean?)",
+          "options": [
+            "He entered without removing his hat.",
+            "He removed his hat when he entered."
+          ],
+          "correct": "He entered without removing his hat.",
+          "explanation": "The phrase \"with his hat on\" (noting that \"head\" in the prompt is a common transcription error for \"hat\") indicates that the Airman was wearing his headgear (cover) as he entered the room. In military protocol, personnel are generally expected to remove their outdoor headgear when entering a building or office, so the sentence describes a person who did not do so."
+        },
+        {
+          "n": 39,
+          "question": "The man extended his hand. (What does this mean?)",
+          "options": [
+            "He held it out.",
+            "He removed it.",
+            "He washed it.",
+            "He cut it."
+          ],
+          "correct": "He held it out.",
+          "explanation": "The verb \"extended\" in this context means to stretch something out or to reach out. When someone \"extends their hand,\" they are typically reaching forward, often to shake hands or offer assistance. Therefore, \"held it out\" is the synonymous phrase that accurately describes the action. \"He removed it.\" is incorrect because \"remove\" means to take away."
+        },
+        {
+          "n": 41,
+          "question": "He is willing to travel. (What does this mean?)",
+          "options": [
+            "He is refusing to travel.",
+            "He is agreeing to travel.",
+            "He is forced to travel.",
+            "He is afraid to travel."
+          ],
+          "correct": "He is agreeing to travel.",
+          "explanation": "To be \"willing\" to do something means to be ready, eager or prepared to do it of one's own accord. Agreeing to travel expresses exactly that consent. \"He is forced to travel\" is incorrect because being forced removes the element of free consent that \"willing\" implies."
+        },
+        {
+          "n": 44,
+          "question": "The store put a number of things on sale. What did they do?",
+          "options": [
+            "put them outside",
+            "lowered the prices",
+            "kept prices the same",
+            "stopped selling"
+          ],
+          "correct": "lowered the prices",
+          "explanation": "To \"put something on sale\" means to offer it at a reduced price for a limited period. Therefore the store lowered the prices of a number of items. \"put them outside\" is incorrect because it refers to physical placement, not to a price reduction."
+        },
+        {
+          "n": 46,
+          "question": "My father works for a Lumber Company. Where does he work?",
+          "options": [
+            "in a library",
+            "in a forest",
+            "in a laboratory",
+            "in a cemetery"
+          ],
+          "correct": "in a forest",
+          "explanation": "Lumber is wood that has been processed into beams and planks. A lumber company harvests trees, so its work takes place in a forest. \"in a laboratory\" is incorrect because laboratories are used for scientific research, not for logging."
+        },
+        {
+          "n": 47,
+          "question": "Tools should be protected against moisture. What should they be protected against?",
+          "options": [
+            "dampness",
+            "improper use"
+          ],
+          "correct": "dampness",
+          "explanation": "The word \"moisture\" refers to the presence of liquid, especially water, often in the form of vapor or condensation. In maintenance or military storage contexts, moisture is a primary cause of rust and corrosion on metal equipment. \"Dampness\" is a synonym for moisture, both describing a state of being slightly wet or humid."
+        },
+        {
+          "n": 48,
+          "question": "How will a new job enable him to buy a car?",
+          "options": [
+            "He will need it to get to work.",
+            "He will know how to drive then.",
+            "He will earn enough money.",
+            "He will have many new friends."
+          ],
+          "correct": "He will earn enough money.",
+          "explanation": "To \"enable\" someone to do something means to give them the means or opportunity to do it. A new job provides income, so the new job enables the purchase by giving him enough money. \"He will need it to get to work.\" is incorrect because it states a reason for wanting a car, not the means of affording one."
+        },
+        {
+          "n": 53,
+          "question": "Sergeant Harris asked the mechanic, \"When will you tear down the unit?\" What did she want to know?",
+          "options": [
+            "when the unit will be in town",
+            "when the unit will be sold",
+            "when the unit will be disassembled",
+            "when the unit will be assembled"
+          ],
+          "correct": "when the unit will be disassembled",
+          "explanation": "In mechanical and military maintenance vocabulary, to \"tear down\" a unit means to take it apart into its component pieces for inspection, repair or overhaul. \"Disassembled\" is the direct synonym. \"when the unit will be assembled\" is incorrect because assembling is the opposite operation — putting the parts back together."
+        },
+        {
+          "n": 54,
+          "question": "The sailor can steer that small boat. (What does this mean?)",
+          "options": [
+            "He can guide it.",
+            "He can get in it.",
+            "He can take pictures of it."
+          ],
+          "correct": "He can guide it.",
+          "explanation": "The verb \"steer\" means to control the direction of a vessel or vehicle. In a naval or maritime context, a sailor steering a boat is responsible for guiding it along a specific course or path. Therefore, \"guide\" is the most accurate synonym for \"steer\" in this sentence. \"He can get in it.\" is incorrect because entering a boat is not the same as directing it."
+        },
+        {
+          "n": 55,
+          "question": "I'm running short of cash this week. (What does this mean?)",
+          "options": [
+            "I'm getting low on money.",
+            "I'm looking for a lost check.",
+            "I'm getting lots of money."
+          ],
+          "correct": "I'm getting low on money.",
+          "explanation": "The idiom \"running short of\" something means that you are close to using up your entire supply or that you do not have enough of it left. In this context, \"cash\" refers to money. Therefore, \"running short of cash\" directly translates to having very little money remaining for the rest of the week."
+        },
+        {
+          "n": 56,
+          "question": "You must tell the attorney nothing but the truth. (What does this mean?)",
+          "options": [
+            "Tell him part of the truth.",
+            "Tell him nothing at all.",
+            "Tell him all lies.",
+            "Tell him only the truth."
+          ],
+          "correct": "Tell him only the truth.",
+          "explanation": "The expression \"nothing but the truth\" is a fixed legal formula meaning exclusively the truth, with nothing false added. It therefore means to tell him only the truth. \"Tell him nothing at all.\" is incorrect because it misreads \"nothing but\" as a simple negation."
+        },
+        {
+          "n": 65,
+          "question": "\"Where are we going to camp?\" \"There's a good place over by those big trees.\" What will they do?",
+          "options": [
+            "sleep overnight",
+            "eat a big lunch"
+          ],
+          "correct": "sleep overnight",
+          "explanation": "In English, the verb \"to camp\" means to set up a temporary shelter, such as a tent, and stay there for a period of time, typically overnight. In a military context, this is similar to establishing a bivouac or a temporary encampment for rest. The dialogue indicates the speakers are looking for a location to perform this activity, which directly implies they will be staying through the night."
+        },
+        {
+          "n": 74,
+          "question": "There were ________ dishes on the floor.",
+          "options": [
+            "broke",
+            "broken",
+            "break"
+          ],
+          "correct": "broken",
+          "explanation": "In this sentence, an adjective is needed to describe the state or condition of the \"dishes\" found on the floor. In English, the past participle form of a verb (V3) is frequently used as an adjective to describe a completed action or a resulting state. \"Broken\" is the past participle of the verb \"break\" and correctly modifies the noun \"dishes.\""
+        },
+        {
+          "n": 77,
+          "question": "I will be at the meeting if I ________ get away.",
+          "options": [
+            "ought to",
+            "will",
+            "might",
+            "can"
+          ],
+          "correct": "can",
+          "explanation": "The conditional clause needs a modal of ability. \"Can\" expresses the capability of getting away from another obligation, which is the condition for attending the meeting. \"might\" is incorrect because it expresses possibility rather than ability, and it is not normally combined with \"if\" in this way."
+        },
+        {
+          "n": 79,
+          "question": "He cut the meat into pieces. (Select the closest synonym.)",
+          "options": [
+            "carved",
+            "bought",
+            "cleaned"
+          ],
+          "correct": "carved",
+          "explanation": "In the context of food and dining, the verb \"to carve\" specifically refers to the act of cutting cooked meat into slices or pieces so that it can be served. Therefore, \"carved\" is a direct synonym for \"cut the meat into pieces\" in this sentence. \"bought\" is incorrect because it means to have purchased the meat, which relates to a transaction."
+        },
+        {
+          "n": 82,
+          "question": "Jack will insert the paper. (Select the closest synonym for \"insert\".)",
+          "options": [
+            "put in",
+            "buy",
+            "exchange"
+          ],
+          "correct": "put in",
+          "explanation": "The verb \"insert\" means to place, fit, or thrust something into something else. In this context, Jack is placing a piece of paper into a device (like a printer or a typewriter). \"Put in\" is a phrasal verb that serves as a direct synonym for \"insert.\" \"buy\" is incorrect because it means to purchase something with money, which does not relate to placing an object."
+        },
+        {
+          "n": 86,
+          "question": "The NCO expects his men ________ the proper uniform.",
+          "options": [
+            "wear",
+            "be wearing",
+            "to wear",
+            "are wearing"
+          ],
+          "correct": "to wear",
+          "explanation": "The verb \"expect\" follows a specific grammatical pattern when it involves an object performing an action: \"expect + object + to-infinitive.\" In this sentence, \"the NCO\" is the subject, \"his men\" is the object, and \"to wear\" is the to-infinitive required to complete the structure. This is a common way to express requirements or anticipated behavior in military leadership contexts."
+        },
+        {
+          "n": 87,
+          "question": "After ________ the money, he put it in the safe.",
+          "options": [
+            "count",
+            "to count",
+            "counting"
+          ],
+          "correct": "counting",
+          "explanation": "In this sentence, \"After\" functions as a preposition. In English grammar, prepositions are followed by nouns or gerunds (the -ing form of a verb). Using the gerund \"counting\" correctly completes the phrase, indicating the action performed before the main clause. The subject of the sentence (\"he\") is the one who performed the counting."
+        },
+        {
+          "n": 91,
+          "question": "It happened at 10 o'clock. (Select the closest synonym for \"happened\".)",
+          "options": [
+            "took place",
+            "came",
+            "took charge"
+          ],
+          "correct": "took place",
+          "explanation": "The phrase \"took place\" is a common idiomatic expression that means to happen or occur. In the sentence \"It happened at 10 o'clock,\" the verb \"happened\" can be replaced by \"took place\" without changing the meaning of the statement, indicating that an event occurred at a specific time. \"came\" is incorrect because it refers to arrival or movement toward a place."
+        },
+        {
+          "n": 92,
+          "question": "Go to sick call right away. (What does this mean?)",
+          "options": [
+            "go at once",
+            "walk straight",
+            "run away"
+          ],
+          "correct": "go at once",
+          "explanation": "In English, the phrase \"right away\" is an idiomatic expression meaning immediately, without delay, or at once. In a military context, \"sick call\" refers to the scheduled time when service members report for medical attention. Telling someone to go to sick call \"right away\" means they should report for medical evaluation immediately."
+        },
+        {
+          "n": 93,
+          "question": "When will Ray wind up the job? (Select the closest synonym for \"wind up\".)",
+          "options": [
+            "finish",
+            "motivate",
+            "join"
+          ],
+          "correct": "finish",
+          "explanation": "The phrasal verb \"wind up\" is an idiomatic expression that means to bring something to a conclusion or to end a process. In the context of a job or a task, asking when someone will \"wind up the job\" is synonymous with asking when they will finish or complete it. This is a common phrase used in both general and military environments when discussing project timelines or operational phases."
+        },
+        {
+          "n": 94,
+          "question": "Mr. Stein's recital was ________ one yet.",
+          "options": [
+            "the most pallid",
+            "more pallid",
+            "more pallid than"
+          ],
+          "correct": "the most pallid",
+          "explanation": "This sentence requires a superlative adjective because it compares one specific recital to all of Mr. Stein's previous recitals (indicated by the word \"yet\"). In English, superlatives for multi-syllable adjectives are formed using \"the most\" + the adjective. The word \"one\" acts as the noun being modified, necessitating the definite article \"the\". Therefore, \"the most pallid\" is the only grammatically complete and correct choice."
+        },
+        {
+          "n": 95,
+          "question": "Those immigrants ________ two months by the first of October.",
+          "options": [
+            "should be detained",
+            "can detain",
+            "will have been detained",
+            "will detain"
+          ],
+          "correct": "will have been detained",
+          "explanation": "This sentence requires the Future Perfect Passive tense. The time marker \"by the first of October\" indicates a point in the future by which an action or state will be completed. The phrase \"two months\" indicates the duration of that state. In English, the construction \"by + [future time]\" typically triggers the Future Perfect tense (\"will have + past participle\"). Because immigrants are the ones being held by authorities (they are the receivers of the action), the passive voice (\"been detained\") must be used."
+        },
+        {
+          "n": 98,
+          "question": "When you loosen this nut, it will ________ .",
+          "options": [
+            "be tightened",
+            "come off",
+            "crack",
+            "stay tight"
+          ],
+          "correct": "come off",
+          "explanation": "To \"loosen\" a nut means to rotate it in a direction that reduces tension or unscrews it. In a mechanical context, the logical progression of loosening a nut is that it will eventually detach from the bolt or stud. The phrasal verb \"come off\" correctly describes this action of detaching or becoming removed. \"be tightened\" is incorrect because it is the antonym of loosening; tightening increases tension, whereas loosening decreases it."
+        },
+        {
+          "n": 100,
+          "question": "Matthew loves to ________ about his exploits on the football field.",
+          "options": [
+            "distort",
+            "utter",
+            "boast",
+            "impart"
+          ],
+          "correct": "boast",
+          "explanation": "To \"boast\" means to speak with excessive pride or self-satisfaction about one's achievements, possessions, or abilities. In English, this verb is commonly paired with the preposition \"about.\" Given the context of \"exploits\" (which are bold, daring, or successful feats), \"boast\" is the most natural and logically fitting choice for the sentence. \"distort\" is incorrect because it means to twist out of shape or to misrepresent."
+        }
+      ]
+    },
+    {
+      "form": "71",
+      "questions": [
+        {
+          "n": 93,
+          "question": "Watch out for speeding cars on the expressway.",
+          "options": [
+            "Look at",
+            "Be careful of",
+            "Glance at",
+            "Take care of"
+          ],
+          "correct": "Be careful of",
+          "explanation": "The phrasal verb \"watch out for\" is an idiomatic expression used to warn someone to be alert, vigilant, or cautious regarding a potential danger or hazard. In the context of an expressway with speeding cars, it serves as a safety warning to remain attentive to avoid accidents. \"Look at\" is incorrect because it simply means to direct your eyes toward something to see it, whereas \"watch out for\" implies a specific need for safety and caution."
+        },
+        {
+          "n": 94,
+          "question": "Mary should ________ more film for her camera when she was shopping.",
+          "options": [
+            "had gotten",
+            "get",
+            "be getting",
+            "have gotten"
+          ],
+          "correct": "have gotten",
+          "explanation": "This sentence requires a past modal construction because the context \"when she was shopping\" indicates an action that took place in the past. To express a past obligation, recommendation, or a missed opportunity that did not happen, English uses the structure should + have + past participle. In this case, \"should have gotten\" indicates that Mary was supposed to buy film in the past, but she didn't. \"had gotten\" is incorrect because modal verbs like \"should\" cannot be followed by \"had\"."
+        }
+      ]
+    },
+    {
+      "form": "73",
+      "questions": [
+        {
+          "n": 3,
+          "question": "Have you decided what kind of car you want?",
+          "options": [
+            "Have you the kind of car you want?",
+            "Have you driven the car you want?",
+            "Have you bought the car you want?",
+            "Have you made up your mind about which car you want?"
+          ],
+          "correct": "Have you made up your mind about which car you want?",
+          "explanation": "The question asks if the person has \"decided\" on a choice. In English, the idiom \"to make up one's mind\" is a common synonymous expression for \"to decide.\" Both phrases refer to the cognitive process of reaching a conclusion or selecting an option after consideration. \"Have you the kind of car you want?\" is incorrect because it asks about current possession."
+        },
+        {
+          "n": 4,
+          "question": "He's going to the grocery store. What will he buy?",
+          "options": [
+            "milk and bread",
+            "posts and wires",
+            "nails and lumber"
+          ],
+          "correct": "milk and bread",
+          "explanation": "A grocery store is a retail establishment that primarily sells food products and various household items. \"milk and bread\" are classic examples of items purchased at a grocery store. This question tests the association between a specific location and the common items associated with it. \"posts and wires\" is incorrect because these are materials used for fencing and are typically sold at hardware or farm supply stores."
+        },
+        {
+          "n": 15,
+          "question": "The bellboy took my suitcase. What did he take?",
+          "options": [
+            "my purse",
+            "my bag",
+            "my coat",
+            "my key"
+          ],
+          "correct": "my bag",
+          "explanation": "The noun \"suitcase\" refers to a large bag used for carrying personal belongings, particularly clothes, when traveling. Among the options provided, \"my bag\" is the most appropriate synonym for \"suitcase.\" In military and general travel contexts, these terms are often used interchangeably to refer to luggage. \"my purse\" is incorrect because a purse is a small bag typically used for carrying money and small personal items."
+        },
+        {
+          "n": 17,
+          "question": "Did the commander have a fever yesterday? (The audio transcript renders \"commander\" as \"comedone\".)",
+          "options": [
+            "Yes, he received a gift.",
+            "Yes, he was ill.",
+            "Yes, he was angry.",
+            "Yes, he gave a party."
+          ],
+          "correct": "Yes, he was ill.",
+          "explanation": "The word \"fever\" refers to an abnormally high body temperature, which is a common symptom of being sick or \"ill.\" Asking if someone had a fever is a way to inquire about their physical health. Therefore, the response \"Yes, he was ill\" directly correlates to the medical condition mentioned."
+        },
+        {
+          "n": 23,
+          "question": "Edward said, \"I'm looking forward to seeing my family.\" What did he mean?",
+          "options": [
+            "He is expecting to see them.",
+            "He is leaving his family.",
+            "He has already seen them."
+          ],
+          "correct": "He is expecting to see them.",
+          "explanation": "The idiomatic expression \"looking forward to\" means to anticipate a future event with pleasure or excitement. In this context, Edward is expressing that he anticipates and is happy about the upcoming visit or meeting with his family. It implies a future event that is expected to happen. \"He is leaving his family.\" is incorrect because \"looking forward to seeing\" implies approaching or meeting them, not departing from them."
+        },
+        {
+          "n": 25,
+          "question": "Margaret looks like her father. (What does this mean?)",
+          "options": [
+            "She resembles her father.",
+            "She is looking for her father.",
+            "She looks after her father.",
+            "She is fond of her father."
+          ],
+          "correct": "She resembles her father.",
+          "explanation": "The phrase \"looks like\" is a common expression used to indicate physical resemblance or having a similar appearance to someone else. In this sentence, it means Margaret has a physical appearance similar to her father. \"She is looking for her father.\" is incorrect because \"looking for\" means to search for someone or something that is lost or missing."
+        },
+        {
+          "n": 28,
+          "question": "Rufus told Jim to meet him right here. Where should Jim meet him?",
+          "options": [
+            "at this exact location",
+            "in about an hour",
+            "a block from here",
+            "at the movie"
+          ],
+          "correct": "at this exact location",
+          "explanation": "The expression \"right here\" uses \"right\" as an intensifier meaning \"exactly\" or \"precisely.\" It therefore designates the exact spot where the speaker is standing. \"a block from here\" is incorrect because it indicates a different location some distance away."
+        },
+        {
+          "n": 30,
+          "question": "The animals are being kept in a pen. Why were they put there?",
+          "options": [
+            "so they couldn't escape",
+            "so they couldn't grow"
+          ],
+          "correct": "so they couldn't escape",
+          "explanation": "The word \"pin\" in the sentence is a phonetic misspelling of \"pen,\" which refers to a small fenced enclosure for animals (such as livestock or pets). The primary purpose of placing animals in a pen is to provide containment. Therefore, the most logical reason for putting them there is to prevent them from wandering off or escaping. In ALCPT listening contexts, identifying the function of common objects or enclosures is a frequent task."
+        },
+        {
+          "n": 33,
+          "question": "Bob slept in the open. Where did he sleep?",
+          "options": [
+            "outside",
+            "inside",
+            "upstairs"
+          ],
+          "correct": "outside",
+          "explanation": "The phrase \"in the open\" is an idiomatic expression meaning outdoors or in an unsheltered area, exposed to the sky. In a military context, sleeping \"in the open\" refers to sleeping without a tent, barracks, or overhead cover, typically during field exercises or deployment. \"upstairs\" is incorrect because \"in the open\" implies being outdoors, whereas \"upstairs\" refers to a level within a building."
+        },
+        {
+          "n": 34,
+          "question": "The watchman looked downward. Where did he look?",
+          "options": [
+            "to the bottom",
+            "to one side",
+            "to the back"
+          ],
+          "correct": "to the bottom",
+          "explanation": "The word \"downward\" is an adverb used to describe movement or direction toward a lower place, point, or level. In the sentence \"The watchman looked downward,\" the watchman is looking toward the ground or the base of his position. Therefore, \"to the bottom\" is the synonymous phrase that correctly identifies where he looked. \"to one side\" is incorrect because it describes a lateral or horizontal direction (left or right)."
+        },
+        {
+          "n": 35,
+          "question": "Was the light blinking?",
+          "options": [
+            "Yes, it was flashing.",
+            "Yes, it was bright.",
+            "Yes, it was off."
+          ],
+          "correct": "Yes, it was flashing.",
+          "explanation": "The word \"blinking\" in the context of lights refers to a light that repeatedly turns on and off or fluctuates in intensity. \"Flashing\" is the most accurate synonym for this action. In military and aviation contexts, identifying light signals (blinking, flashing, steady) is crucial for communication and safety. \"Yes, it was off.\" is incorrect because \"blinking\" implies the light was active and visible at intervals."
+        },
+        {
+          "n": 39,
+          "question": "The top of the table was rough. (What does this mean?)",
+          "options": [
+            "The top was dirty.",
+            "The top was shiny.",
+            "The top was not smooth.",
+            "The top wasn't hard."
+          ],
+          "correct": "The top was not smooth.",
+          "explanation": "The word \"rough\" is an adjective used to describe a surface that is uneven, coarse, or irregular. In the context of a table top, \"rough\" is the direct antonym of \"smooth.\" Therefore, saying the top was rough means it was not smooth. \"The top was dirty.\" is incorrect because \"rough\" refers to the physical texture of the surface, whereas \"dirty\" refers to the presence of grime or soil."
+        },
+        {
+          "n": 42,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "The road had a bend.",
+            "The road had a line.",
+            "The road was wide.",
+            "The road was not long."
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 46,
+          "question": "Why does he have difficulty reading small print?",
+          "options": [
+            "He can't afford books.",
+            "His sight is poor.",
+            "He can't borrow books.",
+            "His printing is poor."
+          ],
+          "correct": "His sight is poor.",
+          "explanation": "The phrase \"small print\" refers to text that is written or printed in very small characters. If a person has difficulty reading small print, it is usually because their vision or \"sight\" is not sharp enough to distinguish the small letters. In a military or general context, this indicates a need for corrective lenses or a medical evaluation of one's eyesight. \"He can't afford books.\" is incorrect because a person's financial ability to buy books is unrelated to visual acuity."
+        },
+        {
+          "n": 48,
+          "question": "Bob jumped into the water head first. What did he do?",
+          "options": [
+            "He dived in.",
+            "He entered the water before anyone else.",
+            "He went in with his feet first.",
+            "He entered the water without looking at it first."
+          ],
+          "correct": "He dived in.",
+          "explanation": "To jump into water \"head first\" is the standard definition of the verb \"to dive.\" In this action, the head enters the water surface before any other part of the body. \"He entered the water before anyone else.\" is incorrect because \"head first\" refers to physical orientation during the jump, not the chronological order of people entering the water."
+        },
+        {
+          "n": 49,
+          "question": "Joe heard a rumor that the airbase was going to close. What did he hear?",
+          "options": [
+            "a statement of fact",
+            "an official statement",
+            "a statement of authority",
+            "an unconfirmed statement"
+          ],
+          "correct": "an unconfirmed statement",
+          "explanation": "A \"rumor\" is a piece of information or a story circulating among people whose truth has not been verified. Therefore, hearing a rumor means hearing an unconfirmed statement. \"an official statement\" is incorrect because official statements come from an authorized source and are verified, which is the opposite of a rumor."
+        },
+        {
+          "n": 50,
+          "question": "Rush this order through. (What does this mean?)",
+          "options": [
+            "Get it out in a hurry.",
+            "Examine it carefully.",
+            "Check to see if it is all there."
+          ],
+          "correct": "Get it out in a hurry.",
+          "explanation": "The phrasal verb \"rush through\" means to handle, process, or complete a task or order with extreme speed and urgency. In a military or logistics context, if someone is told to rush an order through, it means they need to prioritize it and ensure it is dispatched or finished as quickly as possible, bypassing standard delays. \"Examine it carefully.\" is incorrect because rushing implies speed, which is often the opposite of a slow, careful review."
+        },
+        {
+          "n": 52,
+          "question": "That table is not level. (What does this mean?)",
+          "options": [
+            "One end is lower than the other.",
+            "It isn't large enough.",
+            "It isn't suitable.",
+            "One side is longer than the other."
+          ],
+          "correct": "One end is lower than the other.",
+          "explanation": "The word \"level\" describes a surface that is perfectly horizontal and flat, with no part higher or lower than another. If a table is not level, it is tilted or slanted, which means one end or side is lower than the other. This is a common term used in carpentry, construction, and general maintenance. \"It isn't large enough.\" is incorrect because size (area) is not related to being level (horizontal orientation)."
+        },
+        {
+          "n": 53,
+          "question": "He broke away from the crowd. (What does this mean?)",
+          "options": [
+            "He freed himself from the crowd.",
+            "He got some news from the crowd.",
+            "He joined the crowd.",
+            "He encircled the crowd."
+          ],
+          "correct": "He freed himself from the crowd.",
+          "explanation": "The phrasal verb \"break away\" means to escape from a physical hold, to separate oneself from a group, or to leave a situation. In this sentence, it indicates that the person detached himself or moved out from among the people in the crowd. \"He got some news from the crowd.\" is incorrect because \"break away\" refers to physical or social separation, not the reception of information."
+        },
+        {
+          "n": 54,
+          "question": "My neighbor's child is terribly spoiled. He is ________ .",
+          "options": [
+            "dirty",
+            "overindulged",
+            "sleepy",
+            "aggressive"
+          ],
+          "correct": "overindulged",
+          "explanation": "In this context, the adjective \"spoiled\" refers to a child who behaves badly because they are given everything they want and are not disciplined. The word \"overindulged\" is a perfect synonym, as it means to allow someone to have or do everything they want to such an extent that it has a bad effect on their character. \"dirty\" is incorrect because it refers to physical cleanliness and does not relate to a child's behavioral condition."
+        },
+        {
+          "n": 55,
+          "question": "Why did the police set up a barricade?",
+          "options": [
+            "to block traffic",
+            "to let the people through",
+            "to clear the road"
+          ],
+          "correct": "to block traffic",
+          "explanation": "A barricade is a physical barrier, obstacle, or structure used to obstruct or control the passage of people or vehicles. In police or military contexts, setting up a barricade is specifically done to stop movement through a designated area. Therefore, \"to block traffic\" is the primary purpose of this action. \"to let the people through\" is incorrect because a barricade is intended to prevent passage, not facilitate it."
+        },
+        {
+          "n": 56,
+          "question": "Sue's eyes are puffy. They are ________ .",
+          "options": [
+            "red",
+            "sore",
+            "swollen",
+            "black"
+          ],
+          "correct": "swollen",
+          "explanation": "The word \"puffy\" is used to describe a condition where a part of the body, such as the eyes or face, appears distended, bloated, or larger than normal due to fluid retention, inflammation, lack of sleep, or crying. The direct synonym for this physical state is \"swollen.\" \"red\" is incorrect because it refers to the color of the eyes (often bloodshot or irritated), which describes discoloration rather than physical distension."
+        },
+        {
+          "n": 57,
+          "question": "\"What are you going to do this afternoon?\" \"I'm going to go shopping.\" What is the woman going to do?",
+          "options": [
+            "go shopping",
+            "get something to eat",
+            "visit some friends"
+          ],
+          "correct": "go shopping",
+          "explanation": "In this dialogue interpretation task, the woman states her intention for the afternoon by saying she is going to \"go shopping.\" This phrase indicates that her plan is to visit retail stores to browse or purchase items. The question asks what she is going to do, confirming her previously stated intent. \"get something to eat\" is incorrect because the speaker did not mention hunger or a plan to visit a restaurant or cafe."
+        },
+        {
+          "n": 60,
+          "question": "\"Why do you keep doing that?\" \"I'm trying to develop my muscles.\" What does the man want to do?",
+          "options": [
+            "work hard",
+            "be happy",
+            "become stronger",
+            "think better"
+          ],
+          "correct": "become stronger",
+          "explanation": "To \"develop one's muscles\" means to build muscle mass and physical power through exercise. The direct result and purpose of that activity is to become stronger. \"think better\" is incorrect because developing muscles concerns physical capability, not cognitive performance."
+        },
+        {
+          "n": 66,
+          "question": "\"What's the matter, Jane?\" \"I have a cut on my heel.\" Where is the injury?",
+          "options": [
+            "back",
+            "hand",
+            "foot",
+            "arm"
+          ],
+          "correct": "foot",
+          "explanation": "The word \"heel\" refers to the back part of the human foot, located below the ankle. Therefore, if Jane has a cut on her heel, the injury is located on her foot. This question tests basic anatomical vocabulary in English. \"back\" is incorrect because the heel is an anatomical part of the lower limb, not the posterior part of the torso."
+        },
+        {
+          "n": 81,
+          "question": "The lecture is boring. (What does this mean?)",
+          "options": [
+            "It is dull.",
+            "It is very interesting.",
+            "It is on a subject I like.",
+            "It is a fine lecture."
+          ],
+          "correct": "It is dull.",
+          "explanation": "The word \"boring\" describes something that is not interesting or causes a person to feel weary or restless. \"Dull\" is a precise synonym for boring, meaning lacking interest or excitement. Therefore, the two sentences convey the same meaning. \"It is very interesting.\" is incorrect because it is the antonym (opposite) of boring."
+        },
+        {
+          "n": 82,
+          "question": "The student told his roommate, \"You can count on me.\" (What does this mean?)",
+          "options": [
+            "depend on me",
+            "count for me",
+            "tell my age"
+          ],
+          "correct": "depend on me",
+          "explanation": "The phrase \"count on [someone]\" is a common English idiom and phrasal verb that means to rely on or trust someone to be helpful or to do what they promised. In this context, the student is telling his roommate that he is reliable and can be trusted to help or be there when needed. Therefore, \"depend on me\" is the correct synonymous expression. \"count for me\" is incorrect because it changes the preposition and implies performing a mathematical operation."
+        },
+        {
+          "n": 83,
+          "question": "He thought about buying a new car. (Select the closest synonym for \"thought about\".)",
+          "options": [
+            "considered",
+            "intended to",
+            "looked for"
+          ],
+          "correct": "considered",
+          "explanation": "The phrase \"thought about\" followed by a gerund (\"buying\") describes the process of mental deliberation or contemplation before making a decision. In English, \"to consider\" is a direct synonym for \"to think about\" in this context. Both indicate that the subject was weighing the options of an action. \"intended to\" is incorrect because \"intended\" implies a more firm plan or a resolved decision to act."
+        },
+        {
+          "n": 85,
+          "question": "Those books are ________ .",
+          "options": [
+            "their",
+            "theirs",
+            "them"
+          ],
+          "correct": "theirs",
+          "explanation": "The sentence requires a possessive pronoun to show ownership and avoid repeating the noun \"books.\" In English, possessive pronouns (such as mine, yours, his, hers, ours, and theirs) stand alone and do not require a following noun. \"Theirs\" effectively replaces the phrase \"the students' books.\" \"their\" is incorrect because it is a possessive adjective, which must always be followed by a noun (e.g., \"their books\")."
+        },
+        {
+          "n": 86,
+          "question": "If the mechanic ________ here, he would have charged us for the repair.",
+          "options": [
+            "am",
+            "had been"
+          ],
+          "correct": "had been",
+          "explanation": "This sentence uses the Third Conditional structure, which refers to an impossible past condition and its probable past result. These situations are hypothetical because they are now in the past and didn't happen. The grammatical pattern for the third conditional is: If + Subject + Past Perfect (had + past participle), Subject + would have + past participle. Since the second part of the sentence is \"would have charged,\" the conditional \"if\" clause must use the past perfect form \"had been.\""
+        },
+        {
+          "n": 91,
+          "question": "Go to sick call right away. (What does this mean?)",
+          "options": [
+            "go at once",
+            "go to the right",
+            "walk straight",
+            "run away"
+          ],
+          "correct": "go at once",
+          "explanation": "The phrase \"right away\" is an idiomatic adverbial expression meaning \"immediately,\" \"without delay,\" or \"at once.\" In military terminology, \"sick call\" refers to a scheduled period or location where service members can report for medical evaluation. The sentence conveys an instruction to seek medical help immediately. \"go to the right\" is incorrect because it treats the word \"right\" as a physical direction rather than an intensifier."
+        },
+        {
+          "n": 93,
+          "question": "The deer ________ the fence to get into the vegetable garden.",
+          "options": [
+            "arranged to",
+            "stood up",
+            "leaped over",
+            "climbed into"
+          ],
+          "correct": "leaped over",
+          "explanation": "Deer are well-known for their physical ability to jump high and clear obstacles. The phrase \"leaped over\" correctly describes the action of a deer clearing a fence to enter a garden. This is the most idiomatic and biologically accurate verb choice for the subject \"deer.\" \"arranged to\" is incorrect because it is a transitive verb phrase that requires a following action (e.g., arranged to jump)."
+        },
+        {
+          "n": 94,
+          "question": "I'd like to have this suit ________ .",
+          "options": [
+            "cleaned",
+            "cleanly",
+            "cleaning",
+            "cleans"
+          ],
+          "correct": "cleaned",
+          "explanation": "This sentence uses the causative structure \"have + object + past participle,\" which expresses that the subject arranges for someone else to perform an action on the object. The suit does not clean itself; it receives the action. Therefore, the past participle \"cleaned\" is the correct form. \"cleaning\" is incorrect because it would imply the suit is performing the action."
+        },
+        {
+          "n": 95,
+          "question": "Our teacher didn't come, so we ________ .",
+          "options": [
+            "told",
+            "tell",
+            "were told",
+            "were telling"
+          ],
+          "correct": "were told",
+          "explanation": "The sentence requires the passive voice because the students (the subject 'we') were the recipients of information. Since the first part of the sentence uses the past simple ('didn't come'), the result of that action must also be in the past. \"Were told\" is the past simple passive form (was/were + past participle), indicating that an authority figure or another person informed the students about the teacher's absence. \"told\" is incorrect because it is in the active voice."
+        },
+        {
+          "n": 99,
+          "question": "The same word ________ on a different list.",
+          "options": [
+            "contained",
+            "reappeared",
+            "typed",
+            "introduced"
+          ],
+          "correct": "reappeared",
+          "explanation": "The sentence requires an intransitive verb to describe the action of the subject (\"The same word\"). \"Reappeared\" means to appear again or show up in a different location. It functions correctly as an intransitive verb in this context, followed by the prepositional phrase \"on a different list.\" \"typed\" is incorrect because it is a transitive verb; the word itself cannot perform the action of typing."
+        },
+        {
+          "n": 100,
+          "question": "The silver was tarnished. (Select the closest synonym for \"tarnished\".)",
+          "options": [
+            "discolored",
+            "valuable",
+            "antique",
+            "shiny"
+          ],
+          "correct": "discolored",
+          "explanation": "The word 'tarnished' refers to the process where a metal surface, particularly silver, loses its luster and becomes dull, dark, or stained due to a chemical reaction with air or moisture. Therefore, \"discolored\" is the most accurate synonym among the choices. \"valuable\" is incorrect because 'tarnished' describes the physical condition of the surface, not the monetary worth of the object."
+        }
+      ]
+    },
+    {
+      "form": "75",
+      "questions": [
+        {
+          "n": 40,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "washed the sheets and blankets",
+            "put the sheets and blankets on the bed",
+            "built our own beds",
+            "piled the sheets and blankets on the bed"
+          ],
+          "correct": "(Not shown in the screenshot — the item was captured before the review screen.)",
+          "explanation": "Listening comprehension item. The screenshot only captures the answer choices, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 65,
+          "question": "The man ________ (listening item — the audio prompt is not visible in the screenshot).",
+          "options": [
+            "gambled",
+            "goofed",
+            "gesticulated",
+            "gravitated"
+          ],
+          "correct": "(Not shown in the screenshot — the item was captured before the review screen.)",
+          "explanation": "Listening comprehension item. The screenshot only captures the answer choices, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 91,
+          "question": "John could not keep up with me. In other words, John did ________ work than I did.",
+          "options": [
+            "more",
+            "better",
+            "less",
+            "worse"
+          ],
+          "correct": "less",
+          "explanation": "The phrasal verb \"keep up with\" means to move, progress, or increase at the same rate as someone else. If John \"could not keep up\" with the speaker, it implies he was slower and unable to maintain the same pace of production. As a result, in the same period of time, John completed a smaller quantity of work. Since \"work\" is an uncountable noun in this context, the comparative form \"less\" is used to describe this smaller quantity."
+        },
+        {
+          "n": 92,
+          "question": "The engine part was thrown away. (Select the closest synonym.)",
+          "options": [
+            "sold",
+            "disposed of"
+          ],
+          "correct": "disposed of",
+          "explanation": "The phrasal verb \"thrown away\" means to discard something that is no longer useful or needed. In a technical or maintenance environment, \"disposed of\" is the formal synonym for getting rid of waste, scrap, or obsolete parts. When an engine part is beyond repair or no longer functional, it is discarded to clear space and ensure it is not mistakenly reused. \"repaired\" is incorrect because it means to restore something to a good condition, which is the opposite of discarding it."
+        },
+        {
+          "n": 93,
+          "question": "Tell Ray to wind up the job. (Select the closest synonym.)",
+          "options": [
+            "finish",
+            "describe"
+          ],
+          "correct": "finish",
+          "explanation": "The phrasal verb \"wind up\" is an idiomatic expression that means to bring something to a conclusion, end, or finish. In military and professional contexts, it is commonly used when a task or operation is reaching its final stages and needs to be completed. Therefore, telling Ray to \"wind up the job\" is synonymous with telling him to finish it. \"start\" is incorrect because it is the opposite of \"wind up\"; \"start\" refers to the beginning of a process."
+        },
+        {
+          "n": 94,
+          "question": "If the demolition crew ________ the building, nothing will remain.",
+          "options": [
+            "razes",
+            "is razing"
+          ],
+          "correct": "razes",
+          "explanation": "This sentence follows the structure of a First Conditional (also known as the real conditional), which is used to express a probable future situation. The structure is: If + [Simple Present], [Subject] + will + [Base Verb]. The subject \"the demolition crew\" is a collective noun treated as a singular unit in this context. Therefore, it requires the third-person singular verb form \"razes\". In a military or construction context, to raze a structure means to level it completely to the ground so that nothing remains."
+        },
+        {
+          "n": 95,
+          "question": "The waiter added ________ the cost of the food and drinks.",
+          "options": [
+            "at",
+            "out",
+            "up",
+            "down"
+          ],
+          "correct": "up",
+          "explanation": "The sentence requires the phrasal verb \"add up,\" which means to calculate the total sum of several numbers or items. In a restaurant context, a waiter adds up the individual costs of food and drinks to determine the final amount on the bill. \"down\" is incorrect because while \"write down\" means to record information, \"add down\" is not a standard English phrasal verb for calculating a total sum."
+        },
+        {
+          "n": 96,
+          "question": "He decided to skip ________ .",
+          "options": [
+            "to eat",
+            "eating",
+            "being eaten"
+          ],
+          "correct": "eating",
+          "explanation": "The verb \"skip\" is used here to mean \"to omit\" or \"to pass over.\" In English grammar, certain verbs are followed by a gerund (the -ing form of a verb) rather than an infinitive. \"Skip\" is one of those verbs when it describes bypassing an activity. Therefore, \"eating\" is the correct grammatical form to follow \"skip\" in this context. \"to eat\" is incorrect because \"skip\" does not take an infinitive as its direct object in this usage."
+        },
+        {
+          "n": 100,
+          "question": "The engines give off poisonous ________ .",
+          "options": [
+            "vents",
+            "vibrations",
+            "fumes"
+          ],
+          "correct": "fumes",
+          "explanation": "Internal combustion engines, which are used in most military vehicles and equipment, produce exhaust as a byproduct of burning fuel. These exhaust gases, such as carbon monoxide, are toxic or \"poisonous.\" The word \"fumes\" specifically refers to these dangerous or strong-smelling gases or vapors emitted during a chemical process like combustion. \"vents\" is incorrect because vents are the openings or passages that allow air or gas to escape, rather than the gas itself."
+        },
+        {
+          "n": null,
+          "question": "The man was cantankerous. (Select the closest synonym.) (Item number not visible in the screenshot; it falls between items 96 and 100.)",
+          "options": [
+            "generous",
+            "mean",
+            "calm",
+            "ambitious"
+          ],
+          "correct": "mean",
+          "explanation": "The word 'cantankerous' is an adjective used to describe someone who is bad-tempered, argumentative, and uncooperative. In this context, \"mean\" serves as the most appropriate synonym, as it reflects an unpleasant or ill-natured temperament. While 'cantankerous' often specifically implies irritability or being 'cranky,' 'mean' captures the negative social behavior associated with the term. \"generous\" is incorrect because it refers to a person's willingness to give or share, which is the opposite of a difficult or irritable nature. \"calm\" is incorrect because it suggests a peaceful and tranquil state, whereas a cantankerous person is typically easily agitated and argumentative. \"ambitious\" is incorrect because it describes a person with a strong desire to achieve success or power, which has no direct relation to their temperament or personality quirks like being ill-tempered."
+        }
+      ]
+    },
+    {
+      "form": "82",
+      "questions": [
+        {
+          "n": 15,
+          "question": "When we travel we should carry some identification with us. What should we carry?",
+          "options": [
+            "some suitcases",
+            "papers showing where we're going",
+            "medical supplies",
+            "papers showing who we are"
+          ],
+          "correct": "papers showing who we are",
+          "explanation": "\"Identification\" refers to official documents that prove who a person is, such as a passport, an ID card or a military ID. Therefore, carrying identification means carrying papers showing who we are. \"papers showing where we're going\" is incorrect because those would be an itinerary or travel orders, which state the destination rather than the traveller's identity."
+        },
+        {
+          "n": 30,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "later this month",
+            "two months from now",
+            "the month following this one"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 31,
+          "question": "He wanted to know the value of my watch. What did he want to know?",
+          "options": [
+            "its shape",
+            "its color",
+            "its age"
+          ],
+          "correct": "its age",
+          "explanation": "With collectible items such as watches or antiques, the age of the item is a primary factor used to determine its market value or worth. Thus, in this specific context, knowing the value is synonymous with understanding its age. \"its shape\" is incorrect because the physical geometry or silhouette of a watch does not define its financial value. \"its color\" is incorrect because the color of the watch (silver, gold or black) is an aesthetic trait and does not indicate how much the watch is worth."
+        },
+        {
+          "n": 35,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "The top was dirty.",
+            "The top was shiny.",
+            "The top was not smooth."
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 38,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "He wanted to paint it.",
+            "He wanted to clean it.",
+            "He wanted to hide it."
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 42,
+          "question": "The pieces of wire were spliced together. (What does this mean?)",
+          "options": [
+            "They were joined.",
+            "They were separated.",
+            "They were sprayed."
+          ],
+          "correct": "They were joined.",
+          "explanation": "The verb \"to splice\" means to join or connect two or more pieces of wire, rope, or cable by intertwining or overlapping their ends. In a military or technical context, splicing is a standard method for repairing electrical circuits or extending lines. Therefore, if the pieces of wire were spliced together, they were joined. \"They were separated.\" is incorrect because it describes the opposite action of splicing."
+        },
+        {
+          "n": 43,
+          "question": "Jonathan cultivates vegetables. (What does this mean?)",
+          "options": [
+            "He eats vegetables.",
+            "He grows vegetables.",
+            "He cooks vegetables.",
+            "He likes vegetables."
+          ],
+          "correct": "He grows vegetables.",
+          "explanation": "The verb \"cultivate\" means to prepare and use land for crops, and by extension to raise or grow plants. Therefore, someone who cultivates vegetables grows them. \"He cooks vegetables.\" is incorrect because cooking concerns preparing food after harvest, not raising the plants."
+        },
+        {
+          "n": 46,
+          "question": "General Adams took over yesterday. What did he do?",
+          "options": [
+            "He assumed command.",
+            "He inspected the base.",
+            "He flew the new jet."
+          ],
+          "correct": "He assumed command.",
+          "explanation": "In military and professional contexts, the phrasal verb \"take over\" means to assume control, responsibility, or leadership of a position or organization. When a General \"takes over,\" it indicates a change of leadership where he officially begins his duties as the person in charge. Therefore, \"He assumed command\" is the direct synonym for this action."
+        },
+        {
+          "n": 48,
+          "question": "Barney's is supposed to be a very swanky restaurant, isn't it? (Select the closest synonym for \"swanky\".)",
+          "options": [
+            "elegant",
+            "unclean"
+          ],
+          "correct": "elegant",
+          "explanation": "The word \"swanky\" is an informal adjective used to describe something that is stylishly luxurious and expensive. In the context of a restaurant, it refers to a high-end, fashionable, and sophisticated establishment. Therefore, \"elegant\" is the most accurate synonym among the choices provided. \"unclean\" is incorrect because it refers to a lack of cleanliness or hygiene, which is the opposite of the high standards expected in a swanky establishment."
+        },
+        {
+          "n": 49,
+          "question": "\"You know, I think Robert has a screw loose.\" (What does this mean?)",
+          "options": [
+            "somewhat crazy",
+            "quite serious"
+          ],
+          "correct": "somewhat crazy",
+          "explanation": "The idiom \"to have a screw loose\" is an informal expression used to describe someone who is mentally unstable, eccentric, or behaving in a strange way. In this context, it is a metaphorical way of saying Robert is \"somewhat crazy\" or not thinking clearly, as if his mind were a machine with a loose component. \"quite serious\" is incorrect because having a screw loose implies a lack of mental balance or odd behaviour."
+        },
+        {
+          "n": 50,
+          "question": "The doctor had to extract the splinter from my finger. He had to take it ________ .",
+          "options": [
+            "out",
+            "over",
+            "back"
+          ],
+          "correct": "out",
+          "explanation": "The verb 'extract' means to pull out or remove something, especially by effort or force. In medical contexts, such as removing a splinter or a tooth, the most natural phrasal verb synonym is 'take out.' The preposition 'out' correctly indicates the movement of the splinter from inside the skin to the outside. \"over\" is incorrect because 'take over' means to assume control or responsibility for something."
+        },
+        {
+          "n": 52,
+          "question": "The police put the man under surveillance. (What does this mean?)",
+          "options": [
+            "watched",
+            "arrested"
+          ],
+          "correct": "watched",
+          "explanation": "The phrase \"under surveillance\" means to be kept under close observation, especially by police, military, or security forces. In this context, it signifies that the authorities were monitoring the man's activities and movements closely. Therefore, \"watched\" is the most accurate synonym among the choices. \"arrested\" is incorrect because surveillance is the act of observing someone to gather evidence or monitor them, not detaining them."
+        },
+        {
+          "n": 56,
+          "question": "Mike was amazed. (Select the closest synonym for \"amazed\".)",
+          "options": [
+            "surprised",
+            "furious",
+            "excited",
+            "tired"
+          ],
+          "correct": "surprised",
+          "explanation": "The word \"amazed\" is a synonym for being very surprised or astonished. It describes a feeling of great wonder or disbelief at something unexpected or impressive. \"furious\" is incorrect because it means extremely angry, which is a different emotion from amazement. \"excited\" is incorrect because while amazement can lead to excitement, the two are distinct; excitement refers to a state of high energy or enthusiasm."
+        },
+        {
+          "n": 58,
+          "question": "\"What happened to your car?\" \"I forgot — I only had plain water in the radiator last night.\" What did the speaker forget to add?",
+          "options": [
+            "antifreeze",
+            "oil"
+          ],
+          "correct": "antifreeze",
+          "explanation": "The dialogue implies that the car suffered damage because the radiator contained only \"plain water\" during a cold night. In automotive maintenance, water in the cooling system can freeze in low temperatures, expanding and cracking the radiator or engine block. \"Antifreeze\" is the chemical additive used to lower the freezing point of the liquid in the cooling system to prevent this specific issue. Therefore, the speaker is implying they forgot to add antifreeze."
+        },
+        {
+          "n": 61,
+          "question": "\"I've been unpacking all day and I'm tired.\" \"Why don't you take a rest?\" What is being suggested?",
+          "options": [
+            "lie down",
+            "go out",
+            "exercise",
+            "shower"
+          ],
+          "correct": "lie down",
+          "explanation": "The phrase \"take a rest\" means to relax or stop physical activity in order to recover strength. When someone expresses that they are tired from a task such as \"unpacking all day,\" the most logical suggestion for resting is to \"lie down.\" \"go out\" is incorrect because leaving the house to engage in social activities requires energy and is not consistent with the goal of resting."
+        },
+        {
+          "n": 65,
+          "question": "\"How are you doing in math, Joe?\" \"I'm in way over my head in that class.\" What does Joe mean?",
+          "options": [
+            "unable to keep up",
+            "unable to go to class",
+            "not taking math now"
+          ],
+          "correct": "unable to keep up",
+          "explanation": "The idiom \"to be in way over one's head\" means to be involved in a situation that is too difficult to handle or beyond one's ability. In this context, Joe is saying that the math class is much harder than he can manage, meaning he is \"unable to keep up\" with the lessons or the workload. \"unable to go to class\" is incorrect because the idiom refers to the difficulty of the material being taught, not a physical or scheduling inability to attend."
+        },
+        {
+          "n": 85,
+          "question": "Marge watched over her child ________ the night. (The prompt renders \"Marge\" as \"Merge\".)",
+          "options": [
+            "regarding",
+            "throughout",
+            "beyond",
+            "except"
+          ],
+          "correct": "throughout",
+          "explanation": "The preposition \"throughout\" is used to indicate that something happens during the entire period of a specific time frame. In this context, it means that Marge watched over her child from the beginning of the night until the end. This is a common way to express continuous duration in military and general English. \"regarding\" is incorrect because it means 'about' or 'concerning' and does not relate to time duration."
+        },
+        {
+          "n": 89,
+          "question": "What's holding up the movie? (Select the closest synonym for \"holding up\".)",
+          "options": [
+            "delaying",
+            "supporting",
+            "robbing"
+          ],
+          "correct": "delaying",
+          "explanation": "In this sentence, the phrasal verb \"holding up\" means to delay or impede the progress of something. When someone says they don't know what is \"holding up the movie,\" they are wondering why the film hasn't started yet or why the production is taking so long. \"supporting\" is incorrect because while \"hold up\" can mean to provide physical support (like a pillar holding up a roof), it does not make sense in the context of a movie's schedule."
+        },
+        {
+          "n": 91,
+          "question": "The deer ________ the fence to get into the vegetable garden.",
+          "options": [
+            "arranged to",
+            "stood up",
+            "leaped over",
+            "climbed into"
+          ],
+          "correct": "leaped over",
+          "explanation": "Deer are biologically known for their agility and ability to jump high obstacles. In the context of getting past a fence to enter a garden, the verb \"leaped over\" is the most accurate and natural action for this animal. \"arranged to\" is incorrect because it means to plan or organize; grammatically, it would require an infinitive verb (e.g., arranged to meet) and does not fit the physical action described."
+        },
+        {
+          "n": 95,
+          "question": "Students ________ late will miss the test.",
+          "options": [
+            "arriving",
+            "are arriving",
+            "have arrived"
+          ],
+          "correct": "arriving",
+          "explanation": "This sentence uses a reduced relative clause. The full version would be \"Students who arrive late\" or \"Students who are arriving late.\" When we reduce a relative clause that uses an active verb, we use the present participle (-ing form) to modify the noun. In this case, \"arriving late\" acts as an adjective phrase describing which students will miss the test. \"are arriving\" is incorrect because it is a finite verb form; using it here would create a sentence with two main verbs."
+        },
+        {
+          "n": 96,
+          "question": "The mood of the times ________ reflected in the music.",
+          "options": [
+            "was",
+            "has",
+            "are"
+          ],
+          "correct": "was",
+          "explanation": "The subject of the sentence is \"The mood,\" which is a singular noun. The phrase \"of the times\" acts as a prepositional phrase modifying the subject, but the verb must agree with the singular head noun \"mood.\" To form the passive voice (Subject + to be + past participle), the singular past tense verb \"was\" is required to match the singular subject. \"has\" is incorrect because it is an auxiliary verb that would require \"been\" (e.g., \"has been reflected\")."
+        },
+        {
+          "n": 99,
+          "question": "The statue was unveiled. (Select the closest synonym for \"unveiled\".)",
+          "options": [
+            "revealed",
+            "stolen",
+            "appraised",
+            "sold"
+          ],
+          "correct": "revealed",
+          "explanation": "The verb \"unveil\" means to uncover or show something for the first time, especially during a ceremony. When a statue is \"unveiled,\" the cloth covering it is removed so the public can see it. In this context, \"revealed\" is the most accurate synonym. \"stolen\" is incorrect because \"unveiled\" describes a formal and public presentation, which is the opposite of the clandestine nature of being stolen."
+        },
+        {
+          "n": 100,
+          "question": "Lawrence scared me to death when he came in. (How much was the speaker scared?)",
+          "options": [
+            "a little",
+            "on purpose",
+            "a lot",
+            "unintentionally"
+          ],
+          "correct": "a lot",
+          "explanation": "The phrase \"scared me to death\" is an idiomatic expression and a hyperbole used to emphasize that someone was extremely frightened, startled, or terrified. In this context, it indicates the intensity of the emotion felt by the speaker, making \"a lot\" the most accurate synonym among the choices. \"a little\" is incorrect because \"scared to death\" implies an extreme level of fear, which is the opposite of a small amount."
+        },
+        {
+          "n": null,
+          "question": "We're ________ gas. (Item number not visible in the screenshot; it falls between items 65 and 85.)",
+          "options": [
+            "out on",
+            "out for",
+            "out to",
+            "out of"
+          ],
+          "correct": "out of",
+          "explanation": "Being \"out of gas\" means the fuel tank is empty, which explains why the subjects cannot drive much farther. \"out on\" is incorrect because it typically refers to a location (e.g., \"out on the deck\") and does not convey the meaning of depletion. \"out for\" is incorrect because it usually expresses a purpose or a goal (e.g., \"out for a run\") rather than an empty supply. \"out to\" is incorrect because it is often part of expressions indicating direction or a state of being (e.g., \"out to sea\" or \"out to lunch\") and is not used with resources like gas to mean exhausted."
+        },
+        {
+          "n": null,
+          "question": "They finished ________ the house. (Item number not visible in the screenshot; it falls between items 85 and 89.)",
+          "options": [
+            "building",
+            "built",
+            "to build",
+            "build"
+          ],
+          "correct": "building",
+          "explanation": "In English grammar, the verb \"finish\" belongs to a specific category of verbs that must be followed by a gerund (the \"-ing\" form of a verb) when another action is described. Therefore, the phrase \"finished building\" is grammatically correct. Using an infinitive (to build) or a base form (build) after \"finish\" is a common error for English learners. \"built\" is incorrect because it is the past participle or past tense form, which cannot function as the object of the verb \"finish\" in this context."
+        }
+      ]
+    },
+    {
+      "form": "87",
+      "questions": [
+        {
+          "n": 5,
+          "question": "Doug selected a brown suit.",
+          "options": [
+            "dark outfit",
+            "dark hat",
+            "brown gloves"
+          ],
+          "correct": "dark outfit",
+          "explanation": "In English, a suit is defined as a set of outer clothes made of the same fabric and designed to be worn together, typically a jacket and trousers or a skirt. An outfit is a general term for a set of clothes worn together, so a suit is a type of outfit. Since brown is considered a dark, neutral color in clothing contexts, \"dark outfit\" serves as a synonymous paraphrase for \"brown suit.\" This question tests the ability to recognize synonyms and categorize specific items of clothing under general terms."
+        },
+        {
+          "n": 24,
+          "question": "This is a general rule for the school.",
+          "options": [
+            "a rule of thumb",
+            "a rule of finger",
+            "a rule of toe",
+            "a rule of head"
+          ],
+          "correct": "a rule of thumb",
+          "explanation": "\"A rule of thumb\" is a standard English idiom referring to a broadly accurate guide or principle based on practice or experience rather than theory. In this context, it describes a general guideline or policy applied to the school. \"A rule of finger,\" \"a rule of toe,\" and \"a rule of head\" are incorrect because they are invented variations; no such expressions exist in English."
+        },
+        {
+          "n": 30,
+          "question": "The boy had a sore throat.",
+          "options": [
+            "He had a pain",
+            "He had a throat",
+            "He had a fruit",
+            "He had a cold"
+          ],
+          "correct": "He had a pain",
+          "explanation": "A \"sore\" throat means the throat is painful or inflamed, so the boy was experiencing pain. \"He had a throat\" is meaningless as a paraphrase, and \"He had a cold\" adds information not stated, since a sore throat can occur without a cold."
+        },
+        {
+          "n": 31,
+          "question": "The troops are being concentrated in this area.",
+          "options": [
+            "come together",
+            "come out",
+            "taken rest"
+          ],
+          "correct": "come together",
+          "explanation": "In a military context, to concentrate troops means to bring them from various locations to a single, central area. This is often done to mass combat power before an offensive. \"Come together\" is a direct synonym for this action of gathering or grouping in one spot. \"Come out\" is incorrect because it means to emerge or be released, which does not describe the act of gathering forces in a specific area."
+        },
+        {
+          "n": 33,
+          "question": "Students will be dismissed from class today.",
+          "options": [
+            "thrown out",
+            "thrown off"
+          ],
+          "correct": "thrown out",
+          "explanation": "In a classroom context, to be dismissed means to be permitted or ordered to leave. While \"dismissed\" usually has a neutral connotation, such as the teacher ending the class, it can also mean to be removed or expelled in a more disciplinary sense. \"Thrown out\" is the only option that relates to being removed or sent away from a specific location or group. In legal and formal military English, to be dismissed and to be thrown out are frequently used as synonyms regarding cases or personnel. Note: the app displays the option as \"thrown ou\", which is a typo."
+        },
+        {
+          "n": 36,
+          "question": "Our trip was full of hardships.",
+          "options": [
+            "difficulties",
+            "abilities",
+            "possibilities"
+          ],
+          "correct": "difficulties",
+          "explanation": "The noun \"hardships\" refers to circumstances that cause suffering, adversity, or physical discomfort. When a trip is described as being full of hardships, it means the travelers encountered many problems, obstacles, or strenuous conditions. In a military context, field exercises, combat, or survival training are often characterized by hardships such as extreme weather, lack of sleep, or physical exhaustion. \"Difficulties\" is the most accurate synonym provided."
+        },
+        {
+          "n": 37,
+          "question": "Just ignore his complaints.",
+          "options": [
+            "discover him",
+            "disguise him"
+          ],
+          "correct": "discover him",
+          "explanation": "The word \"ignore\" means to intentionally pay no attention to something or someone, or to disregard them. In this sentence, the speaker is advising the listener not to react to or be bothered by the complaints. Note: there appears to be a significant error in the provided choices. In the context of the ALCPT, the synonym for ignore is typically \"pay no attention to.\" The choice \"discover him\" is logically the opposite of ignore, but since it is designated as the correct answer in the database, it likely represents a transcription error for a word like \"disregard\" or a placeholder in this specific data set."
+        },
+        {
+          "n": 38,
+          "question": "John is watching while Bill is skating by himself.",
+          "options": [
+            "Bill is looking"
+          ],
+          "correct": "Bill is looking",
+          "explanation": "The sentence describes two concurrent actions: one person is watching and the other is skating. In ALCPT and similar English proficiency exams, the goal is often to identify synonyms. \"Watching\" is a direct synonym for \"looking.\" The choice \"Bill is looking\" correctly identifies the action of observing. While the provided text has John as the one watching, this choice is the only option that uses a correct synonym for the verbs in the prompt, a common testing pattern when the transcript contains slight variations or when testing recognition of the verb's meaning over phonological traps."
+        },
+        {
+          "n": 39,
+          "question": "The enemy in the village gave up.",
+          "options": [
+            "surrendered",
+            "defended themselves",
+            "attacked the forces",
+            "counterattacked"
+          ],
+          "correct": "surrendered",
+          "explanation": "In a military context, the phrasal verb \"gave up\" means to stop fighting, yield to an opponent, or admit defeat. \"Surrendered\" is the most accurate synonym for this action. \"Defended themselves\" is incorrect because giving up is the opposite of resisting or mounting a defense. \"Attacked the forces\" is incorrect because giving up implies a cessation of hostilities, whereas attacking is an initiation of combat."
+        },
+        {
+          "n": 40,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "He told Smith to watch his jeep.",
+            "He told Smith to hide his jeep.",
+            "He told Smith to wash his jeep.",
+            "He told Smith to check over his jeep."
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 41,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "step the new line",
+            "follow the commander",
+            "follow the rules",
+            "follow the new lines"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 42,
+          "question": "The firecrackers that Jim gave me were duds.",
+          "options": [
+            "did not explode",
+            "exploded",
+            "were not expensive",
+            "fired"
+          ],
+          "correct": "did not explode",
+          "explanation": "In English, a \"dud\" is a term used to describe something that fails to work properly. In the specific context of explosives, ammunition, or firecrackers, a dud is a device that fails to detonate or explode after being ignited or triggered. Therefore, saying the firecrackers were duds means they did not explode. \"Exploded\" is incorrect because it is the antonym of being a dud; a dud specifically fails to explode."
+        },
+        {
+          "n": 43,
+          "question": "This weapon is for terrestrial use only.",
+          "options": [
+            "It is a ground weapon.",
+            "It is an air weapon.",
+            "It is an underwater weapon."
+          ],
+          "correct": "It is a ground weapon.",
+          "explanation": "The term \"terrestrial\" is derived from the Latin root terra, meaning land or earth. In a military or scientific context, terrestrial refers specifically to things relating to or used on the land or ground. Therefore, a weapon for terrestrial use is a ground weapon. \"It is an air weapon\" is incorrect because air weapons are referred to as aerial or aeronautical, involving the atmosphere."
+        },
+        {
+          "n": 45,
+          "question": "There's ________ food.",
+          "options": [
+            "very little",
+            "delicious",
+            "greasy",
+            "abundant"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 46,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "stopped",
+            "escaped",
+            "involved",
+            "faced"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 47,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "We sent a letter inside the package.",
+            "We sent a letter placed in the package.",
+            "We sent a letter with the package.",
+            "We sent a letter instead of the package."
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 50,
+          "question": "The car ran off the road and overturned.",
+          "options": [
+            "it went upside down",
+            "it went far away",
+            "it went down"
+          ],
+          "correct": "it went upside down",
+          "explanation": "The verb \"overturned\" means to flip over or capsize, such that the part that is normally on top is now on the bottom. The idiomatic phrase \"upside down\" accurately describes the resulting state of a vehicle that has overturned. In a military or safety reporting context, describing the orientation of a vehicle after an accident is crucial for situational awareness. \"It went far away\" is incorrect because, while \"ran off the road\" means the car left the pavement, it does not describe the flipping motion."
+        },
+        {
+          "n": 52,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "lately",
+            "early",
+            "completely",
+            "rarely"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 54,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "The band led the parade."
+          ],
+          "correct": "(Not shown — captured during the test; only one option was visible in the screenshot.)",
+          "explanation": "Listening comprehension item. The screenshot only captured part of the answer choices, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 56,
+          "question": "Mrs. Jackson remained unconscious for a long time after the accident. (The app shows \"in consolable\", a transcription error.)",
+          "options": [
+            "he remains unconscious",
+            "he remains conscious"
+          ],
+          "correct": "he remains unconscious",
+          "explanation": "The sentence describes Mrs. Jackson's medical state following an accident. Although the text \"in consolable\" appears to be a transcription error, likely intended to be \"unconscious,\" the context of a long recovery period after an accident and the provided database answer point to a loss of awareness. To be unconscious means a person is not awake or aware of their surroundings. In military medical reporting, such as the Glasgow Coma Scale, determining if a casualty is conscious or unconscious is the first step in triage."
+        },
+        {
+          "n": 59,
+          "question": "\"Why do you think we need a new airport?\" \"There's too much activity at the old one.\" What does the man say about the old airport?",
+          "options": [
+            "a lot of people moving around",
+            "it is under construction",
+            "it lacks a lot of facilities"
+          ],
+          "correct": "a lot of people moving around",
+          "explanation": "The man states that there is too much activity at the old airport. In English, the word \"activity\" in this context refers to a state of being busy, full of movement, or crowded with people and operations. Therefore, \"a lot of people moving around\" is the most accurate synonym provided for the level of activity mentioned. \"It is under construction\" is incorrect because activity refers to current operations, not building work."
+        },
+        {
+          "n": 61,
+          "question": "\"Where's Mr. Duke?\" \"He's in his office. He wants to see you right away.\" When does Mr. Duke want to see him?",
+          "options": [
+            "immediately",
+            "lately",
+            "after an hour",
+            "slowly"
+          ],
+          "correct": "immediately",
+          "explanation": "The phrase \"right away\" is an idiomatic expression that means immediately, at once, or without delay. In military and professional contexts, it signals that an action needs to be prioritized and performed at the current moment rather than later. \"Lately\" is incorrect because it refers to a recent period in the past, whereas \"right away\" refers to the immediate future. \"After an hour\" suggests a delay."
+        },
+        {
+          "n": 62,
+          "question": "\"Are you almost ready to leave?\" \"Yes, I just have to tie my shoes.\" What does the man have to do?",
+          "options": [
+            "to fasten his shoelaces",
+            "to find his shoelaces",
+            "to change his shoes"
+          ],
+          "correct": "to fasten his shoelaces",
+          "explanation": "The phrase \"tie my shoes\" is a common English expression meaning to secure the shoelaces of one's footwear. The man is indicating that he is nearly ready but needs a moment to perform this physical action. \"Fasten\" is a direct synonym for \"tie\" in this context. \"To find his shoelaces\" is incorrect because the man does not express that he is looking for them; he is in the process of putting them on."
+        },
+        {
+          "n": 64,
+          "question": "\"Everyone says that the new supervisor is a good Joe.\" \"That's a change, isn't it?\"",
+          "options": [
+            "He is a good fellow",
+            "He is a good observer"
+          ],
+          "correct": "He is a good fellow",
+          "explanation": "The idiomatic expression \"a good Joe\" is an informal American English term used to describe a man who is friendly, kind, cooperative, and easy to get along with. In a military or professional environment, it signifies that a supervisor is well-liked by their subordinates. Therefore, \"He is a good fellow\" is the most accurate synonym provided. \"He is a good observer\" is incorrect because \"good Joe\" describes a personality trait and character, not a skill of observation."
+        },
+        {
+          "n": 66,
+          "question": "\"Did the commander okay the expenditure for the party?\" \"Yes, we can go on with our plans now.\"",
+          "options": [
+            "the commander agreed to cover the costs",
+            "the commander agreed to study the plans"
+          ],
+          "correct": "the commander agreed to cover the costs",
+          "explanation": "In this dialogue, the first speaker asks if the commander okayed the expenditure. To okay something means to approve or authorize it. The noun \"expenditure\" refers to the act of spending money or the specific funds allocated for a purpose. Therefore, if the commander okayed the expenditure, he authorized the spending of money for the event. In a military environment, official functions often require command approval for the use of unit funds or resources. The phrase \"cover the costs\" is a direct paraphrase of authorizing that spending."
+        },
+        {
+          "n": 68,
+          "question": "The children pestered the travellers for money.",
+          "options": [
+            "bothered",
+            "irrigated",
+            "doubted",
+            "eliminated"
+          ],
+          "correct": "bothered",
+          "explanation": "The verb \"pestered\" means to annoy or trouble someone persistently with frequent requests or interruptions. In this sentence, the children are repeatedly asking the travellers for money, which is a synonymous action to bothered. \"Irrigated\" is incorrect because it refers to the process of supplying water to land or crops to help them grow. \"Doubted\" is incorrect because it means to feel uncertain about something."
+        },
+        {
+          "n": 71,
+          "question": "Synonym item: yell.",
+          "options": [
+            "shout",
+            "whisper",
+            "toot"
+          ],
+          "correct": "shout",
+          "explanation": "The word \"yell\" means to cry out or speak with a very loud voice, often due to anger, pain, or to get someone's attention from a distance. \"Shout\" is the most direct synonym for this action. In military environments, yelling or shouting may be used during drill instruction or when communicating over loud machinery, but in this specific dialogue context it refers to an aggressive tone of voice. \"Whisper\" is incorrect because it means to speak very quietly."
+        },
+        {
+          "n": 73,
+          "question": "He boasted of the big fish he caught. (Select the closest synonym for \"boasted\".)",
+          "options": [
+            "complained",
+            "showed",
+            "bragged"
+          ],
+          "correct": "bragged",
+          "explanation": "To boast means to speak with excessive pride and self-satisfaction about one's achievements, possessions, or abilities. In this sentence, the person is talking proudly about a fish he caught. \"Bragged\" is a direct synonym for \"boasted\" and fits the context perfectly. \"complained\" is incorrect because it means to express dissatisfaction or annoyance, which is the opposite of boasting about an achievement."
+        },
+        {
+          "n": 75,
+          "question": "She isn't here. She ________ to meet her uncle at the airport. (The prompt renders \"meet\" as \"must\".)",
+          "options": [
+            "will go",
+            "has gone",
+            "had gone"
+          ],
+          "correct": "has gone",
+          "explanation": "The sentence starts with \"She isn't here,\" which is in the present tense. This indicates a current state of absence. The Present Perfect tense (\"has gone\") is used to describe a past action that has a result or relevance in the present. Because she left in the past, she is currently not here. \"will go\" is incorrect because it refers to a future action, which does not explain why she is currently absent."
+        },
+        {
+          "n": 78,
+          "question": "________ exams is a teacher's job.",
+          "options": [
+            "gave",
+            "giving",
+            "having given"
+          ],
+          "correct": "giving",
+          "explanation": "This sentence requires a subject. In English, a verb can function as a noun (known as a gerund) by adding the suffix \"-ing\". The phrase \"Giving exams\" acts as the subject of the sentence, describing a general activity or duty that constitutes a teacher's job. Because the sentence describes a general fact or a characteristic of a role, the simple gerund \"giving\" is the most appropriate choice. \"gave\" is incorrect because it is a past tense verb and cannot serve as the subject."
+        },
+        {
+          "n": 79,
+          "question": "Do you all have ________ books?",
+          "options": [
+            "his",
+            "your",
+            "yours",
+            "theirs"
+          ],
+          "correct": "your",
+          "explanation": "In English grammar, the sentence structure requires a possessive adjective to modify the noun \"books.\" Possessive adjectives (my, your, his, her, its, our, their) are always followed by a noun. Since \"you all\" is the subject/direct address, the possessive adjective \"your\" is the most logical and grammatically correct fit. In a military training environment, an instructor might use this phrase to ensure a group of trainees has the required manuals or materials."
+        },
+        {
+          "n": 87,
+          "question": "If the rain stops in time, we can have a picnic; otherwise the ground will be ________ .",
+          "options": [
+            "too dry",
+            "too muddy",
+            "too dried",
+            "too mud"
+          ],
+          "correct": "too muddy",
+          "explanation": "The sentence discusses the consequence of rain on the ground. When rain falls, soil becomes saturated with water, turning into mud. The adjective \"muddy\" describes the state of being covered in or full of mud. Even if the rain stops (\"stops in time\"), the ground remains wet and soft for a period, making it unsuitable for a picnic. \"too dry\" is incorrect because rain adds moisture to the environment, making the ground wet rather than dry."
+        },
+        {
+          "n": 89,
+          "question": "Mary can go to the movies if she takes her little brother ________ .",
+          "options": [
+            "around",
+            "among",
+            "along"
+          ],
+          "correct": "along",
+          "explanation": "The phrase \"take someone along\" is a common phrasal verb meaning to bring someone with you when you go somewhere. In this context, Mary's ability to go to the movies is conditional upon her bringing her little brother with her. The word \"along\" acts as an adverbial particle indicating accompaniment. \"around\" is incorrect because \"take someone around\" implies showing someone a place or taking them on a tour."
+        },
+        {
+          "n": 92,
+          "question": "I am ________ . I don't think I will ever finish this job.",
+          "options": [
+            "practiced",
+            "discouraged",
+            "qualified",
+            "amused"
+          ],
+          "correct": "discouraged",
+          "explanation": "The context of the sentence \"I don't think I will ever finish this job\" indicates a feeling of hopelessness, frustration, or a lack of confidence. The word \"discouraged\" means to lose confidence or enthusiasm, which perfectly matches the pessimistic tone of the second sentence. In a military context, maintaining high morale is important, and being discouraged suggests a temporary loss of that morale due to a difficult or overwhelming task."
+        },
+        {
+          "n": 94,
+          "question": "If I ________ about the sale, I'd have saved a lot of money.",
+          "options": [
+            "knewn",
+            "know",
+            "known",
+            "had known"
+          ],
+          "correct": "had known",
+          "explanation": "This sentence follows the structure of the Third Conditional, which is used to describe a hypothetical situation in the past that did not actually happen. The third conditional requires the 'if' clause to be in the Past Perfect tense (had + past participle) and the main clause to use 'would have + past participle' (\"I'd have saved\"). \"Had known\" correctly completes the past perfect construction needed for this condition. \"knewn\" is incorrect because it is not a valid word in English."
+        },
+        {
+          "n": 100,
+          "question": "Have you ________ my uniform to the cleaner's yet?",
+          "options": [
+            "taken",
+            "brought",
+            "bought"
+          ],
+          "correct": "taken",
+          "explanation": "The verb \"take\" is used to describe moving something away from the speaker's current location toward a destination (in this case, the cleaner's). The sentence uses the present perfect tense (\"Have you taken\") to ask if the action has been completed at some point before now. In a military context, ensuring uniforms are clean and pressed at a professional cleaner's is a routine part of maintaining personal appearance standards. \"brought\" is incorrect because it implies movement toward the speaker."
+        }
+      ]
+    },
+    {
+      "form": "Technical & Action Verbs",
+      "questions": [
+        {
+          "n": 9,
+          "question": "He obeyed all the orders he was given. (Select the closest synonym for \"obeyed\".)",
+          "options": [
+            "created",
+            "celebrated",
+            "followed",
+            "wrote down"
+          ],
+          "correct": "followed",
+          "explanation": "The verb \"obey\" means to comply with an order, a request, or a law. In military English, orders are \"followed\" — carrying out what a superior has directed. \"wrote down\" is incorrect because recording an order in writing is not the same as complying with it."
+        },
+        {
+          "n": 10,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "options": [
+            "surplussed",
+            "enlarged",
+            "held back",
+            "supported"
+          ],
+          "correct": "(Not shown — captured during the exercise, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        }
+      ]
+    }
+  ]
+}
