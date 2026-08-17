@@ -23,7 +23,7 @@ avisa y **no duplica** nada.
 ## Instalación en un equipo nuevo
 
 ```bash
-git clone <URL-DEL-REPO>
+git clone https://github.com/Santiagomg14/alcpt.git
 cd alcpt
 
 pip install -r requirements.txt          # reportlab, pypdf
@@ -49,40 +49,49 @@ Necesitas además, en ese mismo equipo:
   un token en la URL del remoto). Si prefieres que solo haga commits locales,
   pon `GIT_PUSH=0`.
 
-Luego:
+Para el ID no hace falta buscarlo a mano:
 
 ```bash
-python bot/alcpt_bot.py
+python bot/capture_id.py     # manda /start al bot y lo escribe solo en .env
 ```
+
+Luego, para dejarlo permanente:
+
+```bash
+python bot/install_service.py
+```
+
+O para probarlo en primer plano antes: `python bot/alcpt_bot.py`
 
 ## Dejarlo siempre encendido
 
-**Linux (systemd)** — crea `/etc/systemd/system/alcpt-bot.service`:
-
-```ini
-[Unit]
-Description=Bot ALCPT
-After=network-online.target
-
-[Service]
-WorkingDirectory=/ruta/al/alcpt
-ExecStart=/usr/bin/python3 /ruta/al/alcpt/bot/alcpt_bot.py
-Restart=always
-RestartSec=10
-User=TU_USUARIO
-
-[Install]
-WantedBy=multi-user.target
-```
+Un solo comando, igual en cualquier sistema:
 
 ```bash
-sudo systemctl enable --now alcpt-bot
-journalctl -u alcpt-bot -f      # ver el registro
+python bot/install_service.py              # instalar y arrancar
+python bot/install_service.py --status     # ¿está vivo?
+python bot/install_service.py --restart    # reiniciar
+python bot/install_service.py --uninstall  # quitar
 ```
 
-**Windows** — Programador de tareas: nueva tarea, «Al iniciar sesión», acción
-`pythonw.exe` con argumento `C:\ruta\al\alcpt\bot\alcpt_bot.py`. Marca «Ejecutar
-tanto si el usuario inició sesión como si no».
+El instalador detecta el sistema y usa el mecanismo nativo, **sin pedir permisos
+de administrador**:
+
+| Sistema | Qué crea | Arranca |
+|---|---|---|
+| Windows | Tarea programada «ALCPT Bot» (cmdlets de PowerShell) | al iniciar sesión |
+| Linux | Unidad de usuario de systemd `alcpt-bot` + lingering | al arrancar el equipo |
+| macOS | LaunchAgent `com.brayhan.alcptbot` | al iniciar sesión |
+
+Antes de instalar comprueba lo que falta en ese equipo (`.env`, `requests`, Claude
+Code, git) y lo dice en vez de fallar a medias.
+
+En Windows arranca con `pythonw.exe` para que no quede una consola abierta; por eso
+el bot escribe todo en `bot/bot.log`, que es donde hay que mirar si algo va mal.
+El token nunca aparece ahí: se enmascara antes de escribir.
+
+> Telegram solo permite **un lector por token**. Antes de instalarlo en otra
+> máquina, quita el servicio de la anterior con `--uninstall`.
 
 ## Cómo funciona por dentro
 

@@ -38,7 +38,16 @@ python bot/alcpt_bot.py                              # bot de Telegram
 ## Bot de Telegram
 
 Mándale una palabra o una captura del examen y actualiza los JSON, regenera todo y hace push.
-Funciona en cualquier equipo donde clones el repo. Instrucciones en [`bot/README.md`](bot/README.md).
+Funciona en cualquier equipo donde clones el repo:
+
+```bash
+pip install -r bot/requirements.txt
+cp .env.example .env          # pon el token del bot
+python bot/capture_id.py      # manda /start y captura tu ID
+python bot/install_service.py # queda corriendo solo, arranca con el equipo
+```
+
+Detalles en [`bot/README.md`](bot/README.md).
 
 ## Audio
 

@@ -87,8 +87,27 @@ def find_claude():
 CLAUDE = find_claude()
 
 
+LOG_FILE = Path(__file__).resolve().parent / "bot.log"
+
+
+def redact(text):
+    """Nunca dejar el token en el registro: los errores de red traen la URL completa."""
+    text = str(text)
+    return text.replace(TOKEN, "***") if TOKEN else text
+
+
 def log(msg):
-    print(f"[{datetime.now():%H:%M:%S}] {msg}", flush=True)
+    """Escribe en consola y en bot/bot.log (como servicio no hay consola)."""
+    line = f"[{datetime.now():%Y-%m-%d %H:%M:%S}] {redact(msg)}"
+    try:
+        print(line, flush=True)
+    except Exception:
+        pass
+    try:
+        with open(LOG_FILE, "a", encoding="utf-8") as fh:
+            fh.write(line + "\n")
+    except OSError:
+        pass
 
 
 # --- Telegram ------------------------------------------------------------------
@@ -372,4 +391,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit as exc:
+        log(f"salida: {exc}")
+        raise
+    except Exception as exc:
+        log(f"fallo inesperado: {exc!r}")
+        raise

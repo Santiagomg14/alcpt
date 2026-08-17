@@ -18,3 +18,6 @@ venv/
 
 # Estado local del bot (desplazamiento de mensajes de Telegram)
 bot/state.json
+
+# Registro del bot
+bot/bot.log
