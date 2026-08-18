@@ -42,7 +42,8 @@ palabras técnicas (scuttlebutt, chaplain, disrepair, dud, rule of thumb, expend
 Cuando se muestre el estado del proyecto (en chat o en PDF), el orden es siempre:
 1. Vocabulario completo (todas las entradas desde el número 1).
 2. Phrasal verbs, agrupados por partícula.
-3. Sección ALCPT agrupada por formulario, con pregunta / opciones / respuesta / explicación.
+3. Idioms y expresiones militares, agrupados por uso.
+4. Sección ALCPT agrupada por formulario, con pregunta / opciones / respuesta / explicación.
 
 ### 5. Phrasal verbs
 `data/phrasal_verbs.json` explica los phrasal verbs que **aparecen de verdad** en los
@@ -54,12 +55,25 @@ carga un sentido bastante estable, y entender eso rinde más que memorizar casos
 Cada entrada lleva: significado en español, si es separable o no, la trampa típica para
 un hispanohablante, la frase del examen y su origen.
 
-El bloque `false_friends` recoge expresiones que se preguntaron y **se confunden** con
-phrasal verbs sin serlo (take place, run short of, tell time…).
-
 Explicación en español; los ejemplos, textuales en inglés.
 
-### 6. Formato de documentos
+### 6. Idioms y expresiones militares
+`data/idioms.json` tiene dos secciones con el mismo formato que los phrasal verbs:
+
+- **Idioms**, agrupados por lo que expresan (tiempo y urgencia, cantidad y dificultad,
+  cómo es una persona, estados y modo).
+- **Léxico militar**, agrupado por ámbito (mando y rutina, operaciones y combate,
+  mantenimiento y equipo, información y vida en la base).
+
+Aquí van las expresiones fijas que NO son phrasal verbs (take place, run short of,
+tell time…) y el vocabulario de servicio que el examen da por sabido (sick call,
+cover, dud, scuttlebutt…). Muchas ya están en el diccionario numerado: aquí se repiten
+a propósito, agrupadas por uso y con la frase textual del examen.
+
+Regla para no duplicar: si lleva partícula y funciona como verbo, va en
+`phrasal_verbs.json`; si no, va aquí.
+
+### 7. Formato de documentos
 Preferencia fija de Brayhan: **en Word y PDF, los párrafos siempre van justificados.**
 El script `scripts/build_pdf.py` ya aplica `TA_JUSTIFY` en todos los estilos de texto corrido.
 
@@ -73,7 +87,8 @@ alcpt/
 ├── data/
 │   ├── vocabulary.json    <- fuente única del diccionario
 │   ├── forms.json         <- fuente única de las preguntas
-│   └── phrasal_verbs.json <- phrasal verbs de los formularios, por partícula
+│   ├── phrasal_verbs.json <- phrasal verbs de los formularios, por partícula
+│   └── idioms.json        <- idioms y léxico militar, por uso
 ├── scripts/
 │   ├── build_pdf.py       <- genera el PDF consolidado
 │   ├── build_html.py      <- versión web espejo del PDF

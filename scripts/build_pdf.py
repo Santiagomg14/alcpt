@@ -6,7 +6,7 @@ Uso:
     python scripts/build_pdf.py
     python scripts/build_pdf.py --out output/mi_nombre.pdf
 
-Lee:  data/vocabulary.json  y  data/forms.json
+Lee:  data/vocabulary.json, data/phrasal_verbs.json, data/idioms.json y data/forms.json
 Escribe: output/ALCPT_Vocabulario_y_Examenes.pdf
 
 Preferencia fija del usuario: TODOS los párrafos van justificados.
@@ -151,11 +151,12 @@ def page_furniture(canvas, doc):
     canvas.restoreState()
 
 
-def cover(story, s, vocab, forms, pv):
+def cover(story, s, vocab, forms, pv, idioms):
     total = vocab["meta"]["total_confirmed"]
     form_ids = ", ".join(str(f["form"]) for f in forms["forms"])
     total_q = sum(len(f["questions"]) for f in forms["forms"])
     total_pv = sum(len(g["entries"]) for g in pv["groups"])
+    total_id = sum(len(g["entries"]) for sec in idioms["sections"] for g in sec["groups"])
     story.append(Spacer(1, 4.5 * cm))
     story.append(Paragraph("Vocabulario en inglés<br/>y exámenes ALCPT", s["cover_title"]))
     story.append(Spacer(1, 0.5 * cm))
@@ -168,6 +169,7 @@ def cover(story, s, vocab, forms, pv):
         ["Palabras confirmadas", str(total)],
         ["Formularios documentados", form_ids],
         ["Phrasal verbs explicados", str(total_pv)],
+        ["Idioms y términos militares", str(total_id)],
         ["Preguntas documentadas", str(total_q)],
         ["Actualizado", date.today().isoformat()],
     ]
@@ -247,43 +249,58 @@ def vocabulary_part(story, s, vocab):
     story.append(PageBreak())
 
 
+def _entry(story, s, e):
+    """Una expresión: título, etiqueta, significado, trampa, ejemplo y origen."""
+    expr = e.get("expr") or e.get("verb")
+    tag = e.get("tag") or e.get("sep") or ""
+    block = []
+    cabeza = esc(expr)
+    if tag:
+        cabeza += f'  <font size="7" color="#5d5d5d">[{esc(tag).upper()}]</font>'
+    block.append(Paragraph(cabeza, s["pv_verb"]))
+    block.append(Paragraph(esc(e["es"]), s["pv_mean"]))
+    if e.get("trap"):
+        block.append(Paragraph(esc(e["trap"]), s["pv_trap"]))
+    block.append(Paragraph(
+        f'&#8220;{esc(e["example"])}&#8221;  '
+        f'<font size="7" color="#5d5d5d">{esc(e["source"])}</font>', s["pv_ex"]))
+    story.append(KeepTogether(block))
+
+
+def _keys(story, s, meta):
+    for k in meta["keys"]:
+        story.append(Paragraph(f"&#8226; {esc(k)}", s["note"]))
+
+
 def phrasal_part(story, s, pv):
     story.append(Paragraph("Parte II · Phrasal verbs de los formularios 50 a 87", s["h1"]))
     story.append(Paragraph(esc(pv["meta"]["intro"]), s["body"]))
-    for k in pv["meta"]["keys"]:
-        story.append(Paragraph(f"&#8226; {esc(k)}", s["note"]))
-
-    def card(e, with_sep=True):
-        block = []
-        cabeza = esc(e["verb"])
-        if with_sep and e.get("sep"):
-            cabeza += f'  <font size="7" color="#6d6469">[{esc(e["sep"]).upper()}]</font>'
-        block.append(Paragraph(cabeza, s["pv_verb"]))
-        block.append(Paragraph(esc(e["es"]), s["pv_mean"]))
-        if e.get("trap"):
-            block.append(Paragraph(esc(e["trap"]), s["pv_trap"]))
-        block.append(Paragraph(
-            f'&#8220;{esc(e["example"])}&#8221;  '
-            f'<font size="7" color="#6d6469">{esc(e["source"])}</font>', s["pv_ex"]))
-        story.append(KeepTogether(block))
-
+    _keys(story, s, pv["meta"])
     for g in pv["groups"]:
         story.append(Paragraph(esc(g["particle"]), s["h2"]))
         story.append(Paragraph(esc(g["sense"]), s["note"]))
         for e in g["entries"]:
-            card(e)
+            _entry(story, s, e)
+    story.append(PageBreak())
 
-    ff = pv["false_friends"]
-    story.append(Paragraph(esc(ff["title"]), s["h2"]))
-    story.append(Paragraph(esc(ff["note"]), s["note"]))
-    for e in ff["entries"]:
-        card(e, with_sep=False)
 
+def idioms_part(story, s, idioms):
+    story.append(Paragraph("Parte III · Idioms y expresiones militares", s["h1"]))
+    story.append(Paragraph(esc(idioms["meta"]["intro"]), s["body"]))
+    _keys(story, s, idioms["meta"])
+    for sec in idioms["sections"]:
+        story.append(Paragraph(esc(sec["title"]), s["h1"]))
+        story.append(Paragraph(esc(sec["note"]), s["note"]))
+        for g in sec["groups"]:
+            story.append(Paragraph(esc(g["theme"]), s["h2"]))
+            story.append(Paragraph(esc(g["sense"]), s["note"]))
+            for e in g["entries"]:
+                _entry(story, s, e)
     story.append(PageBreak())
 
 
 def forms_part(story, s, forms):
-    story.append(Paragraph("Parte III · Preguntas ALCPT resueltas", s["h1"]))
+    story.append(Paragraph("Parte IV · Preguntas ALCPT resueltas", s["h1"]))
     story.append(Paragraph(
         "Each item below reproduces the question, all answer options, the correct answer and a detailed "
         "explanation. This part is written entirely in English on purpose, so that reviewing it doubles "
@@ -321,6 +338,7 @@ def main():
     vocab = json.loads((DATA / "vocabulary.json").read_text(encoding="utf-8"))
     forms = json.loads((DATA / "forms.json").read_text(encoding="utf-8"))
     pv = json.loads((DATA / "phrasal_verbs.json").read_text(encoding="utf-8"))
+    idioms = json.loads((DATA / "idioms.json").read_text(encoding="utf-8"))
 
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -339,9 +357,10 @@ def main():
 
     s = build_styles()
     story = []
-    cover(story, s, vocab, forms, pv)
+    cover(story, s, vocab, forms, pv, idioms)
     vocabulary_part(story, s, vocab)
     phrasal_part(story, s, pv)
+    idioms_part(story, s, idioms)
     forms_part(story, s, forms)
 
     doc.build(story)

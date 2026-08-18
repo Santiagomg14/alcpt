@@ -230,6 +230,10 @@ h1{
   display:block; margin-top:4px; font-family:"IBM Plex Mono",ui-monospace,monospace;
   font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--faint);
 }
+.subpart{
+  font-family:Newsreader,Georgia,serif; font-weight:600; font-size:1.35rem;
+  margin:30px 0 2px; letter-spacing:-.01em;
+}
 .sense{
   margin:0 0 4px; color:var(--muted); font-size:.93rem;
   border-left:2px solid var(--rule); padding-left:11px;
@@ -439,12 +443,13 @@ def key(text):
     return "".join(c for c in s if unicodedata.category(c) != "Mn")
 
 
-def build(vocab, forms, pv):
+def build(vocab, forms, pv, idioms):
     out = []
     a = out.append
     total_words = sum(len(s["entries"]) for s in vocab["sections"])
     total_q = sum(len(f["questions"]) for f in forms["forms"])
     total_pv = sum(len(g["entries"]) for g in pv["groups"])
+    total_id = sum(len(g["entries"]) for sec in idioms["sections"] for g in sec["groups"])
 
     a("<title>Cuaderno ALCPT</title>")
     a(f'<link rel="stylesheet" href="{FONTS}">')
@@ -460,7 +465,7 @@ def build(vocab, forms, pv):
       "Language Course Placement Test. Busca una palabra, un idiom o el enunciado de cualquier ítem.</p>")
     a('<div class="stats">')
     for fig, cap in [(total_words, "palabras"), (total_pv, "phrasal verbs"),
-                     (total_q, "preguntas"), (date.today().isoformat(), "actualizado")]:
+                     (total_id, "idioms"), (total_q, "preguntas")]:
         a(f'<div><span class="fig">{escape(str(fig))}</span><span class="cap">{cap}</span></div>')
     a("</div></header>")
 
@@ -475,7 +480,8 @@ def build(vocab, forms, pv):
     a("</label>")
     a('<div class="filters" role="group" aria-label="Filtrar por tipo">')
     for scope, label, pressed in [("all", "Todo", "true"), ("voc", "Vocabulario", "false"),
-                                  ("pv", "Phrasal verbs", "false"), ("q", "Preguntas", "false")]:
+                                  ("pv", "Phrasal verbs", "false"), ("id", "Idioms", "false"),
+                                  ("q", "Preguntas", "false")]:
         a(f'<button class="chip" type="button" data-scope="{scope}" aria-pressed="{pressed}">{label}</button>')
     a("</div>")
     a(f'<p class="tally"><span id="tally">{total_words} palabras · {total_pv} phrasal '
@@ -518,56 +524,60 @@ def build(vocab, forms, pv):
               + say_button(e["en"], f'Escuchar {e["en"]}') + '</div>')
         a("</div></details>")
 
+    # ---- phrasal verbs e idioms comparten formato
+    def entry_card(e, kind):
+        """Una expresión: título, etiqueta, significado, trampa, ejemplo y origen."""
+        expr = e.get("expr") or e.get("verb")
+        tag = e.get("tag") or e.get("sep") or ""
+        sk = key(" ".join([expr, e["es"], e["trap"], e["example"], e["source"]]))
+        a(f'<article class="pv" data-s="{escape(sk, quote=True)}" data-kind="{kind}">')
+        a('<div class="top">'
+          f'<span class="vb">{escape(expr)}</span>'
+          + (f'<span class="sep">{escape(tag)}</span>' if tag else "")
+          + say_button(expr, f"Escuchar {expr}") + '</div>')
+        a(f'<p class="mean">{escape(e["es"])}</p>')
+        a(f'<p class="trap">{escape(e["trap"])}</p>')
+        a('<div class="ex">'
+          f'<q>{escape(e["example"])}</q>'
+          + say_button(e["example"], f"Escuchar el ejemplo de {expr}") + '</div>')
+        a(f'<span class="src">{escape(e["source"])}</span>')
+        a("</article>")
+
+    def group_block(g, kind, part, label):
+        titulo = g.get("particle") or g.get("theme")
+        a(f'<details class="group" data-kind="{kind}" data-part-of="{part}">')
+        a(f'<summary><h2>{escape(titulo)}</h2>'
+          f'<span class="n">{len(g["entries"])} {label}</span></summary>')
+        a(f'<p class="sense">{escape(g["sense"])}</p>')
+        for e in g["entries"]:
+            entry_card(e, kind)
+        a("</details>")
+
+    def keys_list(meta):
+        a('<ul class="keys">')
+        for k in meta["keys"]:
+            a(f"<li>{escape(k)}</li>")
+        a("</ul>")
+
     # ---- phrasal verbs
     a('<p class="part" data-part="pv">Parte II · Phrasal verbs</p>')
     a(f'<p class="part-note">{escape(pv["meta"]["intro"])}</p>')
-    a('<ul class="keys">')
-    for k in pv["meta"]["keys"]:
-        a(f"<li>{escape(k)}</li>")
-    a("</ul>")
-
+    keys_list(pv["meta"])
     for g in pv["groups"]:
-        a('<details class="group" data-kind="pv" data-part-of="pv">')
-        a(f'<summary><h2>{escape(g["particle"])}</h2>'
-          f'<span class="n">{len(g["entries"])} phrasal verbs</span></summary>')
-        a(f'<p class="sense">{escape(g["sense"])}</p>')
-        for e in g["entries"]:
-            sk = key(" ".join([e["verb"], e["es"], e["trap"], e["example"], e["source"]]))
-            a(f'<article class="pv" data-s="{escape(sk, quote=True)}" data-kind="pv">')
-            a('<div class="top">'
-              f'<span class="vb">{escape(e["verb"])}</span>'
-              f'<span class="sep">{escape(e["sep"])}</span>'
-              + say_button(e["verb"], f'Escuchar {e["verb"]}') + '</div>')
-            a(f'<p class="mean">{escape(e["es"])}</p>')
-            a(f'<p class="trap">{escape(e["trap"])}</p>')
-            a('<div class="ex">'
-              f'<q>{escape(e["example"])}</q>'
-              + say_button(e["example"], f'Escuchar el ejemplo de {e["verb"]}') + '</div>')
-            a(f'<span class="src">{escape(e["source"])}</span>')
-            a("</article>")
-        a("</details>")
+        group_block(g, "pv", "pv", "phrasal verbs")
 
-    ff = pv["false_friends"]
-    a('<details class="group" data-kind="pv" data-part-of="pv">')
-    a(f'<summary><h2>{escape(ff["title"])}</h2>'
-      f'<span class="n">{len(ff["entries"])} expresiones</span></summary>')
-    a(f'<p class="sense">{escape(ff["note"])}</p>')
-    for e in ff["entries"]:
-        sk = key(" ".join([e["verb"], e["es"], e["example"], e["source"]]))
-        a(f'<article class="pv" data-s="{escape(sk, quote=True)}" data-kind="pv">')
-        a('<div class="top">'
-          f'<span class="vb">{escape(e["verb"])}</span>'
-          + say_button(e["verb"], f'Escuchar {e["verb"]}') + '</div>')
-        a(f'<p class="mean">{escape(e["es"])}</p>')
-        a('<div class="ex">'
-          f'<q>{escape(e["example"])}</q>'
-          + say_button(e["example"], f'Escuchar el ejemplo de {e["verb"]}') + '</div>')
-        a(f'<span class="src">{escape(e["source"])}</span>')
-        a("</article>")
-    a("</details>")
+    # ---- idioms y léxico militar
+    a('<p class="part" data-part="id">Parte III · Idioms y expresiones militares</p>')
+    a(f'<p class="part-note">{escape(idioms["meta"]["intro"])}</p>')
+    keys_list(idioms["meta"])
+    for sec in idioms["sections"]:
+        a(f'<h3 class="subpart">{escape(sec["title"])}</h3>')
+        a(f'<p class="sense">{escape(sec["note"])}</p>')
+        for g in sec["groups"]:
+            group_block(g, "id", "id", "expresiones")
 
     # ---- preguntas
-    a('<p class="part" data-part="q">Parte III · Preguntas resueltas</p>')
+    a('<p class="part" data-part="q">Parte IV · Preguntas resueltas</p>')
     a('<p class="part-note">Cada ítem reproduce el enunciado, todas las opciones, la respuesta correcta '
       "y la explicación. Esta parte va íntegramente en inglés a propósito: repasarla es también "
       "práctica de lectura al nivel del examen.</p>")
@@ -600,7 +610,8 @@ def build(vocab, forms, pv):
     a('<div class="empty" id="empty"><strong>Sin coincidencias</strong>'
       "Prueba con otra palabra, o revisa el filtro de arriba.</div>")
     a(f'<footer><span>Brayhan · nivel B2</span>'
-      f'<span>{total_words} palabras · {total_pv} phrasal verbs · {total_q} preguntas</span></footer>')
+      f'<span>{total_words} palabras · {total_pv} phrasal verbs · '
+      f'{total_id} idioms · {total_q} preguntas</span></footer>')
     a("</div>")
     a(f"<script>{JS}</script>")
     return "\n".join(out)
@@ -641,8 +652,9 @@ def main():
     vocab = json.loads((DATA / "vocabulary.json").read_text(encoding="utf-8"))
     forms = json.loads((DATA / "forms.json").read_text(encoding="utf-8"))
     pv = json.loads((DATA / "phrasal_verbs.json").read_text(encoding="utf-8"))
+    idioms = json.loads((DATA / "idioms.json").read_text(encoding="utf-8"))
 
-    html = build(vocab, forms, pv)
+    html = build(vocab, forms, pv, idioms)
     if args.standalone:
         html = wrap_standalone(html)
 

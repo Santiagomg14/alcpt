@@ -1,0 +1,493 @@
+{
+  "meta": {
+    "scope": "Formularios 50 a 87",
+    "owner": "Brayhan",
+    "last_updated": "2026-08-17",
+    "intro": "Dos frentes que el ALCPT castiga sin piedad. Los idioms, porque su significado no está en las palabras: «a good Joe» no habla de nadie llamado Joe. Y el léxico militar, porque el examen está escrito para personal de la fuerza y da por sabidas cosas como «sick call» o «tear down the unit». Todo lo de aquí salió de los formularios 50 a 87, con la frase textual del examen.",
+    "keys": [
+      "Muchas de estas palabras ya están en el diccionario numerado. Aquí vuelven agrupadas por uso y con la frase del examen, que es como de verdad se fijan.",
+      "En los idioms nunca traduzcas palabra por palabra: busca la idea completa.",
+      "El léxico militar suele tener un sentido corriente y otro de servicio: «cover» es tapar, pero también el cubrecabeza reglamentario."
+    ]
+  },
+  "sections": [
+    {
+      "id": "idioms",
+      "title": "Idioms y expresiones",
+      "note": "Expresiones fijas cuyo significado no se deduce de las palabras sueltas. Se agrupan por lo que expresan, que es como suelen preguntarse.",
+      "groups": [
+        {
+          "theme": "Tiempo y urgencia",
+          "sense": "Cuándo pasa algo y con cuánta prisa. Es de lo más preguntado en las secciones de comprensión.",
+          "entries": [
+            {
+              "expr": "right away",
+              "es": "de inmediato, ahora mismo, sin demora",
+              "tag": "muy frecuente",
+              "trap": "«Right» aquí no es «derecha» ni «correcto»: es un intensificador. «Go to the right» sería otra cosa.",
+              "example": "Go to sick call right away.",
+              "source": "Form 70 #92, Form 73 #91, Form 87 #61"
+            },
+            {
+              "expr": "at once",
+              "es": "en el acto, inmediatamente",
+              "tag": "sinónimo de right away",
+              "trap": "También puede significar «a la vez», según el contexto: don't all talk at once.",
+              "example": "Go at once.",
+              "source": "Form 70 #92"
+            },
+            {
+              "expr": "in a hurry",
+              "es": "con prisa, a las carreras",
+              "tag": "",
+              "trap": "«Get it out in a hurry» = despáchalo ya, no «sácalo apurado».",
+              "example": "Get it out in a hurry.",
+              "source": "Form 73 #50"
+            },
+            {
+              "expr": "sooner or later",
+              "es": "tarde o temprano",
+              "tag": "",
+              "trap": "Es el equivalente de «eventually», que NO significa «eventualmente».",
+              "example": "Sooner or later another branch will be added.",
+              "source": "Form 69 #49"
+            },
+            {
+              "expr": "for good",
+              "es": "para siempre, definitivamente",
+              "tag": "engañoso",
+              "trap": "Nada que ver con «bueno». Lo contrario es «for the time being», por ahora.",
+              "example": "The student has gone back to his country for good.",
+              "source": "Form 50 #53"
+            },
+            {
+              "expr": "for the time being",
+              "es": "por ahora, de momento, provisionalmente",
+              "tag": "",
+              "trap": "Marca algo temporal; «for good» marca lo permanente.",
+              "example": "(contrasta con for good)",
+              "source": "Form 50"
+            }
+          ]
+        },
+        {
+          "theme": "Cantidad, límite y dificultad",
+          "sense": "Cuánto hay, cuánto falta y cuándo algo queda grande.",
+          "entries": [
+            {
+              "expr": "run short of",
+              "es": "quedarse corto de, irse quedando sin",
+              "tag": "no es phrasal verb",
+              "trap": "Expresión fija: no admite objeto en medio. Distinto de «run out of», que es quedarse sin nada.",
+              "example": "I'm running short of cash this week.",
+              "source": "Form 70 #55"
+            },
+            {
+              "expr": "be in way over one's head",
+              "es": "estar totalmente sobrepasado, quedarle a uno grande",
+              "tag": "",
+              "trap": "Imagen de agua por encima de la cabeza. No habla de inteligencia sino de exceso de exigencia.",
+              "example": "I'm in way over my head in that class.",
+              "source": "Form 82 #65"
+            },
+            {
+              "expr": "a piece at a time",
+              "es": "por partes, de a poco, pieza por pieza",
+              "tag": "",
+              "trap": "Describe el modo, no la cantidad total.",
+              "example": "(registrado en el vocabulario del Form 50)",
+              "source": "Form 50"
+            },
+            {
+              "expr": "in all / altogether",
+              "es": "en total, en conjunto",
+              "tag": "",
+              "trap": "«Altogether» junto es «en total»; «all together» separado es «todos juntos».",
+              "example": "(registrado en el vocabulario del Form 50)",
+              "source": "Form 50"
+            }
+          ]
+        },
+        {
+          "theme": "Cómo es una persona",
+          "sense": "Juicios sobre el carácter de alguien. Casi siempre informales.",
+          "entries": [
+            {
+              "expr": "a good Joe",
+              "es": "buen tipo, buena gente, alguien con quien es fácil llevarse",
+              "tag": "jerga",
+              "trap": "No existe ningún Joe. Es un nombre genérico para «un fulano cualquiera», y en positivo es un elogio.",
+              "example": "Everyone says that the new supervisor is a good Joe.",
+              "source": "Form 87 #64"
+            },
+            {
+              "expr": "have a screw loose",
+              "es": "faltarle un tornillo, estar mal de la cabeza",
+              "tag": "informal",
+              "trap": "Metáfora de máquina con una pieza floja. Es informal y algo despectivo, no un diagnóstico.",
+              "example": "I think Robert has a screw loose.",
+              "source": "Form 82 #49"
+            },
+            {
+              "expr": "get along with",
+              "es": "llevarse bien con alguien",
+              "tag": "",
+              "trap": "Sin «with» significa «ir tirando, arreglárselas».",
+              "example": "…is friendly, kind and easy to get along with.",
+              "source": "Form 87 #64"
+            }
+          ]
+        },
+        {
+          "theme": "Estados, reacciones y modo",
+          "sense": "Cómo queda alguien o cómo se hace algo.",
+          "entries": [
+            {
+              "expr": "scared to death",
+              "es": "muerto de miedo, aterrado",
+              "tag": "hipérbole",
+              "trap": "Nadie se muere: es exageración pura. Mide intensidad, no consecuencia.",
+              "example": "Lawrence scared me to death when he came in.",
+              "source": "Form 82 #100"
+            },
+            {
+              "expr": "nothing but",
+              "es": "nada más que, únicamente",
+              "tag": "",
+              "trap": "No es una negación: «nothing but the truth» es SOLO la verdad, no «ninguna verdad».",
+              "example": "You must tell the attorney nothing but the truth.",
+              "source": "Form 70 #56"
+            },
+            {
+              "expr": "head first",
+              "es": "de cabeza, de cabeza al agua",
+              "tag": "",
+              "trap": "Describe la postura al entrar, no el orden de llegada. Zambullirse así es «to dive».",
+              "example": "Bob jumped into the water head first.",
+              "source": "Form 73 #48"
+            },
+            {
+              "expr": "in the open",
+              "es": "a la intemperie, al raso, sin techo",
+              "tag": "uso militar",
+              "trap": "En campaña es dormir sin carpa ni barraca. También «al descubierto», sin secreto.",
+              "example": "Bob slept in the open.",
+              "source": "Form 73 #33"
+            },
+            {
+              "expr": "small print",
+              "es": "la letra pequeña de un contrato",
+              "tag": "",
+              "trap": "Literalmente es tipografía diminuta, y de ahí las condiciones que nadie lee.",
+              "example": "Why does he have difficulty reading small print?",
+              "source": "Form 73 #46"
+            },
+            {
+              "expr": "a rule of thumb",
+              "es": "una regla general, un criterio práctico",
+              "tag": "",
+              "trap": "No es una norma escrita ni obligatoria: es lo que la experiencia aconseja.",
+              "example": "This is a general rule for the school.",
+              "source": "Form 87 #24"
+            },
+            {
+              "expr": "tell time",
+              "es": "leer la hora en un reloj",
+              "tag": "colocación fija",
+              "trap": "En español «decir la hora» lleva a «say the time», que suena mal. Es siempre «tell».",
+              "example": "Can the child tell time yet?",
+              "source": "Form 63 #98"
+            },
+            {
+              "expr": "take place",
+              "es": "ocurrir, tener lugar, celebrarse",
+              "tag": "no es phrasal verb",
+              "trap": "Verbo + sustantivo fijo: no se puede partir. «Take charge» es otra cosa: tomar el mando.",
+              "example": "It happened at 10 o'clock.",
+              "source": "Form 70 #91"
+            },
+            {
+              "expr": "take charge",
+              "es": "hacerse cargo, tomar el mando",
+              "tag": "no es phrasal verb",
+              "trap": "Se confunde con «take place» por empezar igual, pero hablan de cosas distintas.",
+              "example": "(distractor del ítem 91)",
+              "source": "Form 70 #91"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "militar",
+      "title": "Léxico y expresiones militares",
+      "note": "El examen está escrito para personal de la fuerza y da por sabido este vocabulario. Se agrupa por ámbito, como se usa en el servicio.",
+      "groups": [
+        {
+          "theme": "Mando, disciplina y rutina",
+          "sense": "Jerarquía, órdenes y vida diaria en la unidad.",
+          "entries": [
+            {
+              "expr": "sick call",
+              "es": "revista médica, hora de reportarse a enfermería",
+              "tag": "clave",
+              "trap": "No es «llamada de enfermo»: es el horario fijo en que el personal pasa a consulta.",
+              "example": "Go to sick call right away.",
+              "source": "Form 70 #92, Form 73 #91"
+            },
+            {
+              "expr": "take over / assume command",
+              "es": "asumir el mando, hacerse cargo de la unidad",
+              "tag": "",
+              "trap": "«Take over» es el término corriente; «assume command» es la fórmula oficial.",
+              "example": "General Adams took over yesterday.",
+              "source": "Form 82 #46"
+            },
+            {
+              "expr": "dismiss / be dismissed",
+              "es": "dar permiso para retirarse; romper filas",
+              "tag": "doble sentido",
+              "trap": "En formación es «pueden retirarse», neutro. Fuera de ahí puede ser despedir o expulsar.",
+              "example": "Students will be dismissed from class today.",
+              "source": "Form 87 #33"
+            },
+            {
+              "expr": "NCO (Non-Commissioned Officer)",
+              "es": "suboficial",
+              "tag": "sigla",
+              "trap": "Se dice deletreada. Es el escalón de mando entre la tropa y los oficiales.",
+              "example": "The NCO expects his men to wear the proper uniform.",
+              "source": "Form 70 #86"
+            },
+            {
+              "expr": "make up a bed",
+              "es": "tender la cama para revista",
+              "tag": "rutina",
+              "trap": "Tarea diaria de barraca. No es lavarla: es dejarla tensa y presentable.",
+              "example": "We had already made up our beds.",
+              "source": "Form 69 #36"
+            },
+            {
+              "expr": "issued",
+              "es": "de dotación, entregado oficialmente por la unidad",
+              "tag": "",
+              "trap": "«Issued gear» es el equipo que da la fuerza, no el que uno compra.",
+              "example": "The issued ID cards were collected.",
+              "source": "Form 63 #87"
+            },
+            {
+              "expr": "cover / uncovered",
+              "es": "cubrecabeza reglamentario; ir sin él",
+              "tag": "engañoso",
+              "trap": "«Cover» como sustantivo es la gorra. Entrar a un recinto se hace «uncovered», descubierto.",
+              "example": "His head was bare.",
+              "source": "Form 69 #88"
+            },
+            {
+              "expr": "parade",
+              "es": "desfile, formación; desfilar",
+              "tag": "",
+              "trap": "No es «parada». La parada militar en español corresponde a esto.",
+              "example": "The band led the parade.",
+              "source": "Form 87 #54"
+            }
+          ]
+        },
+        {
+          "theme": "Operaciones y combate",
+          "sense": "Movimiento de tropas, enfrentamiento y control del terreno.",
+          "entries": [
+            {
+              "expr": "concentrate troops / come together",
+              "es": "concentrar tropas, agruparlas en un punto",
+              "tag": "",
+              "trap": "«Concentrate» aquí no es «concentrarse mentalmente»: es reunir fuerza en un sitio.",
+              "example": "The troops are being concentrated in this area.",
+              "source": "Form 87 #31"
+            },
+            {
+              "expr": "give up / surrender",
+              "es": "rendirse, entregarse",
+              "tag": "",
+              "trap": "«Give up» es el coloquial; «surrender» el formal. Lo opuesto es defenderse o contraatacar.",
+              "example": "The enemy in the village gave up.",
+              "source": "Form 87 #39"
+            },
+            {
+              "expr": "counterattack",
+              "es": "contraatacar; contraataque",
+              "tag": "",
+              "trap": "Aparece como distractor de «surrender»: son acciones opuestas.",
+              "example": "(distractor del ítem 39)",
+              "source": "Form 87 #39"
+            },
+            {
+              "expr": "terrestrial",
+              "es": "terrestre, de uso en tierra",
+              "tag": "técnico",
+              "trap": "Del latín «terra». Un «terrestrial weapon» es de tierra, no aéreo ni submarino.",
+              "example": "This weapon is for terrestrial use only.",
+              "source": "Form 87 #43"
+            },
+            {
+              "expr": "dud",
+              "es": "cartucho o proyectil que no detonó; algo que falla",
+              "tag": "clave",
+              "trap": "Munición sin explotar: peligrosa justamente por seguir activa.",
+              "example": "The firecrackers that Jim gave me were duds.",
+              "source": "Form 87 #42"
+            },
+            {
+              "expr": "barricade",
+              "es": "barricada, barrera de contención",
+              "tag": "",
+              "trap": "Se pone para impedir el paso, nunca para facilitarlo.",
+              "example": "Why did the police set up a barricade?",
+              "source": "Form 73 #55"
+            },
+            {
+              "expr": "under surveillance",
+              "es": "bajo vigilancia, bajo observación",
+              "tag": "",
+              "trap": "Vigilar para reunir información, no detener. «Arrested» es otra cosa.",
+              "example": "The police put the man under surveillance.",
+              "source": "Form 82 #52"
+            },
+            {
+              "expr": "detain",
+              "es": "detener, retener bajo custodia",
+              "tag": "legal",
+              "trap": "Más formal que «arrest» y no implica cargos: es retener.",
+              "example": "Those immigrants will have been detained two months.",
+              "source": "Form 70 #95"
+            }
+          ]
+        },
+        {
+          "theme": "Mantenimiento y equipo",
+          "sense": "Taller, vehículos y material. Vocabulario muy técnico que el examen usa sin explicar.",
+          "entries": [
+            {
+              "expr": "tear down the unit",
+              "es": "despiezar la unidad, desarmarla por completo",
+              "tag": "clave",
+              "trap": "En mantenimiento NO es destruir: es desmontar para revisar. Lo contrario es «assemble».",
+              "example": "When will you tear down the unit?",
+              "source": "Form 70 #53"
+            },
+            {
+              "expr": "splice",
+              "es": "empalmar cables o cuerdas; empalme",
+              "tag": "técnico",
+              "trap": "Unir dos extremos entrelazándolos. Lo opuesto es separarlos.",
+              "example": "The pieces of wire were spliced together.",
+              "source": "Form 82 #42"
+            },
+            {
+              "expr": "give off fumes",
+              "es": "despedir gases tóxicos",
+              "tag": "seguridad",
+              "trap": "«Fumes» no es humo (smoke): son vapores químicos, y por eso son venenosos.",
+              "example": "The engines give off poisonous fumes.",
+              "source": "Form 75 #100"
+            },
+            {
+              "expr": "antifreeze",
+              "es": "anticongelante del radiador",
+              "tag": "",
+              "trap": "Sin él, el agua se congela y parte el bloque del motor.",
+              "example": "I only had plain water in the radiator last night.",
+              "source": "Form 82 #58"
+            },
+            {
+              "expr": "moisture",
+              "es": "humedad, causa de óxido y corrosión",
+              "tag": "",
+              "trap": "El equipo se protege «against moisture»; no es la lluvia, es el vapor de agua.",
+              "example": "Tools should be protected against moisture.",
+              "source": "Form 70 #47"
+            },
+            {
+              "expr": "loosen a nut",
+              "es": "aflojar una tuerca",
+              "tag": "",
+              "trap": "Al aflojarla, la pieza «comes off», se suelta sola. Lo contrario es «tighten».",
+              "example": "When you loosen this nut, it will come off.",
+              "source": "Form 70 #98"
+            }
+          ]
+        },
+        {
+          "theme": "Información, moral y vida en la base",
+          "sense": "Lo que circula en la unidad: noticias, rumores, servicios y penurias.",
+          "entries": [
+            {
+              "expr": "scuttlebutt",
+              "es": "rumor de cuartel, chisme que corre entre la tropa",
+              "tag": "jerga naval",
+              "trap": "Era el bebedero del barco, donde se cotilleaba. Hoy es el rumor mismo.",
+              "example": "(registrado en el vocabulario del Form 62)",
+              "source": "Form 62"
+            },
+            {
+              "expr": "rumor / unconfirmed statement",
+              "es": "rumor, versión sin confirmar",
+              "tag": "",
+              "trap": "Lo contrario de un comunicado oficial: no está verificado.",
+              "example": "Joe heard a rumor that the airbase was going to close.",
+              "source": "Form 62 #48, Form 73 #49"
+            },
+            {
+              "expr": "chaplain",
+              "es": "capellán de la unidad",
+              "tag": "",
+              "trap": "Oficia el «service» en la «chapel». Nada que ver con «chaperone».",
+              "example": "(registrado en el vocabulario del Form 62)",
+              "source": "Form 62"
+            },
+            {
+              "expr": "okay the expenditure",
+              "es": "autorizar el gasto, dar el visto bueno al desembolso",
+              "tag": "administrativo",
+              "trap": "«Okay» funciona aquí como verbo: aprobar. «Expenditure» es el gasto autorizado.",
+              "example": "Did the commander okay the expenditure for the party?",
+              "source": "Form 87 #66"
+            },
+            {
+              "expr": "hardships",
+              "es": "penurias, adversidades, condiciones duras",
+              "tag": "",
+              "trap": "En campaña son frío, falta de sueño, agotamiento. No es «dureza» de carácter.",
+              "example": "Our trip was full of hardships.",
+              "source": "Form 87 #36"
+            },
+            {
+              "expr": "bivouac",
+              "es": "vivac, campamento provisional sin instalaciones",
+              "tag": "",
+              "trap": "Se pronuncia «BIV-uac». Puede ser sustantivo o verbo: to bivouac.",
+              "example": "There's a good place over by those big trees.",
+              "source": "Form 70 #65"
+            },
+            {
+              "expr": "weather hazards",
+              "es": "riesgos meteorológicos",
+              "tag": "",
+              "trap": "«Hazard» es peligro potencial, no una señal ni un aviso.",
+              "example": "Sleet and snow are weather hazards.",
+              "source": "Form 69 #81"
+            },
+            {
+              "expr": "airbase",
+              "es": "base aérea",
+              "tag": "",
+              "trap": "Va en una sola palabra. La unidad es «air force base» en registro formal.",
+              "example": "Joe heard a rumor that the airbase was going to close.",
+              "source": "Form 62 #48, Form 73 #49"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
