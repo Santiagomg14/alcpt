@@ -90,8 +90,33 @@ En Windows arranca con `pythonw.exe` para que no quede una consola abierta; por 
 el bot escribe todo en `bot/bot.log`, que es donde hay que mirar si algo va mal.
 El token nunca aparece ahí: se enmascara antes de escribir.
 
-> Telegram solo permite **un lector por token**. Antes de instalarlo en otra
-> máquina, quita el servicio de la anterior con `--uninstall`.
+### Una sola máquina a la vez
+
+Telegram admite **un solo lector por token**: si el bot corre en dos equipos, se
+pelean los mensajes y se pierden. Como todas las máquinas comparten el repositorio,
+se usa `bot/active_host.json` —versionado— para saber cuál lo tiene tomado.
+
+Al instalar, el script hace `git pull`, mira ese archivo y **pregunta**:
+
+```
+Este equipo: PORTATIL-SALA (Linux)
+El bot está tomado por otra máquina: LAPTOP-H4O9EDGC (Windows)
+  desde 2026-08-17T19:04:09  (C:\...\alcpt)
+
+¿Esta será la máquina definitiva donde va a correr el sistema? [s/N]
+```
+
+- Si respondes **no**, no instala nada y te recuerda cómo probarlo en primer plano.
+- Si respondes **sí** y otra máquina lo tiene tomado, te dice exactamente qué
+  ejecutar allá (`--uninstall`) y no continúa hasta que confirmes que lo hiciste.
+- Al terminar, este equipo queda registrado como el dueño y se sube el cambio.
+
+`--uninstall` libera el registro, dejando el bot disponible para otra máquina.
+`--status` dice qué equipo lo tiene tomado y avisa si no es este.
+`--force` se salta las preguntas, para guiones automáticos.
+
+Si de todas formas quedaran dos corriendo, el bot lo detecta en caliente: Telegram
+devuelve 409 y queda un aviso claro en `bot/bot.log`.
 
 ## Cómo funciona por dentro
 
