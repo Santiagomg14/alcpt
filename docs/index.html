@@ -180,6 +180,45 @@ h1{
 .term .es{color:var(--muted); font-size:.95rem}
 .term .say{grid-column:3; grid-row:1 / span 2; align-self:center}
 
+/* ---------- phrasal verbs ---------- */
+.pv{
+  background:var(--surface); border:1px solid var(--rule); border-radius:11px;
+  padding:14px 16px; margin:11px 0; box-shadow:var(--shadow);
+}
+.pv .top{display:flex; align-items:baseline; gap:9px; flex-wrap:wrap}
+.pv .vb{
+  font-family:Newsreader,Georgia,serif; font-weight:600; font-size:1.15rem;
+  color:var(--accent-ink); letter-spacing:-.01em;
+}
+.pv .sep{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.62rem;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
+  border:1px solid var(--rule); border-radius:999px; padding:2px 8px; white-space:nowrap;
+}
+.pv .top .say{margin-left:auto}
+.pv .mean{margin:6px 0 0; font-weight:500}
+.pv .trap{
+  margin:8px 0 0; font-size:.9rem; color:var(--muted);
+  border-left:2px solid var(--accent); padding-left:11px;
+}
+.pv .ex{
+  margin:9px 0 0; padding:8px 11px; background:var(--raised);
+  border:1px solid var(--rule-soft); border-radius:7px;
+  display:flex; gap:9px; align-items:flex-start;
+}
+.pv .ex q{font-style:italic; flex:1}
+.pv .ex q::before{content:"C"} .pv .ex q::after{content:"D"}
+.pv .src{
+  display:block; margin-top:4px; font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--faint);
+}
+.sense{
+  margin:0 0 4px; color:var(--muted); font-size:.93rem;
+  border-left:2px solid var(--rule); padding-left:11px;
+}
+.keys{margin:10px 0 0; padding:0 0 0 18px; color:var(--muted); font-size:.93rem}
+.keys li{margin:4px 0}
+
 /* ---------- preguntas ---------- */
 .card{
   background:var(--surface); border:1px solid var(--rule); border-radius:11px;
@@ -245,8 +284,8 @@ footer{
 <p class="standfirst">Diccionario acumulado y banco de preguntas resueltas del American Language Course Placement Test. Busca una palabra, un idiom o el enunciado de cualquier ítem.</p>
 <div class="stats">
 <div><span class="fig">332</span><span class="cap">palabras</span></div>
+<div><span class="fig">39</span><span class="cap">phrasal verbs</span></div>
 <div><span class="fig">233</span><span class="cap">preguntas</span></div>
-<div><span class="fig">11</span><span class="cap">formularios</span></div>
 <div><span class="fig">2026-08-17</span><span class="cap">actualizado</span></div>
 </div></header>
 <div class="toolbar">
@@ -258,9 +297,10 @@ footer{
 <div class="filters" role="group" aria-label="Filtrar por tipo">
 <button class="chip" type="button" data-scope="all" aria-pressed="true">Todo</button>
 <button class="chip" type="button" data-scope="voc" aria-pressed="false">Vocabulario</button>
+<button class="chip" type="button" data-scope="pv" aria-pressed="false">Phrasal verbs</button>
 <button class="chip" type="button" data-scope="q" aria-pressed="false">Preguntas</button>
 </div>
-<p class="tally"><span id="tally">332 palabras · 233 preguntas</span><button id="expand" type="button">Contraer todo</button></p>
+<p class="tally"><span id="tally">332 palabras · 39 phrasal verbs · 233 preguntas</span><button id="expand" type="button">Contraer todo</button></p>
 </div>
 <p class="part" data-part="voc">Parte I · Vocabulario</p>
 <p class="part-note">Todas las entradas registradas hasta la fecha con su traducción y matices de uso. La numeración es acumulativa: se conserva aunque se agreguen formularios nuevos.</p>
@@ -644,7 +684,346 @@ footer{
 <div class="term" data-s="surplus (verbo) dar de baja por excedente, declarar material sobrante" data-kind="voc"><span class="idx">330</span><span class="en">Surplus (verbo)</span><span class="es">dar de baja por excedente, declarar material sobrante</span><button class="say" type="button" aria-pressed="false" data-say="Surplus (verbo)" aria-label="Escuchar Surplus (verbo)"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
 <div class="term" data-s="hold back retener, contener, frenar; ocultar informacion" data-kind="voc"><span class="idx">331</span><span class="en">Hold back</span><span class="es">retener, contener, frenar; ocultar información</span><button class="say" type="button" aria-pressed="false" data-say="Hold back" aria-label="Escuchar Hold back"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
 </div></details>
-<p class="part" data-part="q">Parte II · Preguntas resueltas</p>
+<p class="part" data-part="pv">Parte II · Phrasal verbs</p>
+<p class="part-note">Los phrasal verbs son la trampa clásica del ALCPT para un hispanohablante: el significado casi nunca se deduce de las partes. «Wind up» no tiene nada que ver con viento, y «hold up» puede ser retrasar o atracar. Todos los que están aquí aparecieron de verdad en los formularios 50 a 87, con la frase textual del examen.</p>
+<ul class="keys">
+<li>La partícula manda: agrupados por partícula porque cada una carga un sentido bastante estable.</li>
+<li>Separables: el objeto puede ir en medio (tear the unit down). Si el objeto es un pronombre, TIENE que ir en medio: tear it down, nunca tear down it.</li>
+<li>Inseparables: el objeto va siempre después (count on me, nunca count me on).</li>
+<li>Los de tres palabras (keep up with, look forward to) nunca se separan.</li>
+</ul>
+<details class="group" data-kind="pv" data-part-of="pv">
+<summary><h2>UP</h2><span class="n">9 phrasal verbs</span></summary>
+<p class="sense">Terminar, completar, llevar algo hasta el final. También aumentar o juntar.</p>
+<article class="pv" data-s="wind up concluir, rematar, dar por terminado nada que ver con «viento». su otro sentido es dar cuerda a un reloj. when will ray wind up the job? form 70 #93, form 75 #93" data-kind="pv">
+<div class="top"><span class="vb">wind up</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="wind up" aria-label="Escuchar wind up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">concluir, rematar, dar por terminado</p>
+<p class="trap">Nada que ver con «viento». Su otro sentido es dar cuerda a un reloj.</p>
+<div class="ex"><q>When will Ray wind up the job?</q><button class="say" type="button" aria-pressed="false" data-say="When will Ray wind up the job?" aria-label="Escuchar el ejemplo de wind up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 70 #93, Form 75 #93</span>
+</article>
+<article class="pv" data-s="add up to sumar un total de, ascender a sin «to» significa solo «cuadrar, tener sentido»: it doesn&#x27;t add up. the things i bought added up to $17.50. form 69 #93" data-kind="pv">
+<div class="top"><span class="vb">add up to</span><span class="sep">inseparable (3 palabras)</span><button class="say" type="button" aria-pressed="false" data-say="add up to" aria-label="Escuchar add up to"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">sumar un total de, ascender a</p>
+<p class="trap">Sin «to» significa solo «cuadrar, tener sentido»: it doesn&#x27;t add up.</p>
+<div class="ex"><q>The things I bought added up to $17.50.</q><button class="say" type="button" aria-pressed="false" data-say="The things I bought added up to $17.50." aria-label="Escuchar el ejemplo de add up to"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 69 #93</span>
+</article>
+<article class="pv" data-s="add up sumar, totalizar ojo con el distractor «add down», que no existe en ingles. the waiter added up the cost of the food and drinks. form 75 #95" data-kind="pv">
+<div class="top"><span class="vb">add up</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="add up" aria-label="Escuchar add up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">sumar, totalizar</p>
+<p class="trap">Ojo con el distractor «add down», que no existe en inglés.</p>
+<div class="ex"><q>The waiter added up the cost of the food and drinks.</q><button class="say" type="button" aria-pressed="false" data-say="The waiter added up the cost of the food and drinks." aria-label="Escuchar el ejemplo de add up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 75 #95</span>
+</article>
+<article class="pv" data-s="make up (a bed) tender la cama, arreglarla con sabanas y mantas no es lavarla ni fabricarla. en cuartel es tarea diaria de revista. we had already made up our beds. form 69 #36" data-kind="pv">
+<div class="top"><span class="vb">make up (a bed)</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="make up (a bed)" aria-label="Escuchar make up (a bed)"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">tender la cama, arreglarla con sábanas y mantas</p>
+<p class="trap">No es lavarla ni fabricarla. En cuartel es tarea diaria de revista.</p>
+<div class="ex"><q>We had already made up our beds.</q><button class="say" type="button" aria-pressed="false" data-say="We had already made up our beds." aria-label="Escuchar el ejemplo de make up (a bed)"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 69 #36</span>
+</article>
+<article class="pv" data-s="make up one&#x27;s mind decidirse, tomar una decision mismo verbo que el anterior, sentido totalmente distinto. have you made up your mind about which car you want? form 73 #3" data-kind="pv">
+<div class="top"><span class="vb">make up one&#x27;s mind</span><span class="sep">fijo</span><button class="say" type="button" aria-pressed="false" data-say="make up one&#x27;s mind" aria-label="Escuchar make up one&#x27;s mind"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">decidirse, tomar una decisión</p>
+<p class="trap">Mismo verbo que el anterior, sentido totalmente distinto.</p>
+<div class="ex"><q>Have you made up your mind about which car you want?</q><button class="say" type="button" aria-pressed="false" data-say="Have you made up your mind about which car you want?" aria-label="Escuchar el ejemplo de make up one&#x27;s mind"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 73 #3</span>
+</article>
+<article class="pv" data-s="set up montar, armar, instalar; establecer para una tienda de campana tambien sirve «put up». why did the police set up a barricade? form 73 #55, form 63 #91" data-kind="pv">
+<div class="top"><span class="vb">set up</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="set up" aria-label="Escuchar set up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">montar, armar, instalar; establecer</p>
+<p class="trap">Para una tienda de campaña también sirve «put up».</p>
+<div class="ex"><q>Why did the police set up a barricade?</q><button class="say" type="button" aria-pressed="false" data-say="Why did the police set up a barricade?" aria-label="Escuchar el ejemplo de set up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 73 #55, Form 63 #91</span>
+</article>
+<article class="pv" data-s="hold up retrasar, demorar; tambien atracar, asaltar dos sentidos opuestos en tono. el literal, «sostener», casi nunca es la respuesta. what&#x27;s holding up the movie? form 82 #89" data-kind="pv">
+<div class="top"><span class="vb">hold up</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="hold up" aria-label="Escuchar hold up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">retrasar, demorar; también atracar, asaltar</p>
+<p class="trap">Dos sentidos opuestos en tono. El literal, «sostener», casi nunca es la respuesta.</p>
+<div class="ex"><q>What&#x27;s holding up the movie?</q><button class="say" type="button" aria-pressed="false" data-say="What&#x27;s holding up the movie?" aria-label="Escuchar el ejemplo de hold up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 82 #89</span>
+</article>
+<article class="pv" data-s="keep up with seguir el ritmo de, mantenerse a la altura de no es «mantener». implica ir al mismo paso que alguien. john could not keep up with me. form 75 #91" data-kind="pv">
+<div class="top"><span class="vb">keep up with</span><span class="sep">inseparable (3 palabras)</span><button class="say" type="button" aria-pressed="false" data-say="keep up with" aria-label="Escuchar keep up with"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">seguir el ritmo de, mantenerse a la altura de</p>
+<p class="trap">No es «mantener». Implica ir al mismo paso que alguien.</p>
+<div class="ex"><q>John could not keep up with me.</q><button class="say" type="button" aria-pressed="false" data-say="John could not keep up with me." aria-label="Escuchar el ejemplo de keep up with"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 75 #91</span>
+</article>
+<article class="pv" data-s="take up empezar a estudiar o practicar algo; ocupar espacio o tiempo «take up medicine» es ponerse a estudiar medicina, no tomar un medicamento. he is going to take up medicine this year. form 50 #34" data-kind="pv">
+<div class="top"><span class="vb">take up</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="take up" aria-label="Escuchar take up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">empezar a estudiar o practicar algo; ocupar espacio o tiempo</p>
+<p class="trap">«Take up medicine» es ponerse a estudiar medicina, no tomar un medicamento.</p>
+<div class="ex"><q>He is going to take up medicine this year.</q><button class="say" type="button" aria-pressed="false" data-say="He is going to take up medicine this year." aria-label="Escuchar el ejemplo de take up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 50 #34</span>
+</article>
+</details>
+<details class="group" data-kind="pv" data-part-of="pv">
+<summary><h2>OFF · AWAY</h2><span class="n">6 phrasal verbs</span></summary>
+<p class="sense">Separarse, desprenderse, quitar de en medio. La idea base es alejamiento.</p>
+<article class="pv" data-s="come off soltarse, desprenderse, salirse (una pieza) es lo que pasa solo, no lo que uno hace. si tu lo quitas, es «take off». when you loosen this nut, it will come off. form 70 #98" data-kind="pv">
+<div class="top"><span class="vb">come off</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="come off" aria-label="Escuchar come off"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">soltarse, desprenderse, salirse (una pieza)</p>
+<p class="trap">Es lo que pasa solo, no lo que uno hace. Si tú lo quitas, es «take off».</p>
+<div class="ex"><q>When you loosen this nut, it will come off.</q><button class="say" type="button" aria-pressed="false" data-say="When you loosen this nut, it will come off." aria-label="Escuchar el ejemplo de come off"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 70 #98</span>
+</article>
+<article class="pv" data-s="give off despedir, emitir (gases, olor, calor) no es «regalar» (eso es give away). muy usado en mecanica y seguridad. the engines give off poisonous fumes. form 75 #100" data-kind="pv">
+<div class="top"><span class="vb">give off</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="give off" aria-label="Escuchar give off"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">despedir, emitir (gases, olor, calor)</p>
+<p class="trap">No es «regalar» (eso es give away). Muy usado en mecánica y seguridad.</p>
+<div class="ex"><q>The engines give off poisonous fumes.</q><button class="say" type="button" aria-pressed="false" data-say="The engines give off poisonous fumes." aria-label="Escuchar el ejemplo de give off"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 75 #100</span>
+</article>
+<article class="pv" data-s="throw away botar, desechar, tirar a la basura su sinonimo formal y tecnico es «dispose of». the engine part was thrown away. form 75 #92" data-kind="pv">
+<div class="top"><span class="vb">throw away</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="throw away" aria-label="Escuchar throw away"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">botar, desechar, tirar a la basura</p>
+<p class="trap">Su sinónimo formal y técnico es «dispose of».</p>
+<div class="ex"><q>The engine part was thrown away.</q><button class="say" type="button" aria-pressed="false" data-say="The engine part was thrown away." aria-label="Escuchar el ejemplo de throw away"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 75 #92</span>
+</article>
+<article class="pv" data-s="dispose of deshacerse de, desechar (formal) sin «of» cambia por completo: «dispose» solo es disponer o predisponer. the engine part was disposed of. form 75 #92" data-kind="pv">
+<div class="top"><span class="vb">dispose of</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="dispose of" aria-label="Escuchar dispose of"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">deshacerse de, desechar (formal)</p>
+<p class="trap">Sin «of» cambia por completo: «dispose» solo es disponer o predisponer.</p>
+<div class="ex"><q>The engine part was disposed of.</q><button class="say" type="button" aria-pressed="false" data-say="The engine part was disposed of." aria-label="Escuchar el ejemplo de dispose of"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 75 #92</span>
+</article>
+<article class="pv" data-s="break away (from) zafarse, desprenderse, separarse de un grupo no es romper nada: es soltarse de una sujecion o de una multitud. he broke away from the crowd. form 73 #53" data-kind="pv">
+<div class="top"><span class="vb">break away (from)</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="break away (from)" aria-label="Escuchar break away (from)"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">zafarse, desprenderse, separarse de un grupo</p>
+<p class="trap">No es romper nada: es soltarse de una sujeción o de una multitud.</p>
+<div class="ex"><q>He broke away from the crowd.</q><button class="say" type="button" aria-pressed="false" data-say="He broke away from the crowd." aria-label="Escuchar el ejemplo de break away (from)"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 73 #53</span>
+</article>
+<article class="pv" data-s="take away quitar, llevarse, retirar contrasta con «take along», que es llevar consigo a alguien. the man extended his hand… (contrast item) form 70 #39" data-kind="pv">
+<div class="top"><span class="vb">take away</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="take away" aria-label="Escuchar take away"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">quitar, llevarse, retirar</p>
+<p class="trap">Contrasta con «take along», que es llevar consigo a alguien.</p>
+<div class="ex"><q>The man extended his hand… (contrast item)</q><button class="say" type="button" aria-pressed="false" data-say="The man extended his hand… (contrast item)" aria-label="Escuchar el ejemplo de take away"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 70 #39</span>
+</article>
+</details>
+<details class="group" data-kind="pv" data-part-of="pv">
+<summary><h2>OUT</h2><span class="n">4 phrasal verbs</span></summary>
+<p class="sense">Sacar hacia afuera, extraer. También agotarse por completo.</p>
+<article class="pv" data-s="take out sacar, extraer (una astilla, una muela) su equivalente formal y medico es «extract». the doctor had to take the splinter out. form 82 #50" data-kind="pv">
+<div class="top"><span class="vb">take out</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="take out" aria-label="Escuchar take out"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">sacar, extraer (una astilla, una muela)</p>
+<p class="trap">Su equivalente formal y médico es «extract».</p>
+<div class="ex"><q>The doctor had to take the splinter out.</q><button class="say" type="button" aria-pressed="false" data-say="The doctor had to take the splinter out." aria-label="Escuchar el ejemplo de take out"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 82 #50</span>
+</article>
+<article class="pv" data-s="run out of quedarse sin, agotarsele a uno algo el sujeto es quien se queda sin: we ran out of gas, no the gas ran out of us. we&#x27;re out of gas. form 82" data-kind="pv">
+<div class="top"><span class="vb">run out of</span><span class="sep">inseparable (3 palabras)</span><button class="say" type="button" aria-pressed="false" data-say="run out of" aria-label="Escuchar run out of"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">quedarse sin, agotársele a uno algo</p>
+<p class="trap">El sujeto es quien se queda sin: we ran out of gas, no the gas ran out of us.</p>
+<div class="ex"><q>We&#x27;re out of gas.</q><button class="say" type="button" aria-pressed="false" data-say="We&#x27;re out of gas." aria-label="Escuchar el ejemplo de run out of"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 82</span>
+</article>
+<article class="pv" data-s="watch out for tener cuidado con, estar pendiente de un peligro no es mirar: es una advertencia de seguridad. «look at» nunca es la respuesta. watch out for speeding cars on the expressway. form 71 #93" data-kind="pv">
+<div class="top"><span class="vb">watch out for</span><span class="sep">inseparable (3 palabras)</span><button class="say" type="button" aria-pressed="false" data-say="watch out for" aria-label="Escuchar watch out for"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">tener cuidado con, estar pendiente de un peligro</p>
+<p class="trap">No es mirar: es una advertencia de seguridad. «Look at» nunca es la respuesta.</p>
+<div class="ex"><q>Watch out for speeding cars on the expressway.</q><button class="say" type="button" aria-pressed="false" data-say="Watch out for speeding cars on the expressway." aria-label="Escuchar el ejemplo de watch out for"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 71 #93</span>
+</article>
+<article class="pv" data-s="rush through despachar a toda prisa, tramitar con urgencia fijate como el objeto va en medio: rush this order through. rush this order through. form 73 #50" data-kind="pv">
+<div class="top"><span class="vb">rush through</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="rush through" aria-label="Escuchar rush through"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">despachar a toda prisa, tramitar con urgencia</p>
+<p class="trap">Fíjate cómo el objeto va EN MEDIO: rush this order through.</p>
+<div class="ex"><q>Rush this order through.</q><button class="say" type="button" aria-pressed="false" data-say="Rush this order through." aria-label="Escuchar el ejemplo de rush through"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 73 #50</span>
+</article>
+</details>
+<details class="group" data-kind="pv" data-part-of="pv">
+<summary><h2>OVER</h2><span class="n">5 phrasal verbs</span></summary>
+<p class="sense">Pasar por encima o de un lado a otro. De ahí: asumir el control, revisar de punta a punta, excederse.</p>
+<article class="pv" data-s="take over asumir el mando, hacerse cargo, tomar el control en contexto militar equivale a «assume command». general adams took over yesterday. form 82 #46" data-kind="pv">
+<div class="top"><span class="vb">take over</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="take over" aria-label="Escuchar take over"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">asumir el mando, hacerse cargo, tomar el control</p>
+<p class="trap">En contexto militar equivale a «assume command».</p>
+<div class="ex"><q>General Adams took over yesterday.</q><button class="say" type="button" aria-pressed="false" data-say="General Adams took over yesterday." aria-label="Escuchar el ejemplo de take over"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 82 #46</span>
+</article>
+<article class="pv" data-s="leap over saltar por encima de, franquear de un salto literal, sin sorpresa; el distractor «climbed into» si cambia el sentido. the deer leaped over the fence. form 73 #93, form 82 #91" data-kind="pv">
+<div class="top"><span class="vb">leap over</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="leap over" aria-label="Escuchar leap over"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">saltar por encima de, franquear de un salto</p>
+<p class="trap">Literal, sin sorpresa; el distractor «climbed into» sí cambia el sentido.</p>
+<div class="ex"><q>The deer leaped over the fence.</q><button class="say" type="button" aria-pressed="false" data-say="The deer leaped over the fence." aria-label="Escuchar el ejemplo de leap over"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 73 #93, Form 82 #91</span>
+</article>
+<article class="pv" data-s="watch over cuidar, velar por, vigilar a alguien no confundir con «watch out for», que es cuidarse de un peligro. marge watched over her child throughout the night. form 82 #85" data-kind="pv">
+<div class="top"><span class="vb">watch over</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="watch over" aria-label="Escuchar watch over"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">cuidar, velar por, vigilar a alguien</p>
+<p class="trap">No confundir con «watch out for», que es cuidarse de un peligro.</p>
+<div class="ex"><q>Marge watched over her child throughout the night.</q><button class="say" type="button" aria-pressed="false" data-say="Marge watched over her child throughout the night." aria-label="Escuchar el ejemplo de watch over"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 82 #85</span>
+</article>
+<article class="pv" data-s="check over revisar a fondo, inspeccionar por completo mas minucioso que un simple «check». he told smith to check over his jeep. form 87 #40" data-kind="pv">
+<div class="top"><span class="vb">check over</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="check over" aria-label="Escuchar check over"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">revisar a fondo, inspeccionar por completo</p>
+<p class="trap">Más minucioso que un simple «check».</p>
+<div class="ex"><q>He told Smith to check over his jeep.</q><button class="say" type="button" aria-pressed="false" data-say="He told Smith to check over his jeep." aria-label="Escuchar el ejemplo de check over"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 87 #40</span>
+</article>
+<article class="pv" data-s="be in over one&#x27;s head estar sobrepasado, quedar muy por encima de tu capacidad imagen de agua por encima de la cabeza. nada que ver con inteligencia. i&#x27;m in way over my head in that class. form 82 #65" data-kind="pv">
+<div class="top"><span class="vb">be in over one&#x27;s head</span><span class="sep">fijo</span><button class="say" type="button" aria-pressed="false" data-say="be in over one&#x27;s head" aria-label="Escuchar be in over one&#x27;s head"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">estar sobrepasado, quedar muy por encima de tu capacidad</p>
+<p class="trap">Imagen de agua por encima de la cabeza. Nada que ver con inteligencia.</p>
+<div class="ex"><q>I&#x27;m in way over my head in that class.</q><button class="say" type="button" aria-pressed="false" data-say="I&#x27;m in way over my head in that class." aria-label="Escuchar el ejemplo de be in over one&#x27;s head"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 82 #65</span>
+</article>
+</details>
+<details class="group" data-kind="pv" data-part-of="pv">
+<summary><h2>DOWN · BACK</h2><span class="n">5 phrasal verbs</span></summary>
+<p class="sense">Bajar, desarmar, reducir. Con «back», retener o echarse atrás.</p>
+<article class="pv" data-s="tear down desmontar, desarmar por completo (un motor, una unidad) en mantenimiento no es destruir: es despiezar para revisar. lo contrario es «assemble». when will you tear down the unit? form 70 #53" data-kind="pv">
+<div class="top"><span class="vb">tear down</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="tear down" aria-label="Escuchar tear down"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">desmontar, desarmar por completo (un motor, una unidad)</p>
+<p class="trap">En mantenimiento no es destruir: es despiezar para revisar. Lo contrario es «assemble».</p>
+<div class="ex"><q>When will you tear down the unit?</q><button class="say" type="button" aria-pressed="false" data-say="When will you tear down the unit?" aria-label="Escuchar el ejemplo de tear down"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 70 #53</span>
+</article>
+<article class="pv" data-s="blow down derribar, tumbar (el viento) aparece como distractor frente a «damage»: derribar es un tipo de dano, no un sinonimo. the wind blew down the wheat. form 50" data-kind="pv">
+<div class="top"><span class="vb">blow down</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="blow down" aria-label="Escuchar blow down"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">derribar, tumbar (el viento)</p>
+<p class="trap">Aparece como distractor frente a «damage»: derribar es un tipo de daño, no un sinónimo.</p>
+<div class="ex"><q>The wind blew down the wheat.</q><button class="say" type="button" aria-pressed="false" data-say="The wind blew down the wheat." aria-label="Escuchar el ejemplo de blow down"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 50</span>
+</article>
+<article class="pv" data-s="hold back retener, contener, frenar; ocultar informacion contrario a «hold up» (retrasar) aunque se parezcan. held back technical &amp; action verbs #10" data-kind="pv">
+<div class="top"><span class="vb">hold back</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="hold back" aria-label="Escuchar hold back"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">retener, contener, frenar; ocultar información</p>
+<p class="trap">Contrario a «hold up» (retrasar) aunque se parezcan.</p>
+<div class="ex"><q>held back</q><button class="say" type="button" aria-pressed="false" data-say="held back" aria-label="Escuchar el ejemplo de hold back"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Technical &amp; Action Verbs #10</span>
+</article>
+<article class="pv" data-s="write down anotar, apuntar por escrito distractor de «obey»: anotar una orden no es cumplirla. he obeyed all the orders he was given. technical &amp; action verbs #9" data-kind="pv">
+<div class="top"><span class="vb">write down</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="write down" aria-label="Escuchar write down"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">anotar, apuntar por escrito</p>
+<p class="trap">Distractor de «obey»: anotar una orden no es cumplirla.</p>
+<div class="ex"><q>He obeyed all the orders he was given.</q><button class="say" type="button" aria-pressed="false" data-say="He obeyed all the orders he was given." aria-label="Escuchar el ejemplo de write down"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Technical &amp; Action Verbs #9</span>
+</article>
+<article class="pv" data-s="back down echarse atras, recular, ceder en una postura no es retroceder fisicamente; eso es «back up» o «move back». (registrado en el vocabulario del form 62) form 62" data-kind="pv">
+<div class="top"><span class="vb">back down</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="back down" aria-label="Escuchar back down"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">echarse atrás, recular, ceder en una postura</p>
+<p class="trap">No es retroceder físicamente; eso es «back up» o «move back».</p>
+<div class="ex"><q>(registrado en el vocabulario del Form 62)</q><button class="say" type="button" aria-pressed="false" data-say="(registrado en el vocabulario del Form 62)" aria-label="Escuchar el ejemplo de back down"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 62</span>
+</article>
+</details>
+<details class="group" data-kind="pv" data-part-of="pv">
+<summary><h2>ON · IN · FOR · ALONG · TOGETHER · APART</h2><span class="n">10 phrasal verbs</span></summary>
+<p class="sense">Partículas sueltas cuyo sentido depende más del verbo que las acompaña.</p>
+<article class="pv" data-s="count on contar con, confiar en alguien nada que ver con contar numeros. «count for» es otra cosa: valer, importar. you can count on me. form 73 #82" data-kind="pv">
+<div class="top"><span class="vb">count on</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="count on" aria-label="Escuchar count on"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">contar con, confiar en alguien</p>
+<p class="trap">Nada que ver con contar números. «Count for» es otra cosa: valer, importar.</p>
+<div class="ex"><q>You can count on me.</q><button class="say" type="button" aria-pressed="false" data-say="You can count on me." aria-label="Escuchar el ejemplo de count on"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 73 #82</span>
+</article>
+<article class="pv" data-s="stand for significar, representar; tambien tolerar no es estar de pie. en mensajes cifrados es «equivaler a». every number stands for a letter. form 62 #53" data-kind="pv">
+<div class="top"><span class="vb">stand for</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="stand for" aria-label="Escuchar stand for"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">significar, representar; también tolerar</p>
+<p class="trap">No es estar de pie. En mensajes cifrados es «equivaler a».</p>
+<div class="ex"><q>Every number stands for a letter.</q><button class="say" type="button" aria-pressed="false" data-say="Every number stands for a letter." aria-label="Escuchar el ejemplo de stand for"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 62 #53</span>
+</article>
+<article class="pv" data-s="get in llegar (un vuelo, tren o autobus a su destino) compara: get over = recuperarse, get up = levantarse, get by = arreglarselas. what time does the flight get in? form 63 #99" data-kind="pv">
+<div class="top"><span class="vb">get in</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="get in" aria-label="Escuchar get in"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">llegar (un vuelo, tren o autobús a su destino)</p>
+<p class="trap">Compara: get over = recuperarse, get up = levantarse, get by = arreglárselas.</p>
+<div class="ex"><q>What time does the flight get in?</q><button class="say" type="button" aria-pressed="false" data-say="What time does the flight get in?" aria-label="Escuchar el ejemplo de get in"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 63 #99</span>
+</article>
+<article class="pv" data-s="give up rendirse, entregarse; abandonar algo en contexto militar es «surrender», el opuesto exacto de defenderse. the enemy in the village gave up. form 87 #39" data-kind="pv">
+<div class="top"><span class="vb">give up</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="give up" aria-label="Escuchar give up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">rendirse, entregarse; abandonar algo</p>
+<p class="trap">En contexto militar es «surrender», el opuesto exacto de defenderse.</p>
+<div class="ex"><q>The enemy in the village gave up.</q><button class="say" type="button" aria-pressed="false" data-say="The enemy in the village gave up." aria-label="Escuchar el ejemplo de give up"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 87 #39</span>
+</article>
+<article class="pv" data-s="come together concentrarse, reunirse en un punto es el sentido de «concentrate» aplicado a tropas: agruparlas, no enfocarse. the troops are being concentrated in this area. form 87 #31" data-kind="pv">
+<div class="top"><span class="vb">come together</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="come together" aria-label="Escuchar come together"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">concentrarse, reunirse en un punto</p>
+<p class="trap">Es el sentido de «concentrate» aplicado a tropas: agruparlas, no enfocarse.</p>
+<div class="ex"><q>The troops are being concentrated in this area.</q><button class="say" type="button" aria-pressed="false" data-say="The troops are being concentrated in this area." aria-label="Escuchar el ejemplo de come together"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 87 #31</span>
+</article>
+<article class="pv" data-s="take along llevar consigo, llevarse a alguien «take around» seria pasearlo o mostrarle el lugar, no acompanarlo. mary can go to the movies if she takes her little brother along. form 87 #89" data-kind="pv">
+<div class="top"><span class="vb">take along</span><span class="sep">separable</span><button class="say" type="button" aria-pressed="false" data-say="take along" aria-label="Escuchar take along"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">llevar consigo, llevarse a alguien</p>
+<p class="trap">«Take around» sería pasearlo o mostrarle el lugar, no acompañarlo.</p>
+<div class="ex"><q>Mary can go to the movies if she takes her little brother along.</q><button class="say" type="button" aria-pressed="false" data-say="Mary can go to the movies if she takes her little brother along." aria-label="Escuchar el ejemplo de take along"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 87 #89</span>
+</article>
+<article class="pv" data-s="get along (with) llevarse bien con alguien aparece explicando que es «a good joe»: alguien con quien es facil llevarse. the new supervisor is a good joe. form 87 #64" data-kind="pv">
+<div class="top"><span class="vb">get along (with)</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="get along (with)" aria-label="Escuchar get along (with)"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">llevarse bien con alguien</p>
+<p class="trap">Aparece explicando qué es «a good Joe»: alguien con quien es fácil llevarse.</p>
+<div class="ex"><q>The new supervisor is a good Joe.</q><button class="say" type="button" aria-pressed="false" data-say="The new supervisor is a good Joe." aria-label="Escuchar el ejemplo de get along (with)"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 87 #64</span>
+</article>
+<article class="pv" data-s="look forward to esperar algo con ganas, tener ilusion por el «to» es preposicion: va seguido de -ing, nunca de infinitivo. looking forward to seeing, no to see. i&#x27;m looking forward to seeing my family. form 73 #23" data-kind="pv">
+<div class="top"><span class="vb">look forward to</span><span class="sep">inseparable (3 palabras)</span><button class="say" type="button" aria-pressed="false" data-say="look forward to" aria-label="Escuchar look forward to"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">esperar algo con ganas, tener ilusión por</p>
+<p class="trap">El «to» es preposición: va seguido de -ing, nunca de infinitivo. Looking forward to seeing, no to see.</p>
+<div class="ex"><q>I&#x27;m looking forward to seeing my family.</q><button class="say" type="button" aria-pressed="false" data-say="I&#x27;m looking forward to seeing my family." aria-label="Escuchar el ejemplo de look forward to"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 73 #23</span>
+</article>
+<article class="pv" data-s="look after cuidar de, ocuparse de alguien familia traicionera: look like = parecerse, look for = buscar, look at = mirar. margaret looks like her father. (look after es el distractor) form 73 #25" data-kind="pv">
+<div class="top"><span class="vb">look after</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="look after" aria-label="Escuchar look after"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">cuidar de, ocuparse de alguien</p>
+<p class="trap">Familia traicionera: look like = parecerse, look for = buscar, look at = mirar.</p>
+<div class="ex"><q>Margaret looks like her father. (look after es el distractor)</q><button class="say" type="button" aria-pressed="false" data-say="Margaret looks like her father. (look after es el distractor)" aria-label="Escuchar el ejemplo de look after"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 73 #25</span>
+</article>
+<article class="pv" data-s="fall apart desarmarse, caerse a pedazos, deteriorarse tambien sirve para planes o personas: the plan fell apart. david&#x27;s car is ready to fall apart. form 62 #55" data-kind="pv">
+<div class="top"><span class="vb">fall apart</span><span class="sep">inseparable</span><button class="say" type="button" aria-pressed="false" data-say="fall apart" aria-label="Escuchar fall apart"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">desarmarse, caerse a pedazos, deteriorarse</p>
+<p class="trap">También sirve para planes o personas: the plan fell apart.</p>
+<div class="ex"><q>David&#x27;s car is ready to fall apart.</q><button class="say" type="button" aria-pressed="false" data-say="David&#x27;s car is ready to fall apart." aria-label="Escuchar el ejemplo de fall apart"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 62 #55</span>
+</article>
+</details>
+<details class="group" data-kind="pv" data-part-of="pv">
+<summary><h2>Se parecen, pero no son phrasal verbs</h2><span class="n">5 expresiones</span></summary>
+<p class="sense">Estas expresiones también se preguntaron y suelen confundirse con phrasal verbs. Son verbo + sustantivo o modismos fijos: no admiten objeto en medio ni cambian con la partícula.</p>
+<article class="pv" data-s="take place ocurrir, tener lugar it happened at 10 o&#x27;clock. form 70 #91" data-kind="pv">
+<div class="top"><span class="vb">take place</span><button class="say" type="button" aria-pressed="false" data-say="take place" aria-label="Escuchar take place"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">ocurrir, tener lugar</p>
+<div class="ex"><q>It happened at 10 o&#x27;clock.</q><button class="say" type="button" aria-pressed="false" data-say="It happened at 10 o&#x27;clock." aria-label="Escuchar el ejemplo de take place"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 70 #91</span>
+</article>
+<article class="pv" data-s="take charge hacerse cargo, tomar el mando (distractor de take place) form 70 #91" data-kind="pv">
+<div class="top"><span class="vb">take charge</span><button class="say" type="button" aria-pressed="false" data-say="take charge" aria-label="Escuchar take charge"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">hacerse cargo, tomar el mando</p>
+<div class="ex"><q>(distractor de take place)</q><button class="say" type="button" aria-pressed="false" data-say="(distractor de take place)" aria-label="Escuchar el ejemplo de take charge"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 70 #91</span>
+</article>
+<article class="pv" data-s="run short of quedarse corto de, irse quedando sin i&#x27;m running short of cash this week. form 70 #55" data-kind="pv">
+<div class="top"><span class="vb">run short of</span><button class="say" type="button" aria-pressed="false" data-say="run short of" aria-label="Escuchar run short of"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">quedarse corto de, irse quedando sin</p>
+<div class="ex"><q>I&#x27;m running short of cash this week.</q><button class="say" type="button" aria-pressed="false" data-say="I&#x27;m running short of cash this week." aria-label="Escuchar el ejemplo de run short of"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 70 #55</span>
+</article>
+<article class="pv" data-s="have a screw loose faltarle un tornillo, estar mal de la cabeza i think robert has a screw loose. form 82 #49" data-kind="pv">
+<div class="top"><span class="vb">have a screw loose</span><button class="say" type="button" aria-pressed="false" data-say="have a screw loose" aria-label="Escuchar have a screw loose"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">faltarle un tornillo, estar mal de la cabeza</p>
+<div class="ex"><q>I think Robert has a screw loose.</q><button class="say" type="button" aria-pressed="false" data-say="I think Robert has a screw loose." aria-label="Escuchar el ejemplo de have a screw loose"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 82 #49</span>
+</article>
+<article class="pv" data-s="tell time leer la hora en un reloj can the child tell time yet? form 63 #98" data-kind="pv">
+<div class="top"><span class="vb">tell time</span><button class="say" type="button" aria-pressed="false" data-say="tell time" aria-label="Escuchar tell time"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<p class="mean">leer la hora en un reloj</p>
+<div class="ex"><q>Can the child tell time yet?</q><button class="say" type="button" aria-pressed="false" data-say="Can the child tell time yet?" aria-label="Escuchar el ejemplo de tell time"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></div>
+<span class="src">Form 63 #98</span>
+</article>
+</details>
+<p class="part" data-part="q">Parte III · Preguntas resueltas</p>
 <p class="part-note">Cada ítem reproduce el enunciado, todas las opciones, la respuesta correcta y la explicación. Esta parte va íntegramente en inglés a propósito: repasarla es también práctica de lectura al nivel del examen.</p>
 <details class="group" data-kind="q" data-part-of="q">
 <summary><h2>Form 50</h2><span class="n">21 preguntas</span></summary>
@@ -2877,7 +3256,7 @@ footer{
 </article>
 </details>
 <div class="empty" id="empty"><strong>Sin coincidencias</strong>Prueba con otra palabra, o revisa el filtro de arriba.</div>
-<footer><span>Brayhan · nivel B2</span><span>332 palabras · 233 preguntas</span></footer>
+<footer><span>Brayhan · nivel B2</span><span>332 palabras · 39 phrasal verbs · 233 preguntas</span></footer>
 </div>
 <script>
 (function(){

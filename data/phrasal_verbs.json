@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "scope": "Formularios 50 a 87",
+    "owner": "Brayhan",
+    "last_updated": "2026-08-17",
+    "intro": "Los phrasal verbs son la trampa clásica del ALCPT para un hispanohablante: el significado casi nunca se deduce de las partes. «Wind up» no tiene nada que ver con viento, y «hold up» puede ser retrasar o atracar. Todos los que están aquí aparecieron de verdad en los formularios 50 a 87, con la frase textual del examen.",
+    "keys": [
+      "La partícula manda: agrupados por partícula porque cada una carga un sentido bastante estable.",
+      "Separables: el objeto puede ir en medio (tear the unit down). Si el objeto es un pronombre, TIENE que ir en medio: tear it down, nunca tear down it.",
+      "Inseparables: el objeto va siempre después (count on me, nunca count me on).",
+      "Los de tres palabras (keep up with, look forward to) nunca se separan."
+    ]
+  },
+  "groups": [
+    {
+      "id": "up",
+      "particle": "UP",
+      "sense": "Terminar, completar, llevar algo hasta el final. También aumentar o juntar.",
+      "entries": [
+        {"verb": "wind up", "es": "concluir, rematar, dar por terminado", "sep": "separable",
+         "trap": "Nada que ver con «viento». Su otro sentido es dar cuerda a un reloj.",
+         "example": "When will Ray wind up the job?", "source": "Form 70 #93, Form 75 #93"},
+        {"verb": "add up to", "es": "sumar un total de, ascender a", "sep": "inseparable (3 palabras)",
+         "trap": "Sin «to» significa solo «cuadrar, tener sentido»: it doesn't add up.",
+         "example": "The things I bought added up to $17.50.", "source": "Form 69 #93"},
+        {"verb": "add up", "es": "sumar, totalizar", "sep": "separable",
+         "trap": "Ojo con el distractor «add down», que no existe en inglés.",
+         "example": "The waiter added up the cost of the food and drinks.", "source": "Form 75 #95"},
+        {"verb": "make up (a bed)", "es": "tender la cama, arreglarla con sábanas y mantas", "sep": "separable",
+         "trap": "No es lavarla ni fabricarla. En cuartel es tarea diaria de revista.",
+         "example": "We had already made up our beds.", "source": "Form 69 #36"},
+        {"verb": "make up one's mind", "es": "decidirse, tomar una decisión", "sep": "fijo",
+         "trap": "Mismo verbo que el anterior, sentido totalmente distinto.",
+         "example": "Have you made up your mind about which car you want?", "source": "Form 73 #3"},
+        {"verb": "set up", "es": "montar, armar, instalar; establecer", "sep": "separable",
+         "trap": "Para una tienda de campaña también sirve «put up».",
+         "example": "Why did the police set up a barricade?", "source": "Form 73 #55, Form 63 #91"},
+        {"verb": "hold up", "es": "retrasar, demorar; también atracar, asaltar", "sep": "separable",
+         "trap": "Dos sentidos opuestos en tono. El literal, «sostener», casi nunca es la respuesta.",
+         "example": "What's holding up the movie?", "source": "Form 82 #89"},
+        {"verb": "keep up with", "es": "seguir el ritmo de, mantenerse a la altura de", "sep": "inseparable (3 palabras)",
+         "trap": "No es «mantener». Implica ir al mismo paso que alguien.",
+         "example": "John could not keep up with me.", "source": "Form 75 #91"},
+        {"verb": "take up", "es": "empezar a estudiar o practicar algo; ocupar espacio o tiempo", "sep": "separable",
+         "trap": "«Take up medicine» es ponerse a estudiar medicina, no tomar un medicamento.",
+         "example": "He is going to take up medicine this year.", "source": "Form 50 #34"}
+      ]
+    },
+    {
+      "id": "off-away",
+      "particle": "OFF · AWAY",
+      "sense": "Separarse, desprenderse, quitar de en medio. La idea base es alejamiento.",
+      "entries": [
+        {"verb": "come off", "es": "soltarse, desprenderse, salirse (una pieza)", "sep": "inseparable",
+         "trap": "Es lo que pasa solo, no lo que uno hace. Si tú lo quitas, es «take off».",
+         "example": "When you loosen this nut, it will come off.", "source": "Form 70 #98"},
+        {"verb": "give off", "es": "despedir, emitir (gases, olor, calor)", "sep": "separable",
+         "trap": "No es «regalar» (eso es give away). Muy usado en mecánica y seguridad.",
+         "example": "The engines give off poisonous fumes.", "source": "Form 75 #100"},
+        {"verb": "throw away", "es": "botar, desechar, tirar a la basura", "sep": "separable",
+         "trap": "Su sinónimo formal y técnico es «dispose of».",
+         "example": "The engine part was thrown away.", "source": "Form 75 #92"},
+        {"verb": "dispose of", "es": "deshacerse de, desechar (formal)", "sep": "inseparable",
+         "trap": "Sin «of» cambia por completo: «dispose» solo es disponer o predisponer.",
+         "example": "The engine part was disposed of.", "source": "Form 75 #92"},
+        {"verb": "break away (from)", "es": "zafarse, desprenderse, separarse de un grupo", "sep": "inseparable",
+         "trap": "No es romper nada: es soltarse de una sujeción o de una multitud.",
+         "example": "He broke away from the crowd.", "source": "Form 73 #53"},
+        {"verb": "take away", "es": "quitar, llevarse, retirar", "sep": "separable",
+         "trap": "Contrasta con «take along», que es llevar consigo a alguien.",
+         "example": "The man extended his hand… (contrast item)", "source": "Form 70 #39"}
+      ]
+    },
+    {
+      "id": "out",
+      "particle": "OUT",
+      "sense": "Sacar hacia afuera, extraer. También agotarse por completo.",
+      "entries": [
+        {"verb": "take out", "es": "sacar, extraer (una astilla, una muela)", "sep": "separable",
+         "trap": "Su equivalente formal y médico es «extract».",
+         "example": "The doctor had to take the splinter out.", "source": "Form 82 #50"},
+        {"verb": "run out of", "es": "quedarse sin, agotársele a uno algo", "sep": "inseparable (3 palabras)",
+         "trap": "El sujeto es quien se queda sin: we ran out of gas, no the gas ran out of us.",
+         "example": "We're out of gas.", "source": "Form 82"},
+        {"verb": "watch out for", "es": "tener cuidado con, estar pendiente de un peligro", "sep": "inseparable (3 palabras)",
+         "trap": "No es mirar: es una advertencia de seguridad. «Look at» nunca es la respuesta.",
+         "example": "Watch out for speeding cars on the expressway.", "source": "Form 71 #93"},
+        {"verb": "rush through", "es": "despachar a toda prisa, tramitar con urgencia", "sep": "separable",
+         "trap": "Fíjate cómo el objeto va EN MEDIO: rush this order through.",
+         "example": "Rush this order through.", "source": "Form 73 #50"}
+      ]
+    },
+    {
+      "id": "over",
+      "particle": "OVER",
+      "sense": "Pasar por encima o de un lado a otro. De ahí: asumir el control, revisar de punta a punta, excederse.",
+      "entries": [
+        {"verb": "take over", "es": "asumir el mando, hacerse cargo, tomar el control", "sep": "separable",
+         "trap": "En contexto militar equivale a «assume command».",
+         "example": "General Adams took over yesterday.", "source": "Form 82 #46"},
+        {"verb": "leap over", "es": "saltar por encima de, franquear de un salto", "sep": "inseparable",
+         "trap": "Literal, sin sorpresa; el distractor «climbed into» sí cambia el sentido.",
+         "example": "The deer leaped over the fence.", "source": "Form 73 #93, Form 82 #91"},
+        {"verb": "watch over", "es": "cuidar, velar por, vigilar a alguien", "sep": "inseparable",
+         "trap": "No confundir con «watch out for», que es cuidarse de un peligro.",
+         "example": "Marge watched over her child throughout the night.", "source": "Form 82 #85"},
+        {"verb": "check over", "es": "revisar a fondo, inspeccionar por completo", "sep": "separable",
+         "trap": "Más minucioso que un simple «check».",
+         "example": "He told Smith to check over his jeep.", "source": "Form 87 #40"},
+        {"verb": "be in over one's head", "es": "estar sobrepasado, quedar muy por encima de tu capacidad", "sep": "fijo",
+         "trap": "Imagen de agua por encima de la cabeza. Nada que ver con inteligencia.",
+         "example": "I'm in way over my head in that class.", "source": "Form 82 #65"}
+      ]
+    },
+    {
+      "id": "down-back",
+      "particle": "DOWN · BACK",
+      "sense": "Bajar, desarmar, reducir. Con «back», retener o echarse atrás.",
+      "entries": [
+        {"verb": "tear down", "es": "desmontar, desarmar por completo (un motor, una unidad)", "sep": "separable",
+         "trap": "En mantenimiento no es destruir: es despiezar para revisar. Lo contrario es «assemble».",
+         "example": "When will you tear down the unit?", "source": "Form 70 #53"},
+        {"verb": "blow down", "es": "derribar, tumbar (el viento)", "sep": "separable",
+         "trap": "Aparece como distractor frente a «damage»: derribar es un tipo de daño, no un sinónimo.",
+         "example": "The wind blew down the wheat.", "source": "Form 50"},
+        {"verb": "hold back", "es": "retener, contener, frenar; ocultar información", "sep": "separable",
+         "trap": "Contrario a «hold up» (retrasar) aunque se parezcan.",
+         "example": "held back", "source": "Technical & Action Verbs #10"},
+        {"verb": "write down", "es": "anotar, apuntar por escrito", "sep": "separable",
+         "trap": "Distractor de «obey»: anotar una orden no es cumplirla.",
+         "example": "He obeyed all the orders he was given.", "source": "Technical & Action Verbs #9"},
+        {"verb": "back down", "es": "echarse atrás, recular, ceder en una postura", "sep": "inseparable",
+         "trap": "No es retroceder físicamente; eso es «back up» o «move back».",
+         "example": "(registrado en el vocabulario del Form 62)", "source": "Form 62"}
+      ]
+    },
+    {
+      "id": "otras",
+      "particle": "ON · IN · FOR · ALONG · TOGETHER · APART",
+      "sense": "Partículas sueltas cuyo sentido depende más del verbo que las acompaña.",
+      "entries": [
+        {"verb": "count on", "es": "contar con, confiar en alguien", "sep": "inseparable",
+         "trap": "Nada que ver con contar números. «Count for» es otra cosa: valer, importar.",
+         "example": "You can count on me.", "source": "Form 73 #82"},
+        {"verb": "stand for", "es": "significar, representar; también tolerar", "sep": "inseparable",
+         "trap": "No es estar de pie. En mensajes cifrados es «equivaler a».",
+         "example": "Every number stands for a letter.", "source": "Form 62 #53"},
+        {"verb": "get in", "es": "llegar (un vuelo, tren o autobús a su destino)", "sep": "inseparable",
+         "trap": "Compara: get over = recuperarse, get up = levantarse, get by = arreglárselas.",
+         "example": "What time does the flight get in?", "source": "Form 63 #99"},
+        {"verb": "give up", "es": "rendirse, entregarse; abandonar algo", "sep": "separable",
+         "trap": "En contexto militar es «surrender», el opuesto exacto de defenderse.",
+         "example": "The enemy in the village gave up.", "source": "Form 87 #39"},
+        {"verb": "come together", "es": "concentrarse, reunirse en un punto", "sep": "inseparable",
+         "trap": "Es el sentido de «concentrate» aplicado a tropas: agruparlas, no enfocarse.",
+         "example": "The troops are being concentrated in this area.", "source": "Form 87 #31"},
+        {"verb": "take along", "es": "llevar consigo, llevarse a alguien", "sep": "separable",
+         "trap": "«Take around» sería pasearlo o mostrarle el lugar, no acompañarlo.",
+         "example": "Mary can go to the movies if she takes her little brother along.", "source": "Form 87 #89"},
+        {"verb": "get along (with)", "es": "llevarse bien con alguien", "sep": "inseparable",
+         "trap": "Aparece explicando qué es «a good Joe»: alguien con quien es fácil llevarse.",
+         "example": "The new supervisor is a good Joe.", "source": "Form 87 #64"},
+        {"verb": "look forward to", "es": "esperar algo con ganas, tener ilusión por", "sep": "inseparable (3 palabras)",
+         "trap": "El «to» es preposición: va seguido de -ing, nunca de infinitivo. Looking forward to seeing, no to see.",
+         "example": "I'm looking forward to seeing my family.", "source": "Form 73 #23"},
+        {"verb": "look after", "es": "cuidar de, ocuparse de alguien", "sep": "inseparable",
+         "trap": "Familia traicionera: look like = parecerse, look for = buscar, look at = mirar.",
+         "example": "Margaret looks like her father. (look after es el distractor)", "source": "Form 73 #25"},
+        {"verb": "fall apart", "es": "desarmarse, caerse a pedazos, deteriorarse", "sep": "inseparable",
+         "trap": "También sirve para planes o personas: the plan fell apart.",
+         "example": "David's car is ready to fall apart.", "source": "Form 62 #55"}
+      ]
+    }
+  ],
+  "false_friends": {
+    "title": "Se parecen, pero no son phrasal verbs",
+    "note": "Estas expresiones también se preguntaron y suelen confundirse con phrasal verbs. Son verbo + sustantivo o modismos fijos: no admiten objeto en medio ni cambian con la partícula.",
+    "entries": [
+      {"verb": "take place", "es": "ocurrir, tener lugar", "example": "It happened at 10 o'clock.", "source": "Form 70 #91"},
+      {"verb": "take charge", "es": "hacerse cargo, tomar el mando", "example": "(distractor de take place)", "source": "Form 70 #91"},
+      {"verb": "run short of", "es": "quedarse corto de, irse quedando sin", "example": "I'm running short of cash this week.", "source": "Form 70 #55"},
+      {"verb": "have a screw loose", "es": "faltarle un tornillo, estar mal de la cabeza", "example": "I think Robert has a screw loose.", "source": "Form 82 #49"},
+      {"verb": "tell time", "es": "leer la hora en un reloj", "example": "Can the child tell time yet?", "source": "Form 63 #98"}
+    ]
+  }
+}

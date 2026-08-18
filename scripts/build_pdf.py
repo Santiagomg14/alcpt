@@ -116,6 +116,23 @@ def build_styles():
         fontSize=10.5, leading=14.5, spaceBefore=10, spaceAfter=3,
         alignment=TA_JUSTIFY,
     )
+    s["pv_verb"] = ParagraphStyle(
+        "pv_verb", parent=s["body"], fontName="Times-Bold", fontSize=11.5,
+        leading=15, textColor=ACCENT, spaceBefore=9, spaceAfter=1,
+        alignment=TA_JUSTIFY,
+    )
+    s["pv_mean"] = ParagraphStyle(
+        "pv_mean", parent=s["body"], fontSize=10, leading=13.5,
+        spaceAfter=1, alignment=TA_JUSTIFY,
+    )
+    s["pv_trap"] = ParagraphStyle(
+        "pv_trap", parent=s["body"], fontSize=9.5, leading=13, textColor=GREY,
+        leftIndent=12, spaceAfter=1, alignment=TA_JUSTIFY,
+    )
+    s["pv_ex"] = ParagraphStyle(
+        "pv_ex", parent=s["body"], fontName="Times-Italic", fontSize=9.5,
+        leading=13, leftIndent=12, spaceAfter=5, alignment=TA_JUSTIFY,
+    )
     return s
 
 
@@ -134,10 +151,11 @@ def page_furniture(canvas, doc):
     canvas.restoreState()
 
 
-def cover(story, s, vocab, forms):
+def cover(story, s, vocab, forms, pv):
     total = vocab["meta"]["total_confirmed"]
     form_ids = ", ".join(str(f["form"]) for f in forms["forms"])
     total_q = sum(len(f["questions"]) for f in forms["forms"])
+    total_pv = sum(len(g["entries"]) for g in pv["groups"])
     story.append(Spacer(1, 4.5 * cm))
     story.append(Paragraph("Vocabulario en inglés<br/>y exámenes ALCPT", s["cover_title"]))
     story.append(Spacer(1, 0.5 * cm))
@@ -149,6 +167,7 @@ def cover(story, s, vocab, forms):
         ["Nivel de referencia", vocab["meta"]["level"]],
         ["Palabras confirmadas", str(total)],
         ["Formularios documentados", form_ids],
+        ["Phrasal verbs explicados", str(total_pv)],
         ["Preguntas documentadas", str(total_q)],
         ["Actualizado", date.today().isoformat()],
     ]
@@ -228,8 +247,43 @@ def vocabulary_part(story, s, vocab):
     story.append(PageBreak())
 
 
+def phrasal_part(story, s, pv):
+    story.append(Paragraph("Parte II · Phrasal verbs de los formularios 50 a 87", s["h1"]))
+    story.append(Paragraph(esc(pv["meta"]["intro"]), s["body"]))
+    for k in pv["meta"]["keys"]:
+        story.append(Paragraph(f"&#8226; {esc(k)}", s["note"]))
+
+    def card(e, with_sep=True):
+        block = []
+        cabeza = esc(e["verb"])
+        if with_sep and e.get("sep"):
+            cabeza += f'  <font size="7" color="#6d6469">[{esc(e["sep"]).upper()}]</font>'
+        block.append(Paragraph(cabeza, s["pv_verb"]))
+        block.append(Paragraph(esc(e["es"]), s["pv_mean"]))
+        if e.get("trap"):
+            block.append(Paragraph(esc(e["trap"]), s["pv_trap"]))
+        block.append(Paragraph(
+            f'&#8220;{esc(e["example"])}&#8221;  '
+            f'<font size="7" color="#6d6469">{esc(e["source"])}</font>', s["pv_ex"]))
+        story.append(KeepTogether(block))
+
+    for g in pv["groups"]:
+        story.append(Paragraph(esc(g["particle"]), s["h2"]))
+        story.append(Paragraph(esc(g["sense"]), s["note"]))
+        for e in g["entries"]:
+            card(e)
+
+    ff = pv["false_friends"]
+    story.append(Paragraph(esc(ff["title"]), s["h2"]))
+    story.append(Paragraph(esc(ff["note"]), s["note"]))
+    for e in ff["entries"]:
+        card(e, with_sep=False)
+
+    story.append(PageBreak())
+
+
 def forms_part(story, s, forms):
-    story.append(Paragraph("Parte II · Preguntas ALCPT resueltas", s["h1"]))
+    story.append(Paragraph("Parte III · Preguntas ALCPT resueltas", s["h1"]))
     story.append(Paragraph(
         "Each item below reproduces the question, all answer options, the correct answer and a detailed "
         "explanation. This part is written entirely in English on purpose, so that reviewing it doubles "
@@ -266,6 +320,7 @@ def main():
 
     vocab = json.loads((DATA / "vocabulary.json").read_text(encoding="utf-8"))
     forms = json.loads((DATA / "forms.json").read_text(encoding="utf-8"))
+    pv = json.loads((DATA / "phrasal_verbs.json").read_text(encoding="utf-8"))
 
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -284,8 +339,9 @@ def main():
 
     s = build_styles()
     story = []
-    cover(story, s, vocab, forms)
+    cover(story, s, vocab, forms, pv)
     vocabulary_part(story, s, vocab)
+    phrasal_part(story, s, pv)
     forms_part(story, s, forms)
 
     doc.build(story)

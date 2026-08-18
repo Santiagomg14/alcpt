@@ -41,9 +41,25 @@ palabras técnicas (scuttlebutt, chaplain, disrepair, dud, rule of thumb, expend
 ### 4. Orden de presentación
 Cuando se muestre el estado del proyecto (en chat o en PDF), el orden es siempre:
 1. Vocabulario completo (todas las entradas desde el número 1).
-2. Sección ALCPT agrupada por formulario, con pregunta / opciones / respuesta / explicación.
+2. Phrasal verbs, agrupados por partícula.
+3. Sección ALCPT agrupada por formulario, con pregunta / opciones / respuesta / explicación.
 
-### 5. Formato de documentos
+### 5. Phrasal verbs
+`data/phrasal_verbs.json` explica los phrasal verbs que **aparecen de verdad** en los
+formularios documentados. No se inventan ni se traen de listas genéricas: cada entrada
+cita la frase textual del examen y el formulario donde salió.
+
+Se agrupan **por partícula** (UP, OFF·AWAY, OUT, OVER, DOWN·BACK, otras) porque cada una
+carga un sentido bastante estable, y entender eso rinde más que memorizar casos sueltos.
+Cada entrada lleva: significado en español, si es separable o no, la trampa típica para
+un hispanohablante, la frase del examen y su origen.
+
+El bloque `false_friends` recoge expresiones que se preguntaron y **se confunden** con
+phrasal verbs sin serlo (take place, run short of, tell time…).
+
+Explicación en español; los ejemplos, textuales en inglés.
+
+### 6. Formato de documentos
 Preferencia fija de Brayhan: **en Word y PDF, los párrafos siempre van justificados.**
 El script `scripts/build_pdf.py` ya aplica `TA_JUSTIFY` en todos los estilos de texto corrido.
 
@@ -56,7 +72,8 @@ alcpt/
 ├── requirements.txt
 ├── data/
 │   ├── vocabulary.json    <- fuente única del diccionario
-│   └── forms.json         <- fuente única de las preguntas
+│   ├── forms.json         <- fuente única de las preguntas
+│   └── phrasal_verbs.json <- phrasal verbs de los formularios, por partícula
 ├── scripts/
 │   ├── build_pdf.py       <- genera el PDF consolidado
 │   ├── build_html.py      <- versión web espejo del PDF

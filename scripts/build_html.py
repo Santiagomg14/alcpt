@@ -96,6 +96,27 @@ table.vocab td.audio{width:2.6em; text-align:right; padding-right:0}
 .say[hidden]{display:none}
 @media print{.say{display:none}}
 
+article.pv{
+  background:var(--card); border:1px solid var(--rule); border-radius:8px;
+  padding:12px 16px; margin:10px 0;
+}
+article.pv .top{display:flex; align-items:baseline; gap:9px; flex-wrap:wrap}
+article.pv .vb{font-weight:700; color:var(--accent); font-size:1.06rem}
+article.pv .sepx{
+  font-family:system-ui,sans-serif; font-size:.7rem; text-transform:uppercase;
+  letter-spacing:.06em; color:var(--grey); border:1px solid var(--rule);
+  border-radius:999px; padding:1px 8px;
+}
+article.pv .top .say{margin-left:auto}
+article.pv p{margin:6px 0 0; text-align:justify; hyphens:auto}
+article.pv .trap{font-size:.92rem; color:var(--grey); border-left:2px solid var(--accent); padding-left:10px}
+article.pv .ex{display:flex; gap:9px; align-items:flex-start; font-style:italic; font-size:.95rem}
+article.pv .ex q{flex:1}
+article.pv .src{font-size:.78rem; color:var(--grey); font-style:normal; font-family:system-ui,sans-serif}
+p.sense{color:var(--grey); border-left:2px solid var(--rule); padding-left:10px; margin:6px 0 0; font-size:.94rem}
+ul.keys{color:var(--grey); font-size:.94rem}
+@media print{article.pv{break-inside:avoid}}
+
 .pending{background:var(--accent-soft); border:1px solid var(--rule); border-radius:10px; padding:4px 16px 12px}
 
 article.q{
@@ -191,11 +212,12 @@ def slug(text):
     return "".join(ch if ch.isalnum() else "-" for ch in str(text).lower()).strip("-")
 
 
-def build(vocab, forms):
+def build(vocab, forms, pv):
     out = []
     a = out.append
     total_words = sum(len(s["entries"]) for s in vocab["sections"])
     total_q = sum(len(f["questions"]) for f in forms["forms"])
+    total_pv = sum(len(g["entries"]) for g in pv["groups"])
     form_ids = ", ".join(str(f["form"]) for f in forms["forms"])
 
     a("<!doctype html><html lang='es'><head><meta charset='utf-8'>")
@@ -213,6 +235,7 @@ def build(vocab, forms):
         ("Nivel de referencia", vocab["meta"]["level"]),
         ("Palabras confirmadas", str(total_words)),
         ("Formularios documentados", form_ids),
+        ("Phrasal verbs explicados", str(total_pv)),
         ("Preguntas documentadas", str(total_q)),
         ("Actualizado", date.today().isoformat()),
     ]:
@@ -224,6 +247,7 @@ def build(vocab, forms):
     a("<a href='#vocabulario'>Vocabulario</a>")
     for s in vocab["sections"]:
         a(f"<a href='#voc-{slug(s['id'])}'>{escape(s['title'])}</a>")
+    a("<a href='#phrasal'>Phrasal verbs</a>")
     a("<a href='#alcpt'>ALCPT</a>")
     for f in forms["forms"]:
         label = str(f["form"])
@@ -267,8 +291,45 @@ def build(vocab, forms):
               f"<td class='audio'>{say_button(e['en'], 'Escuchar ' + e['en'])}</td></tr>")
         a("</table></div>")
 
-    # ---- Parte II: ALCPT
-    a("<h2 class='part' id='alcpt'>Parte II · Preguntas ALCPT resueltas</h2>")
+    # ---- Parte II: phrasal verbs
+    a("<h2 class='part' id='phrasal'>Parte II · Phrasal verbs de los formularios 50 a 87</h2>")
+    a(f"<p class='lead'>{escape(pv['meta']['intro'])}</p>")
+    a("<ul class='keys'>")
+    for k in pv["meta"]["keys"]:
+        a(f"<li>{escape(k)}</li>")
+    a("</ul>")
+
+    def pv_card(e, with_sep=True):
+        a("<article class='pv'>")
+        a("<div class='top'>"
+          f"<span class='vb'>{escape(e['verb'])}</span>"
+          + (f"<span class='sepx'>{escape(e['sep'])}</span>" if with_sep and e.get("sep") else "")
+          + say_button(e["verb"], "Escuchar " + e["verb"]) + "</div>")
+        a(f"<p>{escape(e['es'])}</p>")
+        if e.get("trap"):
+            a(f"<p class='trap'>{escape(e['trap'])}</p>")
+        a("<p class='ex'>"
+          f"<q>{escape(e['example'])}</q>"
+          + say_button(e["example"], "Escuchar el ejemplo de " + e["verb"]) + "</p>")
+        a(f"<p class='src'>{escape(e['source'])}</p>")
+        a("</article>")
+
+    for g in pv["groups"]:
+        a(f"<h3 class='sect'>{escape(g['particle'])}"
+          f"<span class='count'>{len(g['entries'])} phrasal verbs</span></h3>")
+        a(f"<p class='sense'>{escape(g['sense'])}</p>")
+        for e in g["entries"]:
+            pv_card(e)
+
+    ff = pv["false_friends"]
+    a(f"<h3 class='sect'>{escape(ff['title'])}"
+      f"<span class='count'>{len(ff['entries'])} expresiones</span></h3>")
+    a(f"<p class='sense'>{escape(ff['note'])}</p>")
+    for e in ff["entries"]:
+        pv_card(e, with_sep=False)
+
+    # ---- Parte III: ALCPT
+    a("<h2 class='part' id='alcpt'>Parte III · Preguntas ALCPT resueltas</h2>")
     a("<p class='lead'>Each item below reproduces the question, all answer options, the correct answer and a "
       "detailed explanation. This part is written entirely in English on purpose, so that reviewing it "
       "doubles as reading practice at test level.</p>")
@@ -297,7 +358,8 @@ def build(vocab, forms):
             a(f"<p class='expl'><b>Explanation.</b> {escape(q['explanation'])}</p>")
             a("</article>")
 
-    a(f"<footer>{total_words} palabras · {total_q} preguntas · generado el {date.today().isoformat()}</footer>")
+    a(f"<footer>{total_words} palabras · {total_pv} phrasal verbs · {total_q} preguntas"
+      f" · generado el {date.today().isoformat()}</footer>")
     a(f"<script>{SPEECH_JS}</script>")
     a("</div></body></html>")
     return "\n".join(out)
@@ -310,10 +372,11 @@ def main():
 
     vocab = json.loads((DATA / "vocabulary.json").read_text(encoding="utf-8"))
     forms = json.loads((DATA / "forms.json").read_text(encoding="utf-8"))
+    pv = json.loads((DATA / "phrasal_verbs.json").read_text(encoding="utf-8"))
 
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(build(vocab, forms), encoding="utf-8")
+    out_path.write_text(build(vocab, forms, pv), encoding="utf-8")
     print(f"OK -> {out_path}")
 
 

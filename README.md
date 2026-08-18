@@ -61,6 +61,7 @@ En las preguntas lee el enunciado y todas las opciones, como en la parte auditiv
 |---|---|
 | `data/vocabulary.json` | Todas las palabras con su número y traducción |
 | `data/forms.json` | Preguntas, opciones, respuestas y explicaciones |
+| `data/phrasal_verbs.json` | Phrasal verbs de los formularios 50–87, agrupados por partícula |
 | `CLAUDE.md` | Las reglas del flujo de trabajo |
 | `output/*.pdf` | Documento consolidado, párrafos justificados |
 | `output/ALCPT_Vocabulario_y_Examenes.html` | Espejo del PDF en versión web |
@@ -68,4 +69,5 @@ En las preguntas lee el enunciado y todas las opciones, como en la parte auditiv
 | `docs/index.html` | Lo mismo, publicado en GitHub Pages |
 | `bot/alcpt_bot.py` | Bot de Telegram que alimenta el diccionario |
 
-Los dos JSON son la única fuente de verdad: el PDF siempre se regenera a partir de ellos.
+Los tres JSON de `data/` son la única fuente de verdad: el PDF y las páginas siempre se
+regeneran a partir de ellos.
