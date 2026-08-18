@@ -369,12 +369,14 @@ def main():
     me = api("getMe")["result"]
     log(f"conectado como @{me['username']} · repo {REPO}")
     offset = load_offset()
+    conflicts = 0
 
     while True:
         try:
             res = requests.get(API.format(token=TOKEN, method="getUpdates"),
                                params={"offset": offset, "timeout": 50}, timeout=70)
             res.raise_for_status()
+            conflicts = 0
             for u in res.json().get("result", []):
                 offset = u["update_id"] + 1
                 save_offset(offset)
@@ -383,7 +385,18 @@ def main():
                 except Exception as exc:                     # un update malo no tumba el bot
                     log(f"error procesando update: {exc!r}")
         except requests.exceptions.RequestException as exc:
-            log(f"red: {exc!r}; reintento en 15 s")
+            # 409 = otro proceso esta leyendo este mismo bot. Telegram solo admite uno.
+            status = getattr(getattr(exc, "response", None), "status_code", None)
+            if status == 409:
+                conflicts += 1
+                if conflicts in (3, 30):
+                    log("CONFLICTO: otro equipo o proceso esta leyendo este bot. "
+                        "Telegram solo admite un lector por token. Revisa con "
+                        "'python bot/install_service.py --status' que maquina lo tiene "
+                        "tomado y quita el servicio de la otra.")
+            else:
+                conflicts = 0
+                log(f"red: {exc!r}; reintento en 15 s")
             time.sleep(15)
         except KeyboardInterrupt:
             log("detenido")

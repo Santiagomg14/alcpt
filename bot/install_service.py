@@ -18,15 +18,19 @@ Por sistema:
 """
 
 import argparse
+import json
 import os
 import platform
 import shutil
+import socket
 import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 BOT = REPO / "bot" / "alcpt_bot.py"
+CLAIM = REPO / "bot" / "active_host.json"
 NAME = "ALCPT Bot"
 SLUG = "alcpt-bot"
 
@@ -34,6 +38,92 @@ SLUG = "alcpt-bot"
 def run(cmd, **kw):
     return subprocess.run(cmd, capture_output=True, text=True,
                           encoding="utf-8", errors="replace", **kw)
+
+
+# ------------------------------------------------------- ¿quién tiene el bot?
+# Telegram solo admite un lector por token. Como todas las máquinas comparten el
+# repositorio, se usa un archivo versionado para saber cuál lo tiene tomado.
+
+def this_host():
+    return f"{socket.gethostname()} ({platform.system()})"
+
+
+def read_claim():
+    if not CLAIM.exists():
+        return None
+    try:
+        return json.loads(CLAIM.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return None
+
+
+def write_claim(release=False):
+    if release:
+        data = {"host": None, "released_at": datetime.now().isoformat(timespec="seconds"),
+                "nota": "Ninguna máquina tiene el bot tomado."}
+    else:
+        data = {"host": this_host(),
+                "claimed_at": datetime.now().isoformat(timespec="seconds"),
+                "repo_path": str(REPO),
+                "nota": "Telegram solo admite un lector por token. Antes de instalar "
+                        "el bot en otra máquina, desinstálalo en esta."}
+    CLAIM.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    if shutil.which("git"):
+        run(["git", "add", str(CLAIM)], cwd=REPO)
+        verbo = "libera" if release else "toma"
+        run(["git", "commit", "-m", f"Bot: {verbo} el servicio en {this_host()}"], cwd=REPO)
+        run(["git", "push"], cwd=REPO)
+
+
+def ask(question, default_no=True):
+    """Pregunta sí/no. Si no hay terminal (script automático), asume la opción segura."""
+    if not sys.stdin or not sys.stdin.isatty():
+        print(f"{question} -> sin terminal interactiva, asumo que NO.")
+        return False
+    sufijo = " [s/N] " if default_no else " [S/n] "
+    try:
+        resp = input(question + sufijo).strip().lower()
+    except (EOFError, KeyboardInterrupt):
+        print()
+        return False
+    if not resp:
+        return not default_no
+    return resp in ("s", "si", "sí", "y", "yes")
+
+
+def confirm_this_machine(force=False):
+    """Comprueba que esta sea la máquina donde debe quedar el bot. Devuelve True si seguir."""
+    if shutil.which("git"):
+        run(["git", "pull", "--quiet", "--ff-only"], cwd=REPO)   # traer el registro más reciente
+
+    claim = read_claim()
+    holder = (claim or {}).get("host")
+    print(f"Este equipo: {this_host()}")
+
+    if holder and holder != this_host():
+        print(f"El bot está tomado por otra máquina: {holder}")
+        print(f"  desde {claim.get('claimed_at', '?')}  ({claim.get('repo_path', '?')})")
+    elif holder == this_host():
+        print("Este equipo ya tenía el bot tomado.")
+    else:
+        print("Ninguna máquina tiene el bot tomado todavía.")
+
+    if force:
+        return True
+
+    if not ask("\n¿Esta será la máquina definitiva donde va a correr el sistema?"):
+        print("\nNo instalo nada.")
+        print("Para probarlo aquí sin dejarlo instalado:  python bot/alcpt_bot.py")
+        return False
+
+    if holder and holder != this_host():
+        print(f"\nTelegram solo admite un lector por token: si el bot sigue corriendo en "
+              f"{holder}, los dos se pelearán los mensajes.")
+        print(f"Ve a esa máquina y ejecuta:  python bot/install_service.py --uninstall")
+        if not ask(f"\n¿Ya quitaste el servicio en {holder}?"):
+            print("\nNo instalo nada. Quítalo allá primero y vuelve a ejecutar esto.")
+            return False
+    return True
 
 
 def check_ready():
@@ -269,9 +359,11 @@ BACKENDS = {
 
 def main():
     ap = argparse.ArgumentParser(description="Instala el bot ALCPT como servicio.")
-    ap.add_argument("--status", action="store_true")
-    ap.add_argument("--uninstall", action="store_true")
+    ap.add_argument("--status", action="store_true", help="¿está corriendo y en qué máquina?")
+    ap.add_argument("--uninstall", action="store_true", help="quitar el servicio y liberar el bot")
     ap.add_argument("--restart", action="store_true")
+    ap.add_argument("--force", action="store_true",
+                    help="instalar sin preguntar (para guiones automáticos)")
     args = ap.parse_args()
 
     system = platform.system()
@@ -280,15 +372,34 @@ def main():
     install, status, uninstall, restart = BACKENDS[system]
 
     if args.status:
+        claim = read_claim()
+        holder = (claim or {}).get("host")
+        print(f"Este equipo: {this_host()}")
+        print(f"Bot tomado por: {holder or 'nadie'}")
+        if holder and holder != this_host():
+            print("  OJO: el servicio de aquí competiría con el de esa máquina.")
+        print()
         print(status())
         return
+
     if args.uninstall:
         err = uninstall()
-        print(err or "Servicio retirado.")
+        if err:
+            print(err)
+        else:
+            print("Servicio retirado.")
+            claim = read_claim()
+            if (claim or {}).get("host") == this_host():
+                write_claim(release=True)
+                print("Bot liberado: ya puedes instalarlo en otra máquina.")
         return
+
     if args.restart:
         err = restart()
         print(err or "Servicio reiniciado.")
+        return
+
+    if not confirm_this_machine(force=args.force):
         return
 
     problems, warnings = check_ready()
@@ -302,8 +413,10 @@ def main():
     err = install()
     if err:
         sys.exit(err)
-    print(f"Servicio instalado y corriendo en {system}.")
+    write_claim()
+    print(f"\nServicio instalado y corriendo en {system}.")
     print(f"Repositorio: {REPO}")
+    print(f"Bot tomado por: {this_host()}")
     print("Comprobar:  python bot/install_service.py --status")
 
 
