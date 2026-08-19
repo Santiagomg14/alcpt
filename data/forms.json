@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 236
+    "total_questions": 237
   },
   "forms": [
     {
@@ -301,6 +301,18 @@
           ],
           "correct": "You are not speaking loud enough.",
           "explanation": "The word \"hardly\" is a negative adverb that means \"scarcely\" or \"almost not.\" When the instructor says, \"I can hardly hear you,\" they are expressing that your voice is so quiet that it is nearly impossible for them to perceive the sound. This indicates a need for the speaker to increase their volume. Incorrect Answers: \"You are not speaking.\" is incorrect because \"hardly\" implies that some sound is being made, but it is at (the rest of the analysis was cut off in the capture). \"You are speaking too loudly.\" is incorrect because it states the opposite of what \"hardly hear\" conveys: the problem is too little volume, not too much."
+        },
+        {
+          "n": 33,
+          "question": "Joe doesn't like to go to the movies alone.",
+          "options": [
+            "Joe dislikes the movies.",
+            "(Option not visible — the explanation panel covered it on the review screen.)",
+            "Joe prefers going to the movies by himself.",
+            "Joe wants company when he goes to the movies."
+          ],
+          "correct": "Joe wants company when he goes to the movies.",
+          "explanation": "The sentence states that Joe does not like to go to the movies \"alone.\" In English, \"alone\" means by oneself or without others. Therefore, if he dislikes being alone, it implies he prefers to have someone with him. \"Company\" is a common term used to describe the presence of another person or a group of people. Incorrect Answers: \"Joe dislikes the movies.\" is incorrect because the (rest of the analysis was covered by the explanation panel in the capture). \"Joe prefers going to the movies by himself.\" is incorrect because it states the opposite of the premise: going \"by himself\" is exactly the same as going \"alone,\" which is what Joe does not like."
         }
       ]
     },
