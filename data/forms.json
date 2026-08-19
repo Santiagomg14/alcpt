@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 234
+    "total_questions": 235
   },
   "forms": [
     {
@@ -277,6 +277,18 @@
           ],
           "correct": "It has no curves.",
           "explanation": "The word \"straight\" is an adjective used to describe something that extends in one direction without bending or turning. In the context of a street, a straight road is one that does not deviate from a direct line. Therefore, saying a street has no curves is a direct paraphrase of saying it is straight. \"It is long.\" is incorrect because \"straight\" refers to the direction or shape of the road, not its length or distance from start to finish."
+        },
+        {
+          "n": 29,
+          "question": "Bill and David want to take a walk after dinner. What do they want to do after dinner?",
+          "options": [
+            "(Correct option not visible — the review screen was scrolled past it.)",
+            "drill after dinner",
+            "walk from the BOQ to class",
+            "take a long hike"
+          ],
+          "correct": "(Not shown — the capture only includes the incorrect-answer analysis; the correct choice was scrolled off the review screen.)",
+          "explanation": "The intended answer restates \"take a walk\" as a synonym of a common verb phrase (the opening lines of the explanation were cut off in the capture). Incorrect Answers: \"drill after dinner\" is incorrect because \"drill\" specifically refers to military training, such as marching or weapon handling, which is a formal duty rather than a casual walk. \"walk from the BOQ to class\" is incorrect because the original sentence provides no specific location (Bachelor Officer Quarters) or destination (class). This choice adds details not present in the premise. \"take a long hike\" is incorrect because a \"hike\" implies a more strenuous, long-distance trek, typically in a natural or rugged environment, whereas a \"walk\" is generally shorter and more casual."
         }
       ]
     },
