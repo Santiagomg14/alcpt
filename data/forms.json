@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 248
+    "total_questions": 249
   },
   "forms": [
     {
@@ -445,6 +445,18 @@
           ],
           "correct": "improper care",
           "explanation": "In the dialogue, the speaker identifies the cause of the engine failure as \"poor maintenance.\" In a mechanical or military context, maintenance refers to the routine actions performed to keep equipment in good working order. \"Improper care\" is a direct synonym for poor maintenance, as it describes a failure to look after the equipment correctly. Incorrect Answers: \"rough roads\" is incorrect because the dialogue focuses on the mechanical upkeep (maintenance) of the vehicle (the rest of the analysis was covered by the explanation panel in the capture), not on the driving surface or terrain. \"proper lubrication\" is incorrect because it names correct servicing rather than a defect: applying oil or grease as required is part of good maintenance, so it would prevent the failure instead of causing it. (The analysis of the remaining option was covered by the explanation panel in the capture.)"
+        },
+        {
+          "n": 68,
+          "question": "A pharmacist is a ________ .",
+          "options": [
+            "druggist",
+            "farmer",
+            "dentist",
+            "doctor"
+          ],
+          "correct": "druggist",
+          "explanation": "A \"pharmacist\" is a person who is professionally trained and licensed to prepare and dispense medicinal drugs. A \"druggist\" is simply the more common, everyday synonym for that same occupation in American English, since the person works with drugs (medicines) in a drugstore or pharmacy. The item tests occupational vocabulary by asking for an exact equivalent, not for a related job. Incorrect Answers: \"farmer\" is incorrect because a farmer cultivates land and raises crops or livestock, an agricultural occupation with no connection to preparing medicine. \"dentist\" is incorrect because a dentist specializes in the care of the teeth, gums, and mouth; although a dentist may prescribe medication, the job is dental treatment rather than dispensing drugs. \"doctor\" is incorrect because a doctor (physician) diagnoses illnesses and writes the prescription, while the pharmacist is the one who fills that prescription and hands over the medicine; the two roles are complementary but not the same."
         }
       ]
     },
