@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 256
+    "total_questions": 257
   },
   "forms": [
     {
@@ -541,6 +541,18 @@
           ],
           "correct": "go at once",
           "explanation": "The phrase \"right away\" is an idiomatic expression that means immediately, without delay, or \"at once.\" In a military context, \"sick call\" is a designated time (usually early in the morning) when service members can report to a medical clinic for non-emergency medical evaluation. Therefore, the sentence \"You should go on sick call right away\" translates to a recommendation to report for medical evaluation immediately. Incorrect Answers: \"walk straight\" is incorrect because it describes the manner or direction of walking, while \"right away\" says nothing about how or where to move; it only sets the moment of the action. \"go to the right\" is incorrect because it treats \"right\" as a physical direction rather than as part of the fixed expression \"right away,\" whose meaning is temporal, not spatial. (The incorrect-answer analysis itself was cut off in the capture, and the remaining option was covered by the explanation panel.)"
+        },
+        {
+          "n": 94,
+          "question": "Do you ________ go to the city library? (The stem was scrolled off the review screen and is reconstructed from the explanation text.)",
+          "options": [
+            "ever",
+            "never",
+            "can",
+            "how"
+          ],
+          "correct": "ever",
+          "explanation": "In English, the word \"ever\" is an adverb used in questions to mean \"at any time.\" When placed between the subject \"you\" and the main verb \"go\" in a question starting with the auxiliary verb \"do,\" it asks about the frequency or existence of a habit. The question \"Do you ever go to the city library?\" is a standard way to ask if someone visits that location. Incorrect Answers: \"never\" is incorrect because, while it is an adverb of frequency, it is typically used in statements rather (the rest of the analysis was cut off in the capture) than in questions, where the negative meaning would clash with the interrogative \"do\" construction. \"can\" is incorrect because it is a modal verb of ability or permission, and a question cannot take both the auxiliary \"do\" and a modal in that position. \"how\" is incorrect because it is a question word that introduces a question about manner, so it cannot sit inside a clause already opened by \"do you.\" (The analyses of these last two options were not visible in the capture.)"
         }
       ]
     },
