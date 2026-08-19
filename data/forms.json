@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 238
+    "total_questions": 239
   },
   "forms": [
     {
@@ -325,6 +325,18 @@
           ],
           "correct": "throw them away.",
           "explanation": "The phrase \"worn out\" means that an item (such as clothing or equipment) has been used so much that it is damaged, useless, or no longer in good condition. In military and everyday contexts, once a piece of gear or footwear is worn out, the standard procedure is to discard or replace it. Therefore, throwing them away is the logical action. Incorrect Answers: \"polish them.\" is incorrect because polishing is a maintenance task for shoes that are still in good (the rest of the analysis was covered by the explanation panel in the capture). \"get them stretched.\" is incorrect because stretching only corrects shoes that are too tight, which is a problem of fit, not of wear and damage."
+        },
+        {
+          "n": 43,
+          "question": "The supermarket is out of fruit.",
+          "options": [
+            "There isn't anymore.",
+            "There is a lot of fruit.",
+            "It is never empty.",
+            "(Option not visible — the explanation panel covered it on the review screen.)"
+          ],
+          "correct": "There isn't anymore.",
+          "explanation": "The phrase \"out of\" is an idiomatic expression meaning that the supply of a particular item has been exhausted or used up. If the supermarket is \"out of fruit,\" it means they have sold all the fruit they had and currently have no more in stock. Incorrect Answers: \"It is never empty.\" is incorrect because it refers to the store's general state rather than the specific lack of fruit mentioned in the statement. \"There is a lot of fruit.\" is incorrect because it states the opposite of the premise: being out of an item means the quantity available is zero, not abundant. (The analysis of the remaining option was covered by the explanation panel in the capture.)"
         }
       ]
     },
