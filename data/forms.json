@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 237
+    "total_questions": 238
   },
   "forms": [
     {
@@ -313,6 +313,18 @@
           ],
           "correct": "Joe wants company when he goes to the movies.",
           "explanation": "The sentence states that Joe does not like to go to the movies \"alone.\" In English, \"alone\" means by oneself or without others. Therefore, if he dislikes being alone, it implies he prefers to have someone with him. \"Company\" is a common term used to describe the presence of another person or a group of people. Incorrect Answers: \"Joe dislikes the movies.\" is incorrect because the (rest of the analysis was covered by the explanation panel in the capture). \"Joe prefers going to the movies by himself.\" is incorrect because it states the opposite of the premise: going \"by himself\" is exactly the same as going \"alone,\" which is what Joe does not like."
+        },
+        {
+          "n": 34,
+          "question": "These shoes are worn out. What should I do with them?",
+          "options": [
+            "throw them away.",
+            "polish them.",
+            "(Option not visible — the explanation panel covered it on the review screen.)",
+            "get them stretched."
+          ],
+          "correct": "throw them away.",
+          "explanation": "The phrase \"worn out\" means that an item (such as clothing or equipment) has been used so much that it is damaged, useless, or no longer in good condition. In military and everyday contexts, once a piece of gear or footwear is worn out, the standard procedure is to discard or replace it. Therefore, throwing them away is the logical action. Incorrect Answers: \"polish them.\" is incorrect because polishing is a maintenance task for shoes that are still in good (the rest of the analysis was covered by the explanation panel in the capture). \"get them stretched.\" is incorrect because stretching only corrects shoes that are too tight, which is a problem of fit, not of wear and damage."
         }
       ]
     },
