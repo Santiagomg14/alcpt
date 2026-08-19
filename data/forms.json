@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 246
+    "total_questions": 247
   },
   "forms": [
     {
@@ -421,6 +421,18 @@
           ],
           "correct": "surrendered",
           "explanation": "The phrasal verb \"gave up\" (the past tense of \"give up\") in this context means to cease resistance and submit to an opponent. In a military scenario, when a force \"gives up\" to a \"superior force\" (a force that is larger or more powerful), it is synonymous with surrendering. The sentence implies that the enemy realized they could not win and chose to stop fighting. Incorrect Answers: \"counterattacked\" is incorrect because it refers to an offensive action taken in response to an enemy attack (the rest of the analysis was cut off in the capture); attacking back is the opposite of ceasing resistance. \"defended\" is incorrect because defending means continuing to resist and hold a position against the attacker, whereas giving up means abandoning that resistance altogether."
+        },
+        {
+          "n": 61,
+          "question": "Why does Billy want a blanket? (The review screen shows the stem twice and partly garbled: \"what does Billy want a blanket / why does Billy want a blanket\".)",
+          "options": [
+            "He's cold.",
+            "He's hurt.",
+            "He's thirsty.",
+            "(Fourth option not visible — the explanation panel covered it on the review screen.)"
+          ],
+          "correct": "He's cold.",
+          "explanation": "A blanket is a thick covering made of wool or other fabric used primarily to keep a person warm. When a person asks for a blanket, it is logically because they are experiencing low temperatures or feeling chilly. In the context of the ALCPT, this tests basic cause-and-effect vocabulary associated with physical needs. Incorrect Answers: \"He's hurt.\" is incorrect because while a blanket might be used in first aid to treat shock, it is not the standard or primary request for an injury compared (the rest of the analysis was cut off in the capture). \"He's thirsty.\" is incorrect because thirst is relieved by drinking a liquid, and a blanket provides warmth rather than hydration."
         }
       ]
     },
