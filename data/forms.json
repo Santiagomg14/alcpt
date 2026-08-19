@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 244
+    "total_questions": 245
   },
   "forms": [
     {
@@ -397,6 +397,18 @@
           ],
           "correct": "go to class",
           "explanation": "The verb \"attend\" means to be present at an event, meeting, or function. In an educational or military training context, if someone is told to attend a class, it means they are required to go to the location of the class and be present for the instruction. Incorrect Answers: \"pay attention in class\" is incorrect because while paying attention is a behavior expected during class, \"attend\" specifically refers to the act of being physically present or going to the session. \"leave the class\" is incorrect because it states the opposite of the premise: attending means going to the class and staying for it, not departing from it. (The analysis of the remaining option was covered by the explanation panel in the capture.)"
+        },
+        {
+          "n": 53,
+          "question": "Why did the welder use goggles?",
+          "options": [
+            "to protect his sight",
+            "to protect his feet",
+            "to protect his hands",
+            "to protect his hearing"
+          ],
+          "correct": "to protect his sight",
+          "explanation": "In a technical or military maintenance context, goggles are a specific type of Personal Protective Equipment (PPE) designed to shield the eyes from hazards. A welder uses goggles to protect their sight from the intense ultraviolet and infrared light, as well as sparks and flying debris produced during the welding process. Incorrect Answers: \"to protect his feet\" is incorrect because footwear, such as safety boots, is used for foot protection (the rest of the analysis was cut off in the capture). \"to protect his hands\" is incorrect because hand protection comes from welding gloves or gauntlets, not from a device worn over the eyes. \"to protect his hearing\" is incorrect because hearing is protected with earplugs or ear defenders, and welding is a visual hazard rather than a noise hazard."
         }
       ]
     },
