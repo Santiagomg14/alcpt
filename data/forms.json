@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 239
+    "total_questions": 240
   },
   "forms": [
     {
@@ -337,6 +337,18 @@
           ],
           "correct": "There isn't anymore.",
           "explanation": "The phrase \"out of\" is an idiomatic expression meaning that the supply of a particular item has been exhausted or used up. If the supermarket is \"out of fruit,\" it means they have sold all the fruit they had and currently have no more in stock. Incorrect Answers: \"It is never empty.\" is incorrect because it refers to the store's general state rather than the specific lack of fruit mentioned in the statement. \"There is a lot of fruit.\" is incorrect because it states the opposite of the premise: being out of an item means the quantity available is zero, not abundant. (The analysis of the remaining option was covered by the explanation panel in the capture.)"
+        },
+        {
+          "n": 46,
+          "question": "The doctor wants to check John's pulse. What does the doctor want to check?",
+          "options": [
+            "his ears.",
+            "his throat.",
+            "his fever.",
+            "his heartbeat."
+          ],
+          "correct": "his heartbeat.",
+          "explanation": "The \"pulse\" is the rhythmic throbbing of the arteries that can be felt at points such as the wrist or the neck, and it is produced by each contraction of the heart. Because every beat of the heart pushes blood through the arteries, taking someone's pulse is the standard way of measuring the heartbeat and its rate. Therefore, checking John's pulse means checking his heartbeat. Incorrect Answers: \"his ears.\" is incorrect because the ears are examined with an otoscope for hearing or infection, and they have nothing to do with the circulation of blood. \"his throat.\" is incorrect because a doctor looks at the throat for signs of soreness or infection; although a pulse can be felt in the neck, the throat itself is not what the pulse measures. \"his fever.\" is incorrect because a fever is a rise in body temperature and is measured with a thermometer, not by feeling the beat of the arteries."
         }
       ]
     },
