@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 247
+    "total_questions": 248
   },
   "forms": [
     {
@@ -433,6 +433,18 @@
           ],
           "correct": "He's cold.",
           "explanation": "A blanket is a thick covering made of wool or other fabric used primarily to keep a person warm. When a person asks for a blanket, it is logically because they are experiencing low temperatures or feeling chilly. In the context of the ALCPT, this tests basic cause-and-effect vocabulary associated with physical needs. Incorrect Answers: \"He's hurt.\" is incorrect because while a blanket might be used in first aid to treat shock, it is not the standard or primary request for an injury compared (the rest of the analysis was cut off in the capture). \"He's thirsty.\" is incorrect because thirst is relieved by drinking a liquid, and a blanket provides warmth rather than hydration."
+        },
+        {
+          "n": 63,
+          "question": "What caused the engine to fail? It failed because of poor maintenance. What did the man blame the failure on? (The review screen shows the stem twice and partly garbled: \"what caused the engine to fail it failed because of poor maintenance / what did the man blame the failure on\".)",
+          "options": [
+            "improper care",
+            "rough roads",
+            "proper lubrication",
+            "(Fourth option not visible — the explanation panel covered it on the review screen.)"
+          ],
+          "correct": "improper care",
+          "explanation": "In the dialogue, the speaker identifies the cause of the engine failure as \"poor maintenance.\" In a mechanical or military context, maintenance refers to the routine actions performed to keep equipment in good working order. \"Improper care\" is a direct synonym for poor maintenance, as it describes a failure to look after the equipment correctly. Incorrect Answers: \"rough roads\" is incorrect because the dialogue focuses on the mechanical upkeep (maintenance) of the vehicle (the rest of the analysis was covered by the explanation panel in the capture), not on the driving surface or terrain. \"proper lubrication\" is incorrect because it names correct servicing rather than a defect: applying oil or grease as required is part of good maintenance, so it would prevent the failure instead of causing it. (The analysis of the remaining option was covered by the explanation panel in the capture.)"
         }
       ]
     },
