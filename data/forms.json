@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 243
+    "total_questions": 244
   },
   "forms": [
     {
@@ -385,6 +385,18 @@
           ],
           "correct": "Be sure to look around.",
           "explanation": "Here \"watch\" is a verb meaning to observe attentively, and the adverb \"carefully\" together with the situation (merging onto a highway) shows that the driver is being told to check the traffic in every direction before entering the road. \"Look around\" is the natural paraphrase of that instruction, because it means to direct your eyes at your surroundings in order to notice what is there. Incorrect Answers: \"Be sure to get off the road.\" is incorrect because \"get off the road\" means to leave the road or pull over, which is the opposite of the premise: the driver is about to drive onto the highway, not away from it. \"Be sure to take care of the car.\" is incorrect because \"take care of\" refers to maintaining a vehicle in good condition, a matter of upkeep rather than of observing traffic at the moment of merging. \"Be sure to look at your watch.\" is incorrect because it treats \"watch\" as the noun meaning a timepiece; in this sentence \"watch\" is a verb about looking, and nothing in the statement concerns the time."
+        },
+        {
+          "n": 52,
+          "question": "Harry was told to attend class. What did he have to do?",
+          "options": [
+            "go to class",
+            "pay attention in class",
+            "leave the class",
+            "(Fourth option not visible — the explanation panel covered it on the review screen.)"
+          ],
+          "correct": "go to class",
+          "explanation": "The verb \"attend\" means to be present at an event, meeting, or function. In an educational or military training context, if someone is told to attend a class, it means they are required to go to the location of the class and be present for the instruction. Incorrect Answers: \"pay attention in class\" is incorrect because while paying attention is a behavior expected during class, \"attend\" specifically refers to the act of being physically present or going to the session. \"leave the class\" is incorrect because it states the opposite of the premise: attending means going to the class and staying for it, not departing from it. (The analysis of the remaining option was covered by the explanation panel in the capture.)"
         }
       ]
     },
