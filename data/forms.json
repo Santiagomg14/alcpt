@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 257
+    "total_questions": 258
   },
   "forms": [
     {
@@ -553,6 +553,18 @@
           ],
           "correct": "ever",
           "explanation": "In English, the word \"ever\" is an adverb used in questions to mean \"at any time.\" When placed between the subject \"you\" and the main verb \"go\" in a question starting with the auxiliary verb \"do,\" it asks about the frequency or existence of a habit. The question \"Do you ever go to the city library?\" is a standard way to ask if someone visits that location. Incorrect Answers: \"never\" is incorrect because, while it is an adverb of frequency, it is typically used in statements rather (the rest of the analysis was cut off in the capture) than in questions, where the negative meaning would clash with the interrogative \"do\" construction. \"can\" is incorrect because it is a modal verb of ability or permission, and a question cannot take both the auxiliary \"do\" and a modal in that position. \"how\" is incorrect because it is a question word that introduces a question about manner, so it cannot sit inside a clause already opened by \"do you.\" (The analyses of these last two options were not visible in the capture.)"
+        },
+        {
+          "n": 95,
+          "question": "Only people from the upper ________ of the company were there.",
+          "options": [
+            "stage",
+            "place",
+            "entrance",
+            "echelon"
+          ],
+          "correct": "echelon",
+          "explanation": "An \"echelon\" is a level or rank within an organization, and the term is especially common in military usage, where \"upper echelon\" refers to the highest levels of command or leadership. The sentence says that only people from the top ranks of the company attended, so the blank calls for a word that names a tier of authority inside a hierarchy. Incorrect Answers: \"stage\" is incorrect because a stage is a step in a process or a period in a sequence of events (as in \"the final stage of training\"), which describes a moment in time rather than a rank held by a group of people. \"place\" is incorrect because it refers to a physical location or a general position, and \"upper place\" is not an English collocation for organizational rank; the sentence is about status within the company, not about where someone stands. \"entrance\" is incorrect because it names the door or opening through which one enters a building, or the act of entering, and it has no relation to hierarchical level."
         }
       ]
     },
