@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 255
+    "total_questions": 256
   },
   "forms": [
     {
@@ -529,6 +529,18 @@
           ],
           "correct": "a vacuum",
           "explanation": "In scientific and aviation contexts, a space that contains no matter or air is defined as a vacuum. Since the prompt describes the area above the atmosphere as \"nothing but empty space,\" it is referring to the vacuum of space. Understanding the characteristics of a vacuum is essential for military personnel involved in aerospace operations, high-altitude flight, and satellite technology. Incorrect Answers: \"a breeze\" is incorrect because it refers to a light (the rest of the analysis was covered by the answer choices on the review screen) current of moving air, and moving air can only exist where there is an atmosphere, not in empty space. \"air layers\" is incorrect because the layers of air are precisely what makes up the atmosphere, so they lie below the region described, not in it. \"atmospheric pressure\" is incorrect because pressure is exerted by the weight of the air itself; where there is no air, the pressure is effectively zero. (The analyses of these last options were not visible in the capture.)"
+        },
+        {
+          "n": 91,
+          "question": "You should go on sick call right away. (What does this mean? The stem was scrolled off the review screen and is reconstructed from the explanation text.)",
+          "options": [
+            "go at once",
+            "(Option not visible — the explanation panel covered it on the review screen.)",
+            "walk straight",
+            "go to the right"
+          ],
+          "correct": "go at once",
+          "explanation": "The phrase \"right away\" is an idiomatic expression that means immediately, without delay, or \"at once.\" In a military context, \"sick call\" is a designated time (usually early in the morning) when service members can report to a medical clinic for non-emergency medical evaluation. Therefore, the sentence \"You should go on sick call right away\" translates to a recommendation to report for medical evaluation immediately. Incorrect Answers: \"walk straight\" is incorrect because it describes the manner or direction of walking, while \"right away\" says nothing about how or where to move; it only sets the moment of the action. \"go to the right\" is incorrect because it treats \"right\" as a physical direction rather than as part of the fixed expression \"right away,\" whose meaning is temporal, not spatial. (The incorrect-answer analysis itself was cut off in the capture, and the remaining option was covered by the explanation panel.)"
         }
       ]
     },
