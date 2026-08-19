@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 235
+    "total_questions": 236
   },
   "forms": [
     {
@@ -289,6 +289,18 @@
           ],
           "correct": "(Not shown — the capture only includes the incorrect-answer analysis; the correct choice was scrolled off the review screen.)",
           "explanation": "The intended answer restates \"take a walk\" as a synonym of a common verb phrase (the opening lines of the explanation were cut off in the capture). Incorrect Answers: \"drill after dinner\" is incorrect because \"drill\" specifically refers to military training, such as marching or weapon handling, which is a formal duty rather than a casual walk. \"walk from the BOQ to class\" is incorrect because the original sentence provides no specific location (Bachelor Officer Quarters) or destination (class). This choice adds details not present in the premise. \"take a long hike\" is incorrect because a \"hike\" implies a more strenuous, long-distance trek, typically in a natural or rugged environment, whereas a \"walk\" is generally shorter and more casual."
+        },
+        {
+          "n": 30,
+          "question": "The instructor said, \"I can hardly hear you.\" What did the instructor mean?",
+          "options": [
+            "You are not speaking loud enough.",
+            "You are not speaking.",
+            "You are speaking too loudly.",
+            "(Fourth option not visible — the review screen was scrolled past it.)"
+          ],
+          "correct": "You are not speaking loud enough.",
+          "explanation": "The word \"hardly\" is a negative adverb that means \"scarcely\" or \"almost not.\" When the instructor says, \"I can hardly hear you,\" they are expressing that your voice is so quiet that it is nearly impossible for them to perceive the sound. This indicates a need for the speaker to increase their volume. Incorrect Answers: \"You are not speaking.\" is incorrect because \"hardly\" implies that some sound is being made, but it is at (the rest of the analysis was cut off in the capture). \"You are speaking too loudly.\" is incorrect because it states the opposite of what \"hardly hear\" conveys: the problem is too little volume, not too much."
         }
       ]
     },
