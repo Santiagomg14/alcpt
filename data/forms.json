@@ -3,6 +3,7 @@
     "language_policy": "Question text, options, correct answer and explanation are ALWAYS fully in English.",
     "forms_documented": [
       "50",
+      "51",
       "62",
       "63",
       "69",
@@ -14,8 +15,8 @@
       "87",
       "Technical & Action Verbs"
     ],
-    "last_updated": "2026-08-17",
-    "total_questions": 233
+    "last_updated": "2026-08-18",
+    "total_questions": 234
   },
   "forms": [
     {
@@ -259,6 +260,23 @@
           ],
           "correct": "The wind did not hurt the wheat.",
           "explanation": "The verb \"damage\" means to cause physical harm or injury to something, reducing its value or usefulness. In the context of crops and weather, to damage is synonymous with to hurt. Therefore, saying the wind did not damage the wheat is the same as saying it did not hurt the wheat. \"The wind blew down the wheat\" is incorrect because blowing down the wheat is a specific type of damage, which contradicts the statement that no damage occurred."
+        }
+      ]
+    },
+    {
+      "form": "51",
+      "questions": [
+        {
+          "n": 20,
+          "question": "That street is very straight.",
+          "options": [
+            "It is long.",
+            "It has no curves.",
+            "It has many stores.",
+            "It is not very wide."
+          ],
+          "correct": "It has no curves.",
+          "explanation": "The word \"straight\" is an adjective used to describe something that extends in one direction without bending or turning. In the context of a street, a straight road is one that does not deviate from a direct line. Therefore, saying a street has no curves is a direct paraphrase of saying it is straight. \"It is long.\" is incorrect because \"straight\" refers to the direction or shape of the road, not its length or distance from start to finish."
         }
       ]
     },
