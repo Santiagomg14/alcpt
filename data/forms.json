@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 253
+    "total_questions": 254
   },
   "forms": [
     {
@@ -505,6 +505,18 @@
           ],
           "correct": "well",
           "explanation": "The sentence requires an adverb to modify the verb \"work,\" describing the manner in which the subjects perform their tasks. \"Well\" is the adverbial form of the adjective \"good.\" In military and academic contexts, adverbs are used to provide detail on how actions or drills are executed. Incorrect Answers: \"slow\" is incorrect because it is primarily an adjective; the standard adverbial form is \"slowly.\" \"careful\" is incorrect because it is an adjective used (the rest of the analysis was cut off in the capture) to describe a noun, whereas modifying the verb \"work\" would require the adverb \"carefully.\" \"good\" is incorrect because it is the adjective form and cannot modify a verb; the adverb \"well\" is what corresponds to it. (The first two choices were covered by the explanation panel in the capture and are reconstructed from the analysis text.)"
+        },
+        {
+          "n": 88,
+          "question": "He realized ________ . (Noun-clause item: the blank calls for a noun clause working as the direct object of the verb \"realized.\" The stem was scrolled off the review screen, which only showed the explanation and the last two choices.)",
+          "options": [
+            "it that time was for class",
+            "that it was time for class",
+            "(Option not visible — the explanation panel covered it on the review screen.)",
+            "(Option not visible — the explanation panel covered it on the review screen.)"
+          ],
+          "correct": "that it was time for class",
+          "explanation": "This sentence requires a noun clause to serve as the direct object of the verb \"realized.\" A noun clause typically begins with the conjunction \"that\" (which can sometimes be omitted, but is required here for the best structure) followed by a subject and a verb. \"It was time for class\" uses the dummy subject \"it\" to describe a situation or scheduled event, which is the standard way to express the arrival of a specific time in English. Incorrect Answers: \"it that time was for class\" is incorrect because it scrambles the word order: the conjunction \"that\" must introduce the clause, and the subject \"it\" must be followed directly by the verb \"was.\" (The analyses of the remaining options were cut off in the capture.)"
         }
       ]
     },
