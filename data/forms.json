@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 241
+    "total_questions": 242
   },
   "forms": [
     {
@@ -361,6 +361,18 @@
           ],
           "correct": "You can borrow money from Tom.",
           "explanation": "The spoken statement conveys that Tom has money available and is willing to let someone else use it, so the listener is the one who may take the money temporarily. To \"borrow\" is to receive something from another person with the intention of returning it, which is exactly the relationship described: Tom is the lender and the listener is the borrower. Incorrect Answers: \"Tom will send for some money.\" is incorrect because \"send for\" means to summon someone or to request that something be brought from elsewhere, which would mean Tom does not have the money at hand; this reverses the situation, since the point of the statement is that the money is already available. \"Tom left his money in the bank.\" is incorrect because it describes where Tom keeps his money rather than the fact that it can be lent, and nothing in the statement mentions a bank or a deposit. \"Tom needs to borrow some money.\" is incorrect because it reverses the direction of the transaction: it makes Tom the borrower who lacks money, when the statement presents him as the person who is able to supply it."
+        },
+        {
+          "n": 49,
+          "question": "How long does it take to go from San Antonio to Chicago?",
+          "options": [
+            "It's about 1100 miles.",
+            "It's a long distance between them.",
+            "about a day and a half by car",
+            "by bus, car, train, or plane"
+          ],
+          "correct": "about a day and a half by car",
+          "explanation": "The question word combination \"how long\" asks about duration, that is, the amount of time an action requires. When it is used with the expression \"take to go,\" it specifically requests the length of the trip in units of time such as hours or days. The choice \"about a day and a half by car\" answers exactly that, because it gives a period of time and also names the means of transport that produces it. Incorrect Answers: \"It's about 1100 miles.\" is incorrect because miles measure distance, not time; that answer would fit the question \"how far is it,\" not \"how long does it take.\" \"It's a long distance between them.\" is incorrect for the same reason, and it is even less precise: it describes the extent of the journey in space and gives no measurement at all. \"by bus, car, train, or plane\" is incorrect because it names the possible means of transportation, which answers \"how do you get there,\" not the duration of the trip."
         }
       ]
     },
