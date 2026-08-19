@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 258
+    "total_questions": 259
   },
   "forms": [
     {
@@ -565,6 +565,18 @@
           ],
           "correct": "echelon",
           "explanation": "An \"echelon\" is a level or rank within an organization, and the term is especially common in military usage, where \"upper echelon\" refers to the highest levels of command or leadership. The sentence says that only people from the top ranks of the company attended, so the blank calls for a word that names a tier of authority inside a hierarchy. Incorrect Answers: \"stage\" is incorrect because a stage is a step in a process or a period in a sequence of events (as in \"the final stage of training\"), which describes a moment in time rather than a rank held by a group of people. \"place\" is incorrect because it refers to a physical location or a general position, and \"upper place\" is not an English collocation for organizational rank; the sentence is about status within the company, not about where someone stands. \"entrance\" is incorrect because it names the door or opening through which one enters a building, or the act of entering, and it has no relation to hierarchical level."
+        },
+        {
+          "n": 97,
+          "question": "We are going to have a meeting at noon. Can you ________ ?",
+          "options": [
+            "go it",
+            "do it",
+            "make it",
+            "succeed it"
+          ],
+          "correct": "make it",
+          "explanation": "\"Make it\" is a fixed idiomatic expression that means to manage to be present at an event, or to arrive somewhere in spite of the difficulties involved. When someone announces a meeting and then asks \"Can you make it?\", they are asking whether the listener is able to attend at that time. This use of \"make\" has nothing to do with building or producing something: the verb combines with the pronoun \"it\" to refer to the whole appointment being discussed. Incorrect Answers: \"go it\" is incorrect because \"go\" is an intransitive verb of movement and does not take \"it\" as an object in this sense; the idiom \"go it alone\" exists, but \"Can you go it?\" is not English for asking about attendance. \"do it\" is incorrect because \"do it\" refers to performing a task or carrying out an action, so it would ask whether the listener is capable of completing some job, not whether they can be present at a scheduled meeting. \"succeed it\" is incorrect because \"succeed\" means to achieve a desired result, and when it is transitive it means to come after someone in a position (\"he succeeded his commander\"); neither meaning fits a question about attending a meeting at noon."
         }
       ]
     },
