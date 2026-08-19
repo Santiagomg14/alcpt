@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 263
+    "total_questions": 264
   },
   "forms": [
     {
@@ -277,6 +277,18 @@
           ],
           "correct": "It has no curves.",
           "explanation": "The word \"straight\" is an adjective used to describe something that extends in one direction without bending or turning. In the context of a street, a straight road is one that does not deviate from a direct line. Therefore, saying a street has no curves is a direct paraphrase of saying it is straight. \"It is long.\" is incorrect because \"straight\" refers to the direction or shape of the road, not its length or distance from start to finish."
+        },
+        {
+          "n": 25,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot. The answer choices describe what John will do to the visitors.)",
+          "options": [
+            "John will turn away the visitors.",
+            "John will frighten the visitors.",
+            "John will examine the visitors.",
+            "John will amuse the visitors."
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded. The four verbs contrast sharply in meaning: \"turn away\" is a phrasal verb meaning to refuse someone entry or to send them back; \"frighten\" means to make someone afraid; \"examine\" means to inspect or study something closely (and, in a medical context, to check a patient); \"amuse\" means to entertain someone or make them laugh."
         },
         {
           "n": 29,
