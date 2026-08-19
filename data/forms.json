@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 245
+    "total_questions": 246
   },
   "forms": [
     {
@@ -409,6 +409,18 @@
           ],
           "correct": "to protect his sight",
           "explanation": "In a technical or military maintenance context, goggles are a specific type of Personal Protective Equipment (PPE) designed to shield the eyes from hazards. A welder uses goggles to protect their sight from the intense ultraviolet and infrared light, as well as sparks and flying debris produced during the welding process. Incorrect Answers: \"to protect his feet\" is incorrect because footwear, such as safety boots, is used for foot protection (the rest of the analysis was cut off in the capture). \"to protect his hands\" is incorrect because hand protection comes from welding gloves or gauntlets, not from a device worn over the eyes. \"to protect his hearing\" is incorrect because hearing is protected with earplugs or ear defenders, and welding is a visual hazard rather than a noise hazard."
+        },
+        {
+          "n": 54,
+          "question": "The enemy gave up to the superior forces. What did the enemy do?",
+          "options": [
+            "surrendered",
+            "counterattacked",
+            "defended",
+            "(Fourth option not visible — the explanation panel covered it on the review screen.)"
+          ],
+          "correct": "surrendered",
+          "explanation": "The phrasal verb \"gave up\" (the past tense of \"give up\") in this context means to cease resistance and submit to an opponent. In a military scenario, when a force \"gives up\" to a \"superior force\" (a force that is larger or more powerful), it is synonymous with surrendering. The sentence implies that the enemy realized they could not win and chose to stop fighting. Incorrect Answers: \"counterattacked\" is incorrect because it refers to an offensive action taken in response to an enemy attack (the rest of the analysis was cut off in the capture); attacking back is the opposite of ceasing resistance. \"defended\" is incorrect because defending means continuing to resist and hold a position against the attacker, whereas giving up means abandoning that resistance altogether."
         }
       ]
     },
