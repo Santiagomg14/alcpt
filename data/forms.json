@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 249
+    "total_questions": 250
   },
   "forms": [
     {
@@ -457,6 +457,18 @@
           ],
           "correct": "druggist",
           "explanation": "A \"pharmacist\" is a person who is professionally trained and licensed to prepare and dispense medicinal drugs. A \"druggist\" is simply the more common, everyday synonym for that same occupation in American English, since the person works with drugs (medicines) in a drugstore or pharmacy. The item tests occupational vocabulary by asking for an exact equivalent, not for a related job. Incorrect Answers: \"farmer\" is incorrect because a farmer cultivates land and raises crops or livestock, an agricultural occupation with no connection to preparing medicine. \"dentist\" is incorrect because a dentist specializes in the care of the teeth, gums, and mouth; although a dentist may prescribe medication, the job is dental treatment rather than dispensing drugs. \"doctor\" is incorrect because a doctor (physician) diagnoses illnesses and writes the prescription, while the pharmacist is the one who fills that prescription and hands over the medicine; the two roles are complementary but not the same."
+        },
+        {
+          "n": 79,
+          "question": "This is how it actually happened. (The first two options were covered by the explanation panel on the review screen and are reconstructed from the analysis text.)",
+          "options": [
+            "really",
+            "probably",
+            "mistakenly",
+            "supposedly"
+          ],
+          "correct": "really",
+          "explanation": "The word \"actually\" is an adverb used to emphasize that something is factual, real, or true, often in contrast to what was previously believed or expected. In the sentence \"This is how it actually happened,\" it indicates the speaker is describing the true version of events. \"Really\" is a direct synonym used to confirm the reality or truth of a situation. Incorrect Answers: \"probably\" is incorrect because it refers to something that is likely to happen or be true, rather than (the rest of the analysis was covered by the answer choices on the review screen) something confirmed as fact; it expresses probability, not certainty. \"mistakenly\" is incorrect because it means that something was done in error or by accident, which says how an event came about rather than affirming that it truly took place. \"supposedly\" is incorrect because it reports what people assume or claim without proof, which is the opposite of \"actually\": it casts doubt on the account instead of confirming it. (The analyses of these last two options were not visible in the capture.)"
         }
       ]
     },
