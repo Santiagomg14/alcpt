@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 254
+    "total_questions": 255
   },
   "forms": [
     {
@@ -517,6 +517,18 @@
           ],
           "correct": "that it was time for class",
           "explanation": "This sentence requires a noun clause to serve as the direct object of the verb \"realized.\" A noun clause typically begins with the conjunction \"that\" (which can sometimes be omitted, but is required here for the best structure) followed by a subject and a verb. \"It was time for class\" uses the dummy subject \"it\" to describe a situation or scheduled event, which is the standard way to express the arrival of a specific time in English. Incorrect Answers: \"it that time was for class\" is incorrect because it scrambles the word order: the conjunction \"that\" must introduce the clause, and the subject \"it\" must be followed directly by the verb \"was.\" (The analyses of the remaining options were cut off in the capture.)"
+        },
+        {
+          "n": 90,
+          "question": "Above the atmosphere there is nothing but empty space. That empty space is ________ . (The stem was scrolled off the review screen and is reconstructed from the explanation text.)",
+          "options": [
+            "a vacuum",
+            "a breeze",
+            "air layers",
+            "atmospheric pressure"
+          ],
+          "correct": "a vacuum",
+          "explanation": "In scientific and aviation contexts, a space that contains no matter or air is defined as a vacuum. Since the prompt describes the area above the atmosphere as \"nothing but empty space,\" it is referring to the vacuum of space. Understanding the characteristics of a vacuum is essential for military personnel involved in aerospace operations, high-altitude flight, and satellite technology. Incorrect Answers: \"a breeze\" is incorrect because it refers to a light (the rest of the analysis was covered by the answer choices on the review screen) current of moving air, and moving air can only exist where there is an atmosphere, not in empty space. \"air layers\" is incorrect because the layers of air are precisely what makes up the atmosphere, so they lie below the region described, not in it. \"atmospheric pressure\" is incorrect because pressure is exerted by the weight of the air itself; where there is no air, the pressure is effectively zero. (The analyses of these last options were not visible in the capture.)"
         }
       ]
     },
