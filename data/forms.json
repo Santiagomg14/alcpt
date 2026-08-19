@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 260
+    "total_questions": 261
   },
   "forms": [
     {
@@ -433,6 +433,18 @@
           ],
           "correct": "He's cold.",
           "explanation": "A blanket is a thick covering made of wool or other fabric used primarily to keep a person warm. When a person asks for a blanket, it is logically because they are experiencing low temperatures or feeling chilly. In the context of the ALCPT, this tests basic cause-and-effect vocabulary associated with physical needs. Incorrect Answers: \"He's hurt.\" is incorrect because while a blanket might be used in first aid to treat shock, it is not the standard or primary request for an injury compared (the rest of the analysis was cut off in the capture). \"He's thirsty.\" is incorrect because thirst is relieved by drinking a liquid, and a blanket provides warmth rather than hydration."
+        },
+        {
+          "n": 62,
+          "question": "(Listening item — the audio prompt is not visible in the screenshot. The answer choices refer to George and the departure time of a plane.)",
+          "options": [
+            "He won't leave on the plane.",
+            "He knows when it leaves.",
+            "He doesn't know George.",
+            "He doesn't know when it leaves."
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
         },
         {
           "n": 63,
