@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 250
+    "total_questions": 251
   },
   "forms": [
     {
@@ -469,6 +469,18 @@
           ],
           "correct": "really",
           "explanation": "The word \"actually\" is an adverb used to emphasize that something is factual, real, or true, often in contrast to what was previously believed or expected. In the sentence \"This is how it actually happened,\" it indicates the speaker is describing the true version of events. \"Really\" is a direct synonym used to confirm the reality or truth of a situation. Incorrect Answers: \"probably\" is incorrect because it refers to something that is likely to happen or be true, rather than (the rest of the analysis was covered by the answer choices on the review screen) something confirmed as fact; it expresses probability, not certainty. \"mistakenly\" is incorrect because it means that something was done in error or by accident, which says how an event came about rather than affirming that it truly took place. \"supposedly\" is incorrect because it reports what people assume or claim without proof, which is the opposite of \"actually\": it casts doubt on the account instead of confirming it. (The analyses of these last two options were not visible in the capture.)"
+        },
+        {
+          "n": 80,
+          "question": "The class was bored with the movie. (The stem was scrolled off the review screen and is reconstructed from the explanation text.)",
+          "options": [
+            "happy to see it",
+            "glad to be there",
+            "not interested in it",
+            "(Fourth option not visible — the explanation panel covered it on the review screen.)"
+          ],
+          "correct": "not interested in it",
+          "explanation": "The word \"bored\" describes the feeling of being weary or restless because one lacks interest in the current activity or surroundings. In this context, if the class was bored with the movie, it means the students found the movie dull and were \"not interested in it.\" Incorrect Answers: \"happy to see it\" is incorrect because being happy is a positive emotional state, whereas being bored is a state of dissatisfaction or lack of engagement. \"glad to be there\" is incorrect because gladness expresses pleasure at attending, while boredom means the students would rather have been somewhere else. (The analyses of the remaining options were cut off in the capture.)"
         }
       ]
     },
