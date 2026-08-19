@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 251
+    "total_questions": 252
   },
   "forms": [
     {
@@ -481,6 +481,18 @@
           ],
           "correct": "not interested in it",
           "explanation": "The word \"bored\" describes the feeling of being weary or restless because one lacks interest in the current activity or surroundings. In this context, if the class was bored with the movie, it means the students found the movie dull and were \"not interested in it.\" Incorrect Answers: \"happy to see it\" is incorrect because being happy is a positive emotional state, whereas being bored is a state of dissatisfaction or lack of engagement. \"glad to be there\" is incorrect because gladness expresses pleasure at attending, while boredom means the students would rather have been somewhere else. (The analyses of the remaining options were cut off in the capture.)"
+        },
+        {
+          "n": 83,
+          "question": "(Word-order item: choose the sentence with the correct word order. The stem was scrolled off the review screen, which only showed the answer and the last two choices.)",
+          "options": [
+            "I'll have coffee later, please.",
+            "I'll have later coffee, please.",
+            "I'll later have coffee, please.",
+            "(Fourth option not visible — the explanation panel covered it on the review screen.)"
+          ],
+          "correct": "I'll have coffee later, please.",
+          "explanation": "This sentence follows the standard English word order for a declarative statement with a future intention and a time adverbial. The structure is: Subject (I) + Auxiliary Verb (will) + Main Verb (have) + Direct Object (coffee) + Adverb of Time (later). The word \"please\" is added as a politeness marker, usually at the beginning or the end of the sentence. In this context, placing the time adverb \"later\" at the end of the verb phrase is the most natural and grammatically correct construction. Incorrect Answers: \"I'll have later coffee, please.\" is incorrect because it puts \"later\" in the attributive position of a noun phrase, where English expects an adjective; \"later coffee\" would describe a kind of coffee rather than the time of the action. \"I'll later have coffee, please.\" is incorrect because inserting the time adverb between the auxiliary and the main verb is an unnatural placement in this kind of request; adverbs of time normally go at the end (or, more formally, at the front) of the clause, not in mid-position. (The analysis of the remaining option was covered by the explanation panel in the capture.)"
         }
       ]
     },
