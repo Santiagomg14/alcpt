@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 240
+    "total_questions": 241
   },
   "forms": [
     {
@@ -349,6 +349,18 @@
           ],
           "correct": "his heartbeat.",
           "explanation": "The \"pulse\" is the rhythmic throbbing of the arteries that can be felt at points such as the wrist or the neck, and it is produced by each contraction of the heart. Because every beat of the heart pushes blood through the arteries, taking someone's pulse is the standard way of measuring the heartbeat and its rate. Therefore, checking John's pulse means checking his heartbeat. Incorrect Answers: \"his ears.\" is incorrect because the ears are examined with an otoscope for hearing or infection, and they have nothing to do with the circulation of blood. \"his throat.\" is incorrect because a doctor looks at the throat for signs of soreness or infection; although a pulse can be felt in the neck, the throat itself is not what the pulse measures. \"his fever.\" is incorrect because a fever is a rise in body temperature and is measured with a thermometer, not by feeling the beat of the arteries."
+        },
+        {
+          "n": 47,
+          "question": "(Audio item, no printed stem — the review screen only shows the answer choices.)",
+          "options": [
+            "You can borrow money from Tom.",
+            "Tom will send for some money.",
+            "Tom left his money in the bank.",
+            "Tom needs to borrow some money."
+          ],
+          "correct": "You can borrow money from Tom.",
+          "explanation": "The spoken statement conveys that Tom has money available and is willing to let someone else use it, so the listener is the one who may take the money temporarily. To \"borrow\" is to receive something from another person with the intention of returning it, which is exactly the relationship described: Tom is the lender and the listener is the borrower. Incorrect Answers: \"Tom will send for some money.\" is incorrect because \"send for\" means to summon someone or to request that something be brought from elsewhere, which would mean Tom does not have the money at hand; this reverses the situation, since the point of the statement is that the money is already available. \"Tom left his money in the bank.\" is incorrect because it describes where Tom keeps his money rather than the fact that it can be lent, and nothing in the statement mentions a bank or a deposit. \"Tom needs to borrow some money.\" is incorrect because it reverses the direction of the transaction: it makes Tom the borrower who lacks money, when the statement presents him as the person who is able to supply it."
         }
       ]
     },
