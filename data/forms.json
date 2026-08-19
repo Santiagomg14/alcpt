@@ -16,7 +16,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-18",
-    "total_questions": 242
+    "total_questions": 243
   },
   "forms": [
     {
@@ -373,6 +373,18 @@
           ],
           "correct": "about a day and a half by car",
           "explanation": "The question word combination \"how long\" asks about duration, that is, the amount of time an action requires. When it is used with the expression \"take to go,\" it specifically requests the length of the trip in units of time such as hours or days. The choice \"about a day and a half by car\" answers exactly that, because it gives a period of time and also names the means of transport that produces it. Incorrect Answers: \"It's about 1100 miles.\" is incorrect because miles measure distance, not time; that answer would fit the question \"how far is it,\" not \"how long does it take.\" \"It's a long distance between them.\" is incorrect for the same reason, and it is even less precise: it describes the extent of the journey in space and gives no measurement at all. \"by bus, car, train, or plane\" is incorrect because it names the possible means of transportation, which answers \"how do you get there,\" not the duration of the trip."
+        },
+        {
+          "n": 50,
+          "question": "Be sure you watch carefully before you drive onto the highway.",
+          "options": [
+            "Be sure to get off the road.",
+            "Be sure to look around.",
+            "Be sure to take care of the car.",
+            "Be sure to look at your watch."
+          ],
+          "correct": "Be sure to look around.",
+          "explanation": "Here \"watch\" is a verb meaning to observe attentively, and the adverb \"carefully\" together with the situation (merging onto a highway) shows that the driver is being told to check the traffic in every direction before entering the road. \"Look around\" is the natural paraphrase of that instruction, because it means to direct your eyes at your surroundings in order to notice what is there. Incorrect Answers: \"Be sure to get off the road.\" is incorrect because \"get off the road\" means to leave the road or pull over, which is the opposite of the premise: the driver is about to drive onto the highway, not away from it. \"Be sure to take care of the car.\" is incorrect because \"take care of\" refers to maintaining a vehicle in good condition, a matter of upkeep rather than of observing traffic at the moment of merging. \"Be sure to look at your watch.\" is incorrect because it treats \"watch\" as the noun meaning a timepiece; in this sentence \"watch\" is a verb about looking, and nothing in the statement concerns the time."
         }
       ]
     },
