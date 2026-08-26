@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-08-26",
-    "total_questions": 265
+    "total_questions": 266
   },
   "forms": [
     {
@@ -1208,6 +1208,18 @@
     {
       "form": "65",
       "questions": [
+        {
+          "n": 96,
+          "question": "Barbara's ________ her job affected her family's lifestyle tremendously.",
+          "options": [
+            "lost",
+            "was lost",
+            "was losing",
+            "losing"
+          ],
+          "correct": "losing",
+          "explanation": "A grammar item on the possessive + gerund construction. The blank needs a noun phrase to serve as the subject of the main verb \"affected,\" and a gerund (\"losing her job\") works as a noun. The possessive \"Barbara's\" shows who performed the action, so the sentence means \"The fact that Barbara lost her job affected her family's lifestyle tremendously.\" \"Lost,\" \"was lost\" and \"was losing\" are finite verb forms; any of them would give the sentence two main verbs with no subject for \"affected,\" and \"Barbara's\" cannot be a subject followed by a finite verb."
+        },
         {
           "n": 97,
           "question": "Two different scales are used to measure atmospheric temperatures. The older Fahrenheit scale is used mostly by the general public of the US and certain other countries, while the Celsius scale, or centigrade scale, is used by scientists nearly everywhere. The latter scale records freezing temperature as 0 degrees. According to this paragraph, the Celsius scale",
