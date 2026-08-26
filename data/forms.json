@@ -6,6 +6,7 @@
       "51",
       "62",
       "63",
+      "65",
       "69",
       "70",
       "71",
@@ -15,8 +16,8 @@
       "87",
       "Technical & Action Verbs"
     ],
-    "last_updated": "2026-08-18",
-    "total_questions": 264
+    "last_updated": "2026-08-26",
+    "total_questions": 265
   },
   "forms": [
     {
@@ -1201,6 +1202,23 @@
           ],
           "correct": "-ee",
           "explanation": "The sentence requires a noun that refers to a person because the subject \"declined to attend the award ceremony.\" The suffix \"-ee\" is used in English to create a noun representing the recipient of an action or an honor. Therefore, an \"honoree\" is a person being honored at an event. This fits both the grammatical requirements (a noun subject) and the semantic requirements (a person who can attend or decline a ceremony)."
+        }
+      ]
+    },
+    {
+      "form": "65",
+      "questions": [
+        {
+          "n": 97,
+          "question": "Two different scales are used to measure atmospheric temperatures. The older Fahrenheit scale is used mostly by the general public of the US and certain other countries, while the Celsius scale, or centigrade scale, is used by scientists nearly everywhere. The latter scale records freezing temperature as 0 degrees. According to this paragraph, the Celsius scale",
+          "options": [
+            "measures temperatures in different scale",
+            "is the same as the Fahrenheit scale",
+            "registers the freezing point at zero",
+            "is not often used by scientists"
+          ],
+          "correct": "registers the freezing point at zero",
+          "explanation": "A reading-comprehension item. \"The latter\" refers to the second of two things just mentioned, i.e. the Celsius scale, and the paragraph says it \"records freezing temperature as 0 degrees,\" which is paraphrased as \"registers the freezing point at zero.\" \"Is not often used by scientists\" contradicts the text (scientists use Celsius \"nearly everywhere\"); \"is the same as the Fahrenheit scale\" is wrong because the paragraph presents them as two different scales; and \"measures temperatures in different scale\" is vague and does not state a fact given in the paragraph."
         }
       ]
     },
