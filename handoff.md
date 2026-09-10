@@ -11,11 +11,12 @@ y audio que él consulta desde el celular (GitHub Pages).
 
 ## 2. El estado actual del proyecto
 
-- **331 palabras confirmadas** (1–331), sin bloques `pending_` abiertos.
-- **233 preguntas** documentadas en 11 secciones (Forms 50, 62, 63, 69, 70, 71,
-  73, 75, 82, 87 y Technical & Action Verbs).
-- Documentos regenerados el 18 ago 2026 22:14, posteriores al último cambio de
-  `data/` — están al día.
+- **333 palabras confirmadas**, sin bloques `pending_` abiertos, y
+  **266 preguntas** documentadas. Contado el 10 sep 2026 sobre los JSON; los
+  handoffs anteriores arrastraban 331 y 233, cifras previas a las capturas que
+  se procesaron en agosto. Verifícalo siempre con `counts()` del bot o con:
+  `.venv/bin/python -c "import json;v=json.load(open('data/vocabulary.json'));print(sum(len(s['entries']) for s in v['sections']))"`
+- Documentos regenerados el 10 sep 2026, al día con `data/`.
 - **Bot de Telegram CORRIENDO en el servidor Linux** (`server`, Ubuntu 24.04),
   en `/home/citae/Pictures/programas/alcpt`, desde el 10 sep 2026 02:39 UTC.
   Migrado desde `LAPTOP-H4O9EDGC`, que lo había liberado el 9 sep.
