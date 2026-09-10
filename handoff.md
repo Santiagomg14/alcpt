@@ -1,6 +1,6 @@
 # Handoff — Vocabulario en inglés + ALCPT (Brayhan)
 
-**Última actualización:** 9 sep 2026 (noche, LAPTOP-H4O9EDGC)
+**Última actualización:** 10 sep 2026 (tarde, servidor Linux `server`)
 
 ## 1. El objetivo
 
@@ -17,20 +17,20 @@ episodio).
 
 ## 2. El estado actual del proyecto
 
-- **333 palabras confirmadas**, sin bloques `pending_` abiertos, y
-  **266 preguntas** documentadas. Verifícalo siempre con `counts()` del bot o con:
+- **334 palabras confirmadas** (la 334 es «Basement», registrada por el bot el
+  10 sep), sin bloques `pending_` abiertos, y **266 preguntas** documentadas. Verifícalo siempre con `counts()` del bot o con:
   `python -c "import json;v=json.load(open('data/vocabulary.json'));print(sum(len(s['entries']) for s in v['sections']))"`
 - **14 lecturas** condensadas en `data/readings.json` (3 tech, 3 math, 2 social,
   6 humanities: filosofía, asuntos públicos, geografía, historia).
 - **21 episodios de podcast** en `data/podcasts.json` + `docs/audio/*.mp3`:
-  7 de vocabulario (8:00–8:49 cada uno, el último 3:41) y 14 de lecturas
-  (4:53–6:05). 47,6 MB de MP3 en `docs/audio/`, 132 min en total.
+  7 de vocabulario (8:00–8:49 cada uno, el último 3:57 tras sumar «Basement») y
+  14 de lecturas (4:53–6:05). ~48 MB de MP3 en `docs/audio/`, 132 min en total.
 - **Bot de Telegram CORRIENDO en el servidor Linux** (`server`, Ubuntu 24.04),
   en `/home/citae/Pictures/programas/alcpt`, como unidad systemd de usuario
   `alcpt-bot`. `bot/active_host.json` registra `server (Linux)` como dueño.
-  **OJO:** el bot del servidor todavía corre la versión anterior del código;
-  hay que hacer `git pull`, `.venv/bin/pip install -r requirements.txt` y
-  `systemctl --user restart alcpt-bot` para que tenga lecturas y podcasts.
+  El 10 sep se actualizó el servidor (pull + `pip install -r requirements.txt`
+  + restart): **ya corre el código con lecturas y podcasts**. Falta probarlo
+  mandándole un enlace de ThoughtCo por Telegram.
 
 ## 3. Los archivos en los que trabajas
 
@@ -72,6 +72,20 @@ Sesión del 9 sep 2026 (este equipo, tras la migración del bot al servidor):
   (reconoce MP3 ya generados sin registro): hizo falta porque Windows mató dos
   veces el render en segundo plano por falta de memoria.
 
+Sesión del 10 sep 2026 (servidor `server`, Claude Code):
+
+- Sincronización con el remoto. El servidor iba 1 commit adelante («Basement»,
+  hecho por el bot) y 2 atrás (lecturas y podcasts del portátil). Se hizo
+  `git rebase origin/main`; los únicos conflictos fueron los archivos generados
+  (`docs/index.html`, `output/*`): se tomó la versión remota y se regeneró todo
+  con los cinco scripts. `build_podcasts.py` re-renderizó solo `vocab-07`
+  (237 s). Commit `774482d` pusheado.
+- Instalados `edge-tts` y `mutagen` en el `.venv` del servidor.
+- Reiniciado el servicio `alcpt-bot`; conectó bien a las 17:01 UTC.
+- Handoff actualizado a mano. **El bot NO actualiza `handoff.md`**: solo hace
+  `git add -A` de `data/`, `docs/` y `output/` y commitea. Cuando el bot agrega
+  palabras, la cifra del handoff se desactualiza hasta la siguiente sesión.
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,
@@ -82,6 +96,8 @@ Sesión del 9 sep 2026 (este equipo, tras la migración del bot al servidor):
   de 1,4 s por segmento y quedaron ~50 palabras por episodio (~480 s reales).
 - Concatenar MP3 de las dos voces + tramas de silencio: mutagen lo lee bien y
   la duración cuadra.
+- `git pull --rebase` desde Claude Code en el servidor queda bloqueado por el
+  clasificador de permisos; `git fetch` + `git rebase origin/main` sí pasa.
 - `claude -p` anidado desde una sesión de Claude Code funciona si se quita
   `CLAUDECODE` del entorno (8 s para una respuesta trivial; 20–60 s por artículo).
 - Página validada: Node `--check` del JS sin errores y etiquetas HTML balanceadas.
@@ -97,9 +113,10 @@ Sesión del 9 sep 2026 (este equipo, tras la migración del bot al servidor):
 
 ## 7. Qué planeas hacer después
 
-- **En el servidor**: `git pull`, `.venv/bin/pip install -r requirements.txt`,
-  `systemctl --user restart alcpt-bot`, y probar mandándole al bot un enlace de
-  ThoughtCo. Revisar que `inbox/readings/` se cree solo (está en `.gitignore`).
+- Probar el bot actualizado mandándole un enlace de ThoughtCo y `/lecturas`.
+  Revisar que `inbox/readings/` se cree solo en el servidor (está en `.gitignore`).
+- Decidir si el bot debe tocar `handoff.md` (por ejemplo, actualizar solo la
+  línea de conteo y la fecha) o si se deja como tarea manual de cada sesión.
 - Mandarle a Brayhan el enlace de GitHub Pages con `#podcasts` y pedirle
   feedback: ¿ritmo de las voces?, ¿palabras por episodio?, ¿temas?
 - Si quiere más lecturas: `python scripts/fetch_readings.py --discover <sección>`
@@ -111,6 +128,10 @@ Sesión del 9 sep 2026 (este equipo, tras la migración del bot al servidor):
 
 ## 8. Cualquier cosa relevante
 
+- **Al empezar sesión en el servidor, hacer `git fetch` primero**: el bot
+  commitea y pushea solo, así que el portátil y el servidor divergen con
+  facilidad. Si hay conflicto, siempre está en los generados: resolver con la
+  versión que sea y regenerar (PDF → espejo → podcasts → cuaderno → Pages).
 - **Telegram admite un solo lector por token.** Si el bot se instala en otra
   máquina, hay que desinstalarlo primero donde esté (`install_service.py
   --uninstall`); `bot/active_host.json` lleva el registro de quién lo tiene tomado.
