@@ -1,5 +1,6 @@
 {
-  "host": null,
-  "released_at": "2026-09-09T21:29:33",
-  "nota": "Ninguna máquina tiene el bot tomado."
+  "host": "server (Linux)",
+  "claimed_at": "2026-09-10T02:39:29",
+  "repo_path": "/home/citae/Pictures/programas/alcpt",
+  "nota": "Telegram solo admite un lector por token. Antes de instalar el bot en otra máquina, desinstálalo en esta."
 }
