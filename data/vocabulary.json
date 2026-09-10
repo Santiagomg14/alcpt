@@ -2,8 +2,8 @@
   "meta": {
     "owner": "Brayhan",
     "level": "B2",
-    "last_updated": "2026-08-26",
-    "total_confirmed": 333
+    "last_updated": "2026-09-10",
+    "total_confirmed": 334
   },
   "sections": [
     {
@@ -260,6 +260,11 @@
           "n": 333,
           "en": "Waterproof",
           "es": "impermeable, a prueba de agua (adjetivo: waterproof jacket, waterproof watch); impermeabilizar, hacer resistente al agua (verbo: to waterproof the boots); matiz: waterproof = no deja pasar el agua en absoluto, water-resistant / water-repellent = solo resiste salpicaduras o lluvia ligera; en contexto militar aparece en equipo de campaña (waterproof bag, waterproof cover); mismo patrón que bulletproof, fireproof, soundproof, foolproof"
+        },
+        {
+          "n": 334,
+          "en": "Basement",
+          "es": "sótano (piso de una casa o edificio que queda bajo el nivel de la calle, usado como bodega, lavandería o cuarto extra: the boiler is in the basement); planta baja subterránea de tiendas y grandes almacenes (bargain basement = sección de ofertas, y por extensión \"de saldo\", muy barato: bargain-basement prices); matiz: basement = sótano habitable o de uso general; cellar = sótano de almacenamiento, sobre todo de vino o comida (wine cellar); en jerga de fútbol americano / béisbol, \"in the basement\" = en el último lugar de la tabla; no confundir con \"base\" (base militar) ni con \"foundation\" (cimientos)"
         }
       ]
     },

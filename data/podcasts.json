@@ -10,7 +10,7 @@
       "es": "-5%"
     },
     "max_seconds": 600,
-    "last_updated": "2026-09-09",
+    "last_updated": "2026-09-10",
     "total": 21
   },
   "series": [
@@ -4868,17 +4868,17 @@
     {
       "id": "vocab-07",
       "series": "vocab",
-      "title": "Palabras 312–333",
+      "title": "Palabras 312–334",
       "subtitle": "Form 87 · Technical & Action Verbs · Mis palabras",
       "words": [
         312,
-        333
+        334
       ],
-      "count": 22,
+      "count": 23,
       "script": [
         {
           "v": "en",
-          "t": "ALCPT Notebook. Vocabulary, episode 7: words 312 to 333. Listen to each word, then its meaning in Spanish, and repeat the word out loud before the next one.",
+          "t": "ALCPT Notebook. Vocabulary, episode 7: words 312 to 334. Listen to each word, then its meaning in Spanish, and repeat the word out loud before the next one.",
           "p": 1.2
         },
         {
@@ -5213,16 +5213,31 @@
         },
         {
           "v": "en",
-          "t": "End of episode 7. Words 312 to 333. Play it again tomorrow: repetition is what makes them stick.",
+          "t": "334. Basement.",
+          "p": 0.5
+        },
+        {
+          "v": "es",
+          "t": "sótano (piso de una casa o edificio que queda bajo el nivel de la calle, usado como bodega, lavandería o cuarto extra: the boiler is in the basement).",
+          "p": 0.4
+        },
+        {
+          "v": "en",
+          "t": "Basement.",
+          "p": 1.1
+        },
+        {
+          "v": "en",
+          "t": "End of episode 7. Words 312 to 334. Play it again tomorrow: repetition is what makes them stick.",
           "p": 0.5
         }
       ],
-      "hash": "7027ce120665",
+      "hash": "5430a3414d5e",
       "file": "audio/vocab-07.mp3",
-      "estimate": 226,
-      "seconds": 221.0,
-      "bytes": 1325808,
-      "built": "2026-09-09"
+      "estimate": 244,
+      "seconds": 237.2,
+      "bytes": 1423008,
+      "built": "2026-09-10"
     },
     {
       "id": "lectura-4172097",
