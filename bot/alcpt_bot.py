@@ -208,8 +208,39 @@ def counts():
             sum(len(f["questions"]) for f in forms["forms"]))
 
 
-def finish(chat_id, summary, commit_msg):
-    """Regenera documentos, sincroniza con git y avisa el resultado."""
+def data_changed():
+    """¿Quedó algo nuevo en data/ respecto al último commit?
+
+    Devuelve None cuando no se puede saber (esto no es un repo git): en ese
+    caso el llamador regenera igual, que es lo seguro.
+    """
+    if run(["git", "rev-parse", "--git-dir"]).returncode != 0:
+        return None
+    res = run(["git", "status", "--porcelain", "--", "data"])
+    if res.returncode != 0:
+        return None
+    return bool(res.stdout.strip())
+
+
+def finish(chat_id, summary, commit_msg, force=False):
+    """Regenera documentos, sincroniza con git y avisa el resultado.
+
+    Si Claude Code no tocó `data/` —la palabra ya estaba, la pregunta ya estaba
+    documentada— no hay nada que regenerar ni que subir: rebuild() solo
+    cambiaría la fecha de generación de los documentos y git_sync() dejaría un
+    commit que dice que agregó algo que en realidad no agregó. `force` es para
+    /rebuild, donde regenerar sin cambios sí es lo que se pidió.
+    """
+    if not force and data_changed() is False:
+        words, questions = counts()
+        log(f"sin cambios en data/: no regenero ni subo ({commit_msg})")
+        send(chat_id, "\n".join([
+            summary, "",
+            "No cambió nada en data/, así que no regeneré documentos ni subí nada.",
+            f"Diccionario: {words} palabras · {questions} preguntas",
+        ]))
+        return
+
     errors = rebuild()
     problem = git_sync(commit_msg)
     words, questions = counts()
@@ -321,7 +352,8 @@ def handle_update(u):
             send(chat_id, f"{words} palabras · {questions} preguntas documentadas.")
         elif cmd == "/rebuild":
             send(chat_id, "Regenerando…")
-            finish(chat_id, "Documentos regenerados.", "Regenera PDF y páginas web")
+            finish(chat_id, "Documentos regenerados.", "Regenera PDF y páginas web",
+                   force=True)
         else:
             send(chat_id, "No conozco ese comando. Usa /help")
         return
