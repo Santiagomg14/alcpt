@@ -34,8 +34,8 @@ y audio que él consulta desde el celular (GitHub Pages).
 
 ## 4. Qué has cambiado
 
-Sesión del 10 sep 2026: sin cambios en código ni datos. Se activó el bot en el
-servidor Linux:
+Sesión del 10 sep 2026. Se activó el bot en el servidor Linux y se corrigió un
+bug que la primera prueba dejó a la vista:
 
 - `git pull --ff-only` para traer `39bca08` y `a7ebf8a` (liberación del bot en
   Windows), con el visto bueno del usuario.
@@ -46,6 +46,10 @@ servidor Linux:
   Generó el commit automático `a9ae156` tomando el bot para `server (Linux)`.
 - Se usó `--force` porque el instalador pregunta por `input()` y aquí no hay
   terminal interactiva; era seguro: `active_host.json` estaba en `host: null`.
+- `6d5a396` — **arreglo en `bot/alcpt_bot.py`**: `finish()` ya no regenera ni
+  commitea cuando `data/` no cambió. Nuevo helper `data_changed()`, y `/rebuild`
+  pasa `force=True` porque ahí regenerar sin cambios sí es lo pedido.
+- `f2ddf71` — corrección del conteo en este handoff (ver §2).
 
 ## 5. Qué has intentado
 
@@ -61,16 +65,31 @@ Verificaciones hechas en el servidor antes y después de instalar:
 - Con un entorno mínimo (`env -i HOME=… PATH=/usr/bin:/bin`), imitando el que
   systemd le da al servicio: SSH a GitHub autentica, `git push --dry-run` pasa y
   `claude -p` responde. O sea, el servicio puede traducir y hacer push por sí solo.
+- **Prueba real desde el celular**: se le mandó «Scuttlebutt». El bot la recibió,
+  llamó a Claude Code, que detectó que ya estaba en el diccionario y no la
+  duplicó; después regeneró documentos y subió `6123ac6`. El circuito funciona
+  de punta a punta.
+- `data_changed()` probado en los cuatro casos: repo limpio, archivo nuevo en
+  `data/`, JSON modificado y repo restaurado. Acierta en todos.
 
 ## 6. Qué ha fallado
 
-Nada. La única fricción fue que `install_service.py` asume la opción segura (NO)
-cuando no hay TTY, lo que obliga a `--force` desde un guion o desde Claude Code.
+- **Commits que mentían** (arreglado en `6d5a396`). La primera prueba dejó
+  `6123ac6`, titulado «Vocabulario: agrega «Scuttlebutt»», cuyo único contenido
+  real era la fecha de generación en `output/`: la palabra ya existía y Claude
+  Code, correctamente, no editó nada, pero `finish()` regeneraba igual y el
+  rebuild siempre cambia esa fecha, así que `git_sync()` nunca veía un commit
+  vacío. Ese commit queda en el historial; los siguientes ya no pasarán.
+- Fricción menor: `install_service.py` asume la opción segura (NO) cuando no hay
+  TTY, lo que obliga a `--force` desde un guion o desde Claude Code.
 
 ## 7. Qué planeas hacer después
 
-- Probar el circuito completo desde el celular: mandarle una palabra y una captura
-  al bot y confirmar que actualiza los JSON, regenera los documentos y hace push.
+- **Falta probar el camino de las imágenes**: mandarle una captura del examen al
+  bot. Es lo único del flujo que no se ha ejercitado en este equipo, y pasa por
+  la descarga de archivos de Telegram y por `inbox/`.
+- Verificar el arreglo de `6d5a396` en caliente: mandarle una palabra repetida y
+  comprobar que responde «no cambió nada en data/» y no aparece ningún commit.
 - Seguir procesando capturas nuevas que Brayhan mande por Telegram.
 - Completar las 21 preguntas registradas con la nota
   `(Not shown — captured during the test…)` si vuelve a hacer esos formularios y
