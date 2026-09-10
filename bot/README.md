@@ -14,8 +14,10 @@ cambia entre equipos es el archivo `.env`.
 | `scuttlebutt` | Traduce con Claude Code y la agrega a `personal` |
 | `scuttlebutt = rumor, chisme` | La agrega tal cual, sin usar IA |
 | Una captura del examen | Extrae número, enunciado, opciones, respuesta y explicación |
-| `/estado` | Cuántas palabras y preguntas hay |
-| `/rebuild` | Regenera PDF y páginas web |
+| Un enlace de `thoughtco.com` | Descarga el artículo, lo condensa a nivel B2 y lo publica en Lecturas (con su podcast) |
+| `/lecturas math 2` | Trae 2 artículos nuevos de esa sección y los condensa |
+| `/estado` | Cuántas palabras, preguntas y lecturas hay |
+| `/rebuild` | Regenera PDF, podcasts y páginas web |
 
 Si la palabra ya existe, o si la pregunta ya está documentada en ese formulario,
 avisa y **no duplica** nada.
@@ -26,7 +28,7 @@ avisa y **no duplica** nada.
 git clone https://github.com/Santiagomg14/alcpt.git
 cd alcpt
 
-pip install -r requirements.txt          # reportlab, pypdf
+pip install -r requirements.txt          # reportlab, pypdf, requests, bs4, edge-tts, mutagen
 pip install -r bot/requirements.txt      # requests
 
 cp .env.example .env                     # en Windows: copy .env.example .env

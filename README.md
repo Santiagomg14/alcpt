@@ -30,10 +30,28 @@ python scripts/add_word.py "palabra" "traducción"   # agregar vocabulario
 python scripts/build_pdf.py                          # generar el PDF
 python scripts/build_pdf.py --out output/v2.pdf      # PDF con otro nombre
 python scripts/build_html.py                         # versión web espejo del PDF
-python scripts/build_artifact.py                     # cuaderno con buscador y audio
+python scripts/build_podcasts.py                     # podcasts MP3 (solo lo que cambió)
+python scripts/build_artifact.py                     # cuaderno: Cuaderno / Lecturas / Podcasts
 python scripts/build_artifact.py --standalone --out docs/index.html   # GitHub Pages
+python scripts/fetch_readings.py --discover math philosophy           # candidatos de ThoughtCo
+python scripts/fetch_readings.py --add URL [URL...]                   # registrar artículos
+python scripts/fetch_readings.py --condense                           # condensar con Claude Code
 python bot/alcpt_bot.py                              # bot de Telegram
 ```
+
+## Lecturas y podcasts
+
+La pestaña **Lecturas** condensa artículos de ThoughtCo (tecnología, matemáticas,
+humanidades y ciencias sociales) a nivel B2: resumen en inglés, glosario en español y una
+pregunta de comprobación. `fetch_readings.py` descarga y extrae el texto; la condensación la
+hace Claude Code en modo no interactivo, igual que el bot. El bot también acepta un enlace de
+thoughtco.com o el comando `/lecturas <sección> <n>`.
+
+La pestaña **Podcasts** tiene audios de **10 minutos como máximo** generados con
+[edge-tts](https://github.com/rany2/edge-tts) (voces neuronales de Microsoft, gratis, sin
+clave): una serie recorre todo el diccionario en orden (inglés → español → inglés) y otra
+lee cada lectura con su glosario y su pregunta. Los MP3 viven en `docs/audio/` y
+`build_podcasts.py` solo re-renderiza los episodios cuyo guion cambió.
 
 ## Bot de Telegram
 
@@ -63,6 +81,9 @@ En las preguntas lee el enunciado y todas las opciones, como en la parte auditiv
 | `data/forms.json` | Preguntas, opciones, respuestas y explicaciones |
 | `data/phrasal_verbs.json` | Phrasal verbs de los formularios 50–87, agrupados por partícula |
 | `data/idioms.json` | Idioms y léxico militar de los mismos formularios, agrupados por uso |
+| `data/readings.json` | Lecturas de ThoughtCo condensadas: resumen, glosario y pregunta |
+| `data/podcasts.json` | Guiones, duración y hash de cada episodio de podcast |
+| `docs/audio/*.mp3` | Los episodios, publicados junto a la página |
 | `CLAUDE.md` | Las reglas del flujo de trabajo |
 | `output/*.pdf` | Documento consolidado, párrafos justificados |
 | `output/ALCPT_Vocabulario_y_Examenes.html` | Espejo del PDF en versión web |
@@ -70,5 +91,5 @@ En las preguntas lee el enunciado y todas las opciones, como en la parte auditiv
 | `docs/index.html` | Lo mismo, publicado en GitHub Pages |
 | `bot/alcpt_bot.py` | Bot de Telegram que alimenta el diccionario |
 
-Los cuatro JSON de `data/` son la única fuente de verdad: el PDF y las páginas siempre se
-regeneran a partir de ellos.
+Los JSON de `data/` son la única fuente de verdad: el PDF, las páginas y los podcasts siempre
+se regeneran a partir de ellos.

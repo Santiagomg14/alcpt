@@ -19,6 +19,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 OUTPUT = ROOT / "output"
+# Donde vive docs/ publicado; el fragmento para Artifact toma los MP3 de aquí.
+PAGES_URL = "https://santiagomg14.github.io/alcpt/"
 
 FONTS = ("https://fonts.googleapis.com/css2?"
          "family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600"
@@ -277,6 +279,127 @@ h1{
   display:block; margin-bottom:3px; font-weight:600;
 }
 
+/* ---------- pestañas ---------- */
+.tabs{
+  position:sticky; top:0; z-index:30; background:var(--paper);
+  display:flex; gap:2px; margin:0; padding:0; border-bottom:1px solid var(--rule);
+  overflow-x:auto; scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:0 0 auto; font:inherit; font-weight:600; font-size:.95rem; color:var(--muted);
+  background:transparent; border:0; border-bottom:2px solid transparent;
+  padding:12px 14px 10px; margin-bottom:-1px; cursor:pointer; white-space:nowrap;
+}
+.tab:hover{color:var(--accent-ink)}
+.tab[aria-selected="true"]{color:var(--accent-ink); border-bottom-color:var(--accent)}
+.tab:focus-visible{outline:2px solid var(--accent); outline-offset:-2px; border-radius:6px}
+.tab .cnt{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.68rem; font-weight:500;
+  color:var(--faint); margin-left:6px; font-variant-numeric:tabular-nums;
+}
+.panel[hidden]{display:none}
+
+/* ---------- lecturas ---------- */
+.reading{
+  background:var(--surface); border:1px solid var(--rule); border-radius:11px;
+  padding:16px 18px; margin:12px 0; box-shadow:var(--shadow);
+}
+.reading:target{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-wash)}
+.rmeta{
+  display:flex; flex-wrap:wrap; gap:4px 8px; font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--faint);
+}
+.rmeta .rtopic{color:var(--accent-ink)}
+.rtitle{
+  font-family:Newsreader,Georgia,serif; font-weight:600; font-size:1.3rem; line-height:1.2;
+  letter-spacing:-.01em; margin:6px 0; text-wrap:balance;
+}
+.rdesc{margin:0; color:var(--muted); font-size:.95rem}
+.ractions{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+.btn{
+  display:inline-flex; align-items:center; gap:7px; font:inherit; font-size:.86rem; font-weight:600;
+  color:var(--accent-ink); background:var(--accent-wash); border:1px solid transparent;
+  border-radius:999px; padding:7px 14px; cursor:pointer; text-decoration:none;
+}
+.btn:hover{border-color:var(--accent)}
+.btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.btn.ghost{background:transparent; border-color:var(--rule); color:var(--muted)}
+.btn.ghost:hover{color:var(--accent-ink); border-color:var(--accent)}
+.btn svg{width:14px; height:14px; fill:currentColor}
+.rbody{margin-top:14px; border-top:1px solid var(--rule-soft); padding-top:4px}
+.rbody > summary{
+  list-style:none; cursor:pointer; padding:8px 0; font-weight:600; color:var(--accent-ink);
+  display:flex; align-items:center; gap:8px;
+}
+.rbody > summary::-webkit-details-marker{display:none}
+.rbody > summary::before{
+  content:"›"; font-size:1.15rem; line-height:1; color:var(--faint);
+  transition:transform .18s ease; display:inline-block;
+}
+.rbody[open] > summary::before{transform:rotate(90deg)}
+.rbody > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+.rtext{margin-top:6px}
+.rtext p{margin:0 0 12px; text-align:justify; hyphens:auto; font-size:1rem; line-height:1.68}
+.rh{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.7rem; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--accent-ink); margin:18px 0 6px; font-weight:600;
+}
+.rpoints{margin:0; padding-left:20px; font-size:.95rem}
+.rpoints li{margin:4px 0}
+.reading .term{grid-template-columns:1fr auto}
+.reading .term .idx{display:none}
+.qstem{margin:0 0 8px; font-weight:600}
+.quiz{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:5px}
+.quiz button{
+  width:100%; text-align:left; font:inherit; font-size:.95rem; color:var(--muted);
+  background:var(--raised); border:1px solid transparent; border-radius:7px;
+  padding:7px 11px 7px 30px; position:relative; cursor:pointer;
+}
+.quiz button::before{
+  content:"○"; position:absolute; left:10px; top:7px; color:var(--faint); font-size:.85rem;
+}
+.quiz button:hover{border-color:var(--rule)}
+.quiz button:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+.quiz .ok button{color:var(--ok); font-weight:600; background:var(--ok-wash); border-color:var(--ok-rule)}
+.quiz .ok button::before{content:"●"; color:var(--ok)}
+.quiz .bad button{color:var(--accent-ink); background:var(--accent-wash); text-decoration:line-through}
+.quiz .bad button::before{content:"×"; color:var(--accent-ink)}
+.quiz.done button{cursor:default}
+.pending{
+  font-size:.9rem; color:var(--muted); background:var(--raised); border:1px dashed var(--rule);
+  border-radius:7px; padding:8px 11px; margin-top:12px;
+}
+
+/* ---------- podcasts ---------- */
+.ep{
+  background:var(--surface); border:1px solid var(--rule); border-radius:11px;
+  padding:14px 16px; margin:11px 0; box-shadow:var(--shadow);
+}
+.ep:target{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-wash)}
+.ep-head{display:flex; gap:12px; align-items:flex-start}
+.ep-idx{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.78rem; color:var(--accent-ink);
+  font-variant-numeric:tabular-nums; padding-top:.3rem; flex:0 0 1.8rem;
+}
+.ep-title{
+  font-family:Newsreader,Georgia,serif; font-weight:600; font-size:1.15rem; margin:0;
+  letter-spacing:-.01em; line-height:1.25;
+}
+.ep-sub{margin:3px 0 0; color:var(--muted); font-size:.88rem}
+.ep-sub .dur{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.74rem; color:var(--faint);
+  font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.ep audio{display:block; width:100%; margin-top:12px; height:40px}
+.ep-more{margin-top:10px}
+.ep-more > summary{
+  list-style:none; cursor:pointer; font-size:.86rem; color:var(--accent-ink); font-weight:600; padding:4px 0;
+}
+.ep-more > summary::-webkit-details-marker{display:none}
+.ep-more > summary:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px}
+.ep-more .term{padding:7px 0}
+
 .empty{
   display:none; text-align:center; color:var(--muted); padding:56px 20px;
   border:1px dashed var(--rule); border-radius:12px; margin-top:26px;
@@ -403,6 +526,105 @@ JS = """
     });
   }
 
+  /* ---- pestañas: Cuaderno / Lecturas / Podcasts ---- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab')),
+      panels = Array.prototype.slice.call(document.querySelectorAll('.panel')),
+      tabbar = document.querySelector('.tabs'),
+      toolbar = document.querySelector('.toolbar');
+
+  function fitToolbar(){ if(tabbar && toolbar) toolbar.style.top = tabbar.offsetHeight + 'px'; }
+  fitToolbar();
+  window.addEventListener('resize', fitToolbar);
+
+  function showTab(name, keepHash){
+    if(!document.getElementById('panel-' + name)) name = 'cuaderno';
+    tabs.forEach(function(t){
+      var on = t.dataset.tab === name;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+    });
+    panels.forEach(function(p){ p.hidden = p.id !== 'panel-' + name; });
+    try{ localStorage.setItem('alcpt-tab', name); }catch(e){}
+    if(!keepHash){
+      try{ history.replaceState(null, '', name === 'cuaderno'
+        ? location.pathname + location.search : '#' + name); }catch(e){}
+    }
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ showTab(t.dataset.tab); window.scrollTo(0, 0); });
+  });
+  if(tabbar) tabbar.addEventListener('keydown', function(e){
+    var i = tabs.indexOf(document.activeElement);
+    if(i < 0 || (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft')) return;
+    e.preventDefault();
+    var j = (i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+    tabs[j].focus(); showTab(tabs[j].dataset.tab);
+  });
+
+  function reveal(el){
+    var p = el.closest('.panel');
+    if(p) showTab(p.id.replace('panel-', ''), true);
+    var d = el.querySelector('details.rbody');
+    if(d) d.open = true;
+    el.scrollIntoView({block:'start'});
+  }
+  function openFromHash(){
+    var h = location.hash.replace('#', '');
+    if(!h) return false;
+    if(document.getElementById('panel-' + h)){ showTab(h, true); return true; }
+    var el = document.getElementById(h);
+    if(el && el.closest('.panel')){ reveal(el); return true; }
+    return false;
+  }
+  if(!openFromHash()){
+    var saved = null;
+    try{ saved = localStorage.getItem('alcpt-tab'); }catch(e){}
+    showTab(saved || 'cuaderno', true);
+  }
+  window.addEventListener('hashchange', openFromHash);
+
+  /* ---- lecturas: filtro por tema y pregunta de comprobación ---- */
+  var rchips = Array.prototype.slice.call(document.querySelectorAll('.rchip')),
+      readings = Array.prototype.slice.call(document.querySelectorAll('.reading'));
+  rchips.forEach(function(c){
+    c.addEventListener('click', function(){
+      var t = c.dataset.topic;
+      rchips.forEach(function(o){ o.setAttribute('aria-pressed', String(o === c)); });
+      readings.forEach(function(r){ r.classList.toggle('hidden', t !== 'all' && r.dataset.topic !== t); });
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.quiz'), function(q){
+    q.addEventListener('click', function(e){
+      var b = e.target.closest('button');
+      if(!b || q.classList.contains('done')) return;
+      q.classList.add('done');
+      Array.prototype.forEach.call(q.querySelectorAll('li'), function(li){
+        if(li.dataset.ok === '1') li.classList.add('ok');
+        else if(li.contains(b)) li.classList.add('bad');
+      });
+    });
+  });
+
+  /* ---- podcasts: un solo audio a la vez; saltos entre lectura y episodio ---- */
+  var audios = Array.prototype.slice.call(document.querySelectorAll('.ep audio'));
+  audios.forEach(function(a){
+    a.addEventListener('play', function(){
+      audios.forEach(function(o){ if(o !== a) o.pause(); });
+      if(synth){ synth.cancel(); }
+      if(typeof release === 'function') release();
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-goto]'), function(b){
+    b.addEventListener('click', function(){
+      var el = document.getElementById(b.dataset.goto);
+      if(!el) return;
+      reveal(el);
+      try{ history.replaceState(null, '', '#' + b.dataset.goto); }catch(e){}
+      var a = el.querySelector('audio');
+      if(a && b.dataset.play){ a.play().catch(function(){}); }
+    });
+  });
+
   document.getElementById('expand').addEventListener('click', function(){
     var anyClosed = groups.some(function(g){ return !g.open; });
     groups.forEach(function(g){ g.open = anyClosed; });
@@ -443,13 +665,31 @@ def key(text):
     return "".join(c for c in s if unicodedata.category(c) != "Mn")
 
 
-def build(vocab, forms, pv, idioms):
+def mmss(seconds):
+    seconds = int(round(seconds or 0))
+    return f"{seconds // 60}:{seconds % 60:02d}"
+
+
+PLAY_ICON = ('<svg viewBox="0 0 16 16" aria-hidden="true">'
+             '<path d="M4.5 2.8v10.4a.6.6 0 0 0 .92.5l8-5.2a.6.6 0 0 0 0-1L5.42 2.3a.6.6 0 0 0-.92.5z"/></svg>')
+LINK_ICON = ('<svg viewBox="0 0 16 16" aria-hidden="true">'
+             '<path d="M9 2h5v5h-1.5V4.56L7.03 10.03 5.97 8.97 11.44 3.5H9V2z"/>'
+             '<path d="M3 4h4v1.5H4.5v6h6V8H12v5H3V4z"/></svg>')
+
+
+def build(vocab, forms, pv, idioms, readings, podcasts, audio_base):
     out = []
     a = out.append
     total_words = sum(len(s["entries"]) for s in vocab["sections"])
     total_q = sum(len(f["questions"]) for f in forms["forms"])
     total_pv = sum(len(g["entries"]) for g in pv["groups"])
     total_id = sum(len(g["entries"]) for sec in idioms["sections"] for g in sec["groups"])
+    total_r = len(readings.get("items", []))
+    episodes = podcasts.get("episodes", [])
+    total_ep = len(episodes)
+    ep_by_reading = {e["reading"]: e for e in episodes if e.get("reading")}
+    words_by_n = {e["n"]: e for s in vocab["sections"] for e in s["entries"]}
+    topic_title = {t["id"]: t["title"] for t in readings.get("topics", [])}
 
     a("<title>Cuaderno ALCPT</title>")
     a(f'<link rel="stylesheet" href="{FONTS}">')
@@ -465,9 +705,23 @@ def build(vocab, forms, pv, idioms):
       "Language Course Placement Test. Busca una palabra, un idiom o el enunciado de cualquier ítem.</p>")
     a('<div class="stats">')
     for fig, cap in [(total_words, "palabras"), (total_pv, "phrasal verbs"),
-                     (total_id, "idioms"), (total_q, "preguntas")]:
+                     (total_id, "idioms"), (total_q, "preguntas"),
+                     (total_r, "lecturas"), (total_ep, "podcasts")]:
         a(f'<div><span class="fig">{escape(str(fig))}</span><span class="cap">{cap}</span></div>')
     a("</div></header>")
+
+    # pestañas
+    a('<nav class="tabs" role="tablist" aria-label="Secciones del cuaderno">')
+    for tid, label, cnt, sel in [("cuaderno", "Cuaderno", total_words + total_q, "true"),
+                                 ("lecturas", "Lecturas", total_r, "false"),
+                                 ("podcasts", "Podcasts", total_ep, "false")]:
+        a(f'<button class="tab" type="button" role="tab" id="tab-{tid}" data-tab="{tid}" '
+          f'aria-selected="{sel}" aria-controls="panel-{tid}">{label}'
+          f'<span class="cnt">{cnt}</span></button>')
+    a("</nav>")
+
+    # ===================== pestaña 1: cuaderno =====================
+    a('<section class="panel" id="panel-cuaderno" role="tabpanel" aria-labelledby="tab-cuaderno">')
 
     # buscador
     a('<div class="toolbar">')
@@ -609,9 +863,140 @@ def build(vocab, forms, pv, idioms):
 
     a('<div class="empty" id="empty"><strong>Sin coincidencias</strong>'
       "Prueba con otra palabra, o revisa el filtro de arriba.</div>")
+    a("</section>")
+
+    # ===================== pestaña 2: lecturas =====================
+    a('<section class="panel" id="panel-lecturas" role="tabpanel" aria-labelledby="tab-lecturas" hidden>')
+    a('<p class="part">Lecturas · ThoughtCo</p>')
+    a(f'<p class="part-note">{escape(readings.get("meta", {}).get("intro", ""))} '
+      "Son temas ajenos a la rutina militar a propósito: el examen mezcla registros, y leer "
+      "fuera de lo conocido es lo que hace crecer el vocabulario.</p>")
+    items = readings.get("items", [])
+    if items:
+        counts = {}
+        for it in items:
+            counts[it.get("topic")] = counts.get(it.get("topic"), 0) + 1
+        a('<div class="filters" role="group" aria-label="Filtrar lecturas por tema" style="margin-top:14px">')
+        a(f'<button class="chip rchip" type="button" data-topic="all" aria-pressed="true">Todas · {len(items)}</button>')
+        for t in readings.get("topics", []):
+            if counts.get(t["id"]):
+                a(f'<button class="chip rchip" type="button" data-topic="{t["id"]}" aria-pressed="false">'
+                  f'{escape(t["title"])} · {counts[t["id"]]}</button>')
+        a("</div>")
+    else:
+        a('<p class="pending">Todavía no hay lecturas. Se agregan con '
+          "<code>scripts/fetch_readings.py</code> o mandándole al bot un enlace de ThoughtCo.</p>")
+
+    for it in items:
+        rid = f'lectura-{it["id"]}'
+        ep = ep_by_reading.get(it["id"])
+        crumbs = [c for c in it.get("path", []) if c not in ("Science, Tech, Math", "Humanities")]
+        a(f'<article class="reading" id="{rid}" data-topic="{escape(it.get("topic") or "")}">')
+        a('<div class="rmeta">'
+          f'<span class="rtopic">{escape(topic_title.get(it.get("topic"), it.get("topic") or ""))}</span>'
+          + "".join(f"<span>· {escape(c)}</span>" for c in crumbs[:2])
+          + (f'<span>· {it["summary_words"]} words · ~{max(1, round(it["summary_words"] / 130))} min</span>'
+             if it.get("summary") else "")
+          + "</div>")
+        a(f'<h3 class="rtitle">{escape(it["title"])}</h3>')
+        if it.get("description"):
+            a(f'<p class="rdesc">{escape(it["description"])}</p>')
+        a('<div class="ractions">')
+        if ep and ep.get("seconds"):
+            a(f'<button class="btn" type="button" data-goto="ep-{ep["id"]}" data-play="1">'
+              f'{PLAY_ICON}Escuchar · {mmss(ep["seconds"])}</button>')
+        a(f'<a class="btn ghost" href="{escape(it["url"], quote=True)}" target="_blank" '
+          f'rel="noopener noreferrer">{LINK_ICON}Artículo original</a>')
+        a("</div>")
+
+        if not it.get("summary"):
+            a('<p class="pending">Pendiente de condensar: corre '
+              "<code>python scripts/fetch_readings.py --condense</code>.</p>")
+            a("</article>")
+            continue
+
+        a('<details class="rbody"><summary>Leer el resumen</summary>')
+        a('<div class="rtext">')
+        for p in it["summary"]:
+            a(f"<p>{escape(p)}</p>")
+        a("</div>")
+        if it.get("key_points"):
+            a('<p class="rh">Key points</p><ul class="rpoints">')
+            for k in it["key_points"]:
+                a(f"<li>{escape(k)}</li>")
+            a("</ul>")
+        if it.get("glossary"):
+            a('<p class="rh">Glosario</p><div class="terms">')
+            for g in it["glossary"]:
+                a('<div class="term">'
+                  f'<span class="en">{escape(g["en"])}</span>'
+                  f'<span class="es">{escape(g["es"])}</span>'
+                  + say_button(g["en"], f'Escuchar {g["en"]}') + "</div>")
+            a("</div>")
+        q = it.get("question")
+        if q:
+            a('<p class="rh">Comprehension check</p>')
+            a(f'<p class="qstem">{escape(q["stem"])}</p>')
+            a('<ul class="quiz">')
+            for opt in q["options"]:
+                ok = ' data-ok="1"' if opt == q["answer"] else ""
+                a(f'<li{ok}><button type="button">{escape(opt)}</button></li>')
+            a("</ul>")
+        a("</details></article>")
+    a("</section>")
+
+    # ===================== pestaña 3: podcasts =====================
+    a('<section class="panel" id="panel-podcasts" role="tabpanel" aria-labelledby="tab-podcasts" hidden>')
+    a('<p class="part">Podcasts</p>')
+    a(f'<p class="part-note">{escape(podcasts.get("meta", {}).get("intro", ""))}</p>')
+    if not episodes:
+        a('<p class="pending">Todavía no hay episodios. Se generan con '
+          "<code>python scripts/build_podcasts.py</code>.</p>")
+    for serie in podcasts.get("series", []):
+        eps = [e for e in episodes if e["series"] == serie["id"]]
+        if not eps:
+            continue
+        total_s = sum(e.get("seconds") or 0 for e in eps)
+        a(f'<h3 class="subpart">{escape(serie["title"])}</h3>')
+        a(f'<p class="sense">{escape(serie["note"])} '
+          f'{len(eps)} episodio{"s" if len(eps) != 1 else ""} · {mmss(total_s)} en total.</p>')
+        for i, e in enumerate(eps, 1):
+            a(f'<article class="ep" id="ep-{e["id"]}">')
+            a('<div class="ep-head">'
+              f'<span class="ep-idx">{i:02d}</span><div>'
+              f'<h4 class="ep-title">{escape(e["title"])}</h4>'
+              f'<p class="ep-sub">{escape(e.get("subtitle") or "")}'
+              + (f' · {e["count"]} palabras' if e.get("count") else "")
+              + (f' · <span class="dur">{mmss(e["seconds"])}</span>' if e.get("seconds") else "")
+              + "</p></div></div>")
+            if e.get("seconds"):
+                a(f'<audio controls preload="none" src="{escape(audio_base + e["id"] + ".mp3", quote=True)}">'
+                  "Tu navegador no reproduce audio MP3.</audio>")
+            else:
+                a('<p class="pending">Audio pendiente de generar.</p>')
+            if e["series"] == "vocab" and e.get("words"):
+                first, last = e["words"]
+                a('<details class="ep-more"><summary>Palabras del episodio</summary><div class="terms">')
+                for n in range(first, last + 1):
+                    w = words_by_n.get(n)
+                    if not w:
+                        continue
+                    a('<div class="term">'
+                      f'<span class="idx">{n}</span>'
+                      f'<span class="en">{escape(w["en"])}</span>'
+                      f'<span class="es">{escape(w["es"])}</span>'
+                      + say_button(w["en"], f'Escuchar {w["en"]}') + "</div>")
+                a("</div></details>")
+            elif e.get("reading"):
+                a('<div class="ractions">'
+                  f'<button class="btn ghost" type="button" data-goto="lectura-{e["reading"]}">'
+                  "Leer el resumen y el glosario</button></div>")
+            a("</article>")
+    a("</section>")
+
     a(f'<footer><span>Brayhan · nivel B2</span>'
       f'<span>{total_words} palabras · {total_pv} phrasal verbs · '
-      f'{total_id} idioms · {total_q} preguntas</span></footer>')
+      f'{total_id} idioms · {total_q} preguntas · {total_r} lecturas · {total_ep} podcasts</span></footer>')
     a("</div>")
     a(f"<script>{JS}</script>")
     return "\n".join(out)
@@ -647,14 +1032,27 @@ def main():
     ap.add_argument("--out", default=str(OUTPUT / "cuaderno_alcpt.html"))
     ap.add_argument("--standalone", action="store_true",
                     help="documento HTML completo (para GitHub Pages) en vez de fragmento")
+    ap.add_argument("--audio-base", default=None,
+                    help="prefijo de las URLs de los MP3 (por defecto: 'audio/' en la versión "
+                         "standalone, y la URL de GitHub Pages en el fragmento)")
     args = ap.parse_args()
 
-    vocab = json.loads((DATA / "vocabulary.json").read_text(encoding="utf-8"))
-    forms = json.loads((DATA / "forms.json").read_text(encoding="utf-8"))
-    pv = json.loads((DATA / "phrasal_verbs.json").read_text(encoding="utf-8"))
-    idioms = json.loads((DATA / "idioms.json").read_text(encoding="utf-8"))
+    def load(name, default):
+        p = DATA / name
+        return json.loads(p.read_text(encoding="utf-8")) if p.exists() else default
 
-    html = build(vocab, forms, pv, idioms)
+    vocab = load("vocabulary.json", None)
+    forms = load("forms.json", None)
+    pv = load("phrasal_verbs.json", None)
+    idioms = load("idioms.json", None)
+    readings = load("readings.json", {"meta": {}, "topics": [], "items": []})
+    podcasts = load("podcasts.json", {"meta": {}, "series": [], "episodes": []})
+
+    audio_base = args.audio_base
+    if audio_base is None:
+        audio_base = "audio/" if args.standalone else PAGES_URL + "audio/"
+
+    html = build(vocab, forms, pv, idioms, readings, podcasts, audio_base)
     if args.standalone:
         html = wrap_standalone(html)
 

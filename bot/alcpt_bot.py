@@ -24,6 +24,7 @@ Uso
 
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -169,6 +170,10 @@ def rebuild():
     steps = [
         ("PDF", [sys.executable, str(SCRIPTS / "build_pdf.py")]),
         ("página espejo", [sys.executable, str(SCRIPTS / "build_html.py")]),
+        # Antes del cuaderno: solo re-renderiza los episodios cuyo guion cambió
+        # (p. ej. el último de vocabulario al agregar una palabra). Sin edge-tts
+        # instalado avisa y sigue, no bloquea lo demás.
+        ("podcasts", [sys.executable, str(SCRIPTS / "build_podcasts.py")]),
         ("cuaderno", [sys.executable, str(SCRIPTS / "build_artifact.py")]),
         ("GitHub Pages", [sys.executable, str(SCRIPTS / "build_artifact.py"),
                           "--standalone", "--out", "docs/index.html"]),
@@ -264,6 +269,10 @@ HELP = (
     "Comandos:\n"
     "/estado – cuántas palabras y preguntas hay\n"
     "/rebuild – regenerar PDF y páginas web\n"
+    "/lecturas – traer lecturas nuevas de ThoughtCo (p. ej. /lecturas math 2)\n"
+    "   secciones: computer-science, math, statistics, philosophy, history,\n"
+    "   geography, issues, social-sciences, humanities\n"
+    "• un enlace de thoughtco.com → lo condenso y lo agrego a Lecturas\n"
     "/help – este mensaje"
 )
 
@@ -329,6 +338,62 @@ def handle_image(chat_id, path):
     finish(chat_id, out or "Captura procesada.", f"ALCPT: procesa {path.name}")
 
 
+THOUGHTCO_URL = re.compile(r"https?://(?:www\.)?thoughtco\.com/\S+", re.I)
+READINGS_SCRIPT = SCRIPTS / "fetch_readings.py"
+
+
+def readings_count():
+    p = DATA / "readings.json"
+    if not p.exists():
+        return 0
+    try:
+        return len(json.loads(p.read_text(encoding="utf-8")).get("items", []))
+    except (json.JSONDecodeError, OSError):
+        return 0
+
+
+def handle_reading_url(chat_id, urls):
+    """Un enlace de ThoughtCo: descargar, condensar con Claude Code y publicar."""
+    send(chat_id, f"Descargando {len(urls)} lectura{'s' if len(urls) != 1 else ''} de ThoughtCo…")
+    res = run([sys.executable, str(READINGS_SCRIPT), "--add", *urls], timeout=300)
+    if res.returncode != 0:
+        send(chat_id, f"No pude descargarla:\n{(res.stderr or res.stdout).strip()[-600:]}")
+        return
+    added = res.stdout.strip()
+    if "+ " not in added:
+        send(chat_id, added or "Nada nuevo: esa lectura ya estaba registrada.")
+        return
+    send(chat_id, added + "\n\nCondensando con Claude Code (tarda un minuto)…")
+    res = run([sys.executable, str(READINGS_SCRIPT), "--condense"], timeout=1200)
+    if res.returncode != 0:
+        send(chat_id, f"Descargada, pero no pude condensarla:\n{(res.stderr or res.stdout).strip()[-600:]}")
+    finish(chat_id, (res.stdout or "Lectura condensada.").strip()[-1500:],
+           f"Lecturas: agrega {len(urls)} artículo{'s' if len(urls) != 1 else ''} de ThoughtCo")
+
+
+def handle_readings_cmd(chat_id, args):
+    """/lecturas [sección] [n]: trae n artículos nuevos de esa sección y los condensa."""
+    section, n = "computer-science", 1
+    for tok in args:
+        if tok.isdigit():
+            n = max(1, min(int(tok), 5))
+        else:
+            section = tok.lower()
+    send(chat_id, f"Buscando {n} lectura{'s' if n != 1 else ''} nueva{'s' if n != 1 else ''} en «{section}»…")
+    res = run([sys.executable, str(READINGS_SCRIPT), "--add-from-section", section,
+               "--max", str(n)], timeout=600)
+    if res.returncode != 0:
+        send(chat_id, f"No pude traerlas:\n{(res.stderr or res.stdout).strip()[-600:]}")
+        return
+    if "+ " not in res.stdout:
+        send(chat_id, (res.stdout or "").strip() or "No encontré artículos nuevos en esa sección.")
+        return
+    send(chat_id, res.stdout.strip() + "\n\nCondensando con Claude Code…")
+    res = run([sys.executable, str(READINGS_SCRIPT), "--condense"], timeout=1800)
+    finish(chat_id, (res.stdout or "Lecturas condensadas.").strip()[-1500:],
+           f"Lecturas: {n} artículo{'s' if n != 1 else ''} nuevo{'s' if n != 1 else ''} de {section}")
+
+
 def handle_update(u):
     msg = u.get("message") or u.get("edited_message")
     if not msg:
@@ -349,7 +414,10 @@ def handle_update(u):
             send(chat_id, HELP)
         elif cmd == "/estado":
             words, questions = counts()
-            send(chat_id, f"{words} palabras · {questions} preguntas documentadas.")
+            send(chat_id, f"{words} palabras · {questions} preguntas documentadas · "
+                          f"{readings_count()} lecturas.")
+        elif cmd == "/lecturas":
+            handle_readings_cmd(chat_id, text.split()[1:])
         elif cmd == "/rebuild":
             send(chat_id, "Regenerando…")
             finish(chat_id, "Documentos regenerados.", "Regenera PDF y páginas web",
@@ -367,6 +435,11 @@ def handle_update(u):
     if doc and str(doc.get("mime_type", "")).startswith("image/"):
         path = download_file(doc["file_id"], INBOX)
         handle_image(chat_id, path)
+        return
+
+    urls = THOUGHTCO_URL.findall(text)
+    if urls:
+        handle_reading_url(chat_id, [u.rstrip(".,)") for u in urls])
         return
 
     if text:

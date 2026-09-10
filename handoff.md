@@ -1,6 +1,6 @@
 # Handoff — Vocabulario en inglés + ALCPT (Brayhan)
 
-**Última actualización:** 10 sep 2026
+**Última actualización:** 9 sep 2026 (noche, LAPTOP-H4O9EDGC)
 
 ## 1. El objetivo
 
@@ -9,107 +9,121 @@ documentar en profundidad las preguntas del ALCPT, a partir de capturas de los
 formularios. Todo se publica en un PDF, una web espejo y un cuaderno con buscador
 y audio que él consulta desde el celular (GitHub Pages).
 
+Desde el 9 sep 2026 el cuaderno tiene además dos pestañas nuevas:
+**Lecturas** (artículos de ThoughtCo condensados a nivel B2, en temas ajenos a su
+experticia: tecnología, matemáticas, humanidades y ciencias sociales) y
+**Podcasts** (audios de ≤10 min: todo el vocabulario en orden y una lectura por
+episodio).
+
 ## 2. El estado actual del proyecto
 
 - **333 palabras confirmadas**, sin bloques `pending_` abiertos, y
-  **266 preguntas** documentadas. Contado el 10 sep 2026 sobre los JSON; los
-  handoffs anteriores arrastraban 331 y 233, cifras previas a las capturas que
-  se procesaron en agosto. Verifícalo siempre con `counts()` del bot o con:
-  `.venv/bin/python -c "import json;v=json.load(open('data/vocabulary.json'));print(sum(len(s['entries']) for s in v['sections']))"`
-- Documentos regenerados el 10 sep 2026, al día con `data/`.
+  **266 preguntas** documentadas. Verifícalo siempre con `counts()` del bot o con:
+  `python -c "import json;v=json.load(open('data/vocabulary.json'));print(sum(len(s['entries']) for s in v['sections']))"`
+- **14 lecturas** condensadas en `data/readings.json` (3 tech, 3 math, 2 social,
+  6 humanities: filosofía, asuntos públicos, geografía, historia).
+- **21 episodios de podcast** en `data/podcasts.json` + `docs/audio/*.mp3`:
+  7 de vocabulario (8:00–8:49 cada uno, el último 3:41) y 14 de lecturas
+  (4:53–6:05). 47,6 MB de MP3 en `docs/audio/`, 132 min en total.
 - **Bot de Telegram CORRIENDO en el servidor Linux** (`server`, Ubuntu 24.04),
-  en `/home/citae/Pictures/programas/alcpt`, desde el 10 sep 2026 02:39 UTC.
-  Migrado desde `LAPTOP-H4O9EDGC`, que lo había liberado el 9 sep.
-  `bot/active_host.json` registra `server (Linux)` como dueño.
-- Repositorio limpio, sincronizado con `main`.
+  en `/home/citae/Pictures/programas/alcpt`, como unidad systemd de usuario
+  `alcpt-bot`. `bot/active_host.json` registra `server (Linux)` como dueño.
+  **OJO:** el bot del servidor todavía corre la versión anterior del código;
+  hay que hacer `git pull`, `.venv/bin/pip install -r requirements.txt` y
+  `systemctl --user restart alcpt-bot` para que tenga lecturas y podcasts.
 
 ## 3. Los archivos en los que trabajas
 
 - `data/vocabulary.json`, `data/forms.json`, `data/phrasal_verbs.json`,
-  `data/idioms.json` — fuentes únicas de verdad.
-- `scripts/build_pdf.py`, `build_html.py`, `build_artifact.py` — generan
-  `output/` y `docs/index.html`.
-- `bot/alcpt_bot.py` e `bot/install_service.py` — el bot y su instalador de servicio.
-- `inbox/` — capturas nuevas (fuera del repo, en `.gitignore`).
+  `data/idioms.json` — fuentes únicas de verdad del cuaderno.
+- `data/readings.json` — lecturas (metadatos + resumen, key_points, glossary,
+  question). El texto original vive en `inbox/readings/<id>.txt`, fuera del repo.
+- `data/podcasts.json` — guiones, hash, duración y bytes de cada episodio.
+- `scripts/fetch_readings.py` — descubre/descarga/condensa artículos de ThoughtCo.
+- `scripts/build_podcasts.py` — guiones + MP3 con edge-tts, solo lo que cambió.
+- `scripts/build_artifact.py` — ahora genera las tres pestañas.
+- `bot/alcpt_bot.py` — acepta enlaces de thoughtco.com y `/lecturas`; `rebuild()`
+  corre `build_podcasts.py` antes del cuaderno.
 
 ## 4. Qué has cambiado
 
-Sesión del 10 sep 2026. Se activó el bot en el servidor Linux y se corrigió un
-bug que la primera prueba dejó a la vista:
+Sesión del 9 sep 2026 (este equipo, tras la migración del bot al servidor):
 
-- `git pull --ff-only` para traer `39bca08` y `a7ebf8a` (liberación del bot en
-  Windows), con el visto bueno del usuario.
-- `.venv/bin/python bot/capture_id.py` → completó `ALLOWED_USER_IDS` en `.env`
-  con el ID capturado al recibir `/start`. `.env` sigue fuera del repo.
-- `.venv/bin/python bot/install_service.py --force` → creó la unidad de usuario
-  `~/.config/systemd/user/alcpt-bot.service`, la habilitó y activó el lingering.
-  Generó el commit automático `a9ae156` tomando el bot para `server (Linux)`.
-- Se usó `--force` porque el instalador pregunta por `input()` y aquí no hay
-  terminal interactiva; era seguro: `active_host.json` estaba en `host: null`.
-- `6d5a396` — **arreglo en `bot/alcpt_bot.py`**: `finish()` ya no regenera ni
-  commitea cuando `data/` no cambió. Nuevo helper `data_changed()`, y `/rebuild`
-  pasa `force=True` porque ahí regenerar sin cambios sí es lo pedido.
-- `f2ddf71` — corrección del conteo en este handoff (ver §2).
+- Nuevo `scripts/fetch_readings.py`. ThoughtCo devuelve 402 sin cabeceras de
+  navegador; con User-Agent de Chrome responde 200. El cuerpo se extrae de los
+  bloques `.mntl-sc-block` (headings + html); imágenes y anuncios se omiten. La
+  condensación usa `claude -p` leyendo el artículo por stdin y devolviendo JSON;
+  quita `CLAUDECODE` del entorno para poder correr anidado.
+- Nuevo `scripts/build_podcasts.py`. Voces `en-US-AndrewNeural` / `es-CO-SalomeNeural`
+  a rate −5 %. Pausas como tramas MP3 de silencio (MPEG-2 L3, 24 kHz, 48 kbps,
+  mono, 144 bytes = 24 ms) intercaladas; no hace falta ffmpeg. Duración medida
+  con mutagen. Estimador: 158 wpm + 1,4 s de sobrecarga por segmento (medido).
+- `scripts/build_artifact.py`: pestañas Cuaderno / Lecturas / Podcasts con
+  `role=tablist`, hash en la URL (`#lecturas`, `#ep-vocab-01`, `#lectura-<id>`),
+  última pestaña recordada en localStorage, filtro por tema, quiz de una sola
+  respuesta, un solo `<audio>` sonando a la vez y saltos lectura↔episodio.
+  Nuevo `--audio-base` (el fragmento para Artifact toma los MP3 de GitHub Pages).
+- `bot/alcpt_bot.py`: `handle_reading_url`, `handle_readings_cmd`, `/lecturas`,
+  `/estado` con lecturas, paso «podcasts» en `rebuild()`.
+- `requirements.txt`: + requests, beautifulsoup4, edge-tts, mutagen.
+- `CLAUDE.md` (reglas 8 y 9, estructura, comandos), `README.md`, `bot/README.md`.
+- Primer lote: 14 artículos registrados y condensados; 21 MP3 generados.
+- `build_podcasts.py` escribe `podcasts.json` tras cada episodio y tiene `--adopt`
+  (reconoce MP3 ya generados sin registro): hizo falta porque Windows mató dos
+  veces el render en segundo plano por falta de memoria.
 
 ## 5. Qué has intentado
 
-Verificaciones hechas en el servidor antes y después de instalar:
-
-- Dependencias del `.venv`: `requests` 2.34.2, `reportlab` 5.0.1, `pypdf` 6.18.0.
-- `CLAUDE_BIN=/home/citae/.local/bin/claude` → Claude Code 2.1.267.
-- `getMe` de Telegram → responde `@alcpt_english_bot`.
-- `install_service.py --status` → `active (running)`, PID 1253467, tomado por
-  `server (Linux)`. `loginctl show-user citae -p Linger` → `Linger=yes`.
-- `bot/bot.log` → «conectado como @alcpt_english_bot», sin 409 (nadie más lee
-  el token).
-- Con un entorno mínimo (`env -i HOME=… PATH=/usr/bin:/bin`), imitando el que
-  systemd le da al servicio: SSH a GitHub autentica, `git push --dry-run` pasa y
-  `claude -p` responde. O sea, el servicio puede traducir y hacer push por sí solo.
-- **Prueba real desde el celular**: se le mandó «Scuttlebutt». El bot la recibió,
-  llamó a Claude Code, que detectó que ya estaba en el diccionario y no la
-  duplicó; después regeneró documentos y subió `6123ac6`. El circuito funciona
-  de punta a punta.
-- `data_changed()` probado en los cuatro casos: repo limpio, archivo nuevo en
-  `data/`, JSON modificado y repo restaurado. Acierta en todos.
+- Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,
+  math, statistics, geometry, humanities, history, geography, philosophy,
+  issues, social-sciences. El slug de la URL no importa, solo el id numérico.
+- Calibración edge-tts: 171 palabras EN → 64,8 s (158 wpm). Un episodio de 78
+  palabras dio 755 s reales frente a 513 s estimados → se añadió la sobrecarga
+  de 1,4 s por segmento y quedaron ~50 palabras por episodio (~480 s reales).
+- Concatenar MP3 de las dos voces + tramas de silencio: mutagen lo lee bien y
+  la duración cuadra.
+- `claude -p` anidado desde una sesión de Claude Code funciona si se quita
+  `CLAUDECODE` del entorno (8 s para una respuesta trivial; 20–60 s por artículo).
+- Página validada: Node `--check` del JS sin errores y etiquetas HTML balanceadas.
+  No se pudo abrir en Chrome desde aquí (extensión desconectada).
 
 ## 6. Qué ha fallado
 
-- **Commits que mentían** (arreglado en `6d5a396`). La primera prueba dejó
-  `6123ac6`, titulado «Vocabulario: agrega «Scuttlebutt»», cuyo único contenido
-  real era la fecha de generación en `output/`: la palabra ya existía y Claude
-  Code, correctamente, no editó nada, pero `finish()` regeneraba igual y el
-  rebuild siempre cambia esa fecha, así que `git_sync()` nunca veía un commit
-  vacío. Ese commit queda en el historial; los siguientes ya no pasarán.
-- Fricción menor: `install_service.py` asume la opción segura (NO) cuando no hay
-  TTY, lo que obliga a `--force` desde un guion o desde Claude Code.
+- Heredocs largos en la shell de Claude Code fallan («unexpected EOF»); los
+  scripts grandes se escribieron con la herramienta de archivos.
+- edge-tts 7.x no emite `WordBoundary` por defecto, por eso la duración se mide
+  con mutagen y no con los offsets del stream.
+- La primera estimación de duración se quedó corta un 47 % (ver §5).
 
 ## 7. Qué planeas hacer después
 
-- **Falta probar el camino de las imágenes**: mandarle una captura del examen al
-  bot. Es lo único del flujo que no se ha ejercitado en este equipo, y pasa por
-  la descarga de archivos de Telegram y por `inbox/`.
-- Verificar el arreglo de `6d5a396` en caliente: mandarle una palabra repetida y
-  comprobar que responde «no cambió nada en data/» y no aparece ningún commit.
-- Seguir procesando capturas nuevas que Brayhan mande por Telegram.
-- Completar las 21 preguntas registradas con la nota
-  `(Not shown — captured during the test…)` si vuelve a hacer esos formularios y
-  captura la pantalla de repaso.
+- **En el servidor**: `git pull`, `.venv/bin/pip install -r requirements.txt`,
+  `systemctl --user restart alcpt-bot`, y probar mandándole al bot un enlace de
+  ThoughtCo. Revisar que `inbox/readings/` se cree solo (está en `.gitignore`).
+- Mandarle a Brayhan el enlace de GitHub Pages con `#podcasts` y pedirle
+  feedback: ¿ritmo de las voces?, ¿palabras por episodio?, ¿temas?
+- Si quiere más lecturas: `python scripts/fetch_readings.py --discover <sección>`
+  y elegir; o `/lecturas <sección> <n>` desde Telegram.
+- Completar las 21 preguntas con la nota `(Not shown — captured during the test…)`
+  si vuelve a hacer esos formularios y captura la pantalla de repaso.
+- Pendiente de decidir: ¿las lecturas van también al PDF y a la web espejo?
+  Hoy solo están en el cuaderno (pestaña Lecturas).
 
 ## 8. Cualquier cosa relevante
 
 - **Telegram admite un solo lector por token.** Si el bot se instala en otra
-  máquina, hay que desinstalarlo aquí primero (`.venv/bin/python
-  bot/install_service.py --uninstall`); `bot/active_host.json` lleva el registro
-  de quién lo tiene tomado.
+  máquina, hay que desinstalarlo primero donde esté (`install_service.py
+  --uninstall`); `bot/active_host.json` lleva el registro de quién lo tiene tomado.
 - **En el servidor hay que invocar los scripts con `.venv/bin/python`**, no con
-  `python`: las dependencias están en el entorno virtual del repo. La unidad de
-  systemd ya apunta al intérprete del `.venv`.
-- Comandos útiles en este equipo: `systemctl --user status alcpt-bot`,
+  `python`: las dependencias están en el entorno virtual del repo.
+- Comandos útiles allá: `systemctl --user status alcpt-bot`,
   `systemctl --user restart alcpt-bot`, `journalctl --user -u alcpt-bot -f`.
-- El servicio corre sin consola: todo lo que pase se ve en `bot/bot.log`
-  (el token va enmascarado).
-- El lingering está activo, así que el bot sobrevive al cierre de sesión y
-  arranca solo al encender el equipo.
-- El bot ya regenera los cuatro documentos y hace commit + push por su cuenta.
-  Si se editan los JSON a mano, hay que correr los cuatro scripts, incluido
-  `build_artifact.py --standalone --out docs/index.html`.
+  El servicio corre sin consola: todo queda en `bot/bot.log` (token enmascarado).
+- Orden de regeneración: PDF → espejo → **podcasts** → cuaderno → Pages. El bot
+  ya lo hace así; si se edita a mano, no olvidar `build_podcasts.py` antes de
+  `build_artifact.py`.
+- `build_podcasts.py` sin edge-tts instalado avisa y sale con 0 (actualiza
+  guiones, no audio), para no bloquear al bot.
+- GitHub Pages sirve `docs/`; los MP3 pesan ~3 MB cada uno. Si el repo crece
+  demasiado, la alternativa es mover `docs/audio/` a Releases o a otro hosting y
+  cambiar `--audio-base`.

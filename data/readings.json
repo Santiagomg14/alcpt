@@ -1,0 +1,1209 @@
+{
+  "meta": {
+    "source": "ThoughtCo (thoughtco.com)",
+    "intro": "Artículos de divulgación condensados al nivel B2: se leen en inglés, con glosario en español y una pregunta de comprobación al final.",
+    "last_updated": "2026-09-09",
+    "total": 14
+  },
+  "topics": [
+    {
+      "id": "tech",
+      "title": "Tecnología y computación"
+    },
+    {
+      "id": "math",
+      "title": "Matemáticas"
+    },
+    {
+      "id": "humanities",
+      "title": "Humanidades"
+    },
+    {
+      "id": "social",
+      "title": "Ciencias sociales"
+    },
+    {
+      "id": "science",
+      "title": "Ciencias naturales"
+    }
+  ],
+  "items": [
+    {
+      "id": "4172097",
+      "url": "https://www.thoughtco.com/best-programming-languages-for-beginners-4172097",
+      "title": "The 7 Best Programming Languages to Learn for Beginners",
+      "description": "A list of the best programming languages to learn for beginners and those with minimal coding experience.",
+      "author": "Scott Orgera",
+      "published": "2018-09-17",
+      "modified": "2020-11-24",
+      "path": [
+        "Science, Tech, Math",
+        "Computer Science"
+      ],
+      "topic": "tech",
+      "original_words": 1233,
+      "fetched": "2026-09-09",
+      "summary": [
+        "Learning how to code opens up many possibilities, from new job opportunities to developing your own applications. However, with so many programming languages available, deciding where to start can be intimidating. The article ranks seven languages for beginners, starting with the easiest and working toward the more challenging ones.",
+        "Ruby comes first because its syntax closely resembles spoken English. It is a dynamically typed language, which means that variable types are checked at run-time rather than at compile-time, so it is forgiving for new programmers. Combined with the Rails framework, it powers many database-driven websites, although its performance is less impressive and there are concerns about scalability. Python is another general-purpose language recommended for beginners: you can script basic functionality on your first day. It runs on the backend of Instagram and YouTube, is heavily used by data scientists, and can even build video games with the PyGame library. Its flexibility, however, should not lead to sloppy coding practices.",
+        "HTML and CSS are not interchangeable, but they are usually learned together because both are key to web page design. HTML is a markup language that uses tags to define elements, while CSS controls the page layout. HTML5 has also become popular for creating mobile apps. JavaScript, still the world's most popular language, manipulates the output of HTML and CSS and is responsible for on-the-fly updates, interactive features, and animation. It is notably harder to learn, so the author recommends it only once you are comfortable with HTML and CSS.",
+        "Java, an object-oriented language, follows the slogan 'write once, run anywhere' and is the main language of Android. It is not as easy, but the web contains a treasure trove of free resources, so you are never alone when you get stuck. Swift was created by Apple for its own platforms as an improvement on Objective-C; its benchmarks are impressive and the Swift Playgrounds app makes learning enjoyable. Finally, R is a free, open-source environment for statistical computing, a favorite for analyzing large data sets in the fast-growing field of big data. Its learning curve may be steep if you are not mathematically inclined. The list is not all-inclusive: your situation may call for C++ or PHP instead."
+      ],
+      "key_points": [
+        "The seven languages are ordered from easiest (Ruby) to most challenging (R).",
+        "Ruby and Python are dynamically typed and forgiving, which makes them ideal starting points.",
+        "HTML and CSS should be learned before JavaScript, which is notably more difficult.",
+        "Java is the main language for Android, while Swift is Apple's language for iOS and macOS.",
+        "R targets statistical computing and big data, but its learning curve can be steep."
+      ],
+      "glossary": [
+        {
+          "en": "intimidating",
+          "es": "intimidante; que impone o asusta por su dificultad o magnitud"
+        },
+        {
+          "en": "dynamically typed",
+          "es": "de tipado dinámico; los tipos de las variables se verifican al ejecutar, no al compilar"
+        },
+        {
+          "en": "run-time / compile-time",
+          "es": "tiempo de ejecución / tiempo de compilación; momentos en que se comprueba el código"
+        },
+        {
+          "en": "forgiving",
+          "es": "tolerante; indulgente, que perdona errores (aquí, un lenguaje que no castiga los descuidos del principiante)"
+        },
+        {
+          "en": "scalability",
+          "es": "escalabilidad; capacidad de crecer hacia sistemas más grandes y complejos sin perder rendimiento"
+        },
+        {
+          "en": "sloppy",
+          "es": "descuidado; chapucero, hecho sin rigor (sloppy coding practices = malos hábitos de programación)"
+        },
+        {
+          "en": "markup language",
+          "es": "lenguaje de marcado; usa etiquetas (tags) para definir elementos de un documento, no para dar instrucciones lógicas"
+        },
+        {
+          "en": "on-the-fly",
+          "es": "al vuelo; sobre la marcha, en tiempo real sin recargar la página"
+        },
+        {
+          "en": "treasure trove",
+          "es": "mina de oro; tesoro escondido, fuente abundante de recursos valiosos"
+        },
+        {
+          "en": "mathematically inclined",
+          "es": "con inclinación por las matemáticas; con aptitud o gusto natural por los números"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, why is Ruby considered a forgiving language for new programmers?",
+        "options": [
+          "Its variable types are checked at run-time instead of compile-time.",
+          "It runs faster than most other popular programming languages.",
+          "It was created by Apple to replace Objective-C.",
+          "It does not require any knowledge of mathematics."
+        ],
+        "answer": "Its variable types are checked at run-time instead of compile-time."
+      },
+      "summary_words": 367,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "4775550",
+      "url": "https://www.thoughtco.com/what-is-responsive-web-design-4775550",
+      "title": "What Is Responsive Web Design?",
+      "description": "Responsive website design is an approach used to ensure websites are able to be viewed on all screen sizes, regardless of device. Here's more about how and why it's used.",
+      "author": "Brenna Miles",
+      "published": "2019-12-26",
+      "modified": "2019-12-26",
+      "path": [
+        "Science, Tech, Math",
+        "Computer Science"
+      ],
+      "topic": "tech",
+      "original_words": 763,
+      "fetched": "2026-09-09",
+      "summary": [
+        "Millions of devices are used worldwide, from phones and tablets to large desktop computers, and users expect to view the same websites on any of them seamlessly. Responsive web design is an approach that ensures a website can be viewed on all screen sizes, regardless of the device. In other words, the website responds to the device and renders its content accordingly: on a mobile phone, for example, the content is resized into a single column.",
+        "Although terms such as fluid and flexible were thrown around as early as 2004, the term responsive web design was coined in 2010 by Ethan Marcotte. He believed that websites should be designed for the \"ebb and flow of things\" rather than remaining static. After he published his article, the term took off and inspired web developers across the globe.",
+        "Responsive websites are built to adjust and resize at specific browser widths known as breakpoints. Each breakpoint has a CSS media query that changes the layout once the browser is within a certain range. Put simply, when the width of the browser changes, the code in the background responds and modifies the layout automatically.",
+        "Thanks to this flexibility, responsive design is now the gold standard for any website. It offers a seamless on-site experience on every device, and it shows mobile users the most important content first instead of a small snippet. It also makes indexing easier for Google, which improves search engine rank because Google favors mobile-first websites. In the past, developers had to build completely different sites for desktop and mobile; now they update one site, which saves critical amounts of time. Responsive design is also proven to increase conversion rates and to keep page speed equally fast on all devices.",
+        "Online shopping illustrates this in the real world. A user may search for a product on a desktop during a lunch break, read reviews on a tablet at home in the evening, and make the final purchase on a mobile phone before turning off the light. Other scenarios, such as planning travel, looking for a new home or looking up recipes, also span a wide range of devices over time, which underlines the importance of a responsive website."
+      ],
+      "key_points": [
+        "Responsive web design lets a website adapt its layout to any screen size or device.",
+        "Ethan Marcotte coined the term in 2010, although words like fluid and flexible were used from 2004.",
+        "Sites change layout at breakpoints, which are browser widths controlled by CSS media queries.",
+        "Benefits include a better user experience, easier Google indexing, higher conversion rates and time saved for developers.",
+        "Everyday tasks such as online shopping often span desktop, tablet and mobile, so responsiveness is essential."
+      ],
+      "glossary": [
+        {
+          "en": "seamlessly",
+          "es": "sin interrupciones; de forma fluida, sin que se note la transición"
+        },
+        {
+          "en": "render",
+          "es": "representar en pantalla; mostrar el contenido tal como el navegador lo dibuja"
+        },
+        {
+          "en": "to coin (a term)",
+          "es": "acuñar (un término); inventar y usar por primera vez una palabra o expresión"
+        },
+        {
+          "en": "ebb and flow",
+          "es": "flujo y reflujo; vaivén, cambio constante como el de la marea"
+        },
+        {
+          "en": "take off",
+          "es": "despegar; hacerse popular o tener éxito de repente (phrasal verb)"
+        },
+        {
+          "en": "breakpoint",
+          "es": "punto de quiebre; ancho de navegador en el que el diseño cambia de distribución"
+        },
+        {
+          "en": "media query",
+          "es": "consulta de medios; regla CSS que aplica estilos según el tamaño o tipo de pantalla"
+        },
+        {
+          "en": "gold standard",
+          "es": "referencia de máxima calidad; el modelo con el que se compara todo lo demás"
+        },
+        {
+          "en": "snippet",
+          "es": "fragmento; pequeño trozo de texto o contenido"
+        },
+        {
+          "en": "conversion rate",
+          "es": "tasa de conversión; porcentaje de visitantes que terminan comprando o realizando la acción deseada"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, what is a breakpoint?",
+        "options": [
+          "A browser width at which a CSS media query changes the page layout",
+          "An error that stops a website from loading on mobile devices",
+          "A separate website created for each type of device",
+          "A tool Google uses to index mobile-first pages"
+        ],
+        "answer": "A browser width at which a CSS media query changes the page layout"
+      },
+      "summary_words": 367,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "4140687",
+      "url": "https://www.thoughtco.com/best-resources-for-learning-to-code-online-4140687",
+      "title": "6 Best Learn-to-Code Resources Online",
+      "description": "Want to learn how to code? There are plenty of great online resources, and this article will help connect you with the best one for you.",
+      "author": "Sarah Silbert",
+      "published": "2017-06-05",
+      "modified": "2024-03-14",
+      "path": [
+        "Science, Tech, Math",
+        "Computer Science"
+      ],
+      "topic": "tech",
+      "original_words": 979,
+      "fetched": "2026-09-09",
+      "summary": [
+        "Learning to code can be useful whether you want to build your own website or make yourself more attractive to potential employers. There is no shortage of options for getting your feet wet in programming, but finding a good entry point can be daunting. The first decision is which language to learn, and the article suggests a simple way to narrow it down: ask yourself what you want to build. Programming languages, like words in English, are a means to an end. If you want a website, HTML, CSS and JavaScript matter. If you want a smartphone app, you must first choose a platform, Android or iOS, and then pick a corresponding language such as Java or Objective-C. A flowchart by Carl Cheo and patient research on Google can also help.",
+        "The article then reviews six online resources. Codecademy offers free, fun lessons in basic languages such as HTML and CSS, JavaScript, Python, Ruby, PHP and SQL. Code Avengers adds mini-games after each lesson and focuses on basic concepts rather than the nuts and bolts of a language; it also offers courses in Spanish, Dutch, Portuguese and Russian. Khan Academy suits newbies who already know what they want to build, especially graphics, gaming, drawings and animations, using JavaScript and SQL.",
+        "Code School is less beginner-oriented and has a more professional bent, so it is better to arrive after you have a few skills under your belt. It covers mobile languages such as Objective-C and Swift, though full access costs money. Coursera works for self-motivated learners willing to do some digging, because it hosts material on a huge variety of subjects beyond programming. Treehouse requires a paid subscription and is aimed at people who plan to stick with programming professionally or for side projects; its courses are built around objectives, such as building a website.",
+        "Finally, for children, the article recommends Blockly, Scratch and Swift Playgrounds, which introduce programming concepts through visuals in engaging, easy-to-follow ways."
+      ],
+      "key_points": [
+        "Before choosing a language, ask yourself what you want to build.",
+        "Websites need HTML, CSS and JavaScript; mobile apps depend on the platform (Android or iOS).",
+        "Codecademy, Code Avengers and Khan Academy are the most beginner-friendly options.",
+        "Code School and Treehouse have a professional focus and require payment for full access.",
+        "Blockly, Scratch and Swift Playgrounds are designed for children."
+      ],
+      "glossary": [
+        {
+          "en": "to get your feet wet",
+          "es": "iniciarse en algo; dar los primeros pasos en una actividad nueva"
+        },
+        {
+          "en": "daunting",
+          "es": "intimidante; abrumador, que desanima por su dificultad"
+        },
+        {
+          "en": "entry point",
+          "es": "punto de entrada; lugar por donde empezar"
+        },
+        {
+          "en": "a means to an end",
+          "es": "un medio para un fin; algo útil solo por lo que permite lograr"
+        },
+        {
+          "en": "to narrow down",
+          "es": "reducir las opciones; acotar hasta llegar a una elección"
+        },
+        {
+          "en": "the nuts and bolts",
+          "es": "los detalles prácticos; el funcionamiento concreto de algo"
+        },
+        {
+          "en": "newbie",
+          "es": "novato; principiante (coloquial)"
+        },
+        {
+          "en": "under your belt",
+          "es": "ya adquirido; en tu haber (experiencia o logros)"
+        },
+        {
+          "en": "bent",
+          "es": "inclinación; orientación o tendencia (a professional bent = enfoque profesional)"
+        },
+        {
+          "en": "to stick with",
+          "es": "seguir con algo; no abandonar una actividad"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, which resource is recommended for someone who already has some skills and wants to become a programmer by trade?",
+        "options": [
+          "Code Avengers",
+          "Khan Academy",
+          "Code School",
+          "Scratch"
+        ],
+        "answer": "Code School"
+      },
+      "summary_words": 325,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "4158142",
+      "url": "https://www.thoughtco.com/why-mathematics-is-a-language-4158142",
+      "title": "Why Mathematics Is a Language",
+      "description": "While there is some debate about it, mathematics is a language, that has both a vocabulary and grammar. Learn why math is a language.",
+      "author": "Anne Marie Helmenstine, Ph.D.",
+      "published": "2018-01-29",
+      "modified": "2019-06-27",
+      "path": [
+        "Science, Tech, Math",
+        "Math"
+      ],
+      "topic": "math",
+      "original_words": 1088,
+      "fetched": "2026-09-09",
+      "summary": [
+        "Mathematics is often called the language of science. Galileo Galilei wrote that the universe is written in mathematical language, with triangles, circles, and other geometrical figures as its letters, and that without them it is impossible to comprehend a single word. But is mathematics truly a language, like English or Chinese? To answer this, it helps to define language and to see how the vocabulary and grammar of mathematics build sentences.",
+        "There are several definitions of language. Linguist Noam Chomsky defined it as a set of sentences constructed from a finite set of elements. Whichever definition is used, a language needs a vocabulary of words or symbols, meaning attached to them, a grammar, a syntax that organizes symbols into propositions, a discourse made of strings of propositions, and a group of people who use and understand the symbols. Mathematics meets all of these requirements, and its symbols and rules are the same throughout the world.",
+        "A mathematical equation can be stated in words as a sentence with a noun and a verb. Nouns include numerals, fractions, variables, expressions, diagrams, infinity, and pi. Verbs include equalities, inequalities, and operations such as addition or division. Grammar and syntax are international: formulas are read from left to right, the Latin and Greek alphabets are used for variables and specific concepts, and parentheses and brackets indicate the order in which symbols interact.",
+        "Understanding mathematical sentences is a useful teaching tool. Students often find symbols intimidating, so putting an equation into familiar language makes the subject more approachable. Word problems, although disliked, improve comprehension and problem-solving skills. Because math is the same everywhere, it can act as a universal language even when other communication barriers exist.",
+        "Not everyone agrees. Some definitions describe language as spoken, while mathematics is written, and complex equations are hard to read aloud. However, this criterion would also disqualify sign language, which most linguists accept as a true language. A strong argument in favor is that modern school curricula use techniques from language education to teach mathematics, since students need robust vocabulary knowledge, fluency with symbols, and comprehension skills."
+      ],
+      "key_points": [
+        "Galileo described the universe as written in mathematical language.",
+        "A language needs vocabulary, meaning, grammar, syntax, discourse, and a community of users; math meets all six.",
+        "Mathematical sentences have nouns (numbers, variables) and verbs (equalities, operations).",
+        "Math grammar is international: the same formulas mean the same thing in every country.",
+        "The main objection is that math is written rather than spoken, but sign language faces the same objection and is still a language."
+      ],
+      "glossary": [
+        {
+          "en": "to comprehend",
+          "es": "comprender; entender a fondo (registro culto)"
+        },
+        {
+          "en": "finite set",
+          "es": "conjunto finito; grupo limitado de elementos"
+        },
+        {
+          "en": "proposition",
+          "es": "proposición; enunciado que afirma algo"
+        },
+        {
+          "en": "to meet a requirement",
+          "es": "cumplir un requisito; satisfacer una condición"
+        },
+        {
+          "en": "intimidating",
+          "es": "intimidante; que asusta o impone"
+        },
+        {
+          "en": "approachable",
+          "es": "accesible; fácil de abordar (un tema o una persona)"
+        },
+        {
+          "en": "word problem",
+          "es": "problema de enunciado; problema matemático planteado en texto"
+        },
+        {
+          "en": "to disqualify",
+          "es": "descalificar; dejar fuera por no cumplir un criterio"
+        },
+        {
+          "en": "curricula",
+          "es": "planes de estudio (plural de curriculum)"
+        },
+        {
+          "en": "robust",
+          "es": "sólido; fuerte y bien fundamentado"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, why does the objection that mathematics is not spoken fail to prove that it is not a language?",
+        "options": [
+          "Because most equations can easily be read aloud in any language.",
+          "Because sign language is not spoken either, yet linguists accept it as a true language.",
+          "Because Galileo said the universe is written in mathematics.",
+          "Because students find symbols intimidating."
+        ],
+        "answer": "Because sign language is not spoken either, yet linguists accept it as a true language."
+      },
+      "summary_words": 348,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "2312581",
+      "url": "https://www.thoughtco.com/overcoming-math-anxiety-2312581",
+      "title": "How to Overcome Math Anxiety",
+      "description": "Math anxiety or fear of math is actually quite common. Here are ways to help you deal effectively with math anxiety and math phobia.",
+      "author": "Deb Russell",
+      "published": "2006-02-19",
+      "modified": "2025-05-18",
+      "path": [
+        "Science, Tech, Math",
+        "Math"
+      ],
+      "topic": "math",
+      "original_words": 720,
+      "fetched": "2026-09-09",
+      "summary": [
+        "Math anxiety, or fear of math, is very common. It resembles test anxiety and stage fright: the fear that something will go wrong, that you will forget everything, or that you will be judged poorly. In most cases, math anxiety is the fear of not doing the math right. The mind draws a blank, we expect to fail, and the more frustrated and anxious we become, the more likely we are to go blank again. The pressure of time limits on tests only makes the anxiety grow.",
+        "Math anxiety usually stems from unpleasant experiences with mathematics, often the result of poor teaching. Many anxious students show an over-reliance on procedures instead of real understanding. When someone memorizes rules and routines without understanding them, the math is quickly forgotten and panic sets in. A good example is the division of fractions: most people learned to 'invert and multiply' without ever seeing why it works. If math is only a list of memorized procedures, a good memory helps, but a weak memory leads to failure. Understanding is critical, and teachers and parents play an important role in ensuring it.",
+        "The article also lists several myths that are simply not true: that you are born with a math gene, that math is only for males, that it is hopeless for average people, that you need a strong logical side of the brain, that some cultures 'never get' math, and that there is only one right way to do math.",
+        "To overcome math anxiety, the author recommends keeping a positive attitude, asking questions, and refusing to settle for anything less than understanding. Students should practice regularly, take good notes, and hire a tutor or work with peers when total understanding escapes them. It is not enough to read over notes; you have to actually do the math. Finally, be persistent and do not overemphasize mistakes, because some of the most powerful learning stems from making them."
+      ],
+      "key_points": [
+        "Math anxiety is a form of fear similar to stage fright and test anxiety.",
+        "It usually stems from poor teaching and memorizing procedures without understanding.",
+        "Common beliefs such as a 'math gene' or math being only for males are myths.",
+        "Ask questions, practice regularly, and get help from a tutor or peers.",
+        "Mistakes are a powerful source of learning, so be persistent."
+      ],
+      "glossary": [
+        {
+          "en": "stage fright",
+          "es": "miedo escénico; pánico a actuar o hablar frente al público"
+        },
+        {
+          "en": "to draw a blank",
+          "es": "quedarse en blanco; no poder recordar nada en el momento"
+        },
+        {
+          "en": "to stem from",
+          "es": "provenir de; tener su origen en"
+        },
+        {
+          "en": "over-reliance",
+          "es": "dependencia excesiva; confiar demasiado en algo"
+        },
+        {
+          "en": "to set in",
+          "es": "instalarse; empezar y afianzarse (dicho del pánico, el mal tiempo, etc.)"
+        },
+        {
+          "en": "to settle for",
+          "es": "conformarse con; aceptar algo inferior a lo deseado"
+        },
+        {
+          "en": "peer",
+          "es": "compañero; persona de la misma condición o nivel"
+        },
+        {
+          "en": "to overemphasize",
+          "es": "dar demasiada importancia a; exagerar el peso de algo"
+        },
+        {
+          "en": "persistent",
+          "es": "perseverante; que insiste sin rendirse"
+        },
+        {
+          "en": "misconception",
+          "es": "idea equivocada; creencia errónea muy extendida"
+        }
+      ],
+      "question": {
+        "stem": "According to the article, where does math anxiety usually come from?",
+        "options": [
+          "A lack of a special math gene",
+          "Unpleasant experiences and memorizing procedures without understanding",
+          "Being born into a culture that never learned math",
+          "Having too many tutors during school"
+        ],
+        "answer": "Unpleasant experiences and memorizing procedures without understanding"
+      },
+      "summary_words": 322,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "2312350",
+      "url": "https://www.thoughtco.com/bell-curve-normal-distribution-defined-2312350",
+      "title": "What Is a Bell Curve in Math and Science?",
+      "description": "Learn the definition of a bell-shaped curve, also called a normal distribution or Gaussian distribution, and the math concept behind it.",
+      "author": "Deb Russell",
+      "published": "2011-11-06",
+      "modified": "2025-05-12",
+      "path": [
+        "Science, Tech, Math",
+        "Math"
+      ],
+      "topic": "math",
+      "original_words": 661,
+      "fetched": "2026-09-09",
+      "summary": [
+        "The term bell curve describes a mathematical concept called normal distribution, also known as Gaussian distribution. The name comes from the shape that appears when you plot the data points of an item that meets the criteria of normal distribution. The center of the curve holds the greatest number of values, so it is the highest point on the arc. This point is called the mean, and in simple terms it is the value that occurs most often, which statisticians call the mode.",
+        "The key feature of a normal distribution is that the curve is concentrated in the center and decreases on either side. Because of this, the data is less likely to produce unusually extreme values, called outliers, than other distributions. The curve is also symmetrical, so once you measure the deviation in the data, you can form reasonable expectations about whether an outcome will fall within a range to the left or right of the center. This deviation is expressed in standard deviations.",
+        "A bell curve graph depends on two factors: the mean and the standard deviation. The mean sets the position of the center, and the standard deviation determines the height and width of the bell. A large standard deviation creates a short, wide bell, while a small one creates a tall, narrow curve. The total area under the curve equals 1, or 100%. About 68% of the area falls within one standard deviation, about 95% within two, and about 99.7% within three. This is known as the empirical rule or the 68-95-99.7 rule.",
+        "A classic example is the roll of two dice. The distribution is centered around the number seven, the most likely outcome at 16.67%, and the probability decreases as you move away from the center. In physics and astronomy, random variations with unknown distributions are often assumed to be normal. This can be a dangerous assumption, but it is a good approximation thanks to the central limit theorem, which states that the mean of any set of variants with a finite mean and variance tends to occur in a normal distribution.",
+        "However, some data sets should not be forced to fit a bell curve. Student grades often have two modes, and income, population growth, and mechanical failures also fail to follow the bell-shaped pattern."
+      ],
+      "key_points": [
+        "A bell curve is the graph of a normal (Gaussian) distribution: symmetrical, concentrated in the center, and decreasing on both sides.",
+        "The mean fixes the center of the curve; the standard deviation controls its height and width.",
+        "The empirical rule: about 68%, 95%, and 99.7% of the data fall within one, two, and three standard deviations.",
+        "The central limit theorem explains why many attributes, such as height or test scores, are roughly normal.",
+        "Grades, income, population growth, and mechanical failures should not be forced into a bell curve."
+      ],
+      "glossary": [
+        {
+          "en": "normal distribution",
+          "es": "distribución normal; distribución de probabilidad simétrica con forma de campana, también llamada gaussiana"
+        },
+        {
+          "en": "mean",
+          "es": "media; promedio de un conjunto de datos, que en la curva normal coincide con el centro"
+        },
+        {
+          "en": "mode",
+          "es": "moda (estadística); el valor que más veces se repite en un conjunto de datos"
+        },
+        {
+          "en": "outlier",
+          "es": "valor atípico; dato extremo que se aleja mucho del resto"
+        },
+        {
+          "en": "standard deviation",
+          "es": "desviación estándar; medida de cuánto se dispersan los datos respecto a la media"
+        },
+        {
+          "en": "empirical rule",
+          "es": "regla empírica; la regla 68-95-99.7 sobre el área bajo la curva normal"
+        },
+        {
+          "en": "approximation",
+          "es": "aproximación; valor o modelo cercano al real aunque no exacto"
+        },
+        {
+          "en": "central limit theorem",
+          "es": "teorema del límite central; establece que la media de muchas variables tiende a distribuirse de forma normal"
+        },
+        {
+          "en": "variance",
+          "es": "varianza; medida de dispersión, el cuadrado de la desviación estándar"
+        },
+        {
+          "en": "to force (data) to fit",
+          "es": "forzar (los datos) a encajar; obligar algo a ajustarse a un modelo que no le corresponde"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, what happens to the shape of a bell curve when the standard deviation is large?",
+        "options": [
+          "The bell becomes tall and narrow.",
+          "The bell becomes short and wide.",
+          "The center of the bell moves to the right.",
+          "The total area under the curve increases."
+        ],
+        "answer": "The bell becomes short and wide."
+      },
+      "summary_words": 380,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "250341",
+      "url": "https://www.thoughtco.com/what-is-a-logical-fallacy-250341",
+      "title": "How Logical Fallacy Invalidates Any Argument",
+      "description": "Logical fallacies are defects that cause an argument to be invalid, unsound, or weak. Avoiding them is the key to winning an argument.",
+      "author": "Austin Cline",
+      "published": "2004-07-10",
+      "modified": "2025-05-15",
+      "path": [
+        "Humanities",
+        "Philosophy"
+      ],
+      "topic": "humanities",
+      "original_words": 842,
+      "fetched": "2026-09-09",
+      "summary": [
+        "Fallacies are defects that make an argument invalid, unsound, or weak. They fall into two general groups: formal and informal. A formal fallacy can be identified merely by looking at the logical structure of an argument, without reading any specific statement. An informal fallacy, by contrast, can only be detected through an analysis of the actual content of the argument.",
+        "Formal fallacies appear only in deductive arguments with identifiable forms. They look reasonable because they mimic valid arguments. For example: all humans are mammals; all cats are mammals; therefore all humans are cats. Both premises are true, but the conclusion is false. If we reduce the argument to its bare structure (All A are C, All B are C, All A are B), it does not matter what A, B, and C stand for: the argument is invalid for the same reason. Stripping away content to examine structure is a useful way to test validity.",
+        "Informal fallacies work differently. Consider: geological events produce rock; rock is a type of music; therefore geological events produce music. When we break this down (A = B, B = C, A = C), the structure is valid, so the defect must lie in the content. Here a key term, \"rock,\" is used with two different definitions. Some informal fallacies distract the reader, while others rely on ambiguity to cause confusion.",
+        "Aristotle was the first to systematically categorize fallacies, identifying thirteen of them. Since then, many more have been described. One useful classification includes fallacies of grammatical analogy, which resemble valid arguments; fallacies of ambiguity, such as equivocation and quoting out of context; fallacies of relevance, such as ad hominem and appeals to authority or emotion, whose premises are logically irrelevant to the conclusion; fallacies of presumption, such as begging the question and false dilemma, whose premises already assume what they should prove; and fallacies of weak induction, such as ad hoc rationalization and oversimplification, where the link between premises and conclusion is too weak to support it."
+      ],
+      "key_points": [
+        "A formal fallacy is visible in the structure of an argument; an informal fallacy is visible only in its content.",
+        "True premises can still lead to a false conclusion if the structure is invalid.",
+        "Reducing an argument to letters (A, B, C) helps reveal whether its form is valid.",
+        "Equivocation uses one word with two different meanings to create confusion.",
+        "Fallacies of presumption assume in the premises exactly what they are supposed to prove."
+      ],
+      "glossary": [
+        {
+          "en": "fallacy",
+          "es": "falacia; error de razonamiento que invalida o debilita un argumento"
+        },
+        {
+          "en": "unsound",
+          "es": "no sólido; se dice de un argumento con estructura válida pero con alguna premisa falsa"
+        },
+        {
+          "en": "merely",
+          "es": "simplemente; solamente, nada más que"
+        },
+        {
+          "en": "mimic",
+          "es": "imitar; parecerse a algo para pasar por ello"
+        },
+        {
+          "en": "premise",
+          "es": "premisa; afirmación de la que parte un argumento"
+        },
+        {
+          "en": "bare structure",
+          "es": "estructura desnuda; esqueleto lógico sin contenido"
+        },
+        {
+          "en": "strip away",
+          "es": "quitar; despojar de capas para dejar lo esencial"
+        },
+        {
+          "en": "equivocation",
+          "es": "equívoco; uso de una palabra con dos sentidos distintos en el mismo argumento"
+        },
+        {
+          "en": "begging the question",
+          "es": "petición de principio; dar por sentado en las premisas lo que se pretende demostrar"
+        },
+        {
+          "en": "ad hoc rationalization",
+          "es": "racionalización ad hoc; justificación improvisada para salvar una idea ya decidida"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, why is the argument about geological events and rock music an informal fallacy rather than a formal one?",
+        "options": [
+          "Because both of its premises are false.",
+          "Because its structure is valid, so the defect lies in the meaning of a key term.",
+          "Because it is an inductive argument with no identifiable form.",
+          "Because Aristotle did not include it in his list of thirteen fallacies."
+        ],
+        "answer": "Because its structure is valid, so the defect lies in the meaning of a key term."
+      },
+      "summary_words": 333,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "250305",
+      "url": "https://www.thoughtco.com/what-is-an-argument-250305",
+      "title": "What Is an Argument?",
+      "description": "You need to know what an argument is in order to construct a sound, valid argument or to evaluate another person's argument.",
+      "author": "Austin Cline",
+      "published": "2005-02-23",
+      "modified": "2025-04-30",
+      "path": [
+        "Humanities",
+        "Philosophy"
+      ],
+      "topic": "humanities",
+      "original_words": 866,
+      "fetched": "2026-09-09",
+      "summary": [
+        "When people create or critique arguments, it helps to know what an argument is and is not. An argument is not a verbal fight, and it is not the same as making assertions. A Monty Python sketch offers a simple definition: an argument is a connected series of statements intended to establish a definite proposition. Contradiction, by contrast, is just the automatic gainsaying of whatever the other person says. To offer an argument, you must go beyond a claim and give others good reasons to believe it is true rather than false.",
+        "Statements such as 'Shakespeare wrote Hamlet' or 'Prostitution is immoral' are assertions, also called propositions. A proposition is the informational content of a statement, and it must be capable of being either true or false. Repeating an assertion, no matter how often, does not constitute an argument. The person making the claim must offer further statements that support it. If the claim is supported, the argument succeeds; if not, it fails. The purpose of an argument is to offer reasons and evidence to establish the truth value of a proposition.",
+        "An argument can be broken down into three components: premises, inferences, and a conclusion. Premises are statements of assumed fact that set forth the reasons or evidence for a claim. The conclusion is the claim you finish with. Inferences are the reasoning parts that link the premises to the final conclusion; the conclusion itself is the final inference.",
+        "Two kinds of claims appear in arguments. Factual claims purport to offer evidence, and little time is usually spent on them: they are either true or not. Inferential claims express the idea that some fact is related to the sought-after conclusion. Without them, there is no clear connection between premises and conclusion, and sometimes you must ask for the missing links. When you evaluate an argument, you spend most of your time on the inferences: that is where it will stand or fall and where fallacies are committed. Most real arguments are not presented so clearly, but every genuine argument should be capable of being reformulated this way; if it cannot, something is probably wrong."
+      ],
+      "key_points": [
+        "An argument is a connected series of statements meant to establish a proposition, not a fight or a simple contradiction.",
+        "Repeating an assertion is not an argument; you must offer further statements that support the claim.",
+        "Every argument has three parts: premises, inferences, and a conclusion.",
+        "Factual claims offer evidence; inferential claims link that evidence to the conclusion.",
+        "Arguments stand or fall on their inferences, which is where fallacies are found."
+      ],
+      "glossary": [
+        {
+          "en": "to critique",
+          "es": "analizar críticamente; evaluar con rigor (no necesariamente criticar mal)"
+        },
+        {
+          "en": "assertion",
+          "es": "afirmación; aseveración que se hace sin aportar pruebas"
+        },
+        {
+          "en": "gainsaying",
+          "es": "contradecir; negar automáticamente lo que dice otro (voz culta)"
+        },
+        {
+          "en": "proposition",
+          "es": "proposición; contenido informativo de un enunciado que puede ser verdadero o falso"
+        },
+        {
+          "en": "premise",
+          "es": "premisa; enunciado de hecho supuesto que sirve de base a una conclusión"
+        },
+        {
+          "en": "inference",
+          "es": "inferencia; paso de razonamiento que conecta las premisas con la conclusión"
+        },
+        {
+          "en": "to set forth",
+          "es": "exponer; presentar de forma ordenada (razones, pruebas)"
+        },
+        {
+          "en": "to purport to",
+          "es": "pretender; dar a entender que algo es o hace cierta cosa, sin garantía de que sea así"
+        },
+        {
+          "en": "sought-after",
+          "es": "buscado; deseado; que se pretende alcanzar"
+        },
+        {
+          "en": "to stand or fall",
+          "es": "sostenerse o venirse abajo; depender por completo de algo (expresión fija)"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, when you evaluate an argument, where will you spend most of your time?",
+        "options": [
+          "On the factual claims, because they are the hardest to verify.",
+          "On the inferential claims, because that is where the argument stands or falls.",
+          "On the conclusion, because it is the only statement that can be true or false.",
+          "On the assertion, because repeating it makes the argument stronger."
+        ],
+        "answer": "On the inferential claims, because that is where the argument stands or falls."
+      },
+      "summary_words": 355,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "4172981",
+      "url": "https://www.thoughtco.com/status-quo-bias-4172981",
+      "title": "Status Quo Bias: What It Means and How It Affects Your Behavior",
+      "description": "Status quo bias refers to the phenomenon of preferring that one's environment and situation remain as they already are.",
+      "author": "Cynthia Vinney",
+      "published": "2018-08-14",
+      "modified": "2019-12-11",
+      "path": [
+        "Science, Tech, Math",
+        "Social Sciences"
+      ],
+      "topic": "social",
+      "original_words": 1204,
+      "fetched": "2026-09-09",
+      "summary": [
+        "Status quo bias is the tendency to prefer that one's environment and situation remain as they already are. It has its strongest impact on decision-making: when we choose, we favor the familiar option over less familiar alternatives that might be more beneficial. The bias affects every kind of decision, from trivial choices such as which soda to buy to major ones such as selecting a health insurance plan.",
+        "The term was coined in 1988 by William Samuelson and Richard Zeckhauser. In one experiment, participants imagined inheriting a large sum of money and had to choose among fixed investment options. In the neutral version, no option was presented as the current one, and all choices were equally valid. In the status quo version, the money was already invested in a specific way, and one option retained that portfolio. Participants strongly preferred the status quo option, and the more choices they were given, the stronger that preference became.",
+        "Psychologists explain the bias through several principles, all of them considered irrational. Loss aversion means people weigh potential losses more heavily than potential gains, so they focus on what they could lose by abandoning the status quo. The sunk cost fallacy leads people to keep investing time, money, or effort in an endeavor simply because they have already invested in it. Cognitive dissonance, the discomfort caused by inconsistent thoughts, pushes people to stick with the current option rather than weigh alternatives. Finally, the mere exposure effect states that people prefer what they have been exposed to before, and by definition we are exposed to the status quo more than to anything else.",
+        "Keeping the status quo is not always irrational. When the transition cost of switching is greater than the gains, staying put is a rational choice. The bias becomes irrational only when someone ignores options that would improve their situation just to keep things the same.",
+        "Real-world examples are pervasive. Relocated German townspeople chose a layout similar to their old town even though it was inefficient. Consumers rejected New Coke despite preferring it in blind taste tests. Incumbent candidates are more likely to win than challengers, and in a retirement plan only a tiny share of participants changed their investment distribution each year, often without being able to justify it."
+      ],
+      "key_points": [
+        "Status quo bias is the preference for keeping things as they are, even when a change might be better.",
+        "Samuelson and Zeckhauser named the bias in 1988; more options make the preference for the status quo stronger.",
+        "Loss aversion, the sunk cost fallacy, cognitive dissonance, and the mere exposure effect all help explain the bias.",
+        "Keeping the status quo is rational when switching costs exceed the gains, and irrational when better options are ignored.",
+        "Examples include the New Coke failure, the incumbent advantage in elections, and unchanged retirement plans."
+      ],
+      "glossary": [
+        {
+          "en": "status quo",
+          "es": "estado actual de las cosas; situación vigente que se tiende a mantener"
+        },
+        {
+          "en": "trivial",
+          "es": "trivial; sin importancia, de poca trascendencia"
+        },
+        {
+          "en": "coin (a term)",
+          "es": "acuñar (un término); inventar y usar por primera vez una palabra o expresión"
+        },
+        {
+          "en": "inherit",
+          "es": "heredar; recibir bienes o dinero de alguien que fallece"
+        },
+        {
+          "en": "portfolio",
+          "es": "cartera de inversiones; conjunto de activos financieros de una persona"
+        },
+        {
+          "en": "loss aversion",
+          "es": "aversión a la pérdida; tendencia a temer más lo que se pierde que a valorar lo que se gana"
+        },
+        {
+          "en": "sunk cost fallacy",
+          "es": "falacia del costo hundido; seguir invirtiendo en algo solo porque ya se invirtió antes"
+        },
+        {
+          "en": "endeavor",
+          "es": "empresa, proyecto; esfuerzo sostenido hacia un objetivo"
+        },
+        {
+          "en": "stay put",
+          "es": "quedarse donde uno está; no moverse ni cambiar de situación"
+        },
+        {
+          "en": "pervasive",
+          "es": "omnipresente; que se extiende y aparece por todas partes"
+        },
+        {
+          "en": "incumbent",
+          "es": "titular del cargo; quien ocupa actualmente un puesto y busca la reelección"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, when is it rational to keep the status quo?",
+        "options": [
+          "When there are many options to choose from",
+          "When the cost of switching is greater than the gains from changing",
+          "When a person has already invested a lot of money in it",
+          "When the familiar option has been chosen many times before"
+        ],
+        "answer": "When the cost of switching is greater than the gains from changing"
+      },
+      "summary_words": 377,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "4152958",
+      "url": "https://www.thoughtco.com/introvert-vs-extrovert-4152958",
+      "title": "What \"Introvert\" and \"Extrovert\" Really Mean",
+      "description": "The definition of \"introvert\" and \"extrovert\" is not as simple as shy versus outgoing. Here are the details from a psychological standpoint.",
+      "author": "Elizabeth Hopper",
+      "published": "2017-10-13",
+      "modified": "2019-08-19",
+      "path": [
+        "Science, Tech, Math",
+        "Social Sciences"
+      ],
+      "topic": "social",
+      "original_words": 995,
+      "fetched": "2026-09-09",
+      "summary": [
+        "Imagine your ideal evening. Would you rather go out for dinner with a large group of friends, or spend the night with one close friend and a good book? Psychologists use answers to questions like these to measure introversion and extroversion: personality traits that describe how we prefer to interact with other people.",
+        "Today many psychologists place these traits within the five-factor model of personality. According to this theory, a personality can be described by five traits: extroversion (introversion is its opposite), agreeableness (altruism and concern for others), conscientiousness (how organized and responsible someone is), neuroticism (how often someone experiences negative emotions), and openness to experience (imagination and curiosity). Each trait ranges along a spectrum. Extroverts tend to be social, talkative, assertive, and likely to seek out excitement. Introverts tend to be quieter and more reserved. However, shyness is not the same as introversion, and introverts are not antisocial. As the author Susan Cain puts it, they are \"differently social\": she loves her family and close friends, but she also craves solitude.",
+        "In 2011, psychologists at Wellesley College proposed four kinds of introverts. Social introverts enjoy time alone or in small groups. Thinking introverts are introspective and thoughtful. Anxious introverts tend to be shy, sensitive, and self-conscious in social situations. Inhibited or restrained introverts do not seek excitement and prefer relaxed activities.",
+        "Is one type better? Research shows that extroverts do experience positive emotions somewhat more often on average. Yet there are also \"happy introverts\": in one study, about one-third of the happy participants were introverts. Cain points out that American society often treats extroversion as a good thing, for example by encouraging group work in classrooms and offices. In doing so, it neglects what introverts can contribute. Introversion may be linked to creativity, and introverts can be good managers because they give employees freedom and focus on the organization's goals rather than their own success.",
+        "In short, neither way of relating to others is better than the other. Each has its own advantages, and understanding our traits helps us study and work with others more effectively."
+      ],
+      "key_points": [
+        "Introversion and extroversion describe how we prefer to interact with others, not whether we are shy or antisocial.",
+        "The five-factor model measures personality on five traits, each ranging along a spectrum.",
+        "A 2011 study proposed four types of introverts: social, thinking, anxious, and inhibited/restrained.",
+        "Extroverts report positive emotions slightly more often, but about one-third of happy people in one study were introverts.",
+        "Neither trait is better; each has its own advantages."
+      ],
+      "glossary": [
+        {
+          "en": "agreeableness",
+          "es": "amabilidad; en psicología, rasgo de altruismo y preocupación por los demás"
+        },
+        {
+          "en": "conscientiousness",
+          "es": "responsabilidad; escrupulosidad; grado de organización y sentido del deber"
+        },
+        {
+          "en": "neuroticism",
+          "es": "neuroticismo; tendencia a experimentar emociones negativas"
+        },
+        {
+          "en": "assertive",
+          "es": "asertivo; seguro y firme al expresarse, sin ser agresivo"
+        },
+        {
+          "en": "to seek out",
+          "es": "buscar activamente; ir tras algo (phrasal verb)"
+        },
+        {
+          "en": "reserved",
+          "es": "reservado; discreto, poco expresivo en el trato social"
+        },
+        {
+          "en": "to crave",
+          "es": "ansiar; desear con intensidad"
+        },
+        {
+          "en": "solitude",
+          "es": "soledad (buscada, no impuesta); tiempo a solas"
+        },
+        {
+          "en": "self-conscious",
+          "es": "cohibido; incómodo por sentirse observado (no significa «consciente de sí mismo»)"
+        },
+        {
+          "en": "to neglect",
+          "es": "descuidar; pasar por alto; desatender"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, why can introverts make good managers?",
+        "options": [
+          "They are more talkative and assertive in meetings.",
+          "They give employees freedom and focus on the organization's goals.",
+          "They seek out excitement and encourage group work.",
+          "They experience positive emotions more often than extroverts."
+        ],
+        "answer": "They give employees freedom and focus on the organization's goals."
+      },
+      "summary_words": 347,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "6744633",
+      "url": "https://www.thoughtco.com/whistleblower-definition-and-examples-6744633",
+      "title": "Whistleblower: Definition and Examples",
+      "description": "Whistleblowers report wrongdoing within private or public organizations. What dangers might whistleblowers face and what is done to protect them?",
+      "author": "Robert Longley",
+      "published": "2022-10-28",
+      "modified": "2022-10-28",
+      "path": [
+        "Humanities",
+        "Issues"
+      ],
+      "topic": "humanities",
+      "original_words": 2638,
+      "fetched": "2026-09-09",
+      "summary": [
+        "A whistleblower is a person, often an employee, who reveals information about activity inside a private or public organization that is considered illegal, immoral, unsafe, or fraudulent. The U.S. Whistleblower Protection Act of 1989 defines whistleblowing as disclosing information that the employee reasonably believes shows a violation of law, gross mismanagement, a gross waste of funds, an abuse of authority, or a danger to public health or safety. In simpler terms, whistleblowers are informants, and their disclosures have exposed the Watergate cover-up, the accounting fraud at Enron and WorldCom, and the health dangers of nicotine.",
+        "The term comes from the 19th century, when police officers blew a whistle to alert the public of crimes in progress. In the 1960s, journalists adopted the single word whistleblower to avoid the negative connotations of words such as informant and snitch. An early example was Ralph Nader, whose 1965 book Unsafe at Any Speed attacked the automobile industry. General Motors retaliated by tapping his phone and hiring prostitutes to discredit him, but Nader won a $425,000 settlement, and Congress passed the National Traffic and Motor Vehicle Safety Act in 1966.",
+        "Research shows that whistleblowers are usually motivated by integrity and a genuine desire to protect the public, not by monetary awards. Many are unwilling to participate in conduct they believe is wrong, even though speaking out can harm their careers. Social pressures also play a role: people are more likely to come forward when others already know about the wrongdoing.",
+        "In the private sector, employees typically report to a supervisor, a lawyer, or the police. In 2021, Frances Haugen disclosed thousands of internal Facebook documents, accusing the company of prioritizing profit over public safety. In the public sector, famous cases include W. Mark Felt, known as Deep Throat, who helped expose Watergate; Daniel Ellsberg, who leaked the Pentagon Papers; and Edward Snowden, who revealed mass surveillance programs and was charged with espionage.",
+        "Whistleblowers are seen either as heroic martyrs or as traitors. Even those who halted billion-dollar frauds are routinely demoted, fired, or threatened. In the United States, a patchwork of federal and state laws, such as the Sarbanes-Oxley Act of 2002, protects employees who call attention to violations or refuse to obey unlawful directions."
+      ],
+      "key_points": [
+        "A whistleblower reveals illegal, unsafe, or fraudulent activity inside an organization, usually as an insider.",
+        "The word was adopted by journalists in the 1960s to avoid negative terms like informant or snitch.",
+        "Most whistleblowers act out of integrity, not for monetary awards, despite the risk to their careers.",
+        "Famous cases include Ralph Nader, Deep Throat (Watergate), the Pentagon Papers, Edward Snowden, and Frances Haugen.",
+        "Whistleblowers are often attacked or fired, so U.S. laws such as the Sarbanes-Oxley Act exist to protect them from retaliation."
+      ],
+      "glossary": [
+        {
+          "en": "whistleblower",
+          "es": "denunciante; persona que revela irregularidades dentro de una organización (literalmente «el que sopla el silbato»)"
+        },
+        {
+          "en": "wrongdoing",
+          "es": "irregularidad; conducta indebida o ilícita"
+        },
+        {
+          "en": "gross mismanagement",
+          "es": "mala gestión grave; «gross» aquí significa flagrante, grosero, no «bruto»"
+        },
+        {
+          "en": "cover-up",
+          "es": "encubrimiento; ocultación deliberada de un delito o error"
+        },
+        {
+          "en": "snitch",
+          "es": "soplón, chivato; término despectivo e informal para un informante"
+        },
+        {
+          "en": "to tap a phone",
+          "es": "intervenir o pinchar un teléfono; escuchar llamadas en secreto"
+        },
+        {
+          "en": "settlement",
+          "es": "acuerdo extrajudicial; indemnización pactada para cerrar una demanda"
+        },
+        {
+          "en": "to come forward",
+          "es": "dar un paso adelante, presentarse para hablar o denunciar; no es «avanzar» físicamente"
+        },
+        {
+          "en": "retaliation",
+          "es": "represalia; venganza o castigo por haber denunciado"
+        },
+        {
+          "en": "patchwork",
+          "es": "mosaico, conjunto irregular de piezas; aquí, leyes dispersas y poco uniformes"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, why did journalists in the 1960s begin using the word \"whistleblower\"?",
+        "options": [
+          "Because police officers had stopped using whistles to warn the public.",
+          "Because they wanted to avoid the negative connotations of words like \"informant\" and \"snitch.\"",
+          "Because the Whistleblower Protection Act required them to use that term.",
+          "Because Ralph Nader asked the press to describe him that way."
+        ],
+        "answer": "Because they wanted to avoid the negative connotations of words like \"informant\" and \"snitch.\""
+      },
+      "summary_words": 371,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "5197450",
+      "url": "https://www.thoughtco.com/national-security-definition-and-examples-5197450",
+      "title": "National Security Definition and Examples",
+      "description": "National security is a country’s ability to protect its citizens, economy, and other institutions. It involves far more than simple military might.",
+      "author": "Robert Longley",
+      "published": "2021-09-24",
+      "modified": "2021-09-24",
+      "path": [
+        "Humanities",
+        "Issues"
+      ],
+      "topic": "humanities",
+      "original_words": 2294,
+      "fetched": "2026-09-09",
+      "summary": [
+        "National security is the ability of a country's government to protect its citizens, economy, and other institutions. For most of the 20th century it was strictly a matter of military power and readiness, but the nuclear age and the Cold War made that definition a thing of the past. Today, U.S. policymakers struggle to balance several \"national securities\": economic, political, energy, homeland, cyber, human, and environmental security.",
+        "The modern environment is complicated by violent non-state actors, such as suicide bombers trained by al Qaeda, Somali pirates, warlords in the Niger Delta, and drug cartels in Mexico. Conventional strategy is ill-equipped to deal with them, so analysts suggest three \"spoiler management\" strategies: inducements, socialization to change their behavior, and arbitrary measures to weaken them. Peace-building and state-building efforts also try to strengthen state institutions. Scholar Sam C. Sarkesian defined U.S. national security as \"the ability of national institutions to prevent adversaries from using force to harm Americans.\"",
+        "The primary goals of U.S. strategy, first stated in 1998, are to protect the lives of Americans, maintain the sovereignty of the country, and provide for its prosperity. The 2021 Interim National Security Strategic Guidance added priorities such as deterring adversaries, mainly China and Russia, and sustaining an open international system underwritten by democratic alliances.",
+        "The 9/11 attacks still shape U.S. policy. The War on Terror ushered in laws like the USA Patriot Act, which prioritized security at the expense of some civil liberties, and police departments adopted surplus military equipment, blurring the line between warfare abroad and law enforcement at home. The human toll was enormous for U.S. personnel and, even more, for the people of Afghanistan and Iraq.",
+        "National security is distinguished from global security, which involves demands like climate change that no single country can handle alone and which require multinational cooperation through organizations such as the UN and NATO. Governments rely on political, economic, military, and diplomatic tactics. The 2018 National Defense Strategy states that inter-state strategic competition, not terrorism, is now the primary concern. Success must be achieved on two levels: the physical, measured by military capacity, and the psychological, which depends on the people's willingness to support the government's goals."
+      ],
+      "key_points": [
+        "National security now includes non-military missions such as economic, energy, cyber, and environmental security.",
+        "Violent non-state actors require flexible \"spoiler management\" strategies, not conventional military responses.",
+        "The War on Terror expanded government powers, sometimes at the expense of civil liberties.",
+        "Global security demands, like climate change, require multinational cooperation.",
+        "The 2018 National Defense Strategy names inter-state competition, not terrorism, as the primary concern."
+      ],
+      "glossary": [
+        {
+          "en": "readiness",
+          "es": "disposición operativa; estado de preparación de una fuerza para actuar de inmediato"
+        },
+        {
+          "en": "a thing of the past",
+          "es": "cosa del pasado; algo que ya no aplica ni existe (idiom)"
+        },
+        {
+          "en": "non-state actor",
+          "es": "actor no estatal; grupo armado o político que opera sin ser un gobierno (terroristas, cárteles, piratas)"
+        },
+        {
+          "en": "ill-equipped",
+          "es": "mal preparado; sin los medios o la capacidad adecuados para una tarea"
+        },
+        {
+          "en": "warlord",
+          "es": "señor de la guerra; jefe militar que controla una región por la fuerza al margen del Estado"
+        },
+        {
+          "en": "inducement",
+          "es": "incentivo; aliciente ofrecido para persuadir a alguien de actuar de cierta forma"
+        },
+        {
+          "en": "sovereignty",
+          "es": "soberanía; autoridad suprema de un Estado sobre su territorio e instituciones"
+        },
+        {
+          "en": "deter",
+          "es": "disuadir; impedir que un adversario actúe por miedo a las consecuencias"
+        },
+        {
+          "en": "usher in",
+          "es": "dar paso a; inaugurar o marcar el comienzo de una nueva etapa (phrasal verb)"
+        },
+        {
+          "en": "blur the line",
+          "es": "difuminar la línea; hacer que dos cosas dejen de distinguirse claramente (idiom)"
+        }
+      ],
+      "question": {
+        "stem": "According to the 2018 National Defense Strategy, what is now the primary concern in U.S. national security?",
+        "options": [
+          "International terrorism",
+          "Inter-state strategic competition",
+          "Climate change",
+          "Drug trafficking"
+        ],
+        "answer": "Inter-state strategic competition"
+      },
+      "summary_words": 362,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "1434837",
+      "url": "https://www.thoughtco.com/push-pull-factors-1434837",
+      "title": "Push-Pull Factors in Immigration",
+      "description": "Why do people choose to immigrate from one country to another? Sometimes they are pushed to relocate, while in other cases they are pulled.",
+      "author": "Matt Rosenberg",
+      "published": "2006-01-11",
+      "modified": "2024-08-10",
+      "path": [
+        "Humanities",
+        "Geography",
+        "Basics"
+      ],
+      "topic": "humanities",
+      "original_words": 621,
+      "fetched": "2026-09-09",
+      "summary": [
+        "Push-pull factors in immigration are the forces that drive people away from one place and draw them toward another. Push factors are often forceful: they demand that a person or group leave a country, or at least give them strong reasons to move, usually because of a threat of violence or the loss of financial security. Pull factors, in contrast, are the positive aspects of a different country that encourage people to immigrate in search of a better life. Although the two may seem diametrically opposed, both typically come into play when a person or population is considering migrating.",
+        "Push factors are detrimental conditions that essentially force people to seek refuge elsewhere. They include a sub-standard level of living, food shortage, land or job scarcity, famine or drought, political or religious persecution, pollution, and natural disasters. Under the worst circumstances, speed of exit matters more than choosing the best destination. Not every push factor obliges a person to leave, but the conditions are often so dire that staying means suffering financially, emotionally, or physically. The Great Potato Famine of the mid-19th century, for example, pushed thousands of Irish families to the United States to avoid starvation.",
+        "Refugee populations are among the most affected by push factors. They often face genocide-like conditions in their country of origin, usually because of authoritarian governments or groups hostile to a religious or ethnic minority. Jews leaving Germany during the Nazi era, for instance, were threatened with violent death if they remained.",
+        "Pull factors help people determine whether relocating would provide a significant benefit. They attract populations because the new country offers something unavailable at home: freedom from persecution, career opportunities, cheap land, or an abundance of food. Students entering universities or seeking jobs in more developed countries, for example, may receive larger salaries and greater opportunities than in their countries of origin.",
+        "For some individuals, push and pull factors work together, especially when the push factors are relatively benign. A young adult who cannot find a lucrative job at home may consider immigrating only if the opportunities elsewhere are significantly better."
+      ],
+      "key_points": [
+        "Push factors drive people away from a place; pull factors draw them to a new one.",
+        "Push factors include famine, drought, persecution, job scarcity, pollution, and natural disasters.",
+        "Refugees are the population most affected by push factors, often facing genocide-like conditions.",
+        "Pull factors are opportunities unavailable at home, such as freedom, jobs, cheap land, or abundant food.",
+        "When push factors are mild, people usually migrate only if the pull factors are significantly stronger."
+      ],
+      "glossary": [
+        {
+          "en": "diametrically opposed",
+          "es": "diametralmente opuestos; completamente contrarios"
+        },
+        {
+          "en": "come into play",
+          "es": "entrar en juego; empezar a influir en una situación"
+        },
+        {
+          "en": "detrimental",
+          "es": "perjudicial; dañino"
+        },
+        {
+          "en": "seek refuge",
+          "es": "buscar refugio; ponerse a salvo en otro lugar"
+        },
+        {
+          "en": "scarcity",
+          "es": "escasez; falta de algo necesario"
+        },
+        {
+          "en": "famine",
+          "es": "hambruna; escasez extrema de alimentos"
+        },
+        {
+          "en": "drought",
+          "es": "sequía; período prolongado sin lluvia"
+        },
+        {
+          "en": "dire",
+          "es": "extremo; terrible; desesperado (situación)"
+        },
+        {
+          "en": "benign",
+          "es": "benigno; leve; poco grave"
+        },
+        {
+          "en": "lucrative",
+          "es": "lucrativo; que produce buenas ganancias"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, when do push and pull factors most often work together?",
+        "options": [
+          "When a country suffers a natural disaster",
+          "When refugees face genocide-like conditions",
+          "When the push factors are relatively mild",
+          "When students receive larger salaries abroad"
+        ],
+        "answer": "When the push factors are relatively mild"
+      },
+      "summary_words": 347,
+      "condensed": "2026-09-09"
+    },
+    {
+      "id": "4147568",
+      "url": "https://www.thoughtco.com/bonus-army-march-4147568",
+      "title": "The 1932 March of the Veterans Bonus Army",
+      "description": "Why did 17,000 US veterans known as the Bonus Army march on Washington, D.C. in 1932 and why did President Hoover have the Army attack them?",
+      "author": "Robert Longley",
+      "published": "2017-08-01",
+      "modified": "2021-09-04",
+      "path": [
+        "Humanities",
+        "History & Culture",
+        "American History"
+      ],
+      "topic": "humanities",
+      "original_words": 1110,
+      "fetched": "2026-09-09",
+      "summary": [
+        "In the summer of 1932, more than 17,000 U.S. veterans of World War I marched on Washington, D.C. They demanded immediate cash payment of the service bonuses that Congress had promised them eight years earlier. The press called them the \"Bonus Army,\" but the group named itself the \"Bonus Expeditionary Force,\" echoing the wartime American Expeditionary Forces.",
+        "The bonus came from the World War Adjusted Compensation Act of 1924, which gave each qualified veteran a certificate worth 125% of his wartime service credit. The catch was that the certificates could not be redeemed until 1945. President Calvin Coolidge had vetoed the bill, saying that \"patriotism, bought and paid for, is not patriotism,\" but Congress overrode his veto. When the Great Depression began in 1929, most veterans lost their jobs, and by 1932 they could not afford to wait.",
+        "The veterans set up makeshift camps around the capital. The largest, nicknamed \"Hooverville\" as a backhanded tribute to President Herbert Hoover, stood on Anacostia Flats, a swampy bog across the river from the Capitol. With families and supporters, the crowd grew to nearly 45,000. The veterans kept order and built military-style sanitation facilities. In June the House passed a bill to move up the payment date, but the Senate defeated it. The protest march that followed turned violent, and two veterans and two police officers died.",
+        "On July 28, Hoover ordered the Secretary of War to clear the camps. Infantry and cavalry under General Douglas MacArthur, backed by six light tanks commanded by Major George S. Patton, charged the veterans with sabers, fixed bayonets and tear gas. Hoover then told the troops to stand down, but MacArthur ignored the order, claiming the marchers wanted to overthrow the government, and launched a second charge. By nightfall, 55 veterans were injured and 135 arrested.",
+        "The Army saw the operation as a success, but the press called it \"a pitiful spectacle.\" The political fallout helped Franklin D. Roosevelt defeat Hoover in November. In 1936 Congress overrode Roosevelt's veto and paid the bonuses at once, and the episode contributed to the GI Bill of 1944."
+      ],
+      "key_points": [
+        "The Bonus Army was over 17,000 World War I veterans who marched on Washington in 1932 demanding early payment of bonuses due in 1945.",
+        "The Great Depression turned a 20-year promise into an urgent need for cash.",
+        "The Senate rejected early payment, and a police clash killed two veterans and two officers.",
+        "MacArthur ignored Hoover's order to stand down and cleared the camps with troops, tanks and tear gas.",
+        "The scandal damaged Hoover politically; Congress finally paid the bonuses in 1936 over Roosevelt's veto."
+      ],
+      "glossary": [
+        {
+          "en": "makeshift",
+          "es": "improvisado; provisional, hecho con lo que hay a mano"
+        },
+        {
+          "en": "backhanded (tribute)",
+          "es": "irónico; homenaje con doble intención, en realidad una burla"
+        },
+        {
+          "en": "to redeem (a certificate)",
+          "es": "canjear; cobrar un bono o certificado por su valor en efectivo"
+        },
+        {
+          "en": "to override a veto",
+          "es": "anular un veto; el Congreso impone la ley pese al rechazo del presidente"
+        },
+        {
+          "en": "the catch",
+          "es": "la trampa; la pega o condición oculta de un trato"
+        },
+        {
+          "en": "to move up (a date)",
+          "es": "adelantar una fecha; hacer que algo ocurra antes de lo previsto"
+        },
+        {
+          "en": "fixed bayonets",
+          "es": "bayonetas caladas; cuchillas montadas en el fusil, listas para el asalto"
+        },
+        {
+          "en": "to stand down",
+          "es": "retirarse; cesar la operación y volver a la posición de espera (orden militar)"
+        },
+        {
+          "en": "fallout",
+          "es": "consecuencias negativas; repercusión política de un hecho"
+        },
+        {
+          "en": "swampy bog",
+          "es": "ciénaga; terreno pantanoso y empapado"
+        }
+      ],
+      "question": {
+        "stem": "According to the passage, why did General MacArthur launch a second charge against the veterans?",
+        "options": [
+          "President Hoover ordered him to continue the attack.",
+          "He claimed the marchers were trying to overthrow the government.",
+          "The veterans had attacked the tanks with weapons.",
+          "The Senate had asked him to clear the camps immediately."
+        ],
+        "answer": "He claimed the marchers were trying to overthrow the government."
+      },
+      "summary_words": 349,
+      "condensed": "2026-09-09"
+    }
+  ]
+}

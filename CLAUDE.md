@@ -77,6 +77,34 @@ Regla para no duplicar: si lleva partícula y funciona como verbo, va en
 Preferencia fija de Brayhan: **en Word y PDF, los párrafos siempre van justificados.**
 El script `scripts/build_pdf.py` ya aplica `TA_JUSTIFY` en todos los estilos de texto corrido.
 
+### 8. Lecturas (pestaña «Lecturas» del cuaderno)
+`data/readings.json` guarda artículos de divulgación de **ThoughtCo** condensados al nivel
+B2. Temas elegidos por Brayhan: **tecnología y computación, matemáticas, humanidades y
+ciencias sociales** (nada de ciencias naturales salvo que él lo pida). Son temas ajenos a su
+experticia a propósito.
+
+- Se traen con `scripts/fetch_readings.py` (`--discover`, `--add URL`, `--add-from-section`,
+  `--condense`). El texto original queda en `inbox/readings/` (fuera del repo); al JSON solo
+  van metadatos + el condensado.
+- La condensación la hace Claude Code (`claude -p`, como el bot): **resumen en inglés** de
+  250–350 palabras, `key_points`, `glossary` inglés→español (solo términos B2+) y una
+  `question` de comprensión estilo ALCPT con 4 opciones.
+- Las palabras del glosario **no** se pasan automáticamente al diccionario numerado; si
+  Brayhan quiere alguna, la pide y entra por la regla 1.
+- El bot también las trae: un enlace de thoughtco.com, o `/lecturas <sección> <n>`.
+
+### 9. Podcasts (pestaña «Podcasts»)
+`data/podcasts.json` + `docs/audio/*.mp3`, generados por `scripts/build_podcasts.py` con
+**edge-tts** (voces `en-US-AndrewNeural` y `es-CO-SalomeNeural`, sin clave ni costo).
+
+- **Tope fijo: 10 minutos por episodio** (`MAX_SECONDS = 600`). Dos series:
+  `vocab` (todo el diccionario en orden: palabra en inglés → significado en español →
+  palabra otra vez) y `lecturas` (una por artículo: resumen, glosario y pregunta).
+- Solo se re-renderiza lo que cambió (hash del guion). Agregar una palabra re-hace el
+  último episodio de vocabulario; agregar una lectura crea un episodio nuevo.
+- Las pausas se insertan como tramas MP3 de silencio del mismo formato que edge-tts; no se
+  necesita ffmpeg.
+
 ## Estructura
 
 ```
@@ -88,27 +116,33 @@ alcpt/
 │   ├── vocabulary.json    <- fuente única del diccionario
 │   ├── forms.json         <- fuente única de las preguntas
 │   ├── phrasal_verbs.json <- phrasal verbs de los formularios, por partícula
-│   └── idioms.json        <- idioms y léxico militar, por uso
+│   ├── idioms.json        <- idioms y léxico militar, por uso
+│   ├── readings.json      <- lecturas de ThoughtCo condensadas (pestaña Lecturas)
+│   └── podcasts.json      <- guiones y metadatos de los episodios (pestaña Podcasts)
 ├── scripts/
 │   ├── build_pdf.py       <- genera el PDF consolidado
 │   ├── build_html.py      <- versión web espejo del PDF
-│   ├── build_artifact.py  <- cuaderno con buscador y audio (+ --standalone para Pages)
+│   ├── build_artifact.py  <- cuaderno con pestañas Cuaderno / Lecturas / Podcasts
+│   ├── build_podcasts.py  <- guiones + MP3 con edge-tts (≤10 min por episodio)
+│   ├── fetch_readings.py  <- trae y condensa artículos de ThoughtCo
 │   └── add_word.py        <- agrega palabras por línea de comandos
 ├── bot/
 │   ├── alcpt_bot.py       <- bot de Telegram (portátil, sin rutas fijas)
 │   └── README.md          <- cómo dejarlo corriendo en cualquier equipo
-├── inbox/                 <- capturas nuevas del ALCPT (fuera del repo)
-├── docs/                  <- index.html publicado en GitHub Pages
+├── inbox/                 <- capturas nuevas del ALCPT y texto crudo de lecturas (fuera del repo)
+├── docs/                  <- index.html + audio/*.mp3 publicados en GitHub Pages
 └── output/                <- PDF y páginas generadas
 ```
 
 ## Al cambiar los datos
 
-Cualquier cambio en `data/*.json` obliga a regenerar los cuatro documentos:
+Cualquier cambio en `data/*.json` obliga a regenerar los documentos. El orden importa:
+los podcasts van antes del cuaderno, porque el cuaderno lee `podcasts.json`.
 
 ```bash
 python scripts/build_pdf.py
 python scripts/build_html.py
+python scripts/build_podcasts.py        # solo re-renderiza los episodios que cambiaron
 python scripts/build_artifact.py
 python scripts/build_artifact.py --standalone --out docs/index.html
 ```
@@ -128,13 +162,24 @@ python scripts/build_pdf.py
 # Regenerar la versión web
 python scripts/build_html.py
 
+# Lecturas: ver candidatos, agregar, condensar
+python scripts/fetch_readings.py --discover math philosophy --max 10
+python scripts/fetch_readings.py --add https://www.thoughtco.com/...-4172097
+python scripts/fetch_readings.py --condense
+
+# Podcasts (MP3 en docs/audio)
+python scripts/build_podcasts.py            # lo que falte
+python scripts/build_podcasts.py --dry-run  # solo guiones y estimación
+
 # Ver cuántas entradas hay
 python -c "import json;d=json.load(open('data/vocabulary.json'));print(sum(len(s['entries']) for s in d['sections']))"
 ```
 
-## Estado (17 ago 2026)
+## Estado (9 sep 2026)
 
-- **331 palabras confirmadas** (numeración 1–331, sin bloques `pending_` abiertos).
+- **333 palabras y 266 preguntas** según los JSON (las cifras de abajo son del 17 ago; el
+  conteo vivo se hace con el comando de arriba). **14 lecturas** y **21 podcasts**.
+- **331 palabras confirmadas** al 17 ago (numeración 1–331, sin bloques `pending_` abiertos).
   Secciones: A. Mis palabras (48) · B. Form 62 (72) · C. Form 50 (76) · D. Form 63 (8) ·
   E. Form 69 (12) · F. Form 70 (22) · G. Form 71 (1) · H. Form 73 (27) · I. Form 75 (12) ·
   J. Form 82 (15) · K. Form 87 (36) · L. Technical & Action Verbs (2).
