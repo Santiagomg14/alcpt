@@ -8,6 +8,7 @@ Qué hace
   * Le mandas "palabra = traduccion"  ->  la agrega tal cual, sin usar IA
   * Le mandas una captura del examen  ->  extrae la pregunta y la agrega a data/forms.json
   * Después de cada cambio: regenera PDF y páginas web, hace commit y push
+    (y refresca fecha y conteos en handoff.md antes del commit)
 
 Portabilidad
 ------------
@@ -24,6 +25,7 @@ Uso
 
 import json
 import os
+import platform
 import re
 import shutil
 import subprocess
@@ -213,6 +215,48 @@ def counts():
             sum(len(f["questions"]) for f in forms["forms"]))
 
 
+MESES = ["ene", "feb", "mar", "abr", "may", "jun",
+         "jul", "ago", "sep", "oct", "nov", "dic"]
+
+
+def update_handoff():
+    """Refresca en handoff.md la fecha y los conteos que el bot deja obsoletos.
+
+    El handoff lo redactan a mano las sesiones de trabajo; el bot no lo
+    escribe. Pero cada palabra o lectura que registra deja vieja la cifra del
+    §2 hasta la siguiente sesión, y quien lo lea al empezar se fía de un número
+    equivocado. Aquí se corrige solo eso: la línea «Última actualización» y los
+    números en negrita de la sección 2. Los patrones son tolerantes: si el
+    archivo no existe o alguna frase cambió de forma, se salta esa parte.
+    """
+    path = REPO / "handoff.md"
+    if not path.exists():
+        return
+    text = path.read_text(encoding="utf-8")
+    words, questions = counts()
+    now = datetime.now()
+    stamp = (f"{now.day} {MESES[now.month - 1]} {now.year} "
+             f"({now:%H:%M}, bot en {platform.node()})")
+    subs = [
+        (r"^(\*\*Última actualización:\*\*).*$", lambda m: f"{m.group(1)} {stamp}"),
+        (r"\*\*\d+ palabras confirmadas\*\*", lambda m: f"**{words} palabras confirmadas**"),
+        (r"\*\*\d+ preguntas\*\*", lambda m: f"**{questions} preguntas**"),
+    ]
+    for name, key, label in (("readings.json", "items", "lecturas"),
+                             ("podcasts.json", "episodes", "episodios de podcast")):
+        try:
+            n = len(json.loads((DATA / name).read_text(encoding="utf-8"))[key])
+        except (OSError, ValueError, KeyError, TypeError):
+            continue
+        subs.append((rf"\*\*\d+ {label}\*\*", lambda m, n=n, label=label: f"**{n} {label}**"))
+    new = text
+    for pattern, repl in subs:
+        new = re.sub(pattern, repl, new, count=1, flags=re.M)
+    if new != text:
+        path.write_text(new, encoding="utf-8")
+        log("handoff.md: fecha y conteos actualizados")
+
+
 def data_changed():
     """¿Quedó algo nuevo en data/ respecto al último commit?
 
@@ -247,6 +291,7 @@ def finish(chat_id, summary, commit_msg, force=False):
         return
 
     errors = rebuild()
+    update_handoff()
     problem = git_sync(commit_msg)
     words, questions = counts()
     lines = [summary, "", f"Diccionario: {words} palabras · {questions} preguntas"]

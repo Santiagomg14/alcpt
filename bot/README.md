@@ -127,5 +127,10 @@ El bot **no** le da acceso a la terminal a Claude Code. Lo invoca con
 archivos del repositorio. Los pasos con efectos —regenerar documentos, `git commit`,
 `git push`— los ejecuta el propio bot, de forma determinista.
 
+Antes de cada commit el bot también refresca en `handoff.md` la línea
+«Última actualización» y los conteos en negrita del §2 (palabras, preguntas,
+lecturas y episodios). Solo eso: el resto del handoff se sigue escribiendo a
+mano en cada sesión.
+
 Las capturas se guardan en `inbox/`, que está en `.gitignore`: no viajan al
 repositorio, solo la información ya extraída en los JSON.

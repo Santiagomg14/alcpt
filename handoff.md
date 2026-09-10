@@ -1,6 +1,6 @@
 # Handoff — Vocabulario en inglés + ALCPT (Brayhan)
 
-**Última actualización:** 10 sep 2026 (tarde, servidor Linux `server`)
+**Última actualización:** 10 sep 2026 (17:10, servidor Linux `server`)
 
 ## 1. El objetivo
 
@@ -17,8 +17,10 @@ episodio).
 
 ## 2. El estado actual del proyecto
 
-- **334 palabras confirmadas** (la 334 es «Basement», registrada por el bot el
-  10 sep), sin bloques `pending_` abiertos, y **266 preguntas** documentadas. Verifícalo siempre con `counts()` del bot o con:
+- **334 palabras confirmadas**, sin bloques `pending_` abiertos, y
+  **266 preguntas** documentadas. Estas cifras, las de lecturas y episodios de
+  abajo y la fecha de arriba **las actualiza el bot solo** en cada commit
+  (`update_handoff()`); el resto del handoff sigue siendo manual. Verifícalo con:
   `python -c "import json;v=json.load(open('data/vocabulary.json'));print(sum(len(s['entries']) for s in v['sections']))"`
 - **14 lecturas** condensadas en `data/readings.json` (3 tech, 3 math, 2 social,
   6 humanities: filosofía, asuntos públicos, geografía, historia).
@@ -82,9 +84,13 @@ Sesión del 10 sep 2026 (servidor `server`, Claude Code):
   (237 s). Commit `774482d` pusheado.
 - Instalados `edge-tts` y `mutagen` en el `.venv` del servidor.
 - Reiniciado el servicio `alcpt-bot`; conectó bien a las 17:01 UTC.
-- Handoff actualizado a mano. **El bot NO actualiza `handoff.md`**: solo hace
-  `git add -A` de `data/`, `docs/` y `output/` y commitea. Cuando el bot agrega
-  palabras, la cifra del handoff se desactualiza hasta la siguiente sesión.
+- Nuevo `update_handoff()` en `bot/alcpt_bot.py`, llamado en `finish()` entre
+  `rebuild()` y `git_sync()`. Reescribe con regex la línea «Última actualización»
+  y los números en negrita del §2 (`**N palabras confirmadas**`, `**N preguntas**`,
+  `**N lecturas**`, `**N episodios de podcast**`). Si una frase cambia de forma,
+  esa sustitución simplemente no aplica; no rompe el bot. Probado sobre una copia
+  con cifras falsas: las cuatro se corrigieron. **No cambiar esas frases del §2
+  sin ajustar los patrones.**
 
 ## 5. Qué has intentado
 
@@ -115,8 +121,6 @@ Sesión del 10 sep 2026 (servidor `server`, Claude Code):
 
 - Probar el bot actualizado mandándole un enlace de ThoughtCo y `/lecturas`.
   Revisar que `inbox/readings/` se cree solo en el servidor (está en `.gitignore`).
-- Decidir si el bot debe tocar `handoff.md` (por ejemplo, actualizar solo la
-  línea de conteo y la fecha) o si se deja como tarea manual de cada sesión.
 - Mandarle a Brayhan el enlace de GitHub Pages con `#podcasts` y pedirle
   feedback: ¿ritmo de las voces?, ¿palabras por episodio?, ¿temas?
 - Si quiere más lecturas: `python scripts/fetch_readings.py --discover <sección>`
