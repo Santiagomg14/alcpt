@@ -1,6 +1,6 @@
 # Handoff — Vocabulario en inglés + ALCPT (Brayhan)
 
-**Última actualización:** 19 ago 2026
+**Última actualización:** 9 sep 2026
 
 ## 1. El objetivo
 
@@ -16,9 +16,11 @@ y audio que él consulta desde el celular (GitHub Pages).
   73, 75, 82, 87 y Technical & Action Verbs).
 - Documentos regenerados el 18 ago 2026 22:14, posteriores al último cambio de
   `data/` — están al día.
-- **Bot de Telegram corriendo** en este equipo (`LAPTOP-H4O9EDGC`), instalado como
-  tarea programada «ALCPT Bot», que arranca sola al iniciar sesión de Windows.
-- Repositorio limpio, sincronizado con `main` (`c596fe3`).
+- **Bot de Telegram DETENIDO en este equipo** (`LAPTOP-H4O9EDGC`) desde el
+  9 sep 2026: se desinstaló la tarea programada «ALCPT Bot» para migrarlo a un
+  servidor. `bot/active_host.json` marca `host: null` (nadie lo tiene tomado).
+  **Hasta que se instale en el servidor, el bot no atiende mensajes.**
+- Repositorio limpio, sincronizado con `main`.
 
 ## 3. Los archivos en los que trabajas
 
@@ -31,17 +33,17 @@ y audio que él consulta desde el celular (GitHub Pages).
 
 ## 4. Qué has cambiado
 
-En esta sesión no se tocó ni el código ni los datos: solo se verificó que los
-servicios estuvieran arriba y se creó este `handoff.md`, que faltaba.
+Sesión del 9 sep 2026: sin cambios en código ni datos. Se retiró el bot de este
+equipo (`python bot/install_service.py --uninstall`), lo que generó el commit
+automático `39bca08` liberando `bot/active_host.json`. Se actualizó este handoff.
 
 ## 5. Qué has intentado
 
-- `python bot/install_service.py --status` → tarea «ALCPT Bot» en **Running**,
-  registrada a nombre de este mismo equipo en `bot/active_host.json`.
-- Se confirmó el proceso vivo (`pythonw.exe … bot/alcpt_bot.py`, PID 11608).
-- Llamada a `getMe` de la API de Telegram → responde `@alcpt_english_bot`.
-- Se compararon fechas de `data/` contra `output/` y `docs/`: los documentos son
-  posteriores, no hay nada por regenerar.
+- 9 sep 2026: `--status` antes → «Running» en LAPTOP-H4O9EDGC; `--uninstall` →
+  «Servicio retirado. Bot liberado»; `--status` después → «No instalado», tomado
+  por nadie. No quedó ningún `pythonw.exe` corriendo.
+- Sesión anterior (19 ago): se verificó bot vivo, `getMe` respondía
+  `@alcpt_english_bot` y los documentos de `output/` y `docs/` estaban al día.
 
 ## 6. Qué ha fallado
 
@@ -51,6 +53,11 @@ cada 15 s y se recupera; no requieren intervención.
 
 ## 7. Qué planeas hacer después
 
+- **Instalar el bot en el servidor**: clonar el repo, crear `.env` con el token
+  (nunca versionarlo), `pip install -r requirements.txt` y seguir `bot/README.md`
+  (`python bot/install_service.py --install` o el equivalente Linux). El
+  instalador debe registrar el nuevo host en `bot/active_host.json`.
+- Verificar desde el servidor con `--status` y un mensaje de prueba a Telegram.
 - Seguir procesando capturas nuevas que Brayhan mande por Telegram.
 - Completar las 21 preguntas registradas con la nota
   `(Not shown — captured during the test…)` si vuelve a hacer esos formularios y
