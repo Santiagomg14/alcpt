@@ -136,6 +136,14 @@ Sesión del 10 sep 2026 (servidor `server`, Claude Code):
   commitea y pushea solo, así que el portátil y el servidor divergen con
   facilidad. Si hay conflicto, siempre está en los generados: resolver con la
   versión que sea y regenerar (PDF → espejo → podcasts → cuaderno → Pages).
+- **Artifact de Claude «Cuaderno ALCPT»** (https://claude.ai/code/artifact/95b9749a-55b5-4292-831d-121fb6dd2aed):
+  se publica desde `output/cuaderno_alcpt.html`, actualizado el 10 sep (versión 5,
+  con pestañas Lecturas y Podcasts). **Limitación:** el visor de artifacts bloquea
+  por CSP los MP3 que vienen de GitHub Pages, así que en el artifact la pestaña
+  Podcasts muestra los reproductores pero no suena; embeberlos como data: URI no
+  cabe (48 MB frente a un tope de 16 MB). El audio de podcasts funciona en
+  GitHub Pages (`docs/index.html`). Pendiente: poner en esa pestaña un enlace a
+  Pages cuando la página corre dentro del artifact.
 - **Telegram admite un solo lector por token.** Si el bot se instala en otra
   máquina, hay que desinstalarlo primero donde esté (`install_service.py
   --uninstall`); `bot/active_host.json` lleva el registro de quién lo tiene tomado.
