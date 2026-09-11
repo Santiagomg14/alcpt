@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 279
+    "total_questions": 280
   },
   "forms": [
     {
@@ -1243,6 +1243,16 @@
           ],
           "correct": "mad",
           "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 74,
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "options": [
+            "He couldn't go.",
+            "(Options screen not captured yet.)"
+          ],
+          "correct": "He couldn't go.",
+          "explanation": "The phrase\"wasn't able to\" is the past tense form of \"unable to,\" indicating a lack of ability, capability, or possibility. In English,\"couldn't\" (the contraction of \"could not\") is the corresponding modal verb used to express a lack of ability in the past. Therefore, \"He couldn't go\"is the direct synonym for\"Adam wasn't able to go.\" \"He didn't want to go.\"is incorrect because\"want\" refers to a person's desire or preference,whereas He wasn't ready to go. He wasn't supposed to go."
         },
         {
           "n": 76,
