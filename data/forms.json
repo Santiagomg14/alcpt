@@ -1236,9 +1236,10 @@
           "n": 56,
           "question": "Phyllis went to the beverage section of the grocery store",
           "options": [
+            "bread",
+            "bacon",
             "soft drinks",
-            "green beans",
-            "bread"
+            "green beans"
           ],
           "correct": "soft drinks",
           "explanation": "The term \"beverage\" refers to any liquid for drinking. \"Soft drinks\" (such as soda or pop) are a common category of beverages found in a grocery store. Therefore,if Phyllis went to the beverage section,she would find soft drinks. \"bread\"is incorrect because it is a solid food item made from flour, typically found in the bakery or bread section."
