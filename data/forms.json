@@ -18,7 +18,7 @@
       "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 281
+    "total_questions": 285
   },
   "forms": [
     {
@@ -1232,6 +1232,27 @@
           "explanation": "(Explanation screen not captured yet.)"
         },
         {
+          "n": 81,
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "options": [
+            "a duty",
+            "a problem"
+          ],
+          "correct": "a duty",
+          "explanation": "In this context,the word“obligation”means a moral or legal requirement or duty. An elected official is bound by their position to serve and represent the interests ofthe people who voted for them. Therefore, \"a duty\" is the most accurate synonym for \"obligation.\" 'a problem\"is incorrect because an obligation represents a responsibility or requirement,nota difficulty or a negative issue to be resolved."
+        },
+        {
+          "n": 82,
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "options": [
+            "He got them.",
+            "He saw them.",
+            "He left them there."
+          ],
+          "correct": "He got them.",
+          "explanation": "The phrasal verb“pick up\"in this context means to retrieve or collect something that was previously left at a specific location, such as a laundry or a dry cleaner. Therefore, saying the student “got them\" is the most accurate synonym for the action performed. \"He left them there.\"is incorrect because it describes the opposite action; leaving items signifies dropping them off rather than retrieving them."
+        },
+        {
           "n": 86,
           "question": "(Question stem not captured yet — only the explanation screen was sent.)",
           "options": [
@@ -1239,6 +1260,16 @@
           ],
           "correct": "belost",
           "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performing it. In English,when using a modal verb like“may\"in the passive voice, the grammatical \"Lost\" is the past participle of the verb \"lose.\" Therefore,“may be lost”correctly expresses the possibility that the letter will go missing during transit."
+        },
+        {
+          "n": 88,
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "options": [
+            "He agreed that anyone could drive the car.",
+            "He agreed that he would drive the car."
+          ],
+          "correct": "He agreed that he would drive the car.",
+          "explanation": "willingness or commitment to perform a specific action. In English grammar,the structure'agree + to- infinitive'expresses apromiseor consent to do something.Therefore,\"He agreed that he would drive the car\" is the most accurate paraphrase, as it captures the intent and future-oriented commitment of the original sentence."
         },
         {
           "n": 92,
@@ -1386,6 +1417,16 @@
           ],
           "correct": "Get it out in a hurry.",
           "explanation": "The phrasal verb“rush(something) through\"means to complete a processor handle a task with great speed or urgency. In military and logistical contexts, if an officer or supervisor tells you to rush an order through, they are prioritizing its completion and shipment over standard,slower procedures. \"Examine it carefully.\"is incorrect because it refers to the level of scrutiny or inspection,whereas rushing often implies moving quickly,sometimes at the Check to see if it is all there."
+        },
+        {
+          "n": 55,
+          "question": "Each winter the pond dries up",
+          "options": [
+            "has no water",
+            "freezes over"
+          ],
+          "correct": "has no water",
+          "explanation": "The phrasal verb\"dries up\"means to lose all moisture or to become completely dry.In the context of a body ofwater like a pond, it signifies that the thepond having no water. \"freezes over\"is incorrect because it describes the surface of the water turning into ice during winter, not the water disappearing."
         },
         {
           "n": 58,
