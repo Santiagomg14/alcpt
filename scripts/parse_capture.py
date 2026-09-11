@@ -58,7 +58,9 @@ PLACEHOLDERS = {NOT_SHOWN, NOT_SHOWN_EXPL, NO_EXPL_YET, NO_OPTIONS_YET, NO_STEM_
 RE_FORM = re.compile(r"\b(?:form(?:ulario)?|alcpt)\s*#?\s*(\d{2,3})\b", re.I)
 RE_STATUS = re.compile(r"\b\d{1,2}:\d{2}\b.*\b(?:4g|5g|lte|wifi|\d{1,3})\b", re.I)
 RE_NOISE = re.compile(r"^\s*(?:end\s*review|cc|next|previous|submit|answer\s*:?\s*\d*\s*\)?)\s*$", re.I)
-RE_STEM_NUM = re.compile(r"^\s*(\d{1,3})\s*[.)]?\s*(?:\1\s+)?(.*)$")   # «56. 56 Phyllis…»
+# «56. Phyllis…», «56. 56 Phyllis…», «54.54the…», «10 When…»; nunca «6:51»
+RE_STEM_NUM = re.compile(r"^\s*(\d{1,3})(?:\s*[.)]\s*(?:\1(?=\s|[A-Za-z]))?\s*|\s+(?=[A-Za-z]))(.*)$")
+RE_TIME = re.compile(r"\b\d{1,2}:\d{2}\b")
 RE_ANSWER_N = re.compile(r"answer\s*:?\s*(\d{1,3})\s*\)", re.I)
 RE_CORRECT = re.compile(r"^\s*correct\s*answer\s*[:\"“”']*\s*(.+?)[\"“”']*\s*$", re.I)
 RE_EXPL = re.compile(r"^\s*explanation\s*:?\s*(.*)$", re.I)
@@ -167,7 +169,8 @@ def parse_rows(rows, width):
         line = r["text"].strip()
         if not line:
             continue
-        if stage == "head" and (RE_STATUS.search(line) or re.fullmatch(r"[\d:\s]+", line)):
+        if stage == "head" and (RE_STATUS.search(line) or RE_TIME.search(line)
+                                or re.fullmatch(r"[\d:\s_]+", line)):
             continue
         if RE_NOISE.match(line):
             if RE_ANSWER_N.search(line) and n is None:
@@ -208,10 +211,21 @@ def parse_rows(rows, width):
             expl.append(line)
             continue
         if stage == "incorrect":
-            # las opciones que siguen debajo del bloque aparecen sueltas y cortas
-            if len(line.split()) <= 4 and not re.search(r"[.!?]$", line) and r["x"] > width * 0.15:
-                options.append(line)
-                option_rows.append(r)
+            # Debajo del bloque asoman las opciones que siguen (con su círculo, más a la
+            # derecha que las viñetas). Si el renglón está pegado al anterior, es la
+            # continuación de esa opción; si es el primero y empieza en minúscula, es la
+            # cola de una opción cuya cabeza quedó tapada, y se descarta.
+            if r["x"] > width * 0.2 and len(line.split()) <= 7 \
+                    and not re.search(r"(,|\band\b|\bor\b|\bto\b)$", line):
+                if option_rows and option_rows[-1] is not None \
+                        and r["y"] - option_rows[-1]["y"] < 2.0 * max(r["h"], option_rows[-1]["h"]):
+                    options[-1] = (options[-1] + " " + line).strip()
+                    option_rows[-1] = r
+                elif not options and line[:1].islower():
+                    pass
+                else:
+                    options.append(line)
+                    option_rows.append(r)
             else:
                 incorrect.append(line)
             continue
@@ -270,17 +284,24 @@ def parse_rows(rows, width):
                 stem.append(line)
                 continue
         if stage == "options":
-            options.append(line)
-            option_rows.append(r)
+            if option_rows and r["y"] - option_rows[-1]["y"] < 2.0 * max(r["h"], option_rows[-1]["h"]):
+                options[-1] = (options[-1] + " " + line).strip()   # opción que ocupa 2 renglones
+                option_rows[-1] = r
+            else:
+                options.append(line)
+                option_rows.append(r)
             continue
         if stage == "answer":
-            stem.append(line)
+            if correct_text is not None:
+                correct_text = (correct_text + " " + line).strip(" \"“”':")
+            else:
+                stem.append(line)
 
     screen = "explanation" if correct_text or expl else "question"
     q = {
         "form": form,
         "n": n,
-        "question": unglue(" ".join(stem).strip()),
+        "question": (lambda s: s[:1].upper() + s[1:])(unglue(" ".join(stem).strip())),
         "options": [unglue(o) for o in options if o],
         "correct": correct_text,
         "explanation": unglue(" ".join(expl).strip()),

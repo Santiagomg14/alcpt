@@ -18,7 +18,7 @@
       "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 295
+    "total_questions": 271
   },
   "forms": [
     {
@@ -1210,203 +1210,8 @@
       "form": "65",
       "questions": [
         {
-          "n": 6,
-          "question": ":51 ________ I4G38 94. That movie director has a new film which is",
-          "options": [
-            "his earlier work.",
-            "like most",
-            "more like",
-            "like to",
-            "as likely"
-          ],
-          "correct": "more like",
-          "explanation": "(Explanation screen not captured yet.)"
-        },
-        {
-          "n": 39,
-          "question": "Mrs Barnett caught the bus",
-          "options": [
-            "She was too late for the bus.",
-            "She was in time for the bus.",
-            "She was waiting for the bus.",
-            "She was asking for the bus."
-          ],
-          "correct": "She was in time for the bus.",
-          "explanation": "(Explanation screen not captured yet.)"
-        },
-        {
-          "n": 40,
-          "question": "he is willing to travel",
-          "options": [
-            "He is refusing to travel.",
-            "He is agreeing to travel.",
-            "He is forced to travel.",
-            "He is afraid to travel."
-          ],
-          "correct": "He is agreeing to travel.",
-          "explanation": "The word“willing”means being ready, eager, or prepared to do something of one's own free will. If someone is willing to travel, it means they are consenting or agreeing to the action without being coerced. \"He is refusing to travel.\" is incorrect because refusing is the direct antonym of being willing; it indicates a rejection of the action. He is afraid to travel."
-        },
-        {
-          "n": 41,
-          "question": "41the man's wound was fatal",
-          "options": [
-            "He needed a bandage.",
-            "He needed a nurse.",
-            "He rested.",
-            "He died."
-          ],
-          "correct": "He died.",
-          "explanation": "The word \"fatal is an adjective that describes something (like an injury, wound, or accident) that causes death. In a military or medical context, a fatal casualty is one where the person has expired due to the severity of their injuries.Therefore,if the man's wound was fatal, the result is that he passed away. \"He needed a bandage.\"is incorrect because a bandage is used fornon-lethal wounds to control bleeding or protect an iniury; it does not address the aisae He died."
-        },
-        {
-          "n": 44,
-          "question": "44Adam took up spanish",
-          "options": [
-            "He failed to learn Spanish.",
-            "He preferred to speak Spanish.",
-            "He appeared to know Spanish.",
-            "He started to learn Spanish."
-          ],
-          "correct": "He started to learn Spanish.",
-          "explanation": "The phrasal verb \"take up\" means to begin a new activity, hobby, or area of study. In this sentence, saying Adam \"took up Spanish\" indicates that he has begun the process of learning the Spanish language. This is a common idiomatic expression used in both general and military contexts to describe starting training or a new skill set. \"He failed to learn Spanish.is incorrect because \"took up\" indicates the initiation of an action, not its HeappeaieutukiiowSpaiiisii. He started to learn Spanish."
-        },
-        {
-          "n": 45,
-          "question": "45my grandmother needs to take a snooze",
-          "options": [
-            "She'll go shopping.",
-            "She'll go to town.",
-            "She'll go to sleep.",
-            "She'll go to walking."
-          ],
-          "correct": "She'll go to sleep.",
-          "explanation": "The idiomatic expression\"to take a snooze\"means to take a short nap or to sleep for a brief period. In the context of the sentence, if the grandmother needs to take a snooze,it implies she is tired and intends to rest or sleep. \"She'll go shopping.\" is incorrect because \"snooze\" refers to sleeping and has nothing to do with buying goods or visiting stores. \"sr eng uu steep. She'll go to walking."
-        },
-        {
-          "n": 46,
-          "question": "4610 new words appeared on the test Esther missed 4 of them how many did she get correct",
-          "options": [
-            "four",
-            "ten",
-            "six",
-            "fourteen"
-          ],
-          "correct": "(Not shown — captured during the test, before the review screen.)",
-          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
-        },
-        {
-          "n": 47,
-          "question": "Sergeant James gave his captain his reason for being late what did Sergeant James tell him",
-          "options": [
-            "how he got there",
-            "when he would be late",
-            "where he was late",
-            "where he was going later"
-          ],
-          "correct": "how he got there",
-          "explanation": "In English,a\"reason\"is an explanation or justification for why something occurred.When Sergeant James gives his \"reason for being late,he is explaining the circumstances that caused the delay. Among the provided choices, \"how he got there\"is the only option that can serve as an (forexample,if hewas late because his car broke down and he had to walk). In military communication,providing a reason for being late usually involves detailing the obstacles encountered during travel or the specific cause of the tardiness. where he was going later"
-        },
-        {
-          "n": 48,
-          "question": "we must de-emphasize War what must we do",
-          "options": [
-            "make war less expensive",
-            "make war less important",
-            "make war less dangerous",
-            "make war less destructive"
-          ],
-          "correct": "make war less important",
-          "explanation": "The word \"de-emphasize\" is formed by adding the prefix\"de-\"(meaning to reverse or reduce) to the word \"emphasize\"(meaning to give special importance or prominence to something). Therefore, to de-emphasizewar means to make it less important or to focus on it less in a strategic or social context. \"make war less expensive”is incorrect because\"de- emphasize refers to the significance or attention"
-        },
-        {
-          "n": 49,
-          "question": "what did your roommate wear to the party",
-          "options": [
-            "He left at 8 o'clock.",
-            "He went with a friend.",
-            "He had on a dark suit.",
-            "He went to the officer's club."
-          ],
-          "correct": "He had on a dark suit.",
-          "explanation": "The question asks\"what did your roommate wear which requires a description of clothing.The phrasal verb \"had on\" is an idiomatic way to say \"was wearing.Therefore, “He had on a dark suit” directly answers the question about his attire for the party. \"He left at 8o'clock.is incorrect because it answers the question\"When did he leave?\"instead of what he wore. \"ne rrauuri a uarksum. He went to the officer's club."
-        },
-        {
-          "n": 50,
-          "question": "Jack carried out the order what did he do",
-          "options": [
-            "He cancelled it.",
-            "He destroyed it.",
-            "He threw it away.",
-            "He executed it."
-          ],
-          "correct": "He executed it.",
-          "explanation": "(Explanation screen not captured yet.)"
-        },
-        {
-          "n": 53,
-          "question": "we succeeded because we had determination",
-          "options": [
-            "We were not interested.",
-            "We made excuses.",
-            "We didn't give up.",
-            "We needed motivation.",
-            "determinationrequiresa high level of interest and"
-          ],
-          "correct": "We didn't give up.",
-          "explanation": "Determination is the quality ofbeing resolute and firm in purpose. It implies a refusal to quit or abandon a task despite difficulties or obstacles.In a military context,determination is essential for Therefore, saying they had determination is equivalent to saying they did not give up. \"We were not interested.\"is incorrect because We needed motivation."
-        },
-        {
-          "n": 54,
-          "question": "54the foreign student had to get used to the new customs",
-          "options": [
-            "He had to find out about the",
-            "customs.",
-            "He had to organize the customs.",
-            "He had to adjust o the customs.",
-            "He had to disregard the customs."
-          ],
-          "correct": "He had to adjust o the customs.",
-          "explanation": "The phrase“get used to\"is an idiomatic expression meaning to become accustomed to,adapt to,or familiarize oneself with anewsituation or environment.In this context,a foreign student arriving in a new place must modify their behavior or expectations to fit the local traditions.\"Adjust to\"is a direct synonym for this process of adaptation. Note: The text \"adjust o\" contains a minor typographical error for \"adjust to.\" He had to disregard the customs."
-        },
-        {
-          "n": 55,
-          "question": "that company has a reputation for being above board",
-          "options": [
-            "exorbitant",
-            "trustworthy",
-            "fraudulent",
-            "successful"
-          ],
-          "correct": "trustworthy",
-          "explanation": "The idiom \"above board\" means being honest, open, and legitimate.When a company has a reputation for being above board, it means their business dealings are transparent and conducted without any intent to deceive or hide information. Therefore,\"trustworthy\" is the most accurate synonym in this context. \"exorbitant\" is incorrect because it describes prices or fees that are unreasonably high or excessive, which doesnot relate to honesty."
-        },
-        {
-          "n": 56,
-          "question": "Phyllis went to the beverage section of the grocery store",
-          "options": [
-            "bread",
-            "bacon",
-            "soft drinks",
-            "green beans"
-          ],
-          "correct": "soft drinks",
-          "explanation": "The term \"beverage\" refers to any liquid for drinking. \"Soft drinks\" (such as soda or pop) are a common category of beverages found in a grocery store. Therefore,if Phyllis went to the beverage section,she would find soft drinks. \"bread\"is incorrect because it is a solid food item made from flour, typically found in the bakery or bread section."
-        },
-        {
-          "n": 65,
-          "question": "he collects rocks from all parts of the world that's nice but do they have any value what does the manwant toknow",
-          "options": [
-            "Are the rocks unusual?",
-            "Are they different shapes?",
-            "Are they hard to find?",
-            "Are they worth anything?"
-          ],
-          "correct": "Are they worth anything?",
-          "explanation": "In this dialogue, the man asks, \"do they have any value?\" In the context of a collection, the word “value' refers to the monetary worth or the importance of the items. Therefore, asking if the rocks are\"worth anything\" is the direct synonym for asking if they have value. \"Are the rocks unusual?\"is incorrect because something can be unusual (strange orrare) without having significant monetary value. Are they worth anything?"
-        },
-        {
           "n": 66,
-          "question": "what did Tom do when the water bill came he got kind of riled",
+          "question": "What did Tom do when the water bill came he got kind of riled",
           "options": [
             "injured",
             "happy",
@@ -1414,77 +1219,17 @@
             "wet"
           ],
           "correct": "mad",
-          "explanation": "The word \"riled\"(often used as \"riled up\") is an informal term meaning to be irritated,vexed, or angry.When Tom received the water bill,his reaction of getting“kind ofriled\"indicates he became annoyed or mad about it. emotional state of agitation,not physical harm or a bodily wound."
-        },
-        {
-          "n": 74,
-          "question": "Adam wasn't able to go with us.",
-          "options": [
-            "He couldn't go.",
-            "He didn't want to go.",
-            "He wasn't ready to go.",
-            "He wasn't supposed to go."
-          ],
-          "correct": "He couldn't go.",
-          "explanation": "The phrase\"wasn't able to\" is the past tense form of \"unable to,\" indicating a lack of ability, capability, or possibility. In English,\"couldn't\" (the contraction of \"could not\") is the corresponding modal verb used to express a lack of ability in the past. Therefore, \"He couldn't go\"is the direct synonym for\"Adam wasn't able to go.\" \"He didn't want to go.\"is incorrect because\"want\" refers to a person's desire or preference,whereas He wasn't ready to go. He wasn't supposed to go."
-        },
-        {
-          "n": 76,
-          "question": "They're planning ________ on the trip tomorrow.",
-          "options": [
-            "to leave",
-            "be leaving",
-            "leaving",
-            "will leave",
-            "required infinitive marker\"to\"（it would need tobe"
-          ],
-          "correct": "to leave",
-          "explanation": "In English grammar, the verb“plan\" is typically followed by the to-infinitive form (\"to\" + base verb) when it refers to an intention or a future action.In this sentence,\"They're planning to leave\"correctly completes the structure to show that departure is the intended action for tomorrow's trip. \"be leaving\" is incorrect because it is missing the \"planning to be leaving\"to be grammatically viable in"
-        },
-        {
-          "n": 81,
-          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
-          "options": [
-            "a duty",
-            "represents a responsibility or requirement,nota",
-            "a moral",
-            "an office",
-            "a problem"
-          ],
-          "correct": "a duty",
-          "explanation": "In this context,the word“obligation”means a moral or legal requirement or duty. An elected official is bound by their position to serve and represent the interests ofthe people who voted for them. Therefore, \"a duty\" is the most accurate synonym for \"obligation.\" 'a problem\"is incorrect because an obligation difficulty or a negative issue to be resolved."
-        },
-        {
-          "n": 82,
-          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
-          "options": [
-            "He got them.",
-            "He left them there."
-          ],
-          "correct": "He got them.",
-          "explanation": "The phrasal verb“pick up\"in this context means to retrieve or collect something that was previously left at a specific location, such as a laundry or a dry cleaner. Therefore, saying the student “got them\" is the most accurate synonym for the action performed. \"He left them there.\"is incorrect because it describes the opposite action; leaving items signifies dropping them off rather than retrieving them. He got them. He saw them."
+          "explanation": "(Explanation screen not captured yet.)"
         },
         {
           "n": 86,
-          "question": "The letter may ________ in the mail.",
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
           "options": [
-            "lost",
-            "be losing",
-            "be lost",
-            "lost"
-          ],
-          "correct": "be lost",
-          "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performing it. In English,when using a modal verb like“may\"in the passive voice, the grammatical \"Lost\" is the past participle of the verb \"lose.\" Therefore,“may be lost”correctly expresses the possibility that the letter will go missing during transit."
-        },
-        {
-          "n": 88,
-          "question": "car.\"",
-          "options": [
-            "He agreed that he would drive the",
+            "belost",
             "(Options screen not captured yet.)"
           ],
-          "correct": "He agreed that he would drive the",
-          "explanation": "willingness or commitment to perform a specific action. In English grammar,the structure'agree + to- infinitive'expresses apromiseor consent to do something.Therefore,\"He agreed that he would drive the car\" is the most accurate paraphrase, as it captures the intent and future-oriented commitment of the original sentence. car. He agreed that anyone could drive the car. He agreed that he would drive the car."
+          "correct": "belost",
+          "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performing it. In English,when using a modal verb like“may\"in the passive voice, the grammatical \"Lost\" is the past participle of the verb \"lose.\" Therefore,“may be lost”correctly expresses the possibility that the letter will go missing during transit."
         },
         {
           "n": 92,
@@ -1496,31 +1241,7 @@
             "mind"
           ],
           "correct": "mind",
-          "explanation": "The phrase \"Do you mind if...?\" is a standard idiomatic expression used to ask for permission politely. It literally asks if the other person would be bothered or annoyed by the proposed action (turning on the TV). In military or shared environments, using polite requests like this maintains proper social decorum. \"want\"is incorrect because the structure“Do you want if..\" is ungrammatical. The correct structure"
-        },
-        {
-          "n": 94,
-          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
-          "options": [
-            "more like",
-            "like to",
-            "as likely",
-            "like most"
-          ],
-          "correct": "more like",
-          "explanation": "The sentence compares a director's new film to their previous projects. The word\"like\"acts as a preposition here to show similarity. When comparing two things to say one resembles the other to a greater degree, the comparative form \"more like\" is used. \"like most\" is incorrect because it is missing necessary components (such as \"most like\"or \"like most of\") to function correctly in this comparative"
-        },
-        {
-          "n": 95,
-          "question": "If you stop at the BX, ________ me some cigarettes.",
-          "options": [
-            "buy",
-            "would buy",
-            "should have bought",
-            "will buy"
-          ],
-          "correct": "will buy",
-          "explanation": "This sentence uses a conditional structure to express a request or command. When the 'if' clause is in the present simple tense (lf you stop\") and the result is an instruction for the listener,the imperative mood is used in the main clause. The imperative form is the base verb without a subject. In a military context, the BX (Base Exchange) is a department store found on air force bases where personnel can purchase various items."
+          "explanation": "(Explanation screen not captured yet.)"
         },
         {
           "n": 96,
@@ -1538,45 +1259,31 @@
           "n": 97,
           "question": "Two different scales are used to measure atmospheric temperatures. The older Fahrenheit scale is used mostly by the general public of the US and certain other countries, while the Celsius scale, or centigrade scale, is used by scientists nearly everywhere. The latter scale records freezing temperature as 0 degrees. According to this paragraph, the Celsius scale",
           "options": [
-            "measures temperatures in",
-            "different scale",
-            "is the same as the Fahrenheit",
-            "scale",
+            "measures temperatures in different scale",
+            "is the same as the Fahrenheit scale",
             "registers the freezing point at zero",
             "is not often used by scientists"
           ],
           "correct": "registers the freezing point at zero",
           "explanation": "A reading-comprehension item. \"The latter\" refers to the second of two things just mentioned, i.e. the Celsius scale, and the paragraph says it \"records freezing temperature as 0 degrees,\" which is paraphrased as \"registers the freezing point at zero.\" \"Is not often used by scientists\" contradicts the text (scientists use Celsius \"nearly everywhere\"); \"is the same as the Fahrenheit scale\" is wrong because the paragraph presents them as two different scales; and \"measures temperatures in different scale\" is vague and does not state a fact given in the paragraph."
-        },
-        {
-          "n": 98,
-          "question": "Ms. Warren, the newly hired teacher, was asked to speak extemp ________ concerning her teaching experiences while in China.",
-          "options": [
-            "-oraneity",
-            "-orary",
-            "-orize",
-            "-oraneously"
-          ],
-          "correct": "-oraneously",
-          "explanation": "The sentence requires an adverb to modify the verb \"speak.Theword\"extemporaneously\"means to speak or perform without preparation (impromptu). In a professional or military instructional environment,this term refers to the ability to deliver information or briefings effectively without relying on a pre-written script or extensive notes. noun and cannot modify theverb“speak\"in this"
-        },
-        {
-          "n": 100,
-          "question": "When the continent was first discovered, there were vast tracts of unexplored",
-          "options": [
-            "district",
-            "inhabitants",
-            "livestock",
-            "wilderness"
-          ],
-          "correct": "wilderness",
-          "explanation": "The sentence describes a continent at the time of its initial discovery, implying that the land was in its natural,untouched state. The term\"wilderness\" refers to a wild,uncultivated, and uninhabited region. The phrase \"vast tracts of\" is a common English collocation used to describe large areas of land, particularly when referring to nature or unexplored territory. \"district\"is incorrect because a district is a specific"
         }
       ]
     },
     {
       "form": "66",
       "questions": [
+        {
+          "n": 58,
+          "question": "What are you going to do I'm going to shave",
+          "options": [
+            "fork",
+            "pen",
+            "truck",
+            "razor"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
         {
           "n": 61,
           "question": "what happened to Angela she Twisted her knee what did the woman say about Angela",
