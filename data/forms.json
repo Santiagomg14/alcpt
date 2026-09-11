@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 273
+    "total_questions": 274
   },
   "forms": [
     {
@@ -1252,6 +1252,18 @@
           ],
           "correct": "mind",
           "explanation": "The phrase \"Do you mind if...?\" is a standard idiomatic expression used to ask for permission politely. It literally asks if the other person would be bothered or annoyed by the proposed action (turning on the TV). In military or shared environments, using polite requests like this maintains proper social decorum. \"want\"is incorrect because the structure“Do you want if..\" is ungrammatical. The correct structure"
+        },
+        {
+          "n": 94,
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "options": [
+            "more like",
+            "like to",
+            "as likely",
+            "like most"
+          ],
+          "correct": "more like",
+          "explanation": "The sentence compares a director's new film to their previous projects. The word\"like\"acts as a preposition here to show similarity. When comparing two things to say one resembles the other to a greater degree, the comparative form \"more like\" is used. \"like most\" is incorrect because it is missing necessary components (such as \"most like\"or \"like most of\") to function correctly in this comparative"
         },
         {
           "n": 95,
