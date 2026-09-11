@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 308
+    "total_questions": 309
   },
   "forms": [
     {
@@ -2353,6 +2353,16 @@
           ],
           "correct": "(Not shown — captured during the test, before the review screen.)",
           "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 26,
+          "question": "The children will slide on the ice",
+          "options": [
+            "They will slip.",
+            "They will sit."
+          ],
+          "correct": "They will slip.",
+          "explanation": "The verb“slide\"means to move smoothly along a surface while maintaining continuous contact with it. Among the choices provided, \"slip\" is the most appropriate synonym in the context of moving on ice, as it describes the action of sliding unintentionally or moving easily over a slick surface. \"They will sit.\" is incorrect because sitting involves resting on a surface and remaining stationary,which contradicts the moye ment implied by sliding. iiey Willldik."
         },
         {
           "n": 29,
