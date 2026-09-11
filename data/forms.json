@@ -18,7 +18,7 @@
       "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 275
+    "total_questions": 277
   },
   "forms": [
     {
@@ -1235,8 +1235,7 @@
           "n": 86,
           "question": "(Question stem not captured yet — only the explanation screen was sent.)",
           "options": [
-            "belost",
-            "(Options screen not captured yet.)"
+            "belost"
           ],
           "correct": "belost",
           "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performing it. In English,when using a modal verb like“may\"in the passive voice, the grammatical \"Lost\" is the past participle of the verb \"lose.\" Therefore,“may be lost”correctly expresses the possibility that the letter will go missing during transit."
@@ -1290,6 +1289,18 @@
           "explanation": "A reading-comprehension item. \"The latter\" refers to the second of two things just mentioned, i.e. the Celsius scale, and the paragraph says it \"records freezing temperature as 0 degrees,\" which is paraphrased as \"registers the freezing point at zero.\" \"Is not often used by scientists\" contradicts the text (scientists use Celsius \"nearly everywhere\"); \"is the same as the Fahrenheit scale\" is wrong because the paragraph presents them as two different scales; and \"measures temperatures in different scale\" is vague and does not state a fact given in the paragraph."
         },
         {
+          "n": 98,
+          "question": "Ms. Warren, the newly hired teacher, was asked to speak extemp ________ concerning her teaching experiences while in China.",
+          "options": [
+            "-oraneity",
+            "-orary",
+            "-orize",
+            "-oraneously"
+          ],
+          "correct": "-oraneously",
+          "explanation": "The sentence requires an adverb to modify the verb \"speak.Theword\"extemporaneously\"means to speak or perform without preparation (impromptu). In a professional or military instructional environment,this term refers to the ability to deliver information or briefings effectively without relying on a pre-written script or extensive notes. -oraneity\"is incorrect because\"extemporaneity\"is a noun and cannot modify theverb“speak\"in this"
+        },
+        {
           "n": 100,
           "question": "When the continent was first discovered, there were vast tracts of unexplored",
           "options": [
@@ -1299,13 +1310,23 @@
             "wilderness"
           ],
           "correct": "wilderness",
-          "explanation": "(Explanation screen not captured yet.)"
+          "explanation": "The sentence describes a continent at the time of its initial discovery, implying that the land was in its natural,untouched state. The term\"wilderness\" refers to a wild,uncultivated, and uninhabited region. The phrase \"vast tracts of\" is a common English collocation used to describe large areas of land, particularly when referring to nature or unexplored territory. \"district\"is incorrect because a district is a specific"
         }
       ]
     },
     {
       "form": "66",
       "questions": [
+        {
+          "n": 46,
+          "question": "Tom says that a great deal of cattle raising is carried on in the midwest how many cattle are raised their",
+          "options": [
+            "a large amount",
+            "different kinds"
+          ],
+          "correct": "a large amount",
+          "explanation": "The phrase \"a great deal\" is a common English idiom used as a quantifier to mean a large quantity,a lot,or much.In the sentence,it describes the volume of cattle raising occurring in the Midwest. Therefore, when asked\"how many,\"the phrase\"a large amount” correctly reflects the meaning of the original statement. \"different kinds\"is incorrect because\"a great deal\" refers to the quantity or magnitude of an activity,not"
+        },
         {
           "n": 47,
           "question": "Mary told Bob that she had heard the record at home what did Mary say",
