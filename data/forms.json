@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 283
+    "total_questions": 284
   },
   "forms": [
     {
@@ -1219,6 +1219,18 @@
             "as likely"
           ],
           "correct": "more like",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 53,
+          "question": "we succeeded because we had determination",
+          "options": [
+            "We were not interested.",
+            "We made excuses.",
+            "We didn't give up.",
+            "We needed motivation."
+          ],
+          "correct": "We didn't give up.",
           "explanation": "(Explanation screen not captured yet.)"
         },
         {
