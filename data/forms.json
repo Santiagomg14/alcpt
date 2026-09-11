@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 276
+    "total_questions": 277
   },
   "forms": [
     {
@@ -1243,6 +1243,19 @@
           ],
           "correct": "mad",
           "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 81,
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "options": [
+            "a duty",
+            "represents a responsibility or requirement,nota",
+            "a moral",
+            "an office",
+            "a problem"
+          ],
+          "correct": "a duty",
+          "explanation": "In this context,the word“obligation”means a moral or legal requirement or duty. An elected official is bound by their position to serve and represent the interests ofthe people who voted for them. Therefore, \"a duty\" is the most accurate synonym for \"obligation.\" 'a problem\"is incorrect because an obligation difficulty or a negative issue to be resolved."
         },
         {
           "n": 86,
