@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 288
+    "total_questions": 289
   },
   "forms": [
     {
@@ -1220,6 +1220,18 @@
           ],
           "correct": "more like",
           "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 46,
+          "question": "4610 new words appeared on the test Esther missed 4 of them how many did she get correct",
+          "options": [
+            "four",
+            "ten",
+            "six",
+            "fourteen"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
         },
         {
           "n": 47,
