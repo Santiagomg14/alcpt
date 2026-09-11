@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 289
+    "total_questions": 290
   },
   "forms": [
     {
@@ -1220,6 +1220,16 @@
           ],
           "correct": "more like",
           "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 45,
+          "question": "45my grandmother needs to take a snooze",
+          "options": [
+            "She'll go to sleep.",
+            "(Options screen not captured yet.)"
+          ],
+          "correct": "She'll go to sleep.",
+          "explanation": "The idiomatic expression\"to take a snooze\"means to take a short nap or to sleep for a brief period. In the context of the sentence, if the grandmother needs to take a snooze,it implies she is tired and intends to rest or sleep. \"She'll go shopping.\" is incorrect because \"snooze\" refers to sleeping and has nothing to do with buying goods or visiting stores. \"sr eng uu steep. She'll go to walking."
         },
         {
           "n": 46,
