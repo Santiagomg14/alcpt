@@ -15,10 +15,11 @@
       "82",
       "87",
       "Technical & Action Verbs",
-      "66"
+      "66",
+      "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 298
+    "total_questions": 301
   },
   "forms": [
     {
@@ -1210,11 +1211,37 @@
       "form": "65",
       "questions": [
         {
+          "n": 46,
+          "question": "4610 new words appeared on the test Esther missed 4 of them how many did she get correct",
+          "options": [
+            "four",
+            "ten",
+            "six",
+            "fourteen"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 47,
+          "question": "Sergeant James gave his captain his reason for being late what did Sergeant James tell him",
+          "options": [
+            "how he got there",
+            "when he would be late",
+            "where he was late",
+            "where he was going later"
+          ],
+          "correct": "how he got there",
+          "explanation": "In English,a\"reason\"is an explanation or justification for why something occurred.When Sergeant James gives his \"reason for being late,he is explaining the circumstances that caused the delay. Among the provided choices, \"how he got there\"is the only option that can serve as an (forexample,if hewas late because his car broke down and he had to walk). In military communication,providing a reason for being late usually involves detailing the obstacles encountered during travel or the specific cause of the tardiness."
+        },
+        {
           "n": 48,
           "question": "We must de-emphasize War what must we do",
           "options": [
+            "make war less expensive",
             "make war less important",
-            "make war less expensive"
+            "make war less dangerous",
+            "make war less destructive"
           ],
           "correct": "make war less important",
           "explanation": "The word \"de-emphasize\" is formed by adding the prefix\"de-\"(meaning to reverse or reduce) to the word \"emphasize\"(meaning to give special importance or prominence to something). Therefore, to de-emphasizewar means to make it less important or to focus on it less in a strategic or social context. \"make war less expensive”is incorrect because\"de- emphasize refers to the significance or attention"
@@ -2236,6 +2263,24 @@
           ],
           "correct": "have gotten",
           "explanation": "This sentence requires a past modal construction because the context \"when she was shopping\" indicates an action that took place in the past. To express a past obligation, recommendation, or a missed opportunity that did not happen, English uses the structure should + have + past participle. In this case, \"should have gotten\" indicates that Mary was supposed to buy film in the past, but she didn't. \"had gotten\" is incorrect because modal verbs like \"should\" cannot be followed by \"had\"."
+        }
+      ]
+    },
+    {
+      "form": "72",
+      "questions": [
+        {
+          "n": 9,
+          "question": "Betty wants some rice",
+          "options": [
+            "food",
+            "-\"warer-",
+            "help",
+            "rest",
+            "water"
+          ],
+          "correct": "food",
+          "explanation": "Rice is a cereal grain that isa staple item of nourishment globally. In this context,\"rice\" is a specific type of \"food.\" The statement indicates that Betty desires something to eat. \"rest\"is incorrect because rice is a physical item consumed for nutrition,while rest refers to sleep or a period of inactivity to recover strength. 'water\" is incorrect because rice is a solid grain,"
         }
       ]
     },
