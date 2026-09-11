@@ -45,7 +45,14 @@ episodio).
 - `scripts/build_podcasts.py` — guiones + MP3 con edge-tts, solo lo que cambió.
 - `scripts/build_artifact.py` — ahora genera las tres pestañas.
 - `bot/alcpt_bot.py` — acepta enlaces de thoughtco.com y `/lecturas`; `rebuild()`
-  corre `build_podcasts.py` antes del cuaderno.
+  corre `build_podcasts.py` antes del cuaderno. Las fotos van a `handle_image()`
+  → `scripts/parse_capture.py` (local); `handle_image_claude()` es el camino viejo.
+- `scripts/ocr_capture.py` — OCR con RapidOCR (escala de grises, 1400 px de
+  ancho, agrupa fragmentos por renglón, devuelve texto + geometría + confianza).
+- `scripts/parse_capture.py` — reglas sobre el OCR: `Form NN`, `Question N`,
+  opciones `A.`/`b)`/sin letra, bloque `Explanation`; correcta por saturación
+  verde de la franja de cada opción; `wordsegment` despega palabras; escribe en
+  `forms.json` (dedupe por form+n, completa las «Not shown» si llega la de repaso).
 
 ## 4. Qué has cambiado
 
@@ -92,6 +99,20 @@ Sesión del 10 sep 2026 (servidor `server`, Claude Code):
   con cifras falsas: las cuatro se corrigieron. **No cambiar esas frases del §2
   sin ajustar los patrones.**
 
+Sesión del 11 sep 2026 (servidor `server`):
+
+- **Capturas sin Claude Code.** Petición de Brayhan para ahorrar tokens. No hay
+  `sudo` en el servidor (Tesseract descartado); `rapidocr-onnxruntime` va por pip
+  con sus modelos. Probado con 3 capturas sintéticas (repaso con verde, examen sin
+  respuesta, imagen ajena) y con `handle_image()` simulado: agrega, marca «Not
+  shown», rechaza la ajena y no duplica. **No se ha probado con una captura real**:
+  el parser asume el diseño de la app (encabezado «Form NN», opciones en tarjetas,
+  la correcta en verde). Umbrales en `highlighted_index()` (sat ≥ 12, +8 sobre la
+  mediana, tira a verde) y `MIN_CONFIDENCE = 0.80`.
+- `CAPTURE_FALLBACK` en `.env` (`off` por defecto, `claude` para el camino viejo).
+- Diagramas de arquitectura (actual vs propuesta) publicados como artifact:
+  https://claude.ai/code/artifact/e7308c13-eb52-40b0-b92f-ad0c430fdc88
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,
@@ -119,6 +140,10 @@ Sesión del 10 sep 2026 (servidor `server`, Claude Code):
 
 ## 7. Qué planeas hacer después
 
+- **Calibrar el parser con capturas reales**: pedirle a Brayhan 5 capturas (de
+  repaso y de examen), correr `python scripts/parse_capture.py inbox/x.jpg --dry-run`
+  y ajustar regex/umbrales. Hasta entonces, tratar `forms.json` con cautela tras
+  cada captura (el bot muestra lo que guardó).
 - Probar el bot actualizado mandándole un enlace de ThoughtCo y `/lecturas`.
   Revisar que `inbox/readings/` se cree solo en el servidor (está en `.gitignore`).
 - Mandarle a Brayhan el enlace de GitHub Pages con `#podcasts` y pedirle

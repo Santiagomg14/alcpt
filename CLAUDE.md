@@ -93,6 +93,16 @@ experticia a propósito.
   Brayhan quiere alguna, la pide y entra por la regla 1.
 - El bot también las trae: un enlace de thoughtco.com, o `/lecturas <sección> <n>`.
 
+### 10. Capturas por Telegram: procesamiento local
+Desde el 11 sep 2026 el bot NO le pasa las capturas a Claude Code. La cadena es
+`scripts/ocr_capture.py` (RapidOCR, en el servidor) → `scripts/parse_capture.py`
+(reglas: formulario, número, enunciado, opciones; respuesta correcta por el color de
+la opción resaltada; explicación transcrita tal cual) → `data/forms.json` sin duplicar.
+Cero tokens y ~3 s por captura. Si el parser no puede, el bot avisa con el texto OCR
+y deja `inbox/<captura>.txt`; solo con `CAPTURE_FALLBACK=claude` en `.env` recurre a
+Claude Code. La regla 2 (filtrar vocabulario y preguntar a Brayhan) sigue igual: el
+parser no toca `vocabulary.json`.
+
 ### 9. Podcasts (pestaña «Podcasts»)
 `data/podcasts.json` + `docs/audio/*.mp3`, generados por `scripts/build_podcasts.py` con
 **edge-tts** (voces `en-US-AndrewNeural` y `es-CO-SalomeNeural`, sin clave ni costo).
@@ -125,6 +135,8 @@ alcpt/
 │   ├── build_artifact.py  <- cuaderno con pestañas Cuaderno / Lecturas / Podcasts
 │   ├── build_podcasts.py  <- guiones + MP3 con edge-tts (≤10 min por episodio)
 │   ├── fetch_readings.py  <- trae y condensa artículos de ThoughtCo
+│   ├── ocr_capture.py     <- OCR local de una captura (RapidOCR, sin red)
+│   ├── parse_capture.py   <- captura → pregunta en forms.json, sin Claude Code
 │   └── add_word.py        <- agrega palabras por línea de comandos
 ├── bot/
 │   ├── alcpt_bot.py       <- bot de Telegram (portátil, sin rutas fijas)

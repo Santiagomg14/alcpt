@@ -63,7 +63,8 @@ def load_env():
             k, v = line.split("=", 1)
             env[k.strip()] = v.strip().strip('"').strip("'")
     # las variables reales del sistema tienen prioridad sobre el archivo
-    for k in ("TELEGRAM_TOKEN", "ALLOWED_USER_IDS", "CLAUDE_BIN", "GIT_PUSH", "CLAUDE_MODEL"):
+    for k in ("TELEGRAM_TOKEN", "ALLOWED_USER_IDS", "CLAUDE_BIN", "GIT_PUSH", "CLAUDE_MODEL",
+              "CAPTURE_FALLBACK"):
         if os.environ.get(k):
             env[k] = os.environ[k]
     return env
@@ -74,6 +75,10 @@ TOKEN = CFG.get("TELEGRAM_TOKEN", "")
 ALLOWED = {int(x) for x in CFG.get("ALLOWED_USER_IDS", "").replace(" ", "").split(",") if x}
 GIT_PUSH = CFG.get("GIT_PUSH", "1") not in ("0", "false", "no")
 CLAUDE_MODEL = CFG.get("CLAUDE_MODEL", "")
+# Qué hacer cuando el procesador local no logra estructurar una captura:
+#   "off"    (por defecto) avisa y deja el texto OCR en inbox/, sin gastar tokens
+#   "claude" le pasa la imagen a Claude Code como antes
+CAPTURE_FALLBACK = CFG.get("CAPTURE_FALLBACK", "off").strip().lower()
 
 
 def find_claude():
@@ -356,9 +361,52 @@ def handle_word(chat_id, text):
     finish(chat_id, out or f"Agregada «{text}».", f"Vocabulario: agrega «{text}»")
 
 
+PARSE_SCRIPT = SCRIPTS / "parse_capture.py"
+
+
 def handle_image(chat_id, path):
-    rel = path.relative_to(REPO).as_posix()
+    """Captura del ALCPT → pregunta en forms.json, todo en el servidor.
+
+    OCR con RapidOCR y parser de reglas (scripts/parse_capture.py): la imagen
+    no sale del equipo ni pasa por Claude Code. Si el parser no puede
+    estructurarla, se avisa con el texto leído y, solo si CAPTURE_FALLBACK es
+    "claude", se recurre al camino antiguo."""
     send(chat_id, "Captura recibida, leyéndola…")
+    res = run([sys.executable, str(PARSE_SCRIPT), str(path), "--json"], timeout=300)
+    out = {}
+    try:
+        out = json.loads(res.stdout.strip().splitlines()[-1]) if res.stdout.strip() else {}
+    except (json.JSONDecodeError, IndexError):
+        out = {}
+    if res.returncode == 0 and out.get("ok"):
+        q = out.get("question", {})
+        summary = out.get("message", "Captura procesada.")
+        if q:
+            summary += f"\n\n{q.get('question', '')}\n" + "\n".join(
+                ("✓ " if o == q.get("correct") else "· ") + o for o in q.get("options", []))
+        log(f"captura {path.name}: {out.get('message')} (OCR {out.get('confidence')})")
+        finish(chat_id, summary, f"ALCPT: procesa {path.name} (OCR local)")
+        return
+
+    reason = out.get("reason") or (res.stderr or res.stdout or "error desconocido").strip()[-400:]
+    text = (out.get("text") or "").strip()
+    log(f"captura {path.name}: no estructurada: {reason}")
+    if CAPTURE_FALLBACK == "claude":
+        send(chat_id, f"El procesador local no pudo ({reason}). Se la paso a Claude Code…")
+        handle_image_claude(chat_id, path)
+        return
+    lines = [f"No pude estructurar la captura: {reason}",
+             f"El texto leído quedó en inbox/{path.with_suffix('.txt').name}."]
+    if text:
+        lines += ["", "Lo que leí:", text[:1200]]
+    lines += ["", "Si es una captura válida del ALCPT, mándala de nuevo más nítida o "
+                  "completa (encabezado con el formulario y todas las opciones)."]
+    send(chat_id, "\n".join(lines))
+
+
+def handle_image_claude(chat_id, path):
+    """Camino antiguo: Claude Code abre la imagen (cuesta tokens)."""
+    rel = path.relative_to(REPO).as_posix()
     prompt = (
         f"Procesa la captura del ALCPT que está en {rel}, siguiendo CLAUDE.md.\n"
         "- Identifica a qué formulario pertenece (lo dice el encabezado de la app).\n"

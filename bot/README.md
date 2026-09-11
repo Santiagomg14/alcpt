@@ -13,7 +13,7 @@ cambia entre equipos es el archivo `.env`.
 |---|---|
 | `scuttlebutt` | Traduce con Claude Code y la agrega a `personal` |
 | `scuttlebutt = rumor, chisme` | La agrega tal cual, sin usar IA |
-| Una captura del examen | Extrae número, enunciado, opciones, respuesta y explicación |
+| Una captura del examen | La lee con OCR local y la guarda en `forms.json` (sin Claude Code) |
 | Un enlace de `thoughtco.com` | Descarga el artículo, lo condensa a nivel B2 y lo publica en Lecturas (con su podcast) |
 | `/lecturas math 2` | Trae 2 artículos nuevos de esa sección y los condensa |
 | `/estado` | Cuántas palabras, preguntas y lecturas hay |
@@ -131,6 +131,15 @@ Antes de cada commit el bot también refresca en `handoff.md` la línea
 «Última actualización» y los conteos en negrita del §2 (palabras, preguntas,
 lecturas y episodios). Solo eso: el resto del handoff se sigue escribiendo a
 mano en cada sesión.
+
+**Las capturas no pasan por Claude Code.** El bot llama a
+`scripts/parse_capture.py`, que hace OCR con RapidOCR en el propio equipo, arma
+la pregunta con reglas (la respuesta correcta se detecta por el color de la opción
+resaltada) y la escribe en `data/forms.json` sin duplicar. Tarda unos 3 segundos y
+no gasta tokens. Si no logra estructurarla, te responde con el texto que leyó y
+deja `inbox/<captura>.txt`; con `CAPTURE_FALLBACK=claude` en `.env` en ese caso
+le pasa la imagen a Claude Code como antes. Necesita `rapidocr-onnxruntime` y
+`wordsegment` (están en `requirements.txt` del repo, no en `bot/requirements.txt`).
 
 Las capturas se guardan en `inbox/`, que está en `.gitignore`: no viajan al
 repositorio, solo la información ya extraída en los JSON.

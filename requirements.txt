@@ -4,3 +4,5 @@ requests>=2.31
 beautifulsoup4>=4.12
 edge-tts>=7.0
 mutagen>=1.47
+rapidocr-onnxruntime>=1.4   # OCR local de las capturas (scripts/ocr_capture.py)
+wordsegment>=1.3            # separa palabras que el OCR pega
