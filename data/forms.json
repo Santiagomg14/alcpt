@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 310
+    "total_questions": 311
   },
   "forms": [
     {
@@ -2375,6 +2375,18 @@
           ],
           "correct": "put them in order",
           "explanation": "The verb\"arrange” means to organize, classify, or place items in a specific sequence or pattern. In this context,asking someone to arrange objects on a table is synonymous with asking them toput those objects in order. This is a common action verb used gear, or logistical items. \"clean them carefully\"is incorrect because arranging refers to the physical placement and organization of"
+        },
+        {
+          "n": 32,
+          "question": "Bill asked Jane to meet him for breakfast where will Bill and Jane meet",
+          "options": [
+            "for breakfast",
+            "at 7 a.m.",
+            "at the cafeteria",
+            "bacon and eggs"
+          ],
+          "correct": "at the cafeteria",
+          "explanation": "(Explanation screen not captured yet.)"
         },
         {
           "n": 46,
