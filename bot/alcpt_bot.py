@@ -66,7 +66,7 @@ def load_env():
             env[k.strip()] = v.strip().strip('"').strip("'")
     # las variables reales del sistema tienen prioridad sobre el archivo
     for k in ("TELEGRAM_TOKEN", "ALLOWED_USER_IDS", "CLAUDE_BIN", "GIT_PUSH", "CLAUDE_MODEL",
-              "CAPTURE_FALLBACK", "FLUSH_DELAY"):
+              "CAPTURE_FALLBACK", "FLUSH_DELAY", "VOCAB_POLISH"):
         if os.environ.get(k):
             env[k] = os.environ[k]
     return env
@@ -148,14 +148,19 @@ def download_file(file_id, dest_dir):
 
 
 # --- Claude Code en modo no interactivo ----------------------------------------
-def ask_claude(prompt, timeout=900):
-    """Ejecuta Claude Code sin interacción, dentro del repo, con permiso solo para editar."""
+def ask_claude(prompt, timeout=900, tools=True):
+    """Ejecuta Claude Code sin interacción, dentro del repo, con permiso solo para
+    editar. Con tools=False no puede tocar archivos: solo responde texto (barato,
+    para pulir o traducir lo que el bot ya extrajo)."""
     if not CLAUDE:
         return False, ("No encuentro el ejecutable de Claude Code en este equipo. "
                        "Instálalo o define CLAUDE_BIN en el .env.")
-    cmd = [CLAUDE, "-p", prompt,
-           "--permission-mode", "acceptEdits",
-           "--allowed-tools", "Read", "Edit", "Write", "Glob", "Grep"]
+    cmd = [CLAUDE, "-p", prompt]
+    if tools:
+        cmd += ["--permission-mode", "acceptEdits",
+                "--allowed-tools", "Read", "Edit", "Write", "Glob", "Grep"]
+    else:
+        cmd += ["--allowed-tools", ""]
     if CLAUDE_MODEL:
         cmd += ["--model", CLAUDE_MODEL]
     try:
@@ -405,6 +410,8 @@ HELP = (
     "• una palabra o expresión en inglés → la traduzco y la agrego\n"
     "• palabra = traducción → la agrego tal cual, sin IA\n"
     "• una captura del examen → la leo aquí mismo (sin IA) y la guardo\n"
+    "• una captura con una lista término = significado (TikTok, apuntes) → la\n"
+    "   agrego al vocabulario y Claude repone tildes y matices\n"
     "   manda las DOS pantallas de cada ítem: la de la pregunta (opciones con la\n"
     "   correcta en verde) y la de la explicación, desplazada arriba del todo\n\n"
     "Comandos:\n"
@@ -482,6 +489,10 @@ def handle_image(chat_id, path):
 
     reason = out.get("reason") or (res.stderr or res.stdout or "error desconocido").strip()[-400:]
     text = (out.get("text") or "").strip()
+    # ¿Es una lista de vocabulario (TikTok, apuntes) y no una pantalla del examen?
+    if "formulario" in reason or "OCR poco fiable" not in reason:
+        if handle_vocab_image(chat_id, path):
+            return
     log(f"captura {path.name}: no estructurada: {reason}")
     if CAPTURE_FALLBACK == "claude":
         send(chat_id, f"El procesador local no pudo ({reason}). Se la paso a Claude Code…")
@@ -494,6 +505,86 @@ def handle_image(chat_id, path):
     lines += ["", "Si es una captura válida del ALCPT, mándala de nuevo más nítida o "
                   "completa (encabezado con el formulario y todas las opciones)."]
     send(chat_id, "\n".join(lines))
+
+
+VOCAB_SCRIPT = SCRIPTS / "parse_vocab_capture.py"
+VOCAB_POLISH = CFG.get("VOCAB_POLISH", "1") not in ("0", "false", "no")
+
+
+def handle_vocab_image(chat_id, path):
+    """Lista término → significado (p. ej. phrasal verbs de TikTok). Se extrae en
+    local y se agrega a `personal`; luego Claude, solo con texto, repone tildes
+    y matices. Devuelve True si la captura era de este tipo."""
+    res = run([sys.executable, str(VOCAB_SCRIPT), str(path), "--json"], timeout=300)
+    try:
+        out = json.loads(res.stdout.strip().splitlines()[-1]) if res.stdout.strip() else {}
+    except (json.JSONDecodeError, IndexError):
+        out = {}
+    if res.returncode != 0 or not out.get("ok"):
+        return False
+    added, skipped = out.get("added", []), out.get("skipped", [])
+    lines = [f"Lista de vocabulario: {len(added)} entrada{'s' if len(added) != 1 else ''} nueva{'s' if len(added) != 1 else ''}."]
+    lines += [f"{e['n']}. {e['en']} = {e['es']}" for e in added]
+    lines += [f"(ya estaba) {s['en']}: {s['why']}" for s in skipped]
+    log(f"captura {path.name}: vocabulario, {len(added)} nuevas, {len(skipped)} repetidas")
+    if added and VOCAB_POLISH and CLAUDE:
+        polished = polish_entries(added)
+        if polished:
+            lines.append("")
+            lines.append("Pulidas por Claude (tildes y matices):")
+            lines += [f"{e['n']}. {e['en']} = {e['es']}" for e in polished]
+    if not added:
+        send(chat_id, "\n".join(lines) + "\n\n(Ya estaban todas; no hay nada nuevo que subir.)")
+        return True
+    finish(chat_id, "\n".join(lines), f"Vocabulario: {len(added)} entradas desde captura {path.name}")
+    return True
+
+
+def polish_entries(entries):
+    """Claude solo recibe texto: las parejas leídas por OCR. Devuelve JSON con la
+    misma numeración y `es` corregido y enriquecido; el bot lo aplica. Sin
+    herramientas ni lectura del diccionario: unos cientos de tokens."""
+    listado = "\n".join(f"{e['n']}. {e['en']} = {e['es']}" for e in entries)
+    prompt = (
+        "Estas entradas salieron por OCR de una captura de vocabulario inglés→español "
+        "(sin tildes y con alguna letra perdida). Para cada una devuelve el campo `es` "
+        "corregido: repón tildes y letras («Legar» → «Llegar»), conserva el significado "
+        "que traía la captura como primera acepción y añade, separados por punto y coma, "
+        "otras acepciones y matices útiles para un estudiante de nivel B2 (registro, "
+        "ejemplo breve en inglés entre paréntesis si ayuda). No cambies `en` salvo para "
+        "corregir mayúsculas u ortografía evidente.\n\n"
+        f"{listado}\n\n"
+        "Responde SOLO con un JSON: una lista de objetos {\"n\": …, \"en\": …, \"es\": …}, "
+        "sin texto antes ni después."
+    )
+    ok, out = ask_claude(prompt, timeout=300, tools=False)
+    if not ok:
+        log(f"pulido con Claude falló: {out[:200]}")
+        return []
+    m = re.search(r"\[.*\]", out, re.S)
+    if not m:
+        log("pulido con Claude: respuesta sin JSON")
+        return []
+    try:
+        fixed = {int(x["n"]): x for x in json.loads(m.group(0))}
+    except (ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
+        log(f"pulido con Claude: JSON inválido ({exc})")
+        return []
+    vocab_path = DATA / "vocabulary.json"
+    d = json.loads(vocab_path.read_text(encoding="utf-8"))
+    applied = []
+    for s in d["sections"]:
+        for e in s["entries"]:
+            f = fixed.get(e["n"])
+            if f and e.get("ocr") and f.get("es"):
+                e["es"] = str(f["es"]).strip()
+                if f.get("en"):
+                    e["en"] = str(f["en"]).strip()
+                e.pop("ocr", None)
+                applied.append(e)
+    if applied:
+        vocab_path.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return applied
 
 
 def handle_image_claude(chat_id, path):

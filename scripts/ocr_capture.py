@@ -27,6 +27,12 @@ from pathlib import Path
 
 from PIL import Image, ImageOps
 
+try:                                   # capturas HEIC del iPhone
+    from pillow_heif import register_heif_opener
+    register_heif_opener()
+except ImportError:
+    pass
+
 MIN_CONFIDENCE = 0.80   # media de confianza por debajo de la cual no fiarse
 MIN_LINES = 3           # una captura del examen tiene enunciado + opciones
 TARGET_WIDTH = 2000     # ancho al que se escala antes del OCR (más = más lento)
@@ -137,7 +143,8 @@ def ocr(path: Path) -> dict:
         if line:
             rows.append({"text": line, **frag})
     return {"text": text, "lines": len(lines), "confidence": round(conf, 3),
-            "usable": usable, "rows": rows, "scale": factor, "height": img.height}
+            "usable": usable, "rows": rows, "frags": frags, "scale": factor,
+            "height": img.height, "width": img.width}
 
 
 def _row_geometry(frags, y_tol=0.6):
@@ -175,7 +182,7 @@ def main() -> int:
     if args.out:
         args.out.write_text(res["text"], encoding="utf-8")
     if args.json:
-        print(json.dumps({k: v for k, v in res.items() if k not in ("rows", "scale", "height")},
+        print(json.dumps({k: v for k, v in res.items() if k not in ("rows", "frags", "scale", "height", "width")},
                          ensure_ascii=False))
     else:
         print(res["text"])

@@ -109,6 +109,14 @@ entrada; lo que falta queda con un marcador «(… not captured yet.)» y `/pend
 lo lista. El texto pasa por corrector ortográfico (corpus de wordsegment) y los
 enunciados de audio se puntúan («…the order. What did he do?»).
 
+**Listas de vocabulario en captura** (TikTok, apuntes: inglés a la izquierda, español a
+la derecha): si la imagen no es del formulario, `scripts/parse_vocab_capture.py` separa
+las dos columnas por el hueco horizontal, filtra la interfaz de la app y agrega las
+entradas a `personal` con numeración consecutiva y `"ocr": true`. Después el bot le
+pide a Claude, **solo con texto** (sin herramientas ni imagen, unos cientos de tokens),
+el campo `es` con tildes repuestas y matices B2, y quita la marca. `VOCAB_POLISH=0`
+lo desactiva. Las capturas HEIC del iPhone se abren con `pillow-heif`.
+
 **Ráfagas**: el bot no regenera ni commitea por captura. Anota cada cambio y, tras
 `FLUSH_DELAY` segundos (30) sin novedades, regenera una vez, un commit «Lote: …» y
 un push. `/rebuild` cierra el lote de inmediato. Al parar el servicio (SIGTERM)
@@ -152,6 +160,7 @@ alcpt/
 │   ├── fetch_readings.py  <- trae y condensa artículos de ThoughtCo
 │   ├── ocr_capture.py     <- OCR local de una captura (RapidOCR, sin red)
 │   ├── parse_capture.py   <- captura → pregunta en forms.json, sin Claude Code
+│   ├── parse_vocab_capture.py <- lista término=significado (TikTok) → vocabulary.json
 │   ├── audit_forms.py     <- completas / pendientes / sospechosas en forms.json
 │   ├── check_captures.py  <- regresión del parser contra tests/captures_expected.json
 │   └── add_word.py        <- agrega palabras por línea de comandos

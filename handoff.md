@@ -163,6 +163,21 @@ Sesión del 11 sep 2026, tercera parte (calidad + ráfagas):
   0 sospechosas**.
 - OCR: `TARGET_WIDTH` 1400→2000 (conf. media 0.949→0.952, mismo tiempo).
 
+Sesión del 11 sep 2026, cuarta parte (listas de vocabulario en captura):
+
+- Brayhan mandó un HEIC de TikTok con 7 phrasal verbs (inglés | español). Fallaba
+  por el formato (Pillow no abre HEIC) y por el tipo (no es formulario). Ahora:
+  `pillow-heif` registrado en `ocr_capture.py`; `ocr()` devuelve también `frags`
+  (con x, x2) y `width`; nuevo `scripts/parse_vocab_capture.py` separa columnas por
+  el mayor hueco horizontal (>1 altura de texto), descarta barra de estado, zona
+  inferior (>85 % de alto) y palabras de interfaz («Seguir», «GIF», «English Yeah»),
+  exige ≥3 pares y agrega a `personal` con `"ocr": true`.
+- Bot: `handle_image` prueba primero el formulario y, si falla por falta de «Form»,
+  `handle_vocab_image`; `polish_entries()` llama a `ask_claude(tools=False)` con el
+  listado y aplica el JSON devuelto (repone tildes, añade matices, quita `ocr`).
+  Probado con la captura real: entradas 335–341 (Pull up … Pull back) ya pulidas.
+- `ask_claude` gana el parámetro `tools` (False = `--allowed-tools ""`).
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,

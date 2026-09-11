@@ -3,7 +3,7 @@
     "owner": "Brayhan",
     "level": "B2",
     "last_updated": "2026-09-11",
-    "total_confirmed": 334
+    "total_confirmed": 341
   },
   "sections": [
     {
@@ -265,6 +265,41 @@
           "n": 334,
           "en": "Basement",
           "es": "sótano (piso de una casa o edificio que queda bajo el nivel de la calle, usado como bodega, lavandería o cuarto extra: the boiler is in the basement); planta baja subterránea de tiendas y grandes almacenes (bargain basement = sección de ofertas, y por extensión \"de saldo\", muy barato: bargain-basement prices); matiz: basement = sótano habitable o de uso general; cellar = sótano de almacenamiento, sobre todo de vino o comida (wine cellar); en jerga de fútbol americano / béisbol, \"in the basement\" = en el último lugar de la tabla; no confundir con \"base\" (base militar) ni con \"foundation\" (cimientos)"
+        },
+        {
+          "n": 335,
+          "en": "Pull up",
+          "es": "Llegar; aparecer (llegar en un vehículo y detenerse: «A taxi pulled up outside»); acercar algo (una silla: «pull up a chair»); abrir o mostrar algo en una pantalla (an email, a file); detenerse; hacer un pull-up (dominada) en ejercicio"
+        },
+        {
+          "n": 336,
+          "en": "Pull out",
+          "es": "Retirarse; sacar; abandonar un acuerdo, proyecto o competencia («They pulled out of the deal»); retirar tropas de una zona (uso militar); salir un vehículo de su lugar a la vía; extraer (a tooth, a gun)"
+        },
+        {
+          "n": 337,
+          "en": "Pull off",
+          "es": "Lograr algo difícil (registro informal: «He pulled off a surprise win»); quitarse algo de un tirón (boots, a jacket); salir de la carretera hacia un lado"
+        },
+        {
+          "n": 338,
+          "en": "Pull through",
+          "es": "Salir adelante; sobrevivir o recuperarse de una enfermedad grave o una crisis («The patient pulled through»); ayudar a alguien a superar algo («Her friends pulled her through»)"
+        },
+        {
+          "n": 339,
+          "en": "Pull away",
+          "es": "Alejarse; arrancar y apartarse un vehículo del lugar donde estaba («The bus pulled away»); apartarse bruscamente de alguien; sacar ventaja en una carrera o competencia («She pulled away from the pack»)"
+        },
+        {
+          "n": 340,
+          "en": "Pull over",
+          "es": "Orillar el carro; detenerse al costado de la vía («The police pulled him over»); hacer que un conductor se detenga (uso policial)"
+        },
+        {
+          "n": 341,
+          "en": "Pull back",
+          "es": "Echarse para atrás; retroceder o retirarse (tropas); replegarse; reducir la participación o el gasto en algo («The company pulled back on expansion»); recuperar posiciones en un juego o negocio"
         }
       ]
     },
