@@ -62,7 +62,7 @@ def group_lines(items, y_tol=0.6):
     for box, text, conf in items:
         xs = [p[0] for p in box]
         ys = [p[1] for p in box]
-        frags.append({"x": min(xs), "y": (min(ys) + max(ys)) / 2,
+        frags.append({"x": min(xs), "x2": max(xs), "y": (min(ys) + max(ys)) / 2,
                       "h": max(ys) - min(ys), "text": text.strip(), "conf": float(conf)})
     frags.sort(key=lambda f: (f["y"], f["x"]))
     rows = []
@@ -75,7 +75,18 @@ def group_lines(items, y_tol=0.6):
     lines = []
     for r in rows:
         r["frags"].sort(key=lambda f: f["x"])
-        lines.append(" ".join(f["text"] for f in r["frags"] if f["text"]))
+        parts, prev = [], None
+        for f in r["frags"]:
+            if not f["text"]:
+                continue
+            # Un hueco grande entre fragmentos del mismo renglón es el espacio en
+            # blanco del ítem («Do you ____ if…»): la app lo dibuja como raya y el
+            # OCR no lo lee. Se restituye con la marca que usa forms.json.
+            if prev is not None and f["x"] - prev["x2"] > 2.5 * max(prev["h"], f["h"]):
+                parts.append("________")
+            parts.append(f["text"])
+            prev = f
+        lines.append(" ".join(parts))
     return lines, frags
 
 

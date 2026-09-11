@@ -104,11 +104,20 @@ Sesión del 11 sep 2026 (servidor `server`):
 - **Capturas sin Claude Code.** Petición de Brayhan para ahorrar tokens. No hay
   `sudo` en el servidor (Tesseract descartado); `rapidocr-onnxruntime` va por pip
   con sus modelos. Probado con 3 capturas sintéticas (repaso con verde, examen sin
-  respuesta, imagen ajena) y con `handle_image()` simulado: agrega, marca «Not
-  shown», rechaza la ajena y no duplica. **No se ha probado con una captura real**:
-  el parser asume el diseño de la app (encabezado «Form NN», opciones en tarjetas,
-  la correcta en verde). Umbrales en `highlighted_index()` (sat ≥ 12, +8 sobre la
-  mediana, tira a verde) y `MIN_CONFIDENCE = 0.80`.
+  respuesta, imagen ajena) y luego **con 9 capturas reales del Form 65** que mandó
+  Brayhan: las 9 fallaron con el parser inicial (diseño supuesto ≠ app real) y se
+  reescribió. La app tiene dos pantallas por ítem: la de pregunta (enunciado
+  «NN. …», opciones con círculo, la correcta en texto verde) y la de explicación
+  («Answer: NN)», «Correct Answer "…"», Explanation, Incorrect Answers). El parser
+  detecta cuál es, y `save()` funde ambas en la misma entrada (cada campo se
+  completa si falta). Resultado: 7 preguntas nuevas del Form 65 (56, 66, 86, 92,
+  95, 98, 100), la 92 fundida de dos capturas, la 96 ya existía.
+  Trucos que hicieron falta: restituir «________» por el hueco entre fragmentos
+  OCR del mismo renglón; «10» + «0.» = 100; «56. 56 Phyllis» (número repetido);
+  «Incorrect Answers» se evalúa antes que «Correct Answer»; verde por fracción de
+  píxeles (g > r+35 y g > b+35) en la franja de cada opción; `wordsegment` solo
+  parte tokens de 8+ letras cuando todas las partes son palabras reales y no hay
+  guion delante (los sufijos «-oraneity» se respetan).
 - `CAPTURE_FALLBACK` en `.env` (`off` por defecto, `claude` para el camino viejo).
 - Diagramas de arquitectura (actual vs propuesta) publicados como artifact:
   https://claude.ai/code/artifact/e7308c13-eb52-40b0-b92f-ad0c430fdc88
@@ -140,10 +149,12 @@ Sesión del 11 sep 2026 (servidor `server`):
 
 ## 7. Qué planeas hacer después
 
-- **Calibrar el parser con capturas reales**: pedirle a Brayhan 5 capturas (de
-  repaso y de examen), correr `python scripts/parse_capture.py inbox/x.jpg --dry-run`
-  y ajustar regex/umbrales. Hasta entonces, tratar `forms.json` con cautela tras
-  cada captura (el bot muestra lo que guardó).
+- Seguir calibrando el parser con más capturas reales (ya va 9/9 del Form 65).
+  Pendiente conocido: en la pantalla de explicación el bloque «Incorrect Answers»
+  puede venir cortado por el scroll (la última frase queda truncada); y el
+  enunciado de la #66 salió sin signos («what did Tom do … he got kind of riled»).
+  Si una captura falla, el texto OCR queda en `inbox/<captura>.txt` para depurar
+  con `python scripts/parse_capture.py inbox/x.jpg --dry-run`.
 - Probar el bot actualizado mandándole un enlace de ThoughtCo y `/lecturas`.
   Revisar que `inbox/readings/` se cree solo en el servidor (está en `.gitignore`).
 - Mandarle a Brayhan el enlace de GitHub Pages con `#podcasts` y pedirle

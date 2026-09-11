@@ -16,8 +16,8 @@
       "87",
       "Technical & Action Verbs"
     ],
-    "last_updated": "2026-08-26",
-    "total_questions": 266
+    "last_updated": "2026-09-11",
+    "total_questions": 273
   },
   "forms": [
     {
@@ -1209,6 +1209,63 @@
       "form": "65",
       "questions": [
         {
+          "n": 56,
+          "question": "Phyllis went to the beverage section of the grocery store",
+          "options": [
+            "soft drinks",
+            "green beans",
+            "bread"
+          ],
+          "correct": "soft drinks",
+          "explanation": "The term \"beverage\" refers to any liquid for drinking. \"Soft drinks\" (such as soda or pop) are a common category of beverages found in a grocery store. Therefore,if Phyllis went to the beverage section,she would find soft drinks. \"bread\"is incorrect because it is a solid food item made from flour, typically found in the bakery or bread section."
+        },
+        {
+          "n": 66,
+          "question": "what did Tom do when the water bill came he got kind of riled",
+          "options": [
+            "injured",
+            "happy",
+            "mad",
+            "wet"
+          ],
+          "correct": "mad",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 86,
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "options": [
+            "be lost",
+            "lost"
+          ],
+          "correct": "be lost",
+          "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performing it. In English,when using a modal verb like“may\"in the passive voice, the grammatical \"Lost\" is the past participle of the verb \"lose.\" Therefore,“may be lost”correctly expresses the possibility that the letter will go missing during transit."
+        },
+        {
+          "n": 92,
+          "question": "Do you ________ if I turn on the TV?",
+          "options": [
+            "want",
+            "wish",
+            "like",
+            "mind"
+          ],
+          "correct": "mind",
+          "explanation": "The phrase \"Do you mind if...?\" is a standard idiomatic expression used to ask for permission politely. It literally asks if the other person would be bothered or annoyed by the proposed action (turning on the TV). In military or shared environments, using polite requests like this maintains proper social decorum. \"want\"is incorrect because the structure“Do you want if..\" is ungrammatical. The correct structure"
+        },
+        {
+          "n": 95,
+          "question": "If you stop at the BX, ________ me some cigarettes.",
+          "options": [
+            "buy",
+            "would buy",
+            "should have bought",
+            "will buy"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
           "n": 96,
           "question": "Barbara's ________ her job affected her family's lifestyle tremendously.",
           "options": [
@@ -1231,6 +1288,30 @@
           ],
           "correct": "registers the freezing point at zero",
           "explanation": "A reading-comprehension item. \"The latter\" refers to the second of two things just mentioned, i.e. the Celsius scale, and the paragraph says it \"records freezing temperature as 0 degrees,\" which is paraphrased as \"registers the freezing point at zero.\" \"Is not often used by scientists\" contradicts the text (scientists use Celsius \"nearly everywhere\"); \"is the same as the Fahrenheit scale\" is wrong because the paragraph presents them as two different scales; and \"measures temperatures in different scale\" is vague and does not state a fact given in the paragraph."
+        },
+        {
+          "n": 98,
+          "question": "Ms. Warren, the newly hired teacher, was asked to speak extemp ________ concerning her teaching experiences while in China.",
+          "options": [
+            "-oraneity",
+            "-orary",
+            "-orize",
+            "-oraneously"
+          ],
+          "correct": "-oraneously",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 100,
+          "question": "When the continent was first discovered, there were vast tracts of unexplored",
+          "options": [
+            "district",
+            "inhabitants",
+            "livestock",
+            "wilderness"
+          ],
+          "correct": "wilderness",
+          "explanation": "(Explanation screen not captured yet.)"
         }
       ]
     },

@@ -1,28 +1,35 @@
 #!/usr/bin/env python3
-"""Convierte una captura del ALCPT en una pregunta de data/forms.json, sin IA.
+"""Convierte una captura de la app del ALCPT en una pregunta de data/forms.json,
+sin IA: OCR local (ocr_capture.py) → reglas → color → forms.json sin duplicar.
 
-Cadena completa y local: OCR (ocr_capture.py) → reglas de texto → color de la
-opción resaltada → escritura en forms.json sin duplicar. No usa Claude Code ni
-ninguna red. Si algo no cuadra (no se ve el formulario, no hay opciones), no
-toca los datos: deja el texto OCR junto a la captura y explica qué faltó.
+La app (modo revisión, fondo oscuro) tiene dos pantallas por ítem, y Brayhan
+puede mandar una, la otra o las dos, en cualquier orden:
+
+  Pantalla de pregunta          Pantalla de explicación
+  ┌ Form 65 ───────────┐        ┌ Form 65 ───────────────────┐
+  │ 92. Do you ___ if… │        │ 92. 92 Do you ___ if…      │  (caja de color)
+  │  ○ want            │        │ Answer: 92)                │
+  │  ○ wish            │        │ Correct Answer "mind"      │
+  │  ○ like            │        │ Explanation:               │
+  │  ◉ mind   (verde)  │        │  • …                       │
+  │      End Review    │        │ Incorrect Answers:         │
+  └────────────────────┘        │  • "want" is incorrect …   │
+                                │  like  mind  (opciones que │
+                                │  siguen debajo, cortadas)  │
+                                └────────────────────────────┘
+
+De la primera salen número, enunciado, opciones y la correcta (texto verde).
+De la segunda salen número, enunciado, la correcta (entre comillas) y la
+explicación. Las dos se funden en forms.json: cada campo se completa con lo
+que aún falte. Si solo llega la de pregunta y no hay verde (pantalla del
+examen, no de revisión), se registra con la nota «(Not shown — …)».
 
 Uso:
     python scripts/parse_capture.py inbox/tg_xxx.jpg             # parsea y guarda
     python scripts/parse_capture.py inbox/tg_xxx.jpg --dry-run   # solo muestra
-    python scripts/parse_capture.py inbox/tg_xxx.jpg --json      # resultado JSON
+    python scripts/parse_capture.py inbox/tg_xxx.jpg --json
 
-Códigos de salida: 0 = guardada (o ya existía) · 2 = no se pudo estructurar ·
-1 = error.
-
-Supuestos sobre la app del ALCPT (calibrar con capturas reales):
-- El encabezado dice el formulario: «Form 87», «ALCPT 87», «Formulario 87».
-- El número del ítem aparece como «Question 42», «Q42», «42.» o «42)».
-- Las opciones van en renglones propios, con o sin letra («A.», «b)»).
-- En la pantalla de repaso la opción correcta va resaltada en verde y debajo
-  hay un bloque «Explanation».
-- En la pantalla del examen no hay explicación ni resaltado: se registra con
-  la nota «(Not shown — captured during the test, before the review screen.)»,
-  igual que las 21 preguntas que ya están así.
+Códigos de salida: 0 = guardada o fundida · 2 = no se pudo estructurar · 1 = error.
 """
 from __future__ import annotations
 
@@ -33,7 +40,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
-from PIL import Image, ImageOps, ImageStat
+from PIL import Image, ImageOps
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ocr_capture import ocr  # noqa: E402
@@ -43,149 +50,233 @@ FORMS = REPO / "data" / "forms.json"
 NOT_SHOWN = "(Not shown — captured during the test, before the review screen.)"
 NOT_SHOWN_EXPL = ("Listening comprehension item. Only the answer choices were "
                   "captured, so the correct option and its explanation were not recorded.")
+NO_EXPL_YET = "(Explanation screen not captured yet.)"
+NO_OPTIONS_YET = "(Options screen not captured yet.)"
+NO_STEM_YET = "(Question stem not captured yet — only the explanation screen was sent.)"
+PLACEHOLDERS = {NOT_SHOWN, NOT_SHOWN_EXPL, NO_EXPL_YET, NO_OPTIONS_YET, NO_STEM_YET, ""}
 
 RE_FORM = re.compile(r"\b(?:form(?:ulario)?|alcpt)\s*#?\s*(\d{2,3})\b", re.I)
-RE_QNUM = re.compile(r"\b(?:question|item|pregunta|q)\s*#?\s*(\d{1,3})\b", re.I)
-RE_QNUM_LEAD = re.compile(r"^\s*(\d{1,3})\s*[.)]\s*(.*)$")
-RE_OPTION = re.compile(r"^\s*\(?([A-Da-d])\s*[.):]\s*(.*)$")
-RE_EXPL = re.compile(r"^\s*explanation\s*[:.]?\s*(.*)$", re.I)
-RE_CORRECT_LINE = re.compile(r"^\s*correct\s*(?:answer)?\s*[:.]?\s*(.*)$", re.I)
-NOISE = re.compile(r"^\s*(?:\d{1,2}:\d{2}|[\d.]+\s*%|next|previous|submit|review|"
-                   r"back|home|menu)\s*$", re.I)
+RE_STATUS = re.compile(r"\b\d{1,2}:\d{2}\b.*\b(?:4g|5g|lte|wifi|\d{1,3})\b", re.I)
+RE_NOISE = re.compile(r"^\s*(?:end\s*review|cc|next|previous|submit|answer\s*:?\s*\d*\s*\)?)\s*$", re.I)
+RE_STEM_NUM = re.compile(r"^\s*(\d{1,3})\s*[.)]?\s*(?:\1\s+)?(.*)$")   # «56. 56 Phyllis…»
+RE_ANSWER_N = re.compile(r"answer\s*:?\s*(\d{1,3})\s*\)", re.I)
+RE_CORRECT = re.compile(r"^\s*correct\s*answer\s*[:\"“”']*\s*(.+?)[\"“”']*\s*$", re.I)
+RE_EXPL = re.compile(r"^\s*explanation\s*:?\s*(.*)$", re.I)
+RE_INCORRECT = re.compile(r"^\s*incorrect\s*answers?\s*:?\s*(.*)$", re.I)
+RE_QUOTED_START = re.compile(r"^\s*[\"“”']\s*([^\"“”']+)\s*[\"“”']\s*is\s+incorrect", re.I)
 
 
-# --- color: qué opción está resaltada ---------------------------------------
-def highlighted_index(image_path: Path, option_rows, scale) -> int | None:
-    """Índice de la opción cuya franja horizontal es la más saturada.
+# --- utilidades de texto -------------------------------------------------------
+_SEG = None
 
-    Cada opción ocupa una tarjeta que va de borde a borde; se promedia el color
-    de una franja a la altura de su texto (el texto es una fracción mínima de
-    los píxeles). La correcta en la app va sobre verde: sobresale en saturación
-    respecto a las otras, que van sobre blanco o gris. Si ninguna sobresale de
-    verdad, se devuelve None y el llamador lo trata como «no resaltada»."""
-    if len(option_rows) < 2:
+
+def segment(tok: str) -> str:
+    """Parte una palabra pegada por el OCR («belost» → «be lost») con wordsegment."""
+    global _SEG
+    try:
+        import wordsegment as ws
+    except ImportError:
+        return tok
+    if _SEG is None:
+        ws.load()
+        _SEG = ws
+    parts = _SEG.segment(tok)
+    return " ".join(parts) if parts else tok
+
+
+def unglue(text: str) -> str:
+    """Solo toca tokens alfabéticos de 8+ letras que no sean palabras conocidas,
+    para no romper siglas, números ni palabras reales largas."""
+    def fix(m):
+        if m.group(1):            # «-oraneity»: sufijos y guiones se dejan en paz
+            return m.group(0)
+        tok = m.group(2)
+        out = segment(tok)
+        if _SEG is None or tok.lower() in _SEG.UNIGRAMS or " " not in out:
+            return tok
+        parts = out.split()
+        # solo si cada trozo es una palabra real de 2+ letras («the beverage»)
+        if any(len(x) < 2 or x not in _SEG.UNIGRAMS for x in parts):
+            return tok
+        return out[0].upper() + out[1:] if tok[0].isupper() else out
+    return re.sub(r"(-?)([A-Za-z]{8,})", fix, text)
+
+
+def norm(s: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", s.lower())
+
+
+def match_option(text: str, options: list[str]) -> str | None:
+    """Casa el texto de la correcta con una opción aunque el OCR pegara palabras."""
+    key = norm(text)
+    for o in options:
+        if norm(o) == key:
+            return o
+    for o in options:
+        if key and (key in norm(o) or norm(o) in key):
+            return o
+    return None
+
+
+# --- color: qué opción está en verde ------------------------------------------
+def green_fraction(img, box) -> float:
+    import numpy as np
+    a = np.asarray(img.crop(box)).astype(int)
+    if a.size == 0:
+        return 0.0
+    r, g, b = a[..., 0], a[..., 1], a[..., 2]
+    mask = (g > 110) & (g > r + 35) & (g > b + 35)
+    return float(mask.mean())
+
+
+def green_option(image_path: Path, option_rows, scale) -> int | None:
+    """La correcta en la pantalla de pregunta va con el texto en verde; el resto
+    en blanco. Se mide la fracción de píxeles verdes en la franja de cada opción."""
+    if not option_rows:
         return None
     img = ImageOps.exif_transpose(Image.open(image_path)).convert("RGB")
     w, h = img.size
     scores = []
     for r in option_rows:
         y = int(r["y"] * scale)
-        half = max(4, int(r["h"] * scale * 0.5))
-        box = (int(w * 0.05), max(0, y - half), int(w * 0.95), min(h, y + half))
-        rm, gm, bm = ImageStat.Stat(img.crop(box)).mean
-        sat = max(rm, gm, bm) - min(rm, gm, bm)
-        greenish = gm - max(rm, bm)
-        scores.append((sat, greenish))
-    sats = sorted(s for s, _ in scores)
+        half = max(6, int(r["h"] * scale * 0.8))
+        x0 = max(0, int(r["x"] * scale) - int(w * 0.02))
+        box = (x0, max(0, y - half), min(w, x0 + int(w * 0.7)), min(h, y + half))
+        scores.append(green_fraction(img, box))
     best = max(range(len(scores)), key=lambda i: scores[i])
-    best_sat, best_green = scores[best]
-    others = sats[:-1]
-    baseline = others[len(others) // 2] if others else 0
-    # tiene que ser claramente más saturada que las demás y tirar a verde
-    if best_sat >= 12 and best_sat >= baseline + 8 and best_green > 0:
+    others = [s for i, s in enumerate(scores) if i != best]
+    if scores[best] >= 0.004 and scores[best] > 4 * (max(others) if others else 0):
         return best
     return None
 
 
-# --- palabras pegadas ---------------------------------------------------------
-_SEG_READY = False
-
-
-def unglue(text: str) -> str:
-    """El OCR a veces devuelve «Thesailorcansteer»: se parte con wordsegment
-    (unigramas y bigramas de inglés) solo en tokens largos y puramente
-    alfabéticos, para no tocar siglas, números ni palabras normales."""
-    global _SEG_READY
-    try:
-        import wordsegment as ws
-    except ImportError:
-        return text
-    if not _SEG_READY:
-        ws.load()
-        _SEG_READY = True
-
-    def fix(m):
-        tok = m.group(0)
-        parts = ws.segment(tok)
-        if len(parts) < 2:
-            return tok
-        out = " ".join(parts)
-        if tok[0].isupper():
-            out = out[0].upper() + out[1:]
-        return out
-
-    return re.sub(r"[A-Za-z]{13,}", fix, text)
-
-
-# --- texto: de renglones OCR a campos -----------------------------------------
-def parse_rows(rows):
-    """Devuelve (pregunta, faltantes). `pregunta` es un dict con form, n,
-    question, options, correct, explanation; `faltantes` lista lo que no se
-    pudo determinar (vacía si todo cuadró)."""
-    form = None
-    n = None
-    stem, options, expl = [], [], []
+# --- de renglones OCR a campos ---------------------------------------------------
+def parse_rows(rows, width):
+    """Devuelve (pregunta, faltantes). Campos: form, n, question, options,
+    correct, explanation, screen ('question' | 'explanation')."""
+    form, n = None, None
+    stem, options, expl, incorrect = [], [], [], []
     option_rows = []
     correct_text = None
-    stage = "head"   # head → stem → options → explanation
+    stage = "head"       # head → stem → options | answer → explanation → incorrect → tail
+    stem_x = None
+    pending_digits = ""  # «10» en un renglón y «0.» en el siguiente = 100
+    stem_x_locked = False  # tras la primera línea del enunciado ya no se corrige n
 
     for r in rows:
         line = r["text"].strip()
-        if not line or NOISE.match(line):
+        if not line:
+            continue
+        if stage == "head" and (RE_STATUS.search(line) or re.fullmatch(r"[\d:\s]+", line)):
+            continue
+        if RE_NOISE.match(line):
+            if RE_ANSWER_N.search(line) and n is None:
+                n = int(RE_ANSWER_N.search(line).group(1))
             continue
         m = RE_FORM.search(line)
         if m and form is None:
             form = m.group(1)
-        m = RE_QNUM.search(line)
-        if m and n is None:
-            n = int(m.group(1))
-            # el resto del renglón puede ser el enunciado
-            rest = RE_QNUM.sub("", RE_FORM.sub("", line))
-            rest = re.sub(r"\balcpt\b", "", rest, flags=re.I).strip(" -:·|—")
-            if rest and stage in ("head", "stem"):
-                stem.append(rest)
-                stage = "stem"
+            rest = RE_FORM.sub("", line).strip(" -:·|")
+            if not rest:
+                continue
+            line = rest
+        m = RE_ANSWER_N.search(line)
+        if m:
+            if n is None:
+                n = int(m.group(1))
+            stage = "answer"
             continue
-        if form is not None and stage == "head" and RE_FORM.search(line):
-            continue   # renglón de encabezado sin más contenido
-
+        m = RE_INCORRECT.match(line)
+        if m:
+            stage = "incorrect"
+            if m.group(1):
+                incorrect.append(m.group(1))
+            continue
+        m = RE_CORRECT.match(line)
+        if m:
+            correct_text = m.group(1).strip(" \"“”':")
+            stage = "answer"
+            continue
         m = RE_EXPL.match(line)
         if m:
             stage = "explanation"
             if m.group(1):
                 expl.append(m.group(1))
             continue
-        m = RE_CORRECT_LINE.match(line)
-        if m and stage != "explanation":
-            correct_text = m.group(1).strip()
-            continue
 
         if stage == "explanation":
             expl.append(line)
             continue
+        if stage == "incorrect":
+            # las opciones que siguen debajo del bloque aparecen sueltas y cortas
+            if len(line.split()) <= 4 and not re.search(r"[.!?]$", line) and r["x"] > width * 0.15:
+                options.append(line)
+                option_rows.append(r)
+            else:
+                incorrect.append(line)
+            continue
 
-        m = RE_OPTION.match(line)
-        if m:
-            stage = "options"
-            options.append(m.group(2).strip())
-            option_rows.append(r)
-            continue
-        m = RE_QNUM_LEAD.match(line)
-        if m and n is None and stage in ("head", "stem"):
-            n = int(m.group(1))
-            if m.group(2):
-                stem.append(m.group(2))
-            stage = "stem"
-            continue
-        if stage == "options" and len(options) < 4:
-            # renglón sin letra entre opciones: el OCR se comió el prefijo
+        # --- pantalla de pregunta: enunciado y luego opciones ---
+        if stage in ("head", "stem"):
+            if n is None:
+                m = RE_STEM_NUM.match(line)
+                if m:
+                    digits = pending_digits + m.group(1)
+                    if re.fullmatch(r"\d{1,2}", line.split()[0]) and "." not in line.split()[0] \
+                            and not m.group(2):
+                        pending_digits = digits
+                        continue
+                    n = int(digits) if len(digits) <= 3 else int(m.group(1))
+                    pending_digits = ""
+                    stage = "stem"
+                    stem_x = r["x"]
+                    if m.group(2):
+                        stem.append(m.group(2))
+                    continue
+                if pending_digits and re.match(r"^\d\s*[.)]", line):
+                    # «10» + «0. were vast…» → 100
+                    m2 = re.match(r"^(\d)\s*[.)]\s*(.*)$", line)
+                    n = int(pending_digits + m2.group(1))
+                    pending_digits = ""
+                    stage = "stem"
+                    stem_x = r["x"] if stem_x is None else stem_x
+                    if m2.group(2):
+                        stem.append(m2.group(2))
+                    continue
+                if pending_digits:
+                    # el número quedó en su renglón; esta línea ya es enunciado
+                    n = int(pending_digits)
+                    pending_digits = ""
+                    stage = "stem"
+                    stem_x = r["x"]
+                    stem.append(line)
+                    continue
+            if stage == "stem" and n is not None and n < 100 and not stem_x_locked \
+                    and re.match(r"^\d\s*[.)]\s", line):
+                # la app parte «100.» en dos renglones: «10» arriba y «0.» abajo
+                m2 = re.match(r"^(\d)\s*[.)]\s*(.*)$", line)
+                n = int(f"{n}{m2.group(1)}")
+                stem_x_locked = True
+                if m2.group(2):
+                    stem.append(m2.group(2))
+                continue
+            stem_x_locked = True
+            if stage == "stem" and stem_x is not None and r["x"] - stem_x > width * 0.06:
+                stage = "options"
+            else:
+                if stage == "head":
+                    stage = "stem"
+                    stem_x = r["x"]
+                stem.append(line)
+                continue
+        if stage == "options":
             options.append(line)
             option_rows.append(r)
             continue
-        if stage in ("head", "stem"):
-            stage = "stem"
+        if stage == "answer":
             stem.append(line)
 
+    screen = "explanation" if correct_text or expl else "question"
     q = {
         "form": form,
         "n": n,
@@ -193,42 +284,90 @@ def parse_rows(rows):
         "options": [unglue(o) for o in options if o],
         "correct": correct_text,
         "explanation": unglue(" ".join(expl).strip()),
+        "incorrect": unglue(" ".join(incorrect).strip()),
+        "screen": screen,
         "_option_rows": option_rows,
     }
     missing = []
     if not form:
-        missing.append("formulario (no se lee «Form NN» en la captura)")
+        missing.append("formulario (no se lee «Form NN» arriba)")
     if n is None:
         missing.append("número de pregunta")
-    if len(q["options"]) < 2:
+    if screen == "question" and len(q["options"]) < 2:
         missing.append("opciones (se leyeron menos de 2)")
-    if not q["question"]:
-        q["question"] = "(Listening item — the audio prompt is not visible in the screenshot.)"
+    if screen == "explanation" and not correct_text:
+        missing.append("la línea «Correct Answer»")
     return q, missing
 
 
-def resolve_correct(q, image_path, scale):
-    """Fija `correct` y `explanation` según lo que muestre la captura."""
-    if q["correct"]:
-        # «Correct answer: B» o el texto de la opción
+def finish_fields(q, image_path, scale):
+    """Completa correct/explanation según la pantalla."""
+    if q["screen"] == "question":
+        idx = green_option(image_path, q["_option_rows"], scale)
+        if idx is not None:
+            q["correct"] = q["options"][idx]
+            q["explanation"] = NO_EXPL_YET
+        else:
+            q["correct"] = NOT_SHOWN
+            q["explanation"] = NOT_SHOWN_EXPL
+    else:
         c = q["correct"]
-        m = re.fullmatch(r"\(?([A-Da-d])\)?\.?", c)
-        if m:
-            i = "ABCD".index(m.group(1).upper())
-            if i < len(q["options"]):
-                q["correct"] = q["options"][i]
-        return
-    idx = highlighted_index(image_path, q["_option_rows"], scale)
-    if idx is not None and idx < len(q["options"]):
-        q["correct"] = q["options"][idx]
-        return
-    # sin resaltado ni texto de respuesta: pantalla del examen
-    q["correct"] = NOT_SHOWN
-    if not q["explanation"]:
-        q["explanation"] = NOT_SHOWN_EXPL
+        if " " not in c and len(c) > 6:
+            c = segment(c)          # «belost» → «be lost», «softdrinks» → «soft drinks»
+        # los nombres de las incorrectas salen entre comillas en su bloque
+        names = [m.group(1).strip() for m in
+                 (RE_QUOTED_START.match(s) for s in re.split(r"(?<=[.!?])\s+", q["incorrect"])) if m]
+        for name in names:
+            if not match_option(name, q["options"]):
+                q["options"].append(name)
+        hit = match_option(c, q["options"])
+        if hit is None:
+            q["options"].insert(0, c)
+        else:
+            c = hit
+        q["correct"] = c
+        expl = q["explanation"]
+        if q["incorrect"]:
+            expl = (expl + " " + q["incorrect"]).strip()
+        q["explanation"] = expl or NO_EXPL_YET
+        if len(q["options"]) < 2:
+            q["options"].append(NO_OPTIONS_YET)
+    if not q["question"]:
+        q["question"] = NO_STEM_YET
+    q.pop("_option_rows", None)
+    q.pop("incorrect", None)
 
 
-# --- forms.json --------------------------------------------------------------
+# --- forms.json -----------------------------------------------------------------
+def merge(existing: dict, new: dict) -> list[str]:
+    """Rellena en `existing` lo que traiga `new` y falte. Devuelve qué cambió."""
+    changed = []
+    if len(new["options"]) > len([o for o in existing.get("options", []) if o not in PLACEHOLDERS]) \
+            and new["screen"] == "question":
+        existing["options"] = new["options"]
+        changed.append("opciones")
+    elif new["screen"] == "explanation":
+        opts = [o for o in existing.get("options", []) if o not in PLACEHOLDERS]
+        for o in new["options"]:
+            if o not in PLACEHOLDERS and not match_option(o, opts):
+                opts.append(o)
+        if opts != existing.get("options"):
+            existing["options"] = opts
+            changed.append("opciones")
+    if existing.get("correct") in PLACEHOLDERS and new["correct"] not in PLACEHOLDERS:
+        hit = match_option(new["correct"], existing["options"]) or new["correct"]
+        existing["correct"] = hit
+        changed.append("respuesta")
+    if existing.get("explanation") in PLACEHOLDERS and new["explanation"] not in PLACEHOLDERS:
+        existing["explanation"] = new["explanation"]
+        changed.append("explicación")
+    if (not existing.get("question") or existing["question"].startswith("(")) \
+            and new["question"] and not new["question"].startswith("("):
+        existing["question"] = new["question"]
+        changed.append("enunciado")
+    return changed
+
+
 def save(q) -> str:
     data = json.loads(FORMS.read_text(encoding="utf-8"))
     section = next((f for f in data["forms"] if str(f["form"]) == q["form"]), None)
@@ -238,19 +377,17 @@ def save(q) -> str:
         data["forms"].sort(key=lambda f: (not str(f["form"]).isdigit(),
                                           int(f["form"]) if str(f["form"]).isdigit() else 0,
                                           str(f["form"])))
-    existing = next((x for x in section["questions"] if x.get("n") == q["n"]), None)
     entry = {k: q[k] for k in ("n", "question", "options", "correct", "explanation")}
+    existing = next((x for x in section["questions"] if x.get("n") == q["n"]), None)
     if existing:
-        # ya estaba; si la nueva trae respuesta y la vieja no, se completa
-        if existing.get("correct") == NOT_SHOWN and q["correct"] != NOT_SHOWN:
-            existing.update(entry)
-            status = "completada"
-        else:
-            return f"Form {q['form']} #{q['n']} ya estaba documentada; no se cambió nada."
+        changed = merge(existing, q)
+        if not changed:
+            return f"Form {q['form']} #{q['n']} ya estaba completa; no se cambió nada."
+        status = "completada: " + ", ".join(changed)
     else:
         section["questions"].append(entry)
         section["questions"].sort(key=lambda x: (x.get("n") is None, x.get("n") or 0))
-        status = "agregada"
+        status = "agregada desde la pantalla de " + ("pregunta" if q["screen"] == "question" else "explicación")
     meta = data.setdefault("meta", {})
     meta["last_updated"] = date.today().isoformat()
     meta["total_questions"] = sum(len(f["questions"]) for f in data["forms"])
@@ -258,7 +395,7 @@ def save(q) -> str:
     if q["form"] not in docs:
         docs.append(q["form"])
     FORMS.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    return f"Form {q['form']} #{q['n']} {status} ({'sin respuesta visible' if q['correct'] == NOT_SHOWN else 'con respuesta y explicación'})."
+    return f"Form {q['form']} #{q['n']} {status}."
 
 
 def main() -> int:
@@ -272,24 +409,23 @@ def main() -> int:
         return 1
 
     res = ocr(args.image)
-    txt_path = args.image.with_suffix(".txt")
-    txt_path.write_text(res["text"], encoding="utf-8")   # queda para revisar a mano
+    args.image.with_suffix(".txt").write_text(res["text"], encoding="utf-8")
     if not res["usable"]:
         out = {"ok": False, "reason": f"OCR poco fiable (confianza {res['confidence']:.2f}, "
                                       f"{res['lines']} renglones)", "text": res["text"]}
         print(json.dumps(out, ensure_ascii=False) if args.json else out["reason"])
         return 2
 
-    q, missing = parse_rows(res["rows"])
+    from ocr_capture import TARGET_WIDTH
+    q, missing = parse_rows(res["rows"], TARGET_WIDTH)
     if missing:
         out = {"ok": False, "reason": "No pude estructurar la captura. Falta: " + "; ".join(missing),
                "text": res["text"], "partial": {k: v for k, v in q.items() if not k.startswith("_")}}
         print(json.dumps(out, ensure_ascii=False) if args.json else out["reason"])
         return 2
-    resolve_correct(q, args.image, res["scale"])
-    q.pop("_option_rows", None)
+    finish_fields(q, args.image, res["scale"])
 
-    message = "(dry-run, no se guardó) " + json.dumps(q, ensure_ascii=False) if args.dry_run else save(q)
+    message = ("(dry-run, no se guardó) " + json.dumps(q, ensure_ascii=False)) if args.dry_run else save(q)
     out = {"ok": True, "message": message, "question": q, "confidence": res["confidence"]}
     print(json.dumps(out, ensure_ascii=False) if args.json else message)
     return 0
