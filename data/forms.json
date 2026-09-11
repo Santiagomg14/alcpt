@@ -18,7 +18,7 @@
       "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 279
+    "total_questions": 281
   },
   "forms": [
     {
@@ -1253,6 +1253,19 @@
           "explanation": "The phrase \"Do you mind if...?\" is a standard idiomatic expression used to ask for permission politely. It literally asks if the other person would be bothered or annoyed by the proposed action (turning on the TV). In military or shared environments, using polite requests like this maintains proper social decorum. \"want\"is incorrect because the structure“Do you want if..\" is ungrammatical. The correct structure"
         },
         {
+          "n": 94,
+          "question": "That movie director has a new film which is",
+          "options": [
+            "his earlier work.",
+            "like most",
+            "more like",
+            "like to",
+            "as likely"
+          ],
+          "correct": "more like",
+          "explanation": "The sentence compares a director's new film to their previous projects. The word\"like\"acts as a preposition here to show similarity. When comparing two things to say one resembles the other to a greater degree, the comparative form \"more like\" is used. \"like most\" is incorrect because it is missing necessary components (such as \"most like\"or \"like most of\") to function correctly in this comparative like to"
+        },
+        {
           "n": 95,
           "question": "If you stop at the BX, ________ me some cigarettes.",
           "options": [
@@ -1362,6 +1375,17 @@
           ],
           "correct": "Itwas stolen.",
           "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 50,
+          "question": "Rush this order through",
+          "options": [
+            "Get it out in a hurry.",
+            "Getltoutmramuir",
+            "Examine it carefully."
+          ],
+          "correct": "Get it out in a hurry.",
+          "explanation": "The phrasal verb“rush(something) through\"means to complete a processor handle a task with great speed or urgency. In military and logistical contexts, if an officer or supervisor tells you to rush an order through, they are prioritizing its completion and shipment over standard,slower procedures. \"Examine it carefully.\"is incorrect because it refers to the level of scrutiny or inspection,whereas rushing often implies moving quickly,sometimes at the Check to see if it is all there."
         },
         {
           "n": 58,
