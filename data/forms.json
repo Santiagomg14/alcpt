@@ -2369,7 +2369,9 @@
           "question": "Each man was asked to arrange the objects on the table what were they asked to do",
           "options": [
             "put them in order",
-            "clean them carefully"
+            "clean them carefully",
+            "take them off the table",
+            "throw them out"
           ],
           "correct": "put them in order",
           "explanation": "The verb\"arrange” means to organize, classify, or place items in a specific sequence or pattern. In this context,asking someone to arrange objects on a table is synonymous with asking them toput those objects in order. This is a common action verb used gear, or logistical items. \"clean them carefully\"is incorrect because arranging refers to the physical placement and organization of"
