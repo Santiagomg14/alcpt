@@ -18,7 +18,7 @@
       "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 290
+    "total_questions": 292
   },
   "forms": [
     {
@@ -1210,11 +1210,25 @@
       "form": "65",
       "questions": [
         {
+          "n": 55,
+          "question": "That company has a reputation for being above board",
+          "options": [
+            "exorbitant",
+            "trustworthy",
+            "fraudulent",
+            "successful"
+          ],
+          "correct": "trustworthy",
+          "explanation": "The idiom \"above board\" means being honest, open, and legitimate.When a company has a reputation for being above board, it means their business dealings are transparent and conducted without any intent to deceive or hide information. Therefore,\"trustworthy\" is the most accurate synonym in this context. \"exorbitant\" is incorrect because it describes prices or fees that are unreasonably high or excessive, which doesnot relate to honesty."
+        },
+        {
           "n": 56,
           "question": "Phyllis went to the beverage section of the grocery store",
           "options": [
+            "bread",
+            "bacon",
             "soft drinks",
-            "bread"
+            "green beans"
           ],
           "correct": "soft drinks",
           "explanation": "The term \"beverage\" refers to any liquid for drinking. \"Soft drinks\" (such as soda or pop) are a common category of beverages found in a grocery store. Therefore,if Phyllis went to the beverage section,she would find soft drinks. \"bread\"is incorrect because it is a solid food item made from flour, typically found in the bakery or bread section."
@@ -1514,6 +1528,16 @@
           ],
           "correct": "learned",
           "explanation": "In this sentence,the blank requires an adjective to modify the noun\"scholar.\"The word“learned\"(often pronounced with two syllables as /l3:nid/) is a specific adjective used to describe a person who has acquired a great deal of knowledge through intensive study.While it looks like a past tense verb,it functions here as an attributive adjective in the structure:[Article] +[Adjective] +[Noun]. learns learned has learned King shot ________ Descargar App Store"
+        },
+        {
+          "n": 97,
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "options": [
+            "a word very",
+            "(Options screen not captured yet.)"
+          ],
+          "correct": "a word very",
+          "explanation": "In this context, the adverb“awfully\"functions as an intensifier meaning\"“very,\"\"extremely，or \"exceedingly.\"When used to modify an adjective like \"long,it emphasizes the degree of the quality rather than conveying a negative or \"awful\"meaning. A \"long run\"for a play indicates it has been performed for a significant period of time,which is usually a sign of popularity and success. an exciting a happy King shot ________ Descargar App Store"
         }
       ]
     },
