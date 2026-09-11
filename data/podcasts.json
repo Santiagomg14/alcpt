@@ -4868,17 +4868,17 @@
     {
       "id": "vocab-07",
       "series": "vocab",
-      "title": "Palabras 312–335",
+      "title": "Palabras 312–334",
       "subtitle": "Form 87 · Technical & Action Verbs · Mis palabras",
       "words": [
         312,
-        335
+        334
       ],
-      "count": 24,
+      "count": 23,
       "script": [
         {
           "v": "en",
-          "t": "ALCPT Notebook. Vocabulary, episode 7: words 312 to 335. Listen to each word, then its meaning in Spanish, and repeat the word out loud before the next one.",
+          "t": "ALCPT Notebook. Vocabulary, episode 7: words 312 to 334. Listen to each word, then its meaning in Spanish, and repeat the word out loud before the next one.",
           "p": 1.2
         },
         {
@@ -5228,30 +5228,15 @@
         },
         {
           "v": "en",
-          "t": "335. Test.",
-          "p": 0.5
-        },
-        {
-          "v": "es",
-          "t": "prueba, examen (to take / sit a test = presentar un examen; to pass / fail a test = aprobar / reprobar).",
-          "p": 0.4
-        },
-        {
-          "v": "en",
-          "t": "Test.",
-          "p": 1.1
-        },
-        {
-          "v": "en",
-          "t": "End of episode 7. Words 312 to 335. Play it again tomorrow: repetition is what makes them stick.",
+          "t": "End of episode 7. Words 312 to 334. Play it again tomorrow: repetition is what makes them stick.",
           "p": 0.5
         }
       ],
-      "hash": "9d5c3053b20f",
+      "hash": "5430a3414d5e",
       "file": "audio/vocab-07.mp3",
-      "estimate": 261,
-      "seconds": 253.1,
-      "bytes": 1518624,
+      "estimate": 244,
+      "seconds": 237.2,
+      "bytes": 1423008,
       "built": "2026-09-11"
     },
     {
