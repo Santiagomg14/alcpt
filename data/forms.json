@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 292
+    "total_questions": 293
   },
   "forms": [
     {
@@ -1220,6 +1220,16 @@
           ],
           "correct": "more like",
           "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 40,
+          "question": "he is willing to travel",
+          "options": [
+            "He is agreeing to travel.",
+            "He is refusing to travel."
+          ],
+          "correct": "He is agreeing to travel.",
+          "explanation": "The word“willing”means being ready, eager, or prepared to do something of one's own free will. If someone is willing to travel, it means they are consenting or agreeing to the action without being coerced. \"He is refusing to travel.\" is incorrect because refusing is the direct antonym of being willing; it indicates a rejection of the action. He is afraid to travel."
         },
         {
           "n": 41,
