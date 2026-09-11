@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 293
+    "total_questions": 294
   },
   "forms": [
     {
@@ -1219,6 +1219,18 @@
             "as likely"
           ],
           "correct": "more like",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 39,
+          "question": "Mrs Barnett caught the bus",
+          "options": [
+            "She was too late for the bus.",
+            "She was in time for the bus.",
+            "She was waiting for the bus.",
+            "She was asking for the bus."
+          ],
+          "correct": "She was in time for the bus.",
           "explanation": "(Explanation screen not captured yet.)"
         },
         {
