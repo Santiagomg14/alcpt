@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 318
+    "total_questions": 319
   },
   "forms": [
     {
@@ -2474,6 +2474,16 @@
           ],
           "correct": "(Not shown — captured during the test, before the review screen.)",
           "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 72,
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "options": [
+            "direct from the garden",
+            "frozen"
+          ],
+          "correct": "direct from the garden",
+          "explanation": "In this context,the word“fresh\"refers to food that has been recently harvested and has not been preserved, processed, or stored for a long time. Vegetables that come“direct from the garden\"are the definition of fresh because they have just been picked and retain their natural quality and moisture. \"frozen\" is incorrect because freezing is a method of preservation used for vegetables that are not being eaten fresh;the two terms are generally opposites in"
         }
       ]
     },
