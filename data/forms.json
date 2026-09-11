@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 314
+    "total_questions": 315
   },
   "forms": [
     {
@@ -2421,6 +2421,16 @@
           ],
           "correct": "the back",
           "explanation": "In aviation and nautical contexts,a tailwind is defined as a wind that blows in the same direction as the object is traveling,meaning it comes from behind or the back of the aircraft.A tailwind increases the aircraft's ground speed. \"the front\"is incorrect because wind coming from the front is called a headwind,which slows the aircraft down."
+        },
+        {
+          "n": 54,
+          "question": "Everyone agrees that Bert is highly motivated",
+          "options": [
+            "inspired",
+            "reserved"
+          ],
+          "correct": "inspired",
+          "explanation": "In this context, \"motivated\" means having a strong desire, enthusiasm, or drive to accomplish a goal. In military and professional environments,a motivated individual is someone eager to perform their duties and excel.\"Inspired\" is the closest synonym among the choices, as it implies being filled with the urge or energy to do something productive or creative. \"reserved\"is incorrect because it describes a person who is quiet,shy,orkeeps their feelings to"
         },
         {
           "n": 56,
