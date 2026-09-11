@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 311
+    "total_questions": 312
   },
   "forms": [
     {
@@ -2386,6 +2386,18 @@
             "bacon and eggs"
           ],
           "correct": "at the cafeteria",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 42,
+          "question": "They paid an average price for the house",
+          "options": [
+            "The price was very high.",
+            "The price was a little high.",
+            "The price was about normal.",
+            "The price was less than normal."
+          ],
+          "correct": "The price was about normal.",
           "explanation": "(Explanation screen not captured yet.)"
         },
         {
