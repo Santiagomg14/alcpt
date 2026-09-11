@@ -18,7 +18,7 @@
       "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 278
+    "total_questions": 279
   },
   "forms": [
     {
@@ -1261,8 +1261,8 @@
             "should have bought",
             "will buy"
           ],
-          "correct": "(Not shown — captured during the test, before the review screen.)",
-          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+          "correct": "buy",
+          "explanation": "This sentence uses a conditional structure to express a request or command. When the 'if' clause is in the present simple tense (lf you stop\") and the result is an instruction for the listener,the imperative mood is used in the main clause. The imperative form is the base verb without a subject. In a military context, the BX (Base Exchange) is a department store found on air force bases where personnel can purchase various items."
         },
         {
           "n": 96,
@@ -1317,6 +1317,18 @@
     {
       "form": "66",
       "questions": [
+        {
+          "n": 43,
+          "question": "Davids car stalled right in the middle of the intersection",
+          "options": [
+            "It went outof control.",
+            "It stopped running.",
+            "It turned over.",
+            "It failed to stop."
+          ],
+          "correct": "It stopped running.",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
         {
           "n": 46,
           "question": "Tom says that a great deal of cattle raising is carried on in the midwest how many cattle are raised their",
