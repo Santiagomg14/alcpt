@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 274
+    "total_questions": 275
   },
   "forms": [
     {
@@ -1208,6 +1208,19 @@
     {
       "form": "65",
       "questions": [
+        {
+          "n": 6,
+          "question": ":51 ________ I4G38 94. That movie director has a new film which is",
+          "options": [
+            "his earlier work.",
+            "like most",
+            "more like",
+            "like to",
+            "as likely"
+          ],
+          "correct": "more like",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
         {
           "n": 56,
           "question": "Phyllis went to the beverage section of the grocery store",
