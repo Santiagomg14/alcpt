@@ -29,7 +29,7 @@ from PIL import Image, ImageOps
 
 MIN_CONFIDENCE = 0.80   # media de confianza por debajo de la cual no fiarse
 MIN_LINES = 3           # una captura del examen tiene enunciado + opciones
-TARGET_WIDTH = 1400     # ancho al que se escala antes del OCR (más = más lento)
+TARGET_WIDTH = 2000     # ancho al que se escala antes del OCR (más = más lento)
 
 
 def prepare(path: Path):

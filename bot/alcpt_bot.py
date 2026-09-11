@@ -28,8 +28,10 @@ import os
 import platform
 import re
 import shutil
+import signal
 import subprocess
 import sys
+import threading
 import time
 from datetime import datetime
 from pathlib import Path
@@ -64,7 +66,7 @@ def load_env():
             env[k.strip()] = v.strip().strip('"').strip("'")
     # las variables reales del sistema tienen prioridad sobre el archivo
     for k in ("TELEGRAM_TOKEN", "ALLOWED_USER_IDS", "CLAUDE_BIN", "GIT_PUSH", "CLAUDE_MODEL",
-              "CAPTURE_FALLBACK"):
+              "CAPTURE_FALLBACK", "FLUSH_DELAY"):
         if os.environ.get(k):
             env[k] = os.environ[k]
     return env
@@ -302,37 +304,98 @@ def data_changed():
     return bool(res.stdout.strip())
 
 
-def finish(chat_id, summary, commit_msg, force=False):
-    """Regenera documentos, sincroniza con git y avisa el resultado.
+# --- ráfagas: un solo rebuild + commit por lote ---------------------------------
+# Brayhan manda las capturas de veinte en veinte. Regenerar y subir por cada una
+# costaba ~10 s y un commit por captura. Ahora cada cambio se anota y, cuando
+# pasan FLUSH_DELAY segundos sin novedades, se regenera y se sube una sola vez.
+FLUSH_DELAY = int(CFG.get("FLUSH_DELAY", "30"))
+WORK = threading.RLock()          # handlers y flush no se pisan
+_batch = {"timer": None, "items": [], "chat": None, "force": False}
 
-    Si Claude Code no tocó `data/` —la palabra ya estaba, la pregunta ya estaba
-    documentada— no hay nada que regenerar ni que subir: rebuild() solo
-    cambiaría la fecha de generación de los documentos y git_sync() dejaría un
-    commit que dice que agregó algo que en realidad no agregó. `force` es para
-    /rebuild, donde regenerar sin cambios sí es lo que se pidió.
+
+def finish(chat_id, summary, commit_msg, force=False):
+    """Avisa el resultado ya y deja el rebuild + commit para el cierre del lote.
+
+    Si el paso no tocó `data/` (la palabra ya estaba, la captura repetía una
+    pregunta completa) no se anota nada: no hay nada que regenerar. `force` es
+    para /rebuild, donde regenerar sin cambios sí es lo que se pidió.
     """
     if not force and data_changed() is False:
-        words, questions = counts()
-        log(f"sin cambios en data/: no regenero ni subo ({commit_msg})")
-        send(chat_id, "\n".join([
-            summary, "",
-            "No cambió nada en data/, así que no regeneré documentos ni subí nada.",
-            f"Diccionario: {words} palabras · {questions} preguntas",
-        ]))
+        log(f"sin cambios en data/: no se anota ({commit_msg})")
+        send(chat_id, summary + "\n\n(Ya estaba así; no hay nada nuevo que subir.)")
         return
+    send(chat_id, summary)
+    with WORK:
+        _batch["items"].append(commit_msg)
+        _batch["chat"] = chat_id
+        _batch["force"] = _batch["force"] or force
+        if _batch["timer"]:
+            _batch["timer"].cancel()
+        if force:
+            flush()
+            return
+        _batch["timer"] = threading.Timer(FLUSH_DELAY, flush)
+        _batch["timer"].daemon = True
+        _batch["timer"].start()
+        log(f"lote: {len(_batch['items'])} cambio(s); cierre en {FLUSH_DELAY} s")
 
-    errors = rebuild()
-    update_handoff()
-    problem = git_sync(commit_msg)
-    words, questions = counts()
-    lines = [summary, "", f"Diccionario: {words} palabras · {questions} preguntas"]
-    if errors:
-        lines += ["", "Los documentos no se regeneraron del todo:"] + errors
-    if problem:
-        lines += ["", problem]
-    elif GIT_PUSH and not errors:
-        lines += ["", "Cambios subidos al repositorio."]
-    send(chat_id, "\n".join(lines))
+
+def flush():
+    """Cierra el lote: regenera todo, actualiza el handoff, un commit, un push."""
+    with WORK:
+        items, chat_id = _batch["items"], _batch["chat"]
+        _batch.update(timer=None, items=[], force=False)
+        if not items or chat_id is None:
+            return
+        log(f"cerrando lote de {len(items)} cambio(s)")
+        errors = rebuild()
+        update_handoff()
+        if len(items) == 1:
+            msg = items[0]
+        else:
+            captures = sum(1 for i in items if i.startswith("ALCPT: procesa"))
+            words = sum(1 for i in items if i.startswith("Vocabulario"))
+            parts = []
+            if captures:
+                parts.append(f"{captures} captura{'s' if captures > 1 else ''}")
+            if words:
+                parts.append(f"{words} palabra{'s' if words > 1 else ''}")
+            other = len(items) - captures - words
+            if other:
+                parts.append(f"{other} cambio{'s' if other > 1 else ''}")
+            msg = "Lote: " + ", ".join(parts) + "\n\n" + "\n".join(f"- {i}" for i in items)
+        problem = git_sync(msg)
+        wc, qc = counts()
+        lines = [f"Lote cerrado: {len(items)} cambio{'s' if len(items) > 1 else ''} regenerado{'s' if len(items) > 1 else ''}.",
+                 f"Diccionario: {wc} palabras · {qc} preguntas"]
+        if errors:
+            lines += ["", "Los documentos no se regeneraron del todo:"] + errors
+        if problem:
+            lines += ["", problem]
+        elif GIT_PUSH and not errors:
+            lines += ["", "Cambios subidos al repositorio."]
+        pend = pending_summary()
+        if pend:
+            lines += ["", pend]
+        send(chat_id, "\n".join(lines))
+
+
+def pending_summary():
+    """Una línea con lo que quedó a medias en este lote (para no pedir /pendientes)."""
+    try:
+        forms = json.loads((DATA / "forms.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return ""
+    q_need, e_need = 0, 0
+    for f in forms["forms"]:
+        for q in f["questions"]:
+            if q.get("question", "").startswith("(Question stem") or any(o.startswith("(") for o in q.get("options", [])):
+                q_need += 1
+            if q.get("explanation", "").startswith("(") or q.get("correct", "").startswith("(Not shown"):
+                e_need += 1
+    if not q_need and not e_need:
+        return ""
+    return f"Pendientes: {q_need} sin pantalla de pregunta · {e_need} sin explicación (/pendientes)."
 
 
 # --- manejadores ---------------------------------------------------------------
@@ -517,6 +580,11 @@ def handle_readings_cmd(chat_id, args):
 
 
 def handle_update(u):
+    with WORK:
+        _handle_update(u)
+
+
+def _handle_update(u):
     msg = u.get("message") or u.get("edited_message")
     if not msg:
         return
@@ -595,6 +663,13 @@ def main():
         log("AVISO: no encuentro Claude Code. Las palabras con '=' y las capturas "
             "se guardarán, pero no se podrán procesar automáticamente.")
 
+    # systemd manda SIGTERM al parar: cerrar el lote antes de morir
+    def _term(*_):
+        log("SIGTERM: cerrando lote pendiente")
+        flush()
+        sys.exit(0)
+    signal.signal(signal.SIGTERM, _term)
+
     me = api("getMe")["result"]
     log(f"conectado como @{me['username']} · repo {REPO}")
     offset = load_offset()
@@ -629,6 +704,7 @@ def main():
             time.sleep(15)
         except KeyboardInterrupt:
             log("detenido")
+            flush()
             return
 
 

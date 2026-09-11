@@ -127,6 +127,11 @@ El bot **no** le da acceso a la terminal a Claude Code. Lo invoca con
 archivos del repositorio. Los pasos con efectos —regenerar documentos, `git commit`,
 `git push`— los ejecuta el propio bot, de forma determinista.
 
+**Ráfagas.** Brayhan manda las capturas de veinte en veinte. El bot responde a cada
+una al instante, pero regenera documentos y hace commit + push una sola vez, 30 s
+después del último cambio (`FLUSH_DELAY` en `.env`). El mensaje de cierre del lote
+dice cuántas preguntas quedaron a medias; `/pendientes` da el detalle.
+
 Antes de cada commit el bot también refresca en `handoff.md` la línea
 «Última actualización» y los conteos en negrita del §2 (palabras, preguntas,
 lecturas y episodios). Solo eso: el resto del handoff se sigue escribiendo a

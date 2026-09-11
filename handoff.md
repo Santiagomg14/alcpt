@@ -143,6 +143,26 @@ Sesión del 11 sep 2026, segunda parte (verificación con capturas reales):
 - Nuevo `/pendientes` en el bot: lista qué preguntas necesitan la pantalla de
   pregunta o la de explicación.
 
+Sesión del 11 sep 2026, tercera parte (calidad + ráfagas):
+
+- **Ráfagas**: `finish()` ya no regenera; anota el cambio y arma un `threading.Timer`
+  de `FLUSH_DELAY` s (30). `flush()` regenera, actualiza handoff, un commit «Lote: N
+  capturas, M palabras» con la lista, un push y un mensaje con los pendientes.
+  `handle_update` y `flush` comparten `WORK` (RLock). SIGTERM y Ctrl-C cierran el
+  lote. Probado con `finish` simulado (3 capturas + 1 palabra → 1 lote).
+- **Calidad de texto**: corrector Norvig sobre el corpus de wordsegment
+  (`correct_word`: solo palabras inexistentes con vecina a 1 edición y ≥2e6 de
+  frecuencia; «adjust o the» → «adjust to the»); `polish_stem` pone mayúscula,
+  «Mrs.», signo final y parte las transcripciones de audio en dos oraciones;
+  `trim_truncated` quita la frase cortada por el scroll y `merge_explanations` une
+  dos capturas desplazadas por el solape. `looks_garbage` NO descarta palabras raras
+  de una sola pieza (gesticulated, razes, -oraneity): el ALCPT las pregunta.
+- **Verificación**: `scripts/audit_forms.py` (completas/pendientes/sospechosas) y
+  `scripts/check_captures.py` con `tests/captures_expected.json` (93 capturas).
+  Estado tras reprocesar todo: **319 preguntas, 275 completas, 44 pendientes,
+  0 sospechosas**.
+- OCR: `TARGET_WIDTH` 1400→2000 (conf. media 0.949→0.952, mismo tiempo).
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,
@@ -170,12 +190,10 @@ Sesión del 11 sep 2026, segunda parte (verificación con capturas reales):
 
 ## 7. Qué planeas hacer después
 
-- **Mejoras recomendadas al flujo del bot** (no hechas): (a) agrupar el rebuild +
-  commit cuando llegan capturas en ráfaga (93 capturas = 93 commits y ~10 s de
-  regeneración cada una; un temporizador de 30 s tras el último cambio bastaría);
-  (b) pedirle a Brayhan que mande siempre las dos pantallas de cada ítem y la de
-  explicación desplazada arriba del todo (si no, no se ve el enunciado);
-  (c) las 21 «Not shown» viejas ya se completan solas si manda su pantalla de repaso.
+- Pedirle a Brayhan las pantallas que faltan (`/pendientes`): 44 preguntas a medias.
+- Las 21 «Not shown» viejas se completan solas si manda su pantalla de repaso.
+- Antes de tocar el parser: `python scripts/check_captures.py` debe seguir en 0
+  cambios y `python scripts/audit_forms.py --strict` en 0 sospechosas.
 - Seguir calibrando el parser con más capturas reales (93/93 estructuradas).
   Pendiente conocido: en la pantalla de explicación el bloque «Incorrect Answers»
   puede venir cortado por el scroll (la última frase queda truncada); y el

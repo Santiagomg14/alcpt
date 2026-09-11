@@ -1,0 +1,1314 @@
+{
+ "tg_20260911_022654_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 96,
+  "options": [
+   "lost",
+   "was lost",
+   "was losing",
+   "losing"
+  ],
+  "correct": "losing",
+  "question": "Barbara's ________ her job affected her family's lifestyle tremendously.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_022659_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 92,
+  "options": [
+   "want",
+   "wish",
+   "like",
+   "mind"
+  ],
+  "correct": "mind",
+  "question": "Do you ________ if I turn on the TV?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_022704_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 86,
+  "options": [
+   "be lost",
+   "(Options screen not captured yet.)"
+  ],
+  "correct": "be lost",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performin"
+ },
+ "tg_20260911_022710_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 66,
+  "options": [
+   "injured",
+   "happy",
+   "mad",
+   "wet"
+  ],
+  "correct": "mad",
+  "question": "What did Tom do when the water bill came? He got kind of riled.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_022715_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 56,
+  "options": [
+   "soft drinks",
+   "bread"
+  ],
+  "correct": "soft drinks",
+  "question": "Phyllis went to the beverage section of the grocery store.",
+  "explanation": "The term \"beverage\" refers to any liquid for drinking. \"Soft drinks\"(such as soda or pop) are a common category of bever"
+ },
+ "tg_20260911_022721_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 100,
+  "options": [
+   "district",
+   "inhabitants",
+   "livestock",
+   "wilderness"
+  ],
+  "correct": "wilderness",
+  "question": "When the continent was first discovered, there were vast tracts of unexplored?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_022726_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 95,
+  "options": [
+   "buy",
+   "would buy",
+   "should have bought",
+   "will buy"
+  ],
+  "correct": "buy",
+  "question": "If you stop at the BX, ________ me some cigarettes.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_022731_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 92,
+  "options": [
+   "mind",
+   "want"
+  ],
+  "correct": "mind",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "The phrase \"Do you mind if...?\" is a standard idiomatic expression used to ask for permission politely. It literally ask"
+ },
+ "tg_20260911_022737_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 98,
+  "options": [
+   "-oraneity",
+   "-orary",
+   "-prize",
+   "-oraneously"
+  ],
+  "correct": "-oraneously",
+  "question": "Ms. Warren, the newly hired teacher, was asked to speak extemp ________ concerning her teaching experiences while in China.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_030700_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 98,
+  "options": [
+   "-prize",
+   "-oraneously"
+  ],
+  "correct": "-oraneously",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "The sentence requires an adverb to modify the verb 'speak.The word\"extemporaneously\"means to speak or perform without pr"
+ },
+ "tg_20260911_030710_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 100,
+  "options": [
+   "wilderness",
+   "district"
+  ],
+  "correct": "wilderness",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "The sentence describes a continent at the time of its initial discovery, implying that the land was in its natural,untou"
+ },
+ "tg_20260911_030720_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 86,
+  "options": [
+   "be lost",
+   "(Options screen not captured yet.)"
+  ],
+  "correct": "be lost",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performin"
+ },
+ "tg_20260911_030726_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 100,
+  "options": [
+   "district",
+   "inhabitants",
+   "livestock",
+   "wilderness"
+  ],
+  "correct": "wilderness",
+  "question": "When the continent was first discovered, there were vast tracts of unexplored?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_030731_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 97,
+  "options": [
+   "registers the freezing point at zero",
+   "measures temperatures in different scale"
+  ],
+  "correct": "registers the freezing point at zero",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "The paragraph identifies two scales: Fahrenheit and Celsius (the latter). It explicitly states that \"The latter scale [C"
+ },
+ "tg_20260911_030737_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 97,
+  "options": [
+   "measures temperatures in different scale",
+   "is the same as the Fahrenheit scale",
+   "registers the freezing point at zero",
+   "is not often used by scientists"
+  ],
+  "correct": "registers the freezing point at zero",
+  "question": "Two different scales are used to measure atmospheric temperatures. The older Fahrenheit scale is used mostly by the general public of the US and certain other countries, while the Celsius scale,or centigrade scale,is used by scientists nearly everywhere. The latter scale records freezing temperature as 0 degrees. According to this paragraph, the Calciniccoalo.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_030747_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 98,
+  "options": [
+   "-oraneity",
+   "-orary",
+   "-prize",
+   "-oraneously"
+  ],
+  "correct": "-oraneously",
+  "question": "Ms. Warren, the newly hired teacher, was asked to speak extemp ________ concerning her teaching experiences while in China.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_030752_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 96,
+  "options": [
+   "lost",
+   "was lost",
+   "was losing",
+   "losing"
+  ],
+  "correct": "losing",
+  "question": "Barbara's ________ her job affected her family's lifestyle tremendously.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_030757_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 96,
+  "options": [
+   "losing",
+   "lost"
+  ],
+  "correct": "losing",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "In this sentence, the subject must be a noun phrase. The word \"Barbara's\" is a possessive noun, which is commonly follow"
+ },
+ "tg_20260911_030803_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 95,
+  "options": [
+   "buy",
+   "(Options screen not captured yet.)"
+  ],
+  "correct": "buy",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "This sentence uses a conditional structure to express a request or command. When the 'if' clause is in the present simpl"
+ },
+ "tg_20260911_030813_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 95,
+  "options": [
+   "buy",
+   "would buy",
+   "should have bought",
+   "will buy"
+  ],
+  "correct": "buy",
+  "question": "If you stop at the BX, ________ me some cigarettes.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_030818_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 94,
+  "options": [
+   "more like",
+   "like most"
+  ],
+  "correct": "more like",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "The sentence compares a director's new film to their previous projects. The word\"like\"acts as a preposition here to show"
+ },
+ "tg_20260911_030828_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 92,
+  "options": [
+   "mind",
+   "want"
+  ],
+  "correct": "mind",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "The phrase \"Do you mind if...?\" is a standard idiomatic expression used to ask for permission politely. It literally ask"
+ },
+ "tg_20260911_030834_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 94,
+  "options": [
+   "like most",
+   "more like",
+   "like to",
+   "as likely"
+  ],
+  "correct": "more like",
+  "question": "That movie director has a new film which is his earlier work.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_030842_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 92,
+  "options": [
+   "want",
+   "wish",
+   "like",
+   "mind"
+  ],
+  "correct": "mind",
+  "question": "Do you ________ if I turn on the TV?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_030847_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 88,
+  "options": [
+   "He agreed that anyone could drive the car.",
+   "He agreed that he would drive the car."
+  ],
+  "correct": "He agreed that he would drive the car.",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "willingness or commitment to perform a specific action. In English grammar,the structure'agree + to- infinitive'expresse"
+ },
+ "tg_20260911_030857_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 86,
+  "options": [
+   "be lost",
+   "(Options screen not captured yet.)"
+  ],
+  "correct": "be lost",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performin"
+ },
+ "tg_20260911_030903_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 81,
+  "options": [
+   "a duty",
+   "a problem"
+  ],
+  "correct": "a duty",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "In this context,the word“obligation”means a moral or legal requirement or duty. An elected official is bound by their po"
+ },
+ "tg_20260911_030913_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 82,
+  "options": [
+   "He got them.",
+   "He saw them.",
+   "He left them there."
+  ],
+  "correct": "He got them.",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "The phrasal verb“pick up\"in this context means to retrieve or collect something that was previously left at a specific l"
+ },
+ "tg_20260911_030923_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 76,
+  "options": [
+   "to leave",
+   "be leaving",
+   "leaving",
+   "will leave"
+  ],
+  "correct": "to leave",
+  "question": "They're planning ________ on the trip tomorrow.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_030932_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 86,
+  "options": [
+   "lost",
+   "be losing",
+   "be lost",
+   "lost"
+  ],
+  "correct": "be lost",
+  "question": "The letter may ________ in the mail.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_030940_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 76,
+  "options": [
+   "to leave",
+   "be leaving"
+  ],
+  "correct": "to leave",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "In English grammar, the verb“plan\" is typically followed by the to-infinitive form (\"to\" + base verb) when it refers to "
+ },
+ "tg_20260911_030950_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 81,
+  "options": [
+   "a duty",
+   "a problem",
+   "a moral",
+   "an office"
+  ],
+  "correct": "a duty",
+  "question": "Every elected official has an obligation to represent the voters.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_030955_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 74,
+  "options": [
+   "He couldn't go.",
+   "He wasn't ready to go.",
+   "He wasn't supposed to go."
+  ],
+  "correct": "He couldn't go.",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "The phrase\"wasn't able to\" is the past tense form of \"unable to,\" indicating a lack of ability, capability, or possibili"
+ },
+ "tg_20260911_031006_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 66,
+  "options": [
+   "mad",
+   "injured"
+  ],
+  "correct": "mad",
+  "question": "What did Tom do when the water bill came? He got kind of riled.",
+  "explanation": "The word \"riled\"(often used as \"riled up\") is an informal term meaning to be irritated, vexed, or angry.When Tom receive"
+ },
+ "tg_20260911_031016_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 65,
+  "options": [
+   "Are the rocks unusual?",
+   "Are they different shapes?",
+   "Are they hard to find?",
+   "Are they worth anything?"
+  ],
+  "correct": "Are they worth anything?",
+  "question": "He collects rocks from all parts of the world that's nice but do they have any value. What does the man want to know?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031026_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 74,
+  "options": [
+   "He couldn't go.",
+   "He didn't want to go.",
+   "He wasn't ready to go.",
+   "He wasn't supposed to go."
+  ],
+  "correct": "He couldn't go.",
+  "question": "Adam wasn't able to go with us.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031034_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 65,
+  "options": [
+   "Are they worth anything?",
+   "Are the rocks unusual?"
+  ],
+  "correct": "Are they worth anything?",
+  "question": "He collects rocks from all parts of the world that's nice but do they have any value. What does the man want to know?",
+  "explanation": "In this dialogue, the man asks, \"do they have any value?\" In the context of a collection, the word “value' refers to the"
+ },
+ "tg_20260911_031044_N5AAM9BA.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 56,
+  "options": [
+   "soft drinks",
+   "bread"
+  ],
+  "correct": "soft drinks",
+  "question": "Phyllis went to the beverage section of the grocery store.",
+  "explanation": "The term \"beverage\" refers to any liquid for drinking. \"Soft drinks\"(such as soda or pop) are a common category of bever"
+ },
+ "tg_20260911_031050_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 66,
+  "options": [
+   "injured",
+   "happy",
+   "mad",
+   "wet"
+  ],
+  "correct": "mad",
+  "question": "What did Tom do when the water bill came? He got kind of riled.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031055_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 55,
+  "options": [
+   "trustworthy",
+   "exorbitant"
+  ],
+  "correct": "trustworthy",
+  "question": "That company has a reputation for being above board.",
+  "explanation": "The idiom \"above board\" means being honest, open, and legitimate.When a company has a reputation for being above board, "
+ },
+ "tg_20260911_031105_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 56,
+  "options": [
+   "bread",
+   "bacon",
+   "soft drinks",
+   "green beans"
+  ],
+  "correct": "soft drinks",
+  "question": "Phyllis went to the beverage section of the grocery store.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031115_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 55,
+  "options": [
+   "exorbitant",
+   "trustworthy",
+   "fraudulent",
+   "successful"
+  ],
+  "correct": "trustworthy",
+  "question": "That company has a reputation for being above board.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031124_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 54,
+  "options": [
+   "He had to adjust to the customs.",
+   "He had to disregard the customs."
+  ],
+  "correct": "He had to adjust to the customs.",
+  "question": "The foreign student had to get used to the new customs.",
+  "explanation": "The phrase“get used to\"is an idiomatic expression meaning to become accustomed to,adapt to,or familiarize oneself with a"
+ },
+ "tg_20260911_031134_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 53,
+  "options": [
+   "We were not interested.",
+   "We made excuses.",
+   "We didn't give up.",
+   "We needed motivation."
+  ],
+  "correct": "We didn't give up.",
+  "question": "We succeeded because we had determination.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031143_A3kAAz0E.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 54,
+  "options": [
+   "He had to find out about the customs.",
+   "He had to organize the customs.",
+   "He had to adjust to the customs.",
+   "He had to disregard the customs."
+  ],
+  "correct": "He had to adjust to the customs.",
+  "question": "The foreign student had to get used to the new customs.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031152_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 53,
+  "options": [
+   "We didn't give up.",
+   "We needed motivation.",
+   "We were not interested."
+  ],
+  "correct": "We didn't give up.",
+  "question": "We succeeded because we had determination.",
+  "explanation": "Determination is the quality of being resolute and firm in purpose. It implies a refusal to quit or abandon a task despi"
+ },
+ "tg_20260911_031202_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 50,
+  "options": [
+   "He cancelled it.",
+   "He destroyed it.",
+   "He threw it away.",
+   "He executed it."
+  ],
+  "correct": "He executed it.",
+  "question": "Jack carried out the order. What did he do?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031211_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 49,
+  "options": [
+   "He had on a dark suit.",
+   "He went to the officer's club."
+  ],
+  "correct": "He had on a dark suit.",
+  "question": "What did your roommate wear to the party?",
+  "explanation": "The question asks\"what did your roommate wear which requires a description of clothing.The phrasal verb \"had on\" is an i"
+ },
+ "tg_20260911_031221_A3kAAz0E.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 49,
+  "options": [
+   "He left at 8 o'clock.",
+   "He went with a friend.",
+   "He had on a dark suit.",
+   "He went to the officer's club."
+  ],
+  "correct": "He had on a dark suit.",
+  "question": "What did your roommate wear to the party?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031230_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 48,
+  "options": [
+   "make war less important",
+   "make war less expensive"
+  ],
+  "correct": "make war less important",
+  "question": "We must de-emphasize War. What must we do?",
+  "explanation": "The word \"de-emphasize\" is formed by adding the prefix\"de-\"(meaning to reverse or reduce) to the word \"emphasize\"(meanin"
+ },
+ "tg_20260911_031240_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 48,
+  "options": [
+   "make war less expensive",
+   "make war less important",
+   "make war less dangerous",
+   "make war less destructive"
+  ],
+  "correct": "make war less important",
+  "question": "We must de-emphasize War. What must we do?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031250_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 47,
+  "options": [
+   "how he got there",
+   "(Options screen not captured yet.)"
+  ],
+  "correct": "how he got there",
+  "question": "Sergeant James gave his captain his reason for being late. What did Sergeant James tell him?",
+  "explanation": "In English,a\"reason\"is an explanation or justification for why something occurred.When Sergeant james gives his \"reason "
+ },
+ "tg_20260911_031301_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 46,
+  "options": [
+   "four",
+   "ten",
+   "six",
+   "fourteen"
+  ],
+  "correct": "six",
+  "question": "10 new words appeared on the test Esther missed 4 of them. How many did she get correct?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031310_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 47,
+  "options": [
+   "how he got there",
+   "when he would be late",
+   "where he was late",
+   "where he was going later"
+  ],
+  "correct": "how he got there",
+  "question": "Sergeant James gave his captain his reason for being late. What did Sergeant James tell him?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031319_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 45,
+  "options": [
+   "She'll go to sleep.",
+   "She'll go to walking."
+  ],
+  "correct": "She'll go to sleep.",
+  "question": "My grandmother needs to take a snooze.",
+  "explanation": "The idiomatic expression“to take a snooze\"means to take a short nap or to sleep for a brief period. In the context of th"
+ },
+ "tg_20260911_031328_A3kAAz0E.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 45,
+  "options": [
+   "She'll go shopping.",
+   "She'll go to town.",
+   "She'll go to sleep.",
+   "She'll go to walking."
+  ],
+  "correct": "She'll go to sleep.",
+  "question": "My grandmother needs to take a snooze.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031338_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 44,
+  "options": [
+   "He started to learn Spanish.",
+   "HeappeaieutukiiowSpaiiisii.",
+   "He failed to learn Spanish."
+  ],
+  "correct": "He started to learn Spanish.",
+  "question": "Adam took up spanish.",
+  "explanation": "The phrasal verb \"take up\" means to begin a new activity, hobby, or area of study. In this sentence, saying Adam \"took u"
+ },
+ "tg_20260911_031348_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 44,
+  "options": [
+   "He failed to learn Spanish.",
+   "He preferred to speak Spanish.",
+   "He appeared to know Spanish.",
+   "He started to learn Spanish."
+  ],
+  "correct": "He started to learn Spanish.",
+  "question": "Adam took up Spanish.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031357_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 41,
+  "options": [
+   "He needed a bandage.",
+   "He needed a nurse.",
+   "He rested.",
+   "He died."
+  ],
+  "correct": "He died.",
+  "question": "The man's wound was fatal.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031406_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 40,
+  "options": [
+   "He is agreeing to travel.",
+   "He is afraid to travel.",
+   "He is refusing to travel."
+  ],
+  "correct": "He is agreeing to travel.",
+  "question": "He is willing to travel.",
+  "explanation": "The word“willing” means being ready, eager, or prepared to do something of one's own free will. If someone is willing to"
+ },
+ "tg_20260911_031416_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "65",
+  "n": 41,
+  "options": [
+   "He died.",
+   "He needed a bandage."
+  ],
+  "correct": "He died.",
+  "question": "The man'swound was fatal.",
+  "explanation": "The word \"fatal\" is an adjective that describes something (like an injury, wound, or accident) that causes death. In a m"
+ },
+ "tg_20260911_031425_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 40,
+  "options": [
+   "He is refusing to travel.",
+   "He is agreeing to travel.",
+   "He is forced to travel.",
+   "He is afraid to travel."
+  ],
+  "correct": "He is agreeing to travel.",
+  "question": "He is willing to travel.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031434_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "65",
+  "n": 39,
+  "options": [
+   "She was too late for the bus.",
+   "She was in time for the bus.",
+   "She was waiting for the bus.",
+   "She was asking for the bus."
+  ],
+  "correct": "She was in time for the bus.",
+  "question": "Mrs. Barnett caught the bus.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031443_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "66",
+  "n": 61,
+  "options": [
+   "She went to see a friend.",
+   "She broke a dish.",
+   "She hurt her leg.",
+   "She opened a bottle."
+  ],
+  "correct": "She hurt her leg.",
+  "question": "What happened to Angela she Twisted her knee what did the woman say about Angela?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031453_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "66",
+  "n": 58,
+  "options": [
+   "fork",
+   "pen",
+   "truck",
+   "razor"
+  ],
+  "correct": "razor",
+  "question": "What are you going to do? I'm going to shave.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031505_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "66",
+  "n": 47,
+  "options": [
+   "She forgot it.",
+   "She listened to it.",
+   "She broke it.",
+   "She made it."
+  ],
+  "correct": "She listened to it.",
+  "question": "Mary told Bob that she had heard the record at home. What did Mary say?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031516_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "66",
+  "n": 46,
+  "options": [
+   "a large amount",
+   "different kinds"
+  ],
+  "correct": "a large amount",
+  "question": "Tom says that a great deal of cattle raising is carried on in the midwest. How many cattle are raised their?",
+  "explanation": "The phrase \"a great deal\" is a common English idiom used as a quantifier to mean a large quantity,a lot,or much.In the s"
+ },
+ "tg_20260911_031530_A3kAAz0E.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "66",
+  "n": 49,
+  "options": [
+   "It was printed.",
+   "It was sold.",
+   "It was stolen.",
+   "It was signed."
+  ],
+  "correct": "It was stolen.",
+  "question": "Someone walked away with our new book. What happened to the book?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031542_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "66",
+  "n": 43,
+  "options": [
+   "It went out of control.",
+   "It stopped running.",
+   "It turned over.",
+   "It failed to stop."
+  ],
+  "correct": "It stopped running.",
+  "question": "Davids car stalled right in the middle of the intersection.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031554_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "66",
+  "n": 50,
+  "options": [
+   "Get it out in a hurry.",
+   "Examine it carefully."
+  ],
+  "correct": "Get it out in a hurry.",
+  "question": "Rush this order through.",
+  "explanation": "The phrasal verb“rush (something) through\"means to complete a processor handle a task with great speed or urgency. In mi"
+ },
+ "tg_20260911_031607_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "66",
+  "n": 55,
+  "options": [
+   "has no water",
+   "freezes over"
+  ],
+  "correct": "has no water",
+  "question": "Each winter the pond dries up.",
+  "explanation": "The phrasal verb\"dries up\"means to lose all moisture or to become completely dry.In the context of a body of water like "
+ },
+ "tg_20260911_031619_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "66",
+  "n": 89,
+  "options": [
+   "a language may drop technical terms",
+   "new words can be added to languages by borrowing",
+   "all languages have words to describe certain occurrences",
+   "borrowing scientific terms is not common"
+  ],
+  "correct": "new words can be added to languages by borrowing",
+  "question": "Occasionally a language will not have a word to describe a certain occurrence or new product. In such cases a word is often borrowed from another language. This borrowing is particularly common with scientific and technical terms. According to this paragraph,.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031632_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "66",
+  "n": 94,
+  "options": [
+   "learned",
+   "(Options screen not captured yet.)"
+  ],
+  "correct": "learned",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "In this sentence,the blank requires an adjective to modify the noun\"scholar.\"The word“learned\"(often pronounced with two"
+ },
+ "tg_20260911_031645_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "66",
+  "n": 97,
+  "options": [
+   "a word very",
+   "(Options screen not captured yet.)"
+  ],
+  "correct": "a word very",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "In this context, the adverb“awfully\" functions as an intensifier meaning“very,\"\"extremely，or \"exceedingly.\"When used to "
+ },
+ "tg_20260911_031658_A3kAAz0E.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "66",
+  "n": 93,
+  "options": [
+   "carry it out",
+   "try it out",
+   "put it on",
+   "try it on"
+  ],
+  "correct": "try it out",
+  "question": "Before buying that car, you had better.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031709_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "66",
+  "n": 93,
+  "options": [
+   "try it out",
+   "carry it out"
+  ],
+  "correct": "try it out",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "When purchasing a vehicle,itis standard practice to test its performance,handling,and condition.The phrasal verb\"try it "
+ },
+ "tg_20260911_031722_A3kAAz0E.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "72",
+  "n": 9,
+  "options": [
+   "food",
+   "help",
+   "rest",
+   "water"
+  ],
+  "correct": "food",
+  "question": "Betty wants some rice.",
+  "explanation": "Rice is a cereal grain that isa staple item of nourishment globally. In this context,\"rice\" is a specific type of \"food."
+ },
+ "tg_20260911_031734_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "72",
+  "n": 9,
+  "options": [
+   "food",
+   "rest",
+   "water",
+   "help"
+  ],
+  "correct": "food",
+  "question": "Betty wants some rice.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031745_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "72",
+  "n": 29,
+  "options": [
+   "put them in order",
+   "clean them carefully"
+  ],
+  "correct": "put them in order",
+  "question": "Each man was asked to arrange the objects on the table. What were they asked to do?",
+  "explanation": "The verb“arrange” means to organize, classify, or place items in a specific sequence or pattern. In this context,asking "
+ },
+ "tg_20260911_031758_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "72",
+  "n": 10,
+  "options": [
+   "mail",
+   "test",
+   "book",
+   "call"
+  ],
+  "correct": "test",
+  "question": "Colonel Manning can't take the quiz.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031807_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "72",
+  "n": 26,
+  "options": [
+   "They will slip.",
+   "They will sit."
+  ],
+  "correct": "They will slip.",
+  "question": "The children will slide on the ice.",
+  "explanation": "The verb“slide\"means to move smoothly along a surface while maintaining continuous contact with it. Among the choices pr"
+ },
+ "tg_20260911_031817_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "72",
+  "n": 29,
+  "options": [
+   "put them in order",
+   "clean them carefully",
+   "take them off the table",
+   "throw them out"
+  ],
+  "correct": "put them in order",
+  "question": "Each man was asked to arrange the objects on the table. What were they asked to do?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031826_A3kAAz0E.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "72",
+  "n": 46,
+  "options": [
+   "The print was no good.",
+   "The paste was no good.",
+   "The cloth was no good.",
+   "The color was no good."
+  ],
+  "correct": "The paste was no good.",
+  "question": "Why did the wallpaper come off the wall?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031835_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "72",
+  "n": 32,
+  "options": [
+   "for breakfast",
+   "at 7 a.m.",
+   "at the cafeteria",
+   "bacon and eggs"
+  ],
+  "correct": "at the cafeteria",
+  "question": "Bill asked Jane to meet him for breakfast. Where will Bill and Jane meet?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031845_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "72",
+  "n": 42,
+  "options": [
+   "The price was very high.",
+   "The price was a little high.",
+   "The price was about normal.",
+   "The price was less than normal."
+  ],
+  "correct": "The price was about normal.",
+  "question": "They paid an average price for the house.",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_031854_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "72",
+  "n": 46,
+  "options": [
+   "The paste was no good.",
+   "The color was no good.",
+   "The print was no good."
+  ],
+  "correct": "The paste was no good.",
+  "question": "Why did the wallpaper come off the wall?",
+  "explanation": "Wallpaper is applied to walls using a specific type of adhesive known as paste. If the wallpaper\"comes off\" the wall, it"
+ },
+ "tg_20260911_031904_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "72",
+  "n": 49,
+  "options": [
+   "the back",
+   "the front"
+  ],
+  "correct": "the back",
+  "question": "The plane encountered a strong Tailwind. Which direction did the wind come from?",
+  "explanation": "In aviation and nautical contexts,a tailwind is defined as a wind that blows in the same direction as the object is trav"
+ },
+ "tg_20260911_031914_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "72",
+  "n": 56,
+  "options": [
+   "sweet rolls",
+   "cereal"
+  ],
+  "correct": "sweet rolls",
+  "question": "Joe always has pastry for breakfast.",
+  "explanation": "In English, a \"pastry\" is a baked food item made from a dough of flour,fat,and water. It is often sweet. Among the choic"
+ },
+ "tg_20260911_031924_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "72",
+  "n": 54,
+  "options": [
+   "inspired",
+   "reserved"
+  ],
+  "correct": "inspired",
+  "question": "Everyone agrees that Bert is highly motivated.",
+  "explanation": "In this context, \"motivated\" means having a strong desire, enthusiasm, or drive to accomplish a goal. In military and pr"
+ },
+ "tg_20260911_031934_A3kAAz0E.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "72",
+  "n": 55,
+  "options": [
+   "too small",
+   "worn out"
+  ],
+  "correct": "too small",
+  "question": "Virgil has outgrown all his clothes.",
+  "explanation": "The verb“outgrow”means to grow too large for something, such as a piece of clothing.When a person grows physically and t"
+ },
+ "tg_20260911_031944_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "72",
+  "n": 51,
+  "options": [
+   "You may fire it.",
+   "You may shove it around.",
+   "You may drop it."
+  ],
+  "correct": "You may fire it.",
+  "question": "Be careful or you may trigger your rifle by accident.",
+  "explanation": "In a military or firearms context, the verb \"trigger\" refers to the action of pulling the trigger mechanism on a weapon."
+ },
+ "tg_20260911_031953_A3kAAz0E.jpg": {
+  "ok": true,
+  "screen": "question",
+  "form": "72",
+  "n": 64,
+  "options": [
+   "medical care before the doctor arrived",
+   "help with his lessons before the teacher arrived",
+   "bodybuilding exercises and good food",
+   "some advice about his location"
+  ],
+  "correct": "medical care before the doctor arrived",
+  "question": "House Bob doing he's okay now he just needed some first aid treatment. What did Bob need?",
+  "explanation": "(Explanation screen not captured yet.)"
+ },
+ "tg_20260911_032003_DeQADPQQ.jpg": {
+  "ok": true,
+  "screen": "explanation",
+  "form": "72",
+  "n": 72,
+  "options": [
+   "direct from the garden",
+   "frozen"
+  ],
+  "correct": "direct from the garden",
+  "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+  "explanation": "In this context, the word“fresh\"refers to food that has been recently harvested and has not been preserved, processed, o"
+ }
+}

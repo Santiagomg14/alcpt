@@ -1212,7 +1212,7 @@
       "questions": [
         {
           "n": 39,
-          "question": "Mrs Barnett caught the bus",
+          "question": "Mrs. Barnett caught the bus.",
           "options": [
             "She was too late for the bus.",
             "She was in time for the bus.",
@@ -1224,7 +1224,7 @@
         },
         {
           "n": 40,
-          "question": "He is willing to travel",
+          "question": "He is willing to travel.",
           "options": [
             "He is refusing to travel.",
             "He is agreeing to travel.",
@@ -1232,11 +1232,11 @@
             "He is afraid to travel."
           ],
           "correct": "He is agreeing to travel.",
-          "explanation": "The word“willing”means being ready, eager, or prepared to do something of one's own free will. If someone is willing to travel, it means they are consenting or agreeing to the action without being coerced. \"He is refusing to travel.\" is incorrect because refusing is the direct antonym of being willing; it indicates a rejection of the action."
+          "explanation": "The word“willing” means being ready, eager, or prepared to do something of one's own free will. If someone is willing to travel, it means they are consenting or agreeing to the action without being coerced. \"He is refusing to travel.\" is incorrect because refusing is the direct antonym of being willing; it indicates a rejection of the action."
         },
         {
           "n": 41,
-          "question": "The man's wound was fatal",
+          "question": "The man's wound was fatal.",
           "options": [
             "He needed a bandage.",
             "He needed a nurse.",
@@ -1244,11 +1244,11 @@
             "He died."
           ],
           "correct": "He died.",
-          "explanation": "The word \"fatal is an adjective that describes something (like an injury, wound, or accident) that causes death. In a military or medical context, a fatal casualty is one where the person has expired due to the severity of their injuries.Therefore,if the man's wound was fatal, the result is that he passed away. \"He needed a bandage.\"is incorrect because a bandage is used for non-lethal wounds to control bleeding or protect an ini ury; it does not address the a isae"
+          "explanation": "The word \"fatal\" is an adjective that describes something (like an injury, wound, or accident) that causes death. In a military or medical context, a fatal casualty is one where the person has expired due to the severity of their injuries.Therefore,if the man's wound was fatal, the result is that he passed away."
         },
         {
           "n": 44,
-          "question": "Adam took up spanish",
+          "question": "Adam took up spanish.",
           "options": [
             "He failed to learn Spanish.",
             "He preferred to speak Spanish.",
@@ -1256,11 +1256,11 @@
             "He started to learn Spanish."
           ],
           "correct": "He started to learn Spanish.",
-          "explanation": "The phrasal verb \"take up\" means to begin a new activity, hobby, or area of study. In this sentence, saying Adam \"took up Spanish\" indicates that he has begun the process of learning the Spanish language. This is a common idiomatic expression used in both general and military contexts to describe starting training or a new skill set. \"He failed to learn Spanish.is incorrect because \"took up\" indicates the initiation of an action, not its"
+          "explanation": "The phrasal verb \"take up\" means to begin a new activity, hobby, or area of study. In this sentence, saying Adam \"took up Spanish\" indicates that he has begun the process of learning the Spanish language. This is a common idiomatic expression used in both general and military contexts to describe starting training or a new skill set."
         },
         {
           "n": 45,
-          "question": "My grandmother needs to take a snooze",
+          "question": "My grandmother needs to take a snooze.",
           "options": [
             "She'll go shopping.",
             "She'll go to town.",
@@ -1268,11 +1268,11 @@
             "She'll go to walking."
           ],
           "correct": "She'll go to sleep.",
-          "explanation": "The idiomatic expression\"to take a snooze\"means to take a short nap or to sleep for a brief period. In the context of the sentence, if the grandmother needs to take a snooze,it implies she is tired and intends to rest or sleep. \"She'll go shopping.\" is incorrect because \"snooze\" refers to sleeping and has nothing to do with buying goods or visiting stores. \"sr eng uu steep."
+          "explanation": "The idiomatic expression“to take a snooze\"means to take a short nap or to sleep for a brief period. In the context of the sentence, if the grandmother needs to take a snooze, it implies she is tired and intends to rest or sleep. \"She'll go shopping.\" is incorrect because \"snooze\" refers to sleeping and has nothing to do with buying goods or visiting stores."
         },
         {
           "n": 46,
-          "question": "10 new words appeared on the test Esther missed 4 of them how many did she get correct",
+          "question": "10 new words appeared on the test Esther missed 4 of them. How many did she get correct?",
           "options": [
             "four",
             "ten",
@@ -1284,7 +1284,7 @@
         },
         {
           "n": 47,
-          "question": "Sergeant James gave his captain his reason for being late what did Sergeant James tell him",
+          "question": "Sergeant James gave his captain his reason for being late. What did Sergeant James tell him?",
           "options": [
             "how he got there",
             "when he would be late",
@@ -1292,11 +1292,11 @@
             "where he was going later"
           ],
           "correct": "how he got there",
-          "explanation": "In English,a\"reason\"is an explanation or justification for why something occurred.When Sergeant James gives his \"reason for being late,he is explaining the circumstances that caused the delay. Among the provided choices, \"how he got there\"is the only option that can serve as an (for example,if he was late because his car broke down and he had to walk). In military communication,providing a reason for being late usually involves detailing the obstacles encountered during travel or the specific cause of the tardiness."
+          "explanation": "In English,a\"reason\"is an explanation or justification for why something occurred.When Sergeant james gives his \"reason for being late,he is explaining the circumstances that caused the delay. Among the provided choices, \"how he got there\"is the only option that can serve as an (for example,if he was late because his car broke down and he had to walk). In military communication,providing a reason for being late usually involves detailing the obstacles encountered during travel or the specific cause of the tardiness."
         },
         {
           "n": 48,
-          "question": "We must de-emphasize War what must we do",
+          "question": "We must de-emphasize War. What must we do?",
           "options": [
             "make war less expensive",
             "make war less important",
@@ -1304,11 +1304,11 @@
             "make war less destructive"
           ],
           "correct": "make war less important",
-          "explanation": "The word \"de-emphasize\" is formed by adding the prefix\"de-\"(meaning to reverse or reduce) to the word \"emphasize\"(meaning to give special importance or prominence to something). Therefore, to de-emphasizewar means to make it less important or to focus on it less in a strategic or social context. \"make war less expensive”is incorrect because\"de- emphasize refers to the significance or attention"
+          "explanation": "The word \"de-emphasize\" is formed by adding the prefix\"de-\"(meaning to reverse or reduce) to the word \"emphasize\"(meaning to give special importance or prominence to something). Therefore, to de-emphasizewar means to make it less important or to focus on it less in a strategic or social context."
         },
         {
           "n": 49,
-          "question": "What did your roommate wear to the party",
+          "question": "What did your roommate wear to the party?",
           "options": [
             "He left at 8 o'clock.",
             "He went with a friend.",
@@ -1320,7 +1320,7 @@
         },
         {
           "n": 50,
-          "question": "Jack carried out the order what did he do",
+          "question": "Jack carried out the order. What did he do?",
           "options": [
             "He cancelled it.",
             "He destroyed it.",
@@ -1332,7 +1332,7 @@
         },
         {
           "n": 53,
-          "question": "We succeeded because we had determination",
+          "question": "We succeeded because we had determination.",
           "options": [
             "We were not interested.",
             "We made excuses.",
@@ -1340,23 +1340,23 @@
             "We needed motivation."
           ],
           "correct": "We didn't give up.",
-          "explanation": "Determination is the quality of being resolute and firm in purpose. It implies a refusal to quit or abandon a task despite difficulties or obstacles.In a military context,determination is essential for Therefore, saying they had determination is equivalent to saying they did not give up. \"We were not interested.\"is incorrect because determination requires a high level of interest and"
+          "explanation": "Determination is the quality of being resolute and firm in purpose. It implies a refusal to quit or abandon a task despite difficulties or obstacles.In a military context,determination is essential for Therefore, saying they had determination is equivalent to saying they did not give up."
         },
         {
           "n": 54,
-          "question": "The foreign student had to get used to the new customs",
+          "question": "The foreign student had to get used to the new customs.",
           "options": [
             "He had to find out about the customs.",
             "He had to organize the customs.",
-            "He had to adjust o the customs.",
+            "He had to adjust to the customs.",
             "He had to disregard the customs."
           ],
-          "correct": "He had to adjust o the customs.",
+          "correct": "He had to adjust to the customs.",
           "explanation": "The phrase“get used to\"is an idiomatic expression meaning to become accustomed to,adapt to,or familiarize oneself with a new situation or environment.In this context,a foreign student arriving in a new place must modify their behavior or expectations to fit the local traditions.\"Adjust to\"is a direct synonym for this process of adaptation. Note: The text \"adjust o\" contains a minor typographical error for \"adjust to.\""
         },
         {
           "n": 55,
-          "question": "That company has a reputation for being above board",
+          "question": "That company has a reputation for being above board.",
           "options": [
             "exorbitant",
             "trustworthy",
@@ -1368,7 +1368,7 @@
         },
         {
           "n": 56,
-          "question": "Phyllis went to the beverage section of the grocery store",
+          "question": "Phyllis went to the beverage section of the grocery store.",
           "options": [
             "bread",
             "bacon",
@@ -1376,11 +1376,11 @@
             "green beans"
           ],
           "correct": "soft drinks",
-          "explanation": "The term \"beverage\" refers to any liquid for drinking. \"Soft drinks\" (such as soda or pop) are a common category of beverages found in a grocery store. Therefore,if Phyllis went to the beverage section,she would find soft drinks. \"bread\"is incorrect because it is a solid food item made from flour, typically found in the bakery or bread section."
+          "explanation": "The term \"beverage\" refers to any liquid for drinking. \"Soft drinks\"(such as soda or pop) are a common category of beverages found in a grocery store. Therefore,if Phyllis went to the beverage section,she would find soft drinks. \"bread\"is incorrect because it is a solid food item made from flour, typically found in the bakery or bread section."
         },
         {
           "n": 65,
-          "question": "He collects rocks from all parts of the world that's nice but do they have any value what does the man want to know",
+          "question": "He collects rocks from all parts of the world that's nice but do they have any value. What does the man want to know?",
           "options": [
             "Are the rocks unusual?",
             "Are they different shapes?",
@@ -1392,7 +1392,7 @@
         },
         {
           "n": 66,
-          "question": "What did Tom do when the water bill came he got kind of riled",
+          "question": "What did Tom do when the water bill came? He got kind of riled.",
           "options": [
             "injured",
             "happy",
@@ -1400,7 +1400,7 @@
             "wet"
           ],
           "correct": "mad",
-          "explanation": "The word \"riled\"(often used as \"riled up\") is an informal term meaning to be irritated,vexed, or angry.When Tom received the water bill,his reaction of getting“kind of riled\"indicates he became annoyed or mad about it. 'injured\"is incorrect because\"riled\"describes an emotional state of agitation,not physical harm or a bodily wound."
+          "explanation": "The word \"riled\"(often used as \"riled up\") is an informal term meaning to be irritated, vexed, or angry.When Tom received the water bill, his reaction of getting \"kind of riled\" indicates he became annoyed or mad about it. 'injured\"is incorrect because\"riled\"describes an emotional state of agitation,not physical harm or a bodily wound."
         },
         {
           "n": 74,
@@ -1412,7 +1412,7 @@
             "He wasn't supposed to go."
           ],
           "correct": "He couldn't go.",
-          "explanation": "The phrase\"wasn't able to\" is the past tense form of \"unable to,\" indicating a lack of ability, capability, or possibility. In English,\"couldn't\" (the contraction of \"could not\") is the corresponding modal verb used to express a lack of ability in the past. Therefore, \"He couldn't go\"is the direct synonym for\"Adam wasn't able to go.\" \"He didn't want to go.\"is incorrect because\"want\" refers to a person's desire or preference,whereas"
+          "explanation": "The phrase\"wasn't able to\" is the past tense form of \"unable to,\" indicating a lack of ability, capability, or possibility. In English,\"couldn't\" (the contraction of \"could not\") is the corresponding modal verb used to express a lack of ability in the past."
         },
         {
           "n": 76,
@@ -1424,7 +1424,7 @@
             "will leave"
           ],
           "correct": "to leave",
-          "explanation": "In English grammar, the verb“plan\" is typically followed by the to-infinitive form (\"to\" + base verb) when it refers to an intention or a future action.In this sentence,\"They're planning to leave\"correctly completes the structure to show that departure is the intended action for tomorrow's trip. \"be leaving\" is incorrect because it is missing the required infinitive marker\"to\"（it would need tobe \"planning to be leaving\"to be grammatically viable in"
+          "explanation": "In English grammar, the verb“plan\" is typically followed by the to-infinitive form (\"to\" + base verb) when it refers to an intention or a future action.In this sentence,\"They're planning to leave\"correctly completes the structure to show that departure is the intended action for tomorrow's trip."
         },
         {
           "n": 81,
@@ -1459,7 +1459,7 @@
             "lost"
           ],
           "correct": "be lost",
-          "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performing it. In English,when using a modal verb like“may\"in the passive voice, the grammatical \"Lost\" is the past participle of the verb \"lose.\" Therefore,“may be lost”correctly expresses the possibility that the letter will go missing during transit."
+          "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performing it. In English,when using a modal verb like“may\"in the passive voice, the grammatical \"Lost\" is the past participle of the verb \"lose.\" Therefore,“may be lost\"correctly expresses the possibility that the letter will go missing during transit. The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performing it. In English, when using a modal verb like “may\" in the passive voice, the grammatical \"Lost\" is the past participle of the verb \"lose.\" Therefore,“may be lost\" correctly expresses the possibility that the letter will go missing during transit."
         },
         {
           "n": 88,
@@ -1469,7 +1469,7 @@
             "He agreed that he would drive the car."
           ],
           "correct": "He agreed that he would drive the car.",
-          "explanation": "willingness or commitment to perform a specific action. In English grammar,the structure'agree + to- infinitive'expresses a promise or consent to do something.Therefore,\"He agreed that he would drive the car\" is the most accurate paraphrase, as it captures the intent and future-oriented commitment of the original sentence."
+          "explanation": "willingness or commitment to perform a specific action. In English grammar,the structure'agree + to- infinitive'expresses a promise or consent todo something.Therefore,\"He agreed that he would drive the car\" is the most accurate paraphrase, as it captures the intent and future-oriented commitment of the original sentence."
         },
         {
           "n": 92,
@@ -1481,7 +1481,7 @@
             "mind"
           ],
           "correct": "mind",
-          "explanation": "The phrase \"Do you mind if...?\" is a standard idiomatic expression used to ask for permission politely. It literally asks if the other person would be bothered or annoyed by the proposed action (turning on the TV). In military or shared environments, using polite requests like this maintains proper social decorum. \"want\"is incorrect because the structure“Do you want if..\" is ungrammatical. The correct structure"
+          "explanation": "The phrase \"Do you mind if...?\" is a standard idiomatic expression used to ask for permission politely. It literally asks if the other person would be bothered or annoyed by the proposed action (turning on the TV). In military or shared environments, using polite requests like this maintains proper social decorum. \"want\"is incorrect because the structure“Do you want if..\" is ungrammatical."
         },
         {
           "n": 94,
@@ -1493,7 +1493,7 @@
             "as likely"
           ],
           "correct": "more like",
-          "explanation": "The sentence compares a director's new film to their previous projects. The word\"like\"acts as a preposition here to show similarity. When comparing two things to say one resembles the other to a greater degree, the comparative form \"more like\" is used. \"like most\" is incorrect because it is missing necessary components (such as \"most like\"or \"like most of\") to function correctly in this comparative like to"
+          "explanation": "The sentence compares a director's new film to their previous projects. The word\"like\"acts as a preposition here to show similarity. When comparing two things to say one resembles the other to a used."
         },
         {
           "n": 95,
@@ -1505,7 +1505,7 @@
             "will buy"
           ],
           "correct": "buy",
-          "explanation": "This sentence uses a conditional structure to express a request or command. When the 'if' clause is in the present simple tense (lf you stop\") and the result is an instruction for the listener,the imperative mood is used in the main clause. The imperative form is the base verb without a subject. In a military context, the BX (Base Exchange) is a department store found on air force bases where personnel can purchase various items."
+          "explanation": "This sentence uses a conditional structure to express a request or command. When the 'if' clause is in the present simple tense (\"lf you stop\") and the result is an instruction for the listener,the imperative mood is used in the main clause. The imperative form is the base verb without a subject. In a military context, the BX (Base Exchange) is a department store found on air force bases where personnel can purchase various items."
         },
         {
           "n": 96,
@@ -1517,7 +1517,7 @@
             "losing"
           ],
           "correct": "losing",
-          "explanation": "A grammar item on the possessive + gerund construction. The blank needs a noun phrase to serve as the subject of the main verb \"affected,\" and a gerund (\"losing her job\") works as a noun. The possessive \"Barbara's\" shows who performed the action, so the sentence means \"The fact that Barbara lost her job affected her family's lifestyle tremendously.\" \"Lost,\" \"was lost\" and \"was losing\" are finite verb forms; any of them would give the sentence two main verbs with no subject for \"affected,\" and \"Barbara's\" cannot be a subject followed by a finite verb."
+          "explanation": "A grammar item on the possessive + gerund construction. The blank needs a noun phrase to serve as the subject of the main verb \"affected,\" and a gerund (\"losing her job\") works as a noun. The possessive \"Barbara's\" shows who performed the action, so the sentence means \"The fact that Barbara lost her job affected her family's lifestyle tremendously.\" \"Lost,\" \"was lost\" and \"was losing\" are finite verb forms; any of them would give the sentence two main verbs with no subject for \"affected,\" and \"Barbara's\" cannot be a subject followed by a finite verb. In this sentence, the subject must be a noun phrase. The word \"Barbara's\" is a possessive noun, which is commonly followed by a gerund (the -ing form of a verb acting as a noun)."
         },
         {
           "n": 97,
@@ -1529,7 +1529,7 @@
             "is not often used by scientists"
           ],
           "correct": "registers the freezing point at zero",
-          "explanation": "A reading-comprehension item. \"The latter\" refers to the second of two things just mentioned, i.e. the Celsius scale, and the paragraph says it \"records freezing temperature as 0 degrees,\" which is paraphrased as \"registers the freezing point at zero.\" \"Is not often used by scientists\" contradicts the text (scientists use Celsius \"nearly everywhere\"); \"is the same as the Fahrenheit scale\" is wrong because the paragraph presents them as two different scales; and \"measures temperatures in different scale\" is vague and does not state a fact given in the paragraph."
+          "explanation": "A reading-comprehension item. \"The latter\" refers to the second of two things just mentioned, i.e. the Celsius scale, and the paragraph says it \"records freezing temperature as 0 degrees,\" which is paraphrased as \"registers the freezing point at zero.\" \"Is not often used by scientists\" contradicts the text (scientists use Celsius \"nearly everywhere\"); \"is the same as the Fahrenheit scale\" is wrong because the paragraph presents them as two different scales; and \"measures temperatures in different scale\" is vague and does not state a fact given in the paragraph. The paragraph identifies two scales: Fahrenheit and Celsius (the latter). It explicitly states that \"The latter scale [Celsius] records freezing temperature as 0 degrees.\"Therefore, the Celsius scale registers the freezing point at zero."
         },
         {
           "n": 98,
@@ -1537,15 +1537,15 @@
           "options": [
             "-oraneity",
             "-orary",
-            "-orize",
+            "-prize",
             "-oraneously"
           ],
           "correct": "-oraneously",
-          "explanation": "The sentence requires an adverb to modify the verb \"speak.The word\"extemporaneously\"means to speak or perform without preparation (impromptu). In a professional or military instructional environment,this term refers to the ability to deliver information or briefings effectively without relying on a pre-written script or extensive notes. -oraneity\"is incorrect because\"extemporaneity\"is a noun and can not modify the verb“speak\"in this"
+          "explanation": "The sentence requires an adverb to modify the verb 'speak.The word\"extemporaneously\"means to speak or perform without preparation (impromptu). In a professional or military instructional environment,this term refers to the ability to deliver information or briefings effectively without relying on a pre-written script or extensive notes."
         },
         {
           "n": 100,
-          "question": "When the continent was first discovered, there were vast tracts of unexplored",
+          "question": "When the continent was first discovered, there were vast tracts of unexplored?",
           "options": [
             "district",
             "inhabitants",
@@ -1553,7 +1553,7 @@
             "wilderness"
           ],
           "correct": "wilderness",
-          "explanation": "The sentence describes a continent at the time of its initial discovery, implying that the land was in its natural,untouched state. The term\"wilderness\" refers to a wild,uncultivated, and uninhabited region. The phrase \"vast tracts of\" is a common English collocation used to describe large areas of land, particularly when referring to nature or unexplored territory. \"district\"is incorrect because a district is a specific"
+          "explanation": "The sentence describes a continent at the time of its initial discovery, implying that the land was in its natural,untouched state. The term\"wilderness\" refers to a wild,uncultivated, and uninhabited region. The phrase \"vast tracts of\" is a common English collocation used to describe large areas of land, territory."
         }
       ]
     },
@@ -1562,7 +1562,7 @@
       "questions": [
         {
           "n": 43,
-          "question": "Davids car stalled right in the middle of the intersection",
+          "question": "Davids car stalled right in the middle of the intersection.",
           "options": [
             "It went out of control.",
             "It stopped running.",
@@ -1574,17 +1574,17 @@
         },
         {
           "n": 46,
-          "question": "Tom says that a great deal of cattle raising is carried on in the midwest how many cattle are raised their",
+          "question": "Tom says that a great deal of cattle raising is carried on in the midwest. How many cattle are raised their?",
           "options": [
             "a large amount",
             "different kinds"
           ],
           "correct": "a large amount",
-          "explanation": "The phrase \"a great deal\" is a common English idiom used as a quantifier to mean a large quantity,a lot,or much.In the sentence,it describes the volume of cattle raising occurring in the Midwest. Therefore, when asked\"how many,\"the phrase\"a large amount” correctly reflects the meaning of the original statement. \"different kinds\"is incorrect because\"a great deal\" refers to the quantity or magnitude of an activity,not"
+          "explanation": "The phrase \"a great deal\" is a common English idiom used as a quantifier to mean a large quantity,a lot,or much.In the sentence, it describes the volume of cattle raising occurring in the Midwest. Therefore, when asked\"how many,\"the phrase\"a large amount” correctly reflects the meaning of the original statement."
         },
         {
           "n": 47,
-          "question": "Mary told Bob that she had heard the record at home what did Mary say",
+          "question": "Mary told Bob that she had heard the record at home. What did Mary say?",
           "options": [
             "She forgot it.",
             "She listened to it.",
@@ -1596,7 +1596,7 @@
         },
         {
           "n": 49,
-          "question": "Someone walked away with our new book what happened to the book",
+          "question": "Someone walked away with our new book. What happened to the book?",
           "options": [
             "It was printed.",
             "It was sold.",
@@ -1608,17 +1608,17 @@
         },
         {
           "n": 50,
-          "question": "Rush this order through",
+          "question": "Rush this order through.",
           "options": [
             "Get it out in a hurry.",
             "Examine it carefully."
           ],
           "correct": "Get it out in a hurry.",
-          "explanation": "The phrasal verb“rush(something) through\"means to complete a processor handle a task with great speed or urgency. In military and logistical contexts, if an officer or supervisor tells you to rush an order through, they are prioritizing its completion and shipment over standard,slower procedures. \"Examine it carefully.\"is incorrect because it refers to the level of scrutiny or inspection,whereas rushing often implies moving quickly,sometimes at the Check to see if it is all there."
+          "explanation": "The phrasal verb“rush (something) through\"means to complete a processor handle a task with great speed or urgency. In military and logistical contexts, if an officer or supervisor tells you to rush an order through, they are prioritizing its completion and shipment over standard,slower procedures. \"Examine it carefully.\"is incorrect because it refers to the level of scrutiny or inspection,whereas rushing often implies moving quickly,sometimes at the Check to see if it is all there."
         },
         {
           "n": 55,
-          "question": "Each winter the pond dries up",
+          "question": "Each winter the pond dries up.",
           "options": [
             "has no water",
             "freezes over"
@@ -1628,7 +1628,7 @@
         },
         {
           "n": 58,
-          "question": "What are you going to do I'm going to shave",
+          "question": "What are you going to do? I'm going to shave.",
           "options": [
             "fork",
             "pen",
@@ -1640,7 +1640,7 @@
         },
         {
           "n": 61,
-          "question": "What happened to Angela she Twisted her knee what did the woman say about Angela",
+          "question": "What happened to Angela she Twisted her knee what did the woman say about Angela?",
           "options": [
             "She went to see a friend.",
             "She broke a dish.",
@@ -1652,7 +1652,7 @@
         },
         {
           "n": 89,
-          "question": "Occasionally a language will not have a word to describe a certain occurrence or new product. In such cases a word is often borrowed from another language. This borrowing is particularly common with scientific and technical terms. According to this paragraph,",
+          "question": "Occasionally a language will not have a word to describe a certain occurrence or new product. In such cases a word is often borrowed from another language. This borrowing is particularly common with scientific and technical terms. According to this paragraph,.",
           "options": [
             "a language may drop technical terms",
             "new words can be added to languages by borrowing",
@@ -1664,7 +1664,7 @@
         },
         {
           "n": 93,
-          "question": "Before buying that car, you had better",
+          "question": "Before buying that car, you had better.",
           "options": [
             "carry it out",
             "try it out",
@@ -1672,7 +1672,7 @@
             "try it on"
           ],
           "correct": "try it out",
-          "explanation": "When purchasing a vehicle,itis standard practice to test its performance,handling,and condition.The phrasal verb\"try it out”means to test something to see if it works effectively or if you like it. In this context,it refers to taking the car for a test drive. \"carry it out\"is incorrect because it means to execute a task,conduct an experiment,or fulfill an order,"
+          "explanation": "When purchasing a vehicle,itis standard practice to test its performance,handling,and condition.The phrasal verb\"try it out”means to test something to see if it works effectively or if you like it. In this context,it refers to taking the car for a test drive."
         },
         {
           "n": 94,
@@ -1682,7 +1682,7 @@
             "(Options screen not captured yet.)"
           ],
           "correct": "learned",
-          "explanation": "In this sentence,the blank requires an adjective to modify the noun\"scholar.\"The word“learned\"(often pronounced with two syllables as /l3:nid/) is a specific adjective used to describe a person who has acquired a great deal of knowledge through intensive study.While it looks like a past tense verb,it functions here as an attributive adjective in the structure:[Article] +[Adjective] +[Noun]. learns learned has learned King shot ________ Descargar App Store"
+          "explanation": "In this sentence,the blank requires an adjective to modify the noun\"scholar.\"The word“learned\"(often pronounced with two syllables as /l3:nid/) is a specific adjective used to describe a person who has acquired a great deal of knowledge through intensive study.While it looks like a past tense verb,it functions here as an attributive adjective in the structure:[Article] +[Adjective]+[Noun]."
         },
         {
           "n": 97,
@@ -1692,7 +1692,7 @@
             "(Options screen not captured yet.)"
           ],
           "correct": "a word very",
-          "explanation": "In this context, the adverb“awfully\"functions as an intensifier meaning\"“very,\"\"extremely，or \"exceedingly.\"When used to modify an adjective like \"long,it emphasizes the degree of the quality rather than conveying a negative or \"awful\"meaning. A \"long run\"for a play indicates it has been performed for a significant period of time,which is usually a sign of popularity and success. an exciting a happy King shot ________ Descargar App Store"
+          "explanation": "In this context, the adverb“awfully\" functions as an intensifier meaning“very,\"\"extremely，or \"exceedingly.\"When used to modify an adjective like \"long,it emphasizes the degree of the quality rather than conveying a negative or \"awful\"meaning. A \"long run\"for a play indicates it has been performed for a significant period of time,which is usually a sign of popularity and success."
         }
       ]
     },
@@ -2328,19 +2328,19 @@
       "questions": [
         {
           "n": 9,
-          "question": "Betty wants some rice",
+          "question": "Betty wants some rice.",
           "options": [
             "food",
-            "water",
             "help",
-            "rest"
+            "rest",
+            "water"
           ],
           "correct": "food",
-          "explanation": "Rice is a cereal grain that isa staple item of nourishment globally. In this context,\"rice\" is a specific type of \"food.\" The statement indicates that Betty desires something to eat. \"rest\"is incorrect because rice is a physical item consumed for nutrition,while rest refers to sleep or a period of inactivity to recover strength. 'water\" is incorrect because rice is a solid grain,"
+          "explanation": "Rice is a cereal grain that isa staple item of nourishment globally. In this context,\"rice\" is a specific type of \"food.\" The statement indicates that Betty desires something to eat. \"rest\"is incorrect because rice is a physical item consumed for nutrition,while rest refers to sleep or a period of inactivity to recover strength."
         },
         {
           "n": 10,
-          "question": "Colonel Manning can't take the quiz",
+          "question": "Colonel Manning can't take the quiz.",
           "options": [
             "mail",
             "test",
@@ -2352,17 +2352,17 @@
         },
         {
           "n": 26,
-          "question": "The children will slide on the ice",
+          "question": "The children will slide on the ice.",
           "options": [
             "They will slip.",
             "They will sit."
           ],
           "correct": "They will slip.",
-          "explanation": "The verb“slide\"means to move smoothly along a surface while maintaining continuous contact with it. Among the choices provided, \"slip\" is the most appropriate synonym in the context of moving on ice, as it describes the action of sliding unintentionally or moving easily over a slick surface. \"They will sit.\" is incorrect because sitting involves resting on a surface and remaining stationary,which contradicts the moye ment implied by sliding. iiey Willldik."
+          "explanation": "The verb“slide\"means to move smoothly along a surface while maintaining continuous contact with it. Among the choices provided, \"slip\" is the most appropriate synonym in the context of moving on ice, as it describes the action of sliding unintentionally or moving easily over a slick surface. \"They will sit.\" is incorrect because sitting involves resting on a surface and remaining stationary,which contradicts the moye ment implied by sliding. imi ey Willldik."
         },
         {
           "n": 29,
-          "question": "Each man was asked to arrange the objects on the table what were they asked to do",
+          "question": "Each man was asked to arrange the objects on the table. What were they asked to do?",
           "options": [
             "put them in order",
             "clean them carefully",
@@ -2370,11 +2370,11 @@
             "throw them out"
           ],
           "correct": "put them in order",
-          "explanation": "The verb\"arrange” means to organize, classify, or place items in a specific sequence or pattern. In this context,asking someone to arrange objects on a table is synonymous with asking them to put those objects in order. This is a common action verb used gear, or logistical items. \"clean them carefully\"is incorrect because arranging refers to the physical placement and organization of"
+          "explanation": "The verb“arrange” means to organize, classify, or place items in a specific sequence or pattern. In this context,asking someone to arrange objects on a table is synonymous with asking them to put those objects in order. This is a common action verb used gear, or logistical items."
         },
         {
           "n": 32,
-          "question": "Bill asked Jane to meet him for breakfast where will Bill and Jane meet",
+          "question": "Bill asked Jane to meet him for breakfast. Where will Bill and Jane meet?",
           "options": [
             "for breakfast",
             "at 7 a.m.",
@@ -2386,7 +2386,7 @@
         },
         {
           "n": 42,
-          "question": "They paid an average price for the house",
+          "question": "They paid an average price for the house.",
           "options": [
             "The price was very high.",
             "The price was a little high.",
@@ -2398,7 +2398,7 @@
         },
         {
           "n": 46,
-          "question": "Why did the wallpaper come off the wall",
+          "question": "Why did the wallpaper come off the wall?",
           "options": [
             "The print was no good.",
             "The paste was no good.",
@@ -2406,11 +2406,11 @@
             "The color was no good."
           ],
           "correct": "The paste was no good.",
-          "explanation": "Wallpaper is applied to walls using a specific type of adhesive known as paste.If the wallpaper\"comes off\" the wall, it means the bonding agent failed. Therefore,the logical reason for the wallpaper detaching is that the paste was poor quality or ineffective. This question tests the understanding of cause-and-effect relationships and vocabulary related to household items and adhesives. \"The print was no good.\" is incorrect because the iiecioiiiwasiioyoou."
+          "explanation": "Wallpaper is applied to walls using a specific type of adhesive known as paste. If the wallpaper\"comes off\" the wall, it means the bonding agent failed. Therefore,the logical reason for the wallpaper detaching is that the paste was poor quality or ineffective. This question tests the understanding of cause-and-effect relationships and vocabulary related to household items and adhesives."
         },
         {
           "n": 49,
-          "question": "The plane encountered a strong Tailwind which direction did the wind come from",
+          "question": "The plane encountered a strong Tailwind. Which direction did the wind come from?",
           "options": [
             "the back",
             "the front"
@@ -2420,7 +2420,7 @@
         },
         {
           "n": 51,
-          "question": "Be careful or you may trigger your rifle by accident",
+          "question": "Be careful or you may trigger your rifle by accident.",
           "options": [
             "You may fire it.",
             "You may shove it around.",
@@ -2431,37 +2431,37 @@
         },
         {
           "n": 54,
-          "question": "Everyone agrees that Bert is highly motivated",
+          "question": "Everyone agrees that Bert is highly motivated.",
           "options": [
             "inspired",
             "reserved"
           ],
           "correct": "inspired",
-          "explanation": "In this context, \"motivated\" means having a strong desire, enthusiasm, or drive to accomplish a goal. In military and professional environments,a motivated individual is someone eager to perform their duties and excel.\"Inspired\" is the closest synonym among the choices, as it implies being filled with the urge or energy to do something productive or creative. \"reserved\"is incorrect because it describes a person who is quiet,shy,or keeps their feelings to"
+          "explanation": "In this context, \"motivated\" means having a strong desire, enthusiasm, or drive to accomplish a goal. In military and professional environments,a motivated individual is someone eager to perform their duties and excel.\"Inspired\" is the closest synonym among the choices, as it implies being filled with the urge or energy to do something productive or creative."
         },
         {
           "n": 55,
-          "question": "Virgil has outgrown all his clothes",
+          "question": "Virgil has outgrown all his clothes.",
           "options": [
             "too small",
-            "(Options screen not captured yet.)"
+            "worn out"
           ],
           "correct": "too small",
-          "explanation": "The verb“outgrow”means to grow too large for something, such as a piece of clothing.When a person grows physically and their clothes no longer fit because they are insufficient in size, we say the clothes have become \"too small\" for them. In a military context,this often refers to recruits or personnel needing new uniform sizes due to physical training and growth. worn out\"is incorrect because this refers to the"
+          "explanation": "The verb“outgrow”means to grow too large for something, such as a piece of clothing.When a person grows physically and their clothes no longer fit because they are insufficient in size, we say the clothes have become \"too small\" for them. In a military context,this often refers to recruits or personnel needing new uniform sizes due to physical training and growth."
         },
         {
           "n": 56,
-          "question": "Joe always has pastry for breakfast",
+          "question": "Joe always has pastry for breakfast.",
           "options": [
             "sweet rolls",
             "cereal"
           ],
           "correct": "sweet rolls",
-          "explanation": "In English, a \"pastry\" is a baked food item made from a dough of flour,fat,and water. Itis often sweet. Among the choices provided, \"sweet rolls\"are a specific type of baked bread-likeproduct that falls under the category of pastry.This question tests the ability to identify synonyms or category members within a breakfast context. \"cereal\"is incorrect because it refers to a grain-based food typically served in a bowl with milk, which is not"
+          "explanation": "In English, a \"pastry\" is a baked food item made from a dough of flour,fat,and water. It is often sweet. Among the choices provided, \"sweet rolls\" are a specific type of baked bread-likeproduct that falls under the category of pastry.This question tests the ability to identify synonyms or category members within a breakfast context."
         },
         {
           "n": 64,
-          "question": "House Bob doing he's okay now he just needed some first aid treatment what did Bob need",
+          "question": "House Bob doing he's okay now he just needed some first aid treatment. What did Bob need?",
           "options": [
             "medical care before the doctor arrived",
             "help with his lessons before the teacher arrived",
@@ -2479,7 +2479,7 @@
             "frozen"
           ],
           "correct": "direct from the garden",
-          "explanation": "In this context,the word“fresh\"refers to food that has been recently harvested and has not been preserved, processed, or stored for a long time. Vegetables that come“direct from the garden\"are the definition of fresh because they have just been picked and retain their natural quality and moisture. \"frozen\" is incorrect because freezing is a method of preservation used for vegetables that are not being eaten fresh;the two terms are generally opposites in"
+          "explanation": "In this context, the word“fresh\"refers to food that has been recently harvested and has not been preserved, processed, or stored for a long time. Vegetables that come“direct from the garden\"are the definition of fresh because they have just been picked and retain their natural quality and moisture."
         }
       ]
     },

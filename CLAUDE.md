@@ -103,6 +103,21 @@ y deja `inbox/<captura>.txt`; solo con `CAPTURE_FALLBACK=claude` en `.env` recur
 Claude Code. La regla 2 (filtrar vocabulario y preguntar a Brayhan) sigue igual: el
 parser no toca `vocabulary.json`.
 
+La app tiene dos pantallas por ítem (pregunta con la correcta en verde; explicación
+con «Correct Answer», «Explanation» e «Incorrect Answers»). Se funden en la misma
+entrada; lo que falta queda con un marcador «(… not captured yet.)» y `/pendientes`
+lo lista. El texto pasa por corrector ortográfico (corpus de wordsegment) y los
+enunciados de audio se puntúan («…the order. What did he do?»).
+
+**Ráfagas**: el bot no regenera ni commitea por captura. Anota cada cambio y, tras
+`FLUSH_DELAY` segundos (30) sin novedades, regenera una vez, un commit «Lote: …» y
+un push. `/rebuild` cierra el lote de inmediato. Al parar el servicio (SIGTERM)
+también se cierra.
+
+**Verificación**: `python scripts/audit_forms.py` (0 sospechosas es el objetivo) y
+`python scripts/check_captures.py` (compara el parser con las 93 capturas reales;
+`--update` tras revisar cambios a mano).
+
 ### 9. Podcasts (pestaña «Podcasts»)
 `data/podcasts.json` + `docs/audio/*.mp3`, generados por `scripts/build_podcasts.py` con
 **edge-tts** (voces `en-US-AndrewNeural` y `es-CO-SalomeNeural`, sin clave ni costo).
@@ -137,6 +152,8 @@ alcpt/
 │   ├── fetch_readings.py  <- trae y condensa artículos de ThoughtCo
 │   ├── ocr_capture.py     <- OCR local de una captura (RapidOCR, sin red)
 │   ├── parse_capture.py   <- captura → pregunta en forms.json, sin Claude Code
+│   ├── audit_forms.py     <- completas / pendientes / sospechosas en forms.json
+│   ├── check_captures.py  <- regresión del parser contra tests/captures_expected.json
 │   └── add_word.py        <- agrega palabras por línea de comandos
 ├── bot/
 │   ├── alcpt_bot.py       <- bot de Telegram (portátil, sin rutas fijas)

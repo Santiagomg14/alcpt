@@ -111,6 +111,77 @@ def unglue(text: str) -> str:
     return re.sub(r"(-?)([A-Za-z]{5,})", fix, text)
 
 
+_KEEP = {"alcpt", "bx", "nco", "tv", "us", "usa", "ok", "mr", "mrs", "ms", "dr", "ur"}
+
+
+def _edits1(w):
+    letters = "abcdefghijklmnopqrstuvwxyz'"
+    splits = [(w[:i], w[i:]) for i in range(len(w) + 1)]
+    yield from (a + b[1:] for a, b in splits if b)
+    yield from (a + b[1] + b[0] + b[2:] for a, b in splits if len(b) > 1)
+    yield from (a + c + b[1:] for a, b in splits if b for c in letters)
+    yield from (a + c + b for a, b in splits for c in letters)
+
+
+def correct_word(w: str) -> str:
+    """Corrector tipo Norvig con el corpus de wordsegment: solo toca palabras que
+    no existen y tienen una vecina a una edición de distancia mucho más
+    frecuente («warer» → «water», «Getltout» no, «Barousse» no)."""
+    if _SEG is None:
+        segment("a")
+    low = w.lower()
+    if len(low) < 3 or low in _SEG.UNIGRAMS or low in _KEEP or not low.isalpha():
+        return w
+    cands = {c for c in _edits1(low) if c in _SEG.UNIGRAMS}
+    if not cands:
+        return w
+    best = max(cands, key=lambda c: _SEG.UNIGRAMS[c])
+    if _SEG.UNIGRAMS[best] < 2e6:       # vecinas raras no son evidencia
+        return w
+    if w[:1].isupper():
+        best = best[0].upper() + best[1:]
+    return best
+
+
+def spellfix(text: str) -> str:
+    """Aplica correct_word palabra por palabra, respetando puntuación y guiones."""
+    text = re.sub(r"(?<=[a-z]) o (?=[a-z])", " to ", text)   # «adjust o the» → «adjust to the»
+    return re.sub(r"[A-Za-z']+", lambda m: correct_word(m.group(0)), text)
+
+
+QUESTION_START = re.compile(r"^(what|who|whom|whose|where|when|why|how|which|do|does|did|is|are|"
+                            r"was|were|can|could|will|would|should|have|has|had|may|might)\b", re.I)
+
+
+def polish_stem(text: str) -> str:
+    """Deja el enunciado como lo escribiría una persona: mayúscula inicial,
+    «Mrs.» con punto, signo final («?» si empieza como pregunta). Los ítems de
+    audio vienen en minúscula y sin puntuación porque la app muestra la
+    transcripción tal cual."""
+    s = text.strip()
+    if not s or s.startswith("("):
+        return s
+    s = re.sub(r"\b(Mr|Mrs|Ms|Dr)\s", r"\1. ", s)
+    s = s[0].upper() + s[1:]
+    if re.search(r"[.?!_\"”]$", s):
+        return s
+    # Transcripciones de audio sin puntuación. Dos formas típicas:
+    #   «Jack carried out the order what did he do»  → afirmación + pregunta
+    #   «What did Tom do when the bill came he got kind of riled» → pregunta + respuesta
+    words = s.split()
+    m = re.search(r" (what|who|where|when|why|how|which) (?=\w)", s, re.I)
+    if not QUESTION_START.match(s) and m and len(s[:m.start()].split()) >= 3:
+        a, b = s[:m.start()].strip(), s[m.start():].strip()
+        return f"{a}. {b[0].upper()}{b[1:]}?"
+    if QUESTION_START.match(s):
+        for m in re.finditer(r" (he|she|they|we|you|it|I'm|I've|I) (?=\w)", s):
+            if len(s[:m.start()].split()) >= 5:
+                a, b = s[:m.start()].strip(), s[m.start():].strip()
+                return f"{a}? {b[0].upper()}{b[1:]}."
+        return s + "?"
+    return s + "."
+
+
 def norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]", "", s.lower())
 
@@ -206,6 +277,21 @@ def _span(r):
     """Rango vertical de una opción: empieza y termina en el mismo renglón hasta
     que se le pegue una continuación."""
     return {"x": r["x"], "y1": r["y"], "y2": r["y"], "h": r["h"], "conf": r.get("conf", 1.0)}
+
+
+def looks_garbage(option: str) -> bool:
+    """Basura de OCR («Getltoutmramuir», «Ba iii eai»), no vocabulario raro.
+    El ALCPT pregunta palabras poco frecuentes («gesticulated», «razes»,
+    «-oraneity»): una sola palabra pronunciable nunca se descarta."""
+    if option.startswith(("(", "-")):
+        return False
+    words = re.findall(r"[A-Za-z']+", option)
+    if not words:
+        return True
+    if len(words) == 1:
+        w = words[0].lower()
+        return not re.search(r"[aeiouy]", w) or bool(re.search(r"[^aeiouy]{5,}", w))
+    return known_ratio(option) < 0.34
 
 
 def known_ratio(text: str) -> float:
@@ -378,11 +464,11 @@ def parse_rows(rows, width):
     q = {
         "form": form,
         "n": n,
-        "question": (lambda s: s[:1].upper() + s[1:])(unglue(" ".join(stem).strip())),
-        "options": [unglue(o) for o in options if o],
-        "correct": correct_text,
-        "explanation": unglue(" ".join(expl).strip()),
-        "incorrect": unglue(" ".join(incorrect).strip()),
+        "question": polish_stem(spellfix(unglue(" ".join(stem).strip()))),
+        "options": [spellfix(unglue(o)) for o in options if o],
+        "correct": spellfix(unglue(correct_text)) if correct_text else None,
+        "explanation": spellfix(unglue(" ".join(expl).strip())),
+        "incorrect": spellfix(unglue(" ".join(incorrect).strip())),
         "screen": screen,
         "_option_rows": option_rows,
     }
@@ -434,15 +520,44 @@ def finish_fields(q, image_path, scale):
         expl = q["explanation"]
         if q["incorrect"]:
             expl = (expl + " " + q["incorrect"]).strip()
-        q["explanation"] = expl or NO_EXPL_YET
+        q["explanation"] = trim_truncated(expl) or NO_EXPL_YET
         if len(q["options"]) < 2:
             q["options"].append(NO_OPTIONS_YET)
     if not q["question"]:
         q["question"] = NO_STEM_YET
-    q["options"] = [o for o in q["options"]
-                    if o.startswith(("(", "-")) or known_ratio(o) >= 0.34]   # «-oraneity» es sufijo, no basura
+    q["options"] = [o for o in q["options"] if not looks_garbage(o)]
     q.pop("_option_rows", None)
     q.pop("incorrect", None)
+
+
+def trim_truncated(text: str) -> str:
+    """La pantalla de explicación se desplaza: la última frase suele quedar
+    cortada («The correct structure»). Si el texto no acaba en puntuación, se
+    quita ese último fragmento; con otra captura desplazada se recupera entero."""
+    s = text.strip()
+    if not s or re.search(r"[.!?\"”)]$", s):
+        return s
+    cut = max(s.rfind(". "), s.rfind("? "), s.rfind("! "))
+    return s[:cut + 1] if cut > 40 else s
+
+
+def merge_explanations(old: str, new: str) -> str:
+    """Dos capturas desplazadas de la misma explicación: se unen por el trozo
+    en que se solapan; si no se solapan, se concatenan."""
+    if not old or old in PLACEHOLDERS:
+        return new
+    if not new or new in PLACEHOLDERS or new in old:
+        return old
+    if old in new:
+        return new
+    a, b = old.split(), new.split()
+    for k in range(min(len(a), len(b), 12), 3, -1):
+        if a[-k:] == b[:k]:
+            return " ".join(a + b[k:])
+    for k in range(min(len(a), len(b), 12), 3, -1):
+        if b[-k:] == a[:k]:
+            return " ".join(b + a[k:])
+    return old + " " + new
 
 
 # --- forms.json -----------------------------------------------------------------
@@ -476,9 +591,11 @@ def merge(existing: dict, new: dict) -> list[str]:
         hit = match_option(new["correct"], existing["options"]) or new["correct"]
         existing["correct"] = hit
         changed.append("respuesta")
-    if existing.get("explanation") in PLACEHOLDERS and new["explanation"] not in PLACEHOLDERS:
-        existing["explanation"] = new["explanation"]
-        changed.append("explicación")
+    if new["explanation"] not in PLACEHOLDERS:
+        merged = merge_explanations(existing.get("explanation", ""), new["explanation"])
+        if merged != existing.get("explanation"):
+            existing["explanation"] = merged
+            changed.append("explicación")
     if (not existing.get("question") or existing["question"].startswith("(")) \
             and new["question"] and not new["question"].startswith("("):
         existing["question"] = new["question"]
