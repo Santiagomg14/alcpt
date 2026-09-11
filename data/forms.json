@@ -18,7 +18,7 @@
       "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 295
+    "total_questions": 298
   },
   "forms": [
     {
@@ -1210,6 +1210,40 @@
       "form": "65",
       "questions": [
         {
+          "n": 48,
+          "question": "We must de-emphasize War what must we do",
+          "options": [
+            "make war less important",
+            "make war less expensive"
+          ],
+          "correct": "make war less important",
+          "explanation": "The word \"de-emphasize\" is formed by adding the prefix\"de-\"(meaning to reverse or reduce) to the word \"emphasize\"(meaning to give special importance or prominence to something). Therefore, to de-emphasizewar means to make it less important or to focus on it less in a strategic or social context. \"make war less expensive”is incorrect because\"de- emphasize refers to the significance or attention"
+        },
+        {
+          "n": 49,
+          "question": "What did your roommate wear to the party",
+          "options": [
+            "He left at 8 o'clock.",
+            "He went with a friend.",
+            "He had on a dark suit.",
+            "He went to the officer's club."
+          ],
+          "correct": "He had on a dark suit.",
+          "explanation": "The question asks\"what did your roommate wear which requires a description of clothing.The phrasal verb \"had on\" is an idiomatic way to say \"was wearing.Therefore, “He had on a dark suit” directly answers the question about his attire for the party. \"He left at 8o'clock.is incorrect because it answers the question\"When did he leave?\"instead of what he wore."
+        },
+        {
+          "n": 50,
+          "question": "Jack carried out the order what did he do",
+          "options": [
+            "He cancelled it.",
+            "He destroyed it.",
+            "He threw it away.",
+            "He executed it."
+          ],
+          "correct": "He executed it.",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
           "n": 53,
           "question": "We succeeded because we had determination",
           "options": [
@@ -1554,7 +1588,7 @@
             "King shot ________ Descargar App Store"
           ],
           "correct": "try it out",
-          "explanation": "(Explanation screen not captured yet.)"
+          "explanation": "When purchasing a vehicle,itis standard practice to test its performance,handling,and condition.The phrasal verb\"try it out”means to test something to see if it works effectively or if you like it. In this context,it refers to taking the carfor a test drive. \"carry it out\"is incorrect because it means to execute a task,conduct an experiment,or fulfill an order, King shot ________ Descargar App Store"
         },
         {
           "n": 94,
