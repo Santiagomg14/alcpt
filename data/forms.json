@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 275
+    "total_questions": 276
   },
   "forms": [
     {
@@ -1253,6 +1253,16 @@
           ],
           "correct": "be lost",
           "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performing it. In English,when using a modal verb like“may\"in the passive voice, the grammatical \"Lost\" is the past participle of the verb \"lose.\" Therefore,“may be lost”correctly expresses the possibility that the letter will go missing during transit."
+        },
+        {
+          "n": 88,
+          "question": "car.\"",
+          "options": [
+            "He agreed that he would drive the",
+            "(Options screen not captured yet.)"
+          ],
+          "correct": "He agreed that he would drive the",
+          "explanation": "willingness or commitment to perform a specific action. In English grammar,the structure'agree + to- infinitive'expresses apromiseor consent to do something.Therefore,\"He agreed that he would drive the car\" is the most accurate paraphrase, as it captures the intent and future-oriented commitment of the original sentence. car. He agreed that anyone could drive the car. He agreed that he would drive the car."
         },
         {
           "n": 92,
