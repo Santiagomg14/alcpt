@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 312
+    "total_questions": 313
   },
   "forms": [
     {
@@ -2411,6 +2411,16 @@
           ],
           "correct": "The paste was no good.",
           "explanation": "Wallpaper is applied to walls using a specific type of adhesive known as paste.If the wallpaper\"comes off\" the wall, it means the bonding agent failed. Therefore,the logical reason for the wallpaper detaching is that the paste was poor quality or ineffective. This question tests the understanding of cause-and-effect relationships and vocabulary related to household items and adhesives. \"The print was no good.\" is incorrect because the iiecioiiiwasiioyoou."
+        },
+        {
+          "n": 49,
+          "question": "The plane encountered a strong Tailwind which direction did thewind come from",
+          "options": [
+            "the back",
+            "the front"
+          ],
+          "correct": "the back",
+          "explanation": "In aviation and nautical contexts,a tailwind is defined as a wind that blows in the same direction as the object is traveling,meaning it comes from behind or the back of the aircraft.A tailwind increases the aircraft's ground speed. \"the front\"is incorrect because wind coming from the front is called a headwind,which slows the aircraft down."
         }
       ]
     },
