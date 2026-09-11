@@ -18,7 +18,7 @@
       "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 277
+    "total_questions": 278
   },
   "forms": [
     {
@@ -1337,6 +1337,18 @@
             "Shemade it."
           ],
           "correct": "She listened to it.",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 49,
+          "question": "Someone walked away with our new book what happened to the book",
+          "options": [
+            "It was printed.",
+            "It was sold.",
+            "Itwas stolen.",
+            "It was signed."
+          ],
+          "correct": "Itwas stolen.",
           "explanation": "(Explanation screen not captured yet.)"
         },
         {
