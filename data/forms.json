@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 291
+    "total_questions": 292
   },
   "forms": [
     {
@@ -1219,6 +1219,18 @@
             "as likely"
           ],
           "correct": "more like",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 41,
+          "question": "41the man's wound was fatal",
+          "options": [
+            "He needed a bandage.",
+            "He needed a nurse.",
+            "He rested.",
+            "He died."
+          ],
+          "correct": "He died.",
           "explanation": "(Explanation screen not captured yet.)"
         },
         {
