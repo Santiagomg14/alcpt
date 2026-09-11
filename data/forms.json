@@ -18,7 +18,7 @@
       "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 285
+    "total_questions": 288
   },
   "forms": [
     {
@@ -1232,11 +1232,36 @@
           "explanation": "(Explanation screen not captured yet.)"
         },
         {
-          "n": 81,
+          "n": 74,
           "question": "(Question stem not captured yet — only the explanation screen was sent.)",
           "options": [
+            "He couldn't go.",
+            "He wasn't ready to go.",
+            "He wasn't supposed to go."
+          ],
+          "correct": "He couldn't go.",
+          "explanation": "The phrase\"wasn't able to\" is the past tense form of \"unable to,\" indicating a lack of ability, capability, or possibility. In English,\"couldn't\" (the contraction of \"could not\") is the corresponding modal verb used to express a lack of ability in the past. Therefore, \"He couldn't go\"is the direct synonym for\"Adam wasn't able to go.\" \"He didn't want to go.\"is incorrect because\"want\" refers to a person's desire or preference,whereas"
+        },
+        {
+          "n": 76,
+          "question": "They're planning ________ on the trip tomorrow.",
+          "options": [
+            "to leave",
+            "be leaving",
+            "leaving",
+            "will leave"
+          ],
+          "correct": "to leave",
+          "explanation": "In English grammar, the verb“plan\" is typically followed by the to-infinitive form (\"to\" + base verb) when it refers to an intention or a future action.In this sentence,\"They're planning to leave\"correctly completes the structure to show that departure is the intended action for tomorrow's trip. \"be leaving\" is incorrect because it is missing the required infinitive marker\"to\"（it would need tobe \"planning to be leaving\"to be grammatically viable in"
+        },
+        {
+          "n": 81,
+          "question": "Every elected official has an obligation to represent the voters.",
+          "options": [
             "a duty",
-            "a problem"
+            "a problem",
+            "a moral",
+            "an office"
           ],
           "correct": "a duty",
           "explanation": "In this context,the word“obligation”means a moral or legal requirement or duty. An elected official is bound by their position to serve and represent the interests ofthe people who voted for them. Therefore, \"a duty\" is the most accurate synonym for \"obligation.\" 'a problem\"is incorrect because an obligation represents a responsibility or requirement,nota difficulty or a negative issue to be resolved."
@@ -1254,9 +1279,12 @@
         },
         {
           "n": 86,
-          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "question": "The letter may ________ in the mail.",
           "options": [
-            "belost"
+            "lost",
+            "be losing",
+            "be lost",
+            "lost"
           ],
           "correct": "belost",
           "explanation": "The sentence requires the passive voice because the subject (\"The letter\") is receiving the action rather than performing it. In English,when using a modal verb like“may\"in the passive voice, the grammatical \"Lost\" is the past participle of the verb \"lose.\" Therefore,“may be lost”correctly expresses the possibility that the letter will go missing during transit."
@@ -1451,6 +1479,18 @@
           ],
           "correct": "She hurt her leg.",
           "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 89,
+          "question": "Occasionally a language will not have a word to describe a certain occurrence or new product. In suchcasesa word is often borrowed from another language. This borrowing is particularly common with scientific and technical terms. According to this paragraph,",
+          "options": [
+            "a language may drop technical terms",
+            "new words can be added to languages by borrowing all languages have words to describe certain occurrences",
+            "borrowing scientific terms is not common",
+            "King shot ________ Descargar App Store"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
         }
       ]
     },
