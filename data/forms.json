@@ -1281,8 +1281,10 @@
         },
         {
           "n": 86,
-          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "question": "The letter may ________ in the mail.",
           "options": [
+            "lost",
+            "be losing",
             "be lost",
             "lost"
           ],
