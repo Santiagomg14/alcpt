@@ -608,6 +608,17 @@ JS = """
   /* ---- podcasts: un solo audio a la vez; saltos entre lectura y episodio ---- */
   var audios = Array.prototype.slice.call(document.querySelectorAll('.ep audio'));
   audios.forEach(function(a){
+    a.addEventListener('error', function(){
+      if(!a.dataset.pages || a.parentNode === null) return;
+      var p = document.createElement('p');
+      p.className = 'pending';
+      p.innerHTML = 'Este visor no permite cargar el audio. ' +
+        '<a target="_blank" rel="noopener"></a>';
+      var link = p.querySelector('a');
+      link.href = a.dataset.pages;
+      link.textContent = 'Escúchalo en GitHub Pages';
+      a.parentNode.replaceChild(p, a);
+    });
     a.addEventListener('play', function(){
       audios.forEach(function(o){ if(o !== a) o.pause(); });
       if(synth){ synth.cancel(); }
@@ -949,6 +960,12 @@ def build(vocab, forms, pv, idioms, readings, podcasts, audio_base):
     a('<section class="panel" id="panel-podcasts" role="tabpanel" aria-labelledby="tab-podcasts" hidden>')
     a('<p class="part">Podcasts</p>')
     a(f'<p class="part-note">{escape(podcasts.get("meta", {}).get("intro", ""))}</p>')
+    if audio_base.startswith("http"):
+        # Fragmento para el artifact de Claude: su visor bloquea por CSP los MP3 de
+        # otros dominios, así que se deja a mano el camino a la versión que sí suena.
+        a(f'<p class="pending">Si los reproductores no suenan aquí, abre los podcasts en '
+          f'<a href="{escape(PAGES_URL, quote=True)}#podcasts" target="_blank" rel="noopener">'
+          f'GitHub Pages</a>.</p>')
     if not episodes:
         a('<p class="pending">Todavía no hay episodios. Se generan con '
           "<code>python scripts/build_podcasts.py</code>.</p>")
@@ -970,7 +987,8 @@ def build(vocab, forms, pv, idioms, readings, podcasts, audio_base):
               + (f' · <span class="dur">{mmss(e["seconds"])}</span>' if e.get("seconds") else "")
               + "</p></div></div>")
             if e.get("seconds"):
-                a(f'<audio controls preload="none" src="{escape(audio_base + e["id"] + ".mp3", quote=True)}">'
+                a(f'<audio controls preload="none" src="{escape(audio_base + e["id"] + ".mp3", quote=True)}" '
+                  f'data-pages="{escape(PAGES_URL + "#ep-" + e["id"], quote=True)}">'
                   "Tu navegador no reproduce audio MP3.</audio>")
             else:
                 a('<p class="pending">Audio pendiente de generar.</p>')

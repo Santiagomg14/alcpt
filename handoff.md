@@ -1,6 +1,6 @@
 # Handoff — Vocabulario en inglés + ALCPT (Brayhan)
 
-**Última actualización:** 10 sep 2026 (17:10, servidor Linux `server`)
+**Última actualización:** 11 sep 2026 (servidor Linux `server`)
 
 ## 1. El objetivo
 
@@ -142,8 +142,9 @@ Sesión del 10 sep 2026 (servidor `server`, Claude Code):
   por CSP los MP3 que vienen de GitHub Pages, así que en el artifact la pestaña
   Podcasts muestra los reproductores pero no suena; embeberlos como data: URI no
   cabe (48 MB frente a un tope de 16 MB). El audio de podcasts funciona en
-  GitHub Pages (`docs/index.html`). Pendiente: poner en esa pestaña un enlace a
-  Pages cuando la página corre dentro del artifact.
+  GitHub Pages (`docs/index.html`). Resuelto el 11 sep: el fragmento lleva un
+  aviso con enlace a Pages al inicio de la pestaña y, si un `<audio>` falla al
+  cargar, el JS lo cambia por un enlace al episodio en Pages (`data-pages`).
 - **Telegram admite un solo lector por token.** Si el bot se instala en otra
   máquina, hay que desinstalarlo primero donde esté (`install_service.py
   --uninstall`); `bot/active_host.json` lleva el registro de quién lo tiene tomado.
