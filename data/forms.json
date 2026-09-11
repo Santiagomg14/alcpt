@@ -1281,8 +1281,10 @@
           "n": 97,
           "question": "Two different scales are used to measure atmospheric temperatures. The older Fahrenheit scale is used mostly by the general public of the US and certain other countries, while the Celsius scale, or centigrade scale, is used by scientists nearly everywhere. The latter scale records freezing temperature as 0 degrees. According to this paragraph, the Celsius scale",
           "options": [
-            "measures temperatures in different scale",
-            "is the same as the Fahrenheit scale",
+            "measures temperatures in",
+            "different scale",
+            "is the same as the Fahrenheit",
+            "scale",
             "registers the freezing point at zero",
             "is not often used by scientists"
           ],
