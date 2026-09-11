@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 317
+    "total_questions": 318
   },
   "forms": [
     {
@@ -2463,6 +2463,17 @@
           ],
           "correct": "sweet rolls",
           "explanation": "In English, a \"pastry\" is a baked food item made from a doughof flour,fat,and water. Itis often sweet. Among the choices provided, \"sweet rolls\"are a specific type of baked bread-likeproduct that falls under the category of pastry.This question tests the ability to identify synonyms or category members within a breakfast context. \"cereal\"is incorrect because it refers to a grain-based food typically served in a bowl with milk, which is not"
+        },
+        {
+          "n": 64,
+          "question": "House Bob doing he's okay now he just needed some first aid treatment what did Bob need",
+          "options": [
+            "medical care before the doctor arrived help with his lessons before the teacher arrived",
+            "bodybuilding exercises and good food",
+            "some advice about his location"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
         }
       ]
     },

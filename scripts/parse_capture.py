@@ -59,7 +59,7 @@ RE_FORM = re.compile(r"\b(?:form(?:ulario)?|alcpt)\s*#?\s*(\d{2,3})\b", re.I)
 RE_STATUS = re.compile(r"\b\d{1,2}:\d{2}\b.*\b(?:4g|5g|lte|wifi|\d{1,3})\b", re.I)
 RE_NOISE = re.compile(r"^\s*(?:end\s*review|cc|next|previous|submit|answer\s*:?\s*\d*\s*\)?)\s*$", re.I)
 # «56. Phyllis…», «56. 56 Phyllis…», «54.54the…», «10 When…»; nunca «6:51»
-RE_STEM_NUM = re.compile(r"^\s*(\d{1,3})(?:\s*[.)]\s*(?:\1(?=\s|[A-Za-z]))?\s*|\s+(?=[A-Za-z]))(.*)$")
+RE_STEM_NUM = re.compile(r"^\s*(\d{1,3})(?:\s*[.)]\s*(?:\1(?=\s|[A-Za-z0-9]))?\s*|\s+(?=[A-Za-z]))(.*)$")
 RE_TIME = re.compile(r"\b\d{1,2}:\d{2}\b")
 RE_ANSWER_N = re.compile(r"answer\s*:?\s*(\d{1,3})\s*\)", re.I)
 RE_CORRECT = re.compile(r"^\s*correct\s*answer\s*[:\"“”']*\s*(.+?)[\"“”']*\s*$", re.I)
@@ -101,7 +101,7 @@ def unglue(text: str) -> str:
         if any(len(x) < 2 or x not in _SEG.UNIGRAMS for x in parts):
             return tok
         return out[0].upper() + out[1:] if tok[0].isupper() else out
-    return re.sub(r"(-?)([A-Za-z]{8,})", fix, text)
+    return re.sub(r"(-?)([A-Za-z]{5,})", fix, text)
 
 
 def norm(s: str) -> str:
@@ -164,17 +164,22 @@ def parse_rows(rows, width):
     stem_x = None
     pending_digits = ""  # «10» en un renglón y «0.» en el siguiente = 100
     stem_x_locked = False  # tras la primera línea del enunciado ya no se corrige n
+    prev_row = None
 
     for r in rows:
         line = r["text"].strip()
         if not line:
             continue
+        prev = prev_row
+        prev_row = r
         if stage == "head" and (RE_STATUS.search(line) or RE_TIME.search(line)
                                 or re.fullmatch(r"[\d:\s_]+", line)):
             continue
         if RE_NOISE.match(line):
             if RE_ANSWER_N.search(line) and n is None:
                 n = int(RE_ANSWER_N.search(line).group(1))
+            if re.match(r"^\s*end\s*review", line, re.I):
+                break          # debajo solo hay botones y anuncios de la app
             continue
         m = RE_FORM.search(line)
         if m and form is None:
@@ -218,7 +223,7 @@ def parse_rows(rows, width):
             if r["x"] > width * 0.2 and len(line.split()) <= 7 \
                     and not re.search(r"(,|\band\b|\bor\b|\bto\b)$", line):
                 if option_rows and option_rows[-1] is not None \
-                        and r["y"] - option_rows[-1]["y"] < 2.0 * max(r["h"], option_rows[-1]["h"]):
+                        and r["y"] - option_rows[-1]["y"] < 1.5 * max(r["h"], option_rows[-1]["h"]):
                     options[-1] = (options[-1] + " " + line).strip()
                     option_rows[-1] = r
                 elif not options and line[:1].islower():
@@ -275,7 +280,8 @@ def parse_rows(rows, width):
                     stem.append(m2.group(2))
                 continue
             stem_x_locked = True
-            if stage == "stem" and stem_x is not None and r["x"] - stem_x > width * 0.06:
+            big_gap = prev is not None and r["y"] - prev["y"] > 2.5 * max(r["h"], prev["h"])
+            if stage == "stem" and stem_x is not None and r["x"] - stem_x > width * 0.06 and big_gap:
                 stage = "options"
             else:
                 if stage == "head":
@@ -284,7 +290,7 @@ def parse_rows(rows, width):
                 stem.append(line)
                 continue
         if stage == "options":
-            if option_rows and r["y"] - option_rows[-1]["y"] < 2.0 * max(r["h"], option_rows[-1]["h"]):
+            if option_rows and r["y"] - option_rows[-1]["y"] < 1.5 * max(r["h"], option_rows[-1]["h"]):
                 options[-1] = (options[-1] + " " + line).strip()   # opción que ocupa 2 renglones
                 option_rows[-1] = r
             else:
@@ -333,7 +339,7 @@ def finish_fields(q, image_path, scale):
             q["explanation"] = NOT_SHOWN_EXPL
     else:
         c = q["correct"]
-        if " " not in c and len(c) > 6:
+        if " " not in c and len(c) >= 5:
             c = segment(c)          # «belost» → «be lost», «softdrinks» → «soft drinks»
         # los nombres de las incorrectas salen entre comillas en su bloque
         names = [m.group(1).strip() for m in
@@ -375,6 +381,11 @@ def merge(existing: dict, new: dict) -> list[str]:
         if opts != existing.get("options"):
             existing["options"] = opts
             changed.append("opciones")
+    if existing.get("correct") not in PLACEHOLDERS and existing["correct"] not in existing.get("options", []):
+        hit = match_option(existing["correct"], existing.get("options", []))
+        if hit:
+            existing["correct"] = hit
+            changed.append("respuesta casada")
     if existing.get("correct") in PLACEHOLDERS and new["correct"] not in PLACEHOLDERS:
         hit = match_option(new["correct"], existing["options"]) or new["correct"]
         existing["correct"] = hit
