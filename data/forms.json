@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 278
+    "total_questions": 279
   },
   "forms": [
     {
@@ -1242,6 +1242,18 @@
             "wet"
           ],
           "correct": "mad",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 76,
+          "question": "They're planning ________ on the trip tomorrow.",
+          "options": [
+            "to leave",
+            "be leaving",
+            "leaving",
+            "will leave"
+          ],
+          "correct": "to leave",
           "explanation": "(Explanation screen not captured yet.)"
         },
         {
