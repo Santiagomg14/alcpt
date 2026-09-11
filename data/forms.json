@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 280
+    "total_questions": 281
   },
   "forms": [
     {
@@ -1231,6 +1231,18 @@
           ],
           "correct": "soft drinks",
           "explanation": "The term \"beverage\" refers to any liquid for drinking. \"Soft drinks\" (such as soda or pop) are a common category of beverages found in a grocery store. Therefore,if Phyllis went to the beverage section,she would find soft drinks. \"bread\"is incorrect because it is a solid food item made from flour, typically found in the bakery or bread section."
+        },
+        {
+          "n": 65,
+          "question": "he collects rocks from all parts of the world that's nice but do they have any value what does the manwant toknow",
+          "options": [
+            "Are the rocks unusual?",
+            "Are they different shapes?",
+            "Are they hard to find?",
+            "Are they worth anything?"
+          ],
+          "correct": "Are they worth anything?",
+          "explanation": "(Explanation screen not captured yet.)"
         },
         {
           "n": 66,
