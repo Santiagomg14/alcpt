@@ -14,10 +14,11 @@
       "75",
       "82",
       "87",
-      "Technical & Action Verbs"
+      "Technical & Action Verbs",
+      "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 294
+    "total_questions": 295
   },
   "forms": [
     {
@@ -1570,6 +1571,23 @@
           ],
           "correct": "wilderness",
           "explanation": "The sentence describes a continent at the time of its initial discovery, implying that the land was in its natural,untouched state. The term\"wilderness\" refers to a wild,uncultivated, and uninhabited region. The phrase \"vast tracts of\" is a common English collocation used to describe large areas of land, particularly when referring to nature or unexplored territory. \"district\"is incorrect because a district is a specific"
+        }
+      ]
+    },
+    {
+      "form": "66",
+      "questions": [
+        {
+          "n": 61,
+          "question": "what happened to Angela she Twisted her knee what did the woman say about Angela",
+          "options": [
+            "She went to see a friend.",
+            "She broke a dish.",
+            "She hurt her leg.",
+            "She opened a bottle."
+          ],
+          "correct": "She hurt her leg.",
+          "explanation": "(Explanation screen not captured yet.)"
         }
       ]
     },
