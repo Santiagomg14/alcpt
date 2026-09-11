@@ -270,7 +270,10 @@ def pending_report():
         for q in f["questions"]:
             tag = f"{f['form']}·{q.get('n')}"
             opts = q.get("options", [])
-            if q.get("question", "").startswith("(") or len(opts) < 4 \
+            # solo las que dejó a medias el procesador local (marcadores entre paréntesis);
+            # las antiguas con menos de 4 opciones vienen de capturas recortadas y no
+            # se van a completar solas
+            if q.get("question", "").startswith("(Question stem") \
                     or any(o.startswith("(") for o in opts):
                 need_q.append(tag)
             if q.get("explanation", "").startswith("(") or q.get("correct", "").startswith("(Not shown"):
