@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 306
+    "total_questions": 308
   },
   "forms": [
     {
@@ -1211,6 +1211,18 @@
       "form": "65",
       "questions": [
         {
+          "n": 39,
+          "question": "Mrs Barnett caught the bus",
+          "options": [
+            "She was too late for the bus.",
+            "She was in time for the bus.",
+            "She was waiting for the bus.",
+            "She was asking for the bus."
+          ],
+          "correct": "She was in time for the bus.",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
           "n": 40,
           "question": "He is willing to travel",
           "options": [
@@ -2329,6 +2341,18 @@
           ],
           "correct": "food",
           "explanation": "Rice is a cereal grain that isa staple item of nourishment globally. In this context,\"rice\" is a specific type of \"food.\" The statement indicates that Betty desires something to eat. \"rest\"is incorrect because rice is a physical item consumed for nutrition,while rest refers to sleep or a period of inactivity to recover strength. 'water\" is incorrect because rice is a solid grain,"
+        },
+        {
+          "n": 10,
+          "question": "Colonel Manning can't take the quiz",
+          "options": [
+            "mail",
+            "test",
+            "book",
+            "call"
+          ],
+          "correct": "(Not shown — captured during the test, before the review screen.)",
+          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
         },
         {
           "n": 29,
