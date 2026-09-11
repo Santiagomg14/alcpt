@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 301
+    "total_questions": 303
   },
   "forms": [
     {
@@ -1210,6 +1210,30 @@
     {
       "form": "65",
       "questions": [
+        {
+          "n": 44,
+          "question": "Adam took up spanish",
+          "options": [
+            "He failed to learn Spanish.",
+            "He preferred to speak Spanish.",
+            "He appeared to know Spanish.",
+            "He started to learn Spanish."
+          ],
+          "correct": "He started to learn Spanish.",
+          "explanation": "The phrasal verb \"take up\" means to begin a new activity, hobby, or area of study. In this sentence, saying Adam \"took up Spanish\" indicates that he has begun the process of learning the Spanish language. This is a common idiomatic expression used in both general and military contexts to describe starting training or a new skill set. \"He failed to learn Spanish.is incorrect because \"took up\" indicates the initiation of an action, not its"
+        },
+        {
+          "n": 45,
+          "question": "My grandmother needs to take a snooze",
+          "options": [
+            "She'll go shopping.",
+            "She'll go to town.",
+            "She'll go to sleep.",
+            "She'll go to walking."
+          ],
+          "correct": "She'll go to sleep.",
+          "explanation": "The idiomatic expression\"to take a snooze\"means to take a short nap or to sleep for a brief period. In the context of the sentence, if the grandmother needs to take a snooze,it implies she is tired and intends to rest or sleep. \"She'll go shopping.\" is incorrect because \"snooze\" refers to sleeping and has nothing to do with buying goods or visiting stores. \"sr eng uu steep."
+        },
         {
           "n": 46,
           "question": "4610 new words appeared on the test Esther missed 4 of them how many did she get correct",
