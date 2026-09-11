@@ -2,8 +2,8 @@
   "meta": {
     "owner": "Brayhan",
     "level": "B2",
-    "last_updated": "2026-09-10",
-    "total_confirmed": 334
+    "last_updated": "2026-09-11",
+    "total_confirmed": 335
   },
   "sections": [
     {
@@ -265,6 +265,11 @@
           "n": 334,
           "en": "Basement",
           "es": "sótano (piso de una casa o edificio que queda bajo el nivel de la calle, usado como bodega, lavandería o cuarto extra: the boiler is in the basement); planta baja subterránea de tiendas y grandes almacenes (bargain basement = sección de ofertas, y por extensión \"de saldo\", muy barato: bargain-basement prices); matiz: basement = sótano habitable o de uso general; cellar = sótano de almacenamiento, sobre todo de vino o comida (wine cellar); en jerga de fútbol americano / béisbol, \"in the basement\" = en el último lugar de la tabla; no confundir con \"base\" (base militar) ni con \"foundation\" (cimientos)"
+        },
+        {
+          "n": 335,
+          "en": "Test",
+          "es": "prueba, examen (to take / sit a test = presentar un examen; to pass / fail a test = aprobar / reprobar); análisis clínico o ensayo técnico (blood test, drug test, stress test, engine test); poner a prueba, probar, ensayar (verbo: to test the brakes, to test someone's patience); matiz: test = prueba puntual, exam = examen formal y más largo, quiz = prueba corta, trial = prueba en condiciones reales (trial period) y también juicio; \"to put something to the test\" = poner algo a prueba; \"to stand the test of time\" = resistir el paso del tiempo; \"acid test\" = prueba definitiva, prueba de fuego; \"test case\" = caso de prueba (en programación y en derecho, caso que sienta precedente); \"test run\" / \"dry run\" = ensayo previo; en contexto militar aparece en test firing (disparo de prueba), test flight (vuelo de prueba) y en el propio ALCPT (placement test = examen de ubicación o clasificación)"
         }
       ]
     },
