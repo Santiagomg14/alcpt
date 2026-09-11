@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 313
+    "total_questions": 314
   },
   "forms": [
     {
@@ -2421,6 +2421,17 @@
           ],
           "correct": "the back",
           "explanation": "In aviation and nautical contexts,a tailwind is defined as a wind that blows in the same direction as the object is traveling,meaning it comes from behind or the back of the aircraft.A tailwind increases the aircraft's ground speed. \"the front\"is incorrect because wind coming from the front is called a headwind,which slows the aircraft down."
+        },
+        {
+          "n": 56,
+          "question": "Joe always has pastry for breakfast",
+          "options": [
+            "Ba iii eai",
+            "sweet rolls",
+            "cereal"
+          ],
+          "correct": "sweet rolls",
+          "explanation": "In English, a \"pastry\" is a baked food item made from a doughof flour,fat,and water. Itis often sweet. Among the choices provided, \"sweet rolls\"are a specific type of baked bread-likeproduct that falls under the category of pastry.This question tests the ability to identify synonyms or category members within a breakfast context. \"cereal\"is incorrect because it refers to a grain-based food typically served in a bowl with milk, which is not"
         }
       ]
     },
