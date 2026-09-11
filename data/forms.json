@@ -18,7 +18,7 @@
       "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 292
+    "total_questions": 295
   },
   "forms": [
     {
@@ -1210,6 +1210,30 @@
       "form": "65",
       "questions": [
         {
+          "n": 53,
+          "question": "We succeeded because we had determination",
+          "options": [
+            "We were not interested.",
+            "We made excuses.",
+            "We didn't give up.",
+            "We needed motivation."
+          ],
+          "correct": "We didn't give up.",
+          "explanation": "Determination is the quality ofbeing resolute and firm in purpose. It implies a refusal to quit or abandon a task despite difficulties or obstacles.In a military context,determination is essential for Therefore, saying they had determination is equivalent to saying they did not give up. \"We were not interested.\"is incorrect because determinationrequiresa high level of interest and"
+        },
+        {
+          "n": 54,
+          "question": "The foreign student had to get used to the new customs",
+          "options": [
+            "He had to find out about the customs.",
+            "He had to organize the customs.",
+            "He had to adjust o the customs.",
+            "He had to disregard the customs."
+          ],
+          "correct": "He had to adjust o the customs.",
+          "explanation": "The phrase“get used to\"is an idiomatic expression meaning to become accustomed to,adapt to,or familiarize oneself with anewsituation or environment.In this context,a foreign student arriving in a new place must modify their behavior or expectations to fit the local traditions.\"Adjust to\"is a direct synonym for this process of adaptation. Note: The text \"adjust o\" contains a minor typographical error for \"adjust to.\""
+        },
+        {
           "n": 55,
           "question": "That company has a reputation for being above board",
           "options": [
@@ -1518,6 +1542,19 @@
           ],
           "correct": "(Not shown — captured during the test, before the review screen.)",
           "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 93,
+          "question": "Before buying that car, you had better",
+          "options": [
+            "carry it out",
+            "try it out",
+            "put it on",
+            "try it on",
+            "King shot ________ Descargar App Store"
+          ],
+          "correct": "try it out",
+          "explanation": "(Explanation screen not captured yet.)"
         },
         {
           "n": 94,
