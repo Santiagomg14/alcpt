@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 303
+    "total_questions": 306
   },
   "forms": [
     {
@@ -1211,6 +1211,30 @@
       "form": "65",
       "questions": [
         {
+          "n": 40,
+          "question": "He is willing to travel",
+          "options": [
+            "He is refusing to travel.",
+            "He is agreeing to travel.",
+            "He is forced to travel.",
+            "He is afraid to travel."
+          ],
+          "correct": "He is agreeing to travel.",
+          "explanation": "The word“willing”means being ready, eager, or prepared to do something of one's own free will. If someone is willing to travel, it means they are consenting or agreeing to the action without being coerced. \"He is refusing to travel.\" is incorrect because refusing is the direct antonym of being willing; it indicates a rejection of the action."
+        },
+        {
+          "n": 41,
+          "question": "The man's wound was fatal",
+          "options": [
+            "He needed a bandage.",
+            "He needed a nurse.",
+            "He rested.",
+            "He died."
+          ],
+          "correct": "He died.",
+          "explanation": "The word \"fatal is an adjective that describes something (like an injury, wound, or accident) that causes death. In a military or medical context, a fatal casualty is one where the person has expired due to the severity of their injuries.Therefore,if the man's wound was fatal, the result is that he passed away. \"He needed a bandage.\"is incorrect because a bandage is used fornon-lethal wounds to control bleeding or protect an iniury; it does not address the aisae"
+        },
+        {
           "n": 44,
           "question": "Adam took up spanish",
           "options": [
@@ -2305,6 +2329,16 @@
           ],
           "correct": "food",
           "explanation": "Rice is a cereal grain that isa staple item of nourishment globally. In this context,\"rice\" is a specific type of \"food.\" The statement indicates that Betty desires something to eat. \"rest\"is incorrect because rice is a physical item consumed for nutrition,while rest refers to sleep or a period of inactivity to recover strength. 'water\" is incorrect because rice is a solid grain,"
+        },
+        {
+          "n": 29,
+          "question": "Each man was asked to arrange the objects on the table what were they asked to do",
+          "options": [
+            "put them in order",
+            "clean them carefully"
+          ],
+          "correct": "put them in order",
+          "explanation": "The verb\"arrange” means to organize, classify, or place items in a specific sequence or pattern. In this context,asking someone to arrange objects on a table is synonymous with asking them toput those objects in order. This is a common action verb used gear, or logistical items. \"clean them carefully\"is incorrect because arranging refers to the physical placement and organization of"
         }
       ]
     },
