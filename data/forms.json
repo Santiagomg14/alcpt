@@ -17,7 +17,7 @@
       "Technical & Action Verbs"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 285
+    "total_questions": 286
   },
   "forms": [
     {
@@ -1220,6 +1220,16 @@
           ],
           "correct": "more like",
           "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 49,
+          "question": "what did your roommate wear to the party",
+          "options": [
+            "He had on a dark suit.",
+            "(Options screen not captured yet.)"
+          ],
+          "correct": "He had on a dark suit.",
+          "explanation": "The question asks\"what did your roommate wear which requires a description of clothing.The phrasal verb \"had on\" is an idiomatic way to say \"was wearing.Therefore, “He had on a dark suit” directly answers the question about his attire for the party. \"He left at 8o'clock.is incorrect because it answers the question\"When did he leave?\"instead of what he wore. \"ne rrauuri a uarksum. He went to the officer's club."
         },
         {
           "n": 50,
