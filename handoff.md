@@ -122,6 +122,27 @@ Sesión del 11 sep 2026 (servidor `server`):
 - Diagramas de arquitectura (actual vs propuesta) publicados como artifact:
   https://claude.ai/code/artifact/e7308c13-eb52-40b0-b92f-ad0c430fdc88
 
+Sesión del 11 sep 2026, segunda parte (verificación con capturas reales):
+
+- Brayhan mandó **93 capturas** (Forms 65, 66 y 72) mientras el bot corría. Auditoría
+  automática (`flags` por placeholders, nº de opciones, correcta ∉ opciones) y visual
+  de las peores. Se reprocesó todo desde cero varias veces tras cada corrección.
+  Resultado final: 55 preguntas, **28 completas** y 27 a la espera de la otra
+  pantalla (ningún error de parser conocido).
+- Correcciones al parser: barra de estado con hora se ignora siempre; «Correct
+  Answer» y opciones de dos renglones se unen (umbral 1.8·h entre renglones); el
+  anuncio «Kingshot · Descargar · App Store» que asoma sobre «End Review» corta el
+  parseo; las opciones empiezan tras un salto ≥2.5·h o con sangría ≥10 % y salto
+  ≥1.8·h (enunciados largos); verde por conteo de píxeles (g>90, g>r+20, g>b+20,
+  ≥12 px) para opciones cortas como «six»; la opción que Brayhan marcó (rojo
+  cursiva) se relee por el canal R ampliada ×4 y se descarta si la confianza <0.80,
+  luego la rellena la pantalla de explicación; `wordsegment` parte tokens de 5+
+  letras solo si el token es rarísimo frente a sus partes («Itwas», «outof»);
+  la correcta NUNCA se casa por aproximación (evita «slip»→«sit»), solo los
+  nombres de las incorrectas.
+- Nuevo `/pendientes` en el bot: lista qué preguntas necesitan la pantalla de
+  pregunta o la de explicación.
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,
@@ -149,7 +170,13 @@ Sesión del 11 sep 2026 (servidor `server`):
 
 ## 7. Qué planeas hacer después
 
-- Seguir calibrando el parser con más capturas reales (ya va 9/9 del Form 65).
+- **Mejoras recomendadas al flujo del bot** (no hechas): (a) agrupar el rebuild +
+  commit cuando llegan capturas en ráfaga (93 capturas = 93 commits y ~10 s de
+  regeneración cada una; un temporizador de 30 s tras el último cambio bastaría);
+  (b) pedirle a Brayhan que mande siempre las dos pantallas de cada ítem y la de
+  explicación desplazada arriba del todo (si no, no se ve el enunciado);
+  (c) las 21 «Not shown» viejas ya se completan solas si manda su pantalla de repaso.
+- Seguir calibrando el parser con más capturas reales (93/93 estructuradas).
   Pendiente conocido: en la pantalla de explicación el bloque «Incorrect Answers»
   puede venir cortado por el scroll (la última frase queda truncada); y el
   enunciado de la #66 salió sin signos («what did Tom do … he got kind of riled»).

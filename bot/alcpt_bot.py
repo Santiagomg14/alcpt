@@ -262,6 +262,29 @@ def update_handoff():
         log("handoff.md: fecha y conteos actualizados")
 
 
+def pending_report():
+    """Qué preguntas quedaron a medias porque solo llegó una de las dos pantallas."""
+    forms = json.loads((DATA / "forms.json").read_text(encoding="utf-8"))
+    need_q, need_e = [], []
+    for f in forms["forms"]:
+        for q in f["questions"]:
+            tag = f"{f['form']}·{q.get('n')}"
+            opts = q.get("options", [])
+            if q.get("question", "").startswith("(") or len(opts) < 4 \
+                    or any(o.startswith("(") for o in opts):
+                need_q.append(tag)
+            if q.get("explanation", "").startswith("(") or q.get("correct", "").startswith("(Not shown"):
+                need_e.append(tag)
+    if not need_q and not need_e:
+        return "Nada pendiente: todas las preguntas tienen enunciado, opciones, respuesta y explicación."
+    lines = []
+    if need_q:
+        lines += [f"Falta la pantalla de PREGUNTA (form·nº), {len(need_q)}:", "  " + ", ".join(need_q)]
+    if need_e:
+        lines += [f"Falta la pantalla de EXPLICACIÓN (form·nº), {len(need_e)}:", "  " + ", ".join(need_e)]
+    return "\n".join(lines)
+
+
 def data_changed():
     """¿Quedó algo nuevo en data/ respecto al último commit?
 
@@ -315,9 +338,12 @@ HELP = (
     "Mándame:\n"
     "• una palabra o expresión en inglés → la traduzco y la agrego\n"
     "• palabra = traducción → la agrego tal cual, sin IA\n"
-    "• una captura del examen → extraigo la pregunta completa\n\n"
+    "• una captura del examen → la leo aquí mismo (sin IA) y la guardo\n"
+    "   manda las DOS pantallas de cada ítem: la de la pregunta (opciones con la\n"
+    "   correcta en verde) y la de la explicación, desplazada arriba del todo\n\n"
     "Comandos:\n"
     "/estado – cuántas palabras y preguntas hay\n"
+    "/pendientes – preguntas a las que les falta una pantalla (pregunta o explicación)\n"
     "/rebuild – regenerar PDF y páginas web\n"
     "/lecturas – traer lecturas nuevas de ThoughtCo (p. ej. /lecturas math 2)\n"
     "   secciones: computer-science, math, statistics, philosophy, history,\n"
@@ -509,6 +535,8 @@ def handle_update(u):
             words, questions = counts()
             send(chat_id, f"{words} palabras · {questions} preguntas documentadas · "
                           f"{readings_count()} lecturas.")
+        elif cmd == "/pendientes":
+            send(chat_id, pending_report())
         elif cmd == "/lecturas":
             handle_readings_cmd(chat_id, text.split()[1:])
         elif cmd == "/rebuild":

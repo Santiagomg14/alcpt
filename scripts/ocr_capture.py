@@ -90,16 +90,43 @@ def group_lines(items, y_tol=0.6):
     return lines, frags
 
 
+_ENGINE = None
+
+
+def engine():
+    """Un solo motor por proceso: cargar los modelos cuesta más que leer una imagen."""
+    global _ENGINE
+    if _ENGINE is None:
+        from rapidocr_onnxruntime import RapidOCR
+        _ENGINE = RapidOCR()
+    return _ENGINE
+
+
+def ocr_crop(img, box, upscale=3, channel=None):
+    """OCR de un recorte de la imagen original, ampliado. `channel` ('R', 'G' o
+    'B') usa solo ese canal: para texto rojo sobre fondo oscuro el canal R da
+    mucho más contraste que la escala de grises."""
+    import numpy as np
+    crop = img.crop(box)
+    crop = crop.getchannel(channel) if channel else ImageOps.grayscale(crop)
+    crop = ImageOps.autocontrast(crop, cutoff=1)
+    crop = crop.resize((crop.width * upscale, crop.height * upscale), Image.LANCZOS)
+    result, _ = engine()(np.asarray(crop))
+    if not result:
+        return "", 0.0
+    lines, frags = group_lines(result)
+    conf = min(f["conf"] for f in frags) if frags else 0.0
+    return " ".join(l for l in lines if l).strip(), conf
+
+
 def ocr(path: Path) -> dict:
     import numpy as np
-    from rapidocr_onnxruntime import RapidOCR
 
     img, factor = prepare(path)
-    engine = RapidOCR()
-    result, _elapsed = engine(np.asarray(img))
+    result, _elapsed = engine()(np.asarray(img))
     if not result:
         return {"text": "", "lines": 0, "confidence": 0.0, "usable": False,
-                "rows": [], "scale": factor}
+                "rows": [], "scale": factor, "height": img.height}
     lines, frags = group_lines(result)
     conf = sum(f["conf"] for f in frags) / len(frags)
     text = "\n".join(l for l in lines if l)
@@ -110,7 +137,7 @@ def ocr(path: Path) -> dict:
         if line:
             rows.append({"text": line, **frag})
     return {"text": text, "lines": len(lines), "confidence": round(conf, 3),
-            "usable": usable, "rows": rows, "scale": factor}
+            "usable": usable, "rows": rows, "scale": factor, "height": img.height}
 
 
 def _row_geometry(frags, y_tol=0.6):
@@ -123,8 +150,9 @@ def _row_geometry(frags, y_tol=0.6):
             r["y"] = (r["y"] + f["y"]) / 2
             r["h"] = max(r["h"], f["h"])
             r["x"] = min(r["x"], f["x"])
+            r["conf"] = min(r["conf"], f["conf"])
         else:
-            rows.append({"x": f["x"], "y": f["y"], "h": f["h"]})
+            rows.append({"x": f["x"], "y": f["y"], "h": f["h"], "conf": f["conf"]})
     return rows
 
 
@@ -147,7 +175,7 @@ def main() -> int:
     if args.out:
         args.out.write_text(res["text"], encoding="utf-8")
     if args.json:
-        print(json.dumps({k: v for k, v in res.items() if k not in ("rows", "scale")},
+        print(json.dumps({k: v for k, v in res.items() if k not in ("rows", "scale", "height")},
                          ensure_ascii=False))
     else:
         print(res["text"])

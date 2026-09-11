@@ -43,7 +43,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from ocr_capture import ocr  # noqa: E402
+from ocr_capture import ocr, ocr_crop  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[1]
 FORMS = REPO / "data" / "forms.json"
@@ -53,7 +53,8 @@ NOT_SHOWN_EXPL = ("Listening comprehension item. Only the answer choices were "
 NO_EXPL_YET = "(Explanation screen not captured yet.)"
 NO_OPTIONS_YET = "(Options screen not captured yet.)"
 NO_STEM_YET = "(Question stem not captured yet — only the explanation screen was sent.)"
-PLACEHOLDERS = {NOT_SHOWN, NOT_SHOWN_EXPL, NO_EXPL_YET, NO_OPTIONS_YET, NO_STEM_YET, ""}
+UNREADABLE = "(unreadable option — marked in red)"
+PLACEHOLDERS = {NOT_SHOWN, NOT_SHOWN_EXPL, NO_EXPL_YET, NO_OPTIONS_YET, NO_STEM_YET, UNREADABLE, ""}
 
 RE_FORM = re.compile(r"\b(?:form(?:ulario)?|alcpt)\s*#?\s*(\d{2,3})\b", re.I)
 RE_STATUS = re.compile(r"\b\d{1,2}:\d{2}\b.*\b(?:4g|5g|lte|wifi|\d{1,3})\b", re.I)
@@ -61,6 +62,7 @@ RE_NOISE = re.compile(r"^\s*(?:end\s*review|cc|next|previous|submit|answer\s*:?\
 # «56. Phyllis…», «56. 56 Phyllis…», «54.54the…», «10 When…»; nunca «6:51»
 RE_STEM_NUM = re.compile(r"^\s*(\d{1,3})(?:\s*[.)]\s*(?:\1(?=\s|[A-Za-z0-9]))?\s*|\s+(?=[A-Za-z]))(.*)$")
 RE_TIME = re.compile(r"\b\d{1,2}:\d{2}\b")
+RE_AD = re.compile(r"descargar|app\s*store|google\s*play|instalar|anuncio|kingshot|\bad\b", re.I)
 RE_ANSWER_N = re.compile(r"answer\s*:?\s*(\d{1,3})\s*\)", re.I)
 RE_CORRECT = re.compile(r"^\s*correct\s*answer\s*[:\"“”']*\s*(.+?)[\"“”']*\s*$", re.I)
 RE_EXPL = re.compile(r"^\s*explanation\s*:?\s*(.*)$", re.I)
@@ -94,11 +96,16 @@ def unglue(text: str) -> str:
             return m.group(0)
         tok = m.group(2)
         out = segment(tok)
-        if _SEG is None or tok.lower() in _SEG.UNIGRAMS or " " not in out:
+        if _SEG is None or " " not in out:
             return tok
         parts = out.split()
         # solo si cada trozo es una palabra real de 2+ letras («the beverage»)
-        if any(len(x) < 2 or x not in _SEG.UNIGRAMS for x in parts):
+        if any((len(x) < 2 and x not in ("a", "i")) or x not in _SEG.UNIGRAMS for x in parts):
+            return tok
+        # «itwas» y «outof» existen en el corpus como rarezas: se parten si el token
+        # entero es muchísimo menos frecuente que sus partes
+        whole = _SEG.UNIGRAMS.get(tok.lower(), 0)
+        if whole and whole > 0.001 * min(_SEG.UNIGRAMS[x] for x in parts):
             return tok
         return out[0].upper() + out[1:] if tok[0].isupper() else out
     return re.sub(r"(-?)([A-Za-z]{5,})", fix, text)
@@ -108,8 +115,10 @@ def norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]", "", s.lower())
 
 
-def match_option(text: str, options: list[str]) -> str | None:
-    """Casa el texto de la correcta con una opción aunque el OCR pegara palabras."""
+def match_option(text: str, options: list[str], fuzzy: bool = False) -> str | None:
+    """Casa un texto con una opción aunque el OCR pegara palabras. `fuzzy` admite
+    una letra de diferencia: solo para los nombres de las incorrectas, nunca
+    para la correcta («slip» no puede acabar casando con «sit»)."""
     key = norm(text)
     for o in options:
         if norm(o) == key:
@@ -117,18 +126,63 @@ def match_option(text: str, options: list[str]) -> str | None:
     for o in options:
         if key and (key in norm(o) or norm(o) in key):
             return o
+    if not fuzzy:
+        return None
+    # «warer» ≈ «water»: el OCR de la opción en rojo suele fallar por una letra
+    import difflib
+    for o in options:
+        if key and len(key) >= 4 and difflib.SequenceMatcher(None, key, norm(o)).ratio() >= 0.8:
+            return o
     return None
 
 
 # --- color: qué opción está en verde ------------------------------------------
-def green_fraction(img, box) -> float:
+def green_fraction(img, box) -> int:
     import numpy as np
     a = np.asarray(img.crop(box)).astype(int)
     if a.size == 0:
         return 0.0
     r, g, b = a[..., 0], a[..., 1], a[..., 2]
-    mask = (g > 110) & (g > r + 35) & (g > b + 35)
-    return float(mask.mean())
+    mask = (g > 90) & (g > r + 20) & (g > b + 20)
+    return int(mask.sum())          # píxeles verdes: «six» en verde también cuenta
+
+
+def red_fraction(img, box) -> int:
+    import numpy as np
+    a = np.asarray(img.crop(box)).astype(int)
+    if a.size == 0:
+        return 0
+    r, g, b = a[..., 0], a[..., 1], a[..., 2]
+    return int(((r > 150) & (r > g + 60) & (r > b + 60)).sum())
+
+
+def option_box(img, r, scale):
+    w, h = img.size
+    y1, y2 = int(r["y1"] * scale), int(r["y2"] * scale)
+    half = max(6, int(r["h"] * scale * 0.8))
+    x0 = max(0, int(r["x"] * scale) - int(w * 0.02))
+    return (x0, max(0, y1 - half), min(w, x0 + int(w * 0.75)), min(h, y2 + half))
+
+
+def reread_red_options(image_path: Path, q, scale):
+    """La opción que Brayhan marcó mal sale en rojo cursiva y el OCR normal la
+    destroza («Getltoutmramuir»). Se vuelve a leer ese recorte por el canal rojo
+    y ampliado, que la deja legible."""
+    img = ImageOps.exif_transpose(Image.open(image_path)).convert("RGB")
+    for i, r in enumerate(q["_option_rows"]):
+        box = option_box(img, r, scale)
+        if red_fraction(img, box) < 12:
+            continue
+        # la lectura original y dos relecturas; gana la de mayor confianza del OCR,
+        # y si ninguna llega a 0.80 la opción se declara ilegible (la completa la
+        # otra pantalla, donde aparece entre comillas en «Incorrect Answers»)
+        candidates = [(q["options"][i], r.get("conf", 0.0))]
+        for kw in ({"upscale": 4, "channel": "R"}, {"upscale": 4, "channel": None}):
+            text, conf = ocr_crop(img, box, **kw)
+            if text and len(text) >= 2:
+                candidates.append((unglue(text), conf))
+        best, conf = max(candidates, key=lambda c: c[1])
+        q["options"][i] = best if conf >= 0.80 else UNREADABLE
 
 
 def green_option(image_path: Path, option_rows, scale) -> int | None:
@@ -140,16 +194,29 @@ def green_option(image_path: Path, option_rows, scale) -> int | None:
     w, h = img.size
     scores = []
     for r in option_rows:
-        y = int(r["y"] * scale)
-        half = max(6, int(r["h"] * scale * 0.8))
-        x0 = max(0, int(r["x"] * scale) - int(w * 0.02))
-        box = (x0, max(0, y - half), min(w, x0 + int(w * 0.7)), min(h, y + half))
-        scores.append(green_fraction(img, box))
+        scores.append(green_fraction(img, option_box(img, r, scale)))
     best = max(range(len(scores)), key=lambda i: scores[i])
     others = [s for i, s in enumerate(scores) if i != best]
-    if scores[best] >= 0.004 and scores[best] > 4 * (max(others) if others else 0):
+    if scores[best] >= 12 and scores[best] > 3 * (max(others) if others else 0) + 5:
         return best
     return None
+
+
+def _span(r):
+    """Rango vertical de una opción: empieza y termina en el mismo renglón hasta
+    que se le pegue una continuación."""
+    return {"x": r["x"], "y1": r["y"], "y2": r["y"], "h": r["h"], "conf": r.get("conf", 1.0)}
+
+
+def known_ratio(text: str) -> float:
+    """Fracción de palabras del texto que existen en el corpus: mide si el OCR
+    devolvió inglés o basura («Getltoutmramuir»)."""
+    if _SEG is None:
+        segment("a")
+    words = re.findall(r"[A-Za-z']+", text)
+    if not words:
+        return 0.0
+    return sum(1 for w in words if w.lower().strip("'") in _SEG.UNIGRAMS) / len(words)
 
 
 # --- de renglones OCR a campos ---------------------------------------------------
@@ -181,6 +248,8 @@ def parse_rows(rows, width):
             if re.match(r"^\s*end\s*review", line, re.I):
                 break          # debajo solo hay botones y anuncios de la app
             continue
+        if RE_AD.search(line) and stage != "explanation":
+            break              # banner publicitario de la app, justo sobre End Review
         m = RE_FORM.search(line)
         if m and form is None:
             form = m.group(1)
@@ -222,15 +291,15 @@ def parse_rows(rows, width):
             # cola de una opción cuya cabeza quedó tapada, y se descarta.
             if r["x"] > width * 0.2 and len(line.split()) <= 7 \
                     and not re.search(r"(,|\band\b|\bor\b|\bto\b)$", line):
-                if option_rows and option_rows[-1] is not None \
-                        and r["y"] - option_rows[-1]["y"] < 1.5 * max(r["h"], option_rows[-1]["h"]):
+                if option_rows and r["y"] - option_rows[-1]["y2"] < 1.8 * max(r["h"], option_rows[-1]["h"]):
                     options[-1] = (options[-1] + " " + line).strip()
-                    option_rows[-1] = r
+                    option_rows[-1]["y2"] = r["y"]
+                    option_rows[-1]["conf"] = min(option_rows[-1]["conf"], r.get("conf", 1.0))
                 elif not options and line[:1].islower():
                     pass
                 else:
                     options.append(line)
-                    option_rows.append(r)
+                    option_rows.append(_span(r))
             else:
                 incorrect.append(line)
             continue
@@ -280,8 +349,9 @@ def parse_rows(rows, width):
                     stem.append(m2.group(2))
                 continue
             stem_x_locked = True
-            big_gap = prev is not None and r["y"] - prev["y"] > 2.5 * max(r["h"], prev["h"])
-            if stage == "stem" and stem_x is not None and r["x"] - stem_x > width * 0.06 and big_gap:
+            gap = (r["y"] - prev["y"]) / max(r["h"], prev["h"]) if prev is not None else 0
+            indent = r["x"] - stem_x if stem_x is not None else 0
+            if stage == "stem" and (gap > 2.5 or (indent > width * 0.10 and gap > 1.8)):
                 stage = "options"
             else:
                 if stage == "head":
@@ -290,12 +360,13 @@ def parse_rows(rows, width):
                 stem.append(line)
                 continue
         if stage == "options":
-            if option_rows and r["y"] - option_rows[-1]["y"] < 1.5 * max(r["h"], option_rows[-1]["h"]):
+            if option_rows and r["y"] - option_rows[-1]["y2"] < 1.8 * max(r["h"], option_rows[-1]["h"]):
                 options[-1] = (options[-1] + " " + line).strip()   # opción que ocupa 2 renglones
-                option_rows[-1] = r
+                option_rows[-1]["y2"] = r["y"]
+                option_rows[-1]["conf"] = min(option_rows[-1]["conf"], r.get("conf", 1.0))
             else:
                 options.append(line)
-                option_rows.append(r)
+                option_rows.append(_span(r))
             continue
         if stage == "answer":
             if correct_text is not None:
@@ -329,6 +400,7 @@ def parse_rows(rows, width):
 
 def finish_fields(q, image_path, scale):
     """Completa correct/explanation según la pantalla."""
+    reread_red_options(image_path, q, scale)      # en las dos pantallas
     if q["screen"] == "question":
         idx = green_option(image_path, q["_option_rows"], scale)
         if idx is not None:
@@ -344,9 +416,15 @@ def finish_fields(q, image_path, scale):
         # los nombres de las incorrectas salen entre comillas en su bloque
         names = [m.group(1).strip() for m in
                  (RE_QUOTED_START.match(s) for s in re.split(r"(?<=[.!?])\s+", q["incorrect"])) if m]
+        q["options"] = [o for o, r in zip(q["options"], q["_option_rows"]) if r.get("conf", 1.0) >= 0.80] \
+            + q["options"][len(q["_option_rows"]):]
         for name in names:
-            if not match_option(name, q["options"]):
+            hit = match_option(name, q["options"], fuzzy=True)
+            if hit is None:
                 q["options"].append(name)
+            elif norm(hit) != norm(name) and known_ratio(hit) < known_ratio(name) + 0.01 \
+                    and len(name) >= 4:
+                q["options"][q["options"].index(hit)] = name   # «-"war er-» → «water»
         hit = match_option(c, q["options"])
         if hit is None:
             q["options"].insert(0, c)
@@ -361,6 +439,8 @@ def finish_fields(q, image_path, scale):
             q["options"].append(NO_OPTIONS_YET)
     if not q["question"]:
         q["question"] = NO_STEM_YET
+    q["options"] = [o for o in q["options"]
+                    if o.startswith(("(", "-")) or known_ratio(o) >= 0.34]   # «-oraneity» es sufijo, no basura
     q.pop("_option_rows", None)
     q.pop("incorrect", None)
 
@@ -378,6 +458,12 @@ def merge(existing: dict, new: dict) -> list[str]:
         for o in new["options"]:
             if o not in PLACEHOLDERS and not match_option(o, opts):
                 opts.append(o)
+        if UNREADABLE in existing.get("options", []):
+            kept = existing["options"][:]
+            extra = [o for o in opts if not match_option(o, [k for k in kept if k != UNREADABLE], fuzzy=True)]
+            if extra:
+                kept[kept.index(UNREADABLE)] = extra[0]
+            opts = kept
         if opts != existing.get("options"):
             existing["options"] = opts
             changed.append("opciones")
