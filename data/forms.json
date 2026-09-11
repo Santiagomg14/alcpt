@@ -19,7 +19,7 @@
       "72"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 316
+    "total_questions": 317
   },
   "forms": [
     {
@@ -2421,6 +2421,17 @@
           ],
           "correct": "the back",
           "explanation": "In aviation and nautical contexts,a tailwind is defined as a wind that blows in the same direction as the object is traveling,meaning it comes from behind or the back of the aircraft.A tailwind increases the aircraft's ground speed. \"the front\"is incorrect because wind coming from the front is called a headwind,which slows the aircraft down."
+        },
+        {
+          "n": 51,
+          "question": "Be careful or you may trigger your rifle by accident",
+          "options": [
+            "You may fire it.",
+            "You may shove it around.",
+            "You may drop it."
+          ],
+          "correct": "You may fire it.",
+          "explanation": "In a military or firearms context, the verb \"trigger\" refers to the action of pulling the trigger mechanism on a weapon. This action causes the rifle to discharge or fire. Therefore, to\"trigger your rifle” means to accidentally discharge a round. \"You may drop it.\" is incorrect because triggering a weapon involves the internal firing mechanism, whereas dropping it refers to losing physical control or grip of the entire object."
         },
         {
           "n": 54,
