@@ -18,7 +18,7 @@
       "66"
     ],
     "last_updated": "2026-09-11",
-    "total_questions": 288
+    "total_questions": 290
   },
   "forms": [
     {
@@ -1220,6 +1220,18 @@
           "explanation": "The term \"beverage\" refers to any liquid for drinking. \"Soft drinks\" (such as soda or pop) are a common category of beverages found in a grocery store. Therefore,if Phyllis went to the beverage section,she would find soft drinks. \"bread\"is incorrect because it is a solid food item made from flour, typically found in the bakery or bread section."
         },
         {
+          "n": 65,
+          "question": "He collects rocks from all parts of the world that's nice but do they have any value what does the manwant toknow",
+          "options": [
+            "Are the rocks unusual?",
+            "Are they different shapes?",
+            "Are they hard to find?",
+            "Are they worth anything?"
+          ],
+          "correct": "Are they worth anything?",
+          "explanation": "In this dialogue, the man asks, \"do they have any value?\" In the context of a collection, the word “value' refers to the monetary worth or the importance of the items. Therefore, asking if the rocks are\"worth anything\" is the direct synonym for asking if they have value. \"Are the rocks unusual?\"is incorrect because something can be unusual (strange orrare) without having significant monetary value."
+        },
+        {
           "n": 66,
           "question": "What did Tom do when the water bill came he got kind of riled",
           "options": [
@@ -1229,13 +1241,14 @@
             "wet"
           ],
           "correct": "mad",
-          "explanation": "(Explanation screen not captured yet.)"
+          "explanation": "The word \"riled\"(often used as \"riled up\") is an informal term meaning to be irritated,vexed, or angry.When Tom received the water bill,his reaction of getting“kind ofriled\"indicates he became annoyed or mad about it. 'injured\"is incorrect because\"riled\"describes an emotional state of agitation,not physical harm or a bodily wound."
         },
         {
           "n": 74,
-          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "question": "Adam wasn't able to go with us.",
           "options": [
             "He couldn't go.",
+            "He didn't want to go.",
             "He wasn't ready to go.",
             "He wasn't supposed to go."
           ],
@@ -1491,6 +1504,16 @@
           ],
           "correct": "(Not shown — captured during the test, before the review screen.)",
           "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
+        },
+        {
+          "n": 94,
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "options": [
+            "learned",
+            "(Options screen not captured yet.)"
+          ],
+          "correct": "learned",
+          "explanation": "In this sentence,the blank requires an adjective to modify the noun\"scholar.\"The word“learned\"(often pronounced with two syllables as /l3:nid/) is a specific adjective used to describe a person who has acquired a great deal of knowledge through intensive study.While it looks like a past tense verb,it functions here as an attributive adjective in the structure:[Article] +[Adjective] +[Noun]. learns learned has learned King shot ________ Descargar App Store"
         }
       ]
     },
