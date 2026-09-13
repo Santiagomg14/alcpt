@@ -222,6 +222,37 @@ Sesión del 13 sep 2026, segunda parte (el enlace que mandó Brayhan no servía)
   (341 entradas, ninguna con URL).
 - `.env` del servidor: `CLAUDE_MODEL=claude-opus-5` (probado: responde «Opus 5»).
 
+Sesión del 13 sep 2026, tercera parte (el álbum de 496 capturas, procesado):
+
+- El enlace de Brayhan era correcto; **el fallo era mío**: `album_token()` solo
+  aceptaba `[A-Za-z0-9]` y los tokens nuevos de iCloud llevan `-` y `_`. Corregido.
+  El álbum tenía **496 fotos, 148 MB, ninguna falló** al descargar.
+- **Memoria**: el primer reproceso lo mató el sistema. La máquina la comparten con
+  procesos Ruby que ocupan 20 de 30 GB. `OCR_THREADS=4` (nuevo, en `ocr_capture.py`)
+  baja el pico a 0,5 GB y además acelera a 2,6 s/captura. El lote es reanudable:
+  `bot/processed.json` se guarda cada 25 imágenes.
+- Resultado: **380 preguntas (61 nuevas), 302 completas, 78 pendientes,
+  0 sospechosas**. Apareció el **Form 64** entero (19 completas). Solo 4 capturas
+  de 496 no se pudieron estructurar.
+- Fallos que destapó el lote y están corregidos en `parse_capture.py`:
+  · banners de la app (adidas, universidad) entraban como quinta opción → `RE_AD`
+    ampliado (ABRIR, INSTALAR, precios) y **tope duro de 4 opciones** (`MAX_OPTIONS`);
+  · relecturas basura («He'liiarkeutneiiiaps») → `looks_garbage` mira letras
+    repetidas, NO el diccionario (el examen pregunta «gesticulated», «razes»);
+  · encabezado nuevo «31. number 31 <enunciado>»;
+  · explicaciones desplazadas sin «Correct Answer» → se guardan igual (aportan la
+    explicación) con `NO_ANSWER_YET`, y el enunciado solo se cree si es corto;
+  · `resolve_missing_number()` empareja por la respuesta con tolerancia a erratas
+    («I he wind» → «The wind»), y si no hay respuesta, por los nombres del bloque
+    «Incorrect Answers»; las 4 preguntas antiguas con `n: null` se emparejan por
+    el texto de su respuesta (`_match`).
+- **Trampa importante**: el contador «4/100» de la pantalla del examen es la
+  posición en el test, **no el número del ítem**. Usarlo metió las opciones de la
+  pregunta 3 en la 4 del Form 73. Se quitó, se reparó la pregunta, y `merge()` ahora
+  solo sustituye opciones si contienen la respuesta ya documentada.
+- Comparado contra el estado previo: 61 nuevas, 39 modificadas, **0 regresiones**.
+  Regresión de `check_captures.py` sobre las 94 antiguas: un solo cambio, y a mejor.
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,
@@ -249,9 +280,8 @@ Sesión del 13 sep 2026, segunda parte (el enlace que mandó Brayhan no servía)
 
 ## 7. Qué planeas hacer después
 
-- **Pendiente de Brayhan**: crear el álbum compartido con «Sitio web público» y
-  mandar ese enlace. Hasta entonces la API de sharedstreams sigue sin probarse
-  contra un álbum real.
+- Pedirle a Brayhan las pantallas que faltan de las 78 pendientes (`/pendientes`).
+- Las 4 capturas que no se pudieron leer están en `inbox/lote_album/` con su `.txt`.
 - **Cuando Brayhan mande el enlace del álbum**: vigilar el primer lote de verdad
   (`journalctl --user -u alcpt-bot -f` o `tail -f bot/bot.log`), porque la API de
   iCloud no se ha probado con un álbum real. Si falla, el respaldo es el ZIP.

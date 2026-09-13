@@ -43,7 +43,7 @@ HEADERS = {"User-Agent": UA, "Origin": "https://www.icloud.com",
 CHUNK = 25          # fotos por petición de URLs (las firmas caducan pronto)
 TIMEOUT = 60
 
-RE_TOKEN = re.compile(r"(?:sharedalbum/?#|album/?#?|photos/?#|/)([A-Za-z0-9]{10,})\s*$")
+RE_TOKEN = re.compile(r"(?:sharedalbum/?#|album/?#?|photos/?#|/)([A-Za-z0-9_-]{10,})\s*$")
 
 
 def album_token(url: str) -> str | None:
@@ -51,7 +51,7 @@ def album_token(url: str) -> str | None:
     url = url.strip().strip("<>\"'")
     if "#" in url:
         tail = url.split("#", 1)[1].strip("/")
-        if re.fullmatch(r"[A-Za-z0-9]{10,}", tail):
+        if re.fullmatch(r"[A-Za-z0-9_-]{10,}", tail):
             return tail
     m = RE_TOKEN.search(url)
     return m.group(1) if m else None

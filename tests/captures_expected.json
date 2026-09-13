@@ -795,7 +795,6 @@
   "n": 44,
   "options": [
    "He started to learn Spanish.",
-   "HeappeaieutukiiowSpaiiisii.",
    "He failed to learn Spanish."
   ],
   "correct": "He started to learn Spanish.",
@@ -1310,5 +1309,9 @@
   "correct": "direct from the garden",
   "question": "(Question stem not captured yet — only the explanation screen was sent.)",
   "explanation": "In this context, the word“fresh\"refers to food that has been recently harvested and has not been preserved, processed, o"
+ },
+ "tg_20260911_083717_TR6JmPQQ.jpg": {
+  "ok": false,
+  "reason": "formulario (no se lee «Form NN» arriba); número de pregunta"
  }
 }

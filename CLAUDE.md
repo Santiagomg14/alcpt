@@ -134,6 +134,10 @@ bot responde con las instrucciones para crear el otro. El de «álbum compartido
   (`webstream` y `webasseturls`) y baja la copia de mayor resolución de cada foto.
 - **ZIP**: como documento por Telegram (hasta 20 MB) o `/lote <enlace directo al zip>`.
 
+En el servidor, el OCR va con `OCR_THREADS=4` (variable de entorno): con los 24
+hilos por defecto ONNX reserva gigabytes y el sistema mata el lote, porque la
+máquina es compartida. Con 4 son 0,5 GB y además va más rápido (2,6 s por captura).
+
 El procesado corre en un hilo aparte: el bot sigue atendiendo mensajes, avisa cada
 25 imágenes y admite `/lote estado` y `/lote cancelar`. Al final, un solo commit.
 `scripts/process_batch.py` carga el motor de OCR una vez (~3,3 s por captura en vez

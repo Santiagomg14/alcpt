@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -99,12 +100,17 @@ def group_lines(items, y_tol=0.6):
 _ENGINE = None
 
 
+# Este servidor es compartido: con los 24 hilos por defecto ONNX reserva
+# gigabytes y el sistema mata el lote en cuanto otro proceso pide memoria.
+THREADS = int(os.environ.get("OCR_THREADS", "4"))
+
+
 def engine():
     """Un solo motor por proceso: cargar los modelos cuesta más que leer una imagen."""
     global _ENGINE
     if _ENGINE is None:
         from rapidocr_onnxruntime import RapidOCR
-        _ENGINE = RapidOCR()
+        _ENGINE = RapidOCR(intra_op_num_threads=THREADS)
     return _ENGINE
 
 

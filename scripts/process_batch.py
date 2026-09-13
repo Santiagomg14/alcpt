@@ -69,6 +69,8 @@ def process_one(path: Path, dry_run: bool = False) -> dict:
                 "detail": f"OCR poco fiable (confianza {res['confidence']:.2f})"}
 
     q, missing = pc.parse_rows(res["rows"], TARGET_WIDTH)
+    if missing == ["número de pregunta"] and pc.resolve_missing_number(q):
+        missing = []
     if not missing:
         pc.finish_fields(q, path, res["scale"])
         if dry_run:
