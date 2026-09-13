@@ -174,8 +174,11 @@ también se cierra.
 - **Tope fijo: 10 minutos por episodio** (`MAX_SECONDS = 600`). Dos series:
   `vocab` (todo el diccionario en orden: palabra en inglés → significado en español →
   palabra otra vez) y `lecturas` (una por artículo: resumen, glosario y pregunta).
-- Solo se re-renderiza lo que cambió (hash del guion). Agregar una palabra re-hace el
-  último episodio de vocabulario; agregar una lectura crea un episodio nuevo.
+- Solo se re-renderiza lo que cambió (hash del guion). Agregar una lectura crea un
+  episodio nuevo. El último episodio de vocabulario, que va creciendo, **espera a
+  juntar 10 palabras** antes de rehacerse (`MIN_PALABRAS_NUEVAS`): rehacerlo por cada
+  palabra metía un MP3 de ~1,4 MB en el historial de git cada vez. `--force` lo
+  rehace igualmente.
 - Las pausas se insertan como tramas MP3 de silencio del mismo formato que edge-tts; no se
   necesita ffmpeg.
 

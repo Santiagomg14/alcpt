@@ -292,6 +292,19 @@ Sesión del 13 sep 2026, quinta parte (cerrar pendientes):
 - Estado: **379 preguntas, 302 completas, 77 pendientes, 0 sospechosas**;
   0 regresiones frente al estado previo al álbum.
 
+Sesión del 13 sep 2026, sexta parte (podcasts):
+
+- Revisados: 21 episodios, 134 min, **las 341 palabras tienen audio**, sin huecos.
+  No había defecto de contenido.
+- Sí había un problema de mantenimiento: el último episodio de vocabulario se
+  rehacía con cada palabra añadida y entraba otra vez en git. `vocab-07` ya
+  llevaba **5 versiones de ~1,4 MB**. A ese ritmo, 100 palabras = ~140 MB muertos.
+  Arreglado con `MIN_PALABRAS_NUEVAS = 10` en `build_podcasts.py`: el episodio
+  incompleto espera a juntar 10 palabras. Probado con 3 (espera) y con 12 (rehace).
+- Limitación que se queda: en el artifact de Claude el audio no suena (el visor
+  bloquea los MP3 de otros dominios). La pestaña Podcasts avisa y enlaza a
+  GitHub Pages, donde sí funciona.
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,

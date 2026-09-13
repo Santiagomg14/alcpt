@@ -41,6 +41,11 @@ PODCASTS = DATA / "podcasts.json"
 VOICES = {"en": "en-US-AndrewNeural", "es": "es-CO-SalomeNeural"}
 RATE = {"en": "-5%", "es": "-5%"}
 MAX_SECONDS = 600            # tope pedido: 10 minutos
+# El último episodio de vocabulario va creciendo con cada palabra nueva. Volver a
+# renderizarlo cada vez metía un MP3 de ~1,4 MB en el historial de git por cada
+# palabra (vocab-07 ya llevaba 5 versiones). Se rehace solo cuando ha crecido lo
+# suficiente, o cuando ya está completo. `--force` lo rehace igualmente.
+MIN_PALABRAS_NUEVAS = 10
 TARGET_SECONDS = 540         # margen para que la estimación no se pase
 WPM = {"en": 158, "es": 150}  # medido con estas voces y este rate
 SEG_OVERHEAD = 1.4            # silencio inicial/final que trae cada segmento de edge-tts (medido)
@@ -273,6 +278,19 @@ def main():
         path = AUDIO / f"{ep['id']}.mp3"
         prev = previous.get(ep["id"])
         fresh = prev and prev.get("hash") == ep["hash"] and path.exists() and prev.get("seconds")
+        # Episodio de vocabulario aún incompleto: esperar a juntar unas cuantas
+        # palabras antes de rehacerlo, para no llenar el historial de MP3.
+        if (not fresh and prev and path.exists() and prev.get("seconds")
+                and ep["series"] == "vocab" and not args.force
+                and ep["estimate"] < MAX_SECONDS
+                and (ep.get("count", 0) - (prev.get("count") or 0)) < MIN_PALABRAS_NUEVAS):
+            nuevas = ep.get("count", 0) - (prev.get("count") or 0)
+            print(f"  {ep['id']}: {nuevas} palabra(s) nueva(s), "
+                  f"espero a {MIN_PALABRAS_NUEVAS} para rehacerlo (--force lo fuerza)")
+            ep["count"] = prev.get("count", ep.get("count"))
+            ep["words"] = prev.get("words", ep.get("words"))
+            ep["hash"] = prev.get("hash")
+            fresh = True
         if fresh and not args.force:
             ep["seconds"], ep["bytes"], ep["built"] = prev["seconds"], prev["bytes"], prev["built"]
         elif args.adopt and path.exists() and not args.force:
