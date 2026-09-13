@@ -43,7 +43,7 @@ HEADERS = {"User-Agent": UA, "Origin": "https://www.icloud.com",
 CHUNK = 25          # fotos por petición de URLs (las firmas caducan pronto)
 TIMEOUT = 60
 
-RE_TOKEN = re.compile(r"(?:sharedalbum/?#|photos/?#|/)([A-Za-z0-9]{10,})\s*$")
+RE_TOKEN = re.compile(r"(?:sharedalbum/?#|album/?#?|photos/?#|/)([A-Za-z0-9]{10,})\s*$")
 
 
 def album_token(url: str) -> str | None:
@@ -66,10 +66,15 @@ def base_url(token: str, session: requests.Session) -> str:
         host = r.json()["X-Apple-MMe-Host"]
         base = f"https://{host}/{token}/sharedstreams"
     elif r.status_code == 404:
-        raise LookupError("iCloud no reconoce ese álbum: revisa que el enlace sea "
-                          "de un álbum compartido con «Sitio web público» activado.")
+        raise LookupError(
+            f"iCloud no reconoce el álbum «{token}». Casi siempre es una de dos cosas:\n"
+            "· el álbum no tiene activado «Sitio web público» (Fotos → el álbum → "
+            "pestaña «Personas» → activar «Sitio web público»);\n"
+            "· el enlace es del botón «Compartir» y no del álbum: el bueno lleva "
+            "«sharedalbum» y una almohadilla, así: "
+            "https://www.icloud.com/sharedalbum/#B0X5…")
     elif r.status_code != 200:
-        raise LookupError(f"iCloud respondió {r.status_code} al abrir el álbum.")
+        raise LookupError(f"iCloud respondió {r.status_code} al abrir el álbum «{token}».")
     return base
 
 

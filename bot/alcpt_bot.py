@@ -520,7 +520,7 @@ def handle_image(chat_id, path):
 ICLOUD_SCRIPT = SCRIPTS / "fetch_icloud_album.py"
 BATCH_SCRIPT = SCRIPTS / "process_batch.py"
 # Álbum compartido (público, se puede leer): …/sharedalbum/#B0X…
-RE_ICLOUD = re.compile(r"https?://(?:\w+\.)?icloud\.com/\S*sharedalbum\S*", re.I)
+RE_ICLOUD = re.compile(r"https?://(?:\w+\.)?icloud\.com/\S*", re.I)
 # Enlace del botón «Compartir» de Fotos: share.icloud.com/photos/… o icloud.com/photos/#…
 # Va por CloudKit y exige iniciar sesión con la cuenta de Apple, así que el bot no
 # puede abrirlo. Se detecta solo para explicar cómo crear el que sí sirve.
@@ -555,6 +555,7 @@ def job_running() -> bool:
 
 def handle_batch_url(chat_id, url):
     """Arranca la descarga y el procesado en segundo plano; el bot sigue atendiendo."""
+    log(f"lote: petición para {url}")
     if job_running():
         send(chat_id, f"Ya hay un lote en marcha: {_job['state']}\n"
                       "Espera a que termine o manda /lote cancelar.")
@@ -589,6 +590,7 @@ def _run_batch(chat_id, url):
 def _download_album(chat_id, url, folder):
     """Descarga con avance cada 50 fotos. Devuelve cuántas hay en la carpeta."""
     _job["state"] = "descargando"
+    log(f"lote: abriendo álbum {url} → {folder.name}")
     cmd = [sys.executable, str(ICLOUD_SCRIPT), url, "--out", str(folder)]
     proc = subprocess.Popen(cmd, cwd=REPO, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                             text=True, encoding="utf-8", errors="replace", bufsize=1)
@@ -603,6 +605,7 @@ def _download_album(chat_id, url, folder):
             continue
         if ev.get("ok") is False:
             proc.wait()
+            log(f"lote: álbum rechazado: {ev.get('reason')}")
             send(chat_id, f"No pude abrir el álbum: {ev.get('reason')}")
             return None
         if ev.get("ok") is True:
@@ -617,8 +620,10 @@ def _download_album(chat_id, url, folder):
             return None
     proc.wait()
     if not summary:
+        log(f"lote: descarga sin resumen (código {proc.returncode})")
         send(chat_id, "La descarga terminó sin resumen; revisa el enlace.")
         return None
+    log(f"lote: descarga terminada {summary}")
     total = summary.get("downloaded", 0) + summary.get("skipped", 0)
     send(chat_id, f"Descargadas {summary.get('downloaded', 0)} fotos nuevas "
                   f"({summary.get('skipped', 0)} ya estaban, {summary.get('failed', 0)} fallaron).\n"
@@ -714,6 +719,7 @@ def handle_zip_document(chat_id, path):
 def _process_folder(chat_id, folder):
     """Lee la carpeta imagen por imagen mostrando avance; un solo commit al final."""
     _job["state"] = "procesando"
+    log(f"lote: procesando {folder.name}")
     cmd = [sys.executable, str(BATCH_SCRIPT), str(folder), "--progress"]
     proc = subprocess.Popen(cmd, cwd=REPO, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
                             text=True, encoding="utf-8", errors="replace", bufsize=1)
@@ -957,6 +963,13 @@ def _handle_update(u):
         return
 
     text = (msg.get("text") or msg.get("caption") or "").strip()
+    if text:
+        log(f"mensaje: {text[:100]}")
+    elif msg.get("photo"):
+        log("mensaje: foto")
+    elif msg.get("document"):
+        log(f"mensaje: documento {msg['document'].get('file_name')} "
+            f"({msg['document'].get('mime_type')})")
 
     if text.startswith("/"):
         cmd = text.split()[0].split("@")[0]
@@ -1019,13 +1032,15 @@ def _handle_update(u):
         handle_image(chat_id, path)
         return
 
-    m = RE_ICLOUD.search(text)
-    if m:
-        handle_batch_url(chat_id, m.group(0))
-        return
-
+    # primero se descarta el enlace de Fotos (no se puede leer); cualquier otro
+    # enlace de iCloud se intenta como álbum, y el descargador ya explica si no lo es
     if RE_ICLOUD_PHOTOS.search(text):
         send(chat_id, ALBUM_HOWTO)
+        return
+
+    m = RE_ICLOUD.search(text)
+    if m:
+        handle_batch_url(chat_id, m.group(0).rstrip(".,;)"))
         return
 
     urls = THOUGHTCO_URL.findall(text)
