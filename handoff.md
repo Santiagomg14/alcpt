@@ -178,6 +178,29 @@ Sesión del 11 sep 2026, cuarta parte (listas de vocabulario en captura):
   Probado con la captura real: entradas 335–341 (Pull up … Pull back) ya pulidas.
 - `ask_claude` gana el parámetro `tools` (False = `--allowed-tools ""`).
 
+Sesión del 13 sep 2026 (lotes de cientos de capturas):
+
+- Brayhan tiene **500+ capturas** y Telegram solo deja 30 por tanda; además el Bot
+  API no baja archivos de más de 20 MB (un ZIP grande tampoco sirve). Solución:
+  **enlace de álbum compartido de iCloud**, que el servidor descarga directo.
+  Comprobado que el servidor alcanza `p01-sharedstreams.icloud.com` (404 con token
+  falso = el endpoint responde). 55 GB libres en disco.
+- `scripts/fetch_icloud_album.py`: token del fragmento del enlace, POST `webstream`
+  (sigue el 330 con `X-Apple-MMe-Host`), POST `webasseturls` de 25 en 25, baja la
+  derivada de mayor `fileSize`. Nombra por checksum, así que reanudar no re-descarga.
+  **No probado contra un álbum real**: hace falta que Brayhan mande uno.
+- `scripts/process_batch.py`: recorre una carpeta con el motor de OCR cacheado
+  (95 imágenes en 315 s = 3,3 s cada una; 500 ≈ 28 min) y con registro
+  `bot/processed.json` (sha256 → resultado, en .gitignore) para saltar repetidas.
+  Cada imagen se prueba como formulario y, si no, como lista de vocabulario.
+- Bot: `/lote <enlace>`, `/lote estado`, `/lote cancelar`; también detecta el enlace
+  de iCloud suelto en un mensaje y acepta ZIP como documento (≤20 MB) o por enlace
+  directo. Todo en un hilo daemon; avisa cada 50 descargas y cada 25 imágenes; un
+  solo `finish()` al final (que dispara el rebuild + commit + push del lote).
+  `polish_pending_vocab()` pule de a 25 todo lo marcado `ocr` al cerrar el lote.
+- Probado: enlace inválido (mensaje claro), carpeta de 5 imágenes (4 formularios +
+  1 vocabulario), ZIP por Telegram (4 imágenes, todas saltadas por el registro).
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,
@@ -205,6 +228,9 @@ Sesión del 11 sep 2026, cuarta parte (listas de vocabulario en captura):
 
 ## 7. Qué planeas hacer después
 
+- **Cuando Brayhan mande el enlace del álbum**: vigilar el primer lote de verdad
+  (`journalctl --user -u alcpt-bot -f` o `tail -f bot/bot.log`), porque la API de
+  iCloud no se ha probado con un álbum real. Si falla, el respaldo es el ZIP.
 - Pedirle a Brayhan las pantallas que faltan (`/pendientes`): 44 preguntas a medias.
 - Las 21 «Not shown» viejas se completan solas si manda su pantalla de repaso.
 - Antes de tocar el parser: `python scripts/check_captures.py` debe seguir en 0

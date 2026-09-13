@@ -29,6 +29,7 @@ import platform
 import re
 import shutil
 import signal
+import zipfile
 import subprocess
 import sys
 import threading
@@ -417,10 +418,15 @@ HELP = (
     "Comandos:\n"
     "/estado – cuántas palabras y preguntas hay\n"
     "/pendientes – preguntas a las que les falta una pantalla (pregunta o explicación)\n"
+    "/lote <enlace> – procesa un álbum de iCloud o un .zip entero (cientos de\n"
+    "   capturas); /lote estado y /lote cancelar mientras corre\n"
     "/rebuild – regenerar PDF y páginas web\n"
     "/lecturas – traer lecturas nuevas de ThoughtCo (p. ej. /lecturas math 2)\n"
     "   secciones: computer-science, math, statistics, philosophy, history,\n"
     "   geography, issues, social-sciences, humanities\n"
+    "• un enlace de álbum compartido de iCloud → me bajo todas las capturas y las\n"
+    "   proceso una por una, sin límite de 30\n"
+    "• un .zip con capturas (hasta 20 MB por Telegram, o /lote con un enlace directo)\n"
     "• un enlace de thoughtco.com → lo condenso y lo agrego a Lecturas\n"
     "/help – este mensaje"
 )
@@ -505,6 +511,241 @@ def handle_image(chat_id, path):
     lines += ["", "Si es una captura válida del ALCPT, mándala de nuevo más nítida o "
                   "completa (encabezado con el formulario y todas las opciones)."]
     send(chat_id, "\n".join(lines))
+
+
+# --- lotes grandes: álbum compartido de iCloud ---------------------------------
+# Telegram deja mandar 30 imágenes por tanda y el bot solo puede bajar archivos de
+# hasta 20 MB, así que 500 capturas por ahí no caben. Con el enlace de un álbum
+# compartido el servidor va directo a iCloud y luego procesa la carpeta entera.
+ICLOUD_SCRIPT = SCRIPTS / "fetch_icloud_album.py"
+BATCH_SCRIPT = SCRIPTS / "process_batch.py"
+RE_ICLOUD = re.compile(r"https?://(?:www\.)?icloud\.com/\S*sharedalbum\S*", re.I)
+_job = {"thread": None, "cancel": False, "state": "", "chat": None}
+
+
+def eta(n_images: int) -> str:
+    """Tiempo aproximado: unos 3,3 s por captura nueva en este equipo."""
+    minutes = round(n_images * 3.3 / 60)
+    if minutes < 1:
+        return "menos de un minuto"
+    return f"un minuto" if minutes == 1 else f"unos {minutes} minutos"
+
+
+def job_running() -> bool:
+    th = _job["thread"]
+    return bool(th and th.is_alive())
+
+
+def handle_batch_url(chat_id, url):
+    """Arranca la descarga y el procesado en segundo plano; el bot sigue atendiendo."""
+    if job_running():
+        send(chat_id, f"Ya hay un lote en marcha: {_job['state']}\n"
+                      "Espera a que termine o manda /lote cancelar.")
+        return
+    _job.update(cancel=False, state="preparando", chat=chat_id)
+    _job["thread"] = threading.Thread(target=_run_batch, args=(chat_id, url), daemon=True)
+    _job["thread"].start()
+
+
+def _run_batch(chat_id, url):
+    folder = INBOX / f"lote_{datetime.now():%Y%m%d_%H%M%S}"
+    try:
+        if RE_ICLOUD.search(url):
+            send(chat_id, "Abriendo el álbum…")
+            got = _download_album(chat_id, url, folder)
+        else:
+            send(chat_id, "Descargando el archivo…")
+            got = _download_zip(chat_id, url, folder)
+        if got is None or _job["cancel"]:
+            return
+        if got == 0:
+            send(chat_id, "No había imágenes nuevas que procesar.")
+            return
+        _process_folder(chat_id, folder)
+    except Exception as exc:                            # el lote no puede tumbar el bot
+        log(f"lote: fallo inesperado: {exc!r}")
+        send(chat_id, f"El lote se cortó por un error: {type(exc).__name__}: {exc}"[:600])
+    finally:
+        _job["state"] = ""
+
+
+def _download_album(chat_id, url, folder):
+    """Descarga con avance cada 50 fotos. Devuelve cuántas hay en la carpeta."""
+    _job["state"] = "descargando"
+    cmd = [sys.executable, str(ICLOUD_SCRIPT), url, "--out", str(folder)]
+    proc = subprocess.Popen(cmd, cwd=REPO, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                            text=True, encoding="utf-8", errors="replace", bufsize=1)
+    last, summary = 0, {}
+    for line in proc.stdout:
+        line = line.strip()
+        if not line.startswith("{"):
+            continue
+        try:
+            ev = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if ev.get("ok") is False:
+            proc.wait()
+            send(chat_id, f"No pude abrir el álbum: {ev.get('reason')}")
+            return None
+        if ev.get("ok") is True:
+            summary = ev
+        done = ev.get("done")
+        if done and done - last >= 50:
+            last = done
+            send(chat_id, f"Descargadas {done} de {ev.get('total')}…")
+        if _job["cancel"]:
+            proc.terminate()
+            send(chat_id, "Descarga cancelada.")
+            return None
+    proc.wait()
+    if not summary:
+        send(chat_id, "La descarga terminó sin resumen; revisa el enlace.")
+        return None
+    total = summary.get("downloaded", 0) + summary.get("skipped", 0)
+    send(chat_id, f"Descargadas {summary.get('downloaded', 0)} fotos nuevas "
+                  f"({summary.get('skipped', 0)} ya estaban, {summary.get('failed', 0)} fallaron).\n"
+                  f"Ahora las proceso: {eta(total)}.")
+    return total
+
+
+def _download_zip(chat_id, url, folder):
+    """Enlace directo a un .zip (Drive, Dropbox, iCloud Drive, lo que sea) con las
+    capturas dentro. Es el camino de respaldo si el álbum compartido no funciona."""
+    _job["state"] = "descargando zip"
+    folder.mkdir(parents=True, exist_ok=True)
+    dest = folder / "lote.zip"
+    try:
+        with requests.get(url, stream=True, timeout=120,
+                          headers={"User-Agent": "Mozilla/5.0"}) as r:
+            r.raise_for_status()
+            size = 0
+            with open(dest, "wb") as fh:
+                for block in r.iter_content(1 << 20):
+                    if _job["cancel"]:
+                        return None
+                    fh.write(block)
+                    size += len(block)
+                    if size % (50 << 20) < (1 << 20):
+                        send(chat_id, f"Descargados {size >> 20} MB…")
+    except requests.RequestException as exc:
+        send(chat_id, f"No pude descargar ese enlace: {exc}"[:400])
+        return None
+    return _extract_zip(chat_id, dest, folder)
+
+
+def _extract_zip(chat_id, zip_path, folder):
+    """Saca las imágenes del ZIP a `folder`, ignorando carpetas y basura del sistema."""
+    _job["state"] = "descomprimiendo"
+    exts = {".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp"}
+    n = 0
+    try:
+        with zipfile.ZipFile(zip_path) as z:
+            for info in z.infolist():
+                name = Path(info.filename).name
+                if info.is_dir() or name.startswith(".") or "__MACOSX" in info.filename:
+                    continue
+                if Path(name).suffix.lower() not in exts:
+                    continue
+                target = folder / f"z{n:04d}_{name}"
+                with z.open(info) as src, open(target, "wb") as out:
+                    shutil.copyfileobj(src, out)
+                n += 1
+    except zipfile.BadZipFile:
+        send(chat_id, "Ese archivo no es un ZIP válido.")
+        return None
+    zip_path.unlink(missing_ok=True)
+    if not n:
+        send(chat_id, "El ZIP no traía imágenes.")
+        return 0
+    send(chat_id, f"{n} imágenes extraídas. Las proceso: {eta(n)}.")
+    return n
+
+
+def handle_zip_document(chat_id, path):
+    """ZIP mandado por Telegram (máximo 20 MB, unas 40-60 capturas)."""
+    if job_running():
+        send(chat_id, f"Ya hay un lote en marcha: {_job['state']}.")
+        return
+    folder = INBOX / f"lote_{datetime.now():%Y%m%d_%H%M%S}"
+    folder.mkdir(parents=True, exist_ok=True)
+    def work():
+        _job.update(cancel=False, state="descomprimiendo", chat=chat_id)
+        try:
+            if _extract_zip(chat_id, path, folder):
+                _process_folder(chat_id, folder)
+        except Exception as exc:
+            log(f"zip: fallo inesperado: {exc!r}")
+            send(chat_id, f"El ZIP se cortó por un error: {type(exc).__name__}: {exc}"[:400])
+        finally:
+            _job["state"] = ""
+    _job["thread"] = threading.Thread(target=work, daemon=True)
+    _job["thread"].start()
+
+
+def _process_folder(chat_id, folder):
+    """Lee la carpeta imagen por imagen mostrando avance; un solo commit al final."""
+    _job["state"] = "procesando"
+    cmd = [sys.executable, str(BATCH_SCRIPT), str(folder), "--progress"]
+    proc = subprocess.Popen(cmd, cwd=REPO, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
+                            text=True, encoding="utf-8", errors="replace", bufsize=1)
+    summary, last = {}, 0
+    for line in proc.stdout:
+        line = line.strip()
+        if not line.startswith("{"):
+            continue
+        try:
+            ev = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if ev.get("ok") is True:
+            summary = ev
+            continue
+        i, total = ev.get("i", 0), ev.get("total", 0)
+        _job["state"] = f"procesando {i}/{total}"
+        if i - last >= 25:
+            last = i
+            send(chat_id, f"Procesadas {i} de {total}…")
+        if _job["cancel"]:
+            proc.terminate()
+            break
+    proc.wait()
+    if _job["cancel"]:
+        send(chat_id, f"Lote cancelado en {_job['state']}. Lo hecho hasta ahí queda guardado.")
+    if not summary:
+        send(chat_id, "El procesado terminó sin resumen. Revisa bot/bot.log.")
+        return
+    t = summary["totals"]
+    secs = summary["seconds"]
+    dur = f"{round(secs)} s" if secs < 90 else f"{round(secs / 60)} min"
+    lines = [f"Lote terminado: {summary['files']} imágenes en {dur}.",
+             f"· {t['form']} pantallas de formulario",
+             f"· {t['vocab']} listas de vocabulario",
+             f"· {t['repetida']} ya procesadas antes (saltadas)"]
+    fallidas = t["nada"] + t["ilegible"] + t["error"]
+    if fallidas:
+        lines.append(f"· {fallidas} sin procesar")
+        for p in summary.get("problems", [])[:8]:
+            lines.append(f"   {p['file']}: {p['why'][:90]}")
+    polished = polish_pending_vocab()
+    if polished:
+        lines.append(f"· {polished} entradas de vocabulario pulidas con Claude")
+    log(f"lote terminado: {summary['files']} imágenes, {t}")
+    finish(chat_id, "\n".join(lines),
+           f"ALCPT: lote de {summary['files']} capturas ({t['form']} preguntas, "
+           f"{t['vocab']} listas de vocabulario)")
+
+
+def polish_pending_vocab(chunk=25):
+    """Repone tildes y matices en todo lo que quedó marcado `ocr` (de a 25)."""
+    if not (VOCAB_POLISH and CLAUDE):
+        return 0
+    d = json.loads((DATA / "vocabulary.json").read_text(encoding="utf-8"))
+    pending = [e for s in d["sections"] for e in s["entries"] if e.get("ocr")]
+    total = 0
+    for i in range(0, len(pending), chunk):
+        total += len(polish_entries(pending[i:i + chunk]))
+    return total
 
 
 VOCAB_SCRIPT = SCRIPTS / "parse_vocab_capture.py"
@@ -697,6 +938,20 @@ def _handle_update(u):
             words, questions = counts()
             send(chat_id, f"{words} palabras · {questions} preguntas documentadas · "
                           f"{readings_count()} lecturas.")
+        elif cmd == "/lote":
+            arg = text.split(maxsplit=1)[1].strip() if len(text.split(maxsplit=1)) > 1 else ""
+            if arg.lower() in ("cancelar", "cancel", "parar", "stop"):
+                if job_running():
+                    _job["cancel"] = True
+                    send(chat_id, "Cancelando en cuanto termine la imagen en curso…")
+                else:
+                    send(chat_id, "No hay ningún lote en marcha.")
+            elif not arg or arg.lower() in ("estado", "status"):
+                send(chat_id, f"Lote en marcha: {_job['state']}." if job_running()
+                     else "No hay ningún lote en marcha. Mándame el enlace de un álbum "
+                          "compartido de iCloud y lo proceso entero.")
+            else:
+                handle_batch_url(chat_id, arg)
         elif cmd == "/pendientes":
             send(chat_id, pending_report())
         elif cmd == "/lecturas":
@@ -715,9 +970,25 @@ def _handle_update(u):
         path = download_file(photo[-1]["file_id"], INBOX)   # la mayor resolución
         handle_image(chat_id, path)
         return
+    if doc and (str(doc.get("mime_type", "")) in ("application/zip", "application/x-zip-compressed")
+                or str(doc.get("file_name", "")).lower().endswith(".zip")):
+        if doc.get("file_size", 0) > 20 * 1024 * 1024:
+            send(chat_id, "Telegram no me deja bajar archivos de más de 20 MB. "
+                          "Manda el ZIP en trozos más pequeños, o mejor el enlace de un "
+                          "álbum compartido de iCloud, que no tiene ese límite.")
+            return
+        send(chat_id, "ZIP recibido, descomprimiendo…")
+        handle_zip_document(chat_id, download_file(doc["file_id"], INBOX))
+        return
+
     if doc and str(doc.get("mime_type", "")).startswith("image/"):
         path = download_file(doc["file_id"], INBOX)
         handle_image(chat_id, path)
+        return
+
+    m = RE_ICLOUD.search(text)
+    if m:
+        handle_batch_url(chat_id, m.group(0))
         return
 
     urls = THOUGHTCO_URL.findall(text)

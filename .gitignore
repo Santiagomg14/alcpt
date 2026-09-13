@@ -21,3 +21,6 @@ bot/state.json
 
 # Registro del bot
 bot/bot.log
+
+# Registro de capturas ya procesadas (caché local: sha256 -> resultado)
+bot/processed.json

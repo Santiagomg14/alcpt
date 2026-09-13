@@ -117,6 +117,24 @@ pide a Claude, **solo con texto** (sin herramientas ni imagen, unos cientos de t
 el campo `es` con tildes repuestas y matices B2, y quita la marca. `VOCAB_POLISH=0`
 lo desactiva. Las capturas HEIC del iPhone se abren con `pillow-heif`.
 
+### 11. Lotes grandes (cientos de capturas)
+Telegram admite 30 imágenes por tanda y el bot solo puede descargar archivos de
+hasta 20 MB, así que para lotes grandes hay dos caminos, ambos por Telegram:
+
+- **Álbum compartido de iCloud** (el bueno, sin límite): en el iPhone, Fotos →
+  seleccionar → Compartir → «Añadir a álbum compartido» → en el álbum, «Personas»
+  → «Sitio web público» → copiar enlace. Se le manda al bot tal cual, o con
+  `/lote <enlace>`. `scripts/fetch_icloud_album.py` habla con la API pública
+  (`webstream` y `webasseturls`) y baja la copia de mayor resolución de cada foto.
+- **ZIP**: como documento por Telegram (hasta 20 MB) o `/lote <enlace directo al zip>`.
+
+El procesado corre en un hilo aparte: el bot sigue atendiendo mensajes, avisa cada
+25 imágenes y admite `/lote estado` y `/lote cancelar`. Al final, un solo commit.
+`scripts/process_batch.py` carga el motor de OCR una vez (~3,3 s por captura en vez
+de ~3,5 arrancando de cero) y lleva `bot/processed.json` (sha256 → resultado) para
+no releer una imagen ya vista. Cada captura se prueba primero como formulario y,
+si no lo es, como lista de vocabulario.
+
 **Ráfagas**: el bot no regenera ni commitea por captura. Anota cada cambio y, tras
 `FLUSH_DELAY` segundos (30) sin novedades, regenera una vez, un commit «Lote: …» y
 un push. `/rebuild` cierra el lote de inmediato. Al parar el servicio (SIGTERM)
@@ -161,6 +179,8 @@ alcpt/
 │   ├── ocr_capture.py     <- OCR local de una captura (RapidOCR, sin red)
 │   ├── parse_capture.py   <- captura → pregunta en forms.json, sin Claude Code
 │   ├── parse_vocab_capture.py <- lista término=significado (TikTok) → vocabulary.json
+│   ├── fetch_icloud_album.py  <- baja un álbum compartido de iCloud entero
+│   ├── process_batch.py   <- procesa una carpeta de capturas (motor OCR cacheado)
 │   ├── audit_forms.py     <- completas / pendientes / sospechosas en forms.json
 │   ├── check_captures.py  <- regresión del parser contra tests/captures_expected.json
 │   └── add_word.py        <- agrega palabras por línea de comandos
