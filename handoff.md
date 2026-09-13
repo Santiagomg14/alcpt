@@ -292,31 +292,29 @@ Sesión del 13 sep 2026, cuarta parte (respaldo de las imágenes):
 
 ## 7. Qué planeas hacer después
 
-- Pedirle a Brayhan las pantallas que faltan de las 78 pendientes (`/pendientes`).
-- Las 4 capturas que no se pudieron leer están en `inbox/lote_album/` con su `.txt`.
-- **Cuando Brayhan mande el enlace del álbum**: vigilar el primer lote de verdad
-  (`journalctl --user -u alcpt-bot -f` o `tail -f bot/bot.log`), porque la API de
-  iCloud no se ha probado con un álbum real. Si falla, el respaldo es el ZIP.
-- Pedirle a Brayhan las pantallas que faltan (`/pendientes`): 44 preguntas a medias.
-- Las 21 «Not shown» viejas se completan solas si manda su pantalla de repaso.
-- Antes de tocar el parser: `python scripts/check_captures.py` debe seguir en 0
-  cambios y `python scripts/audit_forms.py --strict` en 0 sospechosas.
-- Seguir calibrando el parser con más capturas reales (93/93 estructuradas).
-  Pendiente conocido: en la pantalla de explicación el bloque «Incorrect Answers»
-  puede venir cortado por el scroll (la última frase queda truncada); y el
-  enunciado de la #66 salió sin signos («what did Tom do … he got kind of riled»).
-  Si una captura falla, el texto OCR queda en `inbox/<captura>.txt` para depurar
-  con `python scripts/parse_capture.py inbox/x.jpg --dry-run`.
-- Probar el bot actualizado mandándole un enlace de ThoughtCo y `/lecturas`.
-  Revisar que `inbox/readings/` se cree solo en el servidor (está en `.gitignore`).
-- Mandarle a Brayhan el enlace de GitHub Pages con `#podcasts` y pedirle
-  feedback: ¿ritmo de las voces?, ¿palabras por episodio?, ¿temas?
-- Si quiere más lecturas: `python scripts/fetch_readings.py --discover <sección>`
-  y elegir; o `/lecturas <sección> <n>` desde Telegram.
-- Completar las 21 preguntas con la nota `(Not shown — captured during the test…)`
-  si vuelve a hacer esos formularios y captura la pantalla de repaso.
-- Pendiente de decidir: ¿las lecturas van también al PDF y a la web espejo?
-  Hoy solo están en el cuaderno (pestaña Lecturas).
+Depende de Brayhan (él tiene el material):
+
+- **78 preguntas a medias**: les falta la pantalla de pregunta o la de explicación.
+  `/pendientes` en el bot dice cuáles. Se completan solas cuando mande la que falta.
+- **Feedback de los podcasts**: mandarle el enlace de GitHub Pages con `#podcasts`
+  y preguntar por el ritmo de las voces, las palabras por episodio y los temas.
+- **Decidir**: ¿las lecturas van también al PDF y a la web espejo? Hoy solo están
+  en el cuaderno (pestaña Lecturas).
+- **Más lecturas**: `/lecturas <sección> <n>` desde Telegram, o
+  `python scripts/fetch_readings.py --discover <sección>`.
+
+Trabajo técnico pendiente:
+
+- **4 capturas de 496 sin leer**, en `capturas/album_D1zv3FZ5mwE3/` con su `.txt`.
+  Son pantallas desplazadas sin número ni respuesta identificables; de momento no
+  hay forma fiable de ubicarlas.
+- **Nunca probado en el servidor**: mandarle al bot un enlace de ThoughtCo y
+  `/lecturas`, y ver que `inbox/readings/` se cree solo.
+- Antes de tocar el parser: `python scripts/check_captures.py` en 0 cambios y
+  `python scripts/audit_forms.py --strict` en 0 sospechosas.
+- Detalle menor conocido: en la pantalla de explicación el bloque «Incorrect
+  Answers» puede venir cortado por el scroll; `trim_truncated()` quita la frase
+  incompleta y otra captura desplazada la recupera.
 
 ## 8. Cualquier cosa relevante
 
