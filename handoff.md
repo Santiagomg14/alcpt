@@ -265,6 +265,33 @@ Sesión del 13 sep 2026, cuarta parte (respaldo de las imágenes):
 - `capturas/**/*.txt` sí está en .gitignore: el texto OCR es derivado.
 - El bot lanza `process_batch` con `OCR_THREADS=4` (máquina compartida).
 
+Sesión del 13 sep 2026, quinta parte (cerrar pendientes):
+
+- **Capturas sin leer: de 7 a 2 de 496** (0,4 %). Tres fallos encontrados al
+  revisarlas una a una: `$17.50` del enunciado se tomaba por un anuncio (se quitó
+  el patrón de precio de `RE_AD`, basta el botón ABRIR); el corrector ortográfico
+  convertía la respuesta «razes» en «races» y rompía el emparejamiento (ahora se
+  guarda también `correct_raw` sin corregir y se prueban las dos); y la **pantalla
+  de resultados** del examen («Your Score · 80/100») se había guardado como una
+  pregunta 100 falsa en el Form 72 — borrada, y ahora `RE_SCORE` la reconoce.
+  Nuevo `_resolve_by_options()`: si tres o más opciones coinciden con las de una
+  única pregunta del formulario, es esa. Eso validó de paso el arreglo anterior:
+  la captura que antes se asignó mal ahora sale como Form 73 #3, que es lo correcto.
+  Las 2 que quedan son explicaciones desplazadas sin número, respuesta ni nombres:
+  no hay señal para ubicarlas, y las preguntas ya tienen su explicación.
+- **ThoughtCo no funciona desde el servidor**: HTTP 402 con cualquier cabecera y
+  también en la portada, con sesión y cookies. Es bloqueo por IP de datacenter.
+  `get()` lo detecta (402/403/451) y lanza un mensaje explicativo; `main()` sale
+  con `sys.exit(str(exc))` para que el bot lo muestre limpio por Telegram.
+  **Las lecturas hay que traerlas desde el portátil.**
+- **Lecturas en el PDF y la web espejo** (era la decisión pendiente): se añaden como
+  Parte V al final, agrupadas por tema, con resumen, key points, glosario y la
+  pregunta de comprensión. Va al final a propósito, para no tocar el orden de las
+  cuatro primeras partes (regla 4). PDF: 154 páginas, la Parte V empieza en la 133.
+- Artifact del cuaderno republicado (versión 7) con las cifras al día.
+- Estado: **379 preguntas, 302 completas, 77 pendientes, 0 sospechosas**;
+  0 regresiones frente al estado previo al álbum.
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,
@@ -305,11 +332,10 @@ Depende de Brayhan (él tiene el material):
 
 Trabajo técnico pendiente:
 
-- **4 capturas de 496 sin leer**, en `capturas/album_D1zv3FZ5mwE3/` con su `.txt`.
-  Son pantallas desplazadas sin número ni respuesta identificables; de momento no
-  hay forma fiable de ubicarlas.
-- **Nunca probado en el servidor**: mandarle al bot un enlace de ThoughtCo y
-  `/lecturas`, y ver que `inbox/readings/` se cree solo.
+- **2 capturas de 496 sin leer**, en `capturas/album_D1zv3FZ5mwE3/` con su `.txt`
+  (`ic_011c3d76…`, `ic_01e4e62e…`): explicaciones desplazadas sin número, respuesta
+  ni nombres entrecomillados. Sus preguntas ya tienen explicación, así que no falta
+  nada por su culpa.
 - Antes de tocar el parser: `python scripts/check_captures.py` en 0 cambios y
   `python scripts/audit_forms.py --strict` en 0 sospechosas.
 - Detalle menor conocido: en la pantalla de explicación el bloque «Incorrect

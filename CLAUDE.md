@@ -44,6 +44,8 @@ Cuando se muestre el estado del proyecto (en chat o en PDF), el orden es siempre
 2. Phrasal verbs, agrupados por partícula.
 3. Idioms y expresiones militares, agrupados por uso.
 4. Sección ALCPT agrupada por formulario, con pregunta / opciones / respuesta / explicación.
+5. Lecturas (Parte V), agrupadas por tema. Van al final para no alterar el orden
+   de las cuatro primeras partes, que es el que Brayhan estudia.
 
 ### 5. Phrasal verbs
 `data/phrasal_verbs.json` explica los phrasal verbs que **aparecen de verdad** en los
@@ -91,6 +93,11 @@ experticia a propósito.
   `question` de comprensión estilo ALCPT con 4 opciones.
 - Las palabras del glosario **no** se pasan automáticamente al diccionario numerado; si
   Brayhan quiere alguna, la pide y entra por la regla 1.
+- Desde el 13 sep 2026 salen también en el PDF y en la web espejo (Parte V), además
+  de en la pestaña «Lecturas» del cuaderno.
+- **ThoughtCo bloquea la IP del servidor (HTTP 402), también la portada**: las
+  lecturas hay que traerlas desde el portátil y subirlas. El bot lo dice con ese
+  mensaje en vez de fallar en seco.
 - El bot también las trae: un enlace de thoughtco.com, o `/lecturas <sección> <n>`.
 
 ### 10. Capturas por Telegram: procesamiento local

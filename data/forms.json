@@ -20,7 +20,7 @@
       "64"
     ],
     "last_updated": "2026-09-13",
-    "total_questions": 380
+    "total_questions": 379
   },
   "forms": [
     {
@@ -3130,18 +3130,6 @@
           ],
           "correct": "move into his house",
           "explanation": "The idiomatic phrase \"get settled in\" refers to the process of becoming comfortable and organized after moving to a new place. It involves unpacking belongings, arranging furniture, and establishing a daily routine in a new home or office environment. In a military context, this often refers to the period after a Permanent Change of Station (PcS) when a service member arrives at a new duty station and establishes their residence."
-        },
-        {
-          "n": 100,
-          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
-          "options": [
-            "10 1 had to drop out of the judo class.l had 0.to",
-            "Your Score",
-            "80/ 100 Review your answers below",
-            "OK"
-          ],
-          "correct": "(Not shown — captured during the test, before the review screen.)",
-          "explanation": "Listening comprehension item. Only the answer choices were captured, so the correct option and its explanation were not recorded."
         }
       ]
     },
@@ -3645,10 +3633,11 @@
           "question": "If the demolition crew ________ the building, nothing will remain.",
           "options": [
             "razes",
-            "is razing"
+            "is razing",
+            "rates"
           ],
           "correct": "razes",
-          "explanation": "This sentence follows the structure of a First Conditional (also known as the real conditional), which is used to express a probable future situation. The structure is: If + [Simple Present], [Subject] + will + [Base Verb]. The subject \"the demolition crew\" is a collective noun treated as a singular unit in this context. Therefore, it requires the third-person singular verb form \"razes\". In a military or construction context, to raze a structure means to level it completely to the ground so that nothing remains."
+          "explanation": "This sentence follows the structure of a First Conditional (also known as the real conditional), which is used to express a probable future situation. The structure is: If + [Simple Present], [Subject] + will + [Base Verb]. The subject \"the demolition crew\" is a collective noun treated as a singular unit in this context. Therefore, it requires the third-person singular verb form \"razes\". In a military or construction context, to raze a structure means to level it completely to the ground so that nothing remains. This sentence follows the structure of a First Conditional (also known as the real conditional), which is used to express a probable future situation. The structure is: If + [Simple Present], [Subject] + will + [Base Verb]. The subject \"the demolition crew\" is a collective noun treated as a singular unit in this context. Therefore, it requires the third-person singular verb form \"rates\". In a military or construction context, to raze a structure means to level it completely to the ground so that nothing remains."
         },
         {
           "n": 95,

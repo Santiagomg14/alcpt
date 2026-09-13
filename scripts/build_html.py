@@ -213,7 +213,7 @@ def slug(text):
     return "".join(ch if ch.isalnum() else "-" for ch in str(text).lower()).strip("-")
 
 
-def build(vocab, forms, pv, idioms):
+def build(vocab, forms, pv, idioms, readings=None):
     out = []
     a = out.append
     total_words = sum(len(s["entries"]) for s in vocab["sections"])
@@ -374,8 +374,48 @@ def build(vocab, forms, pv, idioms):
             a(f"<p class='expl'><b>Explanation.</b> {escape(q['explanation'])}</p>")
             a("</article>")
 
+    # ---- Parte V: lecturas (al final, para no alterar el orden fijo de las otras)
+    lecturas = [it for it in (readings or {}).get("items", []) if it.get("summary")]
+    if lecturas:
+        a("<h2 class='part' id='lecturas'>Parte V · Lecturas</h2>")
+        a(f"<p class='lead'>{escape(readings['meta']['intro'])}</p>")
+        por_tema = {}
+        for it in lecturas:
+            por_tema.setdefault(it.get("topic") or "otros", []).append(it)
+        for tema, grupo in sorted(por_tema.items()):
+            a(f"<h3 class='sect' id='tema-{slug(tema)}'>{escape(tema.capitalize())}"
+              f"<span class='count'>{len(grupo)} lecturas</span></h3>")
+            for it in grupo:
+                a("<article class='q'>")
+                a(f"<p class='stem'><span class='text'>{escape(it['title'])}</span>"
+                  f"{say_button(it['title'], 'Escuchar el título')}</p>")
+                for parrafo in it["summary"]:
+                    a(f"<p class='expl'>{escape(parrafo)}</p>")
+                if it.get("key_points"):
+                    a("<p class='expl'><b>Key points</b></p><ul class='opts'>")
+                    for kp in it["key_points"]:
+                        a(f"<li>{escape(kp)}</li>")
+                    a("</ul>")
+                if it.get("glossary"):
+                    a("<p class='expl'><b>Glosario</b></p><ul class='opts'>")
+                    for g in it["glossary"]:
+                        a(f"<li><b>{escape(g['en'])}</b> — {escape(g['es'])}</li>")
+                    a("</ul>")
+                q = it.get("question") or {}
+                if q.get("stem"):
+                    a(f"<p class='stem'><span class='text'>{escape(q['stem'])}</span></p>")
+                    a("<ul class='opts'>")
+                    for opt in q.get("options", []):
+                        if opt == q.get("answer"):
+                            a(f"<li class='ok'>{escape(opt)}<span class='tag'>CORRECT</span></li>")
+                        else:
+                            a(f"<li>{escape(opt)}</li>")
+                    a("</ul>")
+                a("</article>")
+
+    extra_lecturas = f" · {len(lecturas)} lecturas" if lecturas else ""
     a(f"<footer>{total_words} palabras · {total_pv} phrasal verbs · {total_id} idioms"
-      f" · {total_q} preguntas"
+      f" · {total_q} preguntas{extra_lecturas}"
       f" · generado el {date.today().isoformat()}</footer>")
     a(f"<script>{SPEECH_JS}</script>")
     a("</div></body></html>")
@@ -391,10 +431,13 @@ def main():
     forms = json.loads((DATA / "forms.json").read_text(encoding="utf-8"))
     pv = json.loads((DATA / "phrasal_verbs.json").read_text(encoding="utf-8"))
     idioms = json.loads((DATA / "idioms.json").read_text(encoding="utf-8"))
+    readings_path = DATA / "readings.json"
+    readings = (json.loads(readings_path.read_text(encoding="utf-8"))
+                if readings_path.exists() else None)
 
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(build(vocab, forms, pv, idioms), encoding="utf-8")
+    out_path.write_text(build(vocab, forms, pv, idioms, readings), encoding="utf-8")
     print(f"OK -> {out_path}")
 
 

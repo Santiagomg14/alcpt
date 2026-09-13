@@ -119,6 +119,15 @@ def article_id(url):
     return m.group(1) if m else None
 
 
+BLOQUEADO = (
+    "ThoughtCo bloquea las peticiones desde este equipo (HTTP {code}); no es cosa de "
+    "las cabeceras: rechaza hasta la portada, así que el bloqueo es por dirección IP. "
+    "Comprobado el 13 sep 2026 en el servidor. Las lecturas hay que traerlas desde el "
+    "portátil (misma orden: python scripts/fetch_readings.py …) y subirlas al repo; "
+    "todo lo demás del bot sí funciona aquí."
+)
+
+
 def get(url, tries=3):
     last = ""
     for i in range(tries):
@@ -126,6 +135,8 @@ def get(url, tries=3):
             r = requests.get(url, headers=HEADERS, timeout=40)
             if r.status_code == 200:
                 return r.text
+            if r.status_code in (402, 403, 451):
+                raise RuntimeError(BLOQUEADO.format(code=r.status_code))
             last = f"HTTP {r.status_code}"
         except requests.RequestException as e:
             last = str(e)
@@ -413,4 +424,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except RuntimeError as exc:
+        # Errores esperables (el sitio nos bloquea): mensaje limpio, sin traza,
+        # para que el bot lo pueda enseñar tal cual por Telegram.
+        sys.exit(str(exc))

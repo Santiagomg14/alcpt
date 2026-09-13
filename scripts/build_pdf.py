@@ -330,6 +330,47 @@ def forms_part(story, s, forms):
         story.append(Spacer(1, 0.3 * cm))
 
 
+def readings_part(story, s, readings):
+    """Parte V: las lecturas de ThoughtCo condensadas. Va al final para no tocar
+    el orden fijo de las cuatro primeras partes (regla 4 de CLAUDE.md)."""
+    items = [it for it in readings.get("items", []) if it.get("summary")]
+    if not items:
+        return
+    story.append(Paragraph("Parte V · Lecturas", s["h1"]))
+    story.append(Paragraph(esc(readings["meta"]["intro"]), s["body"]))
+    por_tema = {}
+    for it in items:
+        por_tema.setdefault(it.get("topic") or "otros", []).append(it)
+    for tema, lecturas in sorted(por_tema.items()):
+        story.append(Paragraph(esc(tema.capitalize()), s["h1"]))
+        for it in lecturas:
+            block = [Paragraph(esc(it["title"]), s["h2"])]
+            for parrafo in it["summary"]:
+                block.append(Paragraph(esc(parrafo), s["body"]))
+            story.append(KeepTogether(block))
+            if it.get("key_points"):
+                story.append(Paragraph("<b>Key points</b>", s["h2"]))
+                for kp in it["key_points"]:
+                    story.append(Paragraph(f'&#8211; {esc(kp)}', s["opt"]))
+            if it.get("glossary"):
+                story.append(Paragraph("<b>Glosario</b>", s["h2"]))
+                for g in it["glossary"]:
+                    story.append(Paragraph(
+                        f'&#8211; <b>{esc(g["en"])}</b> — {esc(g["es"])}', s["opt"]))
+            q = it.get("question") or {}
+            if q.get("stem"):
+                block = [Paragraph(f'<b>Comprehension.</b> {esc(q["stem"])}', s["qstem"])]
+                for opt in q.get("options", []):
+                    if opt == q.get("answer"):
+                        block.append(Paragraph(
+                            f'&#8211; <b><font color="#1f7a3d">{esc(opt)}</font></b>  '
+                            f'<font size="8" color="#1f7a3d">[CORRECT]</font>', s["opt"]))
+                    else:
+                        block.append(Paragraph(f'&#8211; {esc(opt)}', s["opt"]))
+                story.append(KeepTogether(block))
+            story.append(Spacer(1, 0.3 * cm))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(OUTPUT / "ALCPT_Vocabulario_y_Examenes.pdf"))
@@ -339,6 +380,9 @@ def main():
     forms = json.loads((DATA / "forms.json").read_text(encoding="utf-8"))
     pv = json.loads((DATA / "phrasal_verbs.json").read_text(encoding="utf-8"))
     idioms = json.loads((DATA / "idioms.json").read_text(encoding="utf-8"))
+    readings_path = DATA / "readings.json"
+    readings = (json.loads(readings_path.read_text(encoding="utf-8"))
+                if readings_path.exists() else {"meta": {"intro": ""}, "items": []})
 
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -362,6 +406,7 @@ def main():
     phrasal_part(story, s, pv)
     idioms_part(story, s, idioms)
     forms_part(story, s, forms)
+    readings_part(story, s, readings)
 
     doc.build(story)
     print(f"OK -> {out_path}")

@@ -65,9 +65,12 @@ RE_NOISE = re.compile(r"^\s*(?:end\s*review|cc|next|previous|submit|answer\s*:?\
 RE_STEM_NUM = re.compile(r"^\s*(\d{1,3})(?:\s*[.)]\s*(?:\1(?=\s|[A-Za-z0-9]))?\s*|\s+(?=[A-Za-z]))(.*)$")
 RE_TIME = re.compile(r"\b\d{1,2}:\d{2}\b")
 RE_AD = re.compile(r"descargar|app\s*store|google\s*play|instalar|anuncio|kingshot|\bad\b"
-                   r"|\bABRIR\b|\bINSTALAR\b|\bCOMPRAR\b|\$\s?\d", re.I)
+                   r"|\bABRIR\b|\bINSTALAR\b|\bCOMPRAR\b", re.I)
 # Contador de la pantalla del examen: «22:06  44%  44/100» → la pregunta es la 44
 RE_PROGRESS = re.compile(r"\b(\d{1,3})\s*/\s*100\b")
+# Pantalla final del examen («Your Score · 80/100 · Review your answers below»):
+# no es una pregunta, y si se cuela sus botones acaban como opciones.
+RE_SCORE = re.compile(r"your\s*score|review\s*your\s*answers|tu\s*puntaje|puntuaci[oó]n", re.I)
 MAX_OPTIONS = 4          # un ítem del ALCPT nunca tiene más de cuatro opciones
 RE_ANSWER_N = re.compile(r"answer\s*:?\s*(\d{1,3})\s*\)", re.I)
 RE_CORRECT = re.compile(r"^\s*correct\s*answer\s*[:\"“”']*\s*(.+?)[\"“”']*\s*$", re.I)
@@ -494,12 +497,15 @@ def parse_rows(rows, width):
         "question": polish_stem(spellfix(unglue(" ".join(stem).strip()))),
         "options": [spellfix(unglue(o)) for o in options if o],
         "correct": spellfix(unglue(correct_text)) if correct_text else None,
+        "correct_raw": unglue(correct_text) if correct_text else None,
         "explanation": spellfix(unglue(" ".join(expl).strip())),
         "incorrect": spellfix(unglue(" ".join(incorrect).strip())),
         "screen": screen,
         "_option_rows": option_rows,
     }
     missing = []
+    if any(RE_SCORE.search(r["text"]) for r in rows):
+        return q, ["es la pantalla de resultados del examen, no una pregunta"]
     if not form:
         missing.append("formulario (no se lee «Form NN» arriba)")
     if n is None:
@@ -603,17 +609,43 @@ def _resolve_by_wrong_answers(q) -> bool:
     «Incorrect Answers» bastan si solo una pregunta del formulario los tiene todos."""
     names = [m.group(1).strip() for m in
              (RE_QUOTED_START.match(s) for s in re.split(r"(?<=[.!?])\s+", q.get("incorrect", ""))) if m]
-    if len(names) < 2:
+    names = [x for x in names if len(x) >= 5]
+    if not names:
         return False
-    try:
-        data = json.loads(FORMS.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return False
-    section = next((f for f in data["forms"] if str(f["form"]) == q["form"]), None)
+    section = _section(q.get("form"))
     if not section:
         return False
     hits = [x for x in section["questions"]
             if all(match_option(nm, x.get("options", []), fuzzy=True) for nm in names)]
+    if len(hits) != 1:
+        return False
+    q["n"] = hits[0]["n"]
+    if q["n"] is None:
+        q["_match"] = hits[0].get("correct")
+    return True
+
+
+def _section(form):
+    if not form:
+        return None
+    try:
+        data = json.loads(FORMS.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    return next((f for f in data["forms"] if str(f["form"]) == form), None)
+
+
+def _resolve_by_options(q) -> bool:
+    """Capturas tomadas durante el examen: solo se ven las opciones. Si tres o
+    más coinciden con las de una única pregunta del formulario, es esa."""
+    opts = [o for o in q.get("options", []) if o and not o.startswith("(")]
+    if len(opts) < 3:
+        return False
+    section = _section(q.get("form"))
+    if not section:
+        return False
+    hits = [x for x in section["questions"]
+            if sum(1 for o in opts if match_option(o, x.get("options", []))) >= 3]
     if len(hits) != 1:
         return False
     q["n"] = hits[0]["n"]
@@ -629,17 +661,14 @@ def resolve_missing_number(q) -> bool:
     if q.get("n") is not None or not q.get("form"):
         return False
     if not q.get("correct") or q["correct"].startswith("("):
-        return _resolve_by_wrong_answers(q)
-    try:
-        data = json.loads(FORMS.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return False
-    section = next((f for f in data["forms"] if str(f["form"]) == q["form"]), None)
+        return _resolve_by_wrong_answers(q) or _resolve_by_options(q)
+    section = _section(q.get("form"))
     if not section:
         return False
     import difflib
-    key = norm(q["correct"])
-    if len(key) < 4:                       # «six», «mad»: demasiado genéricos
+    claves = [norm(x) for x in (q.get("correct"), q.get("correct_raw")) if x]
+    claves = [k for k in dict.fromkeys(claves) if len(k) >= 4]
+    if not claves:                         # «six», «mad»: demasiado genéricos
         return False
 
     def parecido(a, b):
@@ -649,10 +678,11 @@ def resolve_missing_number(q) -> bool:
     # El OCR de la respuesta suele traer erratas («I he wind» por «The wind»),
     # así que se compara con tolerancia y se exige que encaje con una sola.
     hits = [x for x in section["questions"]
-            if parecido(norm(x.get("correct", "")), key)
-            or any(parecido(norm(o), key) for o in x.get("options", []))]
+            if any(parecido(norm(x.get("correct", "")), k)
+                   or any(parecido(norm(o), k) for o in x.get("options", []))
+                   for k in claves)]
     if len(hits) != 1:
-        return False
+        return _resolve_by_options(q)
     q["n"] = hits[0]["n"]
     # Cuatro preguntas antiguas quedaron sin número («Item number not visible»);
     # para esas se guarda el texto de su respuesta como identificador.
