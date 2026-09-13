@@ -121,6 +121,12 @@ lo desactiva. Las capturas HEIC del iPhone se abren con `pillow-heif`.
 Telegram admite 30 imágenes por tanda y el bot solo puede descargar archivos de
 hasta 20 MB, así que para lotes grandes hay dos caminos, ambos por Telegram:
 
+**OJO con los dos enlaces de iCloud.** El del botón «Compartir» de Fotos
+(`share.icloud.com/photos/…`, que redirige a `icloud.com/photos/#…`) va por
+CloudKit y exige iniciar sesión con la cuenta de Apple: **no se puede leer** y el
+bot responde con las instrucciones para crear el otro. El de «álbum compartido»
+(`icloud.com/sharedalbum/#B0X…`) es público y ese sí funciona.
+
 - **Álbum compartido de iCloud** (el bueno, sin límite): en el iPhone, Fotos →
   seleccionar → Compartir → «Añadir a álbum compartido» → en el álbum, «Personas»
   → «Sitio web público» → copiar enlace. Se le manda al bot tal cual, o con

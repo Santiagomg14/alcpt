@@ -519,7 +519,24 @@ def handle_image(chat_id, path):
 # compartido el servidor va directo a iCloud y luego procesa la carpeta entera.
 ICLOUD_SCRIPT = SCRIPTS / "fetch_icloud_album.py"
 BATCH_SCRIPT = SCRIPTS / "process_batch.py"
-RE_ICLOUD = re.compile(r"https?://(?:www\.)?icloud\.com/\S*sharedalbum\S*", re.I)
+# Álbum compartido (público, se puede leer): …/sharedalbum/#B0X…
+RE_ICLOUD = re.compile(r"https?://(?:\w+\.)?icloud\.com/\S*sharedalbum\S*", re.I)
+# Enlace del botón «Compartir» de Fotos: share.icloud.com/photos/… o icloud.com/photos/#…
+# Va por CloudKit y exige iniciar sesión con la cuenta de Apple, así que el bot no
+# puede abrirlo. Se detecta solo para explicar cómo crear el que sí sirve.
+RE_ICLOUD_PHOTOS = re.compile(r"https?://(?:\w+\.)?icloud\.com/photos/\S*", re.I)
+RE_URL = re.compile(r"https?://\S+", re.I)
+ALBUM_HOWTO = (
+    "Ese enlace es del botón «Compartir» de Fotos y va por la cuenta de Apple: "
+    "sin iniciar sesión no puedo abrirlo, y no voy a pedirte tu contraseña.\n\n"
+    "Hazme uno de «álbum compartido», que es público y sí puedo leer:\n"
+    "1. Fotos → selecciona las capturas → Compartir\n"
+    "2. «Añadir a álbum compartido» → crea uno nuevo (p. ej. «ALCPT»)\n"
+    "3. Abre ese álbum → pestaña «Personas»\n"
+    "4. Activa «Sitio web público» → «Copiar enlace»\n\n"
+    "El enlace bueno se ve así: https://www.icloud.com/sharedalbum/#B0X5…\n"
+    "Mándamelo y proceso el álbum entero."
+)
 _job = {"thread": None, "cancel": False, "state": "", "chat": None}
 
 
@@ -619,6 +636,11 @@ def _download_zip(chat_id, url, folder):
         with requests.get(url, stream=True, timeout=120,
                           headers={"User-Agent": "Mozilla/5.0"}) as r:
             r.raise_for_status()
+            if r.headers.get("Content-Type", "").startswith(("text/html", "text/plain")):
+                send(chat_id, "Ese enlace devuelve una página web, no un archivo. "
+                              "Necesito el enlace de descarga directa del .zip "
+                              "(o el de un álbum compartido de iCloud).")
+                return None
             size = 0
             with open(dest, "wb") as fh:
                 for block in r.iter_content(1 << 20):
@@ -631,6 +653,12 @@ def _download_zip(chat_id, url, folder):
     except requests.RequestException as exc:
         send(chat_id, f"No pude descargar ese enlace: {exc}"[:400])
         return None
+    with open(dest, "rb") as fh:
+        if fh.read(2) != b"PK":                 # firma de todo archivo ZIP
+            dest.unlink(missing_ok=True)
+            send(chat_id, "Lo que llegó no es un ZIP. Comprueba que el enlace sea de "
+                          "descarga directa, o mándame un álbum compartido de iCloud.")
+            return None
     return _extract_zip(chat_id, dest, folder)
 
 
@@ -950,6 +978,11 @@ def _handle_update(u):
                 send(chat_id, f"Lote en marcha: {_job['state']}." if job_running()
                      else "No hay ningún lote en marcha. Mándame el enlace de un álbum "
                           "compartido de iCloud y lo proceso entero.")
+            elif RE_ICLOUD_PHOTOS.search(arg):
+                send(chat_id, ALBUM_HOWTO)
+            elif not RE_URL.match(arg):
+                send(chat_id, "Eso no parece un enlace. Mándame el de un álbum "
+                              "compartido de iCloud o el de un .zip con las capturas.")
             else:
                 handle_batch_url(chat_id, arg)
         elif cmd == "/pendientes":
@@ -991,9 +1024,22 @@ def _handle_update(u):
         handle_batch_url(chat_id, m.group(0))
         return
 
+    if RE_ICLOUD_PHOTOS.search(text):
+        send(chat_id, ALBUM_HOWTO)
+        return
+
     urls = THOUGHTCO_URL.findall(text)
     if urls:
         handle_reading_url(chat_id, [u.rstrip(".,)") for u in urls])
+        return
+
+    if RE_URL.match(text.strip()):
+        # una dirección web nunca es una palabra del diccionario
+        send(chat_id, "No sé qué hacer con ese enlace. Acepto:\n"
+                      "• álbum compartido de iCloud (…/sharedalbum/#B0X…)\n"
+                      "• enlace directo a un .zip con capturas\n"
+                      "• un artículo de thoughtco.com\n"
+                      "Con /lote <enlace> lo proceso como lote.")
         return
 
     if text:

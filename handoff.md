@@ -201,6 +201,27 @@ Sesión del 13 sep 2026 (lotes de cientos de capturas):
 - Probado: enlace inválido (mensaje claro), carpeta de 5 imágenes (4 formularios +
   1 vocabulario), ZIP por Telegram (4 imágenes, todas saltadas por el registro).
 
+Sesión del 13 sep 2026, segunda parte (el enlace que mandó Brayhan no servía):
+
+- Mandó `https://share.icloud.com/photos/01a0…`. **No es un álbum compartido**:
+  redirige a `www.icloud.com/photos/#TOKEN` y va por CloudKit. Investigado a fondo:
+  `POST ckdatabasews.icloud.com/database/1/com.apple.photos.cloud/production/public/`
+  `records/resolve` con `{"shortGUIDs":[{"value":TOKEN}]}` **sí** resuelve (devuelve
+  zoneID `CMM-…`, share y rootRecord `CMMRoot` con `photosCount`), pero cualquier
+  consulta a la zona (`shared/records/query`, `public/records/query`, `lookup`,
+  `users/caller`) responde 401 AUTHENTICATION_FAILED: hace falta sesión de Apple ID.
+  **Descartado**: no se van a pedir credenciales. El álbum compartido
+  (`/sharedalbum/#B0X…`, API sharedstreams) sigue siendo el camino.
+- Fallos que destapó y ya están corregidos: el enlace caía en `handle_word()` y se
+  gastaba una llamada a Claude tratándolo como palabra; `/lote` con ese enlace se iba
+  por la rama del ZIP y descargaba la página HTML como `lote.zip`. Ahora hay
+  `RE_ICLOUD_PHOTOS` (responde con `ALBUM_HOWTO`, las 4 pasos para crear el álbum),
+  `RE_URL` (una dirección web nunca es palabra de diccionario) y el descargador de
+  ZIP comprueba `Content-Type` y la firma `PK`.
+- Borradas las carpetas `inbox/lote_*` de basura. El vocabulario no quedó tocado
+  (341 entradas, ninguna con URL).
+- `.env` del servidor: `CLAUDE_MODEL=claude-opus-5` (probado: responde «Opus 5»).
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,
@@ -228,6 +249,9 @@ Sesión del 13 sep 2026 (lotes de cientos de capturas):
 
 ## 7. Qué planeas hacer después
 
+- **Pendiente de Brayhan**: crear el álbum compartido con «Sitio web público» y
+  mandar ese enlace. Hasta entonces la API de sharedstreams sigue sin probarse
+  contra un álbum real.
 - **Cuando Brayhan mande el enlace del álbum**: vigilar el primer lote de verdad
   (`journalctl --user -u alcpt-bot -f` o `tail -f bot/bot.log`), porque la API de
   iCloud no se ha probado con un álbum real. Si falla, el respaldo es el ZIP.
