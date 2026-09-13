@@ -24,3 +24,6 @@ bot/bot.log
 
 # Registro de capturas ya procesadas (caché local: sha256 -> resultado)
 bot/processed.json
+
+# Capturas de origen: las imágenes SÍ se versionan (respaldo), el texto OCR no
+capturas/**/*.txt

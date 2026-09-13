@@ -538,6 +538,18 @@ ALBUM_HOWTO = (
     "Mándamelo y proceso el álbum entero."
 )
 _job = {"thread": None, "cancel": False, "state": "", "chat": None}
+# Las capturas de origen se guardan aquí y SÍ van al repositorio: son el respaldo
+# de Brayhan y permiten reprocesarlas si el lector mejora. Una carpeta por álbum,
+# con su token en el nombre, para que reenviar el mismo enlace sea incremental:
+# el descargador nombra cada foto por su checksum y salta las que ya están.
+CAPTURAS = REPO / "capturas"
+
+
+def album_folder(url):
+    """Carpeta estable para un álbum; la misma cada vez que llega ese enlace."""
+    token = url.split("#", 1)[1] if "#" in url else url.rstrip("/").rsplit("/", 1)[-1]
+    token = re.sub(r"[^A-Za-z0-9_-]", "", token)[:12] or "sin_token"
+    return CAPTURAS / f"album_{token}"
 
 
 def eta(n_images: int) -> str:
@@ -566,10 +578,14 @@ def handle_batch_url(chat_id, url):
 
 
 def _run_batch(chat_id, url):
-    folder = INBOX / f"lote_{datetime.now():%Y%m%d_%H%M%S}"
+    es_album = bool(RE_ICLOUD.search(url))
+    folder = album_folder(url) if es_album else CAPTURAS / f"zip_{datetime.now():%Y%m%d_%H%M%S}"
     try:
-        if RE_ICLOUD.search(url):
-            send(chat_id, "Abriendo el álbum…")
+        if es_album:
+            ya = len(list(folder.glob("*.jpg"))) if folder.exists() else 0
+            send(chat_id, "Abriendo el álbum…" if not ya else
+                 f"Abriendo el álbum (ya tengo {ya} fotos de la vez anterior; "
+                 "solo bajo las nuevas)…")
             got = _download_album(chat_id, url, folder)
         else:
             send(chat_id, "Descargando el archivo…")
@@ -624,10 +640,14 @@ def _download_album(chat_id, url, folder):
         send(chat_id, "La descarga terminó sin resumen; revisa el enlace.")
         return None
     log(f"lote: descarga terminada {summary}")
-    total = summary.get("downloaded", 0) + summary.get("skipped", 0)
-    send(chat_id, f"Descargadas {summary.get('downloaded', 0)} fotos nuevas "
+    nuevas = summary.get("downloaded", 0)
+    total = nuevas + summary.get("skipped", 0)
+    if not nuevas:
+        send(chat_id, f"El álbum no tiene fotos nuevas: las {total} ya estaban procesadas.")
+        return 0
+    send(chat_id, f"Descargadas {nuevas} fotos nuevas "
                   f"({summary.get('skipped', 0)} ya estaban, {summary.get('failed', 0)} fallaron).\n"
-                  f"Ahora las proceso: {eta(total)}.")
+                  f"Ahora las proceso: {eta(nuevas)}.")
     return total
 
 
@@ -700,7 +720,7 @@ def handle_zip_document(chat_id, path):
     if job_running():
         send(chat_id, f"Ya hay un lote en marcha: {_job['state']}.")
         return
-    folder = INBOX / f"lote_{datetime.now():%Y%m%d_%H%M%S}"
+    folder = CAPTURAS / f"zip_{datetime.now():%Y%m%d_%H%M%S}"
     folder.mkdir(parents=True, exist_ok=True)
     def work():
         _job.update(cancel=False, state="descomprimiendo", chat=chat_id)
@@ -721,8 +741,10 @@ def _process_folder(chat_id, folder):
     _job["state"] = "procesando"
     log(f"lote: procesando {folder.name}")
     cmd = [sys.executable, str(BATCH_SCRIPT), str(folder), "--progress"]
+    env = {**os.environ, "OCR_THREADS": os.environ.get("OCR_THREADS", "4"),
+           "OMP_NUM_THREADS": os.environ.get("OMP_NUM_THREADS", "4")}
     proc = subprocess.Popen(cmd, cwd=REPO, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
-                            text=True, encoding="utf-8", errors="replace", bufsize=1)
+                            text=True, encoding="utf-8", errors="replace", bufsize=1, env=env)
     summary, last = {}, 0
     for line in proc.stdout:
         line = line.strip()

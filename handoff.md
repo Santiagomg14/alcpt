@@ -253,6 +253,18 @@ Sesión del 13 sep 2026, tercera parte (el álbum de 496 capturas, procesado):
 - Comparado contra el estado previo: 61 nuevas, 39 modificadas, **0 regresiones**.
   Regresión de `check_captures.py` sobre las 94 antiguas: un solo cambio, y a mejor.
 
+Sesión del 13 sep 2026, cuarta parte (respaldo de las imágenes):
+
+- Brayhan quiere borrar las 496 del iPhone. Estaban solo en `inbox/` (ignorada por
+  git), así que se movieron a **`capturas/album_D1zv3FZ5mwE3/`, que SÍ se versiona**
+  (150 MB). Verificadas íntegras: 0 ilegibles.
+- El bot ahora descarga cada álbum a `capturas/album_<token12>/`, carpeta estable:
+  como el descargador nombra por checksum y salta lo existente, y `process_batch`
+  salta por sha256, **reenviar el mismo enlace es incremental**. Si no hay fotos
+  nuevas lo dice y no procesa nada.
+- `capturas/**/*.txt` sí está en .gitignore: el texto OCR es derivado.
+- El bot lanza `process_batch` con `OCR_THREADS=4` (máquina compartida).
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,

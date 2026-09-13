@@ -138,6 +138,12 @@ En el servidor, el OCR va con `OCR_THREADS=4` (variable de entorno): con los 24
 hilos por defecto ONNX reserva gigabytes y el sistema mata el lote, porque la
 máquina es compartida. Con 4 son 0,5 GB y además va más rápido (2,6 s por captura).
 
+Las fotos se guardan en `capturas/album_<token>/`, **dentro del repositorio**: son el
+respaldo de Brayhan (borra las del iPhone) y permiten reprocesarlas si el lector
+mejora. El nombre de cada foto es su checksum en iCloud, así que **reenviar el mismo
+enlace solo baja y procesa lo nuevo**. El texto OCR (`*.txt`) no se versiona: es
+derivado y se regenera.
+
 El procesado corre en un hilo aparte: el bot sigue atendiendo mensajes, avisa cada
 25 imágenes y admite `/lote estado` y `/lote cancelar`. Al final, un solo commit.
 `scripts/process_batch.py` carga el motor de OCR una vez (~3,3 s por captura en vez
@@ -197,7 +203,9 @@ alcpt/
 ├── bot/
 │   ├── alcpt_bot.py       <- bot de Telegram (portátil, sin rutas fijas)
 │   └── README.md          <- cómo dejarlo corriendo en cualquier equipo
-├── inbox/                 <- capturas nuevas del ALCPT y texto crudo de lecturas (fuera del repo)
+├── capturas/              <- imágenes de origen, SÍ versionadas (respaldo de Brayhan)
+│   └── album_<token>/     <- una carpeta por álbum de iCloud; reenviar el enlace es incremental
+├── inbox/                 <- capturas sueltas de Telegram y texto de lecturas (fuera del repo)
 ├── docs/                  <- index.html + audio/*.mp3 publicados en GitHub Pages
 └── output/                <- PDF y páginas generadas
 ```

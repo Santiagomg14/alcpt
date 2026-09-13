@@ -15,7 +15,7 @@ cambia entre equipos es el archivo `.env`.
 | `scuttlebutt = rumor, chisme` | La agrega tal cual, sin usar IA |
 | Una captura del examen | La lee con OCR local y la guarda en `forms.json` (sin Claude Code) |
 | Una captura con lista término = significado | La extrae en local, la agrega al vocabulario y Claude repone tildes y matices (solo texto) |
-| Un enlace de álbum compartido de iCloud (`…/sharedalbum/#B0X…`) | Se baja todas las fotos y las procesa en segundo plano (sin el límite de 30 de Telegram) |
+| Un enlace de álbum compartido de iCloud (`…/sharedalbum/#B0X…`) | Se baja todas las fotos a `capturas/album_<token>/` y las procesa en segundo plano. Reenviar el mismo enlace tras añadir fotos solo baja las nuevas |
 | Un enlace de `share.icloud.com/photos/…` | No se puede: es de CloudKit y pide cuenta de Apple. El bot explica cómo crear el de álbum compartido |
 | Un .zip con capturas (≤20 MB) | Lo descomprime y procesa igual |
 | Un enlace de `thoughtco.com` | Descarga el artículo, lo condensa a nivel B2 y lo publica en Lecturas (con su podcast) |
