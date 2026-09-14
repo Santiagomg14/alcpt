@@ -2,8 +2,8 @@
   "meta": {
     "owner": "Brayhan",
     "level": "B2",
-    "last_updated": "2026-09-11",
-    "total_confirmed": 341
+    "last_updated": "2026-09-14",
+    "total_confirmed": 342
   },
   "sections": [
     {
@@ -300,6 +300,11 @@
           "n": 341,
           "en": "Pull back",
           "es": "Echarse para atrás; retroceder o retirarse (tropas); replegarse; reducir la participación o el gasto en algo («The company pulled back on expansion»); recuperar posiciones en un juego o negocio"
+        },
+        {
+          "n": 342,
+          "en": "Fellowship",
+          "es": "Compañerismo, camaradería: el vínculo entre quienes comparten algo («the fellowship of soldiers»); beca de investigación o de posgrado, normalmente para graduados («he won a research fellowship»); en medicina, la subespecialidad que se hace después de la residencia; agrupación o hermandad de personas con un interés común (también con matiz religioso: congregación, comunidad de fieles)"
         }
       ]
     },

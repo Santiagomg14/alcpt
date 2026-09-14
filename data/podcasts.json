@@ -10,7 +10,7 @@
       "es": "-5%"
     },
     "max_seconds": 600,
-    "last_updated": "2026-09-13",
+    "last_updated": "2026-09-14",
     "total": 21
   },
   "series": [
@@ -4868,7 +4868,7 @@
     {
       "id": "vocab-07",
       "series": "vocab",
-      "title": "Palabras 312–341",
+      "title": "Palabras 312–342",
       "subtitle": "Form 87 · Technical & Action Verbs · Mis palabras",
       "words": [
         312,
@@ -4878,7 +4878,7 @@
       "script": [
         {
           "v": "en",
-          "t": "ALCPT Notebook. Vocabulary, episode 7: words 312 to 341. Listen to each word, then its meaning in Spanish, and repeat the word out loud before the next one.",
+          "t": "ALCPT Notebook. Vocabulary, episode 7: words 312 to 342. Listen to each word, then its meaning in Spanish, and repeat the word out loud before the next one.",
           "p": 1.2
         },
         {
@@ -5333,13 +5333,28 @@
         },
         {
           "v": "en",
-          "t": "End of episode 7. Words 312 to 341. Play it again tomorrow: repetition is what makes them stick.",
+          "t": "342. Fellowship.",
+          "p": 0.5
+        },
+        {
+          "v": "es",
+          "t": "Compañerismo, camaradería: el vínculo entre quienes comparten algo («the fellowship of soldiers»).",
+          "p": 0.4
+        },
+        {
+          "v": "en",
+          "t": "Fellowship.",
+          "p": 1.1
+        },
+        {
+          "v": "en",
+          "t": "End of episode 7. Words 312 to 342. Play it again tomorrow: repetition is what makes them stick.",
           "p": 0.5
         }
       ],
       "hash": "1b54da29bc67",
       "file": "audio/vocab-07.mp3",
-      "estimate": 337,
+      "estimate": 349,
       "seconds": 320.9,
       "bytes": 1925280,
       "built": "2026-09-11"
