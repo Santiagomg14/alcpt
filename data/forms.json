@@ -17,10 +17,11 @@
       "Technical & Action Verbs",
       "66",
       "72",
-      "64"
+      "64",
+      "59"
     ],
-    "last_updated": "2026-09-13",
-    "total_questions": 379
+    "last_updated": "2026-09-28",
+    "total_questions": 395
   },
   "forms": [
     {
@@ -642,6 +643,200 @@
           ],
           "correct": "augur",
           "explanation": "All four choices are related to announcing the future, so the item is decided by collocation rather than by meaning alone. \"Augur\" is the only one that combines with the adverb \"well\" (or \"ill\") in the fixed pattern \"to augur well for something,\" which means to be a good sign or a favorable omen for a future outcome. Here the recurrent bad weather is a bad sign for finishing the stadium on time, so \"does not augur well for the timely completion\" is the natural English construction. Note also that in this pattern the subject is the omen (the weather), not a person making a forecast. Incorrect Answers: \"predict\" is incorrect because it is a transitive verb that requires a direct object naming what is forecast (\"predict a delay\"); it cannot be followed by \"well for,\" and it presents the subject as someone who states a forecast, which bad weather cannot do. \"foretell\" is incorrect for the same structural reason: it also takes a direct object (\"foretell the future\") and belongs to a more literary register about revealing events in advance, so \"foretell well for\" is not English. \"prognosticate\" is incorrect because it is a formal, mostly technical or medical synonym of \"predict\" that likewise needs a direct object; it describes the deliberate act of forecasting an outcome and does not enter the omen pattern with \"well.\" The sentence requires a verb that fits into the idiomatic expression \"[verb] well for,\" which means to be a sign of a good or bad outcome. The word \"augur\" (meaning to portend or be a sign of) is the standard choice for this specific structure. While other choices have similar meanings related to the future, \"augur well for\" (or \"bode well for\") is the correct linguistic collocation used to describe how current circumstances might affect future results, such as the completion of a military or construction project."
+        }
+      ]
+    },
+    {
+      "form": "59",
+      "questions": [
+        {
+          "n": 46,
+          "question": "Tools should be protected against moisture. What should they be protected against?",
+          "options": [
+            "dry weather",
+            "dampness",
+            "oil and grease",
+            "improper use"
+          ],
+          "correct": "dampness",
+          "explanation": "The term \"moisture\" refers to the presence of water or liquid, often in the form of vapor or condensation. In military maintenance, protecting tools and equipment from moisture is a standard procedure to prevent oxidation and rust. \"Dampness\" is a direct synonym for moisture, referring to a state of being slightly wet or humid."
+        },
+        {
+          "n": 47,
+          "question": "We're having abnormal weather for this time of year. What are we having?",
+          "options": [
+            "typical weather",
+            "unusual weather",
+            "bad weather",
+            "nice weather"
+          ],
+          "correct": "unusual weather",
+          "explanation": "The word \"abnormal\" means deviating from what is normal, usual, or expected. In the context of weather patterns for a specific time of year, \"abnormal weather\"is a direct synonym for\"unusual weather.\" 'typical weather\" is incorrect because typical is the opposite of abnormal; it refers to what is expected or normal."
+        },
+        {
+          "n": 48,
+          "question": "The woman told her daughter to spread out the tablecloth on the table. What was the daughter told to do with a tablecloth?",
+          "options": [
+            "fold it up",
+            "stretch it out",
+            "roll it up",
+            "take it away"
+          ],
+          "correct": "stretch it out",
+          "explanation": "The phrasal verb \"spread out\" means to open something up and cover a wider area or surface. In the context of a tablecloth, it involves unfolding the fabric so it covers the table. \"Stretch it out\" serves as the best synonym among the choices, as it implies extending the material across the surface to its full length."
+        },
+        {
+          "n": 50,
+          "question": "Sylvia poured the coffee.",
+          "options": [
+            "She filled the cup with coffee.",
+            "She drank the coffee from a cup.",
+            "She made the coffee in a pot.",
+            "She warmed the coffee on the stove."
+          ],
+          "correct": "She filled the cup with coffee.",
+          "explanation": "The verb \"pour\" means to cause a liquid to flow from a container in a steady stream, typically into another container such as a cup. Therefore, when Sylvia \"poured the coffee,\" the result of that action is that she filled a cup or container with the liquid. \"She drank the coffee from a cup.\" is incorrect because drinking refers to the consumption of the liquid, which is a different action than pouring."
+        },
+        {
+          "n": 53,
+          "question": "How does he make his living?",
+          "options": [
+            "He goes to the movies after work.",
+            "He walks around the block.",
+            "He works at the base.",
+            "He eats the proper food."
+          ],
+          "correct": "He works at the base.",
+          "explanation": "The idiom \"to make a living\" means to earn enough money to support oneself or to have a job. Asking \"how does he make his living?\" is a common way of asking what someone's occupation is. \"He works at the base\" is the only option that describes a job or a source of income, which directly answers the question."
+        },
+        {
+          "n": 56,
+          "question": "The downtown area was neglected.",
+          "options": [
+            "beautiful",
+            "deteriorated",
+            "faraway",
+            "divided"
+          ],
+          "correct": "deteriorated",
+          "explanation": "The word \"neglected\" means that something has not been properly cared for or attended to. When applied to a location like a \"downtown area,\" it implies that buildings and infrastructure are in a state of disrepair. \"Deteriorated\" is the most accurate synonym, as it describes something that has become progressively worse in condition or quality over time due to lack of maintenance."
+        },
+        {
+          "n": 60,
+          "question": "And after that. What did the soldiers do they took off their shirts what did the man say about the soldiers?",
+          "options": [
+            "that they had washed their shirts",
+            "that they removed their shirts",
+            "that they arranged their shirts",
+            "that they recovered their shirts"
+          ],
+          "correct": "that they removed their shirts",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 65,
+          "question": "Jim certainly looks happy yes he does his wife just gave birth. Why is Jim happy?",
+          "options": [
+            "His wife just bought him a present.",
+            "He and his wife are going on a trip.",
+            "His wife helps him in his work.",
+            "He has just become a new father."
+          ],
+          "correct": "He has just become a new father.",
+          "explanation": "The dialogue states that Jim's wife \"just gave birth.\" This is a standard idiomatic expression meaning that a child was born. Since Jim is the husband, the logical conclusion is that he has recently become a father, which explains his happiness. \"His wife just bought him a present.\" is incorrect because the context specifically mentions childbirth, not the purchase of a gift."
+        },
+        {
+          "n": 66,
+          "question": "Can you meet me at the restaurant Mary yes it's a very convenient place why will? They meet at the restaurant.",
+          "options": [
+            "Mary can go there very easily.",
+            "It's a good place to eat.",
+            "Not many people go there.",
+            "Mary has never been there before."
+          ],
+          "correct": "Mary can go there very easily.",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 78,
+          "question": "Harry and I don't eat lunch at the snack bar.",
+          "options": [
+            "still",
+            "already",
+            "anyone",
+            "since"
+          ],
+          "correct": "since",
+          "explanation": "In this sentence, \"since\" functions as an adverb meaning \"from a past time until now.\" It indicates bar, but at some point in the past, they stopped and have not eaten there from that point onward. while typically seen with the Present Perfect tense (e.g., \"haven't eaten\"), in certain contexts or informal military English assessments, it can be used to denote a status change regarding a current habit."
+        },
+        {
+          "n": 87,
+          "question": "I'll be looking forward to ________ you soon.",
+          "options": [
+            "seen",
+            "having seen",
+            "saw",
+            "seeing"
+          ],
+          "correct": "seeing",
+          "explanation": "The phrase \"look forward to\" is an idiomatic phrasal verb where \"to\" functions as a preposition rather than part of an infinitive. In English grammar, prepositions must be followed by a noun, a pronoun, or a gerund (the \"-ing\" form of a verb). Therefore, \"seeing\" is the correct form to follow the preposition. This structure is frequently used in formal military and professional communication to express positive anticipation for a future event or meeting."
+        },
+        {
+          "n": 91,
+          "question": "She doesn't mind doing the dishes. She doesn't.",
+          "options": [
+            "object to it",
+            "like to",
+            "want to",
+            "pay attention to it"
+          ],
+          "correct": "object to it",
+          "explanation": "In this context, the verb 'mind' means to feel annoyance, displeasure, or opposition toward something. When someone says they 'don't mind' doing something, it means they do not have a problem with it and are willing to do it. Therefore, 'she doesn't object to it' is the synonymous expression. This is a common idiomatic usage in both general and military English when discussing willingness to perform duties or tasks."
+        },
+        {
+          "n": 93,
+          "question": "The deer ________ the fence to get into the vegetable garden.",
+          "options": [
+            "arranged to",
+            "stood up",
+            "leaped over",
+            "climb into"
+          ],
+          "correct": "leaped over",
+          "explanation": "Deer are known for their ability to jump high and describes the physical action of a deer clearing a barrier like a fence. Grammatically, \"leaped\" is the past tense of leap, which fits the sentence structure describing a completed action. \"arranged to\" is incorrect because it implies planning or organizing a meeting or event, which is not an action an animal takes to cross a physical barrier."
+        },
+        {
+          "n": 94,
+          "question": "Do you ________ go to the city library?",
+          "options": [
+            "how",
+            "can",
+            "ever",
+            "never"
+          ],
+          "correct": "ever",
+          "explanation": "In English grammar, the adverb \"ever\" is used in questions to mean \"at any time.\" In the structure \"Do you + [adverb] + [verb],\" \"ever\" is the standard frequency adverb used to ask if an action occurs. In military instruction and standardized testing like the Al cpt, this pattern is frequently used to test the student's understanding of question formation and adverb placement."
+        },
+        {
+          "n": 95,
+          "question": "If you stop at the BX, ________ me some cigarettes.",
+          "options": [
+            "buy",
+            "would buy",
+            "should have bought",
+            "will buy"
+          ],
+          "correct": "buy",
+          "explanation": "This sentence follows a conditional structure where the 'if' clause uses the Present Simple tense (\"stop\") and the result clause uses the imperative mood. The imperative (\"buy\") is used here to make a direct request or give an instruction based on a specific condition. In a military context, the BX (Base Exchange) is a common facility where service members purchase goods, making this a practical, everyday request."
+        },
+        {
+          "n": 97,
+          "question": "Selecting students for this society\"",
+          "options": [
+            "(Options screen not captured yet.)"
+          ],
+          "correct": "(Correct answer not visible in this capture.)",
+          "explanation": "The paragraph explicitly lists five distinct criteria for membership: scholarship, leadership, citizenship, service, and character. This confirms that the selection process involves evaluating several different factors rather than just one. This type of reading comprehension task requires identifying a summary statement that encompasses the details provided in the text."
         }
       ]
     },
