@@ -22,7 +22,7 @@
       "67"
     ],
     "last_updated": "2026-09-29",
-    "total_questions": 429
+    "total_questions": 446
   },
   "forms": [
     {
@@ -4162,6 +4162,54 @@
       "form": "75",
       "questions": [
         {
+          "n": 23,
+          "question": "Jane was looking over a new car. What was she doing?",
+          "options": [
+            "buying a new car",
+            "passing a new car",
+            "examining a new car",
+            "driving a new car"
+          ],
+          "correct": "examining a new car",
+          "explanation": "The phrasal verb \"look over\" means to inspect or examine something to check its condition or to see what it is like. When Jane is \"looking over\" a new car, she is performing a visual inspection or examining its features and quality. \"buying a new car\" is incorrect because while looking over a car is a common step before a purchase, the phrase itself refers specifically to the inspection, not the act of paying for or acquiring the vehicle."
+        },
+        {
+          "n": 29,
+          "question": "Did you know that today is his birthday?",
+          "options": [
+            "No, I was not aware of it.",
+            "No, I don't care for any.",
+            "Yes, I am hungry.",
+            "Yes, I would like to go with you."
+          ],
+          "correct": "No, I was not aware of it.",
+          "explanation": "The question asks about the listener's knowledge of a specific fact (\"did you know...?\"). In English, being \"aware\" is a direct synonym for \"knowing\" a piece of information. Therefore, stating \"I was not aware of it\" is the only logical response that addresses the question about knowledge regarding the birthday. \"No, I don't care for any.\" is incorrect because this phrase is used to decline an offer of a physical item (like food or drink) rather than responding to a guest ines,hurt frr tun lyn formation Yes, I would like to go with you."
+        },
+        {
+          "n": 34,
+          "question": "Did she get her mail today?",
+          "options": [
+            "Yes, she sent it.",
+            "Yes, she has it now.",
+            "Yes, she wrote it.",
+            "Yes, she didn't remember."
+          ],
+          "correct": "Yes, she has it now.",
+          "explanation": "The question asks \"did she get her mail,\" which means \"did she receive her mail.\" If a person gets or receives an item, they are currently in possession of it. Therefore, saying \"she has it now\" is the logical response to confirm she received the mail. \"Yes, she sent it.\" is incorrect because sending mail is the act of dispatching it to someone else, which is the opposite of \"getting\" (receiving) mail."
+        },
+        {
+          "n": 36,
+          "question": "Helen needed something to pour the milk into. What did she need?",
+          "options": [
+            "ajar",
+            "a counter",
+            "a box",
+            "a bag"
+          ],
+          "correct": "ajar",
+          "explanation": "The question asks for an object into which milk can be poured, which necessitates a container. A jar (often transcribed as \"ajar\" in certain exam versions) is a cylindrical glass vessel suitable for holding liquids. The use of the preposition \"into\" indicates that the target must be an enclosed space or a container capable of holding a volume of liquid."
+        },
+        {
           "n": 39,
           "question": "40.",
           "options": [
@@ -4175,7 +4223,7 @@
         },
         {
           "n": 40,
-          "question": "(Listening item — the audio prompt is not visible in the screenshot.)",
+          "question": "We told the sergeant that we had already made up our beds. What had we done?",
           "options": [
             "washed the sheets and blankets",
             "put the sheets and blankets on the bed",
@@ -4183,7 +4231,79 @@
             "piled the sheets and blankets on the bed"
           ],
           "correct": "(Not shown in the screenshot — the item was captured before the review screen.)",
-          "explanation": "Listening comprehension item. The screenshot only captures the answer choices, so the correct option and its explanation were not recorded."
+          "explanation": "Listening comprehension item. The screenshot only captures the answer choices, so the correct option and its explanation were not recorded. The phrasal verb \"to make up a bed\" (or \"make the bed\") means to arrange the bedding, such as sheets, blankets, and pillows, neatly so the bed is ready for use. In a military context, making one's bed to specific standards is a routine part of morning duties and inspections."
+        },
+        {
+          "n": 42,
+          "question": "The envelope was sealed.",
+          "options": [
+            "Someone took it.",
+            "It got lost in the mail.",
+            "It was closed securely.",
+            "No one paid any attention to it"
+          ],
+          "correct": "It was closed securely.",
+          "explanation": "The word \"sealed\" means to fasten or close something tightly or firmly so that it is secure and can not be opened easily. In the context of an envelope, it refers to the process of sticking the flap down to protect the contents. In military and administrative contexts, sealing documents is a standard procedure to ensure confidentiality and integrity during transit. Someone took it.\"is incorrect because\"sealed\""
+        },
+        {
+          "n": 46,
+          "question": "William ignited the wood. What did he do?",
+          "options": [
+            "He set it on fire.",
+            "He carried it.",
+            "He cut it into pieces.",
+            "He polished it."
+          ],
+          "correct": "He set it on fire.",
+          "explanation": "The verb \"ignite\" means to set something on fire or to cause it to start burning. In this sentence, saying William \"ignited\" the wood is synonymous with saying he \"set it on fire.\" \"He carried it.\" is incorrect because carrying refers to the physical transportation of the wood from one location to another, which has nothing to do with starting a fire."
+        },
+        {
+          "n": 47,
+          "question": "Alan bought some nuts and bolts. What will he do with them?",
+          "options": [
+            "fasten things together",
+            "write things down",
+            "clean things up",
+            "cut things apart"
+          ],
+          "correct": "fasten things together",
+          "explanation": "Nuts and bolts are mechanical hardware components used in tandem to secure or join parts together. A bolt is a threaded shaft, and a nut is a small metal block with a matching internal thread. that allows the user to fasten things together. This is a common technical vocabulary item in military and maintenance contexts."
+        },
+        {
+          "n": 54,
+          "question": "Why does Jane have Goosebumps?",
+          "options": [
+            "because she is angry",
+            "because she is cold",
+            "because she is tired",
+            "because she is warm"
+          ],
+          "correct": "because she is cold",
+          "explanation": "Goosebumps (scientifically known as pilo erection) are a common physiological response to cold temperatures. When the body gets cold, small muscles at the base of hair follicles contract, causing the hairs to stand up and small bumps to form on the skin. This is the body's attempt to trap a layer of air for insulation. While they can also be caused by strong emotions like fear or excitement, \"cold\" is the most standard explanation in this context."
+        },
+        {
+          "n": 55,
+          "question": "Davids car is ready to fall apart.",
+          "options": [
+            "a rental car",
+            "in good condition",
+            "brand new",
+            "in poor condition"
+          ],
+          "correct": "in poor condition",
+          "explanation": "The idiom \"fall apart\" means that something is in such bad condition that it is literally or figuratively breaking into pieces. In the context of a vehicle, stating it is \"ready to fall apart\" indicates that the car is extremely old, dilapidated, or poorly maintained. Therefore, it is in poor condition. \"a rental car\" is incorrect because the sentence describes the physical state of the vehicle, not its ownership or usage status."
+        },
+        {
+          "n": 56,
+          "question": "Aunt Nelly walked over to the couch.",
+          "options": [
+            "start dinner",
+            "sit down",
+            "wash clothes",
+            "stand up"
+          ],
+          "correct": "sit down",
+          "explanation": "In English, a couch (also known as a sofa) is a piece of furniture specifically designed for sitting or reclining. When someone \"walks over to\" a piece of furniture like a chair or a couch, the most logical and expected action is that they intend to use it for its primary purpose, which is to sit down. This is a common contextual inference question found in Al cpt exams to test basic vocabulary and situational logic."
         },
         {
           "n": 65,
@@ -4195,7 +4315,77 @@
             "gravitated"
           ],
           "correct": "(Not shown in the screenshot — the item was captured before the review screen.)",
-          "explanation": "Listening comprehension item. The screenshot only captures the answer choices, so the correct option and its explanation were not recorded."
+          "explanation": "Listening comprehension item. The screenshot only captures the answer choices, so the correct option and its explanation were not recorded. In the dialogue, the speaker admits to making a mistake on a math problem. The word\"goofed\"is an informal English verb meaning to make a silly or careless mistake.In a military or academic context,it is often used to describe a blunder or an error in judgment or calculation."
+        },
+        {
+          "n": 66,
+          "question": "Hi honey sorry I'm late am I in Tha dogg house not this time.",
+          "options": [
+            "was on time",
+            "had waited long",
+            "had fed the dog",
+            "was angry"
+          ],
+          "correct": "was angry",
+          "explanation": "The idiom \"in the doghouse\" is an informal expression meaning to be in trouble or in a state of disfavor with someone, typically a spouse or partner, due to a mistake or wrongdoing. In this dialogue, the speaker is late and anticipates that their partner might be angry. When the partner says \"not this time,\" or putting the speaker \"in the doghouse\" for being late."
+        },
+        {
+          "n": 75,
+          "question": "You shouldn't turn here, ________ -you?",
+          "options": [
+            "should",
+            "can"
+          ],
+          "correct": "should",
+          "explanation": "This sentence is a tag question. In English grammar, when the main clause of a sentence is negative (in this case, \"shouldn't\"), the tag question at the end must be positive (\"should\"). Additionally, the tag must use the same modal verb and subject as the main clause. Therefore, \"should you?\" is the correct completion."
+        },
+        {
+          "n": 76,
+          "question": "John danced with Mary. the party.",
+          "options": [
+            "to",
+            "at",
+            "in",
+            "with"
+          ],
+          "correct": "at",
+          "explanation": "The preposition \"at\" is used to indicate a person's presence at a specific event or social gathering. In meeting,\" or \"at a concert.\" Therefore, \"John danced with Mary at the party\" is the most natural and grammatically correct way to describe the location/ event where the dancing occurred."
+        },
+        {
+          "n": 85,
+          "question": "The students were. ________ with the lecture.",
+          "options": [
+            "bore",
+            "boring",
+            "to bore",
+            "bored"
+          ],
+          "correct": "bored",
+          "explanation": "The sentence requires an adjective to describe the emotional state or reaction of the students.In used to describe how a person feels.Because the students are the ones experiencing the lack of interest,\"bored\"is the correct choice.This is a common structure in military training environments where the quality of instruction affects student engagement."
+        },
+        {
+          "n": 86,
+          "question": "The general is always. ________ to work by his wife.",
+          "options": [
+            "drives",
+            "driving",
+            "driven",
+            "drive"
+          ],
+          "correct": "driven",
+          "explanation": "This sentence uses the Passive Voice. The structure \"subject + form of be + past participle + by + agent\" shows that the subject (The general) is the recipient of the action performed by the agent (his wife). \"Driven\" is the past participle of the verb \"drive,\" which is required after the auxiliary verb \"is\"in this passive construction. \"drives\"is incorrect because it is a present tense active verb form."
+        },
+        {
+          "n": 90,
+          "question": "He told the waitress to keep the change as a.",
+          "options": [
+            "coin",
+            "tip",
+            "bill",
+            "roll"
+          ],
+          "correct": "tip",
+          "explanation": "In a service environment like a restaurant, when a offering the remaining money from their payment as a gratuity. The standard English term for this extra money given in exchange for service is a \"tip.\" \"coin\" is incorrect because while change is often word describing the purpose of the money, which is a qr at uity (tip)."
         },
         {
           "n": 91,
@@ -4224,9 +4414,10 @@
           "n": 93,
           "question": "Tell Ray to wind up the job. (Select the closest synonym.)",
           "options": [
+            "start",
+            "plan",
             "finish",
-            "describe",
-            "start"
+            "describe"
           ],
           "correct": "finish",
           "explanation": "The phrasal verb \"wind up\" is an idiomatic expression that means to bring something to a conclusion, end, or finish. In military and professional contexts, it is commonly used when a task or operation is reaching its final stages and needs to be completed. Therefore, telling Ray to \"wind up the job\" is synonymous with telling him to finish it. \"start\" is incorrect because it is the opposite of \"wind up\"; \"start\" refers to the beginning of a process."
@@ -4252,7 +4443,7 @@
             "down"
           ],
           "correct": "up",
-          "explanation": "The sentence requires the phrasal verb \"add up,\" which means to calculate the total sum of several numbers or items. In a restaurant context, a waiter adds up the individual costs of food and drinks to determine the final amount on the bill. \"down\" is incorrect because while \"write down\" means to record information, \"add down\" is not a standard English phrasal verb for calculating a total sum. The sentence requires the phrasal verb\"add up,\" which means to calculate the total sum of several numbers or items. In a restaurant context, a waiter adds up the individual costs of food and drinks to determine the final amount on the bill. \"down\"is incorrect because while\"write down\" means to record information, \"add down\" is not a standard English phrasal verb for calculating a total sum."
+          "explanation": "The sentence requires the phrasal verb \"add up,\" which means to calculate the total sum of several numbers or items. In a restaurant context, a waiter adds up the individual costs of food and drinks to determine the final amount on the bill. \"down\" is incorrect because while \"write down\" means to record information, \"add down\" is not a standard English phrasal verb for calculating a total sum. The sentence requires the phrasal verb\"add up,\" which means to calculate the total sum of several numbers or items. In a restaurant context, a waiter adds up the individual costs of food and drinks to determine the final amount on the bill. \"down\"is incorrect because while\"write down\" means to record information, \"add down\" is not a standard English phrasal verb for calculating a total sum. The sentence requires the phrasal verb \"add up,\" which means to calculate the total sum of several numbers or items. In a restaurant context, a waiter adds up the individual costs of food and drinks to determine the final amount on the bill. \"down\" is incorrect because while\"write down\" means to record information, \"add down\" is not a standard English phrasal verb for calculating a total sum."
         },
         {
           "n": 96,
@@ -4264,6 +4455,18 @@
           ],
           "correct": "eating",
           "explanation": "The verb \"skip\" is used here to mean \"to omit\" or \"to pass over.\" In English grammar, certain verbs are followed by a gerund (the -ing form of a verb) rather than an infinitive. \"Skip\" is one of those verbs when it describes bypassing an activity. Therefore, \"eating\" is the correct grammatical form to follow \"skip\" in this context. \"to eat\" is incorrect because \"skip\" does not take an infinitive as its direct object in this usage. The verb \"skip\" is used here to mean \"to omit\" or \"to pass over.\" In English grammar, certain verbs are followed by a gerund (the -ing form of a verb) rather than an infinitive. \"Skip\" is one of those verbs when it the correct grammatical form to follow \"skip\" in this context. \"to eat\" is incorrect because \"skip\" does not take an infinitive as its direct object in this usa qe."
+        },
+        {
+          "n": 98,
+          "question": "Martha's grandfather is known for his 'cantankerous' nature.",
+          "options": [
+            "generous",
+            "mean",
+            "calm",
+            "ambitious"
+          ],
+          "correct": "mean",
+          "explanation": "The word 'cantankerous' is an adjective used to describe someone who is bad-tempered, argumentative, and uncooperative. In this context, \"mean\" serves as the most appropriate synonym, as it reflects an unpleasant or ill-natured temperament. While 'cantankerous' often specifically implies irritability or being'cranky, 'mean' captures the negative social behavior associated with the term."
         },
         {
           "n": 100,
