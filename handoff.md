@@ -323,6 +323,20 @@ Sesión del 29 sep 2026 (servidor, Claude Code):
   sesión porque `Write` está bloqueado en sesiones `--bg` sin worktree.
 - Estado: 429 preguntas (343 completas, 84 pendientes, 2 sospechosas: Form 59 #26 y
   #97). Form 67: 24 preguntas (20 completas, 4 pendientes).
+- **Artifact apagado** por decisión de Brayhan: lo que se consulta es GitHub Pages.
+- **Podcast de vocabulario rehecho** (pedido de Brayhan): máximo 3 traducciones en
+  español, frase de ejemplo en inglés tras cada palabra y la voz en inglés a +50 %
+  (≈6 dB sobre el español). Datos en `data/podcast_vocab.json` (Haiku, 9 llamadas para
+  345 palabras); lo escrito no cambió. Pasó de 7 a 10 episodios (6:52–8:07). Se
+  corrigió además la regla de «esperar 10 palabras», que bloqueaba episodios que se
+  habían acortado. Las lecturas no cambiaron de volumen para no rehacer sus MP3.
+- **Lecturas: 4 preguntas por lectura** (idea principal, detalle, vocabulario en
+  contexto, inferencia) y **15 lecturas nuevas de Wikipedia** (ThoughtCo sigue
+  bloqueado en el servidor): C, C++, punteros, compilador, máquinas de estado finitos,
+  máquinas de estado UML; AOCS (control de actitud, ruedas de reacción, star tracker,
+  tema nuevo `aero`); Ruta de la Seda, imprenta, Renacimiento, jazz, Juegos Olímpicos
+  antiguos, historia del café (tema nuevo `culture`). Total 29 lecturas. Condensado con
+  Sonnet (~15 s por lectura). El podcast de cada lectura solo lee la primera pregunta.
 
 ## 5. Qué has intentado
 

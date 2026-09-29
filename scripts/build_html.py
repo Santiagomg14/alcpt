@@ -401,9 +401,11 @@ def build(vocab, forms, pv, idioms, readings=None):
                     for g in it["glossary"]:
                         a(f"<li><b>{escape(g['en'])}</b> — {escape(g['es'])}</li>")
                     a("</ul>")
-                q = it.get("question") or {}
-                if q.get("stem"):
-                    a(f"<p class='stem'><span class='text'>{escape(q['stem'])}</span></p>")
+                qs = it.get("questions") or ([it["question"]] if it.get("question") else [])
+                for qi, q in enumerate(qs, 1):
+                    if not q.get("stem"):
+                        continue
+                    a(f"<p class='stem'><span class='text'>{qi}. {escape(q['stem'])}</span></p>")
                     a("<ul class='opts'>")
                     for opt in q.get("options", []):
                         if opt == q.get("answer"):

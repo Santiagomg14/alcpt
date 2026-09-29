@@ -4,8 +4,10 @@ Genera los podcasts del cuaderno: guiones + MP3 con voces neuronales (edge-tts).
 
 Dos series:
   * vocab     — todo el diccionario numerado, en episodios de ≤10 minutos. Cada
-                palabra se oye en inglés, luego su significado en español, y otra
-                vez en inglés para repetirla.
+                palabra se oye en inglés, luego como mucho 3 traducciones en
+                español, otra vez en inglés y una frase de ejemplo en inglés.
+                Traducción corta y frase salen de data/podcast_vocab.json
+                (scripts/podcast_extras.py): lo escrito no cambia.
   * lecturas  — una lectura condensada por episodio (data/readings.json): resumen
                 en inglés, glosario bilingüe y la pregunta de comprobación.
 
@@ -18,7 +20,7 @@ Uso
     python scripts/build_podcasts.py --dry-run   # solo guiones y estimación, sin red
     python scripts/build_podcasts.py --force     # re-renderiza todo
 
-Lee:     data/vocabulary.json, data/readings.json
+Lee:     data/vocabulary.json, data/podcast_vocab.json, data/readings.json
 Escribe: data/podcasts.json, docs/audio/*.mp3
 
 Si edge-tts no está instalado, el script avisa y termina sin error para no
@@ -40,6 +42,17 @@ PODCASTS = DATA / "podcasts.json"
 
 VOICES = {"en": "en-US-AndrewNeural", "es": "es-CO-SalomeNeural"}
 RATE = {"en": "-5%", "es": "-5%"}
+# El inglés, más fuerte (pedido de Brayhan, 29 sep). Medido: +0% → -21,1 dBFS,
+# +50% → -17,6 dBFS; +100% suena igual que +50% (edge-tts lo topa ahí). La voz en
+# español queda en -23,6 dBFS, unos 6 dB por debajo del inglés.
+# Solo la serie de vocabulario: las lecturas no se tocan (rehacerlas metería ~45 MB
+# de MP3 en git sin que nadie lo pidiera).
+VOLUME = {"en": "+50%", "es": "+0%"}
+NO_VOLUME = {"en": "+0%", "es": "+0%"}
+
+
+def volume_for(ep):
+    return VOLUME if ep.get("series") == "vocab" else NO_VOLUME
 MAX_SECONDS = 600            # tope pedido: 10 minutos
 # El último episodio de vocabulario va creciendo con cada palabra nueva. Volver a
 # renderizarlo cada vez metía un MP3 de ~1,4 MB en el historial de git por cada
@@ -83,22 +96,40 @@ def short_meaning(es, limit=110):
     return out
 
 
-def word_segments(e):
-    return [
+def three_meanings(es):
+    """Respaldo sin Claude: hasta 3 términos de la primera acepción, sin paréntesis."""
+    first = re.sub(r"\([^)]*\)", "", es.split(";")[0])
+    parts = [p.strip(" .\"'«»") for p in first.split(",") if p.strip(" .\"'«»")]
+    return ", ".join(parts[:3]) or short_meaning(es)
+
+
+def load_extras():
+    path = DATA / "podcast_vocab.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+
+
+def word_segments(e, extras):
+    x = extras.get(str(e["n"]), {})
+    fresh = x.get("en") == e["en"]              # si la palabra cambió, no usar lo viejo
+    segs = [
         seg("en", f"{e['n']}. {e['en']}.", 0.5),
-        seg("es", short_meaning(e["es"]) + ".", 0.4),
-        seg("en", f"{e['en']}.", 1.1),
+        seg("es", (x["es"] if fresh and x.get("es") else three_meanings(e["es"])) + ".", 0.4),
+        seg("en", f"{e['en']}.", 0.7 if fresh and x.get("example") else 1.1),
     ]
+    if fresh and x.get("example"):
+        segs.append(seg("en", x["example"], 1.2))
+    return segs
 
 
 def vocab_episodes(vocab):
+    extras = load_extras()
     words = sorted((e for s in vocab["sections"] for e in s["entries"]), key=lambda e: e["n"])
     section_of = {e["n"]: s["title"] for s in vocab["sections"] for e in s["entries"]}
 
     # Reparto en bloques que quepan en TARGET_SECONDS según la estimación.
     blocks, cur, cur_t = [], [], 0.0
     for e in words:
-        t = estimate(word_segments(e))
+        t = estimate(word_segments(e, extras))
         if cur and cur_t + t > TARGET_SECONDS - 40:   # 40 s para intro y cierre
             blocks.append(cur)
             cur, cur_t = [], 0.0
@@ -116,10 +147,10 @@ def vocab_episodes(vocab):
             if st not in sections:
                 sections.append(st)
         segs = [seg("en", f"ALCPT Notebook. Vocabulary, episode {i}: words {first} to {last}. "
-                          "Listen to each word, then its meaning in Spanish, and repeat the word "
-                          "out loud before the next one.", 1.2)]
+                          "Listen to each word, its meaning in Spanish, the word again and an "
+                          "example sentence. Repeat them out loud before the next one.", 1.2)]
         for e in block:
-            segs += word_segments(e)
+            segs += word_segments(e, extras)
         segs.append(seg("en", f"End of episode {i}. Words {first} to {last}. "
                               "Play it again tomorrow: repetition is what makes them stick.", 0.5))
         episodes.append({
@@ -160,7 +191,9 @@ def reading_episodes(readings):
                 segs.append(seg("en", g["en"] + ".", 0.4))
                 segs.append(seg("es", short_meaning(g["es"]) + ".", 0.4))
                 segs.append(seg("en", g["en"] + ".", 0.9))
-        q = it.get("question")
+        # Solo la primera pregunta: las demás están en la página y el PDF. Así el
+        # audio de las lecturas que ya existían no cambia (no se re-renderiza).
+        q = (it.get("questions") or [None])[0] or it.get("question")
         if q:
             letters = "ABCD"
             opts = " ".join(f"{letters[i]}. {o}." for i, o in enumerate(q["options"][:4]))
@@ -184,7 +217,8 @@ def reading_episodes(readings):
 
 
 def script_hash(ep):
-    payload = json.dumps({"s": ep["script"], "v": VOICES, "r": RATE},
+    extra = {"vol": VOLUME} if ep.get("series") == "vocab" else {}
+    payload = json.dumps({"s": ep["script"], "v": VOICES, "r": RATE, **extra},
                          ensure_ascii=False, sort_keys=True)
     return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:12]
 
@@ -194,13 +228,13 @@ def silence(seconds):
     return SILENT_FRAME * max(0, round(seconds / FRAME_SECONDS))
 
 
-async def tts(text, voice, rate, tries=3):
+async def tts(text, voice, rate, volume="+0%", tries=3):
     import edge_tts
     last = None
     for i in range(tries):
         try:
             buf = bytearray()
-            async for ch in edge_tts.Communicate(text, voice, rate=rate).stream():
+            async for ch in edge_tts.Communicate(text, voice, rate=rate, volume=volume).stream():
                 if ch["type"] == "audio":
                     buf += ch["data"]
             if buf:
@@ -214,10 +248,11 @@ async def tts(text, voice, rate, tries=3):
 
 async def render(ep, out_path):
     sem = asyncio.Semaphore(4)
+    vol = volume_for(ep)
 
     async def one(s):
         async with sem:
-            return await tts(s["t"], VOICES[s["v"]], RATE[s["v"]])
+            return await tts(s["t"], VOICES[s["v"]], RATE[s["v"]], vol[s["v"]])
 
     chunks = await asyncio.gather(*(one(s) for s in ep["script"]))
     data = bytearray(silence(0.4))
@@ -279,12 +314,15 @@ def main():
         prev = previous.get(ep["id"])
         fresh = prev and prev.get("hash") == ep["hash"] and path.exists() and prev.get("seconds")
         # Episodio de vocabulario aún incompleto: esperar a juntar unas cuantas
-        # palabras antes de rehacerlo, para no llenar el historial de MP3.
+        # palabras antes de rehacerlo, para no llenar el historial de MP3. Solo
+        # cuando el episodio simplemente creció por la cola (empieza en la misma
+        # palabra y tiene 1-9 más); si cambió el formato o el reparto, se rehace.
+        nuevas = ep.get("count", 0) - ((prev or {}).get("count") or 0)
         if (not fresh and prev and path.exists() and prev.get("seconds")
                 and ep["series"] == "vocab" and not args.force
                 and ep["estimate"] < MAX_SECONDS
-                and (ep.get("count", 0) - (prev.get("count") or 0)) < MIN_PALABRAS_NUEVAS):
-            nuevas = ep.get("count", 0) - (prev.get("count") or 0)
+                and (prev.get("words") or [None])[0] == ep["words"][0]
+                and 0 < nuevas < MIN_PALABRAS_NUEVAS):
             print(f"  {ep['id']}: {nuevas} palabra(s) nueva(s), "
                   f"espero a {MIN_PALABRAS_NUEVAS} para rehacerlo (--force lo fuerza)")
             ep["count"] = prev.get("count", ep.get("count"))
@@ -345,7 +383,7 @@ def write_index(episodes):
             "intro": ("Audios de diez minutos como máximo para estudiar sin pantalla. La serie de "
                       "vocabulario recorre todo el diccionario en orden; la de lecturas condensa "
                       "artículos de ThoughtCo sobre temas fuera de la rutina militar."),
-            "voices": VOICES, "rate": RATE, "max_seconds": MAX_SECONDS,
+            "voices": VOICES, "rate": RATE, "volume": VOLUME, "max_seconds": MAX_SECONDS,
             "last_updated": date.today().isoformat(),
             "total": len(episodes),
         },

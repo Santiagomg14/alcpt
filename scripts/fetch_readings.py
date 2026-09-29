@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Trae lecturas de ThoughtCo y las condensa al nivel B2 para la pestaña «Lecturas».
+Trae lecturas de ThoughtCo o de Wikipedia y las condensa al nivel B2 para la
+pestaña «Lecturas».
 
 Flujo
 -----
@@ -9,13 +10,23 @@ Flujo
                  inbox/readings/<id>.txt (fuera del repo); en data/readings.json
                  queda la entrada con sus metadatos y `summary: null` (pendiente).
   3. --condense  pasa cada pendiente por Claude Code (`claude -p`, igual que el
-                 bot) y guarda resumen B2, puntos clave, glosario y una pregunta
-                 de comprensión estilo ALCPT.
+                 bot) y guarda resumen B2, puntos clave, glosario y 4 preguntas
+                 de comprensión estilo ALCPT (idea principal, detalle, vocabulario
+                 en contexto e inferencia).
+  4. --more-questions  completa hasta 4 preguntas en las lecturas antiguas, que
+                 tenían una sola; parte del resumen ya guardado (barato).
+
+Wikipedia (desde el 29 sep): ThoughtCo bloquea la IP del servidor, y Brayhan pidió
+temas que ThoughtCo no cubre (C, C++, máquinas de estado, AOCS). Se lee con la API
+pública (texto plano), el id es «wiki-<pageid>» y la lectura cita la fuente y la
+licencia (CC BY-SA 4.0).
 
 Uso
 ---
     python scripts/fetch_readings.py --discover computer-science math --max 15
     python scripts/fetch_readings.py --add https://www.thoughtco.com/...-4172097 [URL...]
+    python scripts/fetch_readings.py --add https://en.wikipedia.org/wiki/C%2B%2B --topic tech
+    python scripts/fetch_readings.py --more-questions
     python scripts/fetch_readings.py --add-from-section philosophy --max 2
     python scripts/fetch_readings.py --condense
     python scripts/fetch_readings.py --list
@@ -77,6 +88,8 @@ SECTIONS = {
 
 TOPICS = {
     "tech": {"title": "Tecnología y computación", "en": "Technology and computing"},
+    "aero": {"title": "Ingeniería aeroespacial", "en": "Aerospace engineering"},
+    "culture": {"title": "Cultura general", "en": "General culture"},
     "math": {"title": "Matemáticas", "en": "Mathematics"},
     "humanities": {"title": "Humanidades", "en": "Humanities"},
     "social": {"title": "Ciencias sociales", "en": "Social sciences"},
@@ -237,7 +250,78 @@ def parse_article(html, url):
     }, text
 
 
+# --- Wikipedia ---------------------------------------------------------------------
+WIKI_API = "https://en.wikipedia.org/w/api.php"
+WIKI_SKIP = {"See also", "References", "Notes", "Further reading", "External links",
+             "Bibliography", "Sources", "Citations", "Footnotes", "Gallery"}
+
+
+def is_wikipedia(url):
+    return bool(re.match(r"https?://en\.(m\.)?wikipedia\.org/wiki/", url.strip()))
+
+
+def fetch_wikipedia(url):
+    """Texto plano de un artículo de Wikipedia en inglés, sin referencias."""
+    from urllib.parse import unquote
+    title = unquote(url.strip().split("/wiki/", 1)[1].split("#")[0]).replace("_", " ")
+    params = {"action": "query", "prop": "extracts|info|description",
+              "explaintext": 1, "inprop": "url", "redirects": 1,
+              "titles": title, "format": "json", "formatversion": 2}
+    for attempt in range(5):
+        r = requests.get(WIKI_API, timeout=40, params=params,
+                         headers={"User-Agent": "ALCPT-notebook/1.0 (study notes)"})
+        if r.status_code != 429:          # 429: Wikipedia pide bajar el ritmo
+            break
+        time.sleep(int(r.headers.get("Retry-After", "0") or 0) or 15 * (attempt + 1))
+    r.raise_for_status()
+    page = r.json()["query"]["pages"][0]
+    if page.get("missing"):
+        raise RuntimeError(f"Wikipedia no tiene el artículo «{title}»")
+    parts, skip = [], False
+    for line in page["extract"].splitlines():
+        m = re.match(r"^(=+)\s*(.*?)\s*=+$", line)
+        if m:
+            skip = m.group(2) in WIKI_SKIP if len(m.group(1)) == 2 else skip
+            if not skip:
+                parts.append("## " + m.group(2))
+            continue
+        if not skip and line.strip():
+            parts.append(line.strip())
+    text = "\n\n".join(parts)
+    meta = {
+        "id": f"wiki-{page['pageid']}",
+        "url": page.get("canonicalurl") or url,
+        "title": page["title"],
+        "description": page.get("description", ""),
+        "author": "Wikipedia contributors",
+        "published": None,
+        "modified": (page.get("touched") or "")[:10] or None,
+        "path": ["Wikipedia", "CC BY-SA 4.0"],
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "topic": None,
+        "original_words": len(text.split()),
+    }
+    return meta, text
+
+
 def add(db, url, topic_hint=None, quiet=False):
+    if is_wikipedia(url):
+        meta, text = fetch_wikipedia(url)
+        if any(it["id"] == meta["id"] for it in db["items"]):
+            if not quiet:
+                print(f"  ya estaba: {meta['id']}")
+            return None
+        meta["topic"] = topic_hint or "culture"
+        meta["fetched"] = date.today().isoformat()
+        meta["summary"] = None
+        RAW_DIR.mkdir(parents=True, exist_ok=True)
+        (RAW_DIR / f"{meta['id']}.txt").write_text(
+            f"# {meta['title']}\n{meta['url']}\n\n{text}", encoding="utf-8")
+        db["items"].append(meta)
+        if not quiet:
+            print(f"  + {meta['id']} [{meta['topic']}] {meta['title']} ({meta['original_words']} palabras)")
+        return meta
     aid = article_id(url)
     if not aid:
         raise RuntimeError(f"La URL no parece de ThoughtCo (falta el id numérico): {url}")
@@ -288,21 +372,80 @@ def find_claude(env):
     return None
 
 
-PROMPT = """Eres el editor de un cuaderno de inglés para Brayhan, estudiante hispanohablante de nivel B2 (inglés militar, se prepara para el ALCPT). Te paso por la entrada estándar un artículo de divulgación de ThoughtCo titulado «{title}». Condénsalo para que él lo lea en inglés.
+PROMPT = """Eres el editor de un cuaderno de inglés para Brayhan, estudiante hispanohablante de nivel B2 (inglés militar, se prepara para el ALCPT). Te paso por la entrada estándar un artículo de {source} titulado «{title}». Condénsalo para que él lo lea en inglés. Si es un tema técnico (programación, control de satélites, máquinas de estado), explica cómo funciona de verdad, con los conceptos clave y un ejemplo concreto, sin perder rigor.
 
 Devuelve ÚNICAMENTE un objeto JSON válido, sin texto antes ni después, sin bloques de código, con estas claves:
 
 "summary": lista de 3 a 5 párrafos EN INGLÉS, entre 250 y 350 palabras en total. Nivel B2: oraciones claras y directas, sin simplificar los términos técnicos importantes (se conservan y se explican con naturalidad). Fiel al original; nada de opiniones propias ni de información que no esté en el texto.
 "key_points": lista de 3 a 5 frases cortas EN INGLÉS con lo que hay que recordar.
 "glossary": lista de 6 a 10 objetos {{"en": ..., "es": ...}} con palabras o expresiones que APARECEN en tu resumen y que un estudiante B2 probablemente no conoce. Nada básico ni intermedio bajo (no: important, people, history, problem, build). Sí: términos técnicos, idioms, phrasal verbs no obvios, palabras cultas. En "es": traducción y matiz, separados por punto y coma, en español.
-"question": objeto {{"stem": ..., "options": [4 opciones], "answer": ...}} con UNA pregunta de comprensión EN INGLÉS al estilo del ALCPT sobre el contenido del resumen; "answer" es el texto exacto de la opción correcta.
+"questions": lista de 4 objetos {{"stem": ..., "options": [4 opciones], "answer": ...}}: preguntas de comprensión EN INGLÉS al estilo del ALCPT sobre el contenido del resumen, en este orden: 1) idea principal, 2) un detalle concreto, 3) el significado de una palabra o expresión del resumen en su contexto, 4) una inferencia razonable. Opciones plausibles y de longitud parecida; "answer" es el texto exacto de la opción correcta.
 """
+
+QUESTIONS_PROMPT = """Eres el editor de un cuaderno de inglés para Brayhan, estudiante hispanohablante de nivel B2 que se prepara para el ALCPT. Te paso por la entrada estándar el resumen en inglés de una lectura titulada «{title}» y la pregunta de comprensión que ya tiene.
+
+Devuelve ÚNICAMENTE un objeto JSON válido, sin texto antes ni después, con la clave "questions": lista de {n} objetos {{"stem": ..., "options": [4 opciones], "answer": ...}}, preguntas NUEVAS EN INGLÉS al estilo del ALCPT que no repitan la existente, sobre: {kinds}. Solo sobre lo que dice el resumen. Opciones plausibles y de longitud parecida; "answer" es el texto exacto de la opción correcta.
+"""
+
+
+def check_questions(qs, n):
+    if not isinstance(qs, list) or len(qs) < n:
+        raise RuntimeError(f"Esperaba {n} preguntas y llegaron {len(qs) if isinstance(qs, list) else 0}")
+    out = []
+    for q in qs[:n]:
+        if q.get("answer") not in q.get("options", []) or len(q.get("options", [])) != 4:
+            raise RuntimeError("Una pregunta no trae 4 opciones o su respuesta no está entre ellas")
+        out.append({"stem": q["stem"], "options": q["options"], "answer": q["answer"]})
+    return out
+
+
+def run_claude(prompt, text, env, claude):
+    cmd = [claude, "-p", prompt, "--output-format", "text", "--allowed-tools", ""]
+    if env.get("CLAUDE_MODEL"):
+        cmd += ["--model", env["CLAUDE_MODEL"]]
+    sub_env = {k: v for k, v in os.environ.items()
+               if k not in ("CLAUDECODE", "CLAUDE_CODE_ENTRYPOINT")}
+    for attempt in (1, 2, 3):   # a veces el JSON sale mal formado: se pide otra vez
+        res = subprocess.run(cmd, input=text, cwd=ROOT, capture_output=True, text=True,
+                             encoding="utf-8", errors="replace", timeout=900, env=sub_env)
+        if res.returncode != 0:
+            raise RuntimeError((res.stderr or res.stdout).strip()[-800:])
+        out = res.stdout.strip()
+        start, end = out.find("{"), out.rfind("}")
+        try:
+            if start < 0 or end < 0:
+                raise ValueError("Claude no devolvió JSON:\n" + out[:500])
+            return json.loads(out[start:end + 1])
+        except ValueError as exc:
+            if attempt == 3:
+                raise RuntimeError(f"JSON inválido tras 3 intentos: {exc}")
+
+
+def more_questions(entry, env, claude, total=4):
+    """Completa hasta `total` preguntas a partir del resumen ya guardado."""
+    have = entry.get("questions") or ([entry["question"]] if entry.get("question") else [])
+    need = total - len(have)
+    if need <= 0:
+        return False
+    kinds = ["idea principal", "un detalle concreto",
+             "el significado de una palabra o expresión en su contexto",
+             "una inferencia razonable"][-need:]
+    text = "\n\n".join(entry["summary"]) + "\n\nPregunta existente: " + \
+        json.dumps(have, ensure_ascii=False)
+    data = run_claude(QUESTIONS_PROMPT.format(title=entry["title"], n=need,
+                                              kinds="; ".join(kinds)), text, env, claude)
+    entry["questions"] = have + check_questions(data.get("questions"), need)
+    entry.pop("question", None)
+    return True
 
 
 def condense(entry, env, claude):
     raw = RAW_DIR / f"{entry['id']}.txt"
     if not raw.exists():
-        _meta, text = parse_article(get(entry["url"]), entry["url"])
+        if is_wikipedia(entry["url"]):
+            _meta, text = fetch_wikipedia(entry["url"])
+        else:
+            _meta, text = parse_article(get(entry["url"]), entry["url"])
         RAW_DIR.mkdir(parents=True, exist_ok=True)
         raw.write_text(f"# {entry['title']}\n{entry['url']}\n\n{text}", encoding="utf-8")
     text = raw.read_text(encoding="utf-8")
@@ -310,37 +453,19 @@ def condense(entry, env, claude):
     if len(words) > MAX_WORDS_TO_CLAUDE:
         text = " ".join(words[:MAX_WORDS_TO_CLAUDE]) + "\n\n[…texto recortado…]"
 
-    cmd = [claude, "-p", PROMPT.format(title=entry["title"]),
-           "--output-format", "text", "--allowed-tools", ""]
-    if env.get("CLAUDE_MODEL"):
-        cmd += ["--model", env["CLAUDE_MODEL"]]
-    # Si este script corre desde dentro de una sesión de Claude Code, hay que
-    # quitar su marca de entorno para que la llamada anidada funcione.
-    sub_env = {k: v for k, v in os.environ.items()
-               if k not in ("CLAUDECODE", "CLAUDE_CODE_ENTRYPOINT")}
-    res = subprocess.run(cmd, input=text, cwd=ROOT, capture_output=True, text=True,
-                         encoding="utf-8", errors="replace", timeout=900, env=sub_env)
-    if res.returncode != 0:
-        raise RuntimeError((res.stderr or res.stdout).strip()[-800:])
-    out = res.stdout.strip()
-    start, end = out.find("{"), out.rfind("}")
-    if start < 0 or end < 0:
-        raise RuntimeError("Claude no devolvió JSON:\n" + out[:500])
-    data = json.loads(out[start:end + 1])
-
-    for k in ("summary", "key_points", "glossary", "question"):
+    source = "Wikipedia" if entry.get("source") == "Wikipedia" else "divulgación de ThoughtCo"
+    data = run_claude(PROMPT.format(title=entry["title"], source=source), text, env, claude)
+    for k in ("summary", "key_points", "glossary", "questions"):
         if k not in data:
             raise RuntimeError(f"Falta la clave «{k}» en la respuesta")
     if isinstance(data["summary"], str):
         data["summary"] = [p for p in data["summary"].split("\n") if p.strip()]
-    q = data["question"]
-    if q.get("answer") not in q.get("options", []):
-        raise RuntimeError("La respuesta de la pregunta no coincide con ninguna opción")
 
     entry["summary"] = data["summary"]
     entry["key_points"] = data["key_points"]
     entry["glossary"] = [{"en": g["en"].strip(), "es": g["es"].strip()} for g in data["glossary"]]
-    entry["question"] = {"stem": q["stem"], "options": q["options"], "answer": q["answer"]}
+    entry["questions"] = check_questions(data["questions"], 4)
+    entry.pop("question", None)
     entry["summary_words"] = sum(len(p.split()) for p in data["summary"])
     entry["condensed"] = date.today().isoformat()
 
@@ -358,6 +483,9 @@ def main():
     ap.add_argument("--condense", action="store_true",
                     help="condensa las lecturas pendientes con Claude Code")
     ap.add_argument("--list", action="store_true", help="muestra las lecturas registradas")
+    ap.add_argument("--topic", choices=list(TOPICS), help="tema para --add (Wikipedia no lo trae)")
+    ap.add_argument("--more-questions", action="store_true",
+                    help="completa hasta 4 preguntas en las lecturas que tienen menos")
     args = ap.parse_args()
 
     db = load()
@@ -376,7 +504,7 @@ def main():
     if args.add:
         for url in args.add:
             try:
-                if add(db, url):
+                if add(db, url, topic_hint=args.topic):
                     changed = True
             except Exception as e:  # seguimos con las demás
                 print(f"  x {url}: {e}")
@@ -396,8 +524,25 @@ def main():
                     print(f"  x {f['url']}: {e}")
                 time.sleep(1.5)
 
+    for t_id, t in TOPICS.items():                # temas nuevos (aero, culture…)
+        if not any(x["id"] == t_id for x in db["topics"]):
+            db["topics"].append({"id": t_id, "title": t["title"]})
+            changed = True
     if changed:
         save(db)
+
+    if args.more_questions:
+        env = read_env()
+        claude = find_claude(env)
+        if not claude:
+            sys.exit("No encuentro Claude Code. Instálalo o define CLAUDE_BIN en .env")
+        for it in [i for i in db["items"] if i.get("summary")]:
+            try:
+                if more_questions(it, env, claude):
+                    save(db)
+                    print(f"  ok {it['id']} {it['title']}: {len(it['questions'])} preguntas")
+            except Exception as e:
+                print(f"  x  {it['id']} {it['title']}: {e}")
 
     if args.condense:
         env = read_env()
@@ -416,7 +561,8 @@ def main():
             except Exception as e:
                 print(f"  x  {it['id']} {it['title']}: {e}")
 
-    if args.list or not any([args.discover, args.add, args.add_from_section, args.condense]):
+    if args.list or not any([args.discover, args.add, args.add_from_section, args.condense,
+                             args.more_questions]):
         print(f"{len(db['items'])} lecturas registradas")
         for it in db["items"]:
             state = "ok" if it.get("summary") else "PENDIENTE"

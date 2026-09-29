@@ -357,9 +357,12 @@ def readings_part(story, s, readings):
                 for g in it["glossary"]:
                     story.append(Paragraph(
                         f'&#8211; <b>{esc(g["en"])}</b> — {esc(g["es"])}', s["opt"]))
-            q = it.get("question") or {}
-            if q.get("stem"):
-                block = [Paragraph(f'<b>Comprehension.</b> {esc(q["stem"])}', s["qstem"])]
+            qs = it.get("questions") or ([it["question"]] if it.get("question") else [])
+            for qi, q in enumerate(qs, 1):
+                if not q.get("stem"):
+                    continue
+                label = f"Comprehension {qi}." if len(qs) > 1 else "Comprehension."
+                block = [Paragraph(f'<b>{label}</b> {esc(q["stem"])}', s["qstem"])]
                 for opt in q.get("options", []):
                     if opt == q.get("answer"):
                         block.append(Paragraph(

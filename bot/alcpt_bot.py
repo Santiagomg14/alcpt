@@ -189,6 +189,9 @@ def rebuild():
         # Antes del cuaderno: solo re-renderiza los episodios cuyo guion cambió
         # (p. ej. el último de vocabulario al agregar una palabra). Sin edge-tts
         # instalado avisa y sigue, no bloquea lo demás.
+        # Traducción corta (máx. 3 términos) y frase de ejemplo, solo para el audio.
+        # Pide a Claude únicamente las palabras nuevas: unos cientos de tokens.
+        ("frases del podcast", [sys.executable, str(SCRIPTS / "podcast_extras.py")]),
         ("podcasts", [sys.executable, str(SCRIPTS / "build_podcasts.py")]),
         ("cuaderno", [sys.executable, str(SCRIPTS / "build_artifact.py")]),
         ("GitHub Pages", [sys.executable, str(SCRIPTS / "build_artifact.py"),

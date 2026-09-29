@@ -944,10 +944,13 @@ def build(vocab, forms, pv, idioms, readings, podcasts, audio_base):
                   f'<span class="es">{escape(g["es"])}</span>'
                   + say_button(g["en"], f'Escuchar {g["en"]}') + "</div>")
             a("</div>")
-        q = it.get("question")
-        if q:
-            a('<p class="rh">Comprehension check</p>')
-            a(f'<p class="qstem">{escape(q["stem"])}</p>')
+        qs = it.get("questions") or ([it["question"]] if it.get("question") else [])
+        if qs:
+            a('<p class="rh">Comprehension check'
+              + (f' · {len(qs)} preguntas' if len(qs) > 1 else '') + '</p>')
+        for qi, q in enumerate(qs, 1):
+            num = f"{qi}. " if len(qs) > 1 else ""
+            a(f'<p class="qstem">{num}{escape(q["stem"])}</p>')
             a('<ul class="quiz">')
             for opt in q["options"]:
                 ok = ' data-ok="1"' if opt == q["answer"] else ""

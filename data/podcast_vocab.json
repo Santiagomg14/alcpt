@@ -1,0 +1,2072 @@
+{
+ "1": {
+  "en": "Leakage",
+  "es": "fuga, filtración, escape",
+  "example": "Water leakage in the barracks required immediate repair.",
+  "fp": "38e633995c"
+ },
+ "2": {
+  "en": "Trade-off",
+  "es": "compensación, intercambio",
+  "example": "There's always a trade-off between speed and accuracy.",
+  "fp": "c94d51b400"
+ },
+ "3": {
+  "en": "Beyond",
+  "es": "más allá de, fuera de",
+  "example": "The mission extended beyond our current operational range.",
+  "fp": "3578093bb2"
+ },
+ "4": {
+  "en": "Mainstream",
+  "es": "corriente principal, convencional",
+  "example": "Mainstream media covered the incident after the announcement.",
+  "fp": "48a5973666"
+ },
+ "5": {
+  "en": "Breach",
+  "es": "brecha, incumplimiento, violación",
+  "example": "A security breach compromised sensitive military information yesterday.",
+  "fp": "beff971794"
+ },
+ "6": {
+  "en": "Tailor",
+  "es": "adaptar, personalizar, hacer a medida",
+  "example": "We tailored the training program to each soldier's needs.",
+  "fp": "6186062d51"
+ },
+ "7": {
+  "en": "Fairly",
+  "es": "bastante, considerablemente, justamente",
+  "example": "The procedure was fairly complex but well documented.",
+  "fp": "122c1c9eb3"
+ },
+ "8": {
+  "en": "Vendors",
+  "es": "proveedores, vendedores",
+  "example": "The base negotiated contracts with multiple equipment vendors.",
+  "fp": "7303ec957f"
+ },
+ "9": {
+  "en": "Assessing",
+  "es": "evaluando, valorando, analizando",
+  "example": "The commander was assessing the damage to the airfield.",
+  "fp": "25a1769c2f"
+ },
+ "10": {
+  "en": "Outward",
+  "es": "hacia afuera, externo",
+  "example": "The outward sign showed everything was under control.",
+  "fp": "46b713b0a6"
+ },
+ "11": {
+  "en": "Upward",
+  "es": "hacia arriba, ascendente",
+  "example": "He's been promoted and is moving upward in rank.",
+  "fp": "217b54d8ef"
+ },
+ "12": {
+  "en": "Inward",
+  "es": "hacia adentro, interno",
+  "example": "The fighter turned inward to engage the enemy aircraft.",
+  "fp": "0d7a922e85"
+ },
+ "13": {
+  "en": "Boundary",
+  "es": "límite, frontera, borde",
+  "example": "The training area extended beyond the airbase boundary.",
+  "fp": "cee149da5e"
+ },
+ "14": {
+  "en": "Aside",
+  "es": "a un lado, aparte",
+  "example": "Setting politics aside, we need to focus on readiness.",
+  "fp": "ef57346792"
+ },
+ "15": {
+  "en": "Drop",
+  "es": "gota, caer, disminuir",
+  "example": "The supply drop landed in the designated zone.",
+  "fp": "48c33857ed"
+ },
+ "16": {
+  "en": "Bark",
+  "es": "ladrido, ladrar",
+  "example": "The guard dogs bark whenever someone approaches the perimeter.",
+  "fp": "83475050c5"
+ },
+ "17": {
+  "en": "Folks",
+  "es": "gente, personas",
+  "example": "The folks here are all dedicated to the mission.",
+  "fp": "71327fe692"
+ },
+ "18": {
+  "en": "Kettle",
+  "es": "tetera, hervidor",
+  "example": "She filled the kettle for the morning coffee.",
+  "fp": "64e193a046"
+ },
+ "19": {
+  "en": "Pick up",
+  "es": "recoger, pasar a buscar, aprender",
+  "example": "Pick up those supplies and deliver them to the warehouse.",
+  "fp": "f1685974df"
+ },
+ "20": {
+  "en": "Bear",
+  "es": "oso, soportar, aguantar",
+  "example": "Soldiers must bear the weight of their equipment.",
+  "fp": "1c620c5f71"
+ },
+ "21": {
+  "en": "Concerns",
+  "es": "preocupaciones, inquietudes",
+  "example": "Safety concerns delayed the flight departure by several hours.",
+  "fp": "396d2a1bcd"
+ },
+ "22": {
+  "en": "Plunge",
+  "es": "zambullirse, desplomarse",
+  "example": "The aircraft made a sudden plunge toward the airfield.",
+  "fp": "45d0adef27"
+ },
+ "23": {
+  "en": "Enterprise",
+  "es": "empresa, compañía",
+  "example": "The carrier USS Enterprise was undergoing significant maintenance work.",
+  "fp": "ea8caa01c9"
+ },
+ "24": {
+  "en": "Unwise",
+  "es": "imprudente, poco sensato",
+  "example": "It would be unwise to ignore the weather warnings.",
+  "fp": "2126b1d793"
+ },
+ "25": {
+  "en": "Cobber",
+  "es": "amigo, compañero",
+  "example": "My cobber from the Australian squadron helped with the repairs.",
+  "fp": "e77bad5cef"
+ },
+ "26": {
+  "en": "Kangaroo",
+  "es": "canguro",
+  "example": "We spotted a kangaroo near the Australian military base.",
+  "fp": "6bfa89987f"
+ },
+ "27": {
+  "en": "Hooroo",
+  "es": "adiós, hasta luego",
+  "example": "He waved and said hooroo before boarding the aircraft.",
+  "fp": "e67b9afeba"
+ },
+ "28": {
+  "en": "Shrink",
+  "es": "encoger, reducir, disminuir",
+  "example": "The budget will shrink by twenty percent next fiscal year.",
+  "fp": "155b9e20ad"
+ },
+ "29": {
+  "en": "Back down",
+  "es": "echarse atrás, ceder",
+  "example": "The general refused to back down from his position.",
+  "fp": "f1d625f9d8"
+ },
+ "30": {
+  "en": "Rewording",
+  "es": "reformulación, parafrasear",
+  "example": "Rewording the order made it clearer for all personnel.",
+  "fp": "558df5ca15"
+ },
+ "31": {
+  "en": "Spurious",
+  "es": "falso, engañoso",
+  "example": "The report contained spurious claims about enemy capabilities.",
+  "fp": "d81932ccb8"
+ },
+ "32": {
+  "en": "Hazardous",
+  "es": "peligroso, arriesgado",
+  "example": "Handling hazardous materials requires proper training and equipment.",
+  "fp": "058c9172b9"
+ },
+ "33": {
+  "en": "Harms",
+  "es": "daño, perjuicio, dañar",
+  "example": "The policy harms both morale and operational efficiency.",
+  "fp": "1dee993840"
+ },
+ "34": {
+  "en": "Trial",
+  "es": "juicio, prueba, ensayo",
+  "example": "The aircraft underwent extensive trials before deployment.",
+  "fp": "3538b77898"
+ },
+ "35": {
+  "en": "Eliciting",
+  "es": "obteniendo, suscitando",
+  "example": "The interrogation was focused on eliciting accurate intelligence.",
+  "fp": "1f9be50c6d"
+ },
+ "36": {
+  "en": "Purported",
+  "es": "supuesto, presunto",
+  "example": "The purported base expansion never materialized as planned.",
+  "fp": "9bee90c3ea"
+ },
+ "37": {
+  "en": "Mockup",
+  "es": "maqueta, prototipo",
+  "example": "The engineers presented a mockup of the new hangar.",
+  "fp": "3e2c248236"
+ },
+ "38": {
+  "en": "Seashore",
+  "es": "orilla del mar, costa",
+  "example": "The naval base was located right along the seashore.",
+  "fp": "17280be043"
+ },
+ "39": {
+  "en": "Seabed",
+  "es": "lecho marino, fondo marino",
+  "example": "Submarines conducted surveys of the seabed in that region.",
+  "fp": "646e13eb6b"
+ },
+ "40": {
+  "en": "Vessels",
+  "es": "embarcaciones, buques, naves",
+  "example": "The naval task force included multiple vessels from allied nations.",
+  "fp": "a6c5e09ed1"
+ },
+ "41": {
+  "en": "Wrap it up",
+  "es": "terminar, concluir",
+  "example": "Let's wrap it up and head to lunch.",
+  "fp": "1bc702c557"
+ },
+ "42": {
+  "en": "Fish fights",
+  "es": "disputas pesqueras",
+  "example": "Fish fights over territorial waters cause diplomatic tensions.",
+  "fp": "a4ab3972c6"
+ },
+ "43": {
+  "en": "Windscreen",
+  "es": "parabrisas",
+  "example": "The windscreen got cracked during the storm.",
+  "fp": "cefd09a4c6"
+ },
+ "44": {
+  "en": "Bulb",
+  "es": "bombilla, foco",
+  "example": "Replace the bulb in the desk lamp.",
+  "fp": "bcfc7bc027"
+ },
+ "45": {
+  "en": "Waiter",
+  "es": "mesero, camarero",
+  "example": "The waiter brought our coffee immediately.",
+  "fp": "888e65b261"
+ },
+ "46": {
+  "en": "Solely",
+  "es": "únicamente, solamente",
+  "example": "This rule applies solely to military personnel.",
+  "fp": "3c13517c47"
+ },
+ "47": {
+  "en": "Pitfalls",
+  "es": "trampas, escollos",
+  "example": "Understanding the pitfalls helps you avoid mistakes.",
+  "fp": "5774e4e08a"
+ },
+ "48": {
+  "en": "Cannonball",
+  "es": "bala de cañón",
+  "example": "He performed a cannonball into the pool.",
+  "fp": "45f603ea56"
+ },
+ "49": {
+  "en": "Airmen",
+  "es": "aviadores",
+  "example": "The airmen reported to the commander for orders.",
+  "fp": "4090dbf8f2"
+ },
+ "50": {
+  "en": "Club (militar)",
+  "es": "club social de base",
+  "example": "The NCO Club hosted the weekly social event.",
+  "fp": "7a13e0b670"
+ },
+ "51": {
+  "en": "Kerosene",
+  "es": "queroseno",
+  "example": "Kerosene fuels the emergency heater in the barracks.",
+  "fp": "e957d96c30"
+ },
+ "52": {
+  "en": "Heater",
+  "es": "calentador, calefactor",
+  "example": "Turn on the heater, it's cold in here.",
+  "fp": "49ca7992aa"
+ },
+ "53": {
+  "en": "Ashes",
+  "es": "cenizas",
+  "example": "Sweep up the ashes from the fireplace.",
+  "fp": "7b81992a34"
+ },
+ "54": {
+  "en": "Absent",
+  "es": "ausente",
+  "example": "Three soldiers were absent from morning formation.",
+  "fp": "ad50a37633"
+ },
+ "55": {
+  "en": "Disrupt",
+  "es": "interrumpir, alterar",
+  "example": "Don't disrupt the class with unnecessary noise.",
+  "fp": "9c00b234c9"
+ },
+ "56": {
+  "en": "Piece",
+  "es": "pedazo, trozo",
+  "example": "Give me a piece of that bread.",
+  "fp": "d98ce25f9d"
+ },
+ "57": {
+  "en": "Just as",
+  "es": "justo cuando",
+  "example": "Just as we arrived, the alarm sounded.",
+  "fp": "f99b59ab38"
+ },
+ "58": {
+  "en": "Sleeves",
+  "es": "mangas",
+  "example": "Roll up your sleeves before starting work.",
+  "fp": "6bed8c838e"
+ },
+ "59": {
+  "en": "Trousers",
+  "es": "pantalones",
+  "example": "His trousers were neatly pressed for inspection.",
+  "fp": "ffbf498cd5"
+ },
+ "60": {
+  "en": "Slacks",
+  "es": "pantalones de vestir",
+  "example": "Slacks are appropriate for the casual Friday.",
+  "fp": "19dd859ef7"
+ },
+ "61": {
+  "en": "Slip",
+  "es": "resbalar",
+  "example": "Be careful not to slip on the wet floor.",
+  "fp": "3c122f248c"
+ },
+ "62": {
+  "en": "Sidewalk",
+  "es": "acera, vereda",
+  "example": "We walked along the sidewalk to the store.",
+  "fp": "ddd8748415"
+ },
+ "63": {
+  "en": "Icy",
+  "es": "helado, congelado",
+  "example": "The icy road conditions slowed traffic significantly.",
+  "fp": "9d81cf066a"
+ },
+ "64": {
+  "en": "Paved",
+  "es": "pavimentado",
+  "example": "The paved parking lot accommodated hundreds of vehicles.",
+  "fp": "2d868a0fec"
+ },
+ "65": {
+  "en": "Traction",
+  "es": "tracción, agarre",
+  "example": "Good traction keeps the vehicle stable in snow.",
+  "fp": "59de4db126"
+ },
+ "66": {
+  "en": "A bit",
+  "es": "un poco",
+  "example": "This task requires a bit of extra effort.",
+  "fp": "f309c66c84"
+ },
+ "67": {
+  "en": "Shift",
+  "es": "cambiar, desplazarse",
+  "example": "Shift to the left when you see the signal.",
+  "fp": "714dd988a9"
+ },
+ "68": {
+  "en": "Rumor",
+  "es": "rumor",
+  "example": "I heard a rumor about the base closure.",
+  "fp": "9ba3c6a67f"
+ },
+ "69": {
+  "en": "Unconfirmed",
+  "es": "no confirmado",
+  "example": "The information remains unconfirmed by headquarters.",
+  "fp": "0c0131262e"
+ },
+ "70": {
+  "en": "Scuttlebutt",
+  "es": "chisme, rumor",
+  "example": "According to scuttlebutt, we're getting new equipment.",
+  "fp": "627e508e98"
+ },
+ "71": {
+  "en": "Airbase",
+  "es": "base aérea",
+  "example": "The airbase was equipped with modern hangars.",
+  "fp": "2aa6906ea5"
+ },
+ "72": {
+  "en": "Separately",
+  "es": "por separado",
+  "example": "The tasks were divided separately among three teams.",
+  "fp": "a10c2fcbd5"
+ },
+ "73": {
+  "en": "Divided up",
+  "es": "dividido, repartido",
+  "example": "The supplies were divided up into equal portions.",
+  "fp": "638e86edcb"
+ },
+ "74": {
+  "en": "Tear (tore, torn)",
+  "es": "rasgar, romper",
+  "example": "Don't tear the document; keep it intact please.",
+  "fp": "8029398213"
+ },
+ "75": {
+  "en": "Rip",
+  "es": "desgarrar, rasgar",
+  "example": "The fabric began to rip at the seams.",
+  "fp": "c7af58312c"
+ },
+ "76": {
+  "en": "Fence",
+  "es": "cerca, valla",
+  "example": "The fence surrounds the perimeter of the compound.",
+  "fp": "01e0faa437"
+ },
+ "77": {
+  "en": "Soiled",
+  "es": "ensuciado, manchado",
+  "example": "His uniform was soiled from the training exercise.",
+  "fp": "08ebadd8f2"
+ },
+ "78": {
+  "en": "Wrinkled",
+  "es": "arrugado",
+  "example": "Her wrinkled clothes needed pressing before the ceremony.",
+  "fp": "cc0debf384"
+ },
+ "79": {
+  "en": "Disregard",
+  "es": "ignorar, desatender",
+  "example": "Disregard the email sent yesterday, it's outdated now.",
+  "fp": "9297119662"
+ },
+ "80": {
+  "en": "Stand for",
+  "es": "significar, representar",
+  "example": "What does this abbreviation stand for exactly?",
+  "fp": "8bfd6c4431"
+ },
+ "81": {
+  "en": "Trailer",
+  "es": "remolque, tráiler",
+  "example": "The supply trailer was loaded with ammunition and fuel.",
+  "fp": "9c367aeee0"
+ },
+ "82": {
+  "en": "Haul",
+  "es": "transportar, acarrear",
+  "example": "We need to haul the cargo to the warehouse today.",
+  "fp": "c684da0f60"
+ },
+ "83": {
+  "en": "Freight",
+  "es": "carga, flete, mercancía",
+  "example": "The freight plane carries supplies to remote bases.",
+  "fp": "6cb337f662"
+ },
+ "84": {
+  "en": "Drain",
+  "es": "drenar, desaguar",
+  "example": "We must drain the water from the fuel tanks.",
+  "fp": "a8c76529ba"
+ },
+ "85": {
+  "en": "Fall apart",
+  "es": "desarmarse, caerse a pedazos",
+  "example": "The old equipment started to fall apart during transport.",
+  "fp": "e952afee17"
+ },
+ "86": {
+  "en": "Brand new",
+  "es": "nuevo, flamante, recién estrenado",
+  "example": "He received a brand new uniform for the ceremony.",
+  "fp": "6a7a1a0953"
+ },
+ "87": {
+  "en": "Disrepair",
+  "es": "mal estado, deterioro",
+  "example": "The building was in disrepair after years of neglect.",
+  "fp": "8d39451493"
+ },
+ "88": {
+  "en": "Controversial",
+  "es": "controvertido, polémico",
+  "example": "The controversial decision angered many officers and enlisted men.",
+  "fp": "6af9c64547"
+ },
+ "89": {
+  "en": "Anger (to)",
+  "es": "enojar, enfurecer, indignar",
+  "example": "His comments will anger the senior leadership tomorrow.",
+  "fp": "f1f467bf01"
+ },
+ "90": {
+  "en": "Deep water",
+  "es": "aguas profundas",
+  "example": "The ship navigated through deep water carefully.",
+  "fp": "08f716a873"
+ },
+ "91": {
+  "en": "Thick forest",
+  "es": "bosque espeso, bosque denso",
+  "example": "The patrol disappeared into the thick forest.",
+  "fp": "c8323d2557"
+ },
+ "92": {
+  "en": "Chaplain",
+  "es": "capellán",
+  "example": "The chaplain conducted the service for all personnel.",
+  "fp": "051e9d8b83"
+ },
+ "93": {
+  "en": "Service",
+  "es": "servicio religioso, servicio militar",
+  "example": "Attendance at the Sunday service was mandatory for all.",
+  "fp": "9fdd1e940d"
+ },
+ "94": {
+  "en": "Chapel",
+  "es": "capilla",
+  "example": "They met at the chapel before the evening service.",
+  "fp": "5890f3cf7f"
+ },
+ "95": {
+  "en": "Abrupt",
+  "es": "abrupto, repentino, brusco",
+  "example": "His abrupt departure surprised everyone at the base.",
+  "fp": "551d573161"
+ },
+ "96": {
+  "en": "Sudden",
+  "es": "repentino, súbito",
+  "example": "A sudden storm forced us to cancel the exercise.",
+  "fp": "a2b94df483"
+ },
+ "97": {
+  "en": "Ending",
+  "es": "final, desenlace",
+  "example": "The ending of the training program was emotional.",
+  "fp": "3e950d6092"
+ },
+ "98": {
+  "en": "At all",
+  "es": "en absoluto, para nada",
+  "example": "I don't think he's interested in promotion at all.",
+  "fp": "cc46ad4955"
+ },
+ "99": {
+  "en": "Printing",
+  "es": "impresión",
+  "example": "The printing of official documents took three hours.",
+  "fp": "965f1567b9"
+ },
+ "100": {
+  "en": "Keep (someone) up",
+  "es": "mantener despierto",
+  "example": "The noise from the barracks kept us up all night.",
+  "fp": "e702ea14fc"
+ },
+ "101": {
+  "en": "About to",
+  "es": "a punto de",
+  "example": "The aircraft was about to take off when the alarm sounded.",
+  "fp": "510f693721"
+ },
+ "102": {
+  "en": "Marry",
+  "es": "casarse",
+  "example": "He plans to marry his fiancée next summer.",
+  "fp": "f2f6ad78f2"
+ },
+ "103": {
+  "en": "NCO (Non-Commissioned Officer)",
+  "es": "suboficial",
+  "example": "The NCO briefed the soldiers on morning operations.",
+  "fp": "16801f7f83"
+ },
+ "104": {
+  "en": "Expect",
+  "es": "esperar, exigir, prever",
+  "example": "We expect the supplies to arrive by tomorrow morning.",
+  "fp": "8d67846e26"
+ },
+ "105": {
+  "en": "Fine",
+  "es": "fino, delgado",
+  "example": "The thread is too fine for this type of repair.",
+  "fp": "72f0e242bf"
+ },
+ "106": {
+  "en": "Thread",
+  "es": "hilo",
+  "example": "Pass the thread through the needle carefully.",
+  "fp": "54c0caacdc"
+ },
+ "107": {
+  "en": "Sew",
+  "es": "coser",
+  "example": "She had to sew the torn uniform before inspection.",
+  "fp": "9b7e4aba72"
+ },
+ "108": {
+  "en": "Thin",
+  "es": "delgado, fino",
+  "example": "The wall was thin enough to hear conversations outside.",
+  "fp": "ea7a32e3c1"
+ },
+ "109": {
+  "en": "Deliver / delivered",
+  "es": "entregar, repartir",
+  "example": "The courier delivered the classified documents to headquarters.",
+  "fp": "472d23090d"
+ },
+ "110": {
+  "en": "Newsstand",
+  "es": "quiosco de periódicos",
+  "example": "The newsstand at the base sells magazines and newspapers.",
+  "fp": "abbd8cde47"
+ },
+ "111": {
+  "en": "Worse",
+  "es": "peor",
+  "example": "The weather conditions were worse than we anticipated.",
+  "fp": "8c85ed0788"
+ },
+ "112": {
+  "en": "Mud",
+  "es": "barro, lodo",
+  "example": "The vehicles were covered in mud after the exercise.",
+  "fp": "099e5a01a2"
+ },
+ "113": {
+  "en": "Whooping crane",
+  "es": "grulla trompetera",
+  "example": "The whooping crane is one of the world's rarest birds.",
+  "fp": "0871252c94"
+ },
+ "114": {
+  "en": "Diminishing",
+  "es": "disminuyendo, mermando",
+  "example": "Fuel supplies are diminishing as we approach the deployment.",
+  "fp": "0c1931a365"
+ },
+ "115": {
+  "en": "Torn up",
+  "es": "roto, hecho pedazos",
+  "example": "The document was torn up before the meeting ended.",
+  "fp": "fd410208a7"
+ },
+ "116": {
+  "en": "A piece at a time",
+  "es": "de a un pedazo, por partes",
+  "example": "We disassembled the equipment a piece at a time.",
+  "fp": "ef0d68a3e8"
+ },
+ "117": {
+  "en": "Statement",
+  "es": "declaración, afirmación",
+  "example": "The commander issued an official statement to all personnel.",
+  "fp": "f12b40bb26"
+ },
+ "118": {
+  "en": "Train station",
+  "es": "estación de tren",
+  "example": "We met him at the train station early morning.",
+  "fp": "26d508b9f5"
+ },
+ "119": {
+  "en": "Theater",
+  "es": "teatro",
+  "example": "The base theater hosts movies every Friday evening.",
+  "fp": "ecb304522e"
+ },
+ "120": {
+  "en": "Spray paint",
+  "es": "pintar con aerosol",
+  "example": "Don't spray paint near the ammunition storage area.",
+  "fp": "a8a4407ce5"
+ },
+ "121": {
+  "en": "For good",
+  "es": "para siempre, definitivamente",
+  "example": "The unit moved to the new base for good.",
+  "fp": "5b2e55bc88"
+ },
+ "122": {
+  "en": "For the time being",
+  "es": "por el momento, por ahora",
+  "example": "We'll stay at this location for the time being.",
+  "fp": "48ed18e7a2"
+ },
+ "123": {
+  "en": "Temporarily",
+  "es": "temporalmente, provisionalmente",
+  "example": "The airfield was temporarily closed due to weather.",
+  "fp": "35435c50f2"
+ },
+ "124": {
+  "en": "Permanently",
+  "es": "permanentemente, de forma definitiva",
+  "example": "She was permanently assigned to the squadron.",
+  "fp": "e8151fa35a"
+ },
+ "125": {
+  "en": "In a hurry",
+  "es": "con prisa, apurado",
+  "example": "The pilot was in a hurry to complete the preflight.",
+  "fp": "879c1a8eab"
+ },
+ "126": {
+  "en": "Foggy",
+  "es": "neblinoso, con niebla",
+  "example": "Visibility was poor because the morning was foggy.",
+  "fp": "6379658d34"
+ },
+ "127": {
+  "en": "Fog",
+  "es": "niebla",
+  "example": "The fog prevented the aircraft from taking off.",
+  "fp": "c3d79b7e63"
+ },
+ "128": {
+  "en": "Haze",
+  "es": "bruma, calima",
+  "example": "Desert haze reduced visibility across the airbase.",
+  "fp": "3cdfc8afbb"
+ },
+ "129": {
+  "en": "Dust",
+  "es": "polvo",
+  "example": "The helicopter rotor kicked up a cloud of dust.",
+  "fp": "1c84d77f16"
+ },
+ "130": {
+  "en": "Steady breeze",
+  "es": "brisa constante",
+  "example": "A steady breeze kept the flight line cool.",
+  "fp": "5cff2ce9b4"
+ },
+ "131": {
+  "en": "Repel / repelled",
+  "es": "repeler, rechazar",
+  "example": "The base's defenses repelled the incoming attack.",
+  "fp": "09a5350532"
+ },
+ "132": {
+  "en": "Fight off",
+  "es": "repeler, rechazar",
+  "example": "Pilots must fight off fatigue during long missions.",
+  "fp": "e8247d8a6a"
+ },
+ "133": {
+  "en": "Reinforce",
+  "es": "reforzar",
+  "example": "Command decided to reinforce the squadron with additional aircraft.",
+  "fp": "7bcd909308"
+ },
+ "134": {
+  "en": "Retreat",
+  "es": "retirarse, replegarse",
+  "example": "The troops had to retreat when ammunition ran low.",
+  "fp": "bc0f1faf94"
+ },
+ "135": {
+  "en": "Assault",
+  "es": "asalto, ataque",
+  "example": "The ground assault lasted three hours.",
+  "fp": "75680931ca"
+ },
+ "136": {
+  "en": "Work out",
+  "es": "resolver, solucionar",
+  "example": "We need to work out the supply chain issues.",
+  "fp": "09fd495ed9"
+ },
+ "137": {
+  "en": "Solve",
+  "es": "resolver",
+  "example": "The mechanics solved the engine problem quickly.",
+  "fp": "7e6e877993"
+ },
+ "138": {
+  "en": "Thunder shower",
+  "es": "chubasco, aguacero eléctrico",
+  "example": "A sudden thunder shower delayed the flight operations.",
+  "fp": "82d3cec46f"
+ },
+ "139": {
+  "en": "Thunder",
+  "es": "trueno",
+  "example": "The loud thunder during the storm startled the personnel.",
+  "fp": "01716c280a"
+ },
+ "140": {
+  "en": "Lightning",
+  "es": "rayo, relámpago",
+  "example": "Lightning struck near the radar tower during the storm.",
+  "fp": "93c9b69589"
+ },
+ "141": {
+  "en": "Storm",
+  "es": "tormenta",
+  "example": "A severe storm caused the base to go on weather alert.",
+  "fp": "993f72a5b1"
+ },
+ "142": {
+  "en": "Hole / whole",
+  "es": "agujero, entero",
+  "example": "The shrapnel left a hole in the aircraft's fuselage.",
+  "fp": "4a2a97f315"
+ },
+ "143": {
+  "en": "Dig (dug, dug)",
+  "es": "cavar, excavar",
+  "example": "The engineers dug trenches around the perimeter.",
+  "fp": "6b788ba5e2"
+ },
+ "144": {
+  "en": "Filling",
+  "es": "empaste, relleno",
+  "example": "The dentist completed the filling in just thirty minutes.",
+  "fp": "6b47359d02"
+ },
+ "145": {
+  "en": "Cavity",
+  "es": "caries, cavidad",
+  "example": "The dentist found a cavity that needed treatment.",
+  "fp": "db36755627"
+ },
+ "146": {
+  "en": "Decay",
+  "es": "caries, deterioro",
+  "example": "Tooth decay can be prevented with proper brushing.",
+  "fp": "3ca28ae4f6"
+ },
+ "147": {
+  "en": "Dentist",
+  "es": "dentista",
+  "example": "The base dentist checks all personnel twice yearly.",
+  "fp": "e58ac5ddb2"
+ },
+ "148": {
+  "en": "Cartoons",
+  "es": "caricaturas, dibujos animados",
+  "example": "The cartoons on the cover showed humorous military situations.",
+  "fp": "2cc9f37160"
+ },
+ "149": {
+  "en": "Headlines",
+  "es": "titulares",
+  "example": "The newspaper headlines reported the military exercise results.",
+  "fp": "a9efb28c15"
+ },
+ "150": {
+  "en": "Drawings",
+  "es": "dibujos, esquemas",
+  "example": "The technical drawings showed the aircraft's internal systems.",
+  "fp": "f5e83d8115"
+ },
+ "151": {
+  "en": "Dense",
+  "es": "denso, espeso",
+  "example": "The dense forest made navigation difficult for the patrol.",
+  "fp": "0f8b8c9111"
+ },
+ "152": {
+  "en": "Thick",
+  "es": "grueso, espeso",
+  "example": "The thick smoke from the exercises limited visibility.",
+  "fp": "6f5545b496"
+ },
+ "153": {
+  "en": "Sea level",
+  "es": "nivel del mar",
+  "example": "The altitude was measured at two thousand feet above sea level.",
+  "fp": "215e6cc572"
+ },
+ "154": {
+  "en": "Altitude",
+  "es": "altitud",
+  "example": "The aircraft climbed to thirty thousand feet altitude.",
+  "fp": "7391ad50cd"
+ },
+ "155": {
+  "en": "Spread out",
+  "es": "extender, desplegar",
+  "example": "They spread out the map to plan the route.",
+  "fp": "340349d75a"
+ },
+ "156": {
+  "en": "Fold",
+  "es": "doblar, plegar",
+  "example": "Fold the chart and place it in your flight bag.",
+  "fp": "cf7af99182"
+ },
+ "157": {
+  "en": "Mark",
+  "es": "marcar, señalar",
+  "example": "Mark the waypoint on the navigation chart clearly.",
+  "fp": "73c6eeaeb8"
+ },
+ "158": {
+  "en": "Inspect",
+  "es": "inspeccionar, examinar",
+  "example": "The crew inspected the aircraft before each flight.",
+  "fp": "a67d03ae2b"
+ },
+ "159": {
+  "en": "Oxygen mask",
+  "es": "máscara de oxígeno",
+  "example": "Ensure your oxygen mask is properly fitted.",
+  "fp": "9c054956af"
+ },
+ "160": {
+  "en": "Cadet",
+  "es": "cadete",
+  "example": "The young cadet trained hard to become a pilot.",
+  "fp": "24918d4f68"
+ },
+ "161": {
+  "en": "Guilty",
+  "es": "culpable",
+  "example": "The defendant was found guilty of the crime.",
+  "fp": "901074049c"
+ },
+ "162": {
+  "en": "Innocent",
+  "es": "inocente",
+  "example": "He was declared innocent after the investigation.",
+  "fp": "2b72e29cb4"
+ },
+ "163": {
+  "en": "Charge",
+  "es": "acusación, cargo",
+  "example": "He faced a serious charge of theft.",
+  "fp": "8a37213569"
+ },
+ "164": {
+  "en": "Verdict",
+  "es": "veredicto",
+  "example": "The jury delivered their verdict after six hours.",
+  "fp": "a0faf9ac0c"
+ },
+ "165": {
+  "en": "Fine",
+  "es": "multa",
+  "example": "He received a fine for speeding.",
+  "fp": "3c74c437ac"
+ },
+ "166": {
+  "en": "Sentenced to prison",
+  "es": "condenado a prisión",
+  "example": "The criminal was sentenced to prison for ten years.",
+  "fp": "927e2f059a"
+ },
+ "167": {
+  "en": "Efficient",
+  "es": "eficiente",
+  "example": "The team used an efficient method to complete the task.",
+  "fp": "4cbc1e92b0"
+ },
+ "168": {
+  "en": "Supervise",
+  "es": "supervisar",
+  "example": "The sergeant supervises all the recruits during training.",
+  "fp": "2f7bd5d785"
+ },
+ "169": {
+  "en": "Complain",
+  "es": "quejarse",
+  "example": "Soldiers should not complain about minor inconveniences.",
+  "fp": "5426f067bf"
+ },
+ "170": {
+  "en": "In all / Altogether",
+  "es": "en total",
+  "example": "There were fifty personnel in all at the base.",
+  "fp": "045da4c5e7"
+ },
+ "171": {
+  "en": "Zoo",
+  "es": "zoológico",
+  "example": "The family visited the zoo on Sunday afternoon.",
+  "fp": "1ee3f0de25"
+ },
+ "172": {
+  "en": "Take up",
+  "es": "empezar, dedicarse a",
+  "example": "He decided to take up flying after high school.",
+  "fp": "d1dd9c83cf"
+ },
+ "173": {
+  "en": "Medicine",
+  "es": "medicina",
+  "example": "She studied medicine at the military academy.",
+  "fp": "f74c0b7118"
+ },
+ "174": {
+  "en": "Lay (laid, laid)",
+  "es": "poner, colocar",
+  "example": "Lay the equipment carefully on the table.",
+  "fp": "ed5f30cbee"
+ },
+ "175": {
+  "en": "Bookcase",
+  "es": "estantería, librero",
+  "example": "The officer kept his awards on the bookcase.",
+  "fp": "4baebb475e"
+ },
+ "176": {
+  "en": "Bookstore",
+  "es": "librería",
+  "example": "I bought a dictionary at the local bookstore.",
+  "fp": "67270a80d3"
+ },
+ "177": {
+  "en": "Alike",
+  "es": "parecidos, similares",
+  "example": "The twin sisters looked alike but had different personalities.",
+  "fp": "4757ad499f"
+ },
+ "178": {
+  "en": "Wheat",
+  "es": "trigo",
+  "example": "The farmer planted wheat in the large field.",
+  "fp": "9ea4992b7a"
+ },
+ "179": {
+  "en": "Damage",
+  "es": "dañar, daño",
+  "example": "The storm caused significant damage to the buildings.",
+  "fp": "da21476480"
+ },
+ "180": {
+  "en": "Hurt",
+  "es": "lastimar, doler",
+  "example": "His arm hurt after the accident at work.",
+  "fp": "9501b60d48"
+ },
+ "181": {
+  "en": "Blow down",
+  "es": "derribar, tumbar",
+  "example": "The strong wind blew down the old tree.",
+  "fp": "253225b55d"
+ },
+ "182": {
+  "en": "Crops",
+  "es": "cultivos, cosechas",
+  "example": "The drought damaged the crops severely this year.",
+  "fp": "ef40349ab5"
+ },
+ "183": {
+  "en": "Opposite",
+  "es": "enfrente de, opuesto",
+  "example": "The base hospital is opposite the administration building.",
+  "fp": "8313223dbb"
+ },
+ "184": {
+  "en": "Across the street",
+  "es": "al otro lado de la calle",
+  "example": "The cafeteria is located across the street from here.",
+  "fp": "3a6a14e94e"
+ },
+ "185": {
+  "en": "Behind",
+  "es": "detrás de",
+  "example": "The equipment storage is behind the main hangar.",
+  "fp": "d93df2d623"
+ },
+ "186": {
+  "en": "Next to",
+  "es": "junto a, al lado de",
+  "example": "My office is next to the commander's office.",
+  "fp": "f7a64216eb"
+ },
+ "187": {
+  "en": "Post office",
+  "es": "oficina de correos",
+  "example": "He went to the post office to mail the package.",
+  "fp": "b136be7391"
+ },
+ "188": {
+  "en": "Light",
+  "es": "ligero, liviano",
+  "example": "The soldier carried only light equipment on patrol.",
+  "fp": "751be5f7b6"
+ },
+ "189": {
+  "en": "Heavy",
+  "es": "pesado",
+  "example": "The ammunition box was too heavy to lift alone.",
+  "fp": "3a073391b1"
+ },
+ "190": {
+  "en": "Handle",
+  "es": "asa, mango",
+  "example": "The officer gripped the handle of the door firmly.",
+  "fp": "04c38c7db0"
+ },
+ "191": {
+  "en": "Lift",
+  "es": "levantar, alzar",
+  "example": "Help me lift this heavy box to the truck.",
+  "fp": "16a64fc288"
+ },
+ "192": {
+  "en": "Rare (carne)",
+  "es": "poco hecha, roja",
+  "example": "He ordered his steak rare at the officer's club.",
+  "fp": "6e69588976"
+ },
+ "193": {
+  "en": "Roast beef",
+  "es": "rosbif, carne asada",
+  "example": "The cafeteria served roast beef for Sunday dinner.",
+  "fp": "3c3c3536b7"
+ },
+ "194": {
+  "en": "Apple pie",
+  "es": "pastel de manzana",
+  "example": "Apple pie is a favorite dessert in the cafeteria.",
+  "fp": "fa2342f1f6"
+ },
+ "195": {
+  "en": "Chicken noodle soup",
+  "es": "sopa de pollo con fideos",
+  "example": "The cook prepared chicken noodle soup for lunch.",
+  "fp": "6593b4c312"
+ },
+ "196": {
+  "en": "Cold meats",
+  "es": "fiambres, embutidos",
+  "example": "Cold meats and cheese were served at the reception.",
+  "fp": "36706ce1ae"
+ },
+ "197": {
+  "en": "Issued",
+  "es": "de dotación, oficial",
+  "example": "All personnel received their issued equipment at deployment.",
+  "fp": "c90a7ebd00"
+ },
+ "198": {
+  "en": "Provided that",
+  "es": "siempre que, con tal que",
+  "example": "You may take leave provided that your duties are covered.",
+  "fp": "fd7342cb96"
+ },
+ "199": {
+  "en": "Finicky",
+  "es": "quisquilloso, maniático",
+  "example": "He was finicky about how the equipment was maintained.",
+  "fp": "1621d396a7"
+ },
+ "200": {
+  "en": "Tell time",
+  "es": "leer la hora",
+  "example": "New recruits must learn to tell time accurately.",
+  "fp": "1838432df4"
+ },
+ "201": {
+  "en": "Get in",
+  "es": "llegar",
+  "example": "The transport plane will get in at 0800 hours.",
+  "fp": "7b16e5ef48"
+ },
+ "202": {
+  "en": "Get by",
+  "es": "arreglárselas, apañárselas",
+  "example": "With basic supplies, the unit managed to get by.",
+  "fp": "4ebcb6d21d"
+ },
+ "203": {
+  "en": "Honoree",
+  "es": "homenajeado, galardonado",
+  "example": "The honoree received the medal with great pride.",
+  "fp": "791682f728"
+ },
+ "204": {
+  "en": "Stub",
+  "es": "talón, resguardo",
+  "example": "Keep your ticket stub for the flight home.",
+  "fp": "0b6f2d76ad"
+ },
+ "205": {
+  "en": "Make up (a bed)",
+  "es": "tender, hacer la cama",
+  "example": "Soldiers must make up their beds before inspection.",
+  "fp": "c33a5f0612"
+ },
+ "206": {
+  "en": "Eventually",
+  "es": "finalmente, eventualmente, con el tiempo",
+  "example": "After training, he will eventually become a pilot.",
+  "fp": "b960942f99"
+ },
+ "207": {
+  "en": "Drizzle",
+  "es": "llovizna",
+  "example": "A light drizzle fell throughout the morning.",
+  "fp": "16990a8969"
+ },
+ "208": {
+  "en": "Sleet",
+  "es": "aguanieve",
+  "example": "The convoy slowed during the sleet storm.",
+  "fp": "01f82c4ace"
+ },
+ "209": {
+  "en": "Befuddled",
+  "es": "aturdido, confundido",
+  "example": "The befuddled recruit forgot his equipment.",
+  "fp": "b2f826dade"
+ },
+ "210": {
+  "en": "Baffling",
+  "es": "desconcertante, incomprensible",
+  "example": "The baffling instructions confused the entire squad.",
+  "fp": "9bbc522a95"
+ },
+ "211": {
+  "en": "Obsolete",
+  "es": "obsoleto, en desuso",
+  "example": "That old radio model is now completely obsolete.",
+  "fp": "8ec4cf937e"
+ },
+ "212": {
+  "en": "Give (someone) a shot",
+  "es": "poner una inyección, vacunar",
+  "example": "The medic will give you a shot before deployment.",
+  "fp": "b1f84ba5b4"
+ },
+ "213": {
+  "en": "Lubricate",
+  "es": "lubricar, engrasar",
+  "example": "Always lubricate the weapon before every mission.",
+  "fp": "23f3c91213"
+ },
+ "214": {
+  "en": "Bare (head)",
+  "es": "descubierto, sin cubrir",
+  "example": "Never stand at parade rest with a bare head.",
+  "fp": "7928b254ad"
+ },
+ "215": {
+  "en": "Cover (militar)",
+  "es": "gorra, cubrecabeza",
+  "example": "Ensure your cover is properly aligned and secure.",
+  "fp": "5e4e058bfa"
+ },
+ "216": {
+  "en": "Add up to / amount to",
+  "es": "sumar, ascender a",
+  "example": "Total expenses add up to five hundred dollars.",
+  "fp": "7104c04ea1"
+ },
+ "217": {
+  "en": "Lumber",
+  "es": "madera, tablas",
+  "example": "The construction crew needs to order more lumber.",
+  "fp": "0cd625fa1f"
+ },
+ "218": {
+  "en": "Moisture",
+  "es": "humedad",
+  "example": "Moisture causes rust on metal equipment and parts.",
+  "fp": "c98c85e01d"
+ },
+ "219": {
+  "en": "Tear down",
+  "es": "desmontar, desarmar",
+  "example": "We must tear down the engine for complete inspection.",
+  "fp": "68dcb2cf57"
+ },
+ "220": {
+  "en": "Steer",
+  "es": "gobernar, timonear, dirigir",
+  "example": "Steer the vessel carefully through the narrow channel.",
+  "fp": "9a26c174ff"
+ },
+ "221": {
+  "en": "Run short of",
+  "es": "quedarse corto, carecer de",
+  "example": "The base began to run short of ammunition supplies.",
+  "fp": "1b966e50e6"
+ },
+ "222": {
+  "en": "Nothing but",
+  "es": "solamente, nada más que",
+  "example": "His record shows nothing but outstanding performance.",
+  "fp": "b13946d0c3"
+ },
+ "223": {
+  "en": "Attorney",
+  "es": "abogado, letrado",
+  "example": "The attorney at law reviewed the contract carefully.",
+  "fp": "0e67516339"
+ },
+ "224": {
+  "en": "Bivouac",
+  "es": "vivac, campamento provisional",
+  "example": "The unit set up a bivouac for the night.",
+  "fp": "57772f24cb"
+ },
+ "225": {
+  "en": "Carve",
+  "es": "trinchar, tallar",
+  "example": "Carve the turkey for the officers' dinner service.",
+  "fp": "ab783c8ec1"
+ },
+ "226": {
+  "en": "Safe",
+  "es": "caja fuerte",
+  "example": "The documents are locked inside the officers' safe.",
+  "fp": "a4988d3a18"
+ },
+ "227": {
+  "en": "Take charge",
+  "es": "hacerse cargo, tomar el mando",
+  "example": "The new commander will take charge tomorrow morning.",
+  "fp": "dbb92a98f4"
+ },
+ "228": {
+  "en": "Wind up",
+  "es": "concluir, terminar, rematar",
+  "example": "Wind up the meeting with a final announcement.",
+  "fp": "4cac0eb367"
+ },
+ "229": {
+  "en": "Pallid",
+  "es": "pálido, desvaído",
+  "example": "The pallid recruit appeared nervous and exhausted.",
+  "fp": "9cfd6d65d8"
+ },
+ "230": {
+  "en": "Detain",
+  "es": "detener, retener",
+  "example": "Security will detain anyone without proper identification.",
+  "fp": "9071c2aa37"
+ },
+ "231": {
+  "en": "Loosen",
+  "es": "aflojar",
+  "example": "Loosen the bolt before attempting complete removal.",
+  "fp": "9322e39165"
+ },
+ "232": {
+  "en": "Come off",
+  "es": "soltarse, desprenderse",
+  "example": "The wheel came off during the transport mission.",
+  "fp": "f517fb98d0"
+ },
+ "233": {
+  "en": "Nut",
+  "es": "tuerca",
+  "example": "Replace the missing nut on the landing gear.",
+  "fp": "b7a39e6715"
+ },
+ "234": {
+  "en": "Boast",
+  "es": "alardear, presumir",
+  "example": "Never boast about personal military achievements.",
+  "fp": "04e96f7511"
+ },
+ "235": {
+  "en": "Exploits",
+  "es": "hazañas, proezas",
+  "example": "His exploits during combat earned him recognition.",
+  "fp": "7f9ff0dd39"
+ },
+ "236": {
+  "en": "Distort",
+  "es": "distorsionar, tergiversar",
+  "example": "Don't distort the facts in your official report.",
+  "fp": "133680924d"
+ },
+ "237": {
+  "en": "Utter (verbo)",
+  "es": "pronunciar, proferir",
+  "example": "He did not utter a single word during briefing.",
+  "fp": "3a75842a8d"
+ },
+ "238": {
+  "en": "Impart",
+  "es": "impartir, transmitir",
+  "example": "The instructor will impart vital knowledge to recruits.",
+  "fp": "74d8e3d115"
+ },
+ "239": {
+  "en": "Expressway",
+  "es": "autopista, vía rápida",
+  "example": "Take the expressway to reach the air base.",
+  "fp": "7828c2ae11"
+ },
+ "240": {
+  "en": "Make up one's mind",
+  "es": "decidirse, tomar una decisión",
+  "example": "Make up your mind about the assignment by tonight.",
+  "fp": "2fa9e895a3"
+ },
+ "241": {
+  "en": "Bellboy",
+  "es": "botones, mozo de hotel",
+  "example": "The bellboy carried our luggage to the hotel room.",
+  "fp": "3d0476a9f0"
+ },
+ "242": {
+  "en": "Pen",
+  "es": "corral, redil, cercado",
+  "example": "The sheep were kept in a secure pen overnight.",
+  "fp": "d0986f20c1"
+ },
+ "243": {
+  "en": "In the open",
+  "es": "a la intemperie, al raso",
+  "example": "Soldiers slept in the open during the field exercise.",
+  "fp": "29a888e611"
+ },
+ "244": {
+  "en": "Watchman",
+  "es": "vigilante, sereno, guarda",
+  "example": "The watchman patrolled the base perimeter throughout the night.",
+  "fp": "df9e998f43"
+ },
+ "245": {
+  "en": "Blinking / flashing",
+  "es": "intermitente",
+  "example": "The flashing red light warned of an approaching aircraft.",
+  "fp": "c4b6ff0fe7"
+ },
+ "246": {
+  "en": "Steady (luz)",
+  "es": "fija, continua, fijo",
+  "example": "Keep a steady hand while operating the electronic equipment.",
+  "fp": "1d8b55a057"
+ },
+ "247": {
+  "en": "Bend",
+  "es": "curva, recodo, doblar",
+  "example": "The road takes a sharp bend at the mountain pass.",
+  "fp": "67ac45698f"
+ },
+ "248": {
+  "en": "Small print",
+  "es": "letra pequeña, letra chica",
+  "example": "Read the small print before signing any contract agreement.",
+  "fp": "8e081f9265"
+ },
+ "249": {
+  "en": "Head first",
+  "es": "de cabeza, de frente",
+  "example": "He dove head first into the pool without hesitation.",
+  "fp": "6221b857f0"
+ },
+ "250": {
+  "en": "Rush through",
+  "es": "despachar, tramitar con urgencia",
+  "example": "We rushed through the paperwork to meet the deadline.",
+  "fp": "7546a8b766"
+ },
+ "251": {
+  "en": "Level",
+  "es": "nivelado, horizontal, a nivel",
+  "example": "Ensure the foundation is perfectly level before building.",
+  "fp": "77781772e4"
+ },
+ "252": {
+  "en": "Tilted",
+  "es": "inclinado, ladeado, sesgado",
+  "example": "The tilted picture frame was hanging crooked on the wall.",
+  "fp": "e8ad0db85f"
+ },
+ "253": {
+  "en": "Slanted",
+  "es": "sesgado, en pendiente, inclinado",
+  "example": "Rain fell on the slanted roof of the storage building.",
+  "fp": "126e162a48"
+ },
+ "254": {
+  "en": "Break away",
+  "es": "zafarse, desprenderse, separarse",
+  "example": "The prisoner tried to break away from his guards.",
+  "fp": "e379b446b4"
+ },
+ "255": {
+  "en": "Encircle",
+  "es": "rodear, cercar, envolver",
+  "example": "Enemy forces attempted to encircle our defensive position completely.",
+  "fp": "e0f9a31eae"
+ },
+ "256": {
+  "en": "Spoiled (child)",
+  "es": "malcriado, consentido, mimado",
+  "example": "That spoiled child refused to obey his parents' orders.",
+  "fp": "c22e15402a"
+ },
+ "257": {
+  "en": "Overindulged",
+  "es": "sobreprotegido, consentido en exceso",
+  "example": "The overindulged teenager had never done household chores before.",
+  "fp": "aeeb40b3db"
+ },
+ "258": {
+  "en": "Barricade",
+  "es": "barricada, barrera, valla",
+  "example": "Soldiers erected barricades to block traffic through the checkpoint.",
+  "fp": "17b17dd7d7"
+ },
+ "259": {
+  "en": "Puffy",
+  "es": "hinchado, abotargado, inflamado",
+  "example": "His puffy eyes indicated he had been crying all night.",
+  "fp": "ced0377eca"
+ },
+ "260": {
+  "en": "Swollen",
+  "es": "hinchado, inflamado, tumefacto",
+  "example": "The swollen ankle made it difficult to walk properly.",
+  "fp": "838c173324"
+ },
+ "261": {
+  "en": "Heel",
+  "es": "talón, tacón",
+  "example": "The soldier marched with heels down in formation.",
+  "fp": "ccba4061d9"
+ },
+ "262": {
+  "en": "Dull",
+  "es": "aburrido, romo, apagado",
+  "example": "The dull knife could not cut through the thick rope.",
+  "fp": "4b87ec1317"
+ },
+ "263": {
+  "en": "Count on",
+  "es": "contar con, confiar en",
+  "example": "You can count on your teammate during difficult missions.",
+  "fp": "e90fcc69d0"
+ },
+ "264": {
+  "en": "Leap over",
+  "es": "saltar, franquear de un salto",
+  "example": "The athlete leaped over the barrier in one smooth motion.",
+  "fp": "fbdd43448f"
+ },
+ "265": {
+  "en": "Tarnished",
+  "es": "empañado, deslustrado, ennegrecido",
+  "example": "The tarnished silver medal needed polishing to restore shine.",
+  "fp": "1373fb3296"
+ },
+ "266": {
+  "en": "Discolored",
+  "es": "descolorido, decolorado, manchado",
+  "example": "The discolored uniform had faded from years of use.",
+  "fp": "62918847fa"
+ },
+ "267": {
+  "en": "Pile (up)",
+  "es": "amontonar, apilar, montón",
+  "example": "Papers piled up on the desk during the inspection.",
+  "fp": "639f271481"
+ },
+ "268": {
+  "en": "Goof",
+  "es": "meter la pata, pifiarla",
+  "example": "He goofed during the training exercise but learned quickly.",
+  "fp": "e2f41e8c68"
+ },
+ "269": {
+  "en": "Gamble",
+  "es": "apostar, jugar por dinero, arriesgarse",
+  "example": "Never gamble with military funds or supplies under any circumstance.",
+  "fp": "16b47562ba"
+ },
+ "270": {
+  "en": "Keep up with",
+  "es": "seguir el ritmo, mantenerse a la altura",
+  "example": "You must keep up with the rest of your unit.",
+  "fp": "bb4a9930ac"
+ },
+ "271": {
+  "en": "Dispose of",
+  "es": "deshacerse, desechar, disponer",
+  "example": "Properly dispose of hazardous waste according to protocol guidelines.",
+  "fp": "2206b5d84f"
+ },
+ "272": {
+  "en": "Raze",
+  "es": "arrasar, demoler, derribar",
+  "example": "The military decided to raze the abandoned structures completely.",
+  "fp": "672f917e52"
+ },
+ "273": {
+  "en": "Demolition crew",
+  "es": "cuadrilla de demolición, equipo de demolición",
+  "example": "The demolition crew removed the old barracks in one week.",
+  "fp": "41c6efffda"
+ },
+ "274": {
+  "en": "Skip",
+  "es": "saltarse, omitir, pasar por alto",
+  "example": "Do not skip any required steps during the equipment inspection.",
+  "fp": "75f2cb9934"
+ },
+ "275": {
+  "en": "Cantankerous",
+  "es": "cascarrabias, malhumorado, pendenciero",
+  "example": "The cantankerous sergeant complained about every little mistake constantly.",
+  "fp": "0b04f8fb6d"
+ },
+ "276": {
+  "en": "Mean (adj.)",
+  "es": "malintencionado, mezquino, antipático",
+  "example": "He made a mean remark that offended the entire squad.",
+  "fp": "65115f8e47"
+ },
+ "277": {
+  "en": "Fumes",
+  "es": "gases tóxicos, humos, vapores",
+  "example": "Dangerous fumes escaped from the engine during the malfunction.",
+  "fp": "c7277c791b"
+ },
+ "278": {
+  "en": "Vent",
+  "es": "respiradero, rejilla, conducto",
+  "example": "The vent system must be clear for proper air circulation.",
+  "fp": "dee3f63672"
+ },
+ "279": {
+  "en": "Splice",
+  "es": "empalmar, unir, empalme",
+  "example": "You need to splice two electrical cables together securely.",
+  "fp": "4a92621a82"
+ },
+ "280": {
+  "en": "Take over",
+  "es": "asumir el mando, hacerse cargo, tomar control",
+  "example": "The new commander will take over operations next Monday.",
+  "fp": "ae95b9643e"
+ },
+ "281": {
+  "en": "Assume command",
+  "es": "asumir el mando",
+  "example": "The new general assumed command of the base.",
+  "fp": "4ec397385d"
+ },
+ "282": {
+  "en": "Swanky",
+  "es": "elegante, lujoso, de postín",
+  "example": "His dress uniform was quite swanky and impressive.",
+  "fp": "1f406e8c09"
+ },
+ "283": {
+  "en": "Have a screw loose",
+  "es": "faltarle un tornillo, estar loco",
+  "example": "If you believe that, you have a screw loose.",
+  "fp": "ddbd2d2e1c"
+ },
+ "284": {
+  "en": "Splinter",
+  "es": "astilla, grupo escindido",
+  "example": "A splinter stuck in his finger during training.",
+  "fp": "f188543c06"
+ },
+ "285": {
+  "en": "Extract",
+  "es": "extraer, sacar, remover",
+  "example": "The medic had to extract the bullet from him.",
+  "fp": "9c224255af"
+ },
+ "286": {
+  "en": "Surveillance",
+  "es": "vigilancia, seguimiento, monitoreo",
+  "example": "The area was under constant surveillance twenty-four hours.",
+  "fp": "118bd272b9"
+ },
+ "287": {
+  "en": "Antifreeze",
+  "es": "anticongelante",
+  "example": "Add antifreeze to the radiator before winter arrives.",
+  "fp": "5096844c63"
+ },
+ "288": {
+  "en": "In way over one's head",
+  "es": "estar sobrepasado, quedar por encima",
+  "example": "He realized he was in way over his head.",
+  "fp": "eeeb6d58e4"
+ },
+ "289": {
+  "en": "Be out of (gas)",
+  "es": "quedarse sin, agotarse",
+  "example": "The plane was out of fuel before landing.",
+  "fp": "78718e300a"
+ },
+ "290": {
+  "en": "Hold up",
+  "es": "retrasar, demorar, entorpecer",
+  "example": "Traffic held up the convoy for two hours.",
+  "fp": "e933686e0b"
+ },
+ "291": {
+  "en": "Unveil",
+  "es": "descubrir, develar, revelar",
+  "example": "The commander unveiled the new operational plan today.",
+  "fp": "29c8dfabdc"
+ },
+ "292": {
+  "en": "Appraise",
+  "es": "tasar, valorar, evaluar",
+  "example": "The expert appraised the antique military equipment carefully.",
+  "fp": "49508f8f29"
+ },
+ "293": {
+  "en": "Scared to death",
+  "es": "muerto de miedo, aterrado",
+  "example": "He was scared to death when he saw it.",
+  "fp": "529cf03411"
+ },
+ "294": {
+  "en": "Rule of thumb",
+  "es": "regla general, criterio práctico",
+  "example": "As a rule of thumb, check everything twice.",
+  "fp": "9603e44d2d"
+ },
+ "295": {
+  "en": "Outfit",
+  "es": "atuendo, uniforme, conjunto",
+  "example": "His new dress uniform outfit looked very impressive.",
+  "fp": "048f36b79c"
+ },
+ "296": {
+  "en": "Concentrate (troops)",
+  "es": "concentrar, agrupar, reunir",
+  "example": "The troops concentrated along the border before dawn.",
+  "fp": "5bd9c82582"
+ },
+ "297": {
+  "en": "Dismiss",
+  "es": "dar permiso para salir, despedir",
+  "example": "The officer dismissed the troops after morning formation.",
+  "fp": "e49568f826"
+ },
+ "298": {
+  "en": "Thrown out",
+  "es": "expulsado, echado, sacado",
+  "example": "He was thrown out of the academy completely.",
+  "fp": "e853613399"
+ },
+ "299": {
+  "en": "Hardships",
+  "es": "penurias, adversidades, dificultades",
+  "example": "The soldiers endured many hardships during deployment.",
+  "fp": "e8edfab6bb"
+ },
+ "300": {
+  "en": "Pester",
+  "es": "fastidiar, importunar, molestar",
+  "example": "The recruits kept pestering him with constant pranks.",
+  "fp": "b5ea818840"
+ },
+ "301": {
+  "en": "Dud",
+  "es": "cartucho fallido, cosa que no funciona",
+  "example": "The ammunition turned out to be a dud.",
+  "fp": "5c5955a6fb"
+ },
+ "302": {
+  "en": "Firecrackers",
+  "es": "petardos, cohetes, fuegos artificiales",
+  "example": "Firecrackers exploded during the base celebration yesterday.",
+  "fp": "c385806a6e"
+ },
+ "303": {
+  "en": "Terrestrial",
+  "es": "terrestre, de la tierra",
+  "example": "Terrestrial operations began after the aerial bombardment.",
+  "fp": "28ad688265"
+ },
+ "304": {
+  "en": "Overturn",
+  "es": "volcarse, invertirse, girar",
+  "example": "The vehicle overturned after hitting a tree.",
+  "fp": "a6db1e29c9"
+ },
+ "305": {
+  "en": "Upside down",
+  "es": "boca abajo, al revés, invertido",
+  "example": "The map was upside down on the table.",
+  "fp": "e1965fd50b"
+ },
+ "306": {
+  "en": "Unconscious",
+  "es": "inconsciente, sin conocimiento, desmayado",
+  "example": "The soldier was unconscious after the explosion.",
+  "fp": "8f86cbdcfd"
+ },
+ "307": {
+  "en": "Inconsolable",
+  "es": "inconsolable, desconsolado",
+  "example": "The mother was inconsolable when she heard it.",
+  "fp": "ece8170bd6"
+ },
+ "308": {
+  "en": "Right away",
+  "es": "de inmediato, ahora mismo, al instante",
+  "example": "The officer ordered evacuation of the area right away.",
+  "fp": "3df6807728"
+ },
+ "309": {
+  "en": "Fasten",
+  "es": "abrochar, sujetar, atar",
+  "example": "Fasten your seatbelt before the aircraft takes off.",
+  "fp": "16799004fc"
+ },
+ "310": {
+  "en": "Shoelaces",
+  "es": "cordones de zapato, agujetas",
+  "example": "His shoelaces came undone during the long march.",
+  "fp": "1eeb7d4f76"
+ },
+ "311": {
+  "en": "A good Joe / a good fellow",
+  "es": "buen tipo, buena gente",
+  "example": "He's a good Joe, always helping soldiers.",
+  "fp": "2ab0545b2d"
+ },
+ "312": {
+  "en": "Okay (verbo)",
+  "es": "aprobar, autorizar, dar permiso",
+  "example": "The commander okayed the leave request without objection.",
+  "fp": "83485ba598"
+ },
+ "313": {
+  "en": "Expenditure",
+  "es": "gasto, desembolso, egreso",
+  "example": "The total expenditure for the project was substantial.",
+  "fp": "6f040f64ec"
+ },
+ "314": {
+  "en": "Cover the costs",
+  "es": "cubrir los gastos, sufragar",
+  "example": "The base covered the costs of repairs.",
+  "fp": "0b654fdd2a"
+ },
+ "315": {
+  "en": "Irrigate",
+  "es": "irrigar, regar, humedecer",
+  "example": "You must irrigate the fields once weekly.",
+  "fp": "b460d25273"
+ },
+ "316": {
+  "en": "Toot",
+  "es": "pitar, tocar la bocina, sonar",
+  "example": "The driver tooted his horn at the gate.",
+  "fp": "4f301a5be9"
+ },
+ "317": {
+  "en": "Whisper",
+  "es": "susurrar, hablar en voz baja",
+  "example": "The soldiers whispered during the tactical exercise.",
+  "fp": "2e3285cbb7"
+ },
+ "318": {
+  "en": "Counterattack",
+  "es": "contraatacar, ataque de respuesta",
+  "example": "The enemy was defeated in their counterattack.",
+  "fp": "af7731d09a"
+ },
+ "319": {
+  "en": "Surrender",
+  "es": "rendirse, capitular, entregarse",
+  "example": "The soldier chose to surrender rather than die.",
+  "fp": "1d865463b2"
+ },
+ "320": {
+  "en": "Give up",
+  "es": "rendirse, darse por vencido, abandonar",
+  "example": "Never give up on the mission, always push forward.",
+  "fp": "5178841913"
+ },
+ "321": {
+  "en": "Sore (throat)",
+  "es": "dolorido, irritado",
+  "example": "Her throat was sore after the long training session.",
+  "fp": "4b848cd9fd"
+ },
+ "322": {
+  "en": "Gloves",
+  "es": "guantes",
+  "example": "Soldiers wear leather gloves during field operations.",
+  "fp": "c14a073737"
+ },
+ "323": {
+  "en": "Lack (to)",
+  "es": "carecer de, faltar",
+  "example": "The unit lacks adequate supplies for the mission.",
+  "fp": "d9a05b9df2"
+ },
+ "324": {
+  "en": "Take along",
+  "es": "llevar consigo, llevarse",
+  "example": "Don't forget to take along your identification card.",
+  "fp": "f33b2be4bc"
+ },
+ "325": {
+  "en": "Brag",
+  "es": "fanfarronear, presumir",
+  "example": "He bragged about his combat achievements to everyone.",
+  "fp": "f68e038ad2"
+ },
+ "326": {
+  "en": "Discouraged",
+  "es": "desanimado, desalentado",
+  "example": "The troops felt discouraged after the failed mission.",
+  "fp": "cf6bd3fcce"
+ },
+ "327": {
+  "en": "The cleaner's",
+  "es": "tintorería, lavandería",
+  "example": "I need to take my uniform to the cleaner's.",
+  "fp": "dc2134cb13"
+ },
+ "328": {
+  "en": "Greasy",
+  "es": "grasiento, aceitoso",
+  "example": "The mechanic's hands were greasy after working all day.",
+  "fp": "ab2f53da6c"
+ },
+ "329": {
+  "en": "Parade",
+  "es": "desfile, formación, desfilar",
+  "example": "The battalion will parade across the airfield tomorrow.",
+  "fp": "ba26c39a25"
+ },
+ "330": {
+  "en": "Surplus (verbo)",
+  "es": "dar de baja, declarar sobrante",
+  "example": "The command decided to surplus the old equipment.",
+  "fp": "74ed7650c2"
+ },
+ "331": {
+  "en": "Hold back",
+  "es": "retener, contener, frenar",
+  "example": "The sergeant ordered soldiers to hold back their fire.",
+  "fp": "93f73882e7"
+ },
+ "332": {
+  "en": "Stack",
+  "es": "pila, montón, apilar",
+  "example": "Stack the ammunition boxes carefully in the storage room.",
+  "fp": "ae3d884623"
+ },
+ "333": {
+  "en": "Waterproof",
+  "es": "impermeable, a prueba de agua",
+  "example": "Military personnel require waterproof gear for deployments.",
+  "fp": "ce311f79ba"
+ },
+ "334": {
+  "en": "Basement",
+  "es": "sótano",
+  "example": "The laundry facility is located in the basement.",
+  "fp": "5e3b064d74"
+ },
+ "335": {
+  "en": "Pull up",
+  "es": "llegar, acercarse",
+  "example": "A truck pulled up at the gate carrying supplies.",
+  "fp": "f212d0f590"
+ },
+ "336": {
+  "en": "Pull out",
+  "es": "retirarse, sacar, extraer",
+  "example": "The infantry will pull out from their positions tomorrow.",
+  "fp": "7ca2c2018d"
+ },
+ "337": {
+  "en": "Pull off",
+  "es": "lograr, quitarse",
+  "example": "He pulled off an impressive victory in the competition.",
+  "fp": "0b8f9b7b0f"
+ },
+ "338": {
+  "en": "Pull through",
+  "es": "salir adelante, recuperarse",
+  "example": "With proper support, soldiers can pull through difficult times.",
+  "fp": "f5a9654dc3"
+ },
+ "339": {
+  "en": "Pull away",
+  "es": "alejarse, apartarse, arrancar",
+  "example": "The convoy pulled away from the checkpoint at dawn.",
+  "fp": "a3c98fd08f"
+ },
+ "340": {
+  "en": "Pull over",
+  "es": "detenerse al costado, orillar",
+  "example": "The traffic officer pulled over the military vehicle.",
+  "fp": "347d855dd6"
+ },
+ "341": {
+  "en": "Pull back",
+  "es": "retroceder, retirarse, replegarse",
+  "example": "Troops will pull back to the secondary defensive line.",
+  "fp": "e9dafa9e63"
+ },
+ "342": {
+  "en": "Fellowship",
+  "es": "compañerismo, camaradería, beca",
+  "example": "The fellowship among soldiers strengthens their unit cohesion.",
+  "fp": "eb48e4dcd5"
+ },
+ "343": {
+  "en": "Dirty",
+  "es": "sucio, deshonesto, ensuciar",
+  "example": "Soldiers must keep their weapons clean, not dirty.",
+  "fp": "ad0e5d4e00"
+ },
+ "344": {
+  "en": "Ajar",
+  "es": "entreabierto, entornado",
+  "example": "Leave the barracks door ajar during hot weather.",
+  "fp": "998f53c4b1"
+ },
+ "345": {
+  "en": "Warm",
+  "es": "tibio, templado, cálido",
+  "example": "Drink warm water to stay hydrated during exercises.",
+  "fp": "13ac933540"
+ }
+}

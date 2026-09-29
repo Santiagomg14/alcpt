@@ -5562,7 +5562,336 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 </article>
 <h2 class='part' id='lecturas'>Parte V · Lecturas</h2>
 <p class='lead'>Artículos de divulgación condensados al nivel B2: se leen en inglés, con glosario en español y una pregunta de comprobación al final.</p>
-<h3 class='sect' id='tema-humanities'>Humanities<span class='count'>6 lecturas</span></h3>
+<h3 class='sect' id='tema-aero'>Aero<span class='count'>3 lecturas</span></h3>
+<article class='q'>
+<p class='stem'><span class='text'>Spacecraft attitude determination and control</span><button class="say" type="button" aria-pressed="false" data-say="Spacecraft attitude determination and control" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>Spacecraft attitude control is the process of managing the orientation of a satellite or vehicle relative to a reference, such as the stars or the Earth. It matters because antennas must point accurately at Earth, instruments must aim at their targets, solar panels must face the Sun, and short engine burns must be fired in the right direction. Before attitude can be controlled, it must be determined with sensors. The whole system is usually called the attitude determination and control system (ADCS).</p>
+<p class='expl'>Attitude can be described with rotation matrices, quaternions or Euler angles. Euler angles are easy to visualize but suffer from gimbal lock. A rotation matrix needs nine values, while a quaternion needs only four and avoids gimbal lock, so it is a good compromise.</p>
+<p class='expl'>There are two main ways to stabilize a spacecraft. In spin stabilization, the whole craft rotates and its gyroscopic action keeps it steady; Pioneer 10 and 11 used this. In three-axis stabilization, the craft is held fixed in one orientation. This can be done with small thrusters that nudge it back and forth within a deadband of allowed error, as on the Voyager probes, or with reaction wheels. To turn the vehicle on one axis, the wheel on that axis is accelerated in the opposite direction. External torques slowly build up excess momentum, so the wheels must be desaturated with thrusters or, on the Hubble Space Telescope, magnetic torquers. Other actuators include control moment gyros, solar sails and gravity-gradient stabilization, which needs no fuel.</p>
+<p class='expl'>Control algorithms are software that turn sensor data into actuator commands. Most use error signals, the difference between measured and desired attitude, and a simple PID controller satisfies most needs. After release from the launch vehicle, a satellite in low Earth orbit is usually tumbling, so a B-Dot controller detumbles it using magnetic coils that react to changes in Earth&#x27;s magnetic field. Afterwards the system switches between modes such as safe mode, Sun pointing and nadir pointing.</p>
+<p class='expl'>Determination uses relative sensors, such as gyroscopes, and absolute sensors, such as horizon sensors, Sun sensors, star trackers and magnetometers. Because no single measurement gives the attitude directly, it must be estimated. The most common method is the Multiplicative Extended Kalman Filter, which combines previous estimates with new measurements to obtain an optimal result.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>Attitude control needs sensors to determine orientation, actuators to change it, and algorithms to link them.</li>
+<li>The two main methods are spin stabilization and three-axis stabilization.</li>
+<li>Reaction wheels give steady pointing, but they need periodic momentum desaturation.</li>
+<li>A PID controller handles most control needs, and a B-Dot controller detumbles a satellite after launch.</li>
+<li>Kalman filters combine sensor data to estimate attitude.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>attitude</b> — actitud, orientación de una nave en el espacio; en este contexto técnico no significa &#x27;actitud&#x27; de comportamiento</li>
+<li><b>actuator</b> — actuador; dispositivo que produce el movimiento o la fuerza que se le ordena</li>
+<li><b>torque</b> — par de fuerza, momento de giro; la fuerza que hace rotar un objeto</li>
+<li><b>gimbal lock</b> — bloqueo de cardán; pérdida de un grado de libertad de rotación con los ángulos de Euler</li>
+<li><b>deadband</b> — banda muerta; margen de error permitido en el que el sistema no corrige</li>
+<li><b>reaction wheel</b> — rueda de reacción; rotor eléctrico que gira para hacer rotar la nave en sentido contrario</li>
+<li><b>desaturation</b> — desaturación; eliminación del exceso de momento acumulado en las ruedas</li>
+<li><b>detumble</b> — detener el giro descontrolado; frenar la rotación caótica de un satélite tras su liberación</li>
+<li><b>nadir</b> — nadir; punto directamente debajo del satélite, hacia el centro de la Tierra</li>
+<li><b>nudge</b> — empujar suavemente; dar un pequeño impulso</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the text?</span></p>
+<ul class='opts'>
+<li class='ok'>How a spacecraft&#x27;s orientation is determined and controlled using sensors, actuators and algorithms<span class='tag'>CORRECT</span></li>
+<li>How to build a satellite that can travel to distant planets</li>
+<li>Why solar panels are the best source of power for space probes</li>
+<li>How astronauts steer crewed vehicles during a landing</li>
+</ul>
+<p class='stem'><span class='text'>2. Which spacecraft used magnetic torquers for desaturation instead of thrusters?</span></p>
+<ul class='opts'>
+<li>Pioneer 10</li>
+<li class='ok'>The Hubble Space Telescope<span class='tag'>CORRECT</span></li>
+<li>Voyager 1</li>
+<li>Cassini</li>
+</ul>
+<p class='stem'><span class='text'>3. In the text, the word &quot;nudge&quot; in &quot;small thrusters that nudge it back and forth&quot; is closest in meaning to:</span></p>
+<ul class='opts'>
+<li class='ok'>push gently<span class='tag'>CORRECT</span></li>
+<li>pull sharply</li>
+<li>turn completely</li>
+<li>hold steady</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about a satellite that has just been released from its launch vehicle?</span></p>
+<ul class='opts'>
+<li class='ok'>It is probably rotating in an uncontrolled way and must be stabilized first<span class='tag'>CORRECT</span></li>
+<li>It already points its antenna accurately at Earth</li>
+<li>It has no need for sensors or software</li>
+<li>It will remain safe in nadir pointing mode without any command</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>Reaction wheel</span><button class="say" type="button" aria-pressed="false" data-say="Reaction wheel" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>A reaction wheel (RW) is an electric motor attached to a flywheel. When the wheel&#x27;s rotation speed changes, the spacecraft turns in the opposite direction, because angular momentum is conserved. The wheel can only spin around its center of mass, so it cannot move a spacecraft from one place to another.</p>
+<p class='expl'>Spacecraft use reaction wheels mainly for fine attitude control on three axes, and also for fast detumbling. They need no rockets or external sources of torque, which reduces the fuel a mission must carry. They give high pointing accuracy, so they are ideal for tiny rotations, such as keeping a telescope aimed at a star. Because the wheel is a small fraction of the spacecraft&#x27;s mass, a small, easily controlled change in its speed produces only a small change in angle. Some satellites, such as SCISAT-1, run a wheel at near-constant speed to store a large amount of angular momentum. This &quot;momentum-bias&quot; approach stabilizes an axis in a nearly fixed direction and allows a simpler control system.</p>
+<p class='expl'>For three-axis control, wheels must be mounted along at least three directions. Extra wheels add redundancy, for example four wheels along tetrahedral axes or one spare. A computer controls speed changes electronically. The strength of the wheel&#x27;s materials sets the speed at which it would come apart, and therefore how much momentum it can store.</p>
+<p class='expl'>Over time, a wheel may accumulate more momentum than its maximum speed allows, which is called saturation. Slowing the wheel down creates an unwanted torque, so designers add other systems to cancel it. Traditionally, small chemical rockets fire during desaturation. More fuel-efficient options exist, such as magnetorquers, which transfer momentum to the Earth through its magnetic field using only electrical power, although they work only where that field is strong enough, as in low Earth orbit. Elsewhere, ion thrusters are the next best choice.</p>
+<p class='expl'>Failures can be serious. If wheels fail, a spacecraft may lose its attitude control and the mission may fail. Kepler lost two of its four wheels between 2012 and 2013 and could no longer point precisely enough for its original planet search, so it moved to a new mission called K2. Hayabusa and Dawn also suffered wheel problems and relied on thrusters. Hubble was designed with four redundant wheels and kept its pointing ability as long as three worked. A related device, the control moment gyroscope, produces larger torques and is used on Skylab, Mir and the International Space Station.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>A reaction wheel changes a spacecraft&#x27;s orientation by speeding up or slowing down a spinning flywheel, using conservation of angular momentum.</li>
+<li>Reaction wheels give very precise pointing and save fuel, but they cannot move a spacecraft from one place to another.</li>
+<li>Saturation happens when a wheel has stored too much momentum; magnetorquers, thrusters or ion thrusters are used to desaturate it.</li>
+<li>Redundant wheels help a mission survive failures, as in Hubble, but losing several wheels can end a mission, as with Kepler.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>detumbling</b> — detención de la rotación descontrolada; frenar el giro de un satélite tras su lanzamiento o un imprevisto</li>
+<li><b>attitude control</b> — control de actitud; control de la orientación de una nave en el espacio</li>
+<li><b>torque</b> — par de fuerza; fuerza que produce un giro</li>
+<li><b>precession</b> — precesión; movimiento del eje de un cuerpo giratorio cuando una fuerza actúa sobre él</li>
+<li><b>redundancy</b> — redundancia; componentes de respaldo que permiten seguir funcionando si uno falla</li>
+<li><b>saturation</b> — saturación; punto en que la rueda ya no puede almacenar más momento angular</li>
+<li><b>magnetorquer</b> — magnetopar; dispositivo que usa el campo magnético terrestre para generar par, sin combustible</li>
+<li><b>thruster</b> — propulsor; pequeño motor cohete para corregir la posición u orientación</li>
+<li><b>come apart</b> — desintegrarse; romperse en pedazos por la fuerza</li>
+<li><b>gimbal</b> — cardán; soporte con ejes que permite girar un objeto en una o dos direcciones</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the passage?</span></p>
+<ul class='opts'>
+<li class='ok'>Reaction wheels control a spacecraft&#x27;s orientation by changing the speed of a spinning wheel.<span class='tag'>CORRECT</span></li>
+<li>Reaction wheels move spacecraft from one place to another without using fuel.</li>
+<li>Reaction wheels are mainly used to launch satellites into low Earth orbit.</li>
+<li>Reaction wheels are a type of rocket engine that uses electrical power.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what happened to the Kepler space telescope between 2012 and 2013?</span></p>
+<ul class='opts'>
+<li class='ok'>Two of its four reaction wheels failed, so it could not point precisely enough for its original mission.<span class='tag'>CORRECT</span></li>
+<li>All four of its reaction wheels were replaced by astronauts during a servicing mission.</li>
+<li>Its fuel supply was exhausted, which ended the mission immediately.</li>
+<li>One of its wheels was switched off as a precaution and later restarted.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;saturation&quot; refers to the point at which a wheel...</span></p>
+<ul class='opts'>
+<li class='ok'>has stored more momentum than its maximum speed allows.<span class='tag'>CORRECT</span></li>
+<li>has been slowed down completely by friction.</li>
+<li>is mounted along a third axis for redundancy.</li>
+<li>begins to generate too much heat in its motor.</li>
+</ul>
+<p class='stem'><span class='text'>4. Which conclusion can be drawn from the passage about Hubble&#x27;s design?</span></p>
+<ul class='opts'>
+<li class='ok'>Its extra wheels allowed it to keep pointing accurately even when one wheel was not working.<span class='tag'>CORRECT</span></li>
+<li>It relied only on chemical thrusters to control its orientation.</li>
+<li>It could not be repaired by astronauts because its wheels were too small.</li>
+<li>It used a single large wheel instead of several smaller ones.</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>Star tracker</span><button class="say" type="button" aria-pressed="false" data-say="Star tracker" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>A star tracker is an optical device that measures the positions of stars using photocells or a camera. Astronomers have measured the positions of many stars with great accuracy, so a satellite or spacecraft can use a star tracker to determine its orientation, also called its attitude. To do this, the device must capture an image of the stars, measure their apparent position in the spacecraft&#x27;s reference frame, and identify them so that their position can be compared with the known absolute position in a star catalog. A processor may identify the stars by matching the observed pattern with the known pattern of stars in the sky.</p>
+<p class='expl'>In the 1950s and early 1960s, star trackers were an important part of early long-range ballistic and cruise missiles, because inertial navigation systems (INS) were not accurate enough for intercontinental ranges. Before launch, engineers calculated the angle of a chosen bright star for each moment of the flight. This signal was pre-recorded on magnetic tape, which was used to roughly point a telescope at the expected position of the star. At the telescope&#x27;s focus, a photocell and a spinning disk called a chopper made the star&#x27;s image appear and disappear repeatedly, producing a signal. Comparing its phase with the chopper&#x27;s phase gave the angle to the star, and the difference from the expected angle produced an error signal that brought the missile back onto its trajectory.</p>
+<p class='expl'>Star trackers were often combined with an INS, which measures accelerations and integrates them over time to obtain velocity and position. Even tiny errors add up to an appreciable error known as drift. For example, the N-1 system of the SM-64 Navaho missile drifted about 1 nautical mile per hour, so after two hours it was 2 nautical miles off, well outside the desired accuracy of half a mile. In these stellar inertial systems, the INS points the tracker, and the tracker&#x27;s measurement corrects the accumulated drift. They were especially common from the 1950s through the 1980s.</p>
+<p class='expl'>Today many models are available, including open projects for the CubeSat community. Star trackers need high sensitivity, so they can be confused by sunlight reflected from the spacecraft or by exhaust plumes from its thrusters. They are also prone to optical errors, such as spherical and chromatic aberration, and the identification algorithm can be misled by planets, comets, supernovae, nearby satellites or city light pollution.</p>
+<p class='expl'>About 57 bright navigational stars are in common use, but complex missions rely on whole star field databases. A high-fidelity catalog starts from a standard base, such as the one from the United States Naval Observatory, and is filtered to remove unreliable stars. It may be stored on board or processed at a ground station and uploaded. Star trackers can also help detect space debris and identify satellites.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>A star tracker finds a spacecraft&#x27;s attitude by imaging stars and matching them against a star catalog.</li>
+<li>Early missiles used star trackers with a chopper and a photocell to correct their trajectory.</li>
+<li>An INS accumulates drift, and a star tracker can correct it.</li>
+<li>Sunlight reflections and thruster exhaust can confuse modern star trackers.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>attitude</b> — actitud, orientación de una nave en el espacio; término técnico aeroespacial, no significa &#x27;actitud&#x27; personal</li>
+<li><b>reference frame</b> — sistema de referencia; conjunto de ejes respecto al cual se miden posiciones</li>
+<li><b>inertial navigation system (INS)</b> — sistema de navegación inercial; calcula la posición midiendo aceleraciones sin referencias externas</li>
+<li><b>chopper</b> — interruptor óptico, disco giratorio que corta la luz de forma periódica; en otro contexto, helicóptero (coloquial)</li>
+<li><b>drift</b> — deriva; error acumulado que aumenta con el tiempo</li>
+<li><b>integrate</b> — integrar (matemáticas); sumar una magnitud a lo largo del tiempo</li>
+<li><b>trajectory</b> — trayectoria; camino que sigue un objeto en vuelo</li>
+<li><b>exhaust plume</b> — penacho de gases de escape; columna de gases que expulsa un propulsor</li>
+<li><b>aberration</b> — aberración; defecto óptico que deforma la imagen</li>
+<li><b>star catalog</b> — catálogo estelar; lista de estrellas con posiciones conocidas</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the text?</span></p>
+<ul class='opts'>
+<li class='ok'>A star tracker measures star positions to determine a spacecraft&#x27;s orientation and to correct navigation errors.<span class='tag'>CORRECT</span></li>
+<li>A star tracker is a telescope used by astronomers to discover new stars.</li>
+<li>A star tracker is a weapon that guides missiles to enemy cities.</li>
+<li>A star tracker replaces the need for any kind of catalog or computer.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the text, how far off was the N-1 system after a two-hour flight?</span></p>
+<ul class='opts'>
+<li class='ok'>About 2 nautical miles<span class='tag'>CORRECT</span></li>
+<li>About half a mile</li>
+<li>About 1 nautical mile</li>
+<li>About 57 nautical miles</li>
+</ul>
+<p class='stem'><span class='text'>3. In the text, the word &quot;drift&quot; refers to</span></p>
+<ul class='opts'>
+<li class='ok'>an error that grows as small measurement mistakes accumulate<span class='tag'>CORRECT</span></li>
+<li>a sudden change in the brightness of a star</li>
+<li>the rotation of the Earth during the day</li>
+<li>a signal recorded on a magnetic tape</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about combining a star tracker with an INS?</span></p>
+<ul class='opts'>
+<li class='ok'>It improves accuracy because the tracker limits the drift of the INS.<span class='tag'>CORRECT</span></li>
+<li>It makes the INS unnecessary because the tracker is always perfect.</li>
+<li>It only works on missiles that fly northward.</li>
+<li>It increases the drift because two systems produce more errors.</li>
+</ul>
+</article>
+<h3 class='sect' id='tema-culture'>Culture<span class='count'>3 lecturas</span></h3>
+<article class='q'>
+<p class='stem'><span class='text'>Jazz</span><button class="say" type="button" aria-pressed="false" data-say="Jazz" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>Jazz is a music genre that originated in the African-American communities of New Orleans in the late 19th and early 20th centuries. It grew out of blues, ragtime, European harmony, African rhythmic rituals, spirituals, hymns, marches and dance music. Its main features are swing and blue notes, complex chords, call-and-response vocals, polyrhythms and, above all, improvisation.</p>
+<p class='expl'>Jazz is hard to define because it covers more than a hundred years of music, from ragtime to rock-influenced fusion. The word itself probably comes from a slang term, &quot;jasm&quot;, meaning energy or pep. Its earliest written record dates from 1912, when a baseball pitcher described a &quot;jazz ball&quot; that wobbles unpredictably. Critics have offered broad definitions, and Duke Ellington summed it up by saying, &quot;It&#x27;s all music.&quot;</p>
+<p class='expl'>Unlike classical music, where the performer aims to play the composition as written, jazz values interaction and collaboration. A performer never plays the same tune twice, changing melodies, harmonies and time signatures according to mood and the reaction of the band or audience. In many styles a soloist is supported by a rhythm section of piano or guitar, double bass and drums. In free jazz, even chords, scales and meters may be abandoned.</p>
+<p class='expl'>Its African roots survived partly through call-and-response patterns and body rhythms such as stomping and clapping, because the Black Codes outlawed drumming by enslaved people. The Afro-Cuban tresillo rhythm, which reached New Orleans through the habanera, became a fundamental figure; Jelly Roll Morton called it the &quot;Spanish tinge&quot;. Ragtime, led by Scott Joplin, and the blues, which W. C. Handy published as sheet music, also shaped early jazz.</p>
+<p class='expl'>Jazz then evolved through many styles: swing big bands in the 1930s, bebop in the 1940s, cool jazz, hard bop, modal and free jazz, and finally fusion and smooth jazz. Throughout its history, race, gender and religion influenced who played it. Women worked as bandleaders and instrumentalists, and Jewish Americans and mixed bands such as Benny Goodman&#x27;s helped bring jazz into popular culture.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>Jazz began in New Orleans from a mix of African and European musical traditions.</li>
+<li>Improvisation and swing are among its defining elements.</li>
+<li>Unlike classical music, jazz gives great importance to the performer&#x27;s individual interpretation.</li>
+<li>Ragtime, blues and the Afro-Cuban tresillo rhythm were key ingredients of early jazz.</li>
+<li>Jazz kept changing, producing styles such as bebop, cool jazz, free jazz and fusion.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>improvisation</b> — improvisación; crear la música en el momento, sin partitura fija</li>
+<li><b>call-and-response</b> — llamada y respuesta; patrón en que una voz o instrumento &#x27;pregunta&#x27; y otro &#x27;contesta&#x27;</li>
+<li><b>syncopation</b> — síncopa; acento rítmico en tiempos débiles</li>
+<li><b>wobble</b> — tambalearse; moverse de forma inestable de un lado a otro</li>
+<li><b>encompass</b> — abarcar; incluir una gama amplia de cosas</li>
+<li><b>outlaw</b> — prohibir legalmente; declarar ilegal</li>
+<li><b>tinge</b> — matiz; ligero toque o influencia de algo</li>
+<li><b>sheet music</b> — partitura impresa</li>
+<li><b>rhythm section</b> — sección rítmica; piano/guitarra, bajo y batería que sostienen al solista</li>
+<li><b>fusion</b> — fusión; mezcla de estilos, aquí jazz con rock</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the text?</span></p>
+<ul class='opts'>
+<li class='ok'>Jazz is a genre that grew from African and European traditions and keeps evolving through improvisation<span class='tag'>CORRECT</span></li>
+<li>Jazz is a style that was invented by Duke Ellington in the 1920s</li>
+<li>Jazz is a form of classical music played from a strict written score</li>
+<li>Jazz is a kind of dance music that disappeared after the swing era</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the text, why were African drumming traditions not preserved in North America?</span></p>
+<ul class='opts'>
+<li class='ok'>The Black Codes outlawed drumming by enslaved people<span class='tag'>CORRECT</span></li>
+<li>Drums were too expensive for most musicians</li>
+<li>European instruments replaced them in every church</li>
+<li>Festivals in Congo Square were never organized</li>
+</ul>
+<p class='stem'><span class='text'>3. In the summary, the word &quot;wobbles&quot; in the description of the &quot;jazz ball&quot; means that the ball</span></p>
+<ul class='opts'>
+<li class='ok'>moves unsteadily and unpredictably<span class='tag'>CORRECT</span></li>
+<li>travels very fast in a straight line</li>
+<li>stops suddenly before reaching the batter</li>
+<li>makes a loud musical sound</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about the difference between classical music and jazz?</span></p>
+<ul class='opts'>
+<li class='ok'>Jazz gives performers more freedom to change the music than classical music does<span class='tag'>CORRECT</span></li>
+<li>Classical music allows more improvisation than jazz</li>
+<li>Jazz performers must always follow the composer&#x27;s score exactly</li>
+<li>Classical musicians rarely work with other musicians</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>Ancient Olympic Games</span><button class="say" type="button" aria-pressed="false" data-say="Ancient Olympic Games" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>The ancient Olympic Games were a series of athletic competitions among representatives of Greek city-states, held at the sanctuary of Olympia in honor of Zeus. Traditionally dated to 776 BC, they took place every four years, a period called an Olympiad, which became a unit of time in ancient chronologies. The last recorded celebration was in AD 393 under Theodosius I, although archaeological evidence suggests that some games were held afterward.</p>
+<p class='expl'>The Greeks gave the games a mythological origin. One story says Heracles and his brothers raced at Olympia to entertain the newborn Zeus. Another tells how Pelops won a chariot race against King Oenomaus by persuading the king&#x27;s charioteer to replace the bronze axle pins with wax ones. Historians agree that the games probably date from the eighth century BC, but the exact date of 776 BC cannot be verified. For its first 200 years the event had only regional importance, and Peloponnesian athletes dominated it.</p>
+<p class='expl'>The games were both a religious festival and a political stage. During an Olympic truce, or ekecheiria, athletes and pilgrims could travel safely, although the truce did not stop all wars. City-states used the games to assert dominance, announce alliances and promote themselves, and successful athletes were linked to the spread of Greek colonies. Poets, sculptors and other artists came to show their work to would-be patrons. The statue of Zeus by Pheidias, made of gold and ivory, was counted among the seven wonders of the ancient world.</p>
+<p class='expl'>Only freeborn Greek men could compete, although women could take part as owners of chariot horses. The program grew from a single foot race, the stadion of about 190 metres, to as many as twenty events, including running, wrestling, boxing, the pankration and the hoplite race in full armour. Athletes competed naked for most of the games&#x27; history, a custom the Greeks felt set them apart from non-Greeks. Winners were rewarded with olive wreaths and honored in victory songs.</p>
+<p class='expl'>Under Roman rule the games declined at first, and Sulla robbed Olympia to finance a war. They revived under Augustus and again in the second century, but Nero damaged their reputation by ordering that his own victories be recognized, even after he fell from his chariot. From the third century the games lost popularity, and flooding, earthquakes and invasions damaged the site before they finally came to an end.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>The games were held every four years at Olympia in honor of Zeus, traditionally starting in 776 BC.</li>
+<li>They mixed sport, religion, art and politics, and the Olympic truce protected travelers.</li>
+<li>Only freeborn Greek men competed, and the program grew from one race to about twenty events.</li>
+<li>The games declined under Roman rule, revived under Augustus, and ended around the late fourth or early fifth century AD.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>sanctuary</b> — santuario; recinto sagrado dedicado a una deidad</li>
+<li><b>truce</b> — tregua; cese temporal de hostilidades</li>
+<li><b>pilgrim</b> — peregrino; persona que viaja a un lugar sagrado</li>
+<li><b>wreath</b> — corona de hojas o flores; se daba al vencedor</li>
+<li><b>would-be patrons</b> — posibles mecenas; personas que podrían financiar a un artista</li>
+<li><b>freeborn</b> — nacido libre; que no es esclavo</li>
+<li><b>chariot</b> — carro de caballos; usado en carreras y guerras antiguas</li>
+<li><b>pankration</b> — pancracio; combate que mezclaba boxeo y lucha</li>
+<li><b>armour</b> — armadura; equipo protector de un soldado (ortografía británica)</li>
+<li><b>revived</b> — revivió, resurgió; volvió a tener fuerza o popularidad</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the passage?</span></p>
+<ul class='opts'>
+<li class='ok'>The ancient Olympics were a religious, political and athletic festival held at Olympia for over a thousand years.<span class='tag'>CORRECT</span></li>
+<li>The ancient Olympics were created by the Romans to celebrate military victories.</li>
+<li>The ancient Olympics were mainly an art competition for poets and sculptors.</li>
+<li>The ancient Olympics were open to every person in the Mediterranean world.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what was the only event at the beginning of the games?</span></p>
+<ul class='opts'>
+<li>A wrestling match</li>
+<li class='ok'>A foot race of about 190 metres<span class='tag'>CORRECT</span></li>
+<li>A chariot race</li>
+<li>A race in full armour</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;truce&quot; means</span></p>
+<ul class='opts'>
+<li class='ok'>a temporary agreement to stop fighting<span class='tag'>CORRECT</span></li>
+<li>a prize given to the winner</li>
+<li>a religious sacrifice to Zeus</li>
+<li>a type of athletic training</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about the Olympic truce?</span></p>
+<ul class='opts'>
+<li>It ended all wars in Greece for the whole year.</li>
+<li class='ok'>It was designed mainly to protect people traveling to the games.<span class='tag'>CORRECT</span></li>
+<li>It was invented by the Romans.</li>
+<li>It applied only to athletes from Olympia.</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>History of coffee</span><button class="say" type="button" aria-pressed="false" data-say="History of coffee" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>Coffee has a history of many centuries. Wild coffee plants originated in Ethiopia, but the beverage itself has its roots in Yemen, where it was harvested, roasted and brewed. In the 15th century, Sufi Muslims used it to stay alert during their nighttime prayers. There is no confirmed evidence of coffee being drunk as a beverage before that century, so the drink appears to be a relatively recent development.</p>
+<p class='expl'>From Yemen, coffee spread to Mecca and the Arabian Peninsula, and by the early 16th century it had reached Cairo, Damascus and Istanbul. Its permissibility was debated: in 1511 conservative imams banned it at a theological court in Mecca, but the Ottoman Sultan Suleiman I overturned the ban in 1524. Despite these disputes, coffeehouses soon became central to urban social life, acting as places for conversation, poetry and political discussion.</p>
+<p class='expl'>Coffee entered Europe in the mid-16th century through Mediterranean trade, especially via Venice. The first mainland European coffeehouse opened in Venice in 1645, and by the late 17th century coffeehouses existed in Holland, England and Germany. In England, they became gathering places for serious religious and political talk, which was so common, and potentially subversive, that Charles II tried to crush them in the 1670s. According to a legend, Pope Clement VIII blessed the drink after trying it, although the story may not be true.</p>
+<p class='expl'>Until the end of the 17th century, the Yemeni port of Mocha was the world&#x27;s only gateway for coffee. As demand grew, cultivation spread. In 1720, Gabriel de Clieu brought seedlings to Martinique, and from there coffee reached other Caribbean islands and Mexico. By 1788, Saint-Domingue supplied half of the world&#x27;s coffee. Brazil became the largest producer in 1852 and has held that position ever since. More recently, Colombia, Ivory Coast, Ethiopia and Vietnam have emerged as major producers.</p>
+<p class='expl'>The origins of coffee are also surrounded by legends. The best known tells of a goatherder named Kaldi who noticed his goats becoming energetic after eating red berries. However, this story does not appear before 1671, so it is probably apocryphal. Modern genetic research, published in 2020, confirmed that most Arabica plants in the world descend from varieties cultivated in Yemen.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>Coffee as a drink comes from Yemen, where Sufis used it to stay awake during night prayers.</li>
+<li>Bans on coffee in the Muslim world were eventually overturned, and coffeehouses became social centers.</li>
+<li>Coffee reached Europe in the 16th century through Venetian trade, and English coffeehouses became places for political debate.</li>
+<li>Mocha was the only gateway for coffee until the end of the 17th century; Brazil has led production since 1852.</li>
+<li>A 2020 genetic study confirmed that most Arabica plants come from Yemen.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>Sufi</b> — sufí; seguidor del sufismo, corriente mística del islam</li>
+<li><b>imam</b> — imán; líder religioso o de oración en el islam</li>
+<li><b>overturn</b> — anular; revocar una decisión o prohibición</li>
+<li><b>subversive</b> — subversivo; que amenaza o busca debilitar la autoridad establecida</li>
+<li><b>crush</b> — aplastar; reprimir con fuerza un movimiento o actividad</li>
+<li><b>apocryphal</b> — apócrifo; de origen dudoso, probablemente falso</li>
+<li><b>goatherder</b> — cabrero; persona que cuida cabras</li>
+<li><b>gateway</b> — puerta de entrada; punto por el que algo llega o pasa a otro lugar</li>
+<li><b>seedling</b> — plántula; planta joven que ha crecido a partir de una semilla</li>
+<li><b>cultivation</b> — cultivo; proceso de sembrar y cuidar plantas</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the passage?</span></p>
+<ul class='opts'>
+<li class='ok'>Coffee spread from Yemen across the Muslim world, Europe and the Americas, becoming a major global product.<span class='tag'>CORRECT</span></li>
+<li>Coffee was invented in Europe and later exported to the Middle East and Africa.</li>
+<li>Religious leaders successfully banned coffee everywhere in the world.</li>
+<li>Brazil created the coffee trade after discovering the plant in the 19th century.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what did Gabriel de Clieu do in 1720?</span></p>
+<ul class='opts'>
+<li>He opened the first coffeehouse in Venice.</li>
+<li class='ok'>He brought coffee seedlings to Martinique.<span class='tag'>CORRECT</span></li>
+<li>He banned coffee in the port of Mocha.</li>
+<li>He wrote the first study on coffee genetics.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;apocryphal&quot; in the sentence &quot;it is probably apocryphal&quot; means</span></p>
+<ul class='opts'>
+<li class='ok'>of doubtful authenticity<span class='tag'>CORRECT</span></li>
+<li>very ancient and respected</li>
+<li>written by a religious authority</li>
+<li>proven by scientific research</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about coffeehouses in 17th-century England?</span></p>
+<ul class='opts'>
+<li class='ok'>They were viewed by the king as a possible political danger.<span class='tag'>CORRECT</span></li>
+<li>They were used only by wealthy merchants.</li>
+<li>They were closed by the church soon after opening.</li>
+<li>They served mostly as places to sell coffee seedlings.</li>
+</ul>
+</article>
+<h3 class='sect' id='tema-humanities'>Humanities<span class='count'>9 lecturas</span></h3>
 <article class='q'>
 <p class='stem'><span class='text'>How Logical Fallacy Invalidates Any Argument</span><button class="say" type="button" aria-pressed="false" data-say="How Logical Fallacy Invalidates Any Argument" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
 <p class='expl'>Fallacies are defects that make an argument invalid, unsound, or weak. They fall into two general groups: formal and informal. A formal fallacy can be identified merely by looking at the logical structure of an argument, without reading any specific statement. An informal fallacy, by contrast, can only be detected through an analysis of the actual content of the argument.</p>
@@ -5588,12 +5917,33 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>begging the question</b> — petición de principio; dar por sentado en las premisas lo que se pretende demostrar</li>
 <li><b>ad hoc rationalization</b> — racionalización ad hoc; justificación improvisada para salvar una idea ya decidida</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, why is the argument about geological events and rock music an informal fallacy rather than a formal one?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, why is the argument about geological events and rock music an informal fallacy rather than a formal one?</span></p>
 <ul class='opts'>
 <li>Because both of its premises are false.</li>
 <li class='ok'>Because its structure is valid, so the defect lies in the meaning of a key term.<span class='tag'>CORRECT</span></li>
 <li>Because it is an inductive argument with no identifiable form.</li>
 <li>Because Aristotle did not include it in his list of thirteen fallacies.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what is the difference between a formal fallacy and an informal fallacy?</span></p>
+<ul class='opts'>
+<li class='ok'>A formal fallacy can be found by examining the structure alone, while an informal fallacy requires analyzing the content.<span class='tag'>CORRECT</span></li>
+<li>A formal fallacy appears only in inductive arguments, while an informal fallacy appears only in deductive ones.</li>
+<li>A formal fallacy always has false premises, while an informal fallacy always has true premises.</li>
+<li>A formal fallacy is easy to notice, while an informal fallacy can never be detected.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the expression &quot;stripping away content&quot; most nearly means</span></p>
+<ul class='opts'>
+<li class='ok'>removing the specific subject matter of an argument.<span class='tag'>CORRECT</span></li>
+<li>correcting the mistakes in an argument.</li>
+<li>adding more examples to an argument.</li>
+<li>shortening an argument to save time.</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about the argument &quot;all humans are mammals; all cats are mammals; therefore all humans are cats&quot;?</span></p>
+<ul class='opts'>
+<li class='ok'>It would be invalid even if the terms were replaced by other words with the same structure.<span class='tag'>CORRECT</span></li>
+<li>It would become valid if the conclusion were true.</li>
+<li>It is only invalid because one of its premises is false.</li>
+<li>It is an example of a fallacy of ambiguity.</li>
 </ul>
 </article>
 <article class='q'>
@@ -5621,12 +5971,33 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>sought-after</b> — buscado; deseado; que se pretende alcanzar</li>
 <li><b>to stand or fall</b> — sostenerse o venirse abajo; depender por completo de algo (expresión fija)</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, when you evaluate an argument, where will you spend most of your time?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, when you evaluate an argument, where will you spend most of your time?</span></p>
 <ul class='opts'>
 <li>On the factual claims, because they are the hardest to verify.</li>
 <li class='ok'>On the inferential claims, because that is where the argument stands or falls.<span class='tag'>CORRECT</span></li>
 <li>On the conclusion, because it is the only statement that can be true or false.</li>
 <li>On the assertion, because repeating it makes the argument stronger.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what is a proposition?</span></p>
+<ul class='opts'>
+<li class='ok'>The informational content of a statement, which must be capable of being true or false.<span class='tag'>CORRECT</span></li>
+<li>A verbal fight in which each person contradicts the other.</li>
+<li>A series of premises that always leads to a false conclusion.</li>
+<li>A claim that becomes true when it is repeated often enough.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;gainsaying&quot; in the phrase &quot;the automatic gainsaying of whatever the other person says&quot; is closest in meaning to:</span></p>
+<ul class='opts'>
+<li class='ok'>Denying or contradicting.<span class='tag'>CORRECT</span></li>
+<li>Repeating word for word.</li>
+<li>Agreeing with politely.</li>
+<li>Explaining in detail.</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the passage about an argument that cannot be reformulated into premises, inferences, and a conclusion?</span></p>
+<ul class='opts'>
+<li class='ok'>It probably has a problem and may not be a genuine argument.<span class='tag'>CORRECT</span></li>
+<li>It is certainly a strong argument because it is so original.</li>
+<li>It is only a factual claim that needs no further support.</li>
+<li>It must be a Monty Python sketch rather than a real argument.</li>
 </ul>
 </article>
 <article class='q'>
@@ -5655,12 +6026,33 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>retaliation</b> — represalia; venganza o castigo por haber denunciado</li>
 <li><b>patchwork</b> — mosaico, conjunto irregular de piezas; aquí, leyes dispersas y poco uniformes</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, why did journalists in the 1960s begin using the word &quot;whistleblower&quot;?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, why did journalists in the 1960s begin using the word &quot;whistleblower&quot;?</span></p>
 <ul class='opts'>
 <li>Because police officers had stopped using whistles to warn the public.</li>
 <li class='ok'>Because they wanted to avoid the negative connotations of words like &quot;informant&quot; and &quot;snitch.&quot;<span class='tag'>CORRECT</span></li>
 <li>Because the Whistleblower Protection Act required them to use that term.</li>
 <li>Because Ralph Nader asked the press to describe him that way.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what did General Motors do to try to discredit Ralph Nader after his 1965 book was published?</span></p>
+<ul class='opts'>
+<li>It sued him for damaging the reputation of the automobile industry.</li>
+<li class='ok'>It tapped his phone and hired prostitutes to discredit him.<span class='tag'>CORRECT</span></li>
+<li>It offered him a $425,000 settlement to withdraw the book.</li>
+<li>It asked Congress to investigate his research methods.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;retaliated&quot; in &quot;General Motors retaliated by tapping his phone&quot; is closest in meaning to:</span></p>
+<ul class='opts'>
+<li class='ok'>responded with hostile action against him<span class='tag'>CORRECT</span></li>
+<li>apologized for its earlier mistakes</li>
+<li>agreed to cooperate with his demands</li>
+<li>publicly defended his conclusions</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the passage about the legal protection of whistleblowers in the United States?</span></p>
+<ul class='opts'>
+<li class='ok'>It is provided by a mix of laws at different levels rather than a single system.<span class='tag'>CORRECT</span></li>
+<li>It is guaranteed by one federal law that covers every employee.</li>
+<li>It applies only to people who work for the government.</li>
+<li>It has made retaliation against whistleblowers very rare.</li>
 </ul>
 </article>
 <article class='q'>
@@ -5689,12 +6081,33 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>usher in</b> — dar paso a; inaugurar o marcar el comienzo de una nueva etapa (phrasal verb)</li>
 <li><b>blur the line</b> — difuminar la línea; hacer que dos cosas dejen de distinguirse claramente (idiom)</li>
 </ul>
-<p class='stem'><span class='text'>According to the 2018 National Defense Strategy, what is now the primary concern in U.S. national security?</span></p>
+<p class='stem'><span class='text'>1. According to the 2018 National Defense Strategy, what is now the primary concern in U.S. national security?</span></p>
 <ul class='opts'>
 <li>International terrorism</li>
 <li class='ok'>Inter-state strategic competition<span class='tag'>CORRECT</span></li>
 <li>Climate change</li>
 <li>Drug trafficking</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, why did the definition of national security based only on military power become outdated?</span></p>
+<ul class='opts'>
+<li class='ok'>Because the nuclear age and the Cold War changed the nature of threats<span class='tag'>CORRECT</span></li>
+<li>Because the United Nations took over defense duties from national governments</li>
+<li>Because economic problems made armies too expensive to maintain</li>
+<li>Because citizens stopped supporting military spending after 1998</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the phrase &quot;at the expense of&quot; in &quot;prioritized security at the expense of some civil liberties&quot; is closest in meaning to:</span></p>
+<ul class='opts'>
+<li class='ok'>with the loss or sacrifice of<span class='tag'>CORRECT</span></li>
+<li>with the full approval of</li>
+<li>in order to pay for</li>
+<li>in spite of the opinion of</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the passage about problems such as climate change?</span></p>
+<ul class='opts'>
+<li class='ok'>They are best solved when several countries work together<span class='tag'>CORRECT</span></li>
+<li>They can be solved by a single country with a strong military</li>
+<li>They are less important than terrorism for national security</li>
+<li>They only affect countries that are members of NATO</li>
 </ul>
 </article>
 <article class='q'>
@@ -5723,12 +6136,33 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>benign</b> — benigno; leve; poco grave</li>
 <li><b>lucrative</b> — lucrativo; que produce buenas ganancias</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, when do push and pull factors most often work together?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, when do push and pull factors most often work together?</span></p>
 <ul class='opts'>
 <li>When a country suffers a natural disaster</li>
 <li>When refugees face genocide-like conditions</li>
 <li class='ok'>When the push factors are relatively mild<span class='tag'>CORRECT</span></li>
 <li>When students receive larger salaries abroad</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, which historical event pushed thousands of Irish families to the United States?</span></p>
+<ul class='opts'>
+<li>A war between neighboring countries</li>
+<li class='ok'>The Great Potato Famine of the mid-19th century<span class='tag'>CORRECT</span></li>
+<li>A religious persecution during the Nazi era</li>
+<li>A severe drought in the western territories</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;dire&quot; in the phrase &quot;the conditions are often so dire that staying means suffering&quot; is closest in meaning to</span></p>
+<ul class='opts'>
+<li class='ok'>extremely serious<span class='tag'>CORRECT</span></li>
+<li>fairly common</li>
+<li>easy to predict</li>
+<li>slightly unpleasant</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the passage about a person who leaves home because of a genocide-like threat?</span></p>
+<ul class='opts'>
+<li>The person probably compares many destinations carefully before leaving</li>
+<li class='ok'>The person is likely to choose a quick escape over the best destination<span class='tag'>CORRECT</span></li>
+<li>The person will most likely return once salaries improve at home</li>
+<li>The person is mainly attracted by cheap land abroad</li>
 </ul>
 </article>
 <article class='q'>
@@ -5757,12 +6191,197 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>fallout</b> — consecuencias negativas; repercusión política de un hecho</li>
 <li><b>swampy bog</b> — ciénaga; terreno pantanoso y empapado</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, why did General MacArthur launch a second charge against the veterans?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, why did General MacArthur launch a second charge against the veterans?</span></p>
 <ul class='opts'>
 <li>President Hoover ordered him to continue the attack.</li>
 <li class='ok'>He claimed the marchers were trying to overthrow the government.<span class='tag'>CORRECT</span></li>
 <li>The veterans had attacked the tanks with weapons.</li>
 <li>The Senate had asked him to clear the camps immediately.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, why did the veterans want to be paid in 1932 instead of waiting until 1945?</span></p>
+<ul class='opts'>
+<li class='ok'>They had lost their jobs during the Great Depression and could not afford to wait.<span class='tag'>CORRECT</span></li>
+<li>Congress had promised to pay them earlier than the law stated.</li>
+<li>President Coolidge had cancelled the certificates in 1924.</li>
+<li>They wanted to use the money to build camps near the Capitol.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the phrase &quot;a backhanded tribute to President Herbert Hoover&quot; most nearly means that the name Hooverville was</span></p>
+<ul class='opts'>
+<li class='ok'>an insult disguised as an honor.<span class='tag'>CORRECT</span></li>
+<li>a sincere expression of gratitude.</li>
+<li>a formal title given by Congress.</li>
+<li>a secret code used by the veterans.</li>
+</ul>
+<p class='stem'><span class='text'>4. Which of the following can be inferred from the passage about the way the government handled the Bonus Army?</span></p>
+<ul class='opts'>
+<li class='ok'>It damaged Hoover&#x27;s public image and helped Roosevelt win the election.<span class='tag'>CORRECT</span></li>
+<li>It convinced Congress to pay the bonuses immediately in 1932.</li>
+<li>It was praised by the press as a well-organized operation.</li>
+<li>It proved that the veterans planned to overthrow the government.</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>Silk Road</span><button class="say" type="button" aria-pressed="false" data-say="Silk Road" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>The Silk Road was a network of Asian trade routes active from the second century BCE until the mid-15th century. It stretched over 6,400 km on land and linked the Eastern and Western worlds economically, culturally, politically and religiously. The name was coined in the late 19th century and popularized in 1877 by Ferdinand von Richthofen. Some historians prefer &quot;Silk Routes&quot;, because the system was an intricate web of land and sea routes, not a single road. Others argue that the classic idea overlooks steppe nomads, India and Iran.</p>
+<p class='expl'>The network began to take shape when China&#x27;s Han dynasty expanded into Central Asia. Around 130 BCE, the envoy Zhang Qian explored the region, and his reports showed the economic reasons for pushing westward. The Chinese extended the Great Wall to protect the trade route, and the Han army regularly policed it against nomadic bandits. The Parthian Empire served as a vital bridge to the Mediterranean, while Rome became the western terminus. Chinese silk was in great demand there, although many Romans wrongly believed it grew on trees. The Senate issued several edicts against wearing silk, on economic and moral grounds, but in vain.</p>
+<p class='expl'>The system was highly decentralized and security was sparse. Travelers faced banditry, raids and inhospitable terrain, so few people traveled the whole length. Instead, goods passed through a succession of middlemen in a kind of &quot;relay trade&quot;. Beyond silk, caravans carried tea, dyes, perfumes, porcelain, horses, camels, honey, wine and gold. Ideas, especially Buddhist and scientific thought, also spread, and so did diseases such as plague, possibly contributing to the Black Death.</p>
+<p class='expl'>There were several routes. The northern route started at Chang&#x27;an and split around the Taklamakan Desert, while the southern route crossed the Karakoram mountains, where the Karakoram Highway runs today. A maritime route, run by Austronesian, Persian, Arab and Tamil sailors, connected Southeast Asia, India, Arabia and East Africa. Ships carried far larger cargoes and could avoid political conflict, although they faced weather and piracy.</p>
+<p class='expl'>Critics such as Warwick Ball call the Silk Road a &quot;myth&quot; of modern academia. He argues that maritime spice trade with India mattered more to Rome, and that free movement of goods did not exist until the Mongol Empire. From 1453, the Ottoman Empire competed for control of the overland routes, which pushed Europeans to seek alternatives and marked the start of the Age of Discovery. Today, &quot;New Silk Road&quot; describes projects such as China&#x27;s Belt and Road Initiative, and UNESCO has designated some corridors as World Heritage Sites.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>The Silk Road was a network of land and sea routes, not a single road.</li>
+<li>Zhang Qian&#x27;s explorations around 130 BCE helped open the route for the Han dynasty.</li>
+<li>Few travelers crossed the whole route; goods changed hands through middlemen.</li>
+<li>Goods, religions, ideas and diseases all spread along the routes.</li>
+<li>The Ottoman advance after 1453 pushed Europeans to seek other routes, starting the Age of Discovery.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>envoy</b> — enviado, emisario; representante diplomático de rango menor que un embajador</li>
+<li><b>terminus</b> — punto final o estación terminal de una ruta</li>
+<li><b>banditry</b> — bandolerismo; asaltos y robos en los caminos</li>
+<li><b>inhospitable</b> — inhóspito; hostil e inadecuado para vivir o cruzar</li>
+<li><b>middlemen</b> — intermediarios; quienes compran y revenden entre productor y comprador</li>
+<li><b>relay trade</b> — comercio por relevos; las mercancías pasan de mano en mano por tramos</li>
+<li><b>decentralized</b> — descentralizado; sin una autoridad o control único</li>
+<li><b>edict</b> — edicto; decreto oficial emitido por una autoridad</li>
+<li><b>in vain</b> — en vano; sin conseguir el resultado buscado</li>
+<li><b>caravan</b> — caravana; grupo de mercaderes que viajan juntos con animales de carga</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the text?</span></p>
+<ul class='opts'>
+<li class='ok'>The Silk Road was a network of trade routes that connected East and West for centuries.<span class='tag'>CORRECT</span></li>
+<li>The Silk Road was a single road built by the Roman Empire to import silk.</li>
+<li>The Silk Road was created only to transport religious ideas across Asia.</li>
+<li>The Silk Road was an ocean route used exclusively by Austronesian sailors.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the text, what did the Senate of Rome try to do about silk?</span></p>
+<ul class='opts'>
+<li class='ok'>It tried to forbid people from wearing it, but failed.<span class='tag'>CORRECT</span></li>
+<li>It tried to buy all the silk produced in China.</li>
+<li>It tried to grow silk on trees in Italy.</li>
+<li>It tried to tax silk to pay for the army.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the text, the word &quot;sparse&quot; in &quot;security was sparse&quot; means:</span></p>
+<ul class='opts'>
+<li class='ok'>very limited or thin<span class='tag'>CORRECT</span></li>
+<li>extremely strict</li>
+<li>completely modern</li>
+<li>well organized</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the fact that few people traveled the entire Silk Road?</span></p>
+<ul class='opts'>
+<li class='ok'>Most goods reached their destination through several traders in succession.<span class='tag'>CORRECT</span></li>
+<li>Merchants preferred to travel alone for safety.</li>
+<li>The route was too short to require middlemen.</li>
+<li>Silk was produced in every region along the way.</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>Printing press</span><button class="say" type="button" aria-pressed="false" data-say="Printing press" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>A printing press is a machine that applies pressure to transfer ink onto paper, cloth, or a similar surface. It improved on older methods, in which paper was rubbed by hand over inked material. The German goldsmith Johannes Gutenberg invented it around 1440, and its spread revolutionized literary production and communication in early modern Europe.</p>
+<p class='expl'>Gutenberg combined four existing technologies: the screw press, movable type, the codex book format, and mechanized paper production. He added his own innovations, such as a hand mold for casting type and an oil-based ink suited to metal type. He was also the first to make type from an alloy of lead, tin, and antimony, which was particularly durable. Movable type had appeared earlier in East Asia, but thousands of logographic characters made it costly there, while the Latin alphabet needed only a small set.</p>
+<p class='expl'>To operate a classical press, a compositor set individual metal letters into lines, placed them in a frame called a forme, and inked them with leather ink balls. A sheet of dampened paper, held by the tympan and the frisket, was folded over the type. The compositor then pulled a long lever, the bar, which drove a screw that pressed the platen onto the paper. Around 1800, Lord Stanhope built an iron press that printed a whole sheet in one pull. Later, steam power and rotary motion, introduced by Friedrich Koenig and Richard M. Hoe, allowed millions of impressions per day.</p>
+<p class='expl'>Printing spread quickly: by the end of the 15th century, around 270 European cities had presses, and by 1500 they had produced over 20 million copies. Because the equipment was portable, printers could relocate when authorities tried to curtail them, which made censorship difficult. Printing helped to spread the Reformation, lowered the cost of texts, raised adult literacy, and encouraged books in vernacular languages instead of Latin.</p>
+<p class='expl'>It also changed how people worked and read. Identical copies allowed precise citation and gave authors greater importance, while reading shifted from communal recitation to silent, private reading. Scientists could share discoveries faster and across greater distances. Governments used print for propaganda, and both church and state tried to control it. Some contemporaries criticized it, arguing that printers valued profit over accuracy. Later, offset printing and digital methods replaced the letterpress in commercial work.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>Gutenberg invented the movable-type printing press around 1440 by combining four existing technologies.</li>
+<li>Metal type, an oil-based ink, and the screw press made high-quality mass printing possible.</li>
+<li>Iron, steam-powered, and rotary presses greatly increased output during the Industrial Revolution.</li>
+<li>Printing spread the Reformation, raised literacy, and helped replace Latin with vernacular languages.</li>
+<li>Authorities tried to censor the press, but its portability made control difficult.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>movable type</b> — tipos móviles; letras individuales reutilizables para componer un texto</li>
+<li><b>alloy</b> — aleación; mezcla de metales</li>
+<li><b>compositor</b> — cajista; el que compone el texto colocando los tipos</li>
+<li><b>platen</b> — platina; superficie plana que presiona el papel contra los tipos</li>
+<li><b>vernacular</b> — lengua vernácula; el idioma local hablado, en oposición al latín</li>
+<li><b>curtail</b> — restringir; recortar o limitar algo</li>
+<li><b>censorship</b> — censura; control de lo que se puede publicar</li>
+<li><b>literacy</b> — alfabetización; capacidad de leer y escribir</li>
+<li><b>propaganda</b> — propaganda; información usada para influir en la opinión pública</li>
+<li><b>treatise</b> — tratado; obra extensa y formal sobre un tema</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the passage?</span></p>
+<ul class='opts'>
+<li class='ok'>Gutenberg&#x27;s press combined existing technologies and transformed communication, science, and politics in Europe.<span class='tag'>CORRECT</span></li>
+<li>Movable type was invented in China and never reached Europe.</li>
+<li>Steam power was the most important development in the history of printing.</li>
+<li>Governments successfully stopped the spread of printed material across Europe.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what did the Stanhope press allow printers to do?</span></p>
+<ul class='opts'>
+<li class='ok'>Print a whole sheet in a single pull.<span class='tag'>CORRECT</span></li>
+<li>Print both sides of a sheet at once.</li>
+<li>Use rolled paper with continuous feed.</li>
+<li>Cast a complete line of type.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;curtail&quot; in &quot;authorities tried to curtail them&quot; is closest in meaning to:</span></p>
+<ul class='opts'>
+<li class='ok'>restrict<span class='tag'>CORRECT</span></li>
+<li>support</li>
+<li>copy</li>
+<li>finance</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the passage about the portability of the printing press?</span></p>
+<ul class='opts'>
+<li class='ok'>It helped printers avoid control by moving to other cities.<span class='tag'>CORRECT</span></li>
+<li>It made presses too heavy to use outside large cities.</li>
+<li>It reduced the need for paper and ink.</li>
+<li>It prevented the press from reaching other continents.</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>Renaissance</span><button class="say" type="button" aria-pressed="false" data-say="Renaissance" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>The Renaissance, meaning &quot;rebirth&quot;, was a European period and cultural movement at the end of the Late Middle Ages and the start of the early modern era. It is usually placed in the 15th and 16th centuries, although some define it more broadly, from the 14th century to the 17th. Its defining feature was the rediscovery and revival of the literary, philosophical and artistic achievements of classical antiquity. It began in Florence, then spread across Italy and the rest of Europe.</p>
+<p class='expl'>Its intellectual basis was humanism, which rested on Roman humanitas and on classical Greek philosophy. Humanism was less a philosophy than a method of learning: scholars studied ancient texts in their original languages and judged them through reasoning and empirical evidence. In the 14th century, scholars such as Petrarch scoured European libraries for Latin works. After the fall of Constantinople in 1453, Greek scholars brought precious manuscripts to the West, and the Greek phase of humanism followed. Renaissance scholars differed from earlier medieval ones because they focused on literary and historical texts, not only on science and mathematics.</p>
+<p class='expl'>Historians disagree about why the movement began in Italy. Italy was divided into rich, urbanized city-states, such as Florence and Venice, where merchants brought new ideas from distant lands. Their relative political freedom helped academic and artistic progress, and their wealth paid for large artistic projects. The Medici, a banking family, acted as patrons of artists like Leonardo da Vinci and Michelangelo. Some theorists also suggest that the Black Death, which killed about a third of England&#x27;s population, changed how people saw life on Earth and raised the value of working people.</p>
+<p class='expl'>The period brought change in many fields. Painters such as Masaccio developed linear perspective and studied light, shadow and anatomy in order to portray the human form realistically. Brunelleschi studied ancient buildings and designed the dome of Florence Cathedral. Machiavelli tried to describe political life as it really was. Writers increasingly used vernacular languages, and the movable type printing press, which appeared in Germany around 1440, made books available to many more people. By the end of the 15th century, it had produced more than 20 million volumes. Historians still debate whether the Renaissance was a true break with the Middle Ages or an extension of it.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>The Renaissance was a European cultural movement centered first in Florence that revived classical antiquity.</li>
+<li>Humanism was a method of learning based on studying ancient texts in their original languages.</li>
+<li>Florence&#x27;s wealth, political freedom and patrons such as the Medici helped the movement begin.</li>
+<li>Realistic perspective in art and the printing press were major innovations.</li>
+<li>Historians still debate whether it broke with the Middle Ages or continued them.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>rediscovery</b> — redescubrimiento; recuperación de algo olvidado</li>
+<li><b>vernacular</b> — lengua vernácula; idioma hablado por la gente común, no el latín</li>
+<li><b>to scour</b> — rastrear a fondo; buscar minuciosamente en un lugar</li>
+<li><b>patron</b> — mecenas; persona que financia a artistas</li>
+<li><b>plague</b> — peste; epidemia mortal</li>
+<li><b>perspective</b> — perspectiva; técnica para representar la profundidad en una imagen</li>
+<li><b>empirical</b> — empírico; basado en la observación y la experiencia</li>
+<li><b>manuscript</b> — manuscrito; texto escrito a mano antes de la imprenta</li>
+<li><b>antiquity</b> — antigüedad; el mundo de la Grecia y la Roma clásicas</li>
+<li><b>to flourish</b> — florecer; prosperar con fuerza</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the passage?</span></p>
+<ul class='opts'>
+<li class='ok'>The Renaissance was a cultural movement that revived classical learning, began in Florence and spread across Europe.<span class='tag'>CORRECT</span></li>
+<li>The Renaissance was a period of war between the Italian city-states and the Ottoman Empire.</li>
+<li>The Renaissance was a religious movement that rejected Christianity in favor of Greek philosophy.</li>
+<li>The Renaissance was a short scientific revolution that started in Germany with the printing press.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what did the movable type printing press produce by the end of the 15th century?</span></p>
+<ul class='opts'>
+<li class='ok'>More than 20 million volumes<span class='tag'>CORRECT</span></li>
+<li>About 270 new universities</li>
+<li>Nearly 2 million Greek manuscripts</li>
+<li>Over 20 thousand public libraries</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;scoured&quot; in &quot;scoured the libraries of Europe&quot; is closest in meaning to</span></p>
+<ul class='opts'>
+<li class='ok'>searched thoroughly<span class='tag'>CORRECT</span></li>
+<li>quickly visited</li>
+<li>carefully cleaned</li>
+<li>secretly built</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about the Medici family from the passage?</span></p>
+<ul class='opts'>
+<li class='ok'>Their wealth and support made it possible for artists to create major works.<span class='tag'>CORRECT</span></li>
+<li>They personally painted many of the famous works of the period.</li>
+<li>They opposed the spread of humanism in Florence.</li>
+<li>They ruled all of Italy as a single kingdom.</li>
 </ul>
 </article>
 <h3 class='sect' id='tema-math'>Math<span class='count'>3 lecturas</span></h3>
@@ -5792,12 +6411,33 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>curricula</b> — planes de estudio (plural de curriculum)</li>
 <li><b>robust</b> — sólido; fuerte y bien fundamentado</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, why does the objection that mathematics is not spoken fail to prove that it is not a language?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, why does the objection that mathematics is not spoken fail to prove that it is not a language?</span></p>
 <ul class='opts'>
 <li>Because most equations can easily be read aloud in any language.</li>
 <li class='ok'>Because sign language is not spoken either, yet linguists accept it as a true language.<span class='tag'>CORRECT</span></li>
 <li>Because Galileo said the universe is written in mathematics.</li>
 <li>Because students find symbols intimidating.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what did Galileo Galilei say about the geometrical figures such as triangles and circles?</span></p>
+<ul class='opts'>
+<li class='ok'>They are the letters of the language in which the universe is written.<span class='tag'>CORRECT</span></li>
+<li>They are the only symbols that all people in the world can pronounce.</li>
+<li>They were invented to make word problems easier for students.</li>
+<li>They replace the need for grammar in mathematical sentences.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;intimidating&quot; in the sentence &quot;Students often find symbols intimidating&quot; is closest in meaning to</span></p>
+<ul class='opts'>
+<li class='ok'>frightening or discouraging.<span class='tag'>CORRECT</span></li>
+<li>familiar and comforting.</li>
+<li>boring and repetitive.</li>
+<li>surprising and amusing.</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the passage about the use of everyday language to explain equations?</span></p>
+<ul class='opts'>
+<li class='ok'>It can make mathematics feel less difficult for students who fear symbols.<span class='tag'>CORRECT</span></li>
+<li>It is the reason why mathematical symbols differ from country to country.</li>
+<li>It proves that mathematics cannot be a language of its own.</li>
+<li>It is only useful for students who already speak several languages.</li>
 </ul>
 </article>
 <article class='q'>
@@ -5825,12 +6465,33 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>persistent</b> — perseverante; que insiste sin rendirse</li>
 <li><b>misconception</b> — idea equivocada; creencia errónea muy extendida</li>
 </ul>
-<p class='stem'><span class='text'>According to the article, where does math anxiety usually come from?</span></p>
+<p class='stem'><span class='text'>1. According to the article, where does math anxiety usually come from?</span></p>
 <ul class='opts'>
 <li>A lack of a special math gene</li>
 <li class='ok'>Unpleasant experiences and memorizing procedures without understanding<span class='tag'>CORRECT</span></li>
 <li>Being born into a culture that never learned math</li>
 <li>Having too many tutors during school</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the article, what happens when people memorize rules without understanding them?</span></p>
+<ul class='opts'>
+<li class='ok'>They quickly forget the math and panic sets in<span class='tag'>CORRECT</span></li>
+<li>They become faster at solving problems on tests</li>
+<li>They develop a strong logical side of the brain</li>
+<li>They usually avoid making mistakes in class</li>
+</ul>
+<p class='stem'><span class='text'>3. In the sentence &quot;The mind draws a blank,&quot; the expression &quot;draws a blank&quot; means that a person</span></p>
+<ul class='opts'>
+<li class='ok'>cannot remember anything at that moment<span class='tag'>CORRECT</span></li>
+<li>starts to solve a problem very carefully</li>
+<li>makes a drawing to understand the problem</li>
+<li>feels angry about a difficult question</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about the author&#x27;s view of mistakes?</span></p>
+<ul class='opts'>
+<li class='ok'>They can be a valuable part of learning math<span class='tag'>CORRECT</span></li>
+<li>They show that a student lacks natural talent</li>
+<li>They should be avoided by practicing less</li>
+<li>They prove that some students should quit math</li>
 </ul>
 </article>
 <article class='q'>
@@ -5859,12 +6520,33 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>variance</b> — varianza; medida de dispersión, el cuadrado de la desviación estándar</li>
 <li><b>to force (data) to fit</b> — forzar (los datos) a encajar; obligar algo a ajustarse a un modelo que no le corresponde</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, what happens to the shape of a bell curve when the standard deviation is large?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, what happens to the shape of a bell curve when the standard deviation is large?</span></p>
 <ul class='opts'>
 <li>The bell becomes tall and narrow.</li>
 <li class='ok'>The bell becomes short and wide.<span class='tag'>CORRECT</span></li>
 <li>The center of the bell moves to the right.</li>
 <li>The total area under the curve increases.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what is the mode in a normal distribution?</span></p>
+<ul class='opts'>
+<li class='ok'>The value that occurs most often, located at the center of the curve<span class='tag'>CORRECT</span></li>
+<li>The distance between the mean and the outliers</li>
+<li>The total area under the curve, which equals 100%</li>
+<li>The number that shows how tall the bell is</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;outliers&quot; refers to values that are</span></p>
+<ul class='opts'>
+<li>exactly equal to the mean</li>
+<li class='ok'>unusually far from the center<span class='tag'>CORRECT</span></li>
+<li>repeated more than any other value</li>
+<li>found within one standard deviation</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the passage about using a bell curve to describe student grades?</span></p>
+<ul class='opts'>
+<li class='ok'>It may give a misleading picture, because grades often have two modes.<span class='tag'>CORRECT</span></li>
+<li>It is always the most accurate method available.</li>
+<li>It works best when the standard deviation is very small.</li>
+<li>It is useful only for predicting income and population growth.</li>
 </ul>
 </article>
 <h3 class='sect' id='tema-social'>Social<span class='count'>2 lecturas</span></h3>
@@ -5895,12 +6577,33 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>pervasive</b> — omnipresente; que se extiende y aparece por todas partes</li>
 <li><b>incumbent</b> — titular del cargo; quien ocupa actualmente un puesto y busca la reelección</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, when is it rational to keep the status quo?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, when is it rational to keep the status quo?</span></p>
 <ul class='opts'>
 <li>When there are many options to choose from</li>
 <li class='ok'>When the cost of switching is greater than the gains from changing<span class='tag'>CORRECT</span></li>
 <li>When a person has already invested a lot of money in it</li>
 <li>When the familiar option has been chosen many times before</li>
+</ul>
+<p class='stem'><span class='text'>2. In the Samuelson and Zeckhauser experiment, what happened as participants were given more options to choose from?</span></p>
+<ul class='opts'>
+<li class='ok'>Their preference for the status quo option became stronger<span class='tag'>CORRECT</span></li>
+<li>They were more likely to choose the most profitable portfolio</li>
+<li>Their preference for the status quo option became weaker</li>
+<li>They spent more time comparing every alternative carefully</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;pervasive&quot; in the sentence &quot;Real-world examples are pervasive&quot; is closest in meaning to</span></p>
+<ul class='opts'>
+<li class='ok'>widespread<span class='tag'>CORRECT</span></li>
+<li>misleading</li>
+<li>uncommon</li>
+<li>controversial</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about the consumers who rejected New Coke?</span></p>
+<ul class='opts'>
+<li class='ok'>Their choice was influenced by attachment to the familiar product<span class='tag'>CORRECT</span></li>
+<li>They could not taste any difference between the two drinks</li>
+<li>They rejected it because it was more expensive than the old one</li>
+<li>They had never tried the original product before</li>
 </ul>
 </article>
 <article class='q'>
@@ -5929,15 +6632,36 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>self-conscious</b> — cohibido; incómodo por sentirse observado (no significa «consciente de sí mismo»)</li>
 <li><b>to neglect</b> — descuidar; pasar por alto; desatender</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, why can introverts make good managers?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, why can introverts make good managers?</span></p>
 <ul class='opts'>
 <li>They are more talkative and assertive in meetings.</li>
 <li class='ok'>They give employees freedom and focus on the organization&#x27;s goals.<span class='tag'>CORRECT</span></li>
 <li>They seek out excitement and encourage group work.</li>
 <li>They experience positive emotions more often than extroverts.</li>
 </ul>
+<p class='stem'><span class='text'>2. According to the passage, what did the 2011 study at Wellesley College propose?</span></p>
+<ul class='opts'>
+<li class='ok'>That introverts can be divided into four different kinds.<span class='tag'>CORRECT</span></li>
+<li>That extroverts feel positive emotions much more than introverts.</li>
+<li>That shyness and introversion are exactly the same trait.</li>
+<li>That introversion is the opposite of all five personality traits.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;craves&quot; in the sentence &quot;she also craves solitude&quot; is closest in meaning to</span></p>
+<ul class='opts'>
+<li class='ok'>strongly wants<span class='tag'>CORRECT</span></li>
+<li>carefully avoids</li>
+<li>slowly accepts</li>
+<li>rarely notices</li>
+</ul>
+<p class='stem'><span class='text'>4. Which conclusion can be drawn from the passage about schools and offices that encourage group work?</span></p>
+<ul class='opts'>
+<li class='ok'>They may fail to make use of what introverts can offer.<span class='tag'>CORRECT</span></li>
+<li>They usually have more creative employees than other places.</li>
+<li>They help introverts become extroverts over time.</li>
+<li>They make all people equally happy at work.</li>
+</ul>
 </article>
-<h3 class='sect' id='tema-tech'>Tech<span class='count'>3 lecturas</span></h3>
+<h3 class='sect' id='tema-tech'>Tech<span class='count'>9 lecturas</span></h3>
 <article class='q'>
 <p class='stem'><span class='text'>The 7 Best Programming Languages to Learn for Beginners</span><button class="say" type="button" aria-pressed="false" data-say="The 7 Best Programming Languages to Learn for Beginners" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
 <p class='expl'>Learning how to code opens up many possibilities, from new job opportunities to developing your own applications. However, with so many programming languages available, deciding where to start can be intimidating. The article ranks seven languages for beginners, starting with the easiest and working toward the more challenging ones.</p>
@@ -5963,12 +6687,33 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>treasure trove</b> — mina de oro; tesoro escondido, fuente abundante de recursos valiosos</li>
 <li><b>mathematically inclined</b> — con inclinación por las matemáticas; con aptitud o gusto natural por los números</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, why is Ruby considered a forgiving language for new programmers?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, why is Ruby considered a forgiving language for new programmers?</span></p>
 <ul class='opts'>
 <li class='ok'>Its variable types are checked at run-time instead of compile-time.<span class='tag'>CORRECT</span></li>
 <li>It runs faster than most other popular programming languages.</li>
 <li>It was created by Apple to replace Objective-C.</li>
 <li>It does not require any knowledge of mathematics.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, which language is the main language used for developing Android apps?</span></p>
+<ul class='opts'>
+<li class='ok'>Java<span class='tag'>CORRECT</span></li>
+<li>Swift</li>
+<li>Python</li>
+<li>Ruby</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the phrase &quot;a treasure trove of free resources&quot; means that the web offers</span></p>
+<ul class='opts'>
+<li class='ok'>a large and valuable amount of free learning material<span class='tag'>CORRECT</span></li>
+<li>a small number of expensive programming courses</li>
+<li>a hidden collection of secret programming languages</li>
+<li>a set of tools that only experts can use</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the passage about learning JavaScript?</span></p>
+<ul class='opts'>
+<li class='ok'>It is easier to learn after gaining experience with HTML and CSS.<span class='tag'>CORRECT</span></li>
+<li>It is the best first language for every beginner.</li>
+<li>It is no longer popular among web developers.</li>
+<li>It has replaced HTML and CSS in web design.</li>
 </ul>
 </article>
 <article class='q'>
@@ -5997,12 +6742,33 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>snippet</b> — fragmento; pequeño trozo de texto o contenido</li>
 <li><b>conversion rate</b> — tasa de conversión; porcentaje de visitantes que terminan comprando o realizando la acción deseada</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, what is a breakpoint?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, what is a breakpoint?</span></p>
 <ul class='opts'>
 <li class='ok'>A browser width at which a CSS media query changes the page layout<span class='tag'>CORRECT</span></li>
 <li>An error that stops a website from loading on mobile devices</li>
 <li>A separate website created for each type of device</li>
 <li>A tool Google uses to index mobile-first pages</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, who introduced the term &quot;responsive web design&quot; in 2010?</span></p>
+<ul class='opts'>
+<li class='ok'>Ethan Marcotte, who published an article about it<span class='tag'>CORRECT</span></li>
+<li>A group of developers working for Google</li>
+<li>The engineers who created CSS media queries</li>
+<li>Web designers who used the terms fluid and flexible</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the phrase &quot;the gold standard&quot; in &quot;responsive design is now the gold standard for any website&quot; most nearly means:</span></p>
+<ul class='opts'>
+<li>the most expensive option available</li>
+<li class='ok'>the best and most widely accepted model<span class='tag'>CORRECT</span></li>
+<li>a rule that only large companies follow</li>
+<li>an old method that is rarely used today</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the online shopping example in the passage?</span></p>
+<ul class='opts'>
+<li class='ok'>Shoppers often use several different devices before buying a product<span class='tag'>CORRECT</span></li>
+<li>Most people prefer to buy products on desktop computers</li>
+<li>Tablets are better than phones for reading reviews</li>
+<li>Websites should be designed only for mobile phones</li>
 </ul>
 </article>
 <article class='q'>
@@ -6030,15 +6796,365 @@ footer{margin-top:60px; padding-top:18px; border-top:1px solid var(--rule); colo
 <li><b>bent</b> — inclinación; orientación o tendencia (a professional bent = enfoque profesional)</li>
 <li><b>to stick with</b> — seguir con algo; no abandonar una actividad</li>
 </ul>
-<p class='stem'><span class='text'>According to the passage, which resource is recommended for someone who already has some skills and wants to become a programmer by trade?</span></p>
+<p class='stem'><span class='text'>1. According to the passage, which resource is recommended for someone who already has some skills and wants to become a programmer by trade?</span></p>
 <ul class='opts'>
 <li>Code Avengers</li>
 <li>Khan Academy</li>
 <li class='ok'>Code School<span class='tag'>CORRECT</span></li>
 <li>Scratch</li>
 </ul>
+<p class='stem'><span class='text'>2. According to the passage, what does Code Avengers add after each lesson?</span></p>
+<ul class='opts'>
+<li>A short written exam</li>
+<li class='ok'>Mini-games<span class='tag'>CORRECT</span></li>
+<li>A video tutorial</li>
+<li>A monthly subscription</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the expression &quot;getting your feet wet&quot; in programming most nearly means</span></p>
+<ul class='opts'>
+<li>making a serious mistake at the start</li>
+<li class='ok'>starting to try something for the first time<span class='tag'>CORRECT</span></li>
+<li>paying for a professional course</li>
+<li>working on a project for a long time</li>
+</ul>
+<p class='stem'><span class='text'>4. Which of the following can be inferred about Coursera from the passage?</span></p>
+<ul class='opts'>
+<li>It is a good choice for people who prefer clear step-by-step guidance</li>
+<li>It is designed only for children who are new to coding</li>
+<li class='ok'>It requires learners to take the initiative to find what they need<span class='tag'>CORRECT</span></li>
+<li>It teaches only the languages used for smartphone apps</li>
+</ul>
 </article>
-<footer>345 palabras · 39 phrasal verbs · 52 idioms · 446 preguntas · 14 lecturas · generado el 2026-09-29</footer>
+<article class='q'>
+<p class='stem'><span class='text'>C (programming language)</span><button class="say" type="button" aria-pressed="false" data-say="C (programming language)" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>C is a general-purpose programming language created by Dennis Ritchie at Bell Labs between 1972 and 1973. It began as a successor to the B language, and its first purpose was to build utilities for Unix. Soon after, it was used to re-implement the Unix kernel, which had originally been written in assembly language. In 1973, Version 4 Unix was released with its kernel largely rewritten in C, making Unix one of the first kernels not written in assembly.</p>
+<p class='expl'>By design, C gives programmers fairly direct access to memory and to the features of a typical CPU. That is why it is still used for operating system kernels, device drivers, protocol stacks, and embedded systems, from microcontrollers to supercomputers. Yet the language was also meant to be portable: a standards-compliant program can be compiled for many platforms with few changes to its source code.</p>
+<p class='expl'>C is an imperative, procedural language with a static but weakly enforced type system. All executable code lives inside functions, statements end with semicolons, and blocks are grouped with curly braces. Parameters are passed by value, so passing by reference is done with pointers. Pointers let a program read and modify memory directly, and function pointers make run-time polymorphism possible. C has no dedicated string type; strings are arrays of characters ending in a null character. Complex features such as input/output or string handling are not in the core language but in the standard library. A preprocessor handles macros, file inclusion, and conditional compilation.</p>
+<p class='expl'>For example, in the classic &quot;Hello, world&quot; program, the line #include &lt;stdio.h&gt; tells the preprocessor to insert a header file that declares the printf function. Execution begins in the function main, and printf writes the text to the standard output. The sequence \n is an escape sequence that moves the cursor to the next line.</p>
+<p class='expl'>The language was standardized step by step. The book The C Programming Language (1978), by Kernighan and Ritchie, served for years as an informal specification. ANSI ratified the first official standard in 1989, and ISO adopted it in 1990. Later revisions followed: C99 added inline functions and // comments, C11 added multi-threading and atomic operations, C17 only fixed defects, and C23 was published in October 2024. One trap remains: writing = (assignment) instead of == (equality) in a condition often produces no error message.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>C was created by Dennis Ritchie in 1972 and was used to rewrite the Unix kernel.</li>
+<li>It offers low-level access to memory through pointers, yet it can be portable across platforms.</li>
+<li>Complex features live in the standard library, not in the core language.</li>
+<li>The language has been standardized since 1989 (C89, C99, C11, C17, C23).</li>
+<li>Confusing = with == is a common mistake that often produces no error.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>kernel</b> — núcleo (del sistema operativo); la parte central que controla el hardware y los recursos</li>
+<li><b>device driver</b> — controlador de dispositivo; programa que permite al sistema operativo comunicarse con un componente de hardware</li>
+<li><b>embedded system</b> — sistema embebido o empotrado; computador dedicado dentro de otro aparato</li>
+<li><b>portability</b> — portabilidad; capacidad de un programa de funcionar en distintas plataformas</li>
+<li><b>pass by value</b> — paso por valor; la función recibe una copia del dato, no el original</li>
+<li><b>pointer</b> — puntero; variable que guarda una dirección de memoria</li>
+<li><b>preprocessor</b> — preprocesador; herramienta que transforma el código antes de compilarlo</li>
+<li><b>header file</b> — archivo de cabecera; contiene declaraciones de funciones que se incluyen en otros archivos</li>
+<li><b>ratify</b> — ratificar; aprobar oficialmente una norma o acuerdo</li>
+<li><b>escape sequence</b> — secuencia de escape; combinación de caracteres, como \n, que representa un carácter especial</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the summary?</span></p>
+<ul class='opts'>
+<li class='ok'>C is a portable language that gives direct access to hardware and has been standardized over time.<span class='tag'>CORRECT</span></li>
+<li>C is a modern language designed mainly for building websites and mobile applications.</li>
+<li>C is a language created to replace Unix with a simpler operating system.</li>
+<li>C is a language whose standards have never changed since the year 1978.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the summary, what happened in 1973 with Version 4 Unix?</span></p>
+<ul class='opts'>
+<li class='ok'>Its kernel was largely rewritten in C.<span class='tag'>CORRECT</span></li>
+<li>It was ported to a new PDP-7 computer.</li>
+<li>It was replaced by the B language.</li>
+<li>It was adopted as an ISO standard.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the summary, the word &quot;ratified&quot; in &quot;ANSI ratified the first official standard in 1989&quot; is closest in meaning to:</span></p>
+<ul class='opts'>
+<li class='ok'>officially approved<span class='tag'>CORRECT</span></li>
+<li>strongly criticized</li>
+<li>quickly replaced</li>
+<li>carefully translated</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about a programmer who writes if (a = b + 1) instead of if (a == b + 1)?</span></p>
+<ul class='opts'>
+<li class='ok'>The program may behave incorrectly without showing any error.<span class='tag'>CORRECT</span></li>
+<li>The program will always refuse to compile.</li>
+<li>The program will run faster than expected.</li>
+<li>The program will delete the variable a.</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>C++</span><button class="say" type="button" aria-pressed="false" data-say="C++" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>C++ is a high-level, general-purpose programming language created by the Danish computer scientist Bjarne Stroustrup. He began work in 1979 at Bell Labs on &quot;C with Classes&quot;, an extension of C, because he wanted a language that was as efficient and flexible as C but also offered high-level features for organizing programs. The name C++ was suggested by Rick Mascitti in 1983 and refers to C&#x27;s ++ operator, which increments the value of a variable. The first edition of The C++ Programming Language appeared in 1985 and served as the definitive reference until an official standard existed.</p>
+<p class='expl'>C++ supports low-level memory manipulation as well as object-oriented, generic and functional programming. Its design rests on two ideas: a direct mapping of hardware features, inherited mostly from C, and zero-overhead abstractions built on top of them. Stroustrup argues that offering both hardware access and abstraction is the basis of C++, and that doing it efficiently is what distinguishes it from other languages. One guiding principle is that unused features should not slow down the finished program. Because of this, C++ is common in operating systems, video games, servers and performance-critical systems such as telephone switches and space probes.</p>
+<p class='expl'>The language is standardized by the International Organization for Standardization (ISO). The first standard, C++98, was published in 1998 and was followed by C++03, C++11, C++14, C++17, C++20 and C++23. Since 2012, a new version has been released every three years. The standard covers both the core language and the standard library, which includes containers, algorithms, strings and input/output. An important influence on the library was the Standard Template Library, proposed in 1994.</p>
+<p class='expl'>C++ is often called a superset of C, but this is not strictly true. Most C code compiles in C++, yet some valid C code is invalid or behaves differently. For example, C allows implicit conversion from void* to other pointer types, while C++ does not, for reasons of type safety. To mix both languages, a function must be declared with C linkage using an extern &quot;C&quot; block. The standards committee also left name mangling and exception handling to each compiler vendor, so object code from different compilers is usually incompatible.</p>
+<p class='expl'>C++ has a weakness: it allows manual memory management, so a programmer can inadvertently introduce bugs such as buffer overflow, which are security risks. In March 2025, Stroustrup called on the language community to defend the language. Initiatives such as the C++ Core Guidelines, led by Stroustrup and Herb Sutter, try to help programmers write safer code by following best practices.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>C++ was created by Bjarne Stroustrup as an extension of C, adding classes and other high-level features.</li>
+<li>It combines direct hardware access with zero-overhead abstractions, so unused features do not reduce performance.</li>
+<li>ISO standardizes the language, and a new version has appeared every three years since 2012.</li>
+<li>C++ is not strictly a superset of C: some valid C code fails or behaves differently in C++.</li>
+<li>Manual memory management can cause security bugs such as buffer overflow.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>extension</b> — extensión; en programación, lenguaje o función que amplía otro ya existente</li>
+<li><b>increment</b> — incrementar; aumentar el valor de una variable, normalmente de uno en uno</li>
+<li><b>zero-overhead abstraction</b> — abstracción sin sobrecoste; función de alto nivel que no consume recursos extra al ejecutarse</li>
+<li><b>performance-critical</b> — crítico para el rendimiento; sistemas donde la velocidad es esencial</li>
+<li><b>ratify</b> — ratificar; aprobar oficialmente una norma o acuerdo</li>
+<li><b>superset</b> — superconjunto; algo que contiene todo lo de otro y además elementos propios</li>
+<li><b>implicit conversion</b> — conversión implícita; cambio de tipo de dato hecho automáticamente, sin que el programador lo pida</li>
+<li><b>name mangling</b> — decoración de nombres; técnica del compilador que modifica los nombres de funciones para distinguirlas</li>
+<li><b>buffer overflow</b> — desbordamiento de búfer; error al escribir más datos de los que caben en la memoria reservada</li>
+<li><b>inadvertently</b> — sin darse cuenta; por descuido, de forma no intencionada</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the passage?</span></p>
+<ul class='opts'>
+<li class='ok'>C++ is a language derived from C that combines hardware access with high-level abstractions and is governed by international standards.<span class='tag'>CORRECT</span></li>
+<li>C++ is a language designed mainly for building video games and web pages with simple, safe code.</li>
+<li>C++ replaced the C language completely and can run all C programs without any change.</li>
+<li>C++ is a language whose main purpose is to teach programmers how to manage memory automatically.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, how often has a new version of C++ been released since 2012?</span></p>
+<ul class='opts'>
+<li>Every year</li>
+<li>Every two years</li>
+<li class='ok'>Every three years<span class='tag'>CORRECT</span></li>
+<li>Every five years</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;inadvertently&quot; in &quot;a programmer can inadvertently introduce bugs&quot; most nearly means:</span></p>
+<ul class='opts'>
+<li class='ok'>without noticing the mistake<span class='tag'>CORRECT</span></li>
+<li>on purpose</li>
+<li>with great skill</li>
+<li>after long testing</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the passage about the C++ Core Guidelines?</span></p>
+<ul class='opts'>
+<li class='ok'>They aim to reduce the risks that come from the freedom C++ gives programmers.<span class='tag'>CORRECT</span></li>
+<li>They are a mandatory part of every ISO standard of the language.</li>
+<li>They were created to replace the standard library completely.</li>
+<li>They only apply to programs written before 2011.</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>Pointer (computer programming)</span><button class="say" type="button" aria-pressed="false" data-say="Pointer (computer programming)" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>In computer science, a pointer is an object that stores a memory address. That address may belong to another value in memory or, in some cases, to memory-mapped hardware. Obtaining the value stored at that location is called dereferencing the pointer. A useful analogy is a page number in a book&#x27;s index: flipping to that page and reading it is the equivalent of dereferencing.</p>
+<p class='expl'>Pointers are a very thin abstraction on top of the addressing capabilities of modern architectures. Each unit of memory has a numeric address, so memory works like one very large array. Pointers improve performance in repetitive operations, such as traversing strings, lookup tables, linked lists and trees, because copying a pointer is much cheaper than copying the data it points to. They are also used to pass parameters by reference, to return several values from a function, and to hold the entry points of subroutines.</p>
+<p class='expl'>In C, a pointer is declared with an asterisk, for example int *ptr. The &amp; operator retrieves a variable&#x27;s address, and the asterisk dereferences the pointer. Suppose a is at address 0x8130 and ptr holds that address. Writing *ptr = 8 makes the computer read the address stored in ptr and put 8 in that location, so a now equals 8. Array indexing is defined through pointer arithmetic: a[i] is equivalent to *(a + i). Adding 1 to a pointer moves it by the size of the type, so on a machine with 4-byte integers, a + 1 advances 4 bytes.</p>
+<p class='expl'>Pointers also allow dynamic memory allocation. The function malloc() reserves a block on the heap and returns a pointer to it, or a null pointer if the allocation fails, and free() returns the block. If a program forgets to free memory it no longer needs, a memory leak occurs. On some microcontrollers, a pointer can be set to a fixed hexadecimal address to control memory-mapped devices directly.</p>
+<p class='expl'>Pointers carry risks. An uninitialized wild pointer may point to an invalid address and cause a segmentation fault. A dangling pointer refers to memory that has already been deallocated and may have been overwritten by unrelated code. Dereferencing a null pointer produces undefined behavior. To reduce these hazards, languages such as Java use opaque references that cannot be manipulated as numbers, garbage collection frees memory automatically, and C++ offers smart pointers based on reference counting. Rust uses a borrow checker to eliminate pointer bugs without garbage collection.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>A pointer stores a memory address, and dereferencing it gives access to the value at that address.</li>
+<li>In C, a[i] is equivalent to *(a + i), and pointer arithmetic takes the size of the type into account.</li>
+<li>malloc() allocates memory on the heap and free() releases it; forgetting to free causes a memory leak.</li>
+<li>Wild, dangling and null pointers can cause crashes or undefined behavior.</li>
+<li>Smart pointers, garbage collection and Rust&#x27;s borrow checker make pointers safer.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>dereferencing</b> — desreferenciar; acceder al valor almacenado en la dirección a la que apunta el puntero</li>
+<li><b>traversing</b> — recorrer; pasar por cada elemento de una estructura de datos</li>
+<li><b>memory leak</b> — fuga de memoria; memoria reservada que nunca se libera y se va agotando</li>
+<li><b>dangling pointer</b> — puntero colgante; apunta a memoria ya liberada</li>
+<li><b>wild pointer</b> — puntero salvaje; nunca fue inicializado y apunta a una dirección arbitraria</li>
+<li><b>segmentation fault</b> — fallo de segmentación; error por acceder a una dirección de memoria no permitida</li>
+<li><b>undefined behavior</b> — comportamiento indefinido; resultado impredecible que el estándar no especifica</li>
+<li><b>opaque</b> — opaco; cuyo contenido interno no se puede ver ni manipular</li>
+<li><b>pitfalls</b> — trampas, peligros ocultos; errores típicos en los que se cae fácilmente</li>
+<li><b>garbage collection</b> — recolección de basura; liberación automática de memoria que ya no se usa</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the text?</span></p>
+<ul class='opts'>
+<li class='ok'>A pointer stores a memory address, which is useful but carries risks that languages try to reduce<span class='tag'>CORRECT</span></li>
+<li>Pointers are obsolete and have been replaced in all modern programming languages</li>
+<li>Pointers are used only to control microcontrollers and video hardware</li>
+<li>A pointer is a type of number that cannot be used to access data</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the text, what does the function malloc() return if the allocation fails?</span></p>
+<ul class='opts'>
+<li class='ok'>A null pointer<span class='tag'>CORRECT</span></li>
+<li>A dangling pointer</li>
+<li>The address 0x8130</li>
+<li>A block of zero size</li>
+</ul>
+<p class='stem'><span class='text'>3. In the text, the word &quot;dangling&quot; in &quot;dangling pointer&quot; most nearly means:</span></p>
+<ul class='opts'>
+<li class='ok'>Left pointing to something that no longer exists<span class='tag'>CORRECT</span></li>
+<li>Moving quickly between addresses</li>
+<li>Pointing to two locations at once</li>
+<li>Protected against errors</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about languages like Java that use opaque references?</span></p>
+<ul class='opts'>
+<li class='ok'>They prevent some pointer errors because references cannot be treated as numbers<span class='tag'>CORRECT</span></li>
+<li>They are slower than C because they cannot use memory</li>
+<li>They do not need any memory management</li>
+<li>They allow programmers to add values to addresses freely</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>Compiler</span><button class="say" type="button" aria-pressed="false" data-say="Compiler" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>A compiler is software that translates code written in one programming language, the source language, into another, the target language. The term usually refers to programs that turn a high-level language into a low-level one, such as assembly or machine code, to create an executable program. There are many kinds: a cross-compiler produces code for a different CPU or operating system than the one it runs on, and a bootstrap compiler is a temporary tool used to build a better, more permanent compiler.</p>
+<p class='expl'>An interpreter does a similar job by a different mechanism: it executes code without converting it to machine code, or it runs an intermediate form such as bytecode. Code compiled to native form generally runs faster than interpreted code, while just-in-time compilation offers native speed at the cost of a one-time startup delay. Low-level languages like C are typically compiled, especially when speed matters, because their source maps closely to machine code and gives programmers more control over hardware.</p>
+<p class='expl'>Compilers began in the 1950s. Grace Hopper&#x27;s team wrote the A-0 compiler in 1952 and coined the term, and John Backus&#x27;s team at IBM completed the FORTRAN compiler in 1957. Early computers had so little memory that the work had to be split into several small programs, which led to the idea of separate front end and back end stages. Later, Bell Labs developed B and then C, and the Unix kernel was rewritten in C by 1973.</p>
+<p class='expl'>Modern compilers are usually organized in three stages. The front end reads the source, checks syntax and semantics, reports errors, and builds an intermediate representation (IR). To do this it performs lexical analysis, which breaks the text into tokens, then parsing, which builds a tree according to the grammar, and finally semantic analysis, which checks things like types and fills the symbol table.</p>
+<p class='expl'>The middle end optimizes the IR independently of the CPU. Typical optimizations include dead-code elimination, constant propagation and moving computation out of a loop. The back end then generates code for a specific processor, performing register allocation and instruction scheduling. This design lets tools such as GCC and Clang combine several languages with several processors while sharing the same optimizations.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>A compiler translates high-level source code into a lower-level target such as machine code.</li>
+<li>Compiled code usually runs faster than interpreted code; just-in-time compilation is a compromise.</li>
+<li>Compilers work in phases: front end, middle end and back end.</li>
+<li>The front end analyzes the code with lexing, parsing and semantic analysis, and produces an intermediate representation.</li>
+<li>Optimizations in the middle end are shared across languages and processors.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>cross-compiler</b> — compilador cruzado; genera código para una CPU o sistema distinto de aquel donde se ejecuta</li>
+<li><b>bytecode</b> — código intermedio, ni fuente ni máquina; lo ejecuta una máquina virtual</li>
+<li><b>just-in-time compilation</b> — compilación justo a tiempo; se compila mientras el programa se ejecuta</li>
+<li><b>coin (a term)</b> — acuñar (un término); inventar y difundir una palabra nueva</li>
+<li><b>token</b> — unidad léxica mínima del código, como una palabra clave o un operador</li>
+<li><b>parsing</b> — análisis sintáctico; construir la estructura del programa a partir de los tokens</li>
+<li><b>symbol table</b> — tabla de símbolos; estructura que guarda el tipo y el alcance de cada identificador</li>
+<li><b>dead-code elimination</b> — eliminación de código muerto; quitar instrucciones que nunca afectan al resultado</li>
+<li><b>register allocation</b> — asignación de registros; decidir qué valores viven en los registros de la CPU</li>
+<li><b>instruction scheduling</b> — planificación de instrucciones; reordenarlas para aprovechar la ejecución en paralelo</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the passage?</span></p>
+<ul class='opts'>
+<li class='ok'>A compiler translates source code into another language and works through organized stages.<span class='tag'>CORRECT</span></li>
+<li>Interpreters have replaced compilers in most modern programming projects.</li>
+<li>Grace Hopper invented every important programming language of the 1950s.</li>
+<li>Compilers can only produce code for the computer on which they run.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, why were early compilers divided into several small programs?</span></p>
+<ul class='opts'>
+<li class='ok'>Early computers did not have enough memory to hold one large program.<span class='tag'>CORRECT</span></li>
+<li>Programmers preferred to write assembly language by hand.</li>
+<li>Bell Labs required each phase to be written by a different team.</li>
+<li>Interpreters could not run the larger programs at that time.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the phrase &quot;coined the term&quot; means that Grace Hopper&#x27;s team</span></p>
+<ul class='opts'>
+<li class='ok'>invented and introduced the word &quot;compiler&quot;.<span class='tag'>CORRECT</span></li>
+<li>copied the word from an older manual.</li>
+<li>translated the word into another language.</li>
+<li>forbade the use of other names.</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred from the three-stage structure of compilers like GCC?</span></p>
+<ul class='opts'>
+<li class='ok'>Adding support for a new processor does not require rewriting the front end.<span class='tag'>CORRECT</span></li>
+<li>Each language needs its own completely separate compiler.</li>
+<li>Optimizations must be rewritten for every new language.</li>
+<li>The front end must know the details of every CPU.</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>Finite-state machine</span><button class="say" type="button" aria-pressed="false" data-say="Finite-state machine" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>A finite-state machine (FSM) is a mathematical model of computation. It is an abstract machine that can be in exactly one of a finite number of states at any given time. It changes from one state to another in response to inputs, and each change is called a transition. An FSM is defined by its list of states, its initial state, and the inputs that trigger each transition. Because its memory is limited by the number of states, it has less computational power than a Turing machine.</p>
+<p class='expl'>Many everyday devices behave like state machines. A vending machine dispenses a product when the right coins are deposited, an elevator decides its stops from the floors requested, and a combination lock requires numbers in the proper order. A coin-operated turnstile is the classic example. It has two states, Locked and Unlocked, and two inputs, coin and push. In the Locked state, pushing has no effect; inserting a coin moves it to Unlocked. In the Unlocked state, extra coins change nothing; a push lets one customer through and resets the state to Locked.</p>
+<p class='expl'>A machine can be shown in a state-transition table or in a state diagram. In the diagram, each state is a node, each arrow is a transition labeled with its input, and a circular arrow marks an input that causes no change. Some models also attach an entry action, performed when entering a state, or an exit action, performed when leaving it.</p>
+<p class='expl'>FSMs are classified by what they do. Acceptors give a binary answer: after reading all the input, they accept it if they end in an accepting state and reject it otherwise. The sets of sequences they accept are called regular languages. Transducers produce output. In a Moore machine the output depends only on the current state, which simplifies behavior. In a Mealy machine the output depends on both state and input, which often reduces the number of states.</p>
+<p class='expl'>A machine is deterministic if every state has exactly one transition for each possible input. In a non-deterministic machine, an input may lead to one, several, or no transitions. Any non-deterministic machine can be converted into an equivalent deterministic one, although the result is usually more complex. In practice, FSMs are built with logic gates, flip-flops, or relays, and with a register that stores the current state. They are also used in compilers, where a lexical analyzer turns characters into tokens for the parser.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>An FSM is in exactly one of a finite number of states and moves between them through transitions triggered by inputs.</li>
+<li>A turnstile is a simple example: Locked and Unlocked states, with coin and push inputs.</li>
+<li>In a Moore machine the output depends only on the state; in a Mealy machine it depends on state and input.</li>
+<li>Acceptors accept or reject an input sequence, and the languages they accept are called regular languages.</li>
+<li>Every non-deterministic FSM has an equivalent deterministic one.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>transition</b> — transición; el paso de un estado a otro al recibir una entrada</li>
+<li><b>turnstile</b> — torniquete; puerta giratoria que deja pasar a una persona a la vez</li>
+<li><b>acceptor</b> — aceptor; máquina que acepta o rechaza una secuencia de entrada</li>
+<li><b>transducer</b> — transductor; máquina de estados que produce una salida a partir de la entrada</li>
+<li><b>deterministic</b> — determinista; con un único resultado posible para cada entrada</li>
+<li><b>dispense</b> — dispensar, repartir; se usa para máquinas expendedoras</li>
+<li><b>flip-flop</b> — biestable; circuito electrónico que almacena un bit de información</li>
+<li><b>lexical analyzer</b> — analizador léxico; parte del compilador que convierte caracteres en tokens</li>
+<li><b>reject</b> — rechazar; en un aceptor, no aceptar una entrada</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the passage?</span></p>
+<ul class='opts'>
+<li class='ok'>A finite-state machine is a model that moves between a limited number of states in response to inputs.<span class='tag'>CORRECT</span></li>
+<li>A finite-state machine is a physical device used mainly in subways and vending machines.</li>
+<li>A finite-state machine is more powerful than a Turing machine because it has more states.</li>
+<li>A finite-state machine is a programming language used to write compilers.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what happens when a coin is inserted while the turnstile is in the Unlocked state?</span></p>
+<ul class='opts'>
+<li class='ok'>The state does not change.<span class='tag'>CORRECT</span></li>
+<li>The turnstile goes back to Locked.</li>
+<li>The turnstile rejects the coin and reports an error.</li>
+<li>The turnstile allows two customers through.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;dispense&quot; in &quot;a vending machine dispenses a product&quot; most nearly means:</span></p>
+<ul class='opts'>
+<li class='ok'>to give out<span class='tag'>CORRECT</span></li>
+<li>to keep back</li>
+<li>to pay for</li>
+<li>to test</li>
+</ul>
+<p class='stem'><span class='text'>4. Which conclusion can be drawn from the passage about Mealy machines?</span></p>
+<ul class='opts'>
+<li class='ok'>They can sometimes perform the same job as a Moore machine with fewer states.<span class='tag'>CORRECT</span></li>
+<li>They always need more states than a Moore machine.</li>
+<li>They cannot produce any output.</li>
+<li>They can only be built with relays.</li>
+</ul>
+</article>
+<article class='q'>
+<p class='stem'><span class='text'>UML state machine</span><button class="say" type="button" aria-pressed="false" data-say="UML state machine" aria-label="Escuchar el título"><svg class="play"><use href="#ic-play"/></svg><svg class="stop"><use href="#ic-stop"/></svg></button></p>
+<p class='expl'>A UML state machine, formerly called a UML statechart, extends the mathematical idea of a finite automaton. It organizes how a device or program works so that it is always in exactly one of several possible states, with well-defined conditional transitions between them. It is an object-based variant of the Harel statechart, and it combines features of Mealy machines (actions that depend on both state and triggering event) and Moore machines (entry and exit actions tied to states).</p>
+<p class='expl'>Many software systems are event-driven: they wait for an event, such as a key press or a data packet, react to it, and then wait again. The reaction depends on the type of event and on the internal state. In UML, an event is a type of occurrence, and each concrete occurrence is an instance. A state machine follows the run-to-completion model: it finishes processing one event before starting the next, and new events wait in a queue. This avoids internal concurrency problems, although the machine&#x27;s responsiveness is set by its longest step.</p>
+<p class='expl'>Traditional finite-state machines suffer from state explosion. UML solves part of this with extended state: the state variable captures the qualitative aspect, while other variables capture the quantitative aspects. For example, a key_count variable can limit keystrokes to 1000 without creating 1000 states. Guard conditions, which are Boolean expressions in square brackets, enable a transition only when they evaluate to TRUE. Guards should have no side effects, because UML does not define the order in which they are evaluated.</p>
+<p class='expl'>The most important innovation is hierarchically nested states. If a system is in a substate, it is also in the surrounding superstate. When the substate does not handle an event, the superstate handles it instead of discarding it. In a pocket calculator, for instance, the Clear and Off transitions are defined once in the &quot;on&quot; superstate. Orthogonal regions also let a composite state contain independent parts, such as the main keypad and the numeric keypad. Modeling them separately needs 2 + 2 states instead of the 2 × 2 = 4 of a Cartesian product.</p>
+<p class='expl'>Entry and exit actions guarantee initialization and cleanup, much like constructors and destructors. In a toaster oven, the exit action of &quot;heating&quot; disables the heater, so it is off whatever path leads out of that state. Entry actions run from the outermost state inward, and exit actions run in reverse. An internal transition runs actions without changing state and without triggering entry or exit actions, unlike a self-transition.</p>
+<p class='expl'><b>Key points</b></p><ul class='opts'>
+<li>A UML state machine is always in exactly one state and changes state through transitions triggered by events.</li>
+<li>Extended state variables and guard conditions avoid state explosion.</li>
+<li>Hierarchical states let substates reuse behavior from superstates.</li>
+<li>Orthogonal regions model independent parts without multiplying states.</li>
+<li>Entry and exit actions guarantee initialization and cleanup, and they differ from internal transitions.</li>
+</ul>
+<p class='expl'><b>Glosario</b></p><ul class='opts'>
+<li><b>state explosion</b> — explosión de estados; crecimiento desproporcionado del número de estados en una máquina</li>
+<li><b>guard condition</b> — condición de guarda; expresión booleana que habilita o bloquea una transición</li>
+<li><b>run to completion</b> — ejecución hasta completar; cada evento se procesa entero antes del siguiente</li>
+<li><b>substate</b> — subestado; estado anidado dentro de otro estado</li>
+<li><b>superstate</b> — superestado; estado que contiene a otros y les hereda comportamiento</li>
+<li><b>orthogonal</b> — ortogonal; independiente y compatible con otra parte del sistema</li>
+<li><b>Cartesian product</b> — producto cartesiano; todas las combinaciones posibles entre dos conjuntos</li>
+<li><b>self-transition</b> — autotransición; transición cuyo estado de origen y destino es el mismo</li>
+<li><b>cleanup</b> — limpieza, liberación de recursos; tareas finales al salir de un estado</li>
+<li><b>triggering event</b> — evento disparador; el que provoca una transición</li>
+</ul>
+<p class='stem'><span class='text'>1. What is the main idea of the passage?</span></p>
+<ul class='opts'>
+<li class='ok'>UML state machines extend traditional finite-state machines with features that reduce complexity and repetition.<span class='tag'>CORRECT</span></li>
+<li>UML state machines are a way to draw keyboards and calculators.</li>
+<li>Traditional finite-state machines are always better than UML state machines.</li>
+<li>Event-driven programming should be avoided in real-time systems.</li>
+</ul>
+<p class='stem'><span class='text'>2. According to the passage, what happens when a substate does not handle an event?</span></p>
+<ul class='opts'>
+<li>The event is quietly discarded.</li>
+<li class='ok'>The superstate handles the event.<span class='tag'>CORRECT</span></li>
+<li>The machine returns to its initial state.</li>
+<li>The event is stored until the next transition.</li>
+</ul>
+<p class='stem'><span class='text'>3. In the passage, the word &quot;sparingly&quot; would be closest in meaning to which of the following, in the sentence &quot;Used sparingly, extended state variables and guards make up a powerful mechanism&quot;?</span></p>
+<ul class='opts'>
+<li>Quickly and without planning</li>
+<li class='ok'>In small amounts and with care<span class='tag'>CORRECT</span></li>
+<li>Only by expert designers</li>
+<li>Together with entry actions</li>
+</ul>
+<p class='stem'><span class='text'>4. What can be inferred about the toaster oven example?</span></p>
+<ul class='opts'>
+<li class='ok'>Entry and exit actions make the design safer because a programmer cannot forget to disable the heater.<span class='tag'>CORRECT</span></li>
+<li>The heater is controlled only by the actions on transitions.</li>
+<li>The door_open state has no safety requirements.</li>
+<li>Exit actions are executed only when the door is open.</li>
+</ul>
+</article>
+<footer>345 palabras · 39 phrasal verbs · 52 idioms · 446 preguntas · 29 lecturas · generado el 2026-09-29</footer>
 <script>
 (function(){
   var synth = window.speechSynthesis,

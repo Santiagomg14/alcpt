@@ -80,17 +80,23 @@ Preferencia fija de Brayhan: **en Word y PDF, los párrafos siempre van justific
 El script `scripts/build_pdf.py` ya aplica `TA_JUSTIFY` en todos los estilos de texto corrido.
 
 ### 8. Lecturas (pestaña «Lecturas» del cuaderno)
-`data/readings.json` guarda artículos de divulgación de **ThoughtCo** condensados al nivel
-B2. Temas elegidos por Brayhan: **tecnología y computación, matemáticas, humanidades y
-ciencias sociales** (nada de ciencias naturales salvo que él lo pida). Son temas ajenos a su
-experticia a propósito.
+`data/readings.json` guarda artículos de divulgación de **ThoughtCo** y, desde el 29 sep,
+de **Wikipedia** (citada con su licencia, CC BY-SA 4.0), condensados al nivel B2. Temas
+elegidos por Brayhan: **tecnología y computación, matemáticas, humanidades, ciencias
+sociales y cultura general**, más, a petición suya (29 sep), lecturas técnicas de su
+área que expliquen cómo funcionan las cosas: **C y C++, máquinas de estado y AOCS**
+(tema `aero`). Nada de ciencias naturales salvo que él lo pida.
 
 - Se traen con `scripts/fetch_readings.py` (`--discover`, `--add URL`, `--add-from-section`,
-  `--condense`). El texto original queda en `inbox/readings/` (fuera del repo); al JSON solo
+  `--condense`, `--more-questions`). Wikipedia: `--add https://en.wikipedia.org/wiki/… --topic
+  tech|aero|culture|humanities…` (la API no da tema; id `wiki-<pageid>`). El texto original queda en `inbox/readings/` (fuera del repo); al JSON solo
   van metadatos + el condensado.
 - La condensación la hace Claude Code (`claude -p`, como el bot): **resumen en inglés** de
-  250–350 palabras, `key_points`, `glossary` inglés→español (solo términos B2+) y una
-  `question` de comprensión estilo ALCPT con 4 opciones.
+  250–350 palabras, `key_points`, `glossary` inglés→español (solo términos B2+) y
+  **4 `questions`** de comprensión estilo ALCPT con 4 opciones cada una: idea principal,
+  detalle, vocabulario en contexto e inferencia (pedido de Brayhan, 29 sep). Las lecturas
+  viejas con una sola `question` se completan con `--more-questions` a partir del
+  resumen. Para gastar menos se condensa con `CLAUDE_MODEL=claude-sonnet-5-5`.
 - Las palabras del glosario **no** se pasan automáticamente al diccionario numerado; si
   Brayhan quiere alguna, la pide y entra por la regla 1.
 - Desde el 13 sep 2026 salen también en el PDF y en la web espejo (Parte V), además
@@ -194,8 +200,15 @@ también se cierra.
 **edge-tts** (voces `en-US-AndrewNeural` y `es-CO-SalomeNeural`, sin clave ni costo).
 
 - **Tope fijo: 10 minutos por episodio** (`MAX_SECONDS = 600`). Dos series:
-  `vocab` (todo el diccionario en orden: palabra en inglés → significado en español →
-  palabra otra vez) y `lecturas` (una por artículo: resumen, glosario y pregunta).
+  `vocab` (todo el diccionario en orden: palabra en inglés → **máximo 3 traducciones**
+  en español → palabra otra vez → **frase de ejemplo en inglés**) y `lecturas` (una por
+  artículo: resumen, glosario y la primera pregunta; las otras quedan en la página).
+- Traducción corta y frase de ejemplo salen de `data/podcast_vocab.json`, que llena
+  `scripts/podcast_extras.py` (Haiku, sin herramientas, solo las palabras nuevas). **Es
+  solo para el audio: lo escrito no cambia.** Sin Claude, recorta a 3 términos sola.
+- **La voz en inglés va más fuerte** en la serie `vocab`: `VOLUME = +50 %` (medido:
+  -17,6 dBFS frente a -23,6 del español; +100 % suena igual que +50 %). Las lecturas
+  no cambian de volumen para no re-renderizarlas.
 - Solo se re-renderiza lo que cambió (hash del guion). Agregar una lectura crea un
   episodio nuevo. El último episodio de vocabulario, que va creciendo, **espera a
   juntar 10 palabras** antes de rehacerse (`MIN_PALABRAS_NUEVAS`): rehacerlo por cada
@@ -216,14 +229,16 @@ alcpt/
 │   ├── forms.json         <- fuente única de las preguntas
 │   ├── phrasal_verbs.json <- phrasal verbs de los formularios, por partícula
 │   ├── idioms.json        <- idioms y léxico militar, por uso
-│   ├── readings.json      <- lecturas de ThoughtCo condensadas (pestaña Lecturas)
+│   ├── readings.json      <- lecturas de ThoughtCo y Wikipedia condensadas (pestaña Lecturas)
+│   ├── podcast_vocab.json <- traducción corta + frase de ejemplo (solo para el audio)
 │   └── podcasts.json      <- guiones y metadatos de los episodios (pestaña Podcasts)
 ├── scripts/
 │   ├── build_pdf.py       <- genera el PDF consolidado
 │   ├── build_html.py      <- versión web espejo del PDF
 │   ├── build_artifact.py  <- cuaderno con pestañas Cuaderno / Lecturas / Podcasts
 │   ├── build_podcasts.py  <- guiones + MP3 con edge-tts (≤10 min por episodio)
-│   ├── fetch_readings.py  <- trae y condensa artículos de ThoughtCo
+│   ├── podcast_extras.py  <- traducción corta + frase de ejemplo, solo para el audio
+│   ├── fetch_readings.py  <- trae y condensa artículos de ThoughtCo y Wikipedia
 │   ├── ocr_capture.py     <- OCR local de una captura (RapidOCR, sin red)
 │   ├── parse_capture.py   <- captura → pregunta en forms.json, sin Claude Code
 │   ├── parse_vocab_capture.py <- lista término=significado (TikTok) → vocabulary.json
@@ -250,6 +265,7 @@ los podcasts van antes del cuaderno, porque el cuaderno lee `podcasts.json`.
 ```bash
 python scripts/build_pdf.py
 python scripts/build_html.py
+python scripts/podcast_extras.py        # frases y traducción corta del podcast (solo lo nuevo)
 python scripts/build_podcasts.py        # solo re-renderiza los episodios que cambiaron
 python scripts/build_artifact.py
 python scripts/build_artifact.py --standalone --out docs/index.html
