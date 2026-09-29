@@ -18,10 +18,11 @@
       "66",
       "72",
       "64",
-      "59"
+      "59",
+      "67"
     ],
-    "last_updated": "2026-09-28",
-    "total_questions": 395
+    "last_updated": "2026-09-29",
+    "total_questions": 429
   },
   "forms": [
     {
@@ -649,6 +650,124 @@
     {
       "form": "59",
       "questions": [
+        {
+          "n": 17,
+          "question": "Mrs. Wilson needs a match.",
+          "options": [
+            "She wants to pay the bill.",
+            "She wants to make a fire.",
+            "She wants to know the time.",
+            "She wants to play a game."
+          ],
+          "correct": "She wants to make a fire.",
+          "explanation": "The word \"match\" refers to a small wooden or cardboard stick tipped with chemicals that ignite when struck against a rough surface. Therefore, needing a \"match\" implies a desire to start a fire, light a cigarette, or light a stove. In Al cpt vocabulary tests, this often requires identifying the primary function of common household objects. \"She wants to pay the bill.\" is incorrect because paying a bill is associated with words like \"cash,\""
+        },
+        {
+          "n": 21,
+          "question": "To 21 the school has a new system for teaching students. How to type?",
+          "options": [
+            "It has a new method.",
+            "It has a new typewriter.",
+            "It has a new instructor.",
+            "It has a new textbook."
+          ],
+          "correct": "It has a new method.",
+          "explanation": "In the sentence, the word \"system\" refers to a specific approach, procedure, or organized way of doing something. In an educational context, a \"system for teaching\" is synonymous with a \"method for teaching.\" Therefore, saying the school has a new method conveys the same meaning as saying it has a new system."
+        },
+        {
+          "n": 26,
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "options": [
+            "Iuolitstayimiveuaitei7.uu.",
+            "My roommate wakes me at 7 :15."
+          ],
+          "correct": "(Correct answer not visible in this capture.)",
+          "explanation": "The phrasal verb\"get up\" means to leave one's bed after waking up or sleeping. If someone gets up at 7:00, it logically follows that they are no longer in bed once that time has passed. This is a common way to describe a daily routine in both general and military contexts (such as during basic training or daily muster)."
+        },
+        {
+          "n": 29,
+          "question": "John said Bill might go to town. What did John say?",
+          "options": [
+            "Bill is definitely going to town.",
+            "Bill went to town.",
+            "Bill isn't going to town.",
+            "Bill may go to town."
+          ],
+          "correct": "Bill may go to town.",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 32,
+          "question": "What does that pipe carry?",
+          "options": [
+            "twelve men",
+            "bricks",
+            "water",
+            "heavy bundles"
+          ],
+          "correct": "water",
+          "explanation": "In standard English and technical contexts, a pipe is a hollow cylinder or tube used to transport liquids or gases. Among the options provided, \"water\" is the only substance that is typically conveyed through a pipe system. This question tests basic vocabulary related to infrastructure and utility maintenance, which is common in military and civil facility management."
+        },
+        {
+          "n": 35,
+          "question": "The ride was bumpy. How was the ride?",
+          "options": [
+            "smooth",
+            "fast",
+            "rough",
+            "comfortable"
+          ],
+          "correct": "rough",
+          "explanation": "In English, the word \"bumpy\" is used to describe a ride or a surface that is uneven and causes jolts or bouncing. In the context of transportation (such as a flight or a car ride), a \"bumpy\" ride is synonymous with a \"rough\" ride. \"smooth\" is incorrect because it is the direct antonym of bumpy; it describes a ride with no jolts or disturbances."
+        },
+        {
+          "n": 38,
+          "question": "Robert said I'm going to keep this book.",
+          "options": [
+            "Robert has no books.",
+            "Robert is reading the book.",
+            "Robert wants the book.",
+            "Robert will give the book away."
+          ],
+          "correct": "Robert wants the book.",
+          "explanation": "The verb 'keep' means to retain possession of something, to continue to have it, or not to give it away. If Robert states that he is going to 'keep' the book, it implies that he intends to remain its owner or holder, which suggests he wants to have it. \"Robert has no books.\" is incorrect because the phrase 'this book' indicates that there is at least one book in his possession or immediate vicinity that he is referring to."
+        },
+        {
+          "n": 39,
+          "question": "It takes 15 minutes to record the tape.",
+          "options": [
+            "The recording will start in 15 minutes.",
+            "The recording is 15 minutes long.",
+            "The tape speed is 15feet per minute.",
+            "The tape recorder can be used in 15 minutes."
+          ],
+          "correct": "The recording is 15 minutes long.",
+          "explanation": "The phrase \"it takes 15 minutes\" describes the duration of time required to complete the action of recording. In the context of audio or video, if the process of recording the content consumes 15 minutes, then the resulting media (the recording) has a temporal length of 15 minutes. \"The recording will start in 15 minutes.\" is incorrect because \"it takes\"refers to the duration of the task, not the point in time when the task begins."
+        },
+        {
+          "n": 44,
+          "question": "The pill brought Jon some relief.",
+          "options": [
+            "He became hungry.",
+            "He felt very sad.",
+            "He had less pain.",
+            "He became thirsty."
+          ],
+          "correct": "He had less pain.",
+          "explanation": "In a medical or health context, the noun \"relief\" refers to the alleviation or removal of pain, distress, or discomfort. If a pill \"brought relief,\" it means the medication successfully reduced the negative symptoms Jon was experiencing, most commonly pain. \"He became hungry.\" is incorrect because hunger is a desire for food and is not a synonym for the medical concept of relief."
+        },
+        {
+          "n": 45,
+          "question": "Let's wind up this job as soon as possible.",
+          "options": [
+            "Let's start it.",
+            "Let's finish it.",
+            "Let's turn it around.",
+            "Let's start the fan."
+          ],
+          "correct": "Let's finish it.",
+          "explanation": "The phrasal verb \"wind up\" means to bring an activity, meeting, or job to a conclusion or to finish it. In a professional or military context, it is frequently used to signal that a task is nearing completion and the final steps should be taken to close it out. \"Let's start it.\" is incorrect because it is the antonym of winding something up; starting occurs at the beginning of a process, not the end."
+        },
         {
           "n": 46,
           "question": "Tools should be protected against moisture. What should they be protected against?",
@@ -2468,6 +2587,295 @@
           ],
           "correct": "a word very",
           "explanation": "In this context, the adverb“awfully\" functions as an intensifier meaning“very,\"\"extremely，or \"exceedingly.\"When used to modify an adjective like \"long,it emphasizes the degree of the quality rather than conveying a negative or \"awful\"meaning. A \"long run\"for a play indicates it has been performed for a significant period of time,which is usually a sign of popularity and success. In this context, the adverb \"awfully\" functions as an intensifier meaning \"very,\" \"extremely,\" or \"exceedingly.\" when used to modify an adjective like \"long,\" it emphasizes the degree of the quality rather than conveying a negative or \"awful\" meaning. A \"long run\" for a play indicates it has been performed for a significant period of time, which is usually a sign of popularity and success."
+        }
+      ]
+    },
+    {
+      "form": "67",
+      "questions": [
+        {
+          "n": 10,
+          "question": "Don ________ his canoe across the lake.",
+          "options": [
+            "tripped",
+            "flowed",
+            "paddled",
+            "stirred"
+          ],
+          "correct": "paddled",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 14,
+          "question": "There are only a few people in class today. How many are there?",
+          "options": [
+            "seventy",
+            "only one",
+            "just two",
+            "four or five"
+          ],
+          "correct": "four or five",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 28,
+          "question": "My watch says a quarter 8.",
+          "options": [
+            "It's fifteen to eight.",
+            "It's eight fifteen.",
+            "It's fifteen to nine.",
+            "It's eight thirty."
+          ],
+          "correct": "It's fifteen to nine.",
+          "explanation": "The time expression\"a quarter to\" or \"a quarter of\" indicates that there are 15 minutes remaining before the specified hour. In the context of this military English examination (Al cpt), the prompt \"a quarter 8\" is most likely a transcription error or typo for \"a \"usu jo snb e, do ti) ,uu to anb especially since the designated correct answer is \"fifteen to nine.\" \"Fifteen to nine\" and \"a quarter to nine\" both represent the digital time 8:45. Military personnel --hsfimieerr'tb tnt te.\" It's eight thirty."
+        },
+        {
+          "n": 37,
+          "question": "This uniform has a vertical stripe.",
+          "options": [
+            "The stripe is on an angle.",
+            "The stripe goes around the uniform.",
+            "The stripe goes up and down the uniform.",
+            "The stripe is green in color."
+          ],
+          "correct": "The stripe goes up and down the uniform.",
+          "explanation": "The word \"vertical\" refers to a direction that is perpendicular to the horizon, meaning it runs straight up and down. In the context of a uniform, a vertical stripe would run from the top toward the bottom (like a stripe on dress uniform trousers)."
+        },
+        {
+          "n": 45,
+          "question": "Let's wind up this job as soon as possible.",
+          "options": [
+            "Let's start it.",
+            "Let's finish it.",
+            "Let's turn it around.",
+            "Let's start the fan."
+          ],
+          "correct": "Let's finish it.",
+          "explanation": "The phrasal verb\"wind up\" is an idiomatic expression that means to bring something to a conclusion, to finish, or to complete a task. In a military or professional environment, when a supervisor says team to finalize the remaining work as quickly as possible."
+        },
+        {
+          "n": 46,
+          "question": "The light was dim in. What condition was it?",
+          "options": [
+            "It wasn't bright.",
+            "It was blue."
+          ],
+          "correct": "It wasn't bright.",
+          "explanation": "The word \"dim\" is an adjective used to describe a light source that is faint or has low luminosity. If a light is dim, it means it is not shining brightly. In military contexts, dim lights are often used for stealth, night operations (such as using red lens filters), or during \"darken ship\" conditions to maintain tactical concealment and prevent detection by the enemy."
+        },
+        {
+          "n": 47,
+          "question": "Are you bored already?",
+          "options": [
+            "Yes, I've lost interest.",
+            "Yes,tieiesdiioieilit.",
+            "Yes, I've already eaten.",
+            "Yes, there are two here."
+          ],
+          "correct": "Yes, I've lost interest.",
+          "explanation": "The word \"bored\" is an adjective describing the state of feeling weary or restless because one lacks interest in the current activity. The question \"Are you bored already?\" is a social inquiry about the person's emotional state or level of engagement. \"Yes, I've lost interest\" directly answers this by confirming the lack of engagement."
+        },
+        {
+          "n": 48,
+          "question": "Is there any advantage in studying English?",
+          "options": [
+            "Yes, there is trouble.",
+            "Yes, it is helpful.",
+            "Yes, it is boring.",
+            "Yes, there is a good way."
+          ],
+          "correct": "Yes, it is helpful.",
+          "explanation": "The word \"advantage\" refers to a benefit, a gain, or a positive quality that puts someone in a favorable position. In the context of studying English, saying it is \"helpful\" directly aligns with the meaning of having an advantage, as it suggests the language will be useful for the learner's goals, career, or communication."
+        },
+        {
+          "n": 49,
+          "question": "The weather is unusually warm.",
+          "options": [
+            "It will get warm.",
+            "It isn't warm at all.",
+            "It isn't so warm.",
+            "It is very warm."
+          ],
+          "correct": "It is very warm.",
+          "explanation": "The adverb \"unusually\" is used to describe something that is out of the ordinary or exceptional. In the context of weather, saying it is \"unusually warm\" means that the temperature is significantly higher than normal for that time or place. This corresponds to the meaning of \"very warm.\" \"It will get warm.\" is incorrect because it uses the future tense, whereas the original statement (\"is\") is in the present tense describing a current state."
+        },
+        {
+          "n": 50,
+          "question": "When we Flew Over The Ocean there were clouds below us?",
+          "options": [
+            "We could have seen the water if we had been above the clouds.",
+            "The clouds were all above our plane.",
+            "We saw the clouds but not the water.",
+            "We could not fly above the clouds."
+          ],
+          "correct": "We saw the clouds but not the water.",
+          "explanation": "The sentence states that there were\"clouds below us\" while flying over the ocean. This indicates that the aircraft was at a higher altitude than the cloud layer.Because the clouds were situated between the airplane and the ocean,they would obstruct the view of the water, meaning the people on the plane could see the clouds but not the surface of the ocean."
+        },
+        {
+          "n": 51,
+          "question": "Since his illness he can't do any heavy work.",
+          "options": [
+            "He can't work at all.",
+            "He can't do any lifting.",
+            "He can't do any sitting.",
+            "He can't work at night."
+          ],
+          "correct": "He can't do any lifting.",
+          "explanation": "\"Heavy work\" refers to physical labor that requires significant strength and exertion. Activities such as lifting heavy boxes, manual construction, or moving equipment fall under this category. Therefore, saying someone can not do\"any lifting\" is a practical synonym for being unable to perform \"heavy work\" in a medical or physical capability context."
+        },
+        {
+          "n": 54,
+          "question": "Joe is always ready to take a risk.",
+          "options": [
+            "afraid",
+            "cautious",
+            "erratic",
+            "daring"
+          ],
+          "correct": "daring",
+          "explanation": "The phrase \"ready to take a risk\" describes someone who is bold, adventurous, or willing to face danger and uncertainty. The adjective\"daring\" is a direct synonym for this behavior. In military contexts, being daring often describes leadership or tactical moves that involve calculated risks to achieve an objective. \"afraid\" is incorrect because it means feeling fear or being unwilling to face danger, which is the opposite of taking a risk."
+        },
+        {
+          "n": 56,
+          "question": "Ms. Simpson is impartial.",
+          "options": [
+            "fair",
+            "prejudiced",
+            "hateful",
+            "kind"
+          ],
+          "correct": "fair",
+          "explanation": "The word \"impartial\" means to be unbiased, neutral, or not favoring one side over another. In military and professional contexts, being impartial is essential for leadership and justice, ensuring that decisions are made based on facts rather than personal bias. Therefore, \"fair\" is the correct synonym. \"prejudiced\" is incorrect because it is an antonym of impartial; it means having a preconceived opinion or bias against someone or something."
+        },
+        {
+          "n": 65,
+          "question": "There is a car with its lights on in the parking lot it is a blue Mercury Cougar with Georgia license plates.",
+          "options": [
+            "is illegally parked",
+            "was stolen in Georgia",
+            "is stalled at a light",
+            "has its lights on"
+          ],
+          "correct": "has its lights on",
+          "explanation": "The prompt explicitly states that \"there is a car with its lights on in the parking lot.\" This is a descriptive sentence where the condition of the vehicle (lights being on) is a primary piece of information. The other details (color, model, and license plate origin) further identify the specific vehicle mentioned. Choice \"has its lights on\" is the only option that directly reflects the information provided in the sentence."
+        },
+        {
+          "n": 76,
+          "question": "Portable electric hand drills are used for holes in materials.",
+          "options": [
+            "boring",
+            "to bore",
+            "bored",
+            "bore"
+          ],
+          "correct": "boring",
+          "explanation": "In English grammar, when the preposition \"for\" is used to describe the purpose or function of an object (e.g., \"a tool used for..\"), it must be followed by a gerund, which is the \"-ing\" form of the verb. Therefore, \"for boring\" is the correct construction. If the sentence had used the word \"to\" instead of \"for,\" the base form \"to bore\" would have been the correct choice."
+        },
+        {
+          "n": 78,
+          "question": "Lawrence is careless.",
+          "options": [
+            "He can't get along with people.",
+            "He shouldn't worry so much.",
+            "He doesn't pay attention to anything.",
+            "He isn't happy about anything."
+          ],
+          "correct": "He doesn't pay attention to anything.",
+          "explanation": "The word \"careless\" is an adjective used to describe a person who does not give enough attention, thought, or effort to what they are doing. This often leads to mistakes, accidents, or neglected responsibilities. Therefore, saying Lawrence is careless is synonymous with saying he does not pay attention to what he is doing."
+        },
+        {
+          "n": 83,
+          "question": "The student told his roommate, \"You can count on me.\"",
+          "options": [
+            "depend on me",
+            "count for me"
+          ],
+          "correct": "depend on me",
+          "explanation": "The phrase \"count on [someone]\" is a common English phrasal verb meaning to rely on, trust, or depend on someone. When the student says this to his roommate, he is assuring him that he is reliable and will provide support if needed. \"count for me\"is incorrect because\"count for\" typically means to have value or importance (e.g., \"Your experience counts for a lot\"), which does not fit the context of personal reliability."
+        },
+        {
+          "n": 84,
+          "question": "Warren ________ have to stay in bed.",
+          "options": [
+            "can",
+            "has got to",
+            "was to",
+            "may"
+          ],
+          "correct": "may",
+          "explanation": "In English grammar, modals like \"may\", \"might\", and \"will\" can be combined with the semi-modal \"have to\" to express the possibility or future certainty of an obligation. \"Warren may have to stay in bed\" means it is possible that staying in bed (likely for medical reasons or recovery) will be required. In a military medical context, this often refers to'sick in quarters' or'bed rest' orders given by a medical officer."
+        },
+        {
+          "n": 87,
+          "question": "Her little daughter has been playing noon.",
+          "options": [
+            "for",
+            "during",
+            "since",
+            "by"
+          ],
+          "correct": "since",
+          "explanation": "The sentence uses the Present Perfect Continuous tense (\"has been playing\"), which describes an action that started in the past and is still occurring. When identifying a specific starting point in time (such as \"noon\"), the preposition \"since\" is required. \"for\" is incorrect because it is used to denote a duration of time (e.g., \"for three hours\") rather than a specific point in time."
+        },
+        {
+          "n": 91,
+          "question": "A person who has an ailment should.",
+          "options": [
+            "go back to work",
+            "see a doctor",
+            "see a lawyer",
+            "be very happy"
+          ],
+          "correct": "see a doctor",
+          "explanation": "The word \"ailment\" refers to a physical disorder or illness, typically a minor one. In general English and military contexts, when a person is suffering from a health issue, the logical and recommended course of action is to seek medical attention from a physician. This question tests the understanding of medical- related vocabulary and the appropriate response to health conditions."
+        },
+        {
+          "n": 92,
+          "question": "If your clothes become soaked with water, they will.",
+          "options": [
+            "stay dry",
+            "become lighter",
+            "become partly wet",
+            "become completely wet"
+          ],
+          "correct": "become completely wet",
+          "explanation": "The word \"soaked\" means to be thoroughly wet or saturated with liquid. Therefore, if clothes become \"completely wet.\" This is a common vocabulary check in Al cpt to ensure understanding of synonyms and degrees of adjectives (e.g., damp vs. wet vs. soaked). \"stay dry\" is incorrect because soaking is the direct opposite of remaining dry."
+        },
+        {
+          "n": 95,
+          "question": "The weather forecast ________ by listening to the radio.",
+          "options": [
+            "obtains",
+            "is obtained",
+            "is obtaining",
+            "has obtained"
+          ],
+          "correct": "is obtained",
+          "explanation": "(Explanation screen not captured yet.)"
+        },
+        {
+          "n": 98,
+          "question": "A knife was the proper tool.",
+          "options": [
+            "most attractive",
+            "requested",
+            "most common",
+            "suitable"
+          ],
+          "correct": "suitable",
+          "explanation": "In this context, the word \"proper\" is used as an adjective meaning appropriate, right, or fit for a specific purpose or situation. Therefore, \"suitable\" is the closest synonym. In a military or technical context, identifying the proper or suitable tool for a job is essential for safety and efficiency. \"most attractive\" is incorrect because attractiveness refers to physical appeal or being pleasing to the eye, which is irrelevant to the functional utility of a tool."
+        },
+        {
+          "n": 99,
+          "question": "Don't ________ that old shirt; it will make a good cleaning rag.",
+          "options": [
+            "wipe",
+            "discard",
+            "describe",
+            "polish"
+          ],
+          "correct": "discard",
+          "explanation": "(Explanation screen not captured yet.)"
         }
       ]
     },
