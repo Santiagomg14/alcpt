@@ -167,15 +167,17 @@ de ~3,5 arrancando de cero) y lleva `bot/processed.json` (sha256 → resultado) 
 no releer una imagen ya vista. Cada captura se prueba primero como formulario y,
 si no lo es, como lista de vocabulario.
 
-**Artifact de Claude**: al cerrar un lote que vino de un enlace de fotos (álbum o
-ZIP), el bot republica solo `output/cuaderno_alcpt.html` en el artifact «Cuaderno
+**Artifact de Claude** (APAGADO por decisión de Brayhan, 29 sep: lo que se consulta
+es GitHub Pages, que el bot ya actualiza solo y sin tokens). Si se enciende con
+`ARTIFACT_AUTOPUBLISH=1`, al cerrar un lote que vino de un enlace de fotos (álbum o
+ZIP), el bot republica `output/cuaderno_alcpt.html` en el artifact «Cuaderno
 ALCPT» (`publish_artifact()`). La herramienta Artifact no existe en `claude -p`, así
 que lanza una sesión `claude --bg` con un encargo cerrado (leer la versión publicada
 entera, leer la nueva, publicar en la misma URL) y saca el resultado del registro de
 esa sesión (`~/.claude/projects/<repo>/<id>.jsonl`), porque una sesión en segundo
 plano no puede escribir en el repo sin worktree. Avisa por Telegram al terminar.
 Cuesta del orden de 450k tokens por lote porque la herramienta exige leer la página entera (~1,3 MB).
-`/artifact` lo lanza a mano; `ARTIFACT_AUTOPUBLISH=0` en `.env` lo apaga, y
+`/artifact` lo lanza a mano; `ARTIFACT_AUTOPUBLISH=1` en `.env` lo automatiza, y
 `ARTIFACT_MODEL` (por defecto `claude-sonnet-5-5`) elige el modelo.
 
 **Ráfagas**: el bot no regenera ni commitea por captura. Anota cada cambio y, tras

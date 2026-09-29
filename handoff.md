@@ -383,7 +383,11 @@ Trabajo técnico pendiente:
 - **Artifact de Claude «Cuaderno ALCPT»** (https://claude.ai/code/artifact/95b9749a-55b5-4292-831d-121fb6dd2aed):
   se publica desde `output/cuaderno_alcpt.html`. Última publicación: 29 sep (versión 9,
   con el lote del 28 sep: 342 palabras, 395 preguntas, Forms 51 y 59).
-  **Desde el 29 sep el bot lo republica solo** tras cada lote de fotos (álbum o ZIP):
+  **Republicación automática APAGADA** (decisión de Brayhan, 29 sep): la versión que
+  se consulta es GitHub Pages (https://santiagomg14.github.io/alcpt/), que el bot ya
+  actualiza solo y sin tokens; el artifact quedó en la versión 10. El mecanismo sigue
+  en el código: `/artifact` lo lanza a mano y `ARTIFACT_AUTOPUBLISH=1` lo automatiza.
+  Cómo funciona cuando está encendido, tras cada lote de fotos (álbum o ZIP):
   `publish_artifact()` lanza una sesión `claude --bg` (en `claude -p` no existe la
   herramienta Artifact) y lee el resultado del registro .jsonl de esa sesión (no puede
   escribir un archivo de estado: las sesiones --bg exigen worktree para editar).

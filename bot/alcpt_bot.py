@@ -409,7 +409,9 @@ def flush():
 # Cuesta del orden de 450k tokens por lote (la página pesa ~1,3 MB).
 ARTIFACT_URL = CFG.get("ARTIFACT_URL",
                        "https://claude.ai/code/artifact/95b9749a-55b5-4292-831d-121fb6dd2aed")
-ARTIFACT_AUTOPUBLISH = CFG.get("ARTIFACT_AUTOPUBLISH", "1") not in ("0", "false", "no")
+# Apagado por defecto (29 sep): GitHub Pages ya se actualiza solo y gratis en cada
+# lote; republicar el artifact cuesta ~450k tokens. ARTIFACT_AUTOPUBLISH=1 lo enciende.
+ARTIFACT_AUTOPUBLISH = CFG.get("ARTIFACT_AUTOPUBLISH", "0") in ("1", "true", "yes", "si", "sí")
 ARTIFACT_MODEL = CFG.get("ARTIFACT_MODEL", "claude-sonnet-5-5")
 ARTIFACT_TIMEOUT = int(CFG.get("ARTIFACT_TIMEOUT", "3600"))
 ARTIFACT_FILE = REPO / "output" / "cuaderno_alcpt.html"
@@ -583,7 +585,7 @@ HELP = (
     "/lote <enlace> – procesa un álbum de iCloud o un .zip entero (cientos de\n"
     "   capturas); /lote estado y /lote cancelar mientras corre\n"
     "/rebuild – regenerar PDF y páginas web\n"
-    "/artifact – republicar el cuaderno en el artifact de Claude (se hace solo tras cada lote)\n"
+    "/artifact – republicar el cuaderno en el artifact de Claude (a mano, gasta ~450k tokens; la web se actualiza sola)\n"
     "/lecturas – traer lecturas nuevas de ThoughtCo (p. ej. /lecturas math 2)\n"
     "   secciones: computer-science, math, statistics, philosophy, history,\n"
     "   geography, issues, social-sciences, humanities\n"
