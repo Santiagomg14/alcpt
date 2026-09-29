@@ -362,8 +362,11 @@ Trabajo técnico pendiente:
   facilidad. Si hay conflicto, siempre está en los generados: resolver con la
   versión que sea y regenerar (PDF → espejo → podcasts → cuaderno → Pages).
 - **Artifact de Claude «Cuaderno ALCPT»** (https://claude.ai/code/artifact/95b9749a-55b5-4292-831d-121fb6dd2aed):
-  se publica desde `output/cuaderno_alcpt.html`, actualizado el 10 sep (versión 5,
-  con pestañas Lecturas y Podcasts). **Limitación:** el visor de artifacts bloquea
+  se publica desde `output/cuaderno_alcpt.html`. Última publicación: 29 sep (versión 9,
+  con el lote del 28 sep: 342 palabras, 395 preguntas, Forms 51 y 59).
+  **El bot NO publica el artifact**: solo regenera el HTML y GitHub Pages. Tras cada
+  lote hay que republicarlo a mano desde Claude Code (Artifact, misma URL); si no,
+  se queda atrás, como pasó entre el 13 y el 29 sep. **Limitación:** el visor de artifacts bloquea
   por CSP los MP3 que vienen de GitHub Pages, así que en el artifact la pestaña
   Podcasts muestra los reproductores pero no suena; embeberlos como data: URI no
   cabe (48 MB frente a un tope de 16 MB). El audio de podcasts funciona en
