@@ -1,6 +1,6 @@
 # Handoff — Vocabulario en inglés + ALCPT (Brayhan)
 
-**Última actualización:** 29 sep 2026 (18:49, bot en server)
+**Última actualización:** 29 sep 2026 (18:51, bot en server)
 
 ## 1. El objetivo
 
@@ -17,7 +17,7 @@ episodio).
 
 ## 2. El estado actual del proyecto
 
-- **343 palabras confirmadas**, sin bloques `pending_` abiertos, y
+- **344 palabras confirmadas**, sin bloques `pending_` abiertos, y
   **429 preguntas** documentadas. Estas cifras, las de lecturas y episodios de
   abajo y la fecha de arriba **las actualiza el bot solo** en cada commit
   (`update_handoff()`); el resto del handoff sigue siendo manual. Verifícalo con:

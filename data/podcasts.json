@@ -4868,7 +4868,7 @@
     {
       "id": "vocab-07",
       "series": "vocab",
-      "title": "Palabras 312–343",
+      "title": "Palabras 312–344",
       "subtitle": "Form 87 · Technical & Action Verbs · Mis palabras",
       "words": [
         312,
@@ -4878,7 +4878,7 @@
       "script": [
         {
           "v": "en",
-          "t": "ALCPT Notebook. Vocabulary, episode 7: words 312 to 343. Listen to each word, then its meaning in Spanish, and repeat the word out loud before the next one.",
+          "t": "ALCPT Notebook. Vocabulary, episode 7: words 312 to 344. Listen to each word, then its meaning in Spanish, and repeat the word out loud before the next one.",
           "p": 1.2
         },
         {
@@ -5363,13 +5363,28 @@
         },
         {
           "v": "en",
-          "t": "End of episode 7. Words 312 to 343. Play it again tomorrow: repetition is what makes them stick.",
+          "t": "344. Ajar.",
+          "p": 0.5
+        },
+        {
+          "v": "es",
+          "t": "Entreabierto, entornado: dicho de una puerta o ventana que quedó apenas abierta, no del todo cerrada («the door was ajar», «leave the window ajar»).",
+          "p": 0.4
+        },
+        {
+          "v": "en",
+          "t": "Ajar.",
+          "p": 1.1
+        },
+        {
+          "v": "en",
+          "t": "End of episode 7. Words 312 to 344. Play it again tomorrow: repetition is what makes them stick.",
           "p": 0.5
         }
       ],
       "hash": "1b54da29bc67",
       "file": "audio/vocab-07.mp3",
-      "estimate": 362,
+      "estimate": 379,
       "seconds": 320.9,
       "bytes": 1925280,
       "built": "2026-09-11"
