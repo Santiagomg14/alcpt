@@ -2,8 +2,8 @@
   "meta": {
     "owner": "Brayhan",
     "level": "B2",
-    "last_updated": "2026-09-14",
-    "total_confirmed": 342
+    "last_updated": "2026-09-29",
+    "total_confirmed": 343
   },
   "sections": [
     {
@@ -305,6 +305,11 @@
           "n": 342,
           "en": "Fellowship",
           "es": "Compañerismo, camaradería: el vínculo entre quienes comparten algo («the fellowship of soldiers»); beca de investigación o de posgrado, normalmente para graduados («he won a research fellowship»); en medicina, la subespecialidad que se hace después de la residencia; agrupación o hermandad de personas con un interés común (también con matiz religioso: congregación, comunidad de fieles)"
+        },
+        {
+          "n": 343,
+          "en": "Dirty",
+          "es": "Sucio, mugroso («dirty boots», «dirty dishes»); como verbo, ensuciar («don't dirty your uniform»); deshonesto, tramposo: juego sucio o trampa («a dirty trick», «he plays dirty»); obsceno, grosero, de doble sentido («a dirty joke», «dirty words»); en «a dirty look», mirada de reproche o de desprecio; en «the dirty work», el trabajo pesado o desagradable que nadie quiere hacer, a menudo el turbio que otro delega"
         }
       ]
     },
