@@ -85,6 +85,58 @@ def list_photos(base: str, session: requests.Session) -> list[dict]:
     return r.json().get("photos", [])
 
 
+# El iPhone sube una tanda de fotos al álbum poco a poco, y webstream solo devuelve
+# las que ya terminaron de subir. El 28 sep el bot leyó el álbum un minuto después
+# de que Brayhan añadiera 92 capturas: iCloud tenía 30 y las 62 restantes (todo el
+# Form 67) llegaron después, sin que nadie las procesara. Por eso, antes de bajar,
+# se sondea hasta que el conteo deje de cambiar.
+POLL_SECONDS = 45
+STABLE_POLLS = 2          # sondeos seguidos sin cambios si la última tanda es vieja
+STABLE_POLLS_RECENT = 4   # … y si subió hace menos de RECENT_MINUTES (≈3 min quieto)
+RECENT_MINUTES = 30
+MAX_WAIT_MINUTES = 25
+
+
+def latest_batch_age(photos: list[dict]) -> float | None:
+    """Minutos desde la tanda más reciente del álbum (batchDateCreated, en UTC)."""
+    from datetime import datetime, timezone
+    stamps = []
+    for p in photos:
+        s = p.get("batchDateCreated") or p.get("dateCreated")
+        try:
+            stamps.append(datetime.fromisoformat(s.replace("Z", "+00:00")))
+        except (AttributeError, ValueError):
+            continue
+    if not stamps:
+        return None
+    return (datetime.now(timezone.utc) - max(stamps)).total_seconds() / 60
+
+
+def wait_until_settled(base: str, session: requests.Session, photos: list[dict],
+                       report=print, sleep=time.sleep) -> list[dict]:
+    """Relee el álbum hasta que el número de fotos se quede quieto."""
+    age = latest_batch_age(photos)
+    recent = age is not None and age < RECENT_MINUTES
+    need = STABLE_POLLS_RECENT if recent else STABLE_POLLS
+    stable, waited = 0, 0.0
+    if recent:
+        report(json.dumps({"event": "settling", "count": len(photos),
+                           "age_min": round(age, 1)}))
+    while stable < need and waited < MAX_WAIT_MINUTES * 60:
+        sleep(POLL_SECONDS)
+        waited += POLL_SECONDS
+        now = list_photos(base, session)
+        if len(now) == len(photos):
+            stable += 1
+        else:
+            report(json.dumps({"event": "growing", "before": len(photos),
+                               "count": len(now)}))
+            photos, stable = now, 0
+            if not recent:                        # sigue subiendo: más paciencia
+                recent, need = True, STABLE_POLLS_RECENT
+    return photos
+
+
 def best_derivative(photo: dict) -> tuple[str, int] | None:
     """La copia más grande disponible: el OCR agradece la resolución."""
     best, size = None, -1
@@ -116,7 +168,7 @@ def asset_urls(base: str, guids: list[str], session: requests.Session) -> dict[s
 
 
 def download_album(url: str, out_dir: Path, limit: int = 0, list_only: bool = False,
-                   report=print) -> dict:
+                   report=print, settle: bool = True) -> dict:
     token = album_token(url)
     if not token:
         raise ValueError("No reconozco el enlace. Debe ser un álbum compartido de "
@@ -124,6 +176,8 @@ def download_album(url: str, out_dir: Path, limit: int = 0, list_only: bool = Fa
     session = requests.Session()
     base = base_url(token, session)
     photos = list_photos(base, session)
+    if settle and not list_only:
+        photos = wait_until_settled(base, session, photos, report)
     if limit:
         photos = photos[:limit]
     if list_only:
@@ -139,16 +193,24 @@ def download_album(url: str, out_dir: Path, limit: int = 0, list_only: bool = Fa
 
     downloaded = skipped = failed = 0
     checksums = list(by_checksum)
-    for i in range(0, len(checksums), CHUNK):
-        group = checksums[i:i + CHUNK]
+
+    def have(cs):
+        # el checksum identifica la foto: si ya está, no se vuelve a bajar
+        dest = out_dir / f"ic_{cs[:24]}.jpg"
+        return dest.exists() and dest.stat().st_size > 0
+
+    pending = []
+    for cs in checksums:
+        if have(cs):
+            skipped += 1
+            report(json.dumps({"event": "skip", "file": f"ic_{cs[:24]}.jpg"}))
+        else:
+            pending.append(cs)
+    for i in range(0, len(pending), CHUNK):     # solo se piden URLs de lo que falta
+        group = pending[i:i + CHUNK]
         urls = asset_urls(base, [guid_of[c] for c in group], session)
         for cs in group:
-            # el checksum identifica la foto: si ya está, no se vuelve a bajar
             dest = out_dir / f"ic_{cs[:24]}.jpg"
-            if dest.exists() and dest.stat().st_size > 0:
-                skipped += 1
-                report(json.dumps({"event": "skip", "file": dest.name}))
-                continue
             link = urls.get(cs)
             if not link:
                 failed += 1
@@ -186,13 +248,16 @@ def main() -> int:
     ap.add_argument("--list", action="store_true", dest="list_only",
                     help="solo decir cuántas fotos tiene")
     ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--no-settle", action="store_true",
+                    help="no esperar a que el álbum termine de subir")
     args = ap.parse_args()
     if not args.list_only and not args.out:
         ap.error("hace falta --out (o usa --list)")
     try:
         res = download_album(args.url, args.out or Path("."), args.limit, args.list_only,
                              report=(lambda _l: None) if args.quiet else
-                             (lambda l: print(l, flush=True)))
+                             (lambda l: print(l, flush=True)),
+                             settle=not args.no_settle)
     except (ValueError, LookupError) as exc:
         print(json.dumps({"ok": False, "reason": str(exc)}, ensure_ascii=False))
         return 2

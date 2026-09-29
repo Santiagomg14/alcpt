@@ -67,7 +67,8 @@ def load_env():
             env[k.strip()] = v.strip().strip('"').strip("'")
     # las variables reales del sistema tienen prioridad sobre el archivo
     for k in ("TELEGRAM_TOKEN", "ALLOWED_USER_IDS", "CLAUDE_BIN", "GIT_PUSH", "CLAUDE_MODEL",
-              "CAPTURE_FALLBACK", "FLUSH_DELAY", "VOCAB_POLISH"):
+              "CAPTURE_FALLBACK", "FLUSH_DELAY", "VOCAB_POLISH",
+              "ARTIFACT_URL", "ARTIFACT_AUTOPUBLISH", "ARTIFACT_MODEL", "ARTIFACT_TIMEOUT"):
         if os.environ.get(k):
             env[k] = os.environ[k]
     return env
@@ -316,15 +317,17 @@ def data_changed():
 # pasan FLUSH_DELAY segundos sin novedades, se regenera y se sube una sola vez.
 FLUSH_DELAY = int(CFG.get("FLUSH_DELAY", "30"))
 WORK = threading.RLock()          # handlers y flush no se pisan
-_batch = {"timer": None, "items": [], "chat": None, "force": False}
+_batch = {"timer": None, "items": [], "chat": None, "force": False, "publish": False}
 
 
-def finish(chat_id, summary, commit_msg, force=False):
+def finish(chat_id, summary, commit_msg, force=False, publish=False):
     """Avisa el resultado ya y deja el rebuild + commit para el cierre del lote.
 
     Si el paso no tocó `data/` (la palabra ya estaba, la captura repetía una
     pregunta completa) no se anota nada: no hay nada que regenerar. `force` es
-    para /rebuild, donde regenerar sin cambios sí es lo que se pidió.
+    para /rebuild, donde regenerar sin cambios sí es lo que se pidió. `publish`
+    marca que el lote vino de un enlace de fotos: al cerrarlo se republica el
+    artifact de Claude.
     """
     if not force and data_changed() is False:
         log(f"sin cambios en data/: no se anota ({commit_msg})")
@@ -335,6 +338,7 @@ def finish(chat_id, summary, commit_msg, force=False):
         _batch["items"].append(commit_msg)
         _batch["chat"] = chat_id
         _batch["force"] = _batch["force"] or force
+        _batch["publish"] = _batch["publish"] or publish
         if _batch["timer"]:
             _batch["timer"].cancel()
         if force:
@@ -349,8 +353,8 @@ def finish(chat_id, summary, commit_msg, force=False):
 def flush():
     """Cierra el lote: regenera todo, actualiza el handoff, un commit, un push."""
     with WORK:
-        items, chat_id = _batch["items"], _batch["chat"]
-        _batch.update(timer=None, items=[], force=False)
+        items, chat_id, publish = _batch["items"], _batch["chat"], _batch["publish"]
+        _batch.update(timer=None, items=[], force=False, publish=False)
         if not items or chat_id is None:
             return
         log(f"cerrando lote de {len(items)} cambio(s)")
@@ -383,7 +387,165 @@ def flush():
         pend = pending_summary()
         if pend:
             lines += ["", pend]
+        if publish and ARTIFACT_AUTOPUBLISH:
+            if errors:
+                lines += ["", "El artifact no se republica: el cuaderno no se regeneró bien."]
+            else:
+                lines += ["", "Republicando el cuaderno en el artifact de Claude "
+                              "(tarda unos minutos; aviso al terminar)…"]
         send(chat_id, "\n".join(lines))
+        if publish and ARTIFACT_AUTOPUBLISH and not errors:
+            publish_artifact(chat_id)
+
+
+# --- artifact de Claude: se republica solo tras cada lote de fotos --------------
+# El bot regenera output/cuaderno_alcpt.html, pero el artifact de claude.ai no se
+# entera. La herramienta Artifact no existe en `claude -p`; sí en las sesiones en
+# segundo plano (`claude --bg`), así que se lanza una con un encargo cerrado: leer
+# la versión publicada (la herramienta exige leerla antes de sobrescribirla), leer
+# la nueva y publicarla en la misma URL. El resultado se saca del registro de la
+# sesión (~/.claude/projects/<repo>/<id>.jsonl): una sesión en segundo plano no
+# puede escribir en el repositorio sin abrir antes un worktree.
+# Cuesta del orden de 450k tokens por lote (la página pesa ~1,3 MB).
+ARTIFACT_URL = CFG.get("ARTIFACT_URL",
+                       "https://claude.ai/code/artifact/95b9749a-55b5-4292-831d-121fb6dd2aed")
+ARTIFACT_AUTOPUBLISH = CFG.get("ARTIFACT_AUTOPUBLISH", "1") not in ("0", "false", "no")
+ARTIFACT_MODEL = CFG.get("ARTIFACT_MODEL", "claude-sonnet-5-5")
+ARTIFACT_TIMEOUT = int(CFG.get("ARTIFACT_TIMEOUT", "3600"))
+ARTIFACT_FILE = REPO / "output" / "cuaderno_alcpt.html"
+TRANSCRIPTS = Path.home() / ".claude" / "projects" / re.sub(r"[^A-Za-z0-9]", "-", str(REPO))
+_artifact = {"lock": threading.Lock(), "again": False}
+
+ARTIFACT_PROMPT = """Tarea automática del bot ALCPT: republicar el cuaderno en su artifact.
+No preguntes nada, no edites archivos ni hagas nada más que estos pasos.
+
+REGLA QUE NO SE PUEDE SALTAR: la herramienta rechaza la publicación mientras no hayas
+leído con Read CADA línea de la versión publicada. Publicar antes de terminar de leer
+solo produce el error "You hadn't viewed the live version" y no sirve de nada: no
+publiques hasta haber leído todo.
+
+1. Artifact con action "read" y url {url}. El resultado dice la ruta del archivo donde
+   guardó la página publicada y cuántas líneas tiene (N).
+2. Lee ESE archivo completo con Read en tramos de 100 líneas: offset 1, 101, 201, 301…
+   hasta pasar la línea N. Hazlo en varias llamadas seguidas, sin saltarte ninguna.
+   Si un tramo da error por tamaño, repítelo con limit 50 y sigue desde ahí.
+3. Lee igual, completo y en tramos de 100 líneas, el archivo nuevo {file}
+   ({lines} líneas). Lo genera scripts/build_artifact.py a partir de data/*.json.
+4. Solo entonces: Artifact con action "publish", url {url}, file_path {file} y label
+   "{label}". Sin icon ni capabilities. Si vuelve a rechazarlo, lee lo que te indique
+   el error (el tramo que falte o la versión nueva) y publica una sola vez más.
+5. Termina con una sola línea: la versión publicada, o el motivo si no se pudo.
+"""
+
+
+def publish_artifact(chat_id):
+    """Lanza la republicación en segundo plano; si ya hay una en curso, la encadena."""
+    if not CLAUDE:
+        send(chat_id, "No encuentro Claude Code: el artifact no se republica.")
+        return
+    if not _artifact["lock"].acquire(blocking=False):
+        _artifact["again"] = True
+        log("artifact: ya hay una publicación en curso; se repite al terminar")
+        return
+    threading.Thread(target=_publish_artifact, args=(chat_id,), daemon=True).start()
+
+
+def _publish_artifact(chat_id):
+    try:
+        while True:
+            _artifact["again"] = False
+            ok, text = _publish_artifact_once()
+            log(f"artifact: {text}")
+            send(chat_id, text)
+            if not (ok and _artifact["again"]):
+                break
+    except Exception as exc:                      # nunca tumba el bot
+        log(f"artifact: fallo inesperado: {exc!r}")
+        send(chat_id, f"No pude republicar el artifact: {type(exc).__name__}: {exc}"[:400])
+    finally:
+        _artifact["lock"].release()
+
+
+def _session_outcome(sid):
+    """Lee el registro de la sesión. Devuelve (publicado, versión, url, último texto)."""
+    files = sorted(TRANSCRIPTS.glob(f"{sid}*.jsonl"))
+    if not files:
+        return False, None, None, ""
+    publishes, published, last_text = set(), None, ""
+    for line in files[-1].read_text(encoding="utf-8", errors="replace").splitlines():
+        try:
+            content = json.loads(line).get("message", {}).get("content")
+        except (json.JSONDecodeError, AttributeError):
+            continue
+        if not isinstance(content, list):
+            continue
+        for b in content:
+            if not isinstance(b, dict):
+                continue
+            if b.get("type") == "tool_use" and b.get("name") == "Artifact" \
+                    and b.get("input", {}).get("action") == "publish":
+                publishes.add(b.get("id"))
+            elif b.get("type") == "tool_result" and b.get("tool_use_id") in publishes:
+                text = b.get("content")
+                text = text if isinstance(text, str) else json.dumps(text, ensure_ascii=False)
+                m = re.search(r"Published .*? at (\S+) \(Version (\d+)", text)
+                if m:
+                    published = (m.group(2), m.group(1))
+            elif b.get("type") == "text":
+                last_text = b.get("text", "")
+    if published:
+        return True, published[0], published[1], last_text
+    return False, None, None, last_text
+
+
+def _session_busy(sid, env):
+    """¿Sigue trabajando la sesión en segundo plano? (None si no se pudo saber)."""
+    try:
+        res = subprocess.run([CLAUDE, "agents", "--json"], cwd=REPO, capture_output=True,
+                             text=True, env=env, timeout=60)
+        for a in json.loads(res.stdout or "[]"):
+            if a.get("id") == sid or str(a.get("sessionId", "")).startswith(sid):
+                return a.get("status") == "busy"
+        return False                              # ya no figura: terminó
+    except (subprocess.SubprocessError, json.JSONDecodeError):
+        return None
+
+
+def _publish_artifact_once():
+    """Una publicación completa. Devuelve (ok, mensaje para Telegram)."""
+    prompt = ARTIFACT_PROMPT.format(url=ARTIFACT_URL, file=ARTIFACT_FILE,
+                                    lines=ARTIFACT_FILE.read_text(encoding="utf-8").count("\n") + 1,
+                                    label=f"Lote {datetime.now():%d %b %H:%M}")
+    cmd = [CLAUDE, "--bg", "--model", ARTIFACT_MODEL,
+           "--allowed-tools", "Artifact", "Read", "--", prompt]
+    env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}
+    res = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True, env=env,
+                         timeout=120, encoding="utf-8", errors="replace")
+    m = re.search(r"backgrounded\W+([0-9a-f]{6,})", res.stdout or "")
+    if not m:
+        return False, ("No pude lanzar la sesión que republica el artifact:\n"
+                       + (res.stderr or res.stdout or "sin salida").strip()[-400:])
+    sid = m.group(1)
+    log(f"artifact: sesión {sid} publicando {ARTIFACT_FILE.name} en {ARTIFACT_URL}")
+    start = time.time()
+    ok, version, url, last = False, None, None, ""
+    while time.time() - start < ARTIFACT_TIMEOUT:
+        time.sleep(30)
+        ok, version, url, last = _session_outcome(sid)
+        if ok:
+            break
+        # terminó sin publicar (dejó de trabajar tras arrancar): no esperar más
+        if time.time() - start > 120 and _session_busy(sid, env) is False:
+            break
+    for sub in ("stop", "rm"):                    # no dejar sesiones colgadas
+        subprocess.run([CLAUDE, sub, sid], cwd=REPO, capture_output=True, env=env, timeout=60)
+    if ok:
+        return True, f"Artifact republicado (versión {version}): {url or ARTIFACT_URL}"
+    if time.time() - start >= ARTIFACT_TIMEOUT:
+        return False, (f"El artifact no se republicó: la sesión {sid} no terminó en "
+                       f"{ARTIFACT_TIMEOUT // 60} min. Usa /artifact para reintentar.")
+    return False, ("El artifact no se republicó. Lo último que dijo la sesión:\n"
+                   + (last.strip()[-400:] or "(nada)") + "\nUsa /artifact para reintentar.")
 
 
 def pending_summary():
@@ -421,6 +583,7 @@ HELP = (
     "/lote <enlace> – procesa un álbum de iCloud o un .zip entero (cientos de\n"
     "   capturas); /lote estado y /lote cancelar mientras corre\n"
     "/rebuild – regenerar PDF y páginas web\n"
+    "/artifact – republicar el cuaderno en el artifact de Claude (se hace solo tras cada lote)\n"
     "/lecturas – traer lecturas nuevas de ThoughtCo (p. ej. /lecturas math 2)\n"
     "   secciones: computer-science, math, statistics, philosophy, history,\n"
     "   geography, issues, social-sciences, humanities\n"
@@ -595,7 +758,29 @@ def _run_batch(chat_id, url):
         if got == 0:
             send(chat_id, "No había imágenes nuevas que procesar.")
             return
-        _process_folder(chat_id, folder)
+        results = [_process_folder(chat_id, folder)]
+        # Red de seguridad: si el álbum creció mientras se procesaba (el iPhone
+        # siguió subiendo), se baja y procesa lo nuevo antes de cerrar el lote.
+        for _ in range(3):
+            if not es_album or not results[-1] or _job["cancel"]:
+                break
+            now = _album_count(url)
+            have = len(list(folder.glob("*.jpg")))
+            if now is None or now <= have:
+                break
+            send(chat_id, f"El álbum creció mientras procesaba ({have} → {now} fotos). "
+                          "Bajo y proceso las nuevas antes de cerrar el lote…")
+            if not _download_album(chat_id, url, folder):
+                break
+            results.append(_process_folder(chat_id, folder))
+        done = [r for r in results if r]
+        if done:
+            files = sum(r["files"] for r in done)
+            forms = sum(r["form"] for r in done)
+            vocab = sum(r["vocab"] for r in done)
+            finish(chat_id, "\n\n".join(r["text"] for r in done),
+                   f"ALCPT: lote de {files} capturas ({forms} preguntas, "
+                   f"{vocab} listas de vocabulario)", publish=True)
     except Exception as exc:                            # el lote no puede tumbar el bot
         log(f"lote: fallo inesperado: {exc!r}")
         send(chat_id, f"El lote se cortó por un error: {type(exc).__name__}: {exc}"[:600])
@@ -626,6 +811,13 @@ def _download_album(chat_id, url, folder):
             return None
         if ev.get("ok") is True:
             summary = ev
+        if ev.get("event") == "settling":
+            send(chat_id, f"El álbum recibió fotos hace {ev.get('age_min')} min y puede "
+                          f"que el iPhone siga subiéndolas (van {ev.get('count')}). "
+                          "Espero a que el conteo se quede quieto antes de bajar…")
+        elif ev.get("event") == "growing":
+            send(chat_id, f"Siguen llegando fotos al álbum: {ev.get('before')} → "
+                          f"{ev.get('count')}. Sigo esperando…")
         done = ev.get("done")
         if done and done - last >= 50:
             last = done
@@ -726,7 +918,9 @@ def handle_zip_document(chat_id, path):
         _job.update(cancel=False, state="descomprimiendo", chat=chat_id)
         try:
             if _extract_zip(chat_id, path, folder):
-                _process_folder(chat_id, folder)
+                r = _process_folder(chat_id, folder)
+                if r:
+                    finish(chat_id, r["text"], r["commit"], publish=True)
         except Exception as exc:
             log(f"zip: fallo inesperado: {exc!r}")
             send(chat_id, f"El ZIP se cortó por un error: {type(exc).__name__}: {exc}"[:400])
@@ -736,8 +930,21 @@ def handle_zip_document(chat_id, path):
     _job["thread"].start()
 
 
+def _album_count(url):
+    """Cuántas fotos tiene hoy el álbum (None si no se pudo preguntar)."""
+    try:
+        res = subprocess.run([sys.executable, str(ICLOUD_SCRIPT), url, "--list", "--quiet"],
+                             cwd=REPO, capture_output=True, text=True, timeout=120,
+                             encoding="utf-8", errors="replace")
+        return json.loads(res.stdout.strip().splitlines()[-1]).get("total")
+    except (subprocess.SubprocessError, ValueError, IndexError, AttributeError):
+        return None
+
+
 def _process_folder(chat_id, folder):
-    """Lee la carpeta imagen por imagen mostrando avance; un solo commit al final."""
+    """Lee la carpeta imagen por imagen mostrando avance. No cierra el lote:
+    devuelve el resumen (texto, conteos y mensaje de commit) o None si falló, y
+    el llamador hace un solo finish() al final."""
     _job["state"] = "procesando"
     log(f"lote: procesando {folder.name}")
     cmd = [sys.executable, str(BATCH_SCRIPT), str(folder), "--progress"]
@@ -770,7 +977,7 @@ def _process_folder(chat_id, folder):
         send(chat_id, f"Lote cancelado en {_job['state']}. Lo hecho hasta ahí queda guardado.")
     if not summary:
         send(chat_id, "El procesado terminó sin resumen. Revisa bot/bot.log.")
-        return
+        return None
     t = summary["totals"]
     secs = summary["seconds"]
     dur = f"{round(secs)} s" if secs < 90 else f"{round(secs / 60)} min"
@@ -787,9 +994,10 @@ def _process_folder(chat_id, folder):
     if polished:
         lines.append(f"· {polished} entradas de vocabulario pulidas con Claude")
     log(f"lote terminado: {summary['files']} imágenes, {t}")
-    finish(chat_id, "\n".join(lines),
-           f"ALCPT: lote de {summary['files']} capturas ({t['form']} preguntas, "
-           f"{t['vocab']} listas de vocabulario)")
+    return {"text": "\n".join(lines), "files": summary["files"],
+            "form": t["form"], "vocab": t["vocab"],
+            "commit": f"ALCPT: lote de {summary['files']} capturas ({t['form']} preguntas, "
+                      f"{t['vocab']} listas de vocabulario)"}
 
 
 def polish_pending_vocab(chunk=25):
@@ -1024,6 +1232,10 @@ def _handle_update(u):
             send(chat_id, pending_report())
         elif cmd == "/lecturas":
             handle_readings_cmd(chat_id, text.split()[1:])
+        elif cmd == "/artifact":
+            send(chat_id, "Republicando el cuaderno en el artifact de Claude "
+                          "(tarda unos minutos; aviso al terminar)…")
+            publish_artifact(chat_id)
         elif cmd == "/rebuild":
             send(chat_id, "Regenerando…")
             finish(chat_id, "Documentos regenerados.", "Regenera PDF y páginas web",

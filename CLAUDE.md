@@ -151,12 +151,32 @@ mejora. El nombre de cada foto es su checksum en iCloud, así que **reenviar el 
 enlace solo baja y procesa lo nuevo**. El texto OCR (`*.txt`) no se versiona: es
 derivado y se regenera.
 
+**Álbum a medio subir** (error del 28 sep): el iPhone sube una tanda poco a poco y
+iCloud solo lista lo ya subido. El bot leyó el álbum un minuto después de que Brayhan
+añadiera 92 capturas, vio 30 (Form 59) y las 62 del Form 67 quedaron fuera hasta que
+reenvió el enlace. Ahora `fetch_icloud_album.py` sondea hasta que el conteo se quede
+quieto (4 sondeos si la última tanda tiene menos de 30 min, 2 si es vieja; cada
+consulta a iCloud tarda ~50 s) y, al terminar de procesar, el bot vuelve a contar el
+álbum y baja lo que haya llegado antes de cerrar el lote. `--no-settle` lo salta.
+
 El procesado corre en un hilo aparte: el bot sigue atendiendo mensajes, avisa cada
 25 imágenes y admite `/lote estado` y `/lote cancelar`. Al final, un solo commit.
+
 `scripts/process_batch.py` carga el motor de OCR una vez (~3,3 s por captura en vez
 de ~3,5 arrancando de cero) y lleva `bot/processed.json` (sha256 → resultado) para
 no releer una imagen ya vista. Cada captura se prueba primero como formulario y,
 si no lo es, como lista de vocabulario.
+
+**Artifact de Claude**: al cerrar un lote que vino de un enlace de fotos (álbum o
+ZIP), el bot republica solo `output/cuaderno_alcpt.html` en el artifact «Cuaderno
+ALCPT» (`publish_artifact()`). La herramienta Artifact no existe en `claude -p`, así
+que lanza una sesión `claude --bg` con un encargo cerrado (leer la versión publicada
+entera, leer la nueva, publicar en la misma URL) y saca el resultado del registro de
+esa sesión (`~/.claude/projects/<repo>/<id>.jsonl`), porque una sesión en segundo
+plano no puede escribir en el repo sin worktree. Avisa por Telegram al terminar.
+Cuesta del orden de 450k tokens por lote porque la herramienta exige leer la página entera (~1,3 MB).
+`/artifact` lo lanza a mano; `ARTIFACT_AUTOPUBLISH=0` en `.env` lo apaga, y
+`ARTIFACT_MODEL` (por defecto `claude-sonnet-5-5`) elige el modelo.
 
 **Ráfagas**: el bot no regenera ni commitea por captura. Anota cada cambio y, tras
 `FLUSH_DELAY` segundos (30) sin novedades, regenera una vez, un commit «Lote: …» y

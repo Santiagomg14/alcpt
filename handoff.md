@@ -305,6 +305,25 @@ Sesión del 13 sep 2026, sexta parte (podcasts):
   bloquea los MP3 de otros dominios). La pestaña Podcasts avisa y enlaza a
   GitHub Pages, donde sí funciona.
 
+Sesión del 29 sep 2026 (servidor, Claude Code):
+
+- **Error auditado: el Form 67 no entró con el enlace del 28 sep.** Las 92 capturas
+  que Brayhan añadió al álbum tienen el mismo `batchDateCreated` (28 sep 19:02); el
+  bot leyó el álbum a las 19:03:18, cuando iCloud solo tenía 30 subidas (Form 59). Las
+  62 restantes (43 del Form 67, 18 del 59, 1 ilegible) entraron hoy al reenviar el
+  enlace (commit `02b2040`). Arreglo en dos capas: `wait_until_settled()` en
+  `fetch_icloud_album.py` (sondea hasta que el conteo se quede quieto) y, en el bot,
+  recuento del álbum tras procesar con descarga de lo nuevo antes de cerrar el lote
+  (`_album_count()`; `_process_folder()` ya no cierra el lote, lo hace el llamador).
+  Probado con simulación del 28 sep (30 → 92) y contra el álbum real. De paso, el
+  descargador ya no pide URLs a iCloud de fotos que ya están en disco.
+- **Artifact automático** (ver §8): `publish_artifact()` + `/artifact`. Dos pruebas
+  reales: la primera entró en bucle (publicaba sin leer); con el encargo explícito se
+  publicó la versión 10 (Form 67 incluido). El resultado se lee del .jsonl de la
+  sesión porque `Write` está bloqueado en sesiones `--bg` sin worktree.
+- Estado: 429 preguntas (343 completas, 84 pendientes, 2 sospechosas: Form 59 #26 y
+  #97). Form 67: 24 preguntas (20 completas, 4 pendientes).
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,
@@ -364,9 +383,14 @@ Trabajo técnico pendiente:
 - **Artifact de Claude «Cuaderno ALCPT»** (https://claude.ai/code/artifact/95b9749a-55b5-4292-831d-121fb6dd2aed):
   se publica desde `output/cuaderno_alcpt.html`. Última publicación: 29 sep (versión 9,
   con el lote del 28 sep: 342 palabras, 395 preguntas, Forms 51 y 59).
-  **El bot NO publica el artifact**: solo regenera el HTML y GitHub Pages. Tras cada
-  lote hay que republicarlo a mano desde Claude Code (Artifact, misma URL); si no,
-  se queda atrás, como pasó entre el 13 y el 29 sep. **Limitación:** el visor de artifacts bloquea
+  **Desde el 29 sep el bot lo republica solo** tras cada lote de fotos (álbum o ZIP):
+  `publish_artifact()` lanza una sesión `claude --bg` (en `claude -p` no existe la
+  herramienta Artifact) y lee el resultado del registro .jsonl de esa sesión (no puede
+  escribir un archivo de estado: las sesiones --bg exigen worktree para editar).
+  `/artifact` lo fuerza. Probado de punta a punta: versión 10 publicada con el Form 67.
+  Antes se quedaba atrás, como pasó entre el 13 y el 29 sep. Primera prueba: Sonnet
+  intentó publicar sin leer la versión publicada y entró en bucle de rechazos; el
+  encargo ahora le dice exactamente cómo leer (tramos de 100 líneas) antes de publicar. **Limitación:** el visor de artifacts bloquea
   por CSP los MP3 que vienen de GitHub Pages, así que en el artifact la pestaña
   Podcasts muestra los reproductores pero no suena; embeberlos como data: URI no
   cabe (48 MB frente a un tope de 16 MB). El audio de podcasts funciona en
