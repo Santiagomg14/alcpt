@@ -1,6 +1,6 @@
 # Handoff — Vocabulario en inglés + ALCPT (Brayhan)
 
-**Última actualización:** 29 sep 2026 (20:01, bot en server)
+**Última actualización:** 6 oct 2026 (02:41, bot en server)
 
 ## 1. El objetivo
 
@@ -17,14 +17,14 @@ episodio).
 
 ## 2. El estado actual del proyecto
 
-- **345 palabras confirmadas**, sin bloques `pending_` abiertos, y
+- **346 palabras confirmadas**, sin bloques `pending_` abiertos, y
   **446 preguntas** documentadas. Estas cifras, las de lecturas y episodios de
   abajo y la fecha de arriba **las actualiza el bot solo** en cada commit
   (`update_handoff()`); el resto del handoff sigue siendo manual. Verifícalo con:
   `python -c "import json;v=json.load(open('data/vocabulary.json'));print(sum(len(s['entries']) for s in v['sections']))"`
-- **14 lecturas** condensadas en `data/readings.json` (3 tech, 3 math, 2 social,
+- **29 lecturas** condensadas en `data/readings.json` (3 tech, 3 math, 2 social,
   6 humanities: filosofía, asuntos públicos, geografía, historia).
-- **21 episodios de podcast** en `data/podcasts.json` + `docs/audio/*.mp3`:
+- **39 episodios de podcast** en `data/podcasts.json` + `docs/audio/*.mp3`:
   7 de vocabulario (8:00–8:49 cada uno, el último 3:57 tras sumar «Basement») y
   14 de lecturas (4:53–6:05). ~48 MB de MP3 en `docs/audio/`, 132 min en total.
 - **Bot de Telegram CORRIENDO en el servidor Linux** (`server`, Ubuntu 24.04),

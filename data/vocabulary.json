@@ -2,8 +2,8 @@
   "meta": {
     "owner": "Brayhan",
     "level": "B2",
-    "last_updated": "2026-09-29",
-    "total_confirmed": 345
+    "last_updated": "2026-10-06",
+    "total_confirmed": 346
   },
   "sections": [
     {
@@ -320,6 +320,11 @@
           "n": 345,
           "en": "Warm",
           "es": "Tibio, templado, cálido: temperatura agradable, entre «cool» y «hot» («warm water», «a warm day»); ojo con el matiz, «warm» no es «caliente» (eso es «hot») ni «frío»; de la ropa, abrigado, que da calor («warm clothes», «a warm coat»); de una persona o un recibimiento, afectuoso, cordial, caluroso («a warm welcome», «a warm smile», «warm regards» al cerrar una carta); de los colores, cálido (rojos, naranjas, amarillos); como verbo, calentar o entibiar algo sin llegar a hervir («warm the soup»), y «warm up» = calentar comida, calentar antes de entrenar o de un examen, o ir entrando en confianza («he warmed up to the idea»); en juegos, «you're getting warm» = «caliente, caliente», estás cerca de adivinar; derivados útiles: «warmth» (calidez, calor), «lukewarm» (tibio, y en figurado, poco entusiasta: «a lukewarm response»), «warm-hearted» (de buen corazón)"
+        },
+        {
+          "n": 346,
+          "en": "Lazy",
+          "es": "Perezoso, flojo, haragán: de una persona que evita el esfuerzo («a lazy student», «don't be lazy»); matiz: es una crítica, no un descriptor neutro, y en Colombia equivale a «perezoso/flojo»; de un trabajo o razonamiento, descuidado, hecho sin esfuerzo («lazy thinking», «a lazy translation»); de un rato o un día, tranquilo y sin prisa, con matiz positivo («a lazy Sunday afternoon», «lazy days of summer»); de un río o movimiento, lento y pausado («the lazy river»); en informática, «lazy evaluation» / «lazy loading» = evaluación o carga perezosa, se calcula solo cuando hace falta (opuesto: «eager»); expresiones: «a lazybones» = un flojo, un vago; «bone idle» = flojo de remate (más fuerte, británico); «the lazy man's way» = el camino fácil; derivados: «laziness» (pereza), «lazily» (con pereza, sin prisa)"
         }
       ]
     },

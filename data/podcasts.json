@@ -14,7 +14,7 @@
       "es": "+0%"
     },
     "max_seconds": 600,
-    "last_updated": "2026-09-29",
+    "last_updated": "2026-10-06",
     "total": 39
   },
   "series": [
@@ -6594,7 +6594,7 @@
     {
       "id": "vocab-10",
       "series": "vocab",
-      "title": "Palabras 316–345",
+      "title": "Palabras 316–346",
       "subtitle": "Form 87 · Technical & Action Verbs · Mis palabras",
       "words": [
         316,
@@ -6604,7 +6604,7 @@
       "script": [
         {
           "v": "en",
-          "t": "ALCPT Notebook. Vocabulary, episode 10: words 316 to 345. Listen to each word, its meaning in Spanish, the word again and an example sentence. Repeat them out loud before the next one.",
+          "t": "ALCPT Notebook. Vocabulary, episode 10: words 316 to 346. Listen to each word, its meaning in Spanish, the word again and an example sentence. Repeat them out loud before the next one.",
           "p": 1.2
         },
         {
@@ -7209,13 +7209,28 @@
         },
         {
           "v": "en",
-          "t": "End of episode 10. Words 316 to 345. Play it again tomorrow: repetition is what makes them stick.",
+          "t": "346. Lazy.",
+          "p": 0.5
+        },
+        {
+          "v": "es",
+          "t": "Perezoso, flojo, haragán: de una persona que evita el esfuerzo.",
+          "p": 0.4
+        },
+        {
+          "v": "en",
+          "t": "Lazy.",
+          "p": 1.1
+        },
+        {
+          "v": "en",
+          "t": "End of episode 10. Words 316 to 346. Play it again tomorrow: repetition is what makes them stick.",
           "p": 0.5
         }
       ],
       "hash": "8e9468ee9926",
       "file": "audio/vocab-10.mp3",
-      "estimate": 450,
+      "estimate": 462,
       "seconds": 412.3,
       "bytes": 2473776,
       "built": "2026-09-29"
