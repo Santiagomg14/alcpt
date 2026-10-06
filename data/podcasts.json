@@ -6594,7 +6594,7 @@
     {
       "id": "vocab-10",
       "series": "vocab",
-      "title": "Palabras 316–346",
+      "title": "Palabras 316–347",
       "subtitle": "Form 87 · Technical & Action Verbs · Mis palabras",
       "words": [
         316,
@@ -6604,7 +6604,7 @@
       "script": [
         {
           "v": "en",
-          "t": "ALCPT Notebook. Vocabulary, episode 10: words 316 to 346. Listen to each word, its meaning in Spanish, the word again and an example sentence. Repeat them out loud before the next one.",
+          "t": "ALCPT Notebook. Vocabulary, episode 10: words 316 to 347. Listen to each word, its meaning in Spanish, the word again and an example sentence. Repeat them out loud before the next one.",
           "p": 1.2
         },
         {
@@ -7224,13 +7224,28 @@
         },
         {
           "v": "en",
-          "t": "End of episode 10. Words 316 to 346. Play it again tomorrow: repetition is what makes them stick.",
+          "t": "347. Tent.",
+          "p": 0.5
+        },
+        {
+          "v": "es",
+          "t": "Carpa, tienda de campaña: refugio de tela que se arma con varillas y vientos.",
+          "p": 0.4
+        },
+        {
+          "v": "en",
+          "t": "Tent.",
+          "p": 1.1
+        },
+        {
+          "v": "en",
+          "t": "End of episode 10. Words 316 to 347. Play it again tomorrow: repetition is what makes them stick.",
           "p": 0.5
         }
       ],
       "hash": "8e9468ee9926",
       "file": "audio/vocab-10.mp3",
-      "estimate": 462,
+      "estimate": 475,
       "seconds": 412.3,
       "bytes": 2473776,
       "built": "2026-09-29"
