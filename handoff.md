@@ -1,6 +1,6 @@
 # Handoff — Vocabulario en inglés + ALCPT (Brayhan)
 
-**Última actualización:** 6 oct 2026 (02:56, bot en server)
+**Última actualización:** 12 oct 2026 (cierre de sesión en server, Claude Code)
 
 ## 1. El objetivo
 
@@ -367,26 +367,30 @@ Sesión del 29 sep 2026 (servidor, Claude Code):
 
 Depende de Brayhan (él tiene el material):
 
-- **78 preguntas a medias**: les falta la pantalla de pregunta o la de explicación.
-  `/pendientes` en el bot dice cuáles. Se completan solas cuando mande la que falta.
-- **Feedback de los podcasts**: mandarle el enlace de GitHub Pages con `#podcasts`
-  y preguntar por el ritmo de las voces, las palabras por episodio y los temas.
-- **Decidir**: ¿las lecturas van también al PDF y a la web espejo? Hoy solo están
-  en el cuaderno (pestaña Lecturas).
-- **Más lecturas**: `/lecturas <sección> <n>` desde Telegram, o
-  `python scripts/fetch_readings.py --discover <sección>`.
+- **84 preguntas a medias** (de 446): les falta la pantalla de pregunta o la de
+  explicación. `/pendientes` en el bot dice cuáles; se completan solas cuando mande
+  la captura que falta.
+- **Vocabulario de los formularios nuevos** (regla 2): el bot no toca el diccionario,
+  así que falta proponerle a Brayhan las palabras candidatas de los formularios que
+  entraron por lotes (51, 59, 64, 65, 66, 67, 72) y que diga cuáles descartar.
+- **Feedback del podcast nuevo** (frase de ejemplo, máx. 3 traducciones, inglés a
+  +50 %) y de las 15 lecturas de Wikipedia con 4 preguntas.
+- **Más lecturas**: Wikipedia desde el servidor
+  (`fetch_readings.py --add https://en.wikipedia.org/wiki/… --topic …` y
+  `--condense`); ThoughtCo solo desde el portátil.
 
 Trabajo técnico pendiente:
 
-- **2 capturas de 496 sin leer**, en `capturas/album_D1zv3FZ5mwE3/` con su `.txt`
-  (`ic_011c3d76…`, `ic_01e4e62e…`): explicaciones desplazadas sin número, respuesta
-  ni nombres entrecomillados. Sus preguntas ya tienen explicación, así que no falta
-  nada por su culpa.
+- **2 preguntas sospechosas** en el Form 59 (#26 y #97): la respuesta guardada no
+  está entre las opciones. Revisar con `python scripts/audit_forms.py`.
+- **Tamaño del repo**: `docs/audio/` ya pesa 85 MB (39 episodios). Si sigue
+  creciendo, mover los MP3 a Releases u otro hosting y cambiar `--audio-base`.
+- **Republicación automática del artifact**: está apagada y nunca corrió de punta a
+  punta dentro del bot (solo por piezas). Si se enciende, probar con `/artifact`.
+- **Espera de álbum a medio subir**: probada con simulación y contra el álbum real,
+  pero aún no ha coincidido con una subida en curso de verdad.
 - Antes de tocar el parser: `python scripts/check_captures.py` en 0 cambios y
   `python scripts/audit_forms.py --strict` en 0 sospechosas.
-- Detalle menor conocido: en la pantalla de explicación el bloque «Incorrect
-  Answers» puede venir cortado por el scroll; `trim_truncated()` quita la frase
-  incompleta y otra captura desplazada la recupera.
 
 ## 8. Cualquier cosa relevante
 
