@@ -338,6 +338,22 @@ Sesión del 29 sep 2026 (servidor, Claude Code):
   antiguos, historia del café (tema nuevo `culture`). Total 29 lecturas. Condensado con
   Sonnet (~15 s por lectura). El podcast de cada lectura solo lee la primera pregunta.
 
+### 12 oct 2026 — Enlaces de iCloud (CloudKit)
+
+Brayhan mandó dos enlaces `photos.icloud.com/shared/album/…` que el bot rechazó, y
+un kit (`icloud-links-kit`) con un módulo hipotético para soportarlos. Se confirmó la
+API real con un navegador sin interfaz (fuera del repo) y se integró **en
+`scripts/fetch_icloud_album.py` con `requests`**, sin Playwright ni httpx: resolver →
+listar paginando por `startRank` → bajar `resOriginalRes`. El bot solo enruta: ya no
+rechaza los enlaces `…/photos/…`, mensajes nuevos, `ICLOUD_MAX_FOTOS` opcional, y la
+comprobación de «el álbum creció» compara con lo que vio el descargador. Detalle en
+`bot/ICLOUD_HALLAZGOS.md`; 13 pruebas offline en `tests/test_icloud_links.py`.
+
+Resultado con los enlaces reales: el álbum «Forms» (632 fotos) se abre y son las
+mismas 632 ya guardadas (checksum idéntico), así que no entró nada nuevo. El otro
+enlace es solo por invitación y Apple no lo deja leer sin cuenta. **El enlace
+`sharedalbum` viejo ya da 404**: iOS migró ese álbum al formato nuevo.
+
 ## 5. Qué has intentado
 
 - Secciones de ThoughtCo verificadas (200 con cabeceras): computer-science,

@@ -134,13 +134,25 @@ lo desactiva. Las capturas HEIC del iPhone se abren con `pillow-heif`.
 Telegram admite 30 imágenes por tanda y el bot solo puede descargar archivos de
 hasta 20 MB, así que para lotes grandes hay dos caminos, ambos por Telegram:
 
-**OJO con los dos enlaces de iCloud.** El del botón «Compartir» de Fotos
-(`share.icloud.com/photos/…`, que redirige a `icloud.com/photos/#…`) va por
-CloudKit y exige iniciar sesión con la cuenta de Apple: **no se puede leer** y el
-bot responde con las instrucciones para crear el otro. El de «álbum compartido»
-(`icloud.com/sharedalbum/#B0X…`) es público y ese sí funciona.
+**Dos tipos de enlace de iCloud, y los dos se leen** (corregido el 12 oct 2026; antes
+el segundo se rechazaba creyendo que exigía cuenta de Apple):
 
-- **Álbum compartido de iCloud** (el bueno, sin límite): en el iPhone, Fotos →
+- **Enlace de iCloud / colección compartida** (`photos.icloud.com/shared/album/<id>`,
+  `share.icloud.com/photos/<id>`, `icloud.com/photos/#<id>`): va por CloudKit y se
+  abre de forma anónima **si está compartido como «cualquiera con el enlace»**. Si es
+  solo por invitación (la página pide un correo), caducó (30 días) o se dejó de
+  compartir, Apple responde «Share not found» y el bot lo explica. Es el camino
+  vigente: iOS migró el álbum clásico de Brayhan a este formato y su enlace
+  `sharedalbum` viejo ya da 404.
+- **Álbum compartido clásico** (`icloud.com/sharedalbum/#B0X…`, API `sharedstreams`).
+
+El checksum de cada foto es el mismo por los dos caminos, así que se llaman igual
+(`ic_<checksum>.jpg`) y una foto ya guardada en cualquier `capturas/album_*` no se
+vuelve a bajar. La API confirmada está en `bot/ICLOUD_HALLAZGOS.md`; las pruebas
+offline, en `tests/test_icloud_links.py` (`.venv/bin/python -m pytest tests/`).
+`ICLOUD_MAX_FOTOS` en `.env` pone tope a las fotos nuevas por enlace (0 = sin tope).
+
+- **Álbum compartido de iCloud** (sin límite): en el iPhone, Fotos →
   seleccionar → Compartir → «Añadir a álbum compartido» → en el álbum, «Personas»
   → «Sitio web público» → copiar enlace. Se le manda al bot tal cual, o con
   `/lote <enlace>`. `scripts/fetch_icloud_album.py` habla con la API pública
@@ -242,7 +254,7 @@ alcpt/
 │   ├── ocr_capture.py     <- OCR local de una captura (RapidOCR, sin red)
 │   ├── parse_capture.py   <- captura → pregunta en forms.json, sin Claude Code
 │   ├── parse_vocab_capture.py <- lista término=significado (TikTok) → vocabulary.json
-│   ├── fetch_icloud_album.py  <- baja un álbum compartido de iCloud entero
+│   ├── fetch_icloud_album.py  <- baja un álbum compartido o un Enlace de iCloud entero
 │   ├── process_batch.py   <- procesa una carpeta de capturas (motor OCR cacheado)
 │   ├── audit_forms.py     <- completas / pendientes / sospechosas en forms.json
 │   ├── check_captures.py  <- regresión del parser contra tests/captures_expected.json

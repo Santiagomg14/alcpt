@@ -68,7 +68,7 @@ def load_env():
     # las variables reales del sistema tienen prioridad sobre el archivo
     for k in ("TELEGRAM_TOKEN", "ALLOWED_USER_IDS", "CLAUDE_BIN", "GIT_PUSH", "CLAUDE_MODEL",
               "CAPTURE_FALLBACK", "FLUSH_DELAY", "VOCAB_POLISH",
-              "ARTIFACT_URL", "ARTIFACT_AUTOPUBLISH", "ARTIFACT_MODEL", "ARTIFACT_TIMEOUT"):
+              "ARTIFACT_URL", "ARTIFACT_AUTOPUBLISH", "ARTIFACT_MODEL", "ARTIFACT_TIMEOUT", "ICLOUD_MAX_FOTOS"):
         if os.environ.get(k):
             env[k] = os.environ[k]
     return env
@@ -687,24 +687,17 @@ def handle_image(chat_id, path):
 # compartido el servidor va directo a iCloud y luego procesa la carpeta entera.
 ICLOUD_SCRIPT = SCRIPTS / "fetch_icloud_album.py"
 BATCH_SCRIPT = SCRIPTS / "process_batch.py"
-# Álbum compartido (público, se puede leer): …/sharedalbum/#B0X…
+# Dos tipos de enlace, y el descargador distingue cuál es:
+#   · álbum compartido público   …icloud.com/sharedalbum/#B0X…
+#   · «Enlace de iCloud»         photos.icloud.com/shared/album/<id>,
+#                                share.icloud.com/photos/<id>, icloud.com/photos/#<id>
+# El segundo va por CloudKit y hasta el 12 oct 2026 se rechazaba creyendo que exigía
+# cuenta de Apple. No es así si se compartió como «cualquiera con el enlace»; si es
+# solo por invitación, el descargador lo explica (ver bot/ICLOUD_HALLAZGOS.md).
 RE_ICLOUD = re.compile(r"https?://(?:\w+\.)?icloud\.com/\S*", re.I)
-# Enlace del botón «Compartir» de Fotos: share.icloud.com/photos/… o icloud.com/photos/#…
-# Va por CloudKit y exige iniciar sesión con la cuenta de Apple, así que el bot no
-# puede abrirlo. Se detecta solo para explicar cómo crear el que sí sirve.
-RE_ICLOUD_PHOTOS = re.compile(r"https?://(?:\w+\.)?icloud\.com/photos/\S*", re.I)
 RE_URL = re.compile(r"https?://\S+", re.I)
-ALBUM_HOWTO = (
-    "Ese enlace es del botón «Compartir» de Fotos y va por la cuenta de Apple: "
-    "sin iniciar sesión no puedo abrirlo, y no voy a pedirte tu contraseña.\n\n"
-    "Hazme uno de «álbum compartido», que es público y sí puedo leer:\n"
-    "1. Fotos → selecciona las capturas → Compartir\n"
-    "2. «Añadir a álbum compartido» → crea uno nuevo (p. ej. «ALCPT»)\n"
-    "3. Abre ese álbum → pestaña «Personas»\n"
-    "4. Activa «Sitio web público» → «Copiar enlace»\n\n"
-    "El enlace bueno se ve así: https://www.icloud.com/sharedalbum/#B0X5…\n"
-    "Mándamelo y proceso el álbum entero."
-)
+# Tope de fotos nuevas por Enlace de iCloud (0 = sin tope; los lotes son de cientos).
+ICLOUD_MAX_FOTOS = int(CFG.get("ICLOUD_MAX_FOTOS", "0") or 0)
 _job = {"thread": None, "cancel": False, "state": "", "chat": None}
 # Las capturas de origen se guardan aquí y SÍ van al repositorio: son el respaldo
 # de Brayhan y permiten reprocesarlas si el lector mejora. Una carpeta por álbum,
@@ -770,12 +763,13 @@ def _run_batch(chat_id, url):
             if not es_album or not results[-1] or _job["cancel"]:
                 break
             now = _album_count(url)
-            have = len(list(folder.glob("*.jpg")))
+            have = got          # lo que el descargador vio (parte puede estar en otra carpeta)
             if now is None or now <= have:
                 break
             send(chat_id, f"El álbum creció mientras procesaba ({have} → {now} fotos). "
                           "Bajo y proceso las nuevas antes de cerrar el lote…")
-            if not _download_album(chat_id, url, folder):
+            got = _download_album(chat_id, url, folder)
+            if not got:
                 break
             results.append(_process_folder(chat_id, folder))
         done = [r for r in results if r]
@@ -798,6 +792,8 @@ def _download_album(chat_id, url, folder):
     _job["state"] = "descargando"
     log(f"lote: abriendo álbum {url} → {folder.name}")
     cmd = [sys.executable, str(ICLOUD_SCRIPT), url, "--out", str(folder)]
+    if ICLOUD_MAX_FOTOS and "sharedalbum" not in url.lower():
+        cmd += ["--limit", str(ICLOUD_MAX_FOTOS)]
     proc = subprocess.Popen(cmd, cwd=REPO, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                             text=True, encoding="utf-8", errors="replace", bufsize=1)
     last, summary = 0, {}
@@ -812,7 +808,7 @@ def _download_album(chat_id, url, folder):
         if ev.get("ok") is False:
             proc.wait()
             log(f"lote: álbum rechazado: {ev.get('reason')}")
-            send(chat_id, f"No pude abrir el álbum: {ev.get('reason')}")
+            send(chat_id, f"No pude abrir el enlace: {ev.get('reason')}")
             return None
         if ev.get("ok") is True:
             summary = ev
@@ -840,10 +836,14 @@ def _download_album(chat_id, url, folder):
     nuevas = summary.get("downloaded", 0)
     total = nuevas + summary.get("skipped", 0)
     if not nuevas:
-        send(chat_id, f"El álbum no tiene fotos nuevas: las {total} ya estaban procesadas.")
+        send(chat_id, f"El álbum no tiene fotos nuevas: las {total} ya estaban procesadas."
+             + (f" ({summary.get('failed')} no se pudieron bajar; reenvía el enlace.)"
+                if summary.get("failed") else ""))
         return 0
     send(chat_id, f"Descargadas {nuevas} fotos nuevas "
-                  f"({summary.get('skipped', 0)} ya estaban, {summary.get('failed', 0)} fallaron).\n"
+                  f"({summary.get('skipped', 0)} ya estaban, {summary.get('failed', 0)} fallaron"
+                  + (f", {summary['videos']} vídeos omitidos" if summary.get("videos") else "")
+                  + ").\n"
                   f"Ahora las proceso: {eta(nuevas)}.")
     return total
 
@@ -1224,13 +1224,11 @@ def _handle_update(u):
                     send(chat_id, "No hay ningún lote en marcha.")
             elif not arg or arg.lower() in ("estado", "status"):
                 send(chat_id, f"Lote en marcha: {_job['state']}." if job_running()
-                     else "No hay ningún lote en marcha. Mándame el enlace de un álbum "
-                          "compartido de iCloud y lo proceso entero.")
-            elif RE_ICLOUD_PHOTOS.search(arg):
-                send(chat_id, ALBUM_HOWTO)
+                     else "No hay ningún lote en marcha. Mándame un álbum compartido "
+                          "o un Enlace de iCloud y lo proceso entero.")
             elif not RE_URL.match(arg):
-                send(chat_id, "Eso no parece un enlace. Mándame el de un álbum "
-                              "compartido de iCloud o el de un .zip con las capturas.")
+                send(chat_id, "Eso no parece un enlace. Mándame un álbum compartido o un "
+                              "Enlace de iCloud, o el enlace a un .zip con las capturas.")
             else:
                 handle_batch_url(chat_id, arg)
         elif cmd == "/pendientes":
@@ -1271,12 +1269,8 @@ def _handle_update(u):
         handle_image(chat_id, path)
         return
 
-    # primero se descarta el enlace de Fotos (no se puede leer); cualquier otro
-    # enlace de iCloud se intenta como álbum, y el descargador ya explica si no lo es
-    if RE_ICLOUD_PHOTOS.search(text):
-        send(chat_id, ALBUM_HOWTO)
-        return
-
+    # cualquier enlace de iCloud se intenta como lote: el descargador distingue
+    # álbum compartido de Enlace de iCloud y explica el fallo si no puede abrirlo
     m = RE_ICLOUD.search(text)
     if m:
         handle_batch_url(chat_id, m.group(0).rstrip(".,;)"))
@@ -1291,6 +1285,7 @@ def _handle_update(u):
         # una dirección web nunca es una palabra del diccionario
         send(chat_id, "No sé qué hacer con ese enlace. Acepto:\n"
                       "• álbum compartido de iCloud (…/sharedalbum/#B0X…)\n"
+                      "• Enlace de iCloud (photos.icloud.com/shared/album/…; caduca a los 30 días)\n"
                       "• enlace directo a un .zip con capturas\n"
                       "• un artículo de thoughtco.com\n"
                       "Con /lote <enlace> lo proceso como lote.")
