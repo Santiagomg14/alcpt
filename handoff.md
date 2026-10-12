@@ -367,12 +367,14 @@ Sesión del 29 sep 2026 (servidor, Claude Code):
 
 Depende de Brayhan (él tiene el material):
 
-- **84 preguntas a medias** (de 446): les falta la pantalla de pregunta o la de
+- **85 preguntas a medias** (de 446): les falta la pantalla de pregunta o la de
   explicación. `/pendientes` en el bot dice cuáles; se completan solas cuando mande
   la captura que falta.
-- **Vocabulario de los formularios nuevos** (regla 2): el bot no toca el diccionario,
-  así que falta proponerle a Brayhan las palabras candidatas de los formularios que
-  entraron por lotes (51, 59, 64, 65, 66, 67, 72) y que diga cuáles descartar.
+- **Vocabulario de los formularios nuevos** (regla 2): el 12 oct se le propusieron a
+  Brayhan 81 candidatas, guardadas en `pending_form51/59/64/65/66/67/72` dentro de
+  `vocabulary.json` (salen como apéndice en el PDF y la web). Falta que diga cuáles
+  descartar; las aprobadas se numeran desde el 348 en secciones `form51`… y se borra
+  el bloque `pending_`.
 - **Feedback del podcast nuevo** (frase de ejemplo, máx. 3 traducciones, inglés a
   +50 %) y de las 15 lecturas de Wikipedia con 4 preguntas.
 - **Más lecturas**: Wikipedia desde el servidor
@@ -381,8 +383,9 @@ Depende de Brayhan (él tiene el material):
 
 Trabajo técnico pendiente:
 
-- **2 preguntas sospechosas** en el Form 59 (#26 y #97): la respuesta guardada no
-  está entre las opciones. Revisar con `python scripts/audit_forms.py`.
+- **Sospechosas: 0** desde el 12 oct. Las dos del Form 59 (#26 y #97) se corrigieron
+  a mano mirando la captura: el panel de explicación tapaba una opción y el OCR la
+  leyó como basura. A la #97 le sigue faltando el enunciado (cuenta como pendiente).
 - **Tamaño del repo**: `docs/audio/` ya pesa 85 MB (39 episodios). Si sigue
   creciendo, mover los MP3 a Releases u otro hosting y cambiar `--audio-base`.
 - **Republicación automática del artifact**: está apagada y nunca corrió de punta a

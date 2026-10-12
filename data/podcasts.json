@@ -14,7 +14,7 @@
       "es": "+0%"
     },
     "max_seconds": 600,
-    "last_updated": "2026-10-06",
+    "last_updated": "2026-10-12",
     "total": 39
   },
   "series": [
@@ -7214,13 +7214,18 @@
         },
         {
           "v": "es",
-          "t": "Perezoso, flojo, haragán: de una persona que evita el esfuerzo.",
+          "t": "perezoso, flojo.",
           "p": 0.4
         },
         {
           "v": "en",
           "t": "Lazy.",
-          "p": 1.1
+          "p": 0.7
+        },
+        {
+          "v": "en",
+          "t": "A lazy soldier will not pass the inspection.",
+          "p": 1.2
         },
         {
           "v": "en",
@@ -7229,13 +7234,18 @@
         },
         {
           "v": "es",
-          "t": "Carpa, tienda de campaña: refugio de tela que se arma con varillas y vientos.",
+          "t": "tienda de campaña, carpa.",
           "p": 0.4
         },
         {
           "v": "en",
           "t": "Tent.",
-          "p": 1.1
+          "p": 0.7
+        },
+        {
+          "v": "en",
+          "t": "Strike the tents and prepare to move out.",
+          "p": 1.2
         },
         {
           "v": "en",
@@ -7245,7 +7255,7 @@
       ],
       "hash": "8e9468ee9926",
       "file": "audio/vocab-10.mp3",
-      "estimate": 475,
+      "estimate": 478,
       "seconds": 412.3,
       "bytes": 2473776,
       "built": "2026-09-29"

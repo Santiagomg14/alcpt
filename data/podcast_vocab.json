@@ -2068,5 +2068,17 @@
   "es": "tibio, templado, cálido",
   "example": "Drink warm water to stay hydrated during exercises.",
   "fp": "13ac933540"
+ },
+ "346": {
+  "en": "Lazy",
+  "es": "perezoso, flojo",
+  "example": "A lazy soldier will not pass the inspection.",
+  "fp": "97dc1b0e1f"
+ },
+ "347": {
+  "en": "Tent",
+  "es": "tienda de campaña, carpa",
+  "example": "Strike the tents and prepare to move out.",
+  "fp": "c2b02e2b82"
  }
 }

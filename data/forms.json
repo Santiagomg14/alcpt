@@ -676,13 +676,14 @@
         },
         {
           "n": 26,
-          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
+          "question": "I get up every morning at 7:00.",
           "options": [
-            "Iuolitstayimiveuaitei7.uu.",
-            "My roommate wakes me at 7 :15."
+            "I eat at 7:00.",
+            "I don't stay in bed after 7:00.",
+            "My roommate wakes me at 7:15."
           ],
-          "correct": "(Correct answer not visible in this capture.)",
-          "explanation": "The phrasal verb\"get up\" means to leave one's bed after waking up or sleeping. If someone gets up at 7:00, it logically follows that they are no longer in bed once that time has passed. This is a common way to describe a daily routine in both general and military contexts (such as during basic training or daily muster)."
+          "correct": "I don't stay in bed after 7:00.",
+          "explanation": "The phrasal verb \"get up\" means to leave one's bed after waking up or sleeping. If someone gets up at 7:00, it logically follows that they are no longer in bed once that time has passed. This is a common way to describe a daily routine in both general and military contexts (such as during basic training or daily muster)."
         },
         {
           "n": 29,
@@ -950,11 +951,13 @@
         },
         {
           "n": 97,
-          "question": "Selecting students for this society\"",
+          "question": "(Question stem not captured yet — only the explanation screen was sent.)",
           "options": [
-            "(Options screen not captured yet.)"
+            "determined mainly by educational achievement",
+            "high school students can become members automatically",
+            "several factors are considered in selecting students for this society"
           ],
-          "correct": "(Correct answer not visible in this capture.)",
+          "correct": "several factors are considered in selecting students for this society",
           "explanation": "The paragraph explicitly lists five distinct criteria for membership: scholarship, leadership, citizenship, service, and character. This confirms that the selection process involves evaluating several different factors rather than just one. This type of reading comprehension task requires identifying a summary statement that encompasses the details provided in the text."
         }
       ]

@@ -1825,5 +1825,364 @@
         }
       ]
     }
-  ]
+  ],
+  "pending_form51": {
+    "note": "Candidatos del Form 51 propuestos el 12 oct 2026. Brayhan decide cuáles descartar antes de numerarlos.",
+    "candidates": [
+      {
+        "en": "echelon",
+        "es": "escalón, nivel jerárquico (upper echelon: la cúpula, los altos mandos)"
+      },
+      {
+        "en": "augur well / not augur well",
+        "es": "augurar algo bueno / no presagiar nada bueno (verbo formal; se usa casi siempre con well, ill)"
+      },
+      {
+        "en": "prognosticate",
+        "es": "pronosticar, vaticinar (muy formal)"
+      },
+      {
+        "en": "foretell",
+        "es": "predecir, presagiar"
+      },
+      {
+        "en": "recurrent",
+        "es": "recurrente, que se repite"
+      },
+      {
+        "en": "druggist",
+        "es": "farmacéutico, boticario (EE. UU.; sinónimo de pharmacist)"
+      },
+      {
+        "en": "goggles",
+        "es": "gafas protectoras, antiparras"
+      },
+      {
+        "en": "welder",
+        "es": "soldador (el oficio; to weld: soldar)"
+      },
+      {
+        "en": "lubrication",
+        "es": "lubricación, engrase"
+      },
+      {
+        "en": "make it",
+        "es": "llegar a tiempo; poder asistir; lograrlo («Can you make it?»: ¿puedes venir?)"
+      },
+      {
+        "en": "turn away",
+        "es": "rechazar, no dejar entrar; apartar la mirada"
+      },
+      {
+        "en": "worn out",
+        "es": "gastado, desgastado (cosas); agotado, rendido (personas)"
+      },
+      {
+        "en": "BOQ (Bachelor Officers' Quarters)",
+        "es": "alojamiento de oficiales solteros en la base"
+      }
+    ]
+  },
+  "pending_form59": {
+    "note": "Candidatos del Form 59 propuestos el 12 oct 2026. Brayhan decide cuáles descartar antes de numerarlos.",
+    "candidates": [
+      {
+        "en": "bumpy",
+        "es": "lleno de baches; con sacudidas, movido (bumpy ride)"
+      },
+      {
+        "en": "dampness",
+        "es": "humedad (damp: húmedo)"
+      },
+      {
+        "en": "deteriorated",
+        "es": "deteriorado, venido a menos"
+      },
+      {
+        "en": "neglected",
+        "es": "descuidado, abandonado, desatendido"
+      },
+      {
+        "en": "bundle",
+        "es": "bulto, fardo, atado"
+      },
+      {
+        "en": "make a living",
+        "es": "ganarse la vida"
+      },
+      {
+        "en": "snack bar",
+        "es": "cafetería, merendero (el de la base)"
+      },
+      {
+        "en": "BX (Base Exchange)",
+        "es": "economato de la base aérea (tienda para el personal militar)"
+      },
+      {
+        "en": "give birth",
+        "es": "dar a luz"
+      },
+      {
+        "en": "not mind / object to",
+        "es": "no importarle a uno / oponerse a, tener inconveniente en (+ -ing)"
+      }
+    ]
+  },
+  "pending_form64": {
+    "note": "Candidatos del Form 64 propuestos el 12 oct 2026. Brayhan decide cuáles descartar antes de numerarlos.",
+    "candidates": [
+      {
+        "en": "rumpus",
+        "es": "alboroto, jaleo, trifulca"
+      },
+      {
+        "en": "wobble",
+        "es": "tambalearse, bambolearse; vibrar (una rueda)"
+      },
+      {
+        "en": "slippery",
+        "es": "resbaladizo, escurridizo"
+      },
+      {
+        "en": "plentiful",
+        "es": "abundante, copioso (sinónimo de abundant)"
+      },
+      {
+        "en": "substitute for",
+        "es": "reemplazar a, sustituir a (alguien)"
+      },
+      {
+        "en": "assemble",
+        "es": "reunirse, congregarse; ensamblar, armar"
+      },
+      {
+        "en": "lengthy",
+        "es": "largo, extenso, prolongado"
+      },
+      {
+        "en": "catch up (with)",
+        "es": "alcanzar a, ponerse al día"
+      },
+      {
+        "en": "windshield wipers",
+        "es": "limpiaparabrisas (windshield: parabrisas, EE. UU.)"
+      },
+      {
+        "en": "dashboard",
+        "es": "tablero de instrumentos, salpicadero"
+      },
+      {
+        "en": "exposure",
+        "es": "exposición (al sol, al frío, a un riesgo)"
+      }
+    ]
+  },
+  "pending_form65": {
+    "note": "Candidatos del Form 65 propuestos el 12 oct 2026. Brayhan decide cuáles descartar antes de numerarlos.",
+    "candidates": [
+      {
+        "en": "above board",
+        "es": "honesto, transparente, sin trampa"
+      },
+      {
+        "en": "exorbitant",
+        "es": "exorbitante, desorbitado (precio)"
+      },
+      {
+        "en": "fraudulent",
+        "es": "fraudulento"
+      },
+      {
+        "en": "trustworthy",
+        "es": "digno de confianza, fiable"
+      },
+      {
+        "en": "riled (get riled)",
+        "es": "irritado, enfadado (coloquial; rile: sacar de quicio)"
+      },
+      {
+        "en": "snooze",
+        "es": "siestecita, cabezada; echar una cabezada"
+      },
+      {
+        "en": "wound",
+        "es": "herida (fatal wound: herida mortal); herir"
+      },
+      {
+        "en": "carry out",
+        "es": "llevar a cabo, ejecutar, cumplir (una orden)"
+      },
+      {
+        "en": "de-emphasize",
+        "es": "restar importancia a, quitar énfasis"
+      },
+      {
+        "en": "extemporaneously",
+        "es": "de improviso, sin preparación, improvisando"
+      },
+      {
+        "en": "tract",
+        "es": "extensión de terreno (vast tracts of land); tracto (anatomía)"
+      },
+      {
+        "en": "wilderness",
+        "es": "tierra virgen, zona salvaje, yermo"
+      },
+      {
+        "en": "get used to",
+        "es": "acostumbrarse a (+ sustantivo o -ing)"
+      },
+      {
+        "en": "fireproof",
+        "es": "ignífugo, a prueba de fuego"
+      },
+      {
+        "en": "beverage",
+        "es": "bebida (formal)"
+      },
+      {
+        "en": "peak",
+        "es": "cima, cumbre, pico; punto máximo"
+      }
+    ]
+  },
+  "pending_form66": {
+    "note": "Candidatos del Form 66 propuestos el 12 oct 2026. Brayhan decide cuáles descartar antes de numerarlos.",
+    "candidates": [
+      {
+        "en": "hold out",
+        "es": "resistir, aguantar; durar (provisiones)"
+      },
+      {
+        "en": "haste",
+        "es": "prisa, precipitación (in his haste: con las prisas)"
+      },
+      {
+        "en": "stall",
+        "es": "calarse, pararse (un motor); entrar en pérdida (un avión); dar largas"
+      },
+      {
+        "en": "walk away with",
+        "es": "llevarse, robar; ganar con facilidad"
+      },
+      {
+        "en": "dry up",
+        "es": "secarse por completo (un río, un estanque)"
+      },
+      {
+        "en": "freeze over",
+        "es": "helarse, cubrirse de hielo (una superficie)"
+      },
+      {
+        "en": "try out",
+        "es": "probar, poner a prueba (≠ try on: probarse ropa)"
+      },
+      {
+        "en": "burn down",
+        "es": "incendiarse por completo, reducirse a cenizas"
+      },
+      {
+        "en": "a great deal of",
+        "es": "una gran cantidad de, mucho (con incontables)"
+      },
+      {
+        "en": "cattle raising",
+        "es": "ganadería, cría de ganado"
+      },
+      {
+        "en": "clerk",
+        "es": "dependiente, empleado de tienda (EE. UU.); oficinista"
+      },
+      {
+        "en": "twist (one's knee / ankle)",
+        "es": "torcerse (la rodilla, el tobillo)"
+      }
+    ]
+  },
+  "pending_form67": {
+    "note": "Candidatos del Form 67 propuestos el 12 oct 2026. Brayhan decide cuáles descartar antes de numerarlos.",
+    "candidates": [
+      {
+        "en": "paddle",
+        "es": "remar con pala o canalete (canoa); remo corto"
+      },
+      {
+        "en": "impartial",
+        "es": "imparcial, justo"
+      },
+      {
+        "en": "prejudiced",
+        "es": "con prejuicios, parcial"
+      },
+      {
+        "en": "daring",
+        "es": "atrevido, audaz, osado"
+      },
+      {
+        "en": "erratic",
+        "es": "errático, imprevisible, irregular"
+      },
+      {
+        "en": "ailment",
+        "es": "dolencia, achaque, enfermedad leve"
+      },
+      {
+        "en": "soaked",
+        "es": "empapado, calado"
+      },
+      {
+        "en": "discard",
+        "es": "desechar, tirar, descartar"
+      },
+      {
+        "en": "bore (a hole)",
+        "es": "taladrar, perforar, barrenar (≠ bore: aburrir)"
+      },
+      {
+        "en": "dim",
+        "es": "tenue, débil (luz); atenuar"
+      },
+      {
+        "en": "stripe",
+        "es": "raya, franja; galón (insignia de grado)"
+      }
+    ]
+  },
+  "pending_form72": {
+    "note": "Candidatos del Form 72 propuestos el 12 oct 2026. Brayhan decide cuáles descartar antes de numerarlos.",
+    "candidates": [
+      {
+        "en": "tailwind",
+        "es": "viento de cola (≠ headwind: viento de frente)"
+      },
+      {
+        "en": "trigger",
+        "es": "disparar, accionar; desencadenar; gatillo"
+      },
+      {
+        "en": "shove",
+        "es": "empujar con brusquedad; empujón"
+      },
+      {
+        "en": "adjutant",
+        "es": "ayudante (oficial que asiste al comandante en lo administrativo)"
+      },
+      {
+        "en": "outgrow",
+        "es": "quedarle pequeña la ropa a uno al crecer; dejar atrás (una etapa, un hábito)"
+      },
+      {
+        "en": "pastry",
+        "es": "bollo, pastel, masa de hojaldre (sweet rolls)"
+      },
+      {
+        "en": "first aid",
+        "es": "primeros auxilios"
+      },
+      {
+        "en": "paste",
+        "es": "engrudo, cola, pegamento; pasta"
+      }
+    ]
+  }
 }
